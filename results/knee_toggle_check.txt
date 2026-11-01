@@ -1,0 +1,28 @@
+# knee_toggle_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 05:12, 2 s
+
+KneeToggle 1.0 (2026-11-01)
+  ok   F at 30, 10, 5, 2, 1 deg: [86.6, 283.56, 571.5, 1431.81, 2864.5] N
+  ok   the stroke 10.718 mm
+  ok   Run opens the dialog
+Knee toggle built: links of 40.0 mm at 30.0 deg from the ram's line; 3.0 deg over centre allowed.
+
+Mechanical advantage F / P = 1 / (2 tan(alpha)); stroke to straight 2 l (1 - cos(alpha0)) = 10.718 mm
+With P = 100 N: F = 86.60 N at 30 deg, F = 283.56 N at 10 deg, F = 571.50 N at 5 deg, F = 1431.81 N at 2 deg, F = 2864.50 N at 1 deg
+
+Drive "Upper link turns" towards negative angles (2 deg at a time) to straighten the knee.
+
+[KneeToggle 1.0 (2026-11-01)] KneeToggle 1.0 (2026-11-01)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   four components: ['Frame', 'Lower link', 'Ram', 'Upper link']
+  ok   one body each
+  ok   three revolute and one slider As-built Joints closing the loop
+  ok   no interference at rest 
+  knee travel over ram travel, measured: 30-28: 0.9020, 28-26: 0.9813, 26-24: 1.0723, 24-22: 1.1779, 22-20: 1.3025, 20-18: 1.4521, 18-16: 1.6354, 16-14: 1.8660, 14-12: 2.1657, 12-10: 2.5723, 10-8: 3.1569, 8-6: 4.0722, 6-4: 5.7150, 4-2: 9.5406
+  ok   the ram at -2 l cos(alpha) at every step (worst 2.59e-13 mm)
+  ok   the virtual-work ratio from Fusion's positions equals the formula's (worst 3.1e-13 relative)
+  ok   no interference at the 15 steps 
+  ok   {'alpha0': 70.0} refused: Starting angle 70.0 deg: choose from 5 to 60 deg.
+  ok   {'over': 12.0} refused: Over-centre angle 12.0 deg: choose from 1 to 10 deg.
+ALL PASS

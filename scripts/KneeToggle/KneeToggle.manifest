@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 22: a knee toggle, two links and a ram in one closed loop; the mechanical advantage by virtual work."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "KneeToggle"
+}

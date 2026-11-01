@@ -1,0 +1,6 @@
+# controls/knee_unequal_links
+# Autodesk Fusion 2706.1.17, run 2026-11-01 05:12, 2 s
+
+  the ram strays from -2 l cos(alpha) by up to 0.5970 mm
+  FAIL the ram at -2 l cos(alpha) at every step
+CONTROL: unequal links; the position check MUST fail

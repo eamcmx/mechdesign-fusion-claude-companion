@@ -1,0 +1,43 @@
+Write a Fusion Python script that, when run, builds a knee toggle: two equal links from a fixed pivot down to a ram
+on a straight guide, assembled as one closed loop so that Drive Joints on the upper link straightens the knee and
+drives the ram; and that reports the toggle's mechanical advantage.
+
+INPUTS (a command dialog, with these defaults):
+- link length l (mm), 40
+- starting angle of the links from the ram's line alpha0 (deg), 30
+- over-centre angle allowed past the straight position (deg), 3
+- force pushing the knee sideways P (N), 100
+
+DERIVED (computed from the inputs, never typed):
+- the fixed pivot T = (0, 0); the ram's line is the -y axis; at angle alpha the knee K = (l sin(alpha), -l cos(alpha))
+  and the ram's pin R = (0, -2 l cos(alpha))
+- by virtual work, P dx_K = F dy_R, so the ram's force F = P / (2 tan(alpha)); the mechanical advantage
+  F / P = 1 / (2 tan(alpha))
+- the ram's stroke from alpha0 to the straight position: 2 l (1 - cos(alpha0))
+- F at alpha = 30, 10, 5, 2 and 1 deg
+
+HARD CONSTRAINTS:
+- alpha0 from 5 to 60 deg, or refuse.
+- The over-centre angle from 1 to 10 deg, or refuse: the toggle locks against its stop just past straight.
+- The upper link turns anticlockwise (about +z) as alpha grows; it is limited from alpha = -(over-centre) to
+  alpha = alpha0 + 15 deg.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created at the origin, drawn in place at alpha0: Frame (grounded), a plate from
+  z = -6 to 0; Upper link from T to K, z 0 to 4; Lower link from K to R, z 4 to 8; Ram, a block 16 mm wide round
+  R, z 8 to 12. Links 8 mm wide with round ends and 3 mm holes (Chapter 21). The pins and the ram's guide are not
+  drawn.
+- The API works in cm and radians.
+- AsBuiltJoints: Upper link revolute about z on Frame at T, limited as above; Lower link revolute on Upper link at
+  K; Lower link revolute on Ram at R; Ram slider along y on Frame (the last closes the loop).
+
+ACCEPTANCE CRITERIA:
+- A message gives the stroke, F at the five angles and a version tag.
+- Defaults: stroke 10.718 mm; F = 86.60, 283.56, 571.50, 1431.81 and 2864.50 N at 30, 10, 5, 2 and 1 deg.
+- The upper link stepped from alpha = 30 to 2 deg, 2 deg at a time: the ram at -2 l cos(alpha) at every step, by
+  its body; between every two steps the knee's sideways travel over the ram's travel equal to the same ratio worked
+  from the formula (virtual work measured on Fusion's positions); no interference.
+- Refused: alpha0 = 70; an over-centre angle of 12 deg.
+
+Give me one Python file and its .manifest.
