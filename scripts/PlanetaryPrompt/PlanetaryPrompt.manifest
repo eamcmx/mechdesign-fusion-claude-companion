@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "What the planetary-gearbox prompt of Topic 5 asks for: sun, planets, ring, carrier and a sun bearing, As-built Joints and Motion Links, ready to drive."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "PlanetaryPrompt"
+}

@@ -1,0 +1,77 @@
+Write a Fusion 360 Python script that, when run, builds a parametric planetary gearbox, assembled so that
+ASSEMBLE > Drive Joints on the sun turns the planets round the ring and turns the carrier.
+
+INPUTS (a command dialog, with these defaults):
+- module m (mm), 1.5
+- sun teeth Zs, 16
+- planet teeth Zp, 20
+- number of planets N, 3
+- pressure angle α (deg), 20
+- face width b (mm), 12
+- backlash on the pitch circle (mm), 0.3
+- planet pin diameter (mm), 6
+- sun shaft diameter, input (mm), 8
+- carrier shaft diameter, output (mm), 12
+- carrier plate thickness (mm), 6
+- ring wall outside the tooth spaces (mm), 6
+
+DERIVED (computed from the inputs, never typed):
+- ring teeth Zr = Zs + 2·Zp
+- centre distance a = m·(Zs + Zp)/2; planet i (i = 0 .. N−1) sits at angle θ_i = 2π·i/N, at (a·cos θ_i, a·sin θ_i)
+- pitch radius r = m·z/2, base radius r·cos α; outside gears: tip r + m, root r − 1.25·m
+- planet phase ψ_i = [θ_i·(Zs + Zp) + π·(Zp − 1)]/Zp (mod 2π/Zp): planet i's tooth 0 points along ψ_i
+- ring phase: the ring's tooth SPACES are centred at k·2π/Zr + φ_r with φ_r = 0 when Zp is odd, π/Zr when Zp is even
+- ratios: ring held 1 + Zr/Zs; carrier held −Zr/Zs; sun held 1 + Zs/Zr
+
+HARD CONSTRAINTS:
+- (Zs + Zr)/N must be a whole number, or the planets cannot be spaced evenly: refuse with a message.
+- Neighbouring planets must not touch: 2·a·sin(π/N) > m·(Zp + 2), or refuse with a message.
+- True involute flanks from the base circle. Where the base circle is above the root circle, continue the flank
+  with a radial line down to the root circle.
+- Each outside gear (sun, planets): a root disc with a bore, ONE tooth joined to it, then a circular pattern of
+  that tooth z times. The sun's tooth 0 points along +x; planet i's tooth 0 along ψ_i.
+- The ring: an annulus from radius Rr − m (the tips of its inner teeth) to Rr + 1.25·m + wall (Rr its pitch
+  radius); cut ONE tooth space and circular-pattern the cut Zr times. The tooth space has the outline of an
+  outside tooth of a Zr-tooth gear with tip radius Rr + 1.25·m, root radius Rr − m and thickness π·m/2 + backlash/2
+  on the pitch circle; space 0 centred at φ_r.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- One component per part, one body each: Ring, Sun, Planet 1 .. Planet N, Carrier, Sun bearing.
+- Create each component WHERE IT BELONGS (the translation in the matrix of addNewComponent) and never move it
+  afterwards: in a parametric design a later feature undoes the move.
+- Gears from z = 0 to z = b. Planet bores: pin diameter + 0.2 mm.
+- Sun shaft (input), joined to the sun: from z = −20 mm (it leaves through the BOTTOM) up into the carrier's bore,
+  ending 0.5 mm short of the bore's end (z = b + 1 + half the plate thickness − 0.5).
+- Carrier (output): a disc of radius a + pin diameter, from z = b + 1 to z = b + 1 + plate thickness; a pin down from
+  it into each planet's bore, to z = 0; a blind bore from its bottom face, half the plate thick, of diameter
+  sun shaft + 4.4 mm; the output shaft up from its top face, 20 mm long (it leaves through the TOP).
+- Sun bearing: a sleeve in the carrier's bore round the sun shaft, inner diameter sun shaft + 0.2 mm, outer
+  diameter sun shaft + 4 mm, as deep as the bore. A shaft that passes a turning frame needs a bore and a bearing.
+- Each tooth outline is ONE closed polyline of sketch lines that share their SketchPoint objects (no splines).
+- The API works in cm and radians: convert every mm and degree input.
+- Joints: AsBuiltJoints only (Joints.add would move the parts). The ring is grounded. The sun turns on the ring
+  about z; the carrier turns on the ring about z; each planet turns on the CARRIER about its own centre; the sun
+  bearing is rigid to the carrier.
+- Fusion has no tooth contact: the meshes are Motion Links. Sun to carrier: (Zs + Zr)·360 deg of the sun for
+  Zs·360 deg of the carrier, same direction. Carrier to each planet: Zp·360 deg of the carrier for Zr·360 deg of
+  the planet, reversed (the planet turns backwards relative to the carrier).
+
+ACCEPTANCE CRITERIA:
+- A message at the end gives Zr, the three ratios and a version tag.
+- With the defaults: driving the sun one full turn turns the carrier 80° the same way, and each planet −224°
+  relative to the carrier.
+- No two parts overlap at rest, nor at any sun angle in steps of 45° through one turn (Interference).
+- Zs = 24, Zp = 30, N = 4 builds; Zs = 20, Zp = 25, N = 4 is refused, because 90/4 is not whole.
+
+A WORKED EXAMPLE of the polyline I mean (it works in my Fusion; P3 = adsk.core.Point3D.create, points in cm):
+
+def _polyline(sk, pts):
+    lines = sk.sketchCurves.sketchLines
+    first = lines.addByTwoPoints(P3(pts[0][0], pts[0][1], 0), P3(pts[1][0], pts[1][1], 0))
+    prev = first.endSketchPoint
+    for q in pts[2:]:
+        prev = lines.addByTwoPoints(prev, P3(q[0], q[1], 0)).endSketchPoint
+    lines.addByTwoPoints(prev, first.startSketchPoint)
+
+Give me one Python file and its .manifest.

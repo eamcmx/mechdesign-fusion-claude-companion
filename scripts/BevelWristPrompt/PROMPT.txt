@@ -1,0 +1,69 @@
+Write a Fusion 360 Python script that, when run, builds the bevel-gear differential of a robot wrist as one
+complete, jointed assembly: driving the yoke's joint pitches the wrist, driving the output gear's joint rolls it, and
+the two side gears follow as they would on the two motors.
+
+INPUTS (a command dialog, with these defaults):
+- module m at the heel (mm), 2
+- teeth z, the same on all four bevel gears (even), 40
+- pressure angle α (deg), 20
+- face width b (mm), 16
+- backlash on the pitch circle (mm), 0.2
+- yoke pin diameter d (mm), 8
+
+DERIVED (computed from the inputs, never typed):
+- miter gears: pitch cone angle δ = 45°; pitch radius r = m·z/2; cone distance R = r/sin δ; k = (R − b)/R
+- Tredgold's approximation: each tooth is the tooth of a virtual spur gear of pitch radius r_v = R·tan δ (z/cos δ teeth)
+  drawn at the heel; tip r_v + m, root r_v − 1.25·m, base r_v·cos α, thickness π·m/2 − backlash/2 on the virtual pitch
+  circle; below the base circle the flank is a radial line
+- heel root point (radius, height from the apex) = (R·sin δ − 1.25·m·cos δ, R·cos δ + 1.25·m·sin δ); toe root = k × it
+- back face height z_back = heel root height + 2 mm; hub radius d/2 + 6.2 mm, hub end h_end = z_back + 8 mm
+- sweep radius S = √((h_end + 5)² + 18²): no turning part reaches further from the apex
+
+HARD CONSTRAINTS:
+- z must be even (each gear meets two others 180° apart) and b ≤ R/3: refuse with a message otherwise.
+- All four pitch cones share their apex at the origin. Pitch axis = world Y, roll axis = world Z.
+  Output gear on +Z, idler on −Z, side gear R on +Y, side gear L on −Y.
+- Mesh phase: the side gears point tooth 0 at +Z; the output and the idler point a GAP at +Y (tooth 0 half a tooth
+  pitch, π/z, away from +Y).
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- One component per part, one body each: Frame, Yoke, Output gear, Idler gear, Side gear L, Side gear R.
+- Create each component WHERE IT BELONGS and never move it afterwards. Each gear component's frame: origin at the
+  apex, local z along the gear's axis pointing away from the apex, local x where its tooth 0 points (+Y for the
+  output and the idler, +Z for the side gears); matrix.setWithCoordinateSystem(origin, x, y, z) with y = z × x.
+- Gear blank, in the gear's own frame, made with TemporaryBRepManager and added through a base feature: the root
+  cone from toe root to heel root, the back cone (r·sin δ + h·cos δ = R) from the heel root up to z_back, a flat back
+  face, the hub to h_end, and a bore of d + 0.4 mm right through.
+- Teeth: the virtual tooth outline lies in the plane tangent to the back cone at the heel: a point (u, v) of it
+  (u along the tooth's width, v outward from the virtual pitch circle) is at (R·sin δ + v·cos δ, u, R·cos δ − v·sin δ).
+  The toe section is the heel section scaled by k toward the apex. Each section: a sketch on a plane through three of
+  its points, the points mapped in with the inverse of the sketch transform, one closed polyline with shared
+  SketchPoints. Loft heel to toe, joined to the blank; circular pattern of the loft z times about the gear axis.
+- Output gear only: a flange on its hub end, radius 18 mm, 5 mm thick, with the bore.
+- Yoke: a cross of two pins of diameter d, through the apex: the roll pin along Z from −h_end to h_end + 5,
+  the pitch pin along Y through the side gears and the frame, to 6 mm outside the frame's cheeks.
+- Frame: two cheeks 8 mm thick (y from h_end + 4 to h_end + 12 on each side), 50 mm wide in x, from the base plate up
+  to z = 25 mm, each with a bore of d + 0.4 mm on the pitch axis; a base plate 6 mm thick, 2·S wide in x, reaching the
+  cheeks' outer faces in y, its top at z = −(S + 15). Plate and cheeks are one body.
+- The API works in cm and radians: convert every mm and degree input.
+- Joints: AsBuiltJoints only. The frame is grounded. The yoke turns on the frame about Y ("Pitch"). The output gear
+  turns on the yoke about Z ("Roll"); the idler turns on the yoke about Z; each side gear turns on the yoke about Y.
+  A sketch-point joint does not always take the axis you expect: for each revolute joint try the X, Y and Z joint
+  directions and keep the one that turns the part about the wanted world axis (turn it 0.2 rad, compare the part's
+  rotation), and note its sign (+1 if a positive value turns the part right-handed about that world axis).
+- Fusion has no tooth contact: the meshes are Motion Links, all 1:1, from "Roll" to each gear on the yoke. About +Y,
+  relative to the yoke, side gear L turns +roll and side gear R −roll; about +Z the idler turns −roll. Set Reverse
+  from these signs and the joint signs.
+
+ACCEPTANCE CRITERIA:
+- A message at the end gives z, m, R and a version tag.
+- "Pitch" 30°: the yoke and all four gears turn 30° about Y, and the output does not turn on the yoke.
+- "Roll" 40°: the output turns 40° on the yoke; side L +40°, side R −40° and the idler −40° on the yoke.
+- Pitch 30° with roll 40°: the side gears' world angles about +Y are θL = 70° and θR = −10°, so
+  pitch = (θL + θR)/2 = 30° and roll = (θL − θR)/2 = 40°.
+- No two parts overlap at rest, at (pitch, roll) = (30°, 40°) and (−45°, 120°), nor while the roll goes through one
+  tooth pitch (360/z) in 6 steps.
+- z = 30 is refused (b = 16 > R/3); z = 41 is refused (odd).
+
+Give me one Python file and its .manifest.

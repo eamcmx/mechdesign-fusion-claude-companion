@@ -1,0 +1,28 @@
+# controls/planetary_ring_phase
+# Autodesk Fusion 2706.1.17, run 2026-11-01 02:57, 15 s
+
+PlanetaryPrompt 1.0 (2026-11-01)
+  ok   Run opens the dialog
+Planetary gearbox built.
+
+Zs = 16, Zp = 20, Zr = Zs + 2 · Zp = 56, 3 planets, module 1.50 mm
+Ring held (sun in, carrier out):    1 + Zr / Zs = 4.5000
+Carrier held (sun in, ring out):    -Zr / Zs = -3.5000
+Sun held (ring in, carrier out):    1 + Zs / Zr = 1.2857
+
+Drive Joints on "Sun (input)": one turn moves the carrier 80.00 deg the same way.
+
+[PlanetaryPrompt 1.0 (2026-11-01)] PlanetaryPrompt 1.0 (2026-11-01)
+  OK pressed with the defaults, built in 7 s
+  ok   a new design opened
+  ok   parts: ['Carrier', 'Planet 1', 'Planet 2', 'Planet 3', 'Ring', 'Sun', 'Sun bearing']
+  ok   one body each
+  ok   the ring is grounded
+  ok   As-built Joints only: 5 revolute, 1 rigid, plain Joints 0
+  ok   Motion Links: ['Sun to carrier', 'Planet 1 spin', 'Planet 2 spin', 'Planet 3 spin']
+  FAIL no interference at rest [('Ring', 'Planet 1', 178.8922), ('Ring', 'Planet 2', 184.2636), ('Ring', 'Planet 3', 184.2636)]
+  one sun turn: carrier joint 80.000 deg, planet 1 on the carrier -224.000 deg
+  ok   carrier = sun / 4.500 at every 45 deg step (worst error 0.0000 deg)
+  ok   each planet = -2.800 x carrier, relative to the carrier (worst error 0.0000 deg)
+  FAIL no interference at any of the 8 steps [(45.0, [('Ring', 'Planet 1', 185.0517), ('Ring', 'Planet 2', 182.6757), ('Ring', 'Planet 3', 180.5158)]), (90.0, [('Ring', 'Planet 1', 180.5158), ('Ring', 'Planet 2', 182.6757), ('Ring', 'Planet 3', 185.0517)]), (135.0, [('Ring', 'Planet 1', 184.2636), ('Ring', 'Planet 2', 184.2636), ('Ring', 'Planet 3', 178.8922)]), (180.0, [('Ring', 'Planet 1', 182.6757), ('Ring', 'Planet 2', 180.5158), ('Ring', 'Planet 3', 185.0517)]), (225.0, [('Ring', 'Planet 1', 182.6757), ('Ring', 'Planet 2', 185.0517), ('Ring', 'Planet 3', 180.5158)]), (270.0, [('Ring', 'Planet 1', 184.2636), ('Ring', 'Planet 2', 178.8922), ('Ring', 'Planet 3', 184.2636)]), (315.0, [('Ring', 'Planet 1', 180.5158), ('Ring', 'Planet 2', 185.0517), ('Ring', 'Planet 3', 182.6757)]), (360.0, [('Ring', 'Planet 1', 185.0517), ('Ring', 'Planet 2', 180.5158), ('Ring', 'Planet 3', 182.6757)])]
+CONTROL: the ring phase is deliberately wrong; the clash checks above MUST fail

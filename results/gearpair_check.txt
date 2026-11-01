@@ -1,0 +1,38 @@
+# gearpair_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 02:56, 11 s
+
+GearPairOnPlate 1.1 (2026-11-01)
+  ok   Run opens the dialog
+  dialog defaults (API units): {'m': 0.2, 'z1': 20, 'z2': 40, 'alpha': 0.3490658503988659, 'b': 1.0, 'backlash': 0.020000000000000004, 'ds': 0.8, 'plate': 0.6000000000000001}
+Gear pair built.
+
+Centre distance a = m · (z1 + z2) / 2 = 2.00 · (20 + 40) / 2 = 60.00 mm
+Ratio z2 / z1 = 40 / 20 = 2.000, gear 2 turning the other way
+
+Drive Joints on "Gear 1 turns": 90 deg turns gear 2 by 45.0 deg the other way.
+
+[GearPairOnPlate 1.1 (2026-11-01)] GearPairOnPlate 1.1 (2026-11-01)
+  OK pressed, built in 3 s
+  ok   a new design opened (documents 1 -> 2)
+  ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each: [1, 1, 1, 1, 1]
+  ok   gear 2 and shaft 2 at x = a = 60.00 mm (measured 60.000, 60.000)
+  ok   the base plate is grounded
+  ok   As-built Joints only: ['RevoluteJointMotion', 'RevoluteJointMotion', 'RigidJointMotion', 'RigidJointMotion'], plain Joints 0
+  ok   one Motion Link: ['Mesh 20:40']
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: gear 2 joint reads -45.000, its body turned -45.000 deg about z (want -45.000)
+  ok   no tooth collision while gear 1 turns 0 to 18.0 deg in 13 positions 
+  z2 = 50: Centre distance a = m · (z1 + z2) / 2 = 2.00 · (20 + 50) / 2 = 70.00 mm
+  ok   z2 = 50 gives a = 70 mm in the message
+  ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each: [1, 1, 1, 1, 1]
+  ok   gear 2 and shaft 2 at x = a = 70.00 mm (measured 70.000, 70.000)
+  ok   the base plate is grounded
+  ok   As-built Joints only: ['RevoluteJointMotion', 'RevoluteJointMotion', 'RigidJointMotion', 'RigidJointMotion'], plain Joints 0
+  ok   one Motion Link: ['Mesh 20:50']
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: gear 2 joint reads -36.000, its body turned -36.000 deg about z (want -36.000)
+  ok   no tooth collision while gear 1 turns 0 to 18.0 deg in 13 positions 
+  ok   z1 = 12 refused: 12 teeth: below 18 teeth at 20 degrees the involute is undercut. Choose 18 or more.
+ALL PASS

@@ -1,0 +1,29 @@
+# bevelwrist_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 02:55, 16 s
+
+BevelWristPrompt 1.0 (2026-11-01)
+  ok   Run opens the dialog
+Bevel wrist built.
+
+Four miter gears: z = 40, module 2.00 mm at the heel, cone distance R = 56.57 mm, face 16.0 mm
+Drive "Pitch" to pitch the wrist and "Roll" to roll it. With the side gears' world angles about +Y:
+  pitch = (thL + thR) / 2,   roll = (thL - thR) / 2
+
+[BevelWristPrompt 1.0 (2026-11-01)] BevelWristPrompt 1.0 (2026-11-01)
+  OK pressed with the defaults, built in 8 s
+  ok   a new design opened
+  ok   parts: ['Frame', 'Idler gear', 'Output gear', 'Side gear L', 'Side gear R', 'Yoke']
+  ok   one body each: {'Frame': 1, 'Yoke': 1, 'Output gear': 1, 'Idler gear': 1, 'Side gear R': 1, 'Side gear L': 1}
+  ok   the frame is grounded
+  ok   As-built Joints: ['Pitch', 'Roll', 'Idler on yoke', 'Side gear R on yoke', 'Side gear L on yoke']
+  ok   Motion Links: ['Mesh: roll -> side L', 'Mesh: roll -> side R', 'Mesh: roll -> idler']
+  ok   no interference at rest 
+  ok   pitch 30: about Y {'Yoke': 30.0, 'Side gear L': 30.0, 'Side gear R': 30.0, 'Output gear': 30.0, 'Idler gear': 30.0}
+  ok   pitch 30: the output did not turn on the yoke
+  ok   roll 40: output 40.000 about Z, side L 40.000 and side R -40.000 about Y, idler -40.000 about Z
+  ok   pitch 30 + roll 40: thL = 70.000, thR = -10.000
+  ok   pitch = (thL + thR)/2 = 30.000, roll = (thL - thR)/2 = 40.000
+  ok   no interference at (30, 40), (-45, 120) and roll 1.5 to 9 deg 
+  ok   z = 30 refused: Face width 16.0 mm is more than R / 3 = 42.43 / 3 = 14.14 mm.
+  ok   z = 41 refused: z = 41 is odd: each gear meets two others 180 degrees apart, so z must be even.
+ALL PASS

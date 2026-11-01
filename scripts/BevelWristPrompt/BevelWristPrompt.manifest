@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "What the bevel-wrist prompt of Topic 5 asks for: the bevel differential of a robot wrist (frame, yoke, output, idler and two side gears), As-built Joints and Motion Links, ready to pitch and roll."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "BevelWristPrompt"
+}

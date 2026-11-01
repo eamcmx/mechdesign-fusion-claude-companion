@@ -1,0 +1,52 @@
+Write a Fusion 360 Python script that, when run, builds a parametric spur gear pair on a base plate, assembled and ready to turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- module m (mm), 2
+- driver teeth z1, 20
+- driven teeth z2, 40
+- pressure angle α (deg), 20
+- face width b (mm), 10
+- backlash on the pitch circle (mm), 0.2
+- shaft diameter d_s (mm), 8
+- base plate thickness (mm), 6
+
+DERIVED (computed from the inputs, never typed):
+- pitch radius r = m·z/2, base radius r_b = r·cos α, tip radius r + m, root radius r − 1.25·m
+- centre distance a = m·(z1 + z2)/2
+- tooth thickness on the pitch circle = π·m/2 − backlash/2 for each gear
+
+HARD CONSTRAINTS:
+- True involute flanks starting at the base circle. Where the base circle is above the root circle, continue
+  each flank with a radial line down to the root circle.
+- z1 and z2 at least 18 (fewer teeth undercut): refuse with a message.
+- The driven gear is turned so that a tooth of the driver sits in a gap of the driven gear on the line of centres.
+- Ratio z2/z1; the driven gear turns the opposite way to the driver.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components: Base plate (grounded), Shaft 1, Shaft 2, Gear 1, Gear 2. One body each. Gear 1 at the origin,
+  gear 2 at (a, 0); the shafts stand on the plate, the gears sit on the shafts above the plate.
+- Each tooth outline is ONE closed polyline of sketch lines that share their SketchPoint objects (no splines).
+- The API works in cm and radians: convert every mm and degree input.
+- Place every part where it belongs, then join with AsBuiltJoints (not Joints): rigid between the plate and each
+  shaft, revolute about the shaft axis between each gear and its shaft.
+- A Motion Link between the two revolute joints, so that driving gear 1 turns gear 2 by z1/z2 of the angle,
+  the opposite way.
+
+ACCEPTANCE CRITERIA:
+- A message box at the end gives the centre distance, the ratio and a version tag.
+- With the defaults, driving gear 1's joint 90° turns gear 2 by 45° the other way.
+- At rest the two gears do not overlap anywhere (Interference finds nothing).
+- Changing z2 to 50 in the dialog gives a centre distance of 70 mm with nothing else edited.
+
+A WORKED EXAMPLE of the polyline I mean (it works in my Fusion; P3 = adsk.core.Point3D.create, points in cm):
+
+def _polyline(sk, pts):
+    lines = sk.sketchCurves.sketchLines
+    first = lines.addByTwoPoints(P3(pts[0][0], pts[0][1], 0), P3(pts[1][0], pts[1][1], 0))
+    prev = first.endSketchPoint
+    for q in pts[2:]:
+        prev = lines.addByTwoPoints(prev, P3(q[0], q[1], 0)).endSketchPoint
+    lines.addByTwoPoints(prev, first.startSketchPoint)
+
+Give me one Python file and its .manifest.
