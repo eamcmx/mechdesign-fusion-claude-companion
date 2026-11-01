@@ -1,0 +1,59 @@
+Write a Fusion Python script that, when run, builds the rack-and-pinion steering of a car's front axle: a pinion, a
+rack, two tie rods and two steering knuckles with their wheels, assembled and ready to steer with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- track t, kingpin to kingpin (mm), 1400
+- wheelbase L (mm), 2500
+- steering arm length a (mm), 150
+- steering arm angle beta to the car's axis (deg), 15
+- rack position x_r, behind the kingpins (mm), -170
+- half spacing of the rack's ball joints c (mm), 300
+- rack travel per pinion turn p (mm), 50
+
+DERIVED (computed from the inputs, never typed):
+- x forward, y left, z up; kingpins at (0, +-t/2); each steering arm points backwards and inwards at beta, its tip
+  at a from the kingpin; the tie rod's length is the distance from the arm tip to the rack's ball joint at rest
+- each knuckle's angle delta for a rack travel u: where the arm tip's circle about the kingpin meets the tie rod's
+  circle about the ball joint, on the branch of the straight-ahead position
+- Ackermann: for an inner angle delta_i the outer wheel should be at atan(1 / (cot(delta_i) + t / L)); the error is
+  the outer angle minus that, taken as the worst up to 30 deg of inner steer
+- the transmission angle between each tie rod and its arm, its smallest value over that range
+- steering ratio at straight ahead: pinion degrees per mean degree of the wheels; turns lock to lock to 30 deg of
+  inner steer each way; the pinion's pitch radius p / (2 pi)
+
+HARD CONSTRAINTS:
+- The Ackermann error at most 1 deg up to 30 deg of inner steer, or refuse giving it.
+- The smallest transmission angle at least 35 deg, or refuse giving it.
+- Tie rods at least 100 mm long, or refuse giving their length.
+- The pinion above the rack, its axis along +x: a turn about +x moves the rack towards +y, which steers the car to
+  the right.
+- Nothing touches: the rack, the tie rods and the arms on separate levels (z -15 to 15, 15 to 25, 25 to 35 mm), the
+  wheels 200 mm outboard of the kingpins.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Frame (cross member, side members, kingpins and the rack's
+  support; grounded), Rack (with a pin at each ball joint), Pinion (with the column's stub), Tie rod L, Tie rod R,
+  Knuckle L, Knuckle R (boss, arm with a pin at its tip, stub axle and wheel).
+- Bodies from TemporaryBRepManager through base features. The pinion's teeth are not drawn: Chapter 16 checked a
+  rack's mesh, and here a Motion Link stands for it.
+- The API works in cm and radians.
+- AsBuiltJoints: slider along y for the rack on the frame; revolute about z for each knuckle on its kingpin and for
+  each tie rod on its arm tip and on the rack (closing a loop on each side); revolute about x for the pinion, the
+  direction tried and its sign measured (Chapter 17). A Motion Link of 360 deg of the pinion for p of the rack, its
+  direction set from the measured signs.
+
+ACCEPTANCE CRITERIA:
+- A message gives the tie rods' length, the rack travel to 30 deg, the worst Ackermann error, the smallest
+  transmission angle, the steering ratio and a version tag.
+- Defaults: tie rods 362.049 mm; 62.0 mm of rack to 29.721 deg inner (outer 23.971 deg); worst error 0.719 deg;
+  smallest transmission angle 35.19 deg; ratio 17.87 : 1; 2.48 turns lock to lock.
+- 7 components with one body each; 7 revolute and 1 slider As-built Joints; 1 Motion Link.
+- No interference at rest.
+- The pinion turned in 36 deg steps to 62 mm of rack each way: the rack at p / 360 per degree and each knuckle at
+  the angle worked out independently, measured on the bodies, at every step; nothing interfering at any step.
+- Refused: the rule of thumb (arms aimed at the rear axle's centre, beta = 15.642 deg, rack on the arm tips' line at
+  x_r = -144.4 mm, c = 400 mm: error 1.080 deg); beta = 12, x_r = -195, c = 400 (transmission angle 30.6 deg);
+  c = 640 (tie rods 32.8 mm).
+
+Give me one Python file and its .manifest.

@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 29: rack-and-pinion steering. Rack, tie rods and knuckles laid out to follow Ackermann's condition within 1 deg up to 30 deg of inner steer, with a transmission angle of at least 35 deg."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "SteeringRack"
+}

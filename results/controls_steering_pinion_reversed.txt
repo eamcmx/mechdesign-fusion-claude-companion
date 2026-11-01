@@ -1,0 +1,7 @@
+# controls/steering_pinion_reversed
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:29, 2 s
+
+  (pinion about +x, rack along y, right knuckle about z): [(36.0, -5.0, 2.002), (72.0, -10.0, 3.982), (108.0, -15.0, 5.943)]; overlaps: []
+  ok   no interference
+  FAIL a turn about +x moves the rack towards +y (a right turn)
+CONTROL: the pinion linked the other way; only the direction check can catch it

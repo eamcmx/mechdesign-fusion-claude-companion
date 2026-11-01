@@ -1,0 +1,31 @@
+# steering_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:29, 4 s
+
+SteeringRack 1.0 (2026-11-01)
+  ok   tie rod, worst Ackermann error and transmission angle recomputed independently (362.049, 0.719, 35.19)
+  ok   the rounded values of the prompt (362.049, 62.0, 29.721, 23.971, 0.719, 35.19, 17.87, 2.48)
+  ok   Run opens the dialog
+Rack-and-pinion steering built: track 1400 mm, wheelbase 2500 mm, arms 150 mm at 15.00 deg, rack at x = -170 mm with its ball joints 600 mm apart.
+
+Tie rods 362.049 mm. Rack travel to 30 deg of inner steer: 62.0 mm (outer wheel 23.971 deg).
+Worst Ackermann error 0.719 deg; smallest transmission angle 35.19 deg.
+Steering ratio 17.87 : 1 at straight ahead; 2.48 turns of the pinion lock to lock.
+
+Drive Joints on "Pinion turns": the rack and both wheels follow.
+
+[SteeringRack 1.0 (2026-11-01)] SteeringRack 1.0 (2026-11-01)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   7 components: ['Frame', 'Knuckle L', 'Knuckle R', 'Pinion', 'Rack', 'Tie rod L', 'Tie rod R']
+  ok   one body each
+  ok   seven revolute and one slider As-built Joints, one Motion Link
+  ok   no interference at rest 
+  at +62 mm of rack: knuckle L -23.971 deg, knuckle R -29.721 deg (worked out -23.971, -29.721)
+  at -62 mm of rack: knuckle L 29.721 deg, knuckle R 23.971 deg (worked out 29.721, 23.971)
+  ok   the rack at 50 mm per pinion turn at every step (worst 7.1e-15 mm)
+  ok   both knuckles on the angles worked out here at every step, both ways (worst 1.2e-12 deg)
+  ok   nothing interferes at any step 
+  ok   {'beta': 15.642246457208728, 'x_r': -144.44460295712727, 'c': 400.0} refused: The outer wheel misses Ackermann by up to 1.080 deg before the inner one reaches 30 deg: more than 1.0 deg.
+  ok   {'beta': 12.0, 'x_r': -195.0, 'c': 400.0} refused: The tie rod and the arm come within 30.6 deg of a straight line (transmission angle): below 35 deg.
+  ok   {'c': 640.0} refused: The tie rods would be 32.8 mm long: shorter than 100 mm.
+ALL PASS
