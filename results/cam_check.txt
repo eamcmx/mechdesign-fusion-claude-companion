@@ -1,5 +1,5 @@
 # cam_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 05:17, 7 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 05:34, 8 s
 
 CamFollower 1.0 (2026-11-01)
   ok   the script's lift agrees with the motion law (worst 9.8e-15 mm)

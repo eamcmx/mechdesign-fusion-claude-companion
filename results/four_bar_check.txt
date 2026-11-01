@@ -1,5 +1,5 @@
 # four_bar_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 05:07, 2 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 05:35, 2 s
 
 FourBar 1.0 (2026-11-01)
   ok   the script's circles agree with Freudenstein: theta4 105.590 at the start, swing 39.006 (96.525 to 135.532), mu 44.47 to 83.48 
@@ -14,7 +14,7 @@ Transmission angle from 44.47 to 83.48 deg
 Step "Crank turns" round (30 deg at a time) with Drive Joints.
 
 [FourBar 1.0 (2026-11-01)] FourBar 1.0 (2026-11-01)
-  OK pressed, built in 2 s
+  OK pressed, built in 1 s
   ok   a new design opened
   ok   four components: ['Coupler', 'Crank', 'Ground', 'Rocker']
   ok   one body each
