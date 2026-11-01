@@ -1,0 +1,11 @@
+# controls/spherical_wrist_branch
+# Autodesk Fusion 2706.1.17, run 2026-11-01 09:53, 2 s
+
+  yaw 40 pitch -30 roll 15: asked (48.070, 48.439, -105.790), the tool axis 59.961 deg from the target
+  yaw 40 pitch -30 roll 15: asked (-131.930, -48.439, 74.210), the tool axis 59.961 deg from the target
+  yaw -70 pitch 20 roll 100: asked (-111.173, 71.253, -177.096), the tool axis 40.031 deg from the target
+  yaw -70 pitch 20 roll 100: asked (68.827, -71.253, 2.904), the tool axis 40.031 deg from the target
+  yaw 10 pitch 80 roll -45: asked (178.246, 80.153, -55.151), the tool axis 160.038 deg from the target
+  yaw 10 pitch 80 roll -45: asked (-1.754, -80.153, 124.849), the tool axis 160.038 deg from the target
+  FAIL the tool axis within the rounding of every target (worst 160.038 deg)
+CONTROL: the inverse with a sign left out; the check above MUST fail

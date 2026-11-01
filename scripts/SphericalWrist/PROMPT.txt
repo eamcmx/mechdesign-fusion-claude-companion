@@ -1,0 +1,48 @@
+Write a Fusion Python script that, when run, builds a roll-pitch-roll robot wrist whose three axes meet at one
+point: J4 rolls about the forearm's axis, J5 pitches about an axis square to it, J6 rolls the flange about its own
+axis; with the inverse that gives the three angles for any orientation of the tool.
+
+INPUTS (a command dialog, with these defaults):
+- pitch limit pmax (deg), 110
+- tool length (mm), 60
+
+DERIVED (computed from the inputs, never typed):
+- the orientation for the angles a, b, c (J4, J5, J6): R = Rx(a) Ry(b) Rx(c); the tool along R's first column
+- the inverse, two solutions s = +1 and -1: b = s acos(r00), a = atan2(s r10, -s r20), c = atan2(s r01, s r02),
+  a and c wrapped into -180 to 180 deg; keep those with |b| <= pmax
+- the singularity: when r00 = 1 the two rolls are in line, only a + c = atan2(r21, r11) is set; keep J4 where it is
+  and give one solution
+
+HARD CONSTRAINTS:
+- pmax at most 110 deg (beyond it the flange reaches the roll housing) and at least 90 deg (the tool must point
+  square to the forearm), or refuse.
+- A tool of at least 20 mm, or refuse.
+- The wrist's centre at the origin, the forearm along -x (90 mm across, to x = -121 mm); the roll housing from
+  x = -120 to -50 mm with two cheeks 10 mm thick, 72 mm apart, to x = +30 mm; the pitch housing a hub 50 mm across
+  between the cheeks and a nose 36 mm across to x = +70 mm; the flange 60 mm across and 10 mm thick at x = 71 mm,
+  with a mark on top to show its roll, and the tool 10 mm across. Nothing touches anything else.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each: Forearm (grounded), Roll housing, Pitch housing, Flange; each created at the origin
+  with its joint's axis as its z; bodies from TemporaryBRepManager, given in world coordinates and moved into the
+  component.
+- The API works in cm and radians.
+- AsBuiltJoints, revolute: J4 about x, J5 about y, J6 about x (the flange's axis at J5 = 0). An As-built Joint's
+  direction belongs to its geometry: try X, Y and Z, keep the one that turns the part about the wanted axis, and
+  measure the sign. Limits: J4 and J6 +-180 deg, J5 +-pmax.
+
+ACCEPTANCE CRITERIA:
+- A message gives the limits, the flange's distance and the tool's tip from the centre, the joints' signs and a
+  version tag.
+- 4 components; 3 revolute As-built Joints; no interference at rest.
+- For targets given as yaw, pitch and roll, (40, -30, 15), (-70, 20, 100), (10, 80, -45) and (100, 0, 30) deg: two
+  solutions each; at all 8 poses the flange turned as Rx Ry Rx of the angles Fusion holds, and within 0.15 deg of the
+  target (three angles kept in tenths); no interference. A tool 119.5 deg from the forearm is out of reach.
+- At J5 = 0, J4 = 30 with J6 = -30 turns the flange as J4 = J6 = 0; there the inverse keeps J4 and gives one solution.
+- A path of the tool's axis 0.5 deg beside the forearm's, from 10 deg below to 10 deg above, in 0.5 deg steps:
+  the tool follows within 0.15 deg while J4 turns about 174 deg, 45 deg of it in one step.
+- No interference at J5 = +-pmax with J6 at 0, 90, 180 and -90 deg.
+- Refused: pmax = 115 and 80 deg; a tool of 10 mm.
+
+Give me one Python file and its .manifest.

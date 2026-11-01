@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 35: a roll-pitch-roll robot wrist. Three axes meeting at one point, the inverse for any orientation, and the singularity where the two rolls line up."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "SphericalWrist"
+}
