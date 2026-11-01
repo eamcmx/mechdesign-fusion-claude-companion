@@ -1,0 +1,6 @@
+# controls/car_differential_right_unphased
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:01, 10 s
+
+  2 overlaps: [('Spider 1', 'Side gear R', 1697.801), ('Spider 2', 'Side gear R', 1697.801)]
+  FAIL no interference at rest
+CONTROL: the right side gear not turned; the check above MUST fail

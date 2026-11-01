@@ -1,0 +1,31 @@
+# car_differential_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:00, 13 s
+
+CarDifferential 1.0 (2026-11-01)
+  ok   all values recomputed independently 
+  ok   the rounded values of the prompt (3.4118, 16.336, 120.88, 17.72, 34.287, 66.568, 18.15, 2388.24, 1194.12)
+  ok   Run opens the dialog
+Car rear axle built: final drive 17 : 58 (ratio 3.4118), open differential with 2 spiders of 15 teeth and side gears of 22.
+
+Final drive: delta1 = 16.336 deg, delta2 = 73.664 deg, R_f = 120.880 mm, z_v1 = 17.72
+Differential: delta_p = 34.287 deg, delta_s = 55.713 deg, R_d = 66.568 mm, z_vp = 18.15; 2 z_s / N = 22
+With 200 N m in a first gear of 3.5: pinion 700.0 N m, case 2388.24 N m, 1194.12 N m per half shaft.
+
+Drive Joints on "Pinion turns" turns the case 105.517 deg per pinion turn; on "Side gear L turns in case" the two half shafts turn opposite ways.
+
+[CarDifferential 1.0 (2026-11-01)] CarDifferential 1.0 (2026-11-01)
+  OK pressed, built in 9 s
+  ok   a new design opened
+  ok   12 components: ['Case', 'Half shaft L', 'Half shaft R', 'Housing L', 'Housing R', 'Pinion', 'Pinion shaft', 'Ring gear', 'Side gear L', 'Side gear R', 'Spider 1', 'Spider 2']
+  ok   one body each
+  ok   six revolute and three rigid As-built Joints, four Motion Links: ['RevoluteJointMotion', 'RevoluteJointMotion', 'RevoluteJointMotion', 'RevoluteJointMotion', 'RevoluteJointMotion', 'RevoluteJointMotion', 'RigidJointMotion', 'RigidJointMotion', 'RigidJointMotion']
+  ok   no interference at rest 
+  ok   one pinion turn (positive about +X): the case and both half shafts turned 105.517 deg about +Y, in step at every 30 deg (worst 2.8e-14 deg)
+  ok   the pinion and the ring never collide at the 12 steps 
+  ok   side gear L turned in the case: half shaft L 30.000 deg, half shaft R -30.000 deg about +Y
+  ok   each spider turned on its pin: -44.000, -44.000 deg (want -44.000, opposite to the side gear)
+  ok   no tooth collision while side gear L turns through one tooth pitch in 13 positions 
+  ok   {'z_p': 12} refused: The spider has 13.67 virtual teeth (z / cos(delta)): below 17.1 it is undercut.
+  ok   {'N': 3} refused: 3 spiders: N must be 2 to 4 and 2 z_s / N a whole number; here 2 z_s / N = 14.67.
+  ok   {'b_d': 24.0} refused: Differential face width 24.0 mm is more than R_d / 3 = 22.19 mm.
+ALL PASS

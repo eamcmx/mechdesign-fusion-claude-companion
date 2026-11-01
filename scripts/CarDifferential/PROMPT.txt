@@ -1,0 +1,72 @@
+Write a Fusion Python script that, when run, builds the rear axle of a car: a final-drive pinion and ring gear and an
+open bevel differential with its two half shafts, assembled and ready to turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- final-drive module at the heel m_f (mm), 4
+- pinion teeth z1, 17
+- ring gear teeth z2, 58
+- final-drive face width b_f (mm), 30
+- differential module at the heel m_d (mm), 5
+- side gear teeth z_s, 22
+- spider teeth z_p, 15
+- spiders N (count), 2
+- differential face width b_d (mm), 20
+- pressure angle alpha (deg), 20
+
+DERIVED (computed from the inputs, never typed):
+- final drive: ratio z2 / z1; cone angles delta1 = atan(z1 / z2), delta2 = 90 deg - delta1; cone distance
+  R_f = (m_f z1 / 2) / sin(delta1); virtual teeth z_v = z / cos(delta); teeth by Tredgold's approximation as in
+  Chapter 17 (backlash 0.2 mm on the virtual pitch circle)
+- differential: delta_p = atan(z_p / z_s), delta_s = 90 deg - delta_p, R_d = (m_d z_s / 2) / sin(delta_s), the same
+  teeth rules
+- each gear's blank as in Chapter 17: root cone, back cone, back face 2 mm behind the heel root, a hub of radius
+  bore / 2 + 6 mm, 8 mm long; bores: pinion 24.4 mm, spiders 20.4 mm (pin 20 mm), side gears 30.4 mm (half shafts
+  30 mm), ring gear the case's outside diameter + 0.4 mm
+- the case: a tube from radius (spider hub end + 3 mm) to 8 mm more, closed by two end walls 8 mm thick that start
+  1.5 mm outside the side gears' back faces, with holes 0.8 mm larger than the side gears' hubs; N radial pins of
+  20 mm from the axis into the tube's wall, one per spider; tube, walls and pins are one body
+- assembly: the spider i sits at the angle psi_i = 360 i / N deg about the axle; it can mesh with both side gears
+  only if 2 z_s / N is a whole number
+- torques for an engine torque of 200 N m in a first gear of 3.5: pinion 700 N m, case 700 z2 / z1, each half
+  shaft half of that
+
+HARD CONSTRAINTS:
+- Both pinions' virtual teeth (z1 / cos(delta1) and z_p / cos(delta_p)) at least 2 / sin^2(alpha) = 17.1, or refuse.
+- b_f at most R_f / 3 and b_d at most R_d / 3, or refuse.
+- N from 2 to 4, and 2 z_s / N a whole number, or refuse giving the number.
+- The axle is world Y, the propeller shaft world X; both pitch cone apexes of each pair at the origin. The ring gear
+  faces +Y from the -Y side; the pinion lies on +X. Spider 0 lies on +Z.
+- Phases: the pinion's tooth 0 points at the ring (-Y) and the ring is turned half a tooth so a gap meets it. The
+  left side gear's tooth 0 points at spider 0. Each spider shows the left side gear a gap where the side gear has a
+  tooth and a tooth where it has a gap; the right side gear is turned to do the same with spider 0.
+- The case turns z1 / z2 of the pinion's angle; the half shafts turn with the case when the side gears do not turn
+  in it; turning the left side gear by +d in the case turns the right one by -d and each spider by z_s / z_p of d.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, each created where it belongs with its own z along its axis and its origin at its apex
+  (Matrix3D.setWithCoordinateSystem): Housing L and Housing R (tubes round the half shafts, |y| from 60 to 300 mm,
+  grounded), Pinion shaft (grounded), Pinion, Ring gear, Case, Spider 1 to N, Side gear L, Side gear R, Half shaft L,
+  Half shaft R (30 mm, from |y| = 25 to 300 mm).
+- Bevel gears as in Chapter 17: blanks from TemporaryBRepManager cones through a base feature, one tooth lofted from
+  heel to toe, joined and patterned.
+- The API works in cm and radians.
+- AsBuiltJoints: revolute for the pinion on its shaft, the case on Housing L, each spider on the case and each side
+  gear on the case; rigid for the ring gear to the case and each half shaft to its side gear. Try the joint
+  directions and keep the one that turns the part about its axis, measuring the sign (Chapter 17). Motion Links,
+  their directions set from the signs: pinion to case at z2 : z1; left side gear to each spider at z_p : z_s; left
+  side gear to right side gear at 1 : 1, opposite.
+
+ACCEPTANCE CRITERIA:
+- A message gives the ratio, the cone angles, both R, the virtual teeth, the torques and a version tag.
+- Defaults: ratio 3.4118; delta1 = 16.336 deg, R_f = 120.880 mm, z_v1 = 17.72; delta_p = 34.287 deg,
+  R_d = 66.568 mm, z_vp = 18.15; case torque 2388.24 N m, 1194.12 N m per half shaft.
+- 12 components with one body each; 6 revolute and 3 rigid As-built Joints; 4 Motion Links.
+- No interference at rest.
+- One turn of the pinion in 30 deg steps: the case and both half shafts turn 105.517 deg about +Y, measured on the
+  bodies; no interference at any step.
+- The left side gear turned 30 deg in the case: half shaft L at case + 30 deg, half shaft R at case - 30 deg, each
+  spider 44 deg on its pin; no tooth collision while the side gear turns through one tooth pitch in 13 positions.
+- Refused: z_p = 12 (z_vp = 13.67); N = 3 (2 z_s / N = 14.67); b_d = 24 (R_d / 3 = 22.19).
+
+Give me one Python file and its .manifest.

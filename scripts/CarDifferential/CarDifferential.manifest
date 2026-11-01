@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 27: the rear axle of a car. A final-drive pinion and ring gear turn an open bevel differential whose spiders drive the two side gears and half shafts."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "CarDifferential"
+}
