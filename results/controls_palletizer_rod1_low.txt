@@ -1,0 +1,10 @@
+# controls/palletizer_rod1_low
+# Autodesk Fusion 2706.1.17, run 2026-11-01 10:07, 5 s
+
+  the shoulder turned +10 deg: the load tilted 0.096 deg
+  the shoulder turned +20 deg: the load tilted 0.398 deg
+  the shoulder turned +30 deg: the load tilted 0.954 deg
+  the shoulder turned -10 deg: the load tilted 0.096 deg
+  the shoulder turned -20 deg: the load tilted 0.399 deg
+  FAIL the load level in every pose (worst tilt 0.954 deg)
+CONTROL: a levelling loop that is not a parallelogram; the check above MUST fail

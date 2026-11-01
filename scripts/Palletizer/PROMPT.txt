@@ -1,0 +1,50 @@
+Write a Fusion Python script that, when run, builds a four-axis palletizing robot: a turntable, an upper arm and a
+forearm, a crank beside the shoulder that drives the forearm through a parallelogram, and two more parallelograms
+that keep the load level; with the joint angles for every box of a pallet pattern.
+
+INPUTS (a command dialog, with these defaults):
+- pallet distance, its centre from the robot's axis (mm), 1200
+- number of layers, 3
+
+DERIVED (computed from the inputs, never typed):
+- in the arm's plane (x out, z up), the shoulder A = (150, 700) mm; the upper arm L2 = 900 mm at t2 from the
+  horizontal, the forearm L3 = 1000 mm at t3; B = A + L2 (cos t2, sin t2), W = B + L3 (cos t3, sin t3)
+- the crank and the forearm's tail, 250 mm, at t3 + 180 deg: C = A + 250 (cos, sin)(t3 + 180), D = B + the same
+- the tool point 220 mm below W; turned by J1 about z
+- the inverse, the elbow up: q1 = atan2(y, x); W from the tool point; t2 = atan2 of W - A plus the angle at A of the
+  triangle (L2, L3, |W - A|); t3 the angle of W - B
+- limits: t2 from 40 to 130 deg, t3 from -70 to 30 deg, t2 - t3 from 25 to 155 deg (no parallelogram flattens)
+- the pattern: 800 x 1200 mm pallet, top at 150 mm; boxes 400 x 300 x 200 mm, two rows of four per layer; each box
+  placed at the middle of its top
+
+HARD CONSTRAINTS:
+- 1 to 5 layers, or refuse.
+- Every box within the limits, or refuse, naming the box and the limit it breaks.
+- Parallelograms: rod 3 from C to D; rod 1 from a pivot on the turntable 180 mm behind the shoulder, at its height,
+  to the elbow plate 180 mm behind the elbow; rod 2 from the elbow plate 150 mm above the elbow to the bracket 150 mm
+  above W. The tool hangs from the bracket: a plate and a 300 x 200 x 100 mm steel block.
+- Each link in its own layer along y, so that nothing touches anything else in any pose.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, at the origin with their bodies in world coordinates: Base (grounded), Turntable,
+  Upper arm, Forearm, Crank, Rod 3, Elbow plate, Rod 1, Rod 2, Bracket, Tool; built with t2 = 90 and t3 = 0.
+- The API works in cm and radians.
+- AsBuiltJoints, revolute: J1 about z; about y: J2 and the crank on the turntable at A, the elbow, the elbow plate,
+  the wrist and every rod's two ends, the last joint of each parallelogram closing it; J4 about z. Try the joint
+  directions and measure the sign.
+- The two drives close one loop, and Fusion shares a move between them: setting the shoulder turns the loop as one
+  body. To pose the arm, set the elbow's angle first, then the shoulder. Holding a joint with tight limits leaves
+  the loops open.
+
+ACCEPTANCE CRITERIA:
+- A message gives the arm, the limits, the pallet and its count, the farthest box's angles and a version tag.
+- Defaults: 24 boxes, all within reach; the farthest at J1 -17.82, t2 43.26, t3 -48.31 deg.
+- 11 components; 13 revolute As-built Joints; no interference at rest.
+- At every box: the load level; the tool where the forward kinematics puts it for the angles Fusion holds, and within
+  (r + L2 + L3) x 0.05 deg of the box; no interference.
+- The gravity torques of the shoulder's and the crank's motors, measured by virtual work (the bodies' potential energy
+  for 1 deg either way) and by weights times levers, agree within 0.1 % at (90, 0) and (50, -30) deg.
+- Refused: 6 layers; the pallet at 1300 mm (the upper arm at 39.0 deg); at 800 mm (the forearm at -74.7 deg).
+
+Give me one Python file and its .manifest.

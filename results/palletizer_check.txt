@@ -1,0 +1,42 @@
+# palletizer_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 10:07, 5 s
+
+Palletizer 1.0 (2026-11-01)
+  ok   Run opens the dialog
+Palletizer built: shoulder at (150, 700) mm, upper arm 900 mm, forearm 1000 mm, crank and tail 250 mm.
+Limits: upper arm 40 to 130 deg, forearm -70 to 30 deg, between them 25 to 155 deg.
+
+Pallet at 1200 mm, 3 layers of 8 boxes: all 24 within reach.
+The farthest box: J1 -17.82, upper arm 43.26, forearm -48.31 deg.
+
+The crank turns the forearm to its angle directly; the plates and rods keep the tool level.
+
+[Palletizer 1.0 (2026-11-01)] Palletizer 1.0 (2026-11-01)
+  OK pressed, built in 3 s
+  ok   a new design opened
+  ok   11 components: ['Base', 'Turntable', 'Upper arm', 'Forearm', 'Crank', 'Rod 3', 'Elbow plate', 'Rod 1', 'Rod 2', 'Bracket', 'Tool']
+  ok   13 revolute As-built Joints, three loops
+  ok   no interference at rest 
+  signs: {'J1 turntable': -1, 'J2 upper arm': -1, 'Elbow': -1, 'J4 tool': -1}
+  box  1 ( 1000  -450  350): asked -24.228  57.324  -62.569  held  -24.2   57.3  -62.6  off 0.720 mm
+  box  2 ( 1000  -150  350): asked  -8.531  60.152  -65.590  held   -8.5   60.2  -65.5  off 1.401 mm
+  box  3 ( 1000   150  350): asked   8.531  60.152  -65.590  held    8.5   60.2  -65.5  off 1.401 mm
+  box  4 ( 1000   450  350): asked  24.228  57.324  -62.569  held   24.2   57.3  -62.6  off 0.720 mm
+  ...
+  box 21 ( 1400  -450  750): asked -17.819  59.450  -30.336  held  -17.8   59.4  -30.4  off 1.453 mm
+  box 22 ( 1400  -150  750): asked  -6.116  62.858  -32.066  held   -6.1   62.9  -32.0  off 1.328 mm
+  box 23 ( 1400   150  750): asked   6.116  62.858  -32.066  held    6.1   62.9  -32.0  off 1.328 mm
+  box 24 ( 1400   450  750): asked  17.819  59.450  -30.336  held   17.8   59.4  -30.4  off 1.453 mm
+  ok   the load level at all 24 boxes (worst tilt 2.4e-12 deg)
+  ok   the tool where forward kinematics puts it for the angles held (worst 7.3e-12 mm)
+  ok   and within the rounding of each box's place point (worst 55 % of its bound)
+  ok   no interference at any box 
+  upper arm 90, forearm 0 deg: motor 2 0.000 N m by virtual work, 0.000 N m by levers; motor 3 700.903 and 700.939 N m
+  ok   the gravity torques by virtual work and by levers agree at 90, 0 deg
+  upper arm 50, forearm -30 deg: motor 2 666.404 N m by virtual work, 666.438 N m by levers; motor 3 607.000 and 607.031 N m
+  ok   the gravity torques by virtual work and by levers agree at 50, -30 deg
+  masses kg: Upper arm 36.28, Forearm 24.44, Crank 1.77, Rod 3 4.35, Elbow plate 4.51, Rod 1 4.35, Rod 2 4.82, Bracket 4.93, Tool 56.28
+  ok   {'layers': 6} refused: 6 layers: from 1 to 5.
+  ok   {'xc': 1300.0} refused: Box 5, its top at (1500, -450, 350) mm, is out of reach: the upper arm at 39.0 deg (limits 40 to 130).
+  ok   {'xc': 800.0} refused: Box 1, its top at (600, -450, 350) mm, is out of reach: the forearm at -74.7 deg (limits -70 to 30).
+ALL PASS

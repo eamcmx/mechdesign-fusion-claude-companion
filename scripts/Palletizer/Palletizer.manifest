@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 36: a four-axis palletizing robot. A crank and three parallelograms keep the load level and the forearm's motor on the turntable; the angles for every box of a pallet."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "Palletizer"
+}
