@@ -18,7 +18,8 @@ DERIVED (computed from the inputs, never typed):
 HARD CONSTRAINTS:
 - Grashof: s + l <= p + q for the shortest s, longest l and the other two p, q, and the crank the shortest link,
   so that the crank turns fully, or refuse.
-- The transmission angle never below 40 deg, or refuse giving it.
+- The transmission angle, the acute angle between coupler and rocker, never below 40 deg: mu(0) and
+  180 deg - mu(180 deg) both at least 40 deg, or refuse giving it.
 - Built at theta2 = 0, on the upper branch.
 
 FUSION CONVENTIONS:
@@ -33,10 +34,11 @@ FUSION CONVENTIONS:
 
 ACCEPTANCE CRITERIA:
 - A message gives theta4 at the start, the rocker's swing, the transmission angle's range and a version tag.
-- Defaults: theta4 = 105.590 deg at the start; the rocker swings 39.006 deg, from 96.525 to 135.532 deg; the
+- Defaults: theta4 = 105.590 deg at the start; the rocker swings 39.007 deg, from 96.525 to 135.532 deg; the
   transmission angle from 44.47 to 83.48 deg.
 - The crank stepped through one turn, 30 deg at a time: at every step the rocker's body at theta4(theta2), as
   Freudenstein's equation gives it (worked independently of the circle intersection); no interference.
-- Refused: a = 60 (the crank is not the shortest link); a = 20 (transmission angle 38.57 deg).
+- Refused: a = 60 (the crank is not the shortest link); a = 20 (transmission angle 38.57 deg); a, b, c, d = 20, 38,
+  40, 55 (31.90 deg at theta2 = 180 deg).
 
 Give me one Python file and its .manifest.

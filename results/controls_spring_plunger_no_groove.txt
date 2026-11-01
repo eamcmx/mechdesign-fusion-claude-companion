@@ -1,5 +1,5 @@
 # controls/spring_plunger_no_groove
-# Autodesk Fusion 2706.1.17, run 2026-11-01 03:49, 4 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 09:52, 6 s
 
   1 overlaps, total 3.594 mm^3
   FAIL no interference [('Rod', 'Retaining ring', 3.594)]

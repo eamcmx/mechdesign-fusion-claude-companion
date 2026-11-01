@@ -42,8 +42,8 @@ def position(a, b, c, d, t2):
 
 def linkage(a, b, c, d):
     t4 = []
-    for k in range(360):
-        _, (cx, cy) = position(a, b, c, d, math.radians(k))
+    for k in range(36000):                          # every 0.01 deg, close enough to the toggle angles
+        _, (cx, cy) = position(a, b, c, d, math.radians(k / 100.0))
         t4.append(math.degrees(math.atan2(cy, cx - d)))
     mu = lambda t2: math.degrees(math.acos((b * b + c * c - (a * a + d * d - 2 * a * d * math.cos(t2))) / (2 * b * c)))
     return dict(t4_0=t4[0], t4_min=min(t4), t4_max=max(t4), swing=max(t4) - min(t4), mu_min=mu(0.0), mu_max=mu(math.pi))
@@ -118,8 +118,9 @@ def build(a=15.0, b=55.0, c=50.0, d=55.0):
         raise ValueError('Not a crank-rocker: Grashof s + l = %.1f against p + q = %.1f, and the crank (%.1f mm) must be '
                          'the shortest link.' % (links[0] + links[3], links[1] + links[2], a))
     k = linkage(a, b, c, d)
-    if k['mu_min'] < MU_MIN:
-        raise ValueError('The transmission angle falls to %.2f deg: below %.0f deg the linkage binds.' % (k['mu_min'], MU_MIN))
+    worst = min(k['mu_min'], 180.0 - k['mu_max'])                  # the acute angle, at both ends
+    if worst < MU_MIN:
+        raise ValueError('The transmission angle falls to %.2f deg: below %.0f deg the linkage binds.' % (worst, MU_MIN))
     B, C = position(a, b, c, d, 0.0)
 
     app = adsk.core.Application.get()

@@ -27,11 +27,14 @@ def run(_context):
     t4f = [math.degrees(freudenstein(math.radians(x))) for x in range(360)]
     t4f = [((t + 180) % 360) - 180 for t in t4f]
     mu = lambda t2: math.degrees(math.acos((B * B + C * C - (A * A + D * D - 2 * A * D * math.cos(t2))) / (2 * B * C)))
-    want = dict(t4_0=t4f[0], t4_min=min(t4f), t4_max=max(t4f), swing=max(t4f) - min(t4f), mu_min=mu(0), mu_max=mu(math.pi))
-    bad = [x for x in want if abs(k[x] - want[x]) > 1e-6]
+    # the rocker's extremes in closed form: at the toggle positions crank and coupler lie in one line, O2C = b +- a,
+    # and the triangle O2 O4 C gives the rocker's angle at O4 (the upper branch)
+    ext = [180.0 - math.degrees(math.acos((D * D + C * C - r * r) / (2 * D * C))) for r in (B - A, B + A)]
+    want = dict(t4_0=t4f[0], t4_min=min(ext), t4_max=max(ext), swing=max(ext) - min(ext), mu_min=mu(0), mu_max=mu(math.pi))
+    bad = [x for x in want if abs(k[x] - want[x]) > 1e-5]
     fc.ok(not bad, 'the script\'s circles agree with Freudenstein: theta4 %.3f at the start, swing %.3f (%.3f to %.3f), '
                    'mu %.2f to %.2f %s' % (k['t4_0'], k['swing'], k['t4_min'], k['t4_max'], k['mu_min'], k['mu_max'], bad or ''))
-    fc.ok((round(k['t4_0'], 3), round(k['swing'], 3), round(k['mu_min'], 2), round(k['mu_max'], 2)) == (105.59, 39.006, 44.47, 83.48),
+    fc.ok((round(k['t4_0'], 3), round(k['swing'], 3), round(k['mu_min'], 2), round(k['mu_max'], 2)) == (105.59, 39.007, 44.47, 83.48),
           'the rounded values of the prompt')
     fc.run_dialog(ns)
     root = fc.design().rootComponent
@@ -65,4 +68,5 @@ def run(_context):
         adsk.doEvents()
     fc.refused(ns, 'Not a crank-rocker', a=60.0)
     fc.refused(ns, 'falls to 38.57 deg', a=20.0)
+    fc.refused(ns, 'falls to 31.90 deg', a=20.0, b=38.0, c=40.0, d=55.0)   # the acute angle at 180 deg of the crank
     fc.verdict()

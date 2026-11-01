@@ -1,0 +1,36 @@
+# spherical_wrist_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 09:47, 3 s
+
+SphericalWrist 1.0 (2026-11-01)
+  ok   Run opens the dialog
+Spherical wrist built: roll J4 about x, pitch J5 about y (limit +-110 deg), roll J6 about the flange's axis; the three axes meet at the origin.
+The flange 71 mm from the centre, the tool 60 mm long, its tip 141 mm from the centre.
+Joint signs (a positive value turns about +axis): J4 +1, J5 +1, J6 +1.
+
+At J5 = 0 the two rolls are in line: only J4 + J6 sets the orientation.
+
+[SphericalWrist 1.0 (2026-11-01)] SphericalWrist 1.0 (2026-11-01)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   4 components: ['Forearm', 'Roll housing', 'Pitch housing', 'Flange']
+  ok   three revolute As-built Joints
+  ok   no interference at rest 
+  joint signs measured: [1, 1, 1]
+  ok   yaw 40, pitch -30, roll 15: two solutions ['(131.930, 48.439, -105.790)', '(-48.070, -48.439, 74.210)']
+  ok   yaw -70, pitch 20, roll 100: two solutions ['(-68.827, 71.253, -177.096)', '(111.173, -71.253, 2.904)']
+  ok   yaw 10, pitch 80, roll -45: two solutions ['(1.754, 80.153, -55.151)', '(-178.246, -80.153, 124.849)']
+  ok   yaw 100, pitch 0, roll 30: two solutions ['(90.000, 100.000, -60.000)', '(-90.000, -100.000, 120.000)']
+  ok   at all 8 poses the flange is turned as the product of the angles held (worst 3.2e-13 deg)
+  ok   and within the rounding of three angles of the target (worst 0.0770 deg of 0.15)
+  ok   no interference at any pose 
+  ok   a tool 119.5 deg from the forearm's axis is out of reach
+  ok   at J5 = 0, J4 = 30 with J6 = -30 turns the flange 1.9e-14 deg from J4 = J6 = 0: the singularity
+  ok   there the inverse keeps J4 where it was and gives one solution [(30.0, 0.0, -30.0)]
+  path: the tool axis from 10 deg below to 10 deg above the forearm's axis, 0.5 deg beside it, in 0.5 deg steps
+  J4 measured: -14.0, -18.4, -26.6, -45.0, -90.0, -135.0, -153.4, -161.6, -166.0
+  ok   the tool axis followed within 0.0495 deg; J4 turned 174.4 deg in all, 45.0 deg in the one step from 0 to 0.5 deg
+  ok   no interference at the pitch limits with J6 at 0, 90, 180 and -90 deg 
+  ok   {'pmax': 115.0} refused: A pitch limit of 115 deg: beyond 110 deg the flange reaches the roll housing.
+  ok   {'pmax': 80.0} refused: A pitch limit of 80 deg: below 90 deg the tool cannot point square to the forearm.
+  ok   {'tool': 10.0} refused: A tool of 10 mm: at least 20 mm, so that it shows the flange's axis.
+ALL PASS

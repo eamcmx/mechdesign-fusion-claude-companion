@@ -13,7 +13,7 @@ DERIVED (computed from the inputs, never typed):
 - the driver turns 2 alpha with alpha = pi / 2 - pi / n while the pin is in a slot (indexing), 2 pi - 2 alpha for
   the dwell; each index turns the wheel 2 pi / n the other way
 - during indexing, the driver at theta from the line of centres, the slot points from the wheel's centre at the
-  pin: gamma = atan2(a sin(theta), a cos(theta) - C); the wheel's turn is gamma minus its value at theta = -alpha
+  pin: gamma = atan2(a sin(theta), a cos(theta) - C); the wheel's turn is gamma minus its value at theta = -alpha, wrapped into -180 to 180 deg
 - the wheel's speed over the driver's at mid-index a / (C - a)
 - running gap 0.2 mm everywhere: slots 0.4 mm wider than the pin; slot bottoms 1 mm inside the pin's closest
   approach; locking disc radius a - pin diameter, the wheel's locking arcs 0.2 mm larger round the driver's centre
