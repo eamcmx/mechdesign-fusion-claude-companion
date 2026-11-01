@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 24: an external Geneva drive, a driver with a pin and a locking disc indexing a slotted wheel."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "Geneva"
+}

@@ -1,0 +1,46 @@
+Write a Fusion Python script that, when run, builds an external Geneva drive: a driver with a pin and a locking disc,
+and a slotted wheel that it indexes and then holds still; and that reports the drive's timing and the wheel's peak
+speed.
+
+INPUTS (a command dialog, with these defaults):
+- number of slots n (count), 4
+- pin circle radius a (mm), 30
+- pin diameter (mm), 8
+
+DERIVED (computed from the inputs, never typed):
+- centre distance C = a / sin(pi / n), so that the pin enters and leaves each slot along it; wheel radius
+  b = sqrt(C^2 - a^2)
+- the driver turns 2 alpha with alpha = pi / 2 - pi / n while the pin is in a slot (indexing), 2 pi - 2 alpha for
+  the dwell; each index turns the wheel 2 pi / n the other way
+- during indexing, the driver at theta from the line of centres, the slot points from the wheel's centre at the
+  pin: gamma = atan2(a sin(theta), a cos(theta) - C); the wheel's turn is gamma minus its value at theta = -alpha
+- the wheel's speed over the driver's at mid-index a / (C - a)
+- running gap 0.2 mm everywhere: slots 0.4 mm wider than the pin; slot bottoms 1 mm inside the pin's closest
+  approach; locking disc radius a - pin diameter, the wheel's locking arcs 0.2 mm larger round the driver's centre
+  at dwell; the locking disc's relief a circle of radius b + 0.2 round the point C from the driver's centre
+  towards the pin
+
+HARD CONSTRAINTS:
+- n from 3 to 12, or refuse.
+- The pin must fit: pin diameter at most a / 3, or refuse.
+- Driver at the origin, wheel's centre at (C, 0); built at dwell, the pin pointing away from the wheel (theta = pi),
+  a slot of the wheel pointing at angle pi + pi / n.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created at the origin, drawn in place: Ground (grounded), a plate from z = -6 to 0;
+  Driver: a crank disc of radius a + 6 from z = 0 to 3.5 (0.5 mm under the wheel), the pin from z = 0 to 10, the
+  locking disc from z = 3.5 to 10; Wheel from z = 4 to 10 with its n slots and n locking arcs.
+- The API works in cm and radians.
+- AsBuiltJoints: Driver revolute about z on Ground at the origin; Wheel revolute about z on Ground at (C, 0). No
+  Motion Link: the wheel's motion is not a constant ratio; whoever turns the driver sets the wheel.
+
+ACCEPTANCE CRITERIA:
+- A message gives C, b, the indexing and dwell angles, the peak speed ratio and a version tag.
+- Defaults: C = 42.426 mm, b = 30 mm, indexing 90 deg, dwell 270 deg, peak speed ratio 2.414.
+- The driver stepped through one turn from the built position, 10 deg at a time, the wheel set by the law above at
+  each step (still during the dwell): no interference and at least 0.15 mm between driver and wheel at every
+  step; after the turn the wheel has turned -90 deg.
+- Refused: n = 2; a pin of 12 mm on a = 30.
+
+Give me one Python file and its .manifest.
