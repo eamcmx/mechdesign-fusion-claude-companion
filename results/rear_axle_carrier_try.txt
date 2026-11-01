@@ -1,0 +1,13 @@
+# rear_axle_carrier_try
+# Autodesk Fusion 2706.1.17, run 2026-11-01 19:10, 40 s
+
+RearAxleCarrier 1.1 (2026-11-01)
+Rear axle carrier built: spiral bevel 12:47 (3.9167), module 6.50, face 52 mm, crown wheel 308.1 mm across, ground clearance 196.9 mm.
+At the design torque: pinion bending factor 1.078, contact 1.718; at full power in sixth for the life: 1.861 and 1.809.
+Pinion bearings 32309 and 32308, 46.9 mm behind the mesh and 111.0 mm apart; case bearings 32213, 160.4 mm apart.
+Differential: 4 spiders of 15 teeth, side gears of 22, module 5.5, face 24: bending factors 1.114 and 1.377.
+
+Parts: 49 components; 2 Adjuster, 1 Bearing A 32309 cone, 1 Bearing A 32309 cup, 1 Bearing B 32308 cone, 1 Bearing B 32308 cup, 1 Bearing C1 32213 cone, 1 Bearing C1 32213 cup, 1 Bearing C2 32213 cone, 1 Bearing C2 32213 cup, 2 Bearing cap, 4 Cap bolt M12x90, 1 Carrier casting, 1 Companion flange, 1 Cross, 10 Crown wheel bolt M12x35, 1 Crown wheel z47, 1 Differential case, 1 Pinion depth shim, 1 Pinion nut M30, 1 Pinion seal 60x85x10, 1 Pinion shaft z12, 2 Side gear, 2 Side gear washer, 1 Spacer, 4 Spider, 4 Spider washer, 1 Washer.
+
+[RearAxleCarrier 1.1 (2026-11-01)]
+  built in 40 s

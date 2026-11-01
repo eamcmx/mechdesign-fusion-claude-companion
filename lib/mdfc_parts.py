@@ -280,3 +280,107 @@ def nut(d, p, axis, m=None):
 
 def dowel(d, p0, p1):
     return cyl(p0, p1, d / 2.0)
+
+
+# ---------- tapered roller bearings on any axis (Volume 2, Chapter 29) ----------
+def _along(p, e, t):
+    return [p[i] + e[i] * t for i in range(3)]
+
+
+def _perp(e):
+    """A unit vector square to e."""
+    a = (1.0, 0.0, 0.0) if abs(e[0]) < 0.9 else (0.0, 1.0, 0.0)
+    v = (e[1] * a[2] - e[2] * a[1], e[2] * a[0] - e[0] * a[2], e[0] * a[1] - e[1] * a[0])
+    n = math.sqrt(sum(x * x for x in v))
+    return [x / n for x in v]
+
+
+def taper_geometry(d, D, T, B, C, alpha_deg=15.0):
+    """Proportions for drawing a single row tapered roller bearing from its catalogue sizes: the cup's raceway at
+    alpha to the axis, the cone's at alpha less the rollers' own taper. t is measured from the cone's back face (its
+    large end) towards the small end; radii from the axis."""
+    Dw = 0.24 * (D - d)                        # the rollers' mean diameter
+    rm = (d + D) / 4.0                         # their pitch radius, at mid-width
+    Lw = 0.62 * C                              # their length
+    tm = T - C + C / 2.0                       # their middle, under the middle of the cup
+    a_o = math.radians(alpha_deg)
+    a_i = math.radians(alpha_deg - 4.0)
+    a_m = (a_o + a_i) / 2.0
+    g = dict(Dw=Dw, rm=rm, Lw=Lw, tm=tm, a_o=a_o, a_i=a_i, a_m=a_m)
+    # the cup's raceway through (tm, rm + Dw/2), radius falling towards the small end at a_o
+    g['cup_r'] = lambda t: rm + Dw / 2.0 + (tm - t) * math.tan(a_o)
+    g['cone_r'] = lambda t: rm - Dw / 2.0 + (tm - t) * math.tan(a_i)
+    g['n_rollers'] = int(math.floor(2 * math.pi * rm / (1.18 * Dw)))
+    return g
+
+
+def taper_bodies(d, D, T, B, C, p0, axis, alpha_deg=15.0):
+    """The cone with its rollers (one body, as a cone assembly is bought) and the cup of a tapered roller bearing.
+    p0: the centre of the cone's back face (its large end); axis: the unit vector from there towards the small end."""
+    e = axis
+    g = taper_geometry(d, D, T, B, C, alpha_deg)
+    # the cone: a frustum on its raceway, a rib at the large end, the bore
+    cone = tbm().createCylinderOrCone(P3(*[v * CM for v in _along(p0, e, 0.0)]), g['cone_r'](0.0) * CM,
+                                      P3(*[v * CM for v in _along(p0, e, B)]), g['cone_r'](B) * CM)
+    rib = cyl(_along(p0, e, 0.0), _along(p0, e, 0.12 * B), g['cone_r'](0.0) + 0.45 * g['Dw'])
+    union(cone, rib)
+    cut(cone, cyl(_along(p0, e, -1.0), _along(p0, e, B + 1.0), d / 2.0))
+    # the rollers, between the raceways, their axes inclined at the mean of the two raceway angles
+    u = _perp(e)
+    w = (e[1] * u[2] - e[2] * u[1], e[2] * u[0] - e[0] * u[2], e[0] * u[1] - e[1] * u[0])
+    t0, t1 = g['tm'] - g['Lw'] / 2.0, g['tm'] + g['Lw'] / 2.0
+    for k in range(g['n_rollers']):
+        ang = 2 * math.pi * k / g['n_rollers']
+        rad = [math.cos(ang) * u[i] + math.sin(ang) * w[i] for i in range(3)]
+        def at(t, r):
+            return [p0[i] + e[i] * t + rad[i] * r for i in range(3)]
+        rc0 = (g['cup_r'](t0) + g['cone_r'](t0)) / 2.0
+        rc1 = (g['cup_r'](t1) + g['cone_r'](t1)) / 2.0
+        r0 = (g['cup_r'](t0) - g['cone_r'](t0)) / 2.0 * 0.92      # clear of both raceways at the tilted ends
+        r1 = (g['cup_r'](t1) - g['cone_r'](t1)) / 2.0 * 0.92
+        roller = tbm().createCylinderOrCone(P3(*[v * CM for v in at(t0, rc0)]), r0 * CM,
+                                            P3(*[v * CM for v in at(t1, rc1)]), r1 * CM)
+        union(cone, roller)
+    # the cup: its outside cylinder less a frustum on its raceway
+    ta, tb = T - C, T
+    cup = cyl(_along(p0, e, ta), _along(p0, e, tb), D / 2.0)
+    race = tbm().createCylinderOrCone(P3(*[v * CM for v in _along(p0, e, ta - 1.0)]), g['cup_r'](ta - 1.0) * CM,
+                                      P3(*[v * CM for v in _along(p0, e, tb + 1.0)]), g['cup_r'](tb + 1.0) * CM)
+    cut(cup, race)
+    return cone, cup, g
+
+
+# ---------- straight-sided splines on any axis ----------
+def spline_shaft(p0, p1, d_minor, d_major, n, w):
+    """A shaft with n straight-sided splines, w wide, from its minor to its major diameter, between p0 and p1."""
+    e = [p1[i] - p0[i] for i in range(3)]
+    L = math.sqrt(sum(x * x for x in e))
+    e = [x / L for x in e]
+    s = cyl(p0, p1, d_minor / 2.0 + 0.01)
+    for k in range(n):
+        s = union(s, _spline_tooth(p0, e, L, k, n, d_minor, d_major, w))
+    return s
+
+
+def spline_hole(p0, p1, d_minor, d_major, n, w, gap=0.1):
+    """The hole a splined hub needs: the minor diameter and n slots, `gap` larger all round."""
+    e = [p1[i] - p0[i] for i in range(3)]
+    L = math.sqrt(sum(x * x for x in e))
+    e = [x / L for x in e]
+    h = cyl(p0, p1, d_minor / 2.0 + gap)
+    for k in range(n):
+        h = union(h, _spline_tooth(p0, e, L, k, n, d_minor, d_major + 2 * gap, w + 2 * gap))
+    return h
+
+
+def _spline_tooth(p0, e, L, k, n, d_minor, d_major, w):
+    u = _perp(e)
+    v = (e[1] * u[2] - e[2] * u[1], e[2] * u[0] - e[0] * u[2], e[0] * u[1] - e[1] * u[0])
+    ang = 2 * math.pi * k / n
+    r = [math.cos(ang) * u[i] + math.sin(ang) * v[i] for i in range(3)]          # the tooth's radial direction
+    s = [-math.sin(ang) * u[i] + math.cos(ang) * v[i] for i in range(3)]         # across the tooth
+    rc = (d_minor / 2.0 * 0.9 + d_major / 2.0) / 2.0
+    hgt = d_major / 2.0 - d_minor / 2.0 * 0.9
+    c = [p0[i] + e[i] * L / 2.0 + r[i] * rc for i in range(3)]
+    return tbm().createBox(adsk.core.OrientedBoundingBox3D.create(P3(*[x * CM for x in c]), V3(*e), V3(*r),
+                                                                   L * CM, hgt * CM, w * CM))

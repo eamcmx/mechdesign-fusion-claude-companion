@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 29: the rear axle's carrier. A spiral bevel final drive 12:47 on tapered roller bearings and an open differential of four spiders, sized by the AGMA rating and built as three subassemblies of real parts."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "RearAxleCarrier"
+}

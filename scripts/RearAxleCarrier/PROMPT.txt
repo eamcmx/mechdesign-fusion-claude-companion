@@ -1,0 +1,57 @@
+Write a Fusion Python script that, when run, builds the carrier of a light truck's rear axle as a subsystem of real
+parts: a spiral bevel pinion on two tapered roller bearings in the carrier's nose, a crown wheel bolted to the
+differential's case, the case on two tapered roller bearings in the carrier's saddles under bearing caps, and an open
+differential of four spiders on a cross and two side gears; the parts turning as they do in the axle.
+
+INPUTS (a command dialog, with these defaults):
+- final-drive module at the heel m (mm), 6.5
+- final-drive face width F (mm), 52
+- differential module m_d (mm), 5.5
+- spiders N (a count), 4
+
+DERIVED (computed from the inputs by lib/axle_design.py, never typed; Childs 2014 and Budynas and Nisbett 2015):
+- the duty: 2009.25 N m on the pinion for 9528 turns (5000 hard starts), 283.49 N m at 4800 rpm for 498.69 million
+- the spiral bevel pair 12:47, 20 deg normal, 35 deg spiral: cones, A_e = m/2 sqrt(12^2 + 47^2), mean point at
+  A_e - F/2; rated by ANSI/AGMA 2003-B97 in SI (Childs Eqs. 10.9, 10.12, 10.16-10.23; Z_I 0.1275, Y_J 0.23;
+  carburized grade 2, 1550 and 240 MPa; Z_NT, Y_NT for the turns)
+- the forces of the mesh (Childs Eqs. 10.6, 10.7, the upper signs driving forward), the pinion's bearings SKF 32309
+  and 32308 back to back, the case's SKF 32213 face to face (Shigley Eqs. 11-18 to 11-20)
+- the differential: side gears 22, spiders 15, straight bevel, rated in bending at the design torque
+- the layout: the pinion's bearings' pressure points from SKF's a; the case's bearings at y = -74 and +74
+
+HARD CONSTRAINTS:
+- Refuse a module whose pinion keeps a bending factor under 1 at the design torque, a crown wheel that leaves less
+  than 195 mm of ground clearance (365 mm less half its outside diameter, 8 mm of wall and 6 mm of gap), a face
+  over a third of the cone distance, and spiders for which 2 z_s / N is not a whole number, saying which.
+- The pair's apex at the origin, the pinion along +X (forward), the axle along Y, the crown wheel on the -Y side.
+- Spiral teeth lofted through seven transverse sections from the toe to the heel, each Tredgold's virtual tooth with
+  the transverse module and pressure angle, turned about the axis by phi(R) = -/+ tan(35 deg) / sin(delta) ln(R/A_m);
+  the crown wheel's teeth of the opposite hand to the pinion's, its tooth 0 half a pitch round so that a gap meets
+  the pinion's tooth.
+- Tapered roller bearings drawn from their catalogue sizes: the cone with its rollers as one body, the cup apart.
+- The pinion's shaft: a collar, a depth shim, bearing A's seat (45), a spacer, bearing B's seat (40), splines
+  8 x 32 x 38 for the companion flange, an M30 thread, washer and nut.
+- The case: one casting, a spherical cavity of 76 mm, two windows, a flange for ten M12 bolts on 186 mm, a spigot;
+  the crown wheel's bore 170.4 mm passes over the case. The gears' backs spherical (74 mm) on spherical washers; the
+  side gears' hubs splined 8 x 35 x 40 for the half shafts.
+- The carrier: a mounting plate with ten holes on 370 mm, the nose with the cups' bores and the seal's, two legs with
+  the saddles, bearing caps with two M12 bolts each, threaded adjusters behind the case's cups.
+- Nothing touches anything else, at rest or turning.
+
+FUSION CONVENTIONS:
+- A new design document. Three subassemblies, Carrier (grounded), Pinion assembly, Differential assembly; each part
+  a component, grounded to its parent, one body each.
+- AsBuiltJoints in the root: the pinion assembly revolute about X, the differential revolute about Y; a Motion Link of
+  47 turns of the pinion to 12 of the case, the case turning about +Y when the pinion turns about +X. The spiders and
+  the side gears revolute on the case, each joint made in the root between the parts' proxies.
+- The API works in cm and radians. Materials: Steel; Iron, Cast for the casting, the caps and the case.
+
+ACCEPTANCE CRITERIA:
+- A message gives the ratio, the module, the crown wheel's size and the clearance, the pinion's factors at both duty
+  points, the bearings and their spacing, the differential's factors, the parts list and a version tag.
+- Defaults: bending factor 1.078 and contact 1.718 at the design torque; 1.861 and 1.809 at full power; crown wheel
+  308.1 mm, clearance 196.9 mm; the differential's side gear 1.114 and spider 1.377.
+- 49 components in 27 kinds; no interference at rest; every bearing's cone on its seat and its cup in its bore.
+- The pinion turned 30 deg about +X: the case 7.6596 deg about +Y. No tooth collision while the pinion turns one
+  pitch, nor with the side gears turned 4, 8.18 and 12 deg in the case.
+- Refused: module 5.9 (bending), 6.75 (clearance), face 56 mm, three spiders.

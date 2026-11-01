@@ -42,7 +42,7 @@ def place(items, busy, W, H, rho):
     centre = (W / 2, H / 2)
 
     def disc_clear(b):
-        if not (rho + 4 < b[0] < W - rho - 4 and rho + 4 < b[1] < H - rho - 4):
+        if not (rho + 8 < b[0] < W - rho - 8 and rho + 8 < b[1] < H - rho - 8):   # the samples reach rho + 6
             return False
         for k in range(24):
             for f in (0.35, 0.7, 1.0):
