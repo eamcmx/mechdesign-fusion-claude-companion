@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 21: a linear axis on a ball screw, the screw's and the nut's groove one helical tube cut by its section swept with a twist, three circuits of balls on its centre line."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "BallScrewAxis"
+}

@@ -1,0 +1,53 @@
+Write a Fusion Python script that, when run, builds a linear axis on a ball screw: a frame with two bearing blocks
+and a guide rod, a screw with its ball groove, a flange nut with its own groove and three circuits of balls, and a
+carriage bolted to the nut, assembled so that Drive Joints on the screw moves the carriage one lead per turn.
+
+INPUTS (a command dialog, with these defaults):
+- nominal diameter d_s (mm), 16
+- lead P (mm), 5
+- ball diameter D_w (mm), 3.175
+- axial load F (N), 500
+- dynamic load rating C_dyn of the nut (N, from the maker's table), 7310
+- average speed n (rpm), 1000
+
+DERIVED (computed from the inputs, never typed):
+- ball centre diameter d_m = d_s + 0.6 mm; groove radius R_g = 0.52 D_w on both parts, centred on the balls' helix
+  (one circle in the model, standing for the gothic arch); core d_k = d_m - 2 R_g
+- the screw's land d_s - 0.4 mm, the nut's bore d_s + 1.6 mm
+- balls per turn: the whole number of balls of D_w that fit round one turn of the helix with at least 3 % to spare;
+  three circuits of one turn each, every ball centred on the helix
+- the groove's section square to the axis: the points closer than R_g to the helix, computed; swept along the axis
+  turning once per lead (a right-hand groove), it cuts the same helical groove into the screw and into the nut
+- drive torque T_a = F P / (2 pi 0.90); back-driving torque T_c = F P 0.80 / (2 pi)
+- rating life L = (C_dyn / (1.2 F))^3 10^6 revolutions, L_h = L / (60 n) hours
+- buckling F_k = 4.072e5 x 0.25 d_k^4 / l_s^2 and critical speed n_k = 2.71e8 x 0.446 d_k / l_s^2, with l_s the
+  distance between the bearing blocks
+
+HARD CONSTRAINTS:
+- d_s / D_w from 3 to 10, or refuse.
+- The land between neighbouring grooves at least 1 mm: P - 2 R_g >= 1, or refuse.
+- L_h at least 10 000 h, or refuse giving L_h.
+- 0.5 F_k at least 2 F, or refuse giving F_k.
+- At x = 0 the balls' helix crosses the angle 0 (the +y direction from the screw's axis).
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, at the origin with their geometry drawn in place, the screw's axis along x at height
+  H = 30 mm: Frame (grounded), a base plate and two bearing blocks 150 + 40 mm apart; Guide rod (12 mm), through both
+  blocks; Screw, journals of 12 mm end to end and the grooved part, 150 mm, between the blocks; Nut, a flange of 54 mm
+  by 12 mm and a body of 30 mm, 46 mm long in all; Balls, all balls as one body; Carriage, a plate bolted to the
+  nut's flange and sliding on the guide rod.
+- The API works in cm and radians.
+- AsBuiltJoints: Guide rod rigid on Frame; Screw revolute about x on Frame; Carriage slider along x on Frame, its
+  travel limited to keep the nut on the grooved part; Nut rigid on Carriage; Balls rigid on Nut. One Motion Link:
+  360 deg of the screw for one lead of the carriage, in the direction that keeps the nut's groove on the screw's.
+
+ACCEPTANCE CRITERIA:
+- A message gives d_m, R_g, d_k, the balls per turn and in all, T_a, T_c, L and L_h, F_k and n_k, and a version tag.
+- Defaults: d_m = 16.6, R_g = 1.651, d_k = 13.298 mm; 16 balls a turn, 48 in all; T_a = 442.10 and T_c = 318.31
+  N mm; L = 1.8084e9 revolutions, L_h = 30 140 h; F_k and n_k for l_s = 190 mm.
+- No interference at rest. The screw stepped one turn, 30 deg at a time: the carriage moves one lead, P / 12 per step,
+  and nothing interferes at any step.
+- Refused: P = 3 with the defaults (land -0.30 mm: the grooves overlap); F = 3000 (L_h 140 h, below 10 000 h).
+
+Give me one Python file and its .manifest.
