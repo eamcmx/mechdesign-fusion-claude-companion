@@ -6,7 +6,7 @@
 #   INPUTS        the dialog: d, P, starts, F, f
 #   DERIVED       screw(): d2, d3, D1, D4, L, lambda, the torque, the efficiency, self-locking, the lowering torque
 #   HARD RULES    build() refuses a screw outside 8-40 mm, a pitch outside 2-10 mm, a thread deeper than d / 4;
-#                 a right-hand thread; the nut's thread half a lead round; the threads never touch
+#                 a right-hand thread; the nut's thread half a pitch round; the threads never touch
 #   CONVENTIONS   a new design; parts at the origin, drawn in place; each thread one closed polyline swept with a
 #                 whole number of turns; cm and radians inside the API; As-built Joints, the screw's direction
 #                 tried and its sign measured; a revolute-to-slider Motion Link

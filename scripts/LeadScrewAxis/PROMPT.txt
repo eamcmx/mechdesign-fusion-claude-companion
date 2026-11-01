@@ -26,7 +26,7 @@ HARD CONSTRAINTS:
 - d from 8 to 40 mm and P from 2 to 10 mm, the thread depth P / 2 at most d / 4, or refuse.
 - A right-hand thread. In the screw's section square to its axis, the thread fills the angles
   |phi - 2 pi x / L| <= 2 pi h(rho) / L, h(rho) its half-thickness along the axis at radius rho; the nut's thread
-  fills the same angles turned by half a lead (pi for one start).
+  fills the same angles turned by half a pitch (pi / starts; pi for one start).
 - The screw's and the nut's threads never touch: 0.25 mm at the crests and roots, 0.2 mm along the axis.
 
 FUSION CONVENTIONS:
