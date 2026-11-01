@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 19: a GT2 timing-belt drive, the centre distance solved for a belt of whole teeth."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "BeltDrive"
+}

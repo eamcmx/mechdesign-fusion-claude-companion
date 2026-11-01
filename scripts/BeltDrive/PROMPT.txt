@@ -1,0 +1,45 @@
+Write a Fusion Python script that, when run, builds a GT2 timing-belt drive: two toothed pulleys on shafts and the
+belt round them, the centre distance found so that a belt of a whole number of teeth fits, assembled so that Drive
+Joints on pulley 1 turns pulley 2.
+
+INPUTS (a command dialog, with these defaults):
+- pulley 1 teeth z1, 20
+- pulley 2 teeth z2, 40
+- belt teeth N_b (count), 90
+- belt width (mm), 6
+
+DERIVED (computed from the inputs, never typed):
+- GT2: pitch p = 2 mm; pulley pitch diameter PD = z p / pi; outside diameter OD = PD - 0.508 mm; belt back 0.63 mm
+  thick outside the pulleys' outside diameter (the belt's teeth are not drawn)
+- pitch length of an open belt round pulleys of pitch radii a < b, centres C apart:
+  L = 2 C cos(phi) + pi (a + b) + 2 phi (b - a), with sin(phi) = (b - a) / C
+- C solved (by bisection) so that L = N_b p
+- wrap angles: pulley 1 pi - 2 phi, pulley 2 pi + 2 phi; teeth in mesh on pulley 1 = z1 (pi - 2 phi) / (2 pi)
+- ratio z2 / z1, both pulleys turning the same way
+
+HARD CONSTRAINTS:
+- If no centre distance gives L = N_b p, refuse: the belt is too short.
+- The pulleys must not touch: C > (OD1 + OD2) / 2 + 2 mm, or refuse.
+- At least 6 teeth in mesh on pulley 1, or refuse giving the number.
+- The belt's inside rests on the pulleys' outside diameters; the belt runs along the two outside tangents.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Base plate (grounded), top at z = 0; Shaft 1 at the origin
+  and Shaft 2 at (C, 0), 5 mm, each with a collar under its pulley (Chapter 11); Pulley 1 and Pulley 2 from z = 1
+  to z = 1 + width + 2, each its outside diameter with z grooves cut as circles of radius 0.6 mm on it, bore
+  5.2 mm; Belt from z = 2 to z = 2 + width, its outline two arcs and two tangent lines inside and out, sharing their
+  sketch points.
+- The API works in cm and radians.
+- AsBuiltJoints: rigid for the shafts and the belt to the plate, revolute about z for each pulley on its shaft. A
+  Motion Link: z2 x 360 deg of pulley 1 for z1 x 360 deg of pulley 2, NOT reversed (a belt keeps the direction).
+
+ACCEPTANCE CRITERIA:
+- A message gives PD1, PD2, C, both wrap angles, the teeth in mesh, the ratio and a version tag.
+- Defaults: PD1 = 12.7324 mm, PD2 = 25.4648 mm, C = 59.660 mm, wraps 167.749 and 192.251 deg, 9.32 teeth in mesh.
+- The belt's volume equals width x thickness x the length of its centre line (a band of constant thickness):
+  681.849 mm^3.
+- Pulley 1 stepped one turn, 30 deg at a time: pulley 2 turns +15 deg per step; no interference at any step.
+- Refused: N_b = 40 (too short); z1 = 12, z2 = 60, N_b = 70 (3.96 teeth in mesh).
+
+Give me one Python file and its .manifest.

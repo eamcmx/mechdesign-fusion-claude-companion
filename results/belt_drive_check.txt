@@ -1,0 +1,28 @@
+# belt_drive_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:50, 4 s
+
+BeltDrive 1.0 (2026-11-01)
+  ok   PD 12.7324 and 25.4648, C 59.6600, wraps 167.749 and 192.251 deg, 9.32 teeth in mesh 
+  ok   the rounded values of the prompt
+  ok   Run opens the dialog
+GT2 belt drive built: pulleys of 20 and 40 teeth, a belt of 90 teeth (180 mm).
+
+Pitch diameters 12.7324 and 25.4648 mm; outside diameters 12.2244 and 24.9568 mm
+Centre distance C = 59.660 mm (solved for a pitch length of 180 mm)
+Wrap: pulley 1 167.749 deg, pulley 2 192.251 deg; 9.32 teeth of pulley 1 in mesh
+Ratio 2.000, both pulleys turning the same way
+
+[BeltDrive 1.0 (2026-11-01)] BeltDrive 1.0 (2026-11-01)
+  OK pressed, built in 4 s
+  ok   a new design opened
+  ok   six components: ['Base plate', 'Belt', 'Pulley 1', 'Pulley 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each
+  ok   pulley 2 at x = C = 59.6600 mm (measured 59.6600)
+  ok   the belt 681.849 mm^3: width x thickness x centre line = 681.849 mm^3
+  ok   five As-built Joints (three rigid, two revolute), one Motion Link
+  ok   no interference at rest 
+  ok   pulley 2 at +15 deg per 30 deg step of pulley 1, the same way (worst 0.00000 deg)
+  ok   no interference at any of the 12 steps 
+  ok   {'n_b': 40} refused: A belt of 40 teeth (80 mm) is too short to go round these pulleys.
+  ok   {'z1': 12, 'z2': 60, 'n_b': 70} refused: Only 3.96 teeth of pulley 1 in mesh: at least 6. Use a longer belt or closer ratios.
+ALL PASS

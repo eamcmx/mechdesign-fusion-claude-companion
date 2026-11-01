@@ -1,0 +1,7 @@
+# controls/belt_reversed
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:51, 4 s
+
+  pulley 2 after 30, 60, 90 deg of pulley 1: [-15.0, -30.0, -45.0] deg; overlaps: []
+  ok   no interference
+  FAIL pulley 2 at +15 deg per 30 deg step
+CONTROL: the belt link reversed; only the motion check can catch it
