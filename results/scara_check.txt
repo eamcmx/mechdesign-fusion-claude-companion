@@ -1,0 +1,63 @@
+# scara_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 09:28, 3 s
+
+ScaraArm 1.0 (2026-11-01)
+  ok   all values recomputed independently 
+  ok   floor area 5426 cm2, a 2 mm grid counts 5425 cm2
+  ok   the rounded values of the prompt (450.0, 126.085, 5426, 0.785, 4.05, 41.085, 48.0, 82.0)
+  ok   Run opens the dialog
+SCARA built: arms 250 and 200 mm, column 400 mm, stroke 150 mm; limits J1 +-132 deg, J2 +-150 deg.
+
+Reach 450.0 mm; inner radius at the J2 limit 126.085 mm; the tool covers 5426 cm2 of floor.
+The tool flange at z = 332.0 mm with the quill up. Clearances: tool to column 41.09 mm, quill to the first arm 48.00 mm, tool to base 82.00 mm.
+A step of 0.1 deg at J1 moves the tool 0.785 mm at full reach.
+Accelerating 2.0 kg at full reach at 10 rad/s2 takes 4.050 N m at J1 (the payload alone).
+
+Drive Joints on J1, J2, J3 and J4; the check sets them from the inverse kinematics.
+
+[ScaraArm 1.0 (2026-11-01)] ScaraArm 1.0 (2026-11-01)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   5 components: ['Base', 'Arm 1', 'Arm 2', 'Quill', 'Tool']
+  ok   one body each
+  ok   four As-built Joints: ['RevoluteJointMotion', 'RevoluteJointMotion', 'SliderJointMotion', 'RevoluteJointMotion']
+  ok   limits [(-132.0, 132.0), (-150.0, 150.0), (-150.0, 0.0), (-180.0, 180.0)]
+  ok   no interference at rest 
+  ok   target (300, 200, 300) at 0 deg: 2 elbow(s) inside the limits
+  ok   the tool turned to 0.000 deg for 0
+  ok   the tool turned to 0.000 deg for 0
+  ok   target (-150, 350, 250) at 90 deg: 1 elbow(s) inside the limits
+  ok   the tool turned to 89.900 deg for 90
+  ok   target (420, -100, 200) at -45 deg: 2 elbow(s) inside the limits
+  ok   the tool turned to -45.000 deg for -45
+  ok   the tool turned to -45.000 deg for -45
+  ok   target (130, 0, 332) at 0 deg: 2 elbow(s) inside the limits
+  ok   the tool turned to -0.000 deg for 0
+  ok   the tool turned to -0.000 deg for 0
+  ok   target (0, -400, 182) at 30 deg: 2 elbow(s) inside the limits
+  ok   the tool turned to 30.000 deg for 30
+  ok   the tool turned to 30.000 deg for 30
+  ok   target (-300, -300, 260) at 180 deg: 1 elbow(s) inside the limits
+  ok   the tool turned to -180.000 deg for 180
+  (  300.0   200.0 300.0    0.0)  asked    1.460   74.038  held     1.5    74.0  off 0.174 mm (bound 0.489), 0.000 deg
+  (  300.0   200.0 300.0    0.0)  asked   65.920  -74.038  held    65.9   -74.0  off 0.092 mm (bound 0.489), 0.000 deg
+  ( -150.0   350.0 250.0   90.0)  asked   84.811   64.849  held    84.8    64.8  off 0.236 mm (bound 0.507), 0.100 deg
+  (  420.0  -100.0 200.0  -45.0)  asked  -27.992   32.965  held   -28.0    33.0  off 0.068 mm (bound 0.551), 0.000 deg
+  (  420.0  -100.0 200.0  -45.0)  asked    1.207  -32.965  held     1.2   -33.0  off 0.173 mm (bound 0.551), 0.000 deg
+  (  130.0     0.0 332.0    0.0)  asked  -52.688  148.870  held   -52.7   148.9  off 0.110 mm (bound 0.288), 0.000 deg
+  (  130.0     0.0 332.0    0.0)  asked   52.688 -148.870  held    52.7  -148.9  off 0.110 mm (bound 0.288), 0.000 deg
+  (    0.0  -400.0 182.0   30.0)  asked -114.147   54.900  held  -114.1    54.9  off 0.326 mm (bound 0.524), 0.000 deg
+  (    0.0  -400.0 182.0   30.0)  asked  -65.853  -54.900  held   -65.9   -54.9  off 0.326 mm (bound 0.524), 0.000 deg
+  ( -300.0  -300.0 260.0  180.0)  asked -117.668  -39.195  held  -117.7   -39.2  off 0.254 mm (bound 0.545), 0.000 deg
+  ok   at every pose the tool is where forward kinematics puts it for the angles held (worst 4.0e-13 mm)
+  ok   and within the rounding of the target: worst 0.326 mm, 62 % of its bound
+  ok   no interference at any pose 
+  ok   J2 asked 160 deg, beyond its limit: it ignored it and kept 30.0 deg
+  ok   unreachable: beyond the reach, inside the inner radius, behind the robot, above the quill top
+  ok   the outline drawn in Fusion encloses 5425.9 cm2 (the integral 5425.9 cm2); the arcs cross 241.333 mm behind the axis
+  ok   the workspace plate on the floor touches nothing 
+  ok   {'q1max': 175} refused: Joint limits of 175 and 150 deg: keep them within 170 deg, where the cables still reach.
+  ok   {'q2max': 165} refused: Folded to 165 deg, the tool would pass -8.14 mm from the column: at least 2 mm.
+  ok   {'L1': 400, 'L2': 200, 'q2max': 170} refused: Folded to 170 deg, the quill would pass -17.27 mm from the first arm: at least 2 mm.
+  ok   {'stroke': 250} refused: With a stroke of 250 mm the tool would stop -18.00 mm above the base: at least 2 mm.
+ALL PASS

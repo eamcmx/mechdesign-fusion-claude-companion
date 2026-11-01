@@ -4,14 +4,16 @@
 # kinematics, the workspace, the joint limits and the payload's torque. Written from PROMPT.txt beside it; checked
 # by checks/scara_check.py.
 #
-#   INPUTS        the dialog: L1, L2, column height H, stroke, joint limits q1max and q2max, payload m, reach speed
-#   DERIVED       scara(): reach, inner radius, the tool's position for joint values (fk) and the joint values for
-#                 a position (ik, both elbows), the resolution of a 0.1 deg step, the payload's inertia torque
-#   HARD RULES    build() refuses L2 >= L1, limits beyond 170 deg, and a stroke longer than the column
+#   INPUTS        the dialog: L1, L2, column height H, stroke, joint limits q1max and q2max
+#   DERIVED       scara(): reach, inner radius, the floor area the tool covers, the tool's position for joint values
+#                 (fk) and the joint values for a position (ik, both elbows), the resolution of a 0.1 deg step, the
+#                 payload's inertia torque
+#   HARD RULES    build() refuses arms outside 100-600 mm, limits beyond 170 deg, a quill that would hit the column
+#                 or the first arm within the J2 limit, and a stroke that would bring the tool into the base
 #   CONVENTIONS   z up; base axis at the origin; bodies from TemporaryBRepManager; As-built Joints with limits:
 #                 revolute J1, J2, J4 about z, slider J3 along z
 #   ACCEPTANCE    the message; the tool where fk puts it for the joint values Fusion holds, at every target; within
-#                 the 0.1 deg resolution of each target; no interference; three refusals
+#                 the 0.1 deg resolution of each target; no interference; four refusals
 #
 #   Emmanuel Merchan, TSI Engineering Faculty - AI Augmented Education
 # =============================================================================
@@ -28,8 +30,29 @@ V3 = adsk.core.Vector3D.create
 VI = adsk.core.ValueInput.createByReal
 VS = adsk.core.ValueInput.createByString
 W1, W2, T1, T2, GAP = 80.0, 60.0, 40.0, 30.0, 1.0        # link widths and thicknesses, the gap between them (mm)
-R_COL, R_QUILL = 60.0, 12.0
+R_COL, R_QUILL, R_FLANGE, R_PLATE, T_PLATE = 60.0, 12.0, 25.0, 120.0, 40.0
+TIP, CLEAR = 60.0, 2.0                                    # the pointer below the flange; the least clearance (mm)
 STEP = 0.1                                                # deg: the resolution Fusion keeps
+
+
+def span(s, r):
+    """The angle (rad) the tool covers at radius r: the two elbows' arcs of
+    2 q1max, centred at +-beta, together."""
+    L1, L2, h = s['L1'], s['L2'], math.radians(s['q1max'])
+    cb = max(-1.0, min(1.0, (L1 * L1 + r * r - L2 * L2) / (2 * L1 * r)))
+    # the angle between the two arcs' centres, the shorter way round
+    d = 2 * math.acos(cb)
+    d = min(d, 2 * math.pi - d)
+    over = max(0.0, 2 * h - d) + max(0.0, 2 * h - (2 * math.pi - d))
+    return min(2 * math.pi, 4 * h - over)
+
+
+def area(s, n=2000):
+    """The floor area the tool covers, mm^2: the integral of r span(r) dr from the inner radius to the reach."""
+    a, b = s['inner'], s['reach']
+    h = (b - a) / n
+    f = [(a + i * h) * span(s, a + i * h) for i in range(n + 1)]
+    return h / 3 * (f[0] + f[-1] + 4 * sum(f[1:-1:2]) + 2 * sum(f[2:-1:2]))
 
 
 def scara(L1=250.0, L2=200.0, H=400.0, stroke=150.0, q1max=132.0, q2max=150.0, m=2.0, alpha=10.0):
@@ -38,9 +61,14 @@ def scara(L1=250.0, L2=200.0, H=400.0, stroke=150.0, q1max=132.0, q2max=150.0, m
     z_l1 = H + GAP
     z_l2 = z_l1 + T1 + GAP
     z_flange = z_l2 - 110.0                               # the tool's flange, the quill up
-    return dict(L1=L1, L2=L2, H=H, stroke=stroke, q1max=q1max, q2max=q2max, reach=reach, inner=inner, z_l1=z_l1,
-                z_l2=z_l2, z_flange=z_flange, res=reach * math.radians(STEP), T_payload=m * (reach / 1000.0) ** 2 * alpha,
-                m=m, alpha=alpha)
+    s = dict(L1=L1, L2=L2, H=H, stroke=stroke, q1max=q1max, q2max=q2max, reach=reach, inner=inner, z_l1=z_l1,
+             z_l2=z_l2, z_flange=z_flange, res=reach * math.radians(STEP), T_payload=m * (reach / 1000.0) ** 2 * alpha,
+             m=m, alpha=alpha)
+    s['c_column'] = inner - R_COL - R_FLANGE              # the flange against the column, the arm folded to q2max
+    s['c_arm'] = (L2 * math.sin(math.radians(q2max)) if q2max > 90 else L2) - W1 / 2 - R_QUILL   # ... against arm 1
+    s['c_base'] = z_flange - TIP - stroke - T_PLATE       # the tip against the base plate, the quill down
+    s['area'] = area(s)
+    return s
 
 
 def fk(s, q1, q2, d3, q4):
@@ -51,7 +79,7 @@ def fk(s, q1, q2, d3, q4):
 
 
 def ik(s, x, y, z, phi):
-    """Joint values for a tool position and angle: both elbows, those inside the limits."""
+    """Joint values for a tool position and angle, both elbows, within limits."""
     L1, L2 = s['L1'], s['L2']
     c2 = (x * x + y * y - L1 * L1 - L2 * L2) / (2 * L1 * L2)
     if abs(c2) > 1:
@@ -59,12 +87,15 @@ def ik(s, x, y, z, phi):
     out = []
     for sgn in (1, -1):
         q2 = sgn * math.degrees(math.acos(c2))
-        q1 = math.degrees(math.atan2(y, x) - math.atan2(L2 * math.sin(math.radians(q2)),
-                                                         L1 + L2 * math.cos(math.radians(q2))))
+        a2 = math.radians(q2)
+        # the angle the second arm adds
+        b = math.atan2(L2 * math.sin(a2), L1 + L2 * math.cos(a2))
+        q1 = math.degrees(math.atan2(y, x) - b)
         q1 = (q1 + 180.0) % 360.0 - 180.0
         d3 = s['z_flange'] - z
-        q4 = phi - q1 - q2
-        if abs(q1) <= s['q1max'] and abs(q2) <= s['q2max'] and 0 <= d3 <= s['stroke']:
+        q4 = (phi - q1 - q2 + 180.0) % 360.0 - 180.0      # within J4's +-180 deg
+        inside = abs(q1) <= s['q1max'] and abs(q2) <= s['q2max']
+        if inside and 0 <= d3 <= s['stroke']:
             out.append((q1, q2, d3, q4))
     return out
 
@@ -158,16 +189,21 @@ def colour(design, occ, name):
 
 # ---------- the robot ----------
 def build(L1=250.0, L2=200.0, H=400.0, stroke=150.0, q1max=132.0, q2max=150.0, m=2.0):
-    if L2 >= L1:
-        raise ValueError('L2 = %.0f mm is not shorter than L1 = %.0f mm: the second arm would reach back past the '
-                         'column.' % (L2, L1))
+    if not (100 <= L1 <= 600 and 100 <= L2 <= 600):
+        raise ValueError('Arms of %.0f and %.0f mm: keep each from 100 to 600 mm.' % (L1, L2))
     if not (0 < q1max <= 170 and 0 < q2max <= 170):
         raise ValueError('Joint limits of %.0f and %.0f deg: keep them within 170 deg, where the cables still '
                          'reach.' % (q1max, q2max))
-    if stroke >= H - 100.0:
-        raise ValueError('A stroke of %.0f mm would bring the tool into the floor: keep it below H - 100 = %.0f mm.'
-                         % (stroke, H - 100.0))
     s = scara(L1, L2, H, stroke, q1max, q2max, m)
+    if s['c_column'] < CLEAR:
+        raise ValueError('Folded to %.0f deg, the tool would pass %.2f mm from the column: at least %.0f mm.'
+                         % (q2max, s['c_column'], CLEAR))
+    if s['c_arm'] < CLEAR:
+        raise ValueError('Folded to %.0f deg, the quill would pass %.2f mm from the first arm: at least %.0f mm.'
+                         % (q2max, s['c_arm'], CLEAR))
+    if not (0 < stroke and s['c_base'] >= CLEAR):
+        raise ValueError('With a stroke of %.0f mm the tool would stop %.2f mm above the base: at least %.0f mm.'
+                         % (stroke, s['c_base'], CLEAR))
 
     app = adsk.core.Application.get()
     app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
@@ -176,8 +212,8 @@ def build(L1=250.0, L2=200.0, H=400.0, stroke=150.0, q1max=132.0, q2max=150.0, m
     root = design.rootComponent
 
     base = place(root, 'Base')
-    bb = cyl((0, 0, 0), (0, 0, 40), 120)
-    union(bb, cyl((0, 0, 39.999), (0, 0, H), R_COL))
+    bb = cyl((0, 0, 0), (0, 0, T_PLATE), R_PLATE)
+    union(bb, cyl((0, 0, T_PLATE - 0.001), (0, 0, H), R_COL))
     add_body(base.component, bb, 'Base')
     base.isGrounded = True
 
@@ -186,16 +222,17 @@ def build(L1=250.0, L2=200.0, H=400.0, stroke=150.0, q1max=132.0, q2max=150.0, m
     a2 = place(root, 'Arm 2', L1, 0, 0)
     add_body(a2.component, link(L2, W2, s['z_l2'], T2, R_QUILL + 0.5), 'Arm 2')
     quill = place(root, 'Quill', L1 + L2, 0, 0)
-    add_body(quill.component, cyl((0, 0, s['z_flange'] + 0.001), (0, 0, s['z_l2'] + T2 + 120), R_QUILL), 'Quill')
+    top = s['z_l2'] + T2 + stroke + 20.0                                     # 20 mm above the arm, the quill down
+    add_body(quill.component, cyl((0, 0, s['z_flange'] + 0.001), (0, 0, top), R_QUILL), 'Quill')
     tool = place(root, 'Tool', L1 + L2, 0, s['z_flange'])
-    tb = cyl((0, 0, -10), (0, 0, 0), 25.0)
-    union(tb, cyl((0, 0, -60), (0, 0, -9.999), 6.0))                         # a pointer on the flange
+    tb = cyl((0, 0, -10), (0, 0, 0), R_FLANGE)
+    union(tb, cyl((0, 0, -TIP), (0, 0, -9.999), 6.0))                        # a pointer on the flange
     add_body(tool.component, tb, 'Tool')
 
     joint(root, a1, base, 'revolute', 'J1', -q1max, q1max)
     joint(root, a2, a1, 'revolute', 'J2', -q2max, q2max)
     joint(root, quill, a2, 'slider', 'J3', -stroke, 0.0)
-    joint(root, tool, quill, 'revolute', 'J4', -360.0, 360.0)
+    joint(root, tool, quill, 'revolute', 'J4', -180.0, 180.0)
 
     colour(design, base, 'Paint - Enamel Glossy (Grey)')
     colour(design, a1, 'Paint - Enamel Glossy (Yellow)')
@@ -205,12 +242,14 @@ def build(L1=250.0, L2=200.0, H=400.0, stroke=150.0, q1max=132.0, q2max=150.0, m
     app.activeViewport.fit()
 
     return ('SCARA built: arms %.0f and %.0f mm, column %.0f mm, stroke %.0f mm; limits J1 +-%.0f deg, J2 +-%.0f deg.\n\n'
-            'Reach %.1f mm; inner radius at the J2 limit %.3f mm. The tool flange at z = %.1f mm with the quill up.\n'
+            'Reach %.1f mm; inner radius at the J2 limit %.3f mm; the tool covers %.0f cm2 of floor.\n'
+            'The tool flange at z = %.1f mm with the quill up. Clearances: tool to column %.2f mm, quill to the first '
+            'arm %.2f mm, tool to base %.2f mm.\n'
             'A step of 0.1 deg at J1 moves the tool %.3f mm at full reach.\n'
             'Accelerating %.1f kg at full reach at %.0f rad/s2 takes %.3f N m at J1 (the payload alone).\n\n'
             'Drive Joints on J1, J2, J3 and J4; the check sets them from the inverse kinematics.\n\n[%s]'
-            % (L1, L2, H, stroke, q1max, q2max, s['reach'], s['inner'], s['z_flange'], s['res'], m, s['alpha'],
-               s['T_payload'], VERSION))
+            % (L1, L2, H, stroke, q1max, q2max, s['reach'], s['inner'], s['area'] / 100.0, s['z_flange'],
+               s['c_column'], s['c_arm'], s['c_base'], s['res'], m, s['alpha'], s['T_payload'], VERSION))
 
 
 # ---------- the command dialog ----------

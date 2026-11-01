@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 33: a SCARA robot. Two arms turn in the horizontal plane, a quill slides and turns the tool; forward and inverse kinematics, workspace and joint limits."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "ScaraArm"
+}

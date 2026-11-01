@@ -1,0 +1,58 @@
+Write a Fusion Python script that, when run, builds a SCARA robot: a column, two arms that turn in the horizontal
+plane, a quill at the end of the second arm that slides up and down and turns the tool; with its forward and inverse
+kinematics, its workspace and its joint limits, assembled and ready to move with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- first arm L1 (mm), 250
+- second arm L2 (mm), 200
+- column height H (mm), 400
+- quill stroke (mm), 150
+- J1 limit q1max (deg), 132
+- J2 limit q2max (deg), 150
+
+DERIVED (computed from the inputs, never typed):
+- reach L1 + L2; inner radius, the arm folded to the J2 limit: sqrt(L1^2 + L2^2 + 2 L1 L2 cos q2max)
+- forward kinematics: x = L1 cos q1 + L2 cos(q1 + q2), y = L1 sin q1 + L2 sin(q1 + q2), z = z_flange - d3, the tool
+  at q1 + q2 + q4; z_flange 110 mm below the second arm, the quill up
+- inverse kinematics, both elbows: cos q2 = (x^2 + y^2 - L1^2 - L2^2) / (2 L1 L2), q2 = +-acos of it,
+  q1 = atan2(y, x) - atan2(L2 sin q2, L1 + L2 cos q2), d3 = z_flange - z, q4 = phi - q1 - q2 within +-180 deg;
+  keep the elbows inside the limits, none if the point is out of reach
+- the floor area the tool covers: at radius r the two elbows cover arcs of 2 q1max centred at +-beta,
+  cos beta = (L1^2 + r^2 - L2^2) / (2 L1 r); integrate r times the arcs' union from the inner radius to the reach
+- the tool's movement for a step of 0.1 deg at J1, at full reach; the torque at J1 to accelerate 2 kg at full reach
+  at 10 rad/s2 (the payload alone)
+- three clearances: the tool's flange (25 mm radius) to the column (60 mm), the arm folded to q2max; the quill (12 mm)
+  to the first arm (80 mm wide), the arm folded to q2max; the tool's tip to the base plate, the quill down
+
+HARD CONSTRAINTS:
+- L1 and L2 from 100 to 600 mm, q1max and q2max at most 170 deg, or refuse.
+- Each of the three clearances at least 2 mm, or refuse, saying which.
+- The column on a base plate 240 mm across and 40 mm thick; each arm 1 mm above what it turns on; the quill long
+  enough to stay 20 mm above the second arm at the bottom of its stroke. Nothing touches anything else.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Base (grounded), Arm 1, Arm 2, Quill, Tool (a flange and a
+  pointer 60 mm long); bodies from TemporaryBRepManager.
+- The API works in cm and radians.
+- AsBuiltJoints, each at its component's origin: J1 revolute about z (Arm 1 on Base), J2 revolute (Arm 2 on Arm 1),
+  J3 slider along z (Quill on Arm 2, from -stroke to 0), J4 revolute (Tool on Quill), with the limits as joint limits.
+- J4 from -180 to +180 deg: a limit of -360 deg comes back as 0.
+- A revolute joint keeps its angle in tenths of a degree, and a value beyond a joint's limit is ignored without an
+  error: read back what the joint holds.
+
+ACCEPTANCE CRITERIA:
+- A message gives the reach, the inner radius, the floor area, the clearances, the step at full reach, the torque and
+  a version tag.
+- Defaults: reach 450.0 mm, inner radius 126.085 mm, 5426 cm2 of floor; clearances 41.085, 48.000 and 82.000 mm;
+  0.785 mm for 0.1 deg; 4.050 N m.
+- 5 components with one body each; 4 As-built Joints with their limits; no interference at rest.
+- For six targets, both elbows where they are inside the limits: the tool where the forward kinematics puts it for
+  the angles Fusion holds, and within (r + L2) x 0.05 deg of the target; the tool at the asked angle within 0.15 deg;
+  no interference at any pose.
+- J2 asked for q2max + 10 deg keeps its angle; points beyond the reach, inside the inner radius, behind the robot
+  and above the flange's highest position are out of reach.
+- Refused: q1max = 175; q2max = 165 (the tool hits the column); L1 = 400, L2 = 200, q2max = 170 (the quill hits the
+  first arm); a stroke of 250 mm (the tool hits the base).
+
+Give me one Python file and its .manifest.

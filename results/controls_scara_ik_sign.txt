@@ -1,0 +1,11 @@
+# controls/scara_ik_sign
+# Autodesk Fusion 2706.1.17, run 2026-11-01 09:28, 2 s
+
+  target (300, 200, 300): asked q1 65.920 q2 74.038, the tool 384.437 mm away
+  target (300, 200, 300): asked q1 1.460 q2 -74.038, the tool 384.331 mm away
+  target (420, -100, 200): asked q1 1.207 q2 32.965, the tool 217.702 mm away
+  target (420, -100, 200): asked q1 -27.992 q2 -32.965, the tool 217.811 mm away
+  target (0, -400, 182): asked q1 -65.853 q2 54.900, the tool 326.962 mm away
+  target (0, -400, 182): asked q1 -114.147 q2 -54.900, the tool 326.962 mm away
+  FAIL the tool within the rounding of every target (worst 384.437 mm)
+CONTROL: the inverse kinematics with the wrong sign; the check above MUST fail
