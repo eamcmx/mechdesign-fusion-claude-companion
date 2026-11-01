@@ -26,7 +26,7 @@ HARD CONSTRAINTS:
 FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
 - Components, one body each, created where they belong: Base plate (grounded), top at z = 0; Shaft 1 at the origin
-  and Shaft 2 at (C, 0), 5 mm, each with a collar under its pulley (Chapter 11); Pulley 1 and Pulley 2 from z = 1
+  and Shaft 2 at (C, 0), 5 mm, each with a collar under its pulley (Chapter 12); Pulley 1 and Pulley 2 from z = 1
   to z = 1 + width + 2, each its outside diameter with z grooves cut as circles of radius 0.6 mm on it, bore
   5.2 mm; Belt from z = 2 to z = 2 + width, its outline two arcs and two tangent lines inside and out, sharing their
   sketch points.

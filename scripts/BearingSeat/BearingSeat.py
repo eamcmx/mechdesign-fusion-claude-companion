@@ -1,5 +1,5 @@
 # =============================================================================
-# BearingSeat.py  -  Chapter 7 of "Mechanical Design in Autodesk Fusion with Claude": a deep groove ball bearing seated
+# BearingSeat.py  -  Chapter 8 of "Mechanical Design in Autodesk Fusion with Claude": a deep groove ball bearing seated
 # on a shaft and in a housing; the balls orbit at the cage's speed; the rating life is reported. Written from
 # PROMPT.txt beside it; checked by checks/bearing_seat_check.py.
 #

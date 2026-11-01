@@ -1,4 +1,4 @@
-# Picture for Chapter 7: BearingSeat, 6002, with the housing and the outer ring see-through so the balls show.
+# Picture for Chapter 8: BearingSeat, 6002, with the housing and the outer ring see-through so the balls show.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

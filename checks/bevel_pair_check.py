@@ -1,4 +1,4 @@
-# BevelPair (Chapter 16) against the acceptance criteria of its prompt, measured on what Fusion built: the numbers
+# BevelPair (Chapter 17) against the acceptance criteria of its prompt, measured on what Fusion built: the numbers
 # recomputed independently; the gear's turn about +X measured on its body when the pinion is driven about +Z; no tooth
 # collision while the pinion turns through one tooth pitch.
 import math, sys, importlib

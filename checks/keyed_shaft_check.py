@@ -1,4 +1,4 @@
-# KeyedShaft (Chapter 5) against the acceptance criteria of its prompt, measured on what Fusion built.
+# KeyedShaft (Chapter 6) against the acceptance criteria of its prompt, measured on what Fusion built.
 import math, sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

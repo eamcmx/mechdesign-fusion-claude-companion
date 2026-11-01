@@ -1,5 +1,5 @@
 # =============================================================================
-# HelicalPair.py  -  Chapter 13 of "Mechanical Design in Autodesk Fusion with Claude": a pair of helical (or
+# HelicalPair.py  -  Chapter 14 of "Mechanical Design in Autodesk Fusion with Claude": a pair of helical (or
 # herringbone) gears on a base plate, assembled and ready to turn with Drive Joints. Each tooth is the transverse
 # involute outline swept along the gear's axis with a twist. Written from PROMPT.txt beside it; checked by
 # checks/helical_pair_check.py.
@@ -62,7 +62,7 @@ def rotate(pts, ang):
 
 
 def transverse_tooth(mt, mn, z, at, backlash, phase, n=8):
-    """Chapter 11's tooth drawn in the transverse plane: pitch circle and pressure angle from the transverse module
+    """Chapter 12's tooth drawn in the transverse plane: pitch circle and pressure angle from the transverse module
     and angle, addendum and dedendum from the normal module."""
     r = mt * z / 2.0                        # pitch radius
     rb = r * math.cos(at)                   # base radius

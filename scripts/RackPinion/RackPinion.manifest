@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 15: a spur pinion on a fixed shaft driving a straight rack, linked by a revolute-to-slider Motion Link."
+        "": "Chapter 16: a spur pinion on a fixed shaft driving a straight rack, linked by a revolute-to-slider Motion Link."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

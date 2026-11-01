@@ -1,5 +1,5 @@
 # =============================================================================
-# SealedCover.py  -  Chapter 10 of "Mechanical Design in Autodesk Fusion with Claude": a pressure housing closed by a
+# SealedCover.py  -  Chapter 11 of "Mechanical Design in Autodesk Fusion with Claude": a pressure housing closed by a
 # bolted cover and sealed by an O-ring in a face groove. The O-ring is drawn at its free size, so Fusion's interference
 # check measures its squeeze. Written from PROMPT.txt beside it; checked by checks/sealed_cover_check.py.
 #
@@ -27,7 +27,7 @@ NEW = adsk.fusion.FeatureOperations.NewBodyFeatureOperation
 CUT = adsk.fusion.FeatureOperations.CutFeatureOperation
 JOIN = adsk.fusion.FeatureOperations.JoinFeatureOperation
 SECTIONS = (1.78, 2.62, 3.53)              # O-ring cross-sections, mm
-FI_M5 = 0.75 * 14.2 * 580.0                # preload of an M5 8.8 bolt, N (Chapter 8)
+FI_M5 = 0.75 * 14.2 * 580.0                # preload of an M5 8.8 bolt, N (Chapter 9)
 H_HOUSING, T_COVER, CAVITY = 20.0, 8.0, 10.0
 BOLT_D, HOLE_D, HEX_S, HEX_K, ENGAGE = 5.0, 5.5, 8.0, 3.5, 10.0
 

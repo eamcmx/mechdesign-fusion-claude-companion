@@ -1,4 +1,4 @@
-# Picture for Chapter 8: BoltedFlange with its defaults (4 x M8 on a 60 mm bolt circle).
+# Picture for Chapter 9: BoltedFlange with its defaults (4 x M8 on a 60 mm bolt circle).
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

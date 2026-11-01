@@ -1,4 +1,4 @@
-# Picture for Chapter 18: CycloidalDrive with the output flange hidden: the disc, the ring pins, the eccentric.
+# Picture for Chapter 19: CycloidalDrive with the output flange hidden: the disc, the ring pins, the eccentric.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

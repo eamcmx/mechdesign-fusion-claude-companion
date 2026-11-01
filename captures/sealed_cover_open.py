@@ -1,4 +1,4 @@
-# Picture for Chapter 10: SealedCover with the cover and the bolts hidden, the O-ring in its face groove.
+# Picture for Chapter 11: SealedCover with the cover and the bolts hidden, the O-ring in its face groove.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

@@ -1,5 +1,5 @@
 # geneva_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 06:26, 4 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 07:20, 5 s
 
 Geneva 1.0 (2026-11-01)
   ok   C 42.426, b 30.000, indexing 90.0 deg, dwell 270.0 deg, peak speed ratio 2.414
@@ -13,7 +13,7 @@ Peak wheel speed at mid-index: 2.414 times the driver's
 Turn "Driver turns" and set "Wheel turns" by the Geneva law: Fusion cannot link them.
 
 [Geneva 1.0 (2026-11-01)] Geneva 1.0 (2026-11-01)
-  OK pressed, built in 2 s
+  OK pressed, built in 3 s
   ok   a new design opened
   ok   three components: ['Driver', 'Ground', 'Wheel']
   ok   one body each

@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 7: a deep groove ball bearing (6002 or 61902) on a shaft and in a housing; the balls orbit at the cage's speed; the rating life is reported."
+        "": "Chapter 8: a deep groove ball bearing (6002 or 61902) on a shaft and in a housing; the balls orbit at the cage's speed; the rating life is reported."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

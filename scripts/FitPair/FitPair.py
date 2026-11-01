@@ -1,5 +1,5 @@
 # =============================================================================
-# FitPair.py  -  Chapter 6 of "Mechanical Design in Autodesk Fusion with Claude": a pin in a hole, each made at a chosen
+# FitPair.py  -  Chapter 7 of "Mechanical Design in Autodesk Fusion with Claude": a pin in a hole, each made at a chosen
 # limit of its ISO 286 tolerance, so that the fit can be measured in Fusion. Written from PROMPT.txt beside it;
 # checked by checks/fit_pair_check.py.
 #

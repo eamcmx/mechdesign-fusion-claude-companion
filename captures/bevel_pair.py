@@ -1,4 +1,4 @@
-# Pictures for Chapter 16: BevelPair with its defaults; the script colours the gears.
+# Pictures for Chapter 17: BevelPair with its defaults; the script colours the gears.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

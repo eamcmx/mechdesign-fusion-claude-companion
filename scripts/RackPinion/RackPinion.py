@@ -1,5 +1,5 @@
 # =============================================================================
-# RackPinion.py  -  Chapter 15 of "Mechanical Design in Autodesk Fusion with Claude": a spur pinion on a fixed shaft
+# RackPinion.py  -  Chapter 16 of "Mechanical Design in Autodesk Fusion with Claude": a spur pinion on a fixed shaft
 # and a straight rack sliding under it, assembled so that Drive Joints on the pinion moves the rack. Written from
 # PROMPT.txt beside it; checked by checks/rack_pinion_check.py.
 #
@@ -148,7 +148,7 @@ def extrude(comp, prof, length_mm, op=NEW, body=None):
 
 
 def gear_body(comp, m, z, alpha_deg, b, z0, phase, name):
-    """Chapter 11's gear: root disc with a bore, one tooth joined to it, a circular pattern of that tooth."""
+    """Chapter 12's gear: root disc with a bore, one tooth joined to it, a circular pattern of that tooth."""
     pts, rf = tooth_outline(m * CM, z, math.radians(alpha_deg), BACKLASH * CM, phase)
     sk = comp.sketches.add(plane_at(comp, z0))
     sk.sketchCurves.sketchCircles.addByCenterRadius(P3(0, 0, 0), rf)

@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 12: a two-stage reverted compound spur gear train, input and output on one spindle, a cluster gear on a countershaft."
+        "": "Chapter 13: a two-stage reverted compound spur gear train, input and output on one spindle, a cluster gear on a countershaft."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

@@ -1,5 +1,5 @@
 # =============================================================================
-# LeadScrewAxis.py  -  Chapter 20 of "Mechanical Design in Autodesk Fusion with Claude": a linear axis. A trapezoidal
+# LeadScrewAxis.py  -  Chapter 21 of "Mechanical Design in Autodesk Fusion with Claude": a linear axis. A trapezoidal
 # lead screw turns in a frame; a carriage carrying the nut slides on a guide rod. Both threads are their sections
 # swept along the axis with a twist. Written from PROMPT.txt beside it; checked by checks/lead_screw_check.py.
 #

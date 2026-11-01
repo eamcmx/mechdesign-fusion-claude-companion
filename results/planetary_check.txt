@@ -1,37 +1,6 @@
 # planetary_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 06:30, 39 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 07:22, 40 s
 
-PlanetaryPrompt 1.0 (2026-11-01)
-  ok   Run opens the dialog
-Planetary gearbox built.
-
-Zs = 16, Zp = 20, Zr = Zs + 2 · Zp = 56, 3 planets, module 1.50 mm
-Ring held (sun in, carrier out):    1 + Zr / Zs = 4.5000
-Carrier held (sun in, ring out):    -Zr / Zs = -3.5000
-Sun held (ring in, carrier out):    1 + Zs / Zr = 1.2857
-
-Drive Joints on "Sun (input)": one turn moves the carrier 80.00 deg the same way.
-
-[PlanetaryPrompt 1.0 (2026-11-01)] PlanetaryPrompt 1.0 (2026-11-01)
-  OK pressed with the defaults, built in 8 s
-  ok   a new design opened
-  ok   parts: ['Carrier', 'Planet 1', 'Planet 2', 'Planet 3', 'Ring', 'Sun', 'Sun bearing']
-  ok   one body each
-  ok   the ring is grounded
-  ok   As-built Joints only: 5 revolute, 1 rigid, plain Joints 0
-  ok   Motion Links: ['Sun to carrier', 'Planet 1 spin', 'Planet 2 spin', 'Planet 3 spin']
-  ok   no interference at rest 
-  one sun turn: carrier joint 80.000 deg, planet 1 on the carrier -224.000 deg
-  ok   carrier = sun / 4.500 at every 45 deg step (worst error 0.0000 deg)
-  ok   each planet = -2.800 x carrier, relative to the carrier (worst error 0.0000 deg)
-  ok   no interference at any of the 8 steps 
-  Zs 24, Zp 30, N 4: Zs = 24, Zp = 30, Zr = Zs + 2 · Zp = 84, 4 planets, module 1.50 mm
-  ok   parts: ['Carrier', 'Planet 1', 'Planet 2', 'Planet 3', 'Planet 4', 'Ring', 'Sun', 'Sun bearing']
-  ok   one body each
-  ok   the ring is grounded
-  ok   As-built Joints only: 6 revolute, 1 rigid, plain Joints 0
-  ok   Motion Links: ['Sun to carrier', 'Planet 1 spin', 'Planet 2 spin', 'Planet 3 spin', 'Planet 4 spin']
-  ok   no interference at rest 
   one sun turn: carrier joint 80.000 deg, planet 1 on the carrier -224.000 deg
   ok   carrier = sun / 4.500 at every 45 deg step (worst error 0.0000 deg)
   ok   each planet = -2.800 x carrier, relative to the carrier (worst error 0.0000 deg)

@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 20: a linear axis, a trapezoidal lead screw and a carriage with its nut on a guide rod; torque, efficiency and self-locking."
+        "": "Chapter 21: a linear axis, a trapezoidal lead screw and a carriage with its nut on a guide rod; torque, efficiency and self-locking."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

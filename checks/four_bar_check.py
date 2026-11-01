@@ -1,4 +1,4 @@
-# FourBar (Chapter 21) against the acceptance criteria of its prompt, measured on what Fusion built: the crank stepped
+# FourBar (Chapter 22) against the acceptance criteria of its prompt, measured on what Fusion built: the crank stepped
 # through one turn, 30 deg at a time; at every step the rocker's turn measured on its body and compared with
 # Freudenstein's equation, worked here independently of the script's circle intersection; no interference.
 import math, sys, importlib

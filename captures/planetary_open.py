@@ -1,4 +1,4 @@
-# Picture for Chapter 14: PlanetaryPrompt with its defaults, the carrier and the sun bearing hidden, the parts coloured
+# Picture for Chapter 15: PlanetaryPrompt with its defaults, the carrier and the sun bearing hidden, the parts coloured
 # for the picture only (the script leaves them grey): ring grey, sun blue, planets yellow.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')

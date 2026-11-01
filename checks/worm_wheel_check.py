@@ -1,4 +1,4 @@
-# WormWheel (Chapter 17) against the acceptance criteria of its prompt, measured on what Fusion built: the numbers
+# WormWheel (Chapter 18) against the acceptance criteria of its prompt, measured on what Fusion built: the numbers
 # recomputed independently; the wheel's turn about +Z measured on its body when the worm is driven one turn about +X;
 # no collision at the 12 steps of that turn.
 import math, sys, importlib

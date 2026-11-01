@@ -1,5 +1,5 @@
 # =============================================================================
-# BeltDrive.py  -  Chapter 19 of "Mechanical Design in Autodesk Fusion with Claude": a GT2 timing-belt drive. The
+# BeltDrive.py  -  Chapter 20 of "Mechanical Design in Autodesk Fusion with Claude": a GT2 timing-belt drive. The
 # centre distance is solved so that a belt of a whole number of teeth fits; the belt is drawn as the band it is at
 # rest, round the pulleys' outside diameters. Written from PROMPT.txt beside it; checked by checks/belt_drive_check.py.
 #

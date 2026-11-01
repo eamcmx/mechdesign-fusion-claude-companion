@@ -1,5 +1,5 @@
 # helical_pair_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 06:27, 23 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 07:24, 35 s
 
 HelicalPair 1.0 (2026-11-01)
   ok   all values recomputed independently 
@@ -13,7 +13,7 @@ Twist per sweep kept by Fusion: gear 1 11.8 deg, gear 2 -5.9 deg
 z_min = 14.41; transverse contact ratio 1.504, overlap ratio 0.656
 
 [HelicalPair 1.0 (2026-11-01)] HelicalPair 1.0 (2026-11-01)
-  OK pressed, built in 4 s
+  OK pressed, built in 6 s
   ok   a new design opened
   ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
   ok   one body each

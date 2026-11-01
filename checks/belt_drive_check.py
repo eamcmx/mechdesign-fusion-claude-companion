@@ -1,4 +1,4 @@
-# BeltDrive (Chapter 19) against the acceptance criteria of its prompt, measured on what Fusion built: the drive's
+# BeltDrive (Chapter 20) against the acceptance criteria of its prompt, measured on what Fusion built: the drive's
 # numbers recomputed independently (the centre distance by Newton's method, not the script's bisection); the belt's
 # volume against width x thickness x the length of its centre line; pulley 1 stepped round and pulley 2 measured.
 import math, sys, importlib

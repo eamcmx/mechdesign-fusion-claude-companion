@@ -1,4 +1,4 @@
-# Pictures for Chapter 14: PlanetaryPrompt with its defaults.
+# Pictures for Chapter 15: PlanetaryPrompt with its defaults.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

@@ -1,5 +1,5 @@
 # bevel_pair_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 05:34, 5 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 07:19, 6 s
 
 BevelPair 1.0 (2026-11-01)
   ok   all values recomputed independently 
@@ -13,7 +13,7 @@ Virtual (Tredgold) teeth z_v1 = 22.36, z_v2 = 89.44; contact ratio 1.712
 Drive Joints on "Pinion turns": 90 deg turns the gear -45.0 deg about +X.
 
 [BevelPair 1.0 (2026-11-01)] BevelPair 1.0 (2026-11-01)
-  OK pressed, built in 3 s
+  OK pressed, built in 4 s
   ok   a new design opened
   ok   four components: ['Gear', 'Pinion', 'Shaft 1', 'Shaft 2']
   ok   one body each

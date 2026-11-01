@@ -16,7 +16,7 @@ DERIVED (computed from the inputs, never typed):
   the same centre distance (a reverted train: input and output on one axis)
 - ratio of the train, input speed over output speed: (z2 / z1) * (z4 / z3); the output turns the same way as the
   input (two external meshes)
-- contact ratio of each stage, as in Chapter 11, pressure angle 20 degrees
+- contact ratio of each stage, as in Chapter 12, pressure angle 20 degrees
 - levels: stage 1 from z = 1 to 1 + b above the plate, stage 2 from z = 3 + b to 3 + 2b
 
 HARD CONSTRAINTS:

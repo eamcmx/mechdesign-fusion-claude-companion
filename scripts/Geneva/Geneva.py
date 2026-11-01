@@ -1,5 +1,5 @@
 # =============================================================================
-# Geneva.py  -  Chapter 24 of "Mechanical Design in Autodesk Fusion with Claude": an external Geneva drive. A driver
+# Geneva.py  -  Chapter 25 of "Mechanical Design in Autodesk Fusion with Claude": an external Geneva drive. A driver
 # with a pin and a locking disc indexes a slotted wheel by one slot per turn and holds it still between. Written from
 # PROMPT.txt beside it; checked by checks/geneva_check.py.
 #

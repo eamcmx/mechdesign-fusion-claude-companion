@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 10: a pressure housing closed by a bolted cover and sealed by an O-ring in a face groove; squeeze, gland fill and the bolts' margin, the squeeze measured by Fusion's interference check."
+        "": "Chapter 11: a pressure housing closed by a bolted cover and sealed by an O-ring in a face groove; squeeze, gland fill and the bolts' margin, the squeeze measured by Fusion's interference check."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

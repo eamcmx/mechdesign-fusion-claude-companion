@@ -1,5 +1,5 @@
 # =============================================================================
-# CycloidalDrive.py  -  Chapter 18 of "Mechanical Design in Autodesk Fusion with Claude": a single-disc cycloidal
+# CycloidalDrive.py  -  Chapter 19 of "Mechanical Design in Autodesk Fusion with Claude": a single-disc cycloidal
 # drive. The input's eccentric rolls a disc of N_p - 1 lobes round N_p ring pins; six output pins in the disc's holes
 # take off its slow turn. Written from PROMPT.txt beside it; checked by checks/cycloidal_check.py.
 #

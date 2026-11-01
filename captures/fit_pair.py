@@ -1,4 +1,4 @@
-# Picture for Chapter 6: FitPair, 20 H7/g6 at maximum material; the block see-through so the pin in its hole shows.
+# Picture for Chapter 7: FitPair, 20 H7/g6 at maximum material; the block see-through so the pin in its hole shows.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

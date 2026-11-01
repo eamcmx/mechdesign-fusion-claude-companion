@@ -1,4 +1,4 @@
-# RackPinion (Chapter 15) against the acceptance criteria of its prompt, measured on what Fusion built: the numbers
+# RackPinion (Chapter 16) against the acceptance criteria of its prompt, measured on what Fusion built: the numbers
 # recomputed independently; the pinion driven and the rack's travel read from its joint AND its body; no tooth
 # collision while the pinion turns through one tooth pitch.
 import math, sys, importlib

@@ -1,4 +1,4 @@
-# Pictures for Chapter 17: WormWheel with its defaults; the script colours the worm and the wheel.
+# Pictures for Chapter 18: WormWheel with its defaults; the script colours the worm and the wheel.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

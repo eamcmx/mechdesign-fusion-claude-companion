@@ -1,5 +1,5 @@
 # =============================================================================
-# BoltedFlange.py  -  Chapter 8 of "Mechanical Design in Autodesk Fusion with Claude": two flange plates clamped by
+# BoltedFlange.py  -  Chapter 9 of "Mechanical Design in Autodesk Fusion with Claude": two flange plates clamped by
 # hexagon bolts and nuts on a bolt circle; preload, tightening torque and the joint's safety factors under an external
 # tensile load. Written from PROMPT.txt beside it; checked by checks/bolted_flange_check.py.
 #

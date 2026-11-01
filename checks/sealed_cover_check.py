@@ -1,4 +1,4 @@
-# SealedCover (Chapter 10) against the acceptance criteria of its prompt, measured on what Fusion built. The seal's
+# SealedCover (Chapter 11) against the acceptance criteria of its prompt, measured on what Fusion built. The seal's
 # numbers are recomputed here from the formulas of the prompt, independently of the script, and compared; then the
 # interference check must find the squeeze volume, and nothing else.
 import math, sys, importlib

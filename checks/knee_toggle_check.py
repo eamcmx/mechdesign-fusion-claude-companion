@@ -1,4 +1,4 @@
-# KneeToggle (Chapter 22) against the acceptance criteria of its prompt, measured on what Fusion built: the upper link
+# KneeToggle (Chapter 23) against the acceptance criteria of its prompt, measured on what Fusion built: the upper link
 # stepped from 30 to 2 deg, 2 deg at a time; at every step the ram's position measured on its body; between every two
 # steps the knee's sideways travel over the ram's travel (virtual work, on Fusion's positions) against the formula.
 import math, sys, importlib

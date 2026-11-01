@@ -1,5 +1,5 @@
 # =============================================================================
-# BevelPair.py  -  Chapter 16 of "Mechanical Design in Autodesk Fusion with Claude": a pair of straight bevel gears on
+# BevelPair.py  -  Chapter 17 of "Mechanical Design in Autodesk Fusion with Claude": a pair of straight bevel gears on
 # shafts at right angles, assembled and ready to turn with Drive Joints. The gears are built as the bevel wrist of
 # Topic 5 builds its miter gears, for any pair of cone angles. Written from PROMPT.txt beside it; checked by
 # checks/bevel_pair_check.py.

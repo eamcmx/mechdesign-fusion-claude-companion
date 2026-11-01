@@ -1,4 +1,4 @@
-# CamFollower (Chapter 23) against the acceptance criteria of its prompt, measured on what Fusion built: the cam
+# CamFollower (Chapter 24) against the acceptance criteria of its prompt, measured on what Fusion built: the cam
 # stepped through one turn, 10 deg at a time; at each step its real turn measured on its body, the follower set to the
 # lift worked here from the motion law (not the script's function), then Interference and Fusion's own minimum
 # distance between the roller and the cam.

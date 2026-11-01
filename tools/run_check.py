@@ -6,8 +6,9 @@
     python tools/run_check.py --all                     every check in checks/, in order
     python tools/run_check.py --cleanup                 close, without saving, the designs the checks opened
 
-Fusion must be running with its local endpoint on (Fusion 2705 or later prints "MCP - http://127.0.0.1:27183/mcp"
-in its Text Commands palette). A check is a Fusion script with run(_context); the text __COMPANION__ in it is replaced
+Fusion must be running with its MCP server on (Preferences > General > API > "Fusion MCP Server (runs locally on this
+device)"); tools/fusion_mcp.py finds its port (Chapter 3). A check is a Fusion script with run(_context); the text
+__COMPANION__ in it is replaced
 by this repository's folder before it is sent, so the checks work wherever the repository is cloned. Every design a
 check opens is marked 'mdfc' and only those are closed by --cleanup.
 """

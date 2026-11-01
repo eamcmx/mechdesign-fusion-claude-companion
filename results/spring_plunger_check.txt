@@ -1,5 +1,5 @@
 # spring_plunger_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 06:30, 5 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 07:22, 5 s
 
 SpringPlunger 1.0 (2026-11-01)
   ok   C 8.000, K_B 1.17241, N_a 9, L_s 15.00, k 3.32438, F1 19.95, F2 46.54, F_s 69.81, tau2 494.0, tau_s 741.1, S_sy 938.1, n2 1.899, n_s 1.266, xi 0.500, tau_p 3.29 
@@ -15,7 +15,7 @@ n2 = 1.899, n_s = 1.266, xi = 0.500
 Cross pin in double shear: tau_p = 3.29 MPa
 
 [SpringPlunger 1.0 (2026-11-01)] SpringPlunger 1.0 (2026-11-01)
-  OK pressed, built in 4 s
+  OK pressed, built in 5 s
   ok   a new design opened
   ok   six components: ['Base', 'Pin', 'Retaining ring', 'Rod', 'Sleeve', 'Spring']
   ok   one body each

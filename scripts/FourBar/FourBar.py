@@ -1,5 +1,5 @@
 # =============================================================================
-# FourBar.py  -  Chapter 21 of "Mechanical Design in Autodesk Fusion with Claude": a four-bar crank-rocker linkage,
+# FourBar.py  -  Chapter 22 of "Mechanical Design in Autodesk Fusion with Claude": a four-bar crank-rocker linkage,
 # assembled as one closed loop of four revolute joints. Written from PROMPT.txt beside it; checked by
 # checks/four_bar_check.py.
 #

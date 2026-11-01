@@ -1,5 +1,5 @@
 # =============================================================================
-# SpringPlunger.py  -  Chapter 9 of "Mechanical Design in Autodesk Fusion with Claude": a sleeve sliding down a rod
+# SpringPlunger.py  -  Chapter 10 of "Mechanical Design in Autodesk Fusion with Claude": a sleeve sliding down a rod
 # against a helical compression spring, held up by a DIN 471 retaining ring, the rod fixed in a base block by a
 # cross pin; the spring's rate, forces, stresses and safety factors. Written from PROMPT.txt beside it; checked by
 # checks/spring_plunger_check.py.

@@ -1,4 +1,4 @@
-# Geneva (Chapter 24) against the acceptance criteria of its prompt, measured on what Fusion built: the driver stepped
+# Geneva (Chapter 25) against the acceptance criteria of its prompt, measured on what Fusion built: the driver stepped
 # through one turn, 10 deg at a time; at each step the driver's real turn measured on its body, the wheel set by the
 # Geneva law worked here (still during the dwell), then Interference and Fusion's minimum distance between them.
 import math, sys, importlib

@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 8: two flange plates clamped by hexagon bolts and nuts; preload, tightening torque and the joint's safety factors under an external load."
+        "": "Chapter 9: two flange plates clamped by hexagon bolts and nuts; preload, tightening torque and the joint's safety factors under an external load."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

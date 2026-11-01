@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 17: a single-start Archimedean worm driving a worm wheel at right angles; thread and teeth swept with a twist."
+        "": "Chapter 18: a single-start Archimedean worm driving a worm wheel at right angles; thread and teeth swept with a twist."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

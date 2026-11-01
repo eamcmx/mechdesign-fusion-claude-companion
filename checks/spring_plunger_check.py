@@ -1,4 +1,4 @@
-# SpringPlunger (Chapter 9) against the acceptance criteria of its prompt, measured on what Fusion built. The spring's
+# SpringPlunger (Chapter 10) against the acceptance criteria of its prompt, measured on what Fusion built. The spring's
 # numbers are recomputed here from the formulas of the prompt, independently of the script, and compared.
 import math, sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')

@@ -1,4 +1,4 @@
-# Picture for Chapter 11's control: the driven gear not turned (no mesh phase): a tooth meets a tooth on the line of
+# Picture for Chapter 12's control: the driven gear not turned (no mesh phase): a tooth meets a tooth on the line of
 # centres.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')

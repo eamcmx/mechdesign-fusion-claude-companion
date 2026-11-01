@@ -1,5 +1,5 @@
-# LeadScrewAxis (Chapter 20) against the acceptance criteria of its prompt, measured on what Fusion built: the screw's
-# numbers recomputed independently; the screw stepped through one turn about +x (Chapter 17: never in one jump); at
+# LeadScrewAxis (Chapter 21) against the acceptance criteria of its prompt, measured on what Fusion built: the screw's
+# numbers recomputed independently; the screw stepped through one turn about +x (Chapter 18: never in one jump); at
 # every step the carriage's travel by its joint and its body, and no contact between the threads.
 import math, sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')

@@ -1,5 +1,5 @@
 # =============================================================================
-# CompoundTrain.py  -  Chapter 12 of "Mechanical Design in Autodesk Fusion with Claude": a two-stage reverted compound
+# CompoundTrain.py  -  Chapter 13 of "Mechanical Design in Autodesk Fusion with Claude": a two-stage reverted compound
 # spur gear train. Input and output gears turn on one fixed spindle; a cluster gear on a countershaft carries the two
 # middle gears. Written from PROMPT.txt beside it; checked by checks/compound_train_check.py.
 #
@@ -102,7 +102,7 @@ def polyline(sk, pts):
 
 
 def contact_ratio(m, za, zb):
-    """Chapter 11: the length of the path of contact over the base pitch."""
+    """Chapter 12: the length of the path of contact over the base pitch."""
     rba, rbb = m * za / 2 * math.cos(ALPHA), m * zb / 2 * math.cos(ALPHA)
     raa, rab = m * za / 2 + m, m * zb / 2 + m
     a = m * (za + zb) / 2

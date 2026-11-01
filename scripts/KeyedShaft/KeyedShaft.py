@@ -1,5 +1,5 @@
 # =============================================================================
-# KeyedShaft.py  -  Chapter 5 of "Mechanical Design in Autodesk Fusion with Claude": a shaft turning in a bearing
+# KeyedShaft.py  -  Chapter 6 of "Mechanical Design in Autodesk Fusion with Claude": a shaft turning in a bearing
 # block, with a hub fixed to it by a DIN 6885 parallel key. Written from PROMPT.txt beside it; checked by
 # checks/keyed_shaft_check.py.
 #

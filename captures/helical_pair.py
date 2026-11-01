@@ -1,4 +1,4 @@
-# Pictures for Chapter 13: HelicalPair with its defaults; the script colours the parts.
+# Pictures for Chapter 14: HelicalPair with its defaults; the script colours the parts.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 18: a single-disc cycloidal drive, the disc outline generated from the ring pins seen from the turning disc."
+        "": "Chapter 19: a single-disc cycloidal drive, the disc outline generated from the ring pins seen from the turning disc."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

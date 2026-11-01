@@ -1,4 +1,4 @@
-# HelicalPair (Chapter 13) against the acceptance criteria of its prompt, measured on what Fusion built: the numbers
+# HelicalPair (Chapter 14) against the acceptance criteria of its prompt, measured on what Fusion built: the numbers
 # recomputed independently; the twist of each gear read from the angles of its teeth's tips at the bottom, middle and
 # top faces; the mesh driven and swept for collisions; the herringbone the same way.
 import math, sys, importlib

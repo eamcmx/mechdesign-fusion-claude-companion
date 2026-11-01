@@ -1,5 +1,5 @@
 # cycloidal_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 05:35, 8 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 07:20, 8 s
 
 CycloidalDrive 1.0 (2026-11-01)
   ok   N_d 10, ratio -10, K1 0.550, outline 25.40 to 28.40 mm 
@@ -13,7 +13,7 @@ K1 = e N_p / R = 0.550; the disc outline runs from 25.400 to 28.400 mm; gap 0.10
 Step the input 30 deg at a time: the output turns -3.0 deg per step.
 
 [CycloidalDrive 1.0 (2026-11-01)] CycloidalDrive 1.0 (2026-11-01)
-  OK pressed, built in 6 s
+  OK pressed, built in 7 s
   ok   a new design opened
   ok   four components: ['Disc', 'Housing', 'Input', 'Output']
   ok   one body each

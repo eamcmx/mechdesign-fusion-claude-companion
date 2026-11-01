@@ -1,4 +1,4 @@
-# Picture for Chapter 25: BevelWristPrompt with its defaults, the frame and the yoke hidden: the four miter gears round
+# Picture for Chapter 26: BevelWristPrompt with its defaults, the frame and the yoke hidden: the four miter gears round
 # one apex, coloured for the picture only (output blue, idler grey, side gears yellow).
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')

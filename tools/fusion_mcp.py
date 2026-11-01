@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
-"""Talk to desktop Fusion through the local endpoint it announces in its Text Commands palette
-("MCP - http://127.0.0.1:27183/mcp", Fusion 2705 and later). No mouse, no screen.
+"""Talk to desktop Fusion through its local MCP server (Preferences > General > API > "Fusion MCP Server (runs
+locally on this device)"; Fusion shows its address in the Text Commands palette, "MCP - http://127.0.0.1:<port>/mcp").
+No mouse, no screen. The address is FUSION_MCP_URL if that is set; otherwise the first local port from 27182
+(Autodesk's default) whose server introduces itself as Fusion's. Another program may hold 27182: on the author's
+computer MATLAB's service host does, and Fusion's server is on 27183.
 
+    python fusion_mcp.py tools
+        prints the server's address, name and version and the tools it offers.
     python fusion_mcp.py script <file.py> [--readonly] [--out result.txt]
         runs the file in Fusion. The file must define run(_context) and print what it found;
         it must NOT catch its own exceptions (Fusion returns the traceback).
@@ -18,19 +23,22 @@ Fusion must be running with a document open. Saving a document is never done fro
 import base64
 import io
 import json
+import os
 import sys
 import urllib.request
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-URL = "http://127.0.0.1:27183/mcp"
 HEAD = {"Content-Type": "application/json", "Accept": "application/json, text/event-stream"}
+INIT = {"jsonrpc": "2.0", "id": 1, "method": "initialize",
+        "params": {"protocolVersion": "2025-03-26", "capabilities": {}, "clientInfo": {"name": "mdfc-companion", "version": "1"}}}
+URL = None
 
 
-def post(payload, session=None, timeout=600):
+def post(payload, session=None, timeout=600, url=None):
     h = dict(HEAD)
     if session:
         h["MCP-Session-Id"] = session
-    req = urllib.request.Request(URL, data=json.dumps(payload).encode("utf-8"), headers=h, method="POST")
+    req = urllib.request.Request(url or endpoint(), data=json.dumps(payload).encode("utf-8"), headers=h, method="POST")
     with urllib.request.urlopen(req, timeout=timeout) as r:
         body = r.read().decode("utf-8", "replace")
         sid = r.headers.get("MCP-Session-Id")
@@ -40,11 +48,37 @@ def post(payload, session=None, timeout=600):
     return (json.loads(body) if body.strip() else None), sid
 
 
+def endpoint():
+    """Fusion's MCP server: FUSION_MCP_URL, or the first port from 27182 whose server says it is Fusion's."""
+    global URL
+    if URL:
+        return URL
+    if os.environ.get("FUSION_MCP_URL"):
+        URL = os.environ["FUSION_MCP_URL"]
+        return URL
+    for port in range(27182, 27190):
+        url = "http://127.0.0.1:%d/mcp" % port
+        try:
+            out, _ = post(INIT, timeout=3, url=url)
+        except Exception:
+            continue  # nothing there, or a program that does not answer
+        name = (out or {}).get("result", {}).get("serverInfo", {}).get("name")
+        if name == "MCP Server Adapter":
+            URL = url
+            return URL
+    raise SystemExit("No Fusion MCP server found on ports 27182-27189: start Fusion, switch the server on in "
+                     "Preferences > General > API, or set FUSION_MCP_URL to the address in Fusion's Text Commands.")
+
+
 def call(tool, arguments, timeout=600):
-    init, sid = post({"jsonrpc": "2.0", "id": 1, "method": "initialize",
-                      "params": {"protocolVersion": "2025-03-26", "capabilities": {}, "clientInfo": {"name": "rdm-workshop", "version": "1"}}})
+    # 1. open a session; the server returns its id
+    init, sid = post(INIT)
+    # 2. say the client is ready
     post({"jsonrpc": "2.0", "method": "notifications/initialized"}, sid)
-    out, _ = post({"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": tool, "arguments": arguments}}, sid, timeout)
+    # 3. call one tool in that session
+    out, _ = post({"jsonrpc": "2.0", "id": 2, "method": "tools/call",
+                   "params": {"name": tool, "arguments": arguments}},
+                  sid, timeout)
     return out
 
 
@@ -68,6 +102,17 @@ def main(argv):
         print(__doc__)
         return 2
     cmd = argv[0]
+    if cmd == "tools":
+        init, sid = post(INIT)
+        post({"jsonrpc": "2.0", "method": "notifications/initialized"}, sid)
+        out, _ = post({"jsonrpc": "2.0", "id": 2, "method": "tools/list"}, sid)
+        info = init["result"]["serverInfo"]
+        print("%s  %s %s" % (endpoint(), info.get("name"), info.get("version")))
+        for t in out["result"]["tools"]:
+            props = t.get("inputSchema", {}).get("properties", {})
+            kinds = props.get("featureType", props.get("queryType", {})).get("enum", [])
+            print("  %-28s %s" % (t["name"], ", ".join(kinds)))
+        return 0
     if cmd == "script":
         src = io.open(argv[1], encoding="utf-8").read()
         obj = {"script": src}

@@ -1,5 +1,5 @@
 # lead_screw_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 06:30, 157 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 07:27, 144 s
 
 LeadScrewAxis 1.0 (2026-11-01)
   ok   all values recomputed independently, self-locking 
@@ -12,7 +12,7 @@ Against F = 500 N with f = 0.15: T = 655.63 N.mm, efficiency 0.364; self-locking
 Carriage travel plus and minus 20.0 mm; 3.00 mm per screw turn, towards -x for a positive turn
 
 [LeadScrewAxis 1.0 (2026-11-01)] LeadScrewAxis 1.0 (2026-11-01)
-  OK pressed, built in 8 s
+  OK pressed, built in 10 s
   ok   a new design opened
   ok   four components: ['Carriage', 'Frame', 'Guide rod', 'Screw']
   ok   one body each

@@ -1,5 +1,5 @@
-# CycloidalDrive (Chapter 18) against the acceptance criteria of its prompt, measured on what Fusion built: the input
-# stepped round 30 deg at a time (a joint jumps the short way round otherwise, Chapter 17); at every step the output's
+# CycloidalDrive (Chapter 19) against the acceptance criteria of its prompt, measured on what Fusion built: the input
+# stepped round 30 deg at a time (a joint jumps the short way round otherwise, Chapter 18); at every step the output's
 # turn, the disc's centre and its own turn measured on the bodies, and no interference.
 import math, sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')

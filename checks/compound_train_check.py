@@ -1,4 +1,4 @@
-# CompoundTrain (Chapter 12) against the acceptance criteria of its prompt, measured on what Fusion built: the train's
+# CompoundTrain (Chapter 13) against the acceptance criteria of its prompt, measured on what Fusion built: the train's
 # numbers recomputed independently, the turns of the cluster and the output read from the joints AND the bodies, and
 # no tooth collision while the input turns through one tooth pitch.
 import math, sys, importlib

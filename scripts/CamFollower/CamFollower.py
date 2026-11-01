@@ -1,5 +1,5 @@
 # =============================================================================
-# CamFollower.py  -  Chapter 23 of "Mechanical Design in Autodesk Fusion with Claude": a disc cam and a translating
+# CamFollower.py  -  Chapter 24 of "Mechanical Design in Autodesk Fusion with Claude": a disc cam and a translating
 # roller follower. The cam's outline is generated from the follower's motion law: the roller centre's path in the
 # cam's frame, offset by the roller radius. Written from PROMPT.txt beside it; checked by checks/cam_check.py.
 #

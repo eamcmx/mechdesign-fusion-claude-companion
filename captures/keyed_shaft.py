@@ -1,4 +1,4 @@
-# Picture for Chapter 5: KeyedShaft with its defaults; the hub see-through so the key in its slots can be seen.
+# Picture for Chapter 6: KeyedShaft with its defaults; the hub see-through so the key in its slots can be seen.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc

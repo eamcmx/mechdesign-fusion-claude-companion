@@ -1,4 +1,4 @@
-# BoltedFlange (Chapter 8) against the acceptance criteria of its prompt, measured on what Fusion built. The joint's
+# BoltedFlange (Chapter 9) against the acceptance criteria of its prompt, measured on what Fusion built. The joint's
 # numbers are recomputed here from the formulas, independently of the script, and compared with what it reports.
 import math, sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')

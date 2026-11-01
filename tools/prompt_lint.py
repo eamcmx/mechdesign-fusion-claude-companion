@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Check a prompt for the five parts of Chapter 3, before it is sent.
+"""Check a prompt for the five parts of Chapter 4, before it is sent.
 
     python tools/prompt_lint.py scripts/FirstAssembly/PROMPT.txt
     python tools/prompt_lint.py --all            every scripts/*/PROMPT.txt

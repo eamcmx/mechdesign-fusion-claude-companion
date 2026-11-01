@@ -1,5 +1,5 @@
 # =============================================================================
-# KneeToggle.py  -  Chapter 22 of "Mechanical Design in Autodesk Fusion with Claude": a knee toggle. Two equal links
+# KneeToggle.py  -  Chapter 23 of "Mechanical Design in Autodesk Fusion with Claude": a knee toggle. Two equal links
 # from a fixed pivot down to a ram on a straight guide, one closed loop of three revolute joints and a slider. Written
 # from PROMPT.txt beside it; checked by checks/knee_toggle_check.py.
 #
@@ -8,7 +8,7 @@
 #   HARD RULES    build() refuses a starting angle outside 5-60 deg and an over-centre angle outside 1-10 deg; the
 #                 upper link limited to just past straight
 #   CONVENTIONS   a new design; parts at the origin, drawn in place at alpha0, on four levels; links with round ends
-#                 (Chapter 21); cm inside the API; As-built Joints closing the loop with a slider
+#                 (Chapter 22); cm inside the API; As-built Joints closing the loop with a slider
 #   ACCEPTANCE    the message; the ram's position and the virtual-work ratio at every 2 deg step; two refusals
 #
 #   Emmanuel Merchan, TSI Engineering Faculty - AI Augmented Education

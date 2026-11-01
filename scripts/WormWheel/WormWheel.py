@@ -1,5 +1,5 @@
 # =============================================================================
-# WormWheel.py  -  Chapter 17 of "Mechanical Design in Autodesk Fusion with Claude": a single-start Archimedean worm
+# WormWheel.py  -  Chapter 18 of "Mechanical Design in Autodesk Fusion with Claude": a single-start Archimedean worm
 # driving a worm wheel at right angles, assembled and ready to turn with Drive Joints. The worm's thread is its
 # transverse section swept along its axis with a twist; the wheel is a helical gear of the worm's lead angle.
 # Written from PROMPT.txt beside it; checked by checks/worm_wheel_check.py.
@@ -62,7 +62,7 @@ def rotate(pts, ang):
 
 
 def wheel_tooth(m, z, at, backlash, phase, n=8):
-    """Chapter 11's tooth, the wheel's transverse section: module m and pressure angle at in the transverse plane."""
+    """Chapter 12's tooth, the wheel's transverse section: module m and pressure angle at in the transverse plane."""
     r = m * z / 2.0
     rb, ra, rf = r * math.cos(at), r + m, r - 1.25 * m
     r_lo = max(rb, rf)
@@ -234,7 +234,7 @@ def build(m=2.0, q=10.0, z2=30, alpha_x=20.0, b=8.0, starts=1):
         raise ValueError('Lead angle %.1f deg: more than 25 degrees; use more teeth or a larger q.' % math.degrees(w['lam']))
     ax, lam, r1, r2 = math.radians(alpha_x), w['lam'], w['d1'] / 2, w['d2'] / 2
     # the wheel's teeth turn by b tan(lambda) / r2 over the face width; Fusion keeps a twist in tenths of a degree,
-    # so the face width is chosen to make it exact (Chapter 13)
+    # so the face width is chosen to make it exact (Chapter 14)
     step = math.radians(0.1)
     b_asked, b = b, round(b * math.tan(lam) / r2 / step) * step * r2 / math.tan(lam)
     theta = b * math.tan(lam) / r2
