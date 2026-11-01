@@ -63,9 +63,11 @@ def check_duty(d):
     short = []
     for k, name in (('1', 'pinion'), ('2', 'gear')):
         if g['SF' + k] < b['nd']:
-            short.append('the %s\'s teeth have a bending factor of %.2f (%.1f needed)' % (name, g['SF' + k], b['nd']))
+            short.append('the %s\'s teeth have a bending factor of %.2f '
+                         '(%.1f needed)' % (name, g['SF' + k], b['nd']))
         if g['SH' + k] < SH_MIN:
-            short.append('the %s\'s flanks have a contact factor of %.3f (%.1f needed)' % (name, g['SH' + k], SH_MIN))
+            short.append('the %s\'s flanks have a contact factor of %.3f '
+                         '(%.1f needed)' % (name, g['SH' + k], SH_MIN))
     for k, name in (('n_in', 'the input end'), ('n_gear', 'the gear seat'), ('n_out', 'the output end')):
         if s[k] < b['nd']:
             short.append('%s has a factor of safety of %.2f (%.1f needed)' % (name, s[k], b['nd']))
