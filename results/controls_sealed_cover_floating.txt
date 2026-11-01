@@ -1,0 +1,6 @@
+# controls/sealed_cover_floating
+# Autodesk Fusion 2706.1.17, run 2026-11-01 03:55, 3 s
+
+  2 overlaps, total 120.288 mm^3: [('Housing', 'O-ring', 60.144), ('Cover', 'O-ring', 60.144)]
+  FAIL exactly one overlap, the O-ring with the cover, of 162.793 mm^3
+CONTROL: O-ring centred in the groove depth; the check above MUST fail

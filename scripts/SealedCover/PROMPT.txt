@@ -1,0 +1,49 @@
+Write a Fusion Python script that, when run, builds a pressure housing closed by a bolted cover and sealed by an O-ring
+in a face groove, the O-ring drawn at its free size so that Fusion's interference check measures its squeeze; and
+that reports the squeeze, the gland fill, the pressure force and the bolts' margin.
+
+INPUTS (a command dialog, with these defaults):
+- O-ring cross-section W (one of 1.78, 2.62, 3.53 mm), 2.62
+- O-ring inside diameter d1 (mm), 45
+- groove depth L (mm), 1.95
+- groove width G (mm), 3.5
+- pressure in the housing p (MPa), 1
+- number of cover bolts N (count), 4
+
+DERIVED (computed from the inputs, never typed):
+- squeeze c = W - L, as a percentage 100 * c / W
+- the O-ring is pushed outward by the pressure, so the groove's outside diameter is the O-ring's outside diameter:
+  D_o = d1 + 2 W; the groove's inside diameter D_i = D_o - 2 G
+- gland fill = (pi * W^2 / 4) / (G * L), as a percentage
+- O-ring section centre at radius R_c = d1 / 2 + W / 2, height -L + W / 2 (resting on the groove bottom)
+- squeeze volume, the part of the free O-ring above the groove: V = A * 2 * pi * R_c, where A is the circular
+  segment of radius r = W / 2 and height c: A = r^2 * acos((r - c) / r) - (r - c) * sqrt(2 r c - c^2)
+- pressure force on the cover, up to the O-ring's outside diameter: F_p = p * pi * D_o^2 / 4
+- cover bolts M5, property class 8.8 (Chapter 8): preload F_i = 0.75 * 14.2 * 580 = 6177 N each; clamp margin
+  n_c = N * F_i / F_p
+- bolt circle diameter = D_o + 12 rounded up to a whole mm; housing and cover diameter = bolt circle + 16
+
+HARD CONSTRAINTS:
+- Squeeze between 20 and 30 percent (Parker O-Ring Handbook, Design Chart 4-3, face seals), or refuse giving it.
+- Gland fill between 60 and 85 percent (Parker, section 3.7), or refuse giving it.
+- n_c >= 2, or refuse giving it.
+- No part touches the O-ring except the groove and the cover.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Housing (grounded), a cylinder from z = -20 to 0 with a
+  pressure cavity of diameter D_i - 6 and depth 10, the face groove cut into its top face, and N blind holes of
+  5 mm, 10 deep, on the bolt circle; Cover, from z = 0 to 8 with N clearance holes of 5.5 mm; O-ring, a torus
+  revolved from its circular section about z; Bolt 1 .. Bolt N, a hexagon head (across flats 8, height 3.5) on
+  the cover and a 5 mm shank down to z = -10. Bolt i at angle 360 (i - 1) / N degrees.
+- The API works in cm: convert every mm input.
+- Joints, As-built only, all rigid: Cover, O-ring and each Bolt to Housing.
+
+ACCEPTANCE CRITERIA:
+- A message gives c, the squeeze, D_o, D_i, the gland fill, V, F_p, n_c and a version tag.
+- Defaults: c = 0.67 mm, squeeze 25.57 percent, D_o = 50.24 mm, D_i = 43.24 mm, gland fill 78.99 percent,
+  V = 162.793 mm^3, F_p = 1982.4 N, n_c = 12.46.
+- Interference finds exactly one overlap, the O-ring with the cover, of 162.793 mm^3.
+- Refused: L = 1.70 (squeeze 35.11 percent); G = 3.0 (gland fill 92.16 percent); p = 7 MPa (n_c = 1.78).
+
+Give me one Python file and its .manifest.
