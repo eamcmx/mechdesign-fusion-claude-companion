@@ -1,0 +1,46 @@
+Write a Fusion Python script that, when run, builds a rack and pinion on a base plate: a spur pinion turning on a fixed
+shaft and a straight rack sliding under it, assembled so that Drive Joints on the pinion moves the rack.
+
+INPUTS (a command dialog, with these defaults):
+- module m (mm), 2
+- pinion teeth z, 20
+- rack teeth N_r (count), 16
+- pressure angle alpha (deg), 20
+- face width b (mm), 10
+
+DERIVED (computed from the inputs, never typed):
+- pinion: pitch radius r = m z / 2, base radius r cos(alpha), tip r + m, root r - 1.25 m (Chapter 11)
+- rack: pitch p = pi m; teeth with straight flanks at alpha to the vertical, addendum m above the pitch line,
+  dedendum 1.25 m below it, thickness on the pitch line p / 2 - 0.1 mm (backlash 0.2 mm); a body 8 mm deep below
+  the roots
+- rack travel per pinion turn = pi m z; per degree r * pi / 180
+- contact ratio of a rack and pinion: (sqrt(r_a^2 - r_b^2) - r sin(alpha) + m / sin(alpha)) / (pi m cos(alpha))
+- travel limits of the rack: plus and minus (N_r / 2 - 2) p, so that the pinion always meshes with whole teeth
+
+HARD CONSTRAINTS:
+- z at least 18 (fewer undercut at 20 degrees), or refuse.
+- N_r at least 8, or refuse: the rack must be long enough to travel.
+- A gap of the rack is centred under the pinion's tooth 0 at x = 0, which points straight down at the rack.
+- The rack's pitch line is tangent to the pinion's pitch circle.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Base plate (grounded), top face at z = 0; Shaft at
+  (0, r), 8 mm, with a collar under the pinion as in Chapter 11; Pinion on it from z = 1 to 1 + b, centre (0, r);
+  Rack from z = 1 to 1 + b, its pitch line on y = 0, teeth pointing up (+y), centred on x = 0. The rack's guide is
+  not drawn.
+- The pinion tooth outline is one closed polyline as in Chapter 11; the rack's whole outline, teeth and body, is
+  one closed polyline of sketch lines sharing their points.
+- The API works in cm and radians.
+- AsBuiltJoints: rigid between the plate and the shaft; revolute about z between the pinion and the shaft; a slider
+  along x between the rack and the plate, limited to the travel. A Motion Link: 360 deg of the pinion for pi m z of
+  the rack; the pinion turning anticlockwise (seen from above) moves the rack towards +x.
+
+ACCEPTANCE CRITERIA:
+- A message gives r, the travel per turn, the contact ratio, the travel limits and a version tag.
+- Defaults: r = 20 mm, travel per turn 125.664 mm, contact ratio 1.769, limits plus and minus 37.699 mm.
+- The pinion driven 90 deg moves the rack +31.416 mm, by the joint and by the body.
+- No interference at rest; no tooth collision while the pinion turns through one tooth pitch (18 deg).
+- Refused: z = 12; N_r = 6.
+
+Give me one Python file and its .manifest.

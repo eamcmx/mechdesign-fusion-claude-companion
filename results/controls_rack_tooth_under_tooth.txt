@@ -1,0 +1,6 @@
+# controls/rack_tooth_under_tooth
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:24, 3 s
+
+  1 overlaps: [('Pinion', 'Rack', 216.706)]
+  FAIL no interference at rest
+CONTROL: a rack tooth under the pinion tooth; the check above MUST fail

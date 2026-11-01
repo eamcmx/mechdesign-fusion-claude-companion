@@ -1,0 +1,29 @@
+# rack_pinion_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:23, 3 s
+
+RackPinion 1.0 (2026-11-01)
+  ok   r 20.00, p 6.283, travel per turn 125.664, contact ratio 1.769, limits 37.699 
+  ok   the rounded values of the prompt
+  ok   Run opens the dialog
+Rack and pinion built: module 2.00, pinion 20 teeth, rack 16 teeth.
+
+Pinion pitch radius r = m z / 2 = 20.00 mm; rack pitch p = pi m = 6.283 mm
+Rack travel per pinion turn pi m z = 125.664 mm (0.3491 mm per degree)
+Contact ratio 1.769; rack limits plus and minus 37.699 mm
+
+Drive Joints on "Pinion turns": 90 deg moves the rack 31.416 mm towards +x.
+
+[RackPinion 1.0 (2026-11-01)] RackPinion 1.0 (2026-11-01)
+  OK pressed, built in 3 s
+  ok   a new design opened
+  ok   four components: ['Base plate', 'Pinion', 'Rack', 'Shaft']
+  ok   one body each
+  ok   As-built Joints: rigid, revolute, slider ['RevoluteJointMotion', 'RigidJointMotion', 'SliderJointMotion']
+  ok   one Motion Link
+  ok   the rack limited to plus and minus 37.699 mm
+  ok   no interference at rest 
+  ok   pinion driven 90 deg: the rack joint 31.4159 mm, its body moved 31.4159 mm (want +31.4159)
+  ok   no tooth collision while the pinion turns 0 to 18 deg in 13 positions 
+  ok   {'z': 12} refused: 12 teeth: below 18 teeth at 20 degrees the involute is undercut.
+  ok   {'n_r': 6} refused: 6 rack teeth: at least 8, or the rack cannot travel and stay in mesh.
+ALL PASS
