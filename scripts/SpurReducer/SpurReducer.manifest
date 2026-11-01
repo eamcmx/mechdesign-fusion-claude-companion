@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 27: a single-stage spur reducer designed by subsystems. Sizing along the load path, then a housing, two shaft assemblies and all their parts, the shafts turning on their bearings."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "SpurReducer"
+}

@@ -1,0 +1,6 @@
+# controls/spur_reducer_short_spacer
+# Autodesk Fusion 2706.1.17, run 2026-11-01 11:00, 12 s
+
+  interference: none
+  FAIL the output shaft's stack without play: shoulder to gear 0.000 mm, gear to spacer 0.000 mm, spacer to bearing 2.000 mm
+CONTROL: a spacer 2 mm short; the check above MUST fail
