@@ -1,0 +1,29 @@
+# first_assembly_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 02:59, 2 s
+
+FirstAssembly 1.0 (2026-11-01)
+  ok   Run opens the dialog
+Block and shaft built.
+
+Shaft at (15.00, 0.00) mm, diameter 10.0 mm, 50.0 mm long
+Shaft volume  3927.0 mm^3
+Block volume  46365.7 mm^3
+
+Drive Joints on "Shaft turns" to turn it.
+
+[FirstAssembly 1.0 (2026-11-01)] FirstAssembly 1.0 (2026-11-01)
+  OK pressed, built in 1 s
+  ok   a new design opened
+  ok   two components: ['Block', 'Shaft']
+  ok   one body each
+  ok   the shaft is at (15.000, 0.000, 0.000) mm
+  ok   shaft volume 3926.99 mm^3 (pi * 5^2 * 50 = 3926.99)
+  ok   block volume 46365.74 mm^3 (60 * 40 * 20 - pi * 5.1^2 * 20 = 46365.74)
+  ok   the block is grounded
+  ok   one As-built Joint, no plain Joints
+  ok   no interference 
+  ok   joint at 90 deg: the shaft turned 90.000 deg about z, the block stayed
+  ok   the shaft turned in place, still at (15.000, 0.000) mm
+  ok   {'x': 22.0} refused: Only 2.9 mm of block left round the hole; at least 3 mm is needed.
+  ok   {'L_s': 15.0} refused: The shaft (15.0 mm) must be longer than the block is high (20.0 mm).
+ALL PASS

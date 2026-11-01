@@ -1,0 +1,40 @@
+Write a Fusion Python script that, when run, builds a block with a shaft standing in a hole through it, assembled
+so that the shaft can turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- block length L_b (mm), 60
+- block width W_b (mm), 40
+- block height H_b (mm), 20
+- shaft diameter d (mm), 10
+- shaft length L_s (mm), 50
+- shaft position x (mm), 15
+- shaft position y (mm), 0
+
+DERIVED (computed from the inputs, never typed):
+- the block is centred on the origin in x and y, its top face at z = 0, its bottom at z = -H_b
+- hole diameter d + 0.2 (0.1 mm clearance on the radius), through the block at (x, y)
+- the shaft stands in the hole from z = -H_b up to z = L_s - H_b
+
+HARD CONSTRAINTS:
+- At least 3 mm of block material all round the hole: |x| + (d + 0.2)/2 + 3 <= L_b/2 and
+  |y| + (d + 0.2)/2 + 3 <= W_b/2. Otherwise refuse with a message, before anything is drawn.
+- The shaft must be longer than the block is high (L_s > H_b), or refuse.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Two components, one body each: Block and Shaft. The Block is grounded.
+- Create the Shaft component WHERE IT BELONGS, at (x, y, 0), with the translation in the matrix given to
+  addNewComponent. Never move it afterwards: a later feature undoes the move in a parametric design.
+- Draw the shaft in its own component at its own origin; the API works in cm, so convert every mm input.
+- Join with an As-built Joint (not a Joint): revolute, the Shaft turning on the Block about z through the shaft's
+  centre.
+
+ACCEPTANCE CRITERIA:
+- A message at the end gives the shaft's position, the two volumes and a version tag.
+- With the defaults: the shaft is at (15, 0) mm; its volume is pi * 5^2 * 50 = 3927.0 mm^3; the block's volume is
+  60 * 40 * 20 - pi * 5.1^2 * 20 = 46365.7 mm^3.
+- No interference between the two parts.
+- Driving the joint 90 degrees turns the shaft 90 degrees about z and leaves the block where it is.
+- x = 22 is refused (only 30 - 22 - 5.1 = 2.9 mm of wall left).
+
+Give me one Python file and its .manifest.
