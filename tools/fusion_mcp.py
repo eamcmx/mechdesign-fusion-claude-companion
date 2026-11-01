@@ -70,7 +70,7 @@ def endpoint():
                      "Preferences > General > API, or set FUSION_MCP_URL to the address in Fusion's Text Commands.")
 
 
-def call(tool, arguments, timeout=600):
+def call(tool, arguments, timeout=3600):
     # 1. open a session; the server returns its id
     init, sid = post(INIT)
     # 2. say the client is ready

@@ -47,7 +47,9 @@ def run_dialog(ns, values=None):
             base.notify(self, args)
             seen.append(args.command)
     ns['_Created'] = Seen
-    n0 = app.documents.count
+    before = app.activeDocument
+    if before is not None:
+        before.attributes.add('mdfc', 'before', 'yes')     # Fusion may close an empty start-up design, so count is no test
     ns['run'](None)
     for _ in range(200):
         if seen:
@@ -68,7 +70,12 @@ def run_dialog(ns, values=None):
     for _ in range(30):
         adsk.doEvents()
     print('  OK pressed, built in %.0f s' % (time.time() - t0))
-    ok(app.documents.count == n0 + 1, 'a new design opened')
+    new = app.activeDocument
+    ok(new is not None and new.attributes.itemByName('mdfc', 'before') is None, 'a new design opened')
+    if before is not None and before.isValid:
+        a = before.attributes.itemByName('mdfc', 'before')
+        if a is not None:
+            a.deleteMe()
     mark()
     return app.activeDocument
 

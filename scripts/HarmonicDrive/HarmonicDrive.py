@@ -20,7 +20,7 @@ import traceback
 import adsk.core
 import adsk.fusion
 
-VERSION = 'HarmonicDrive 1.0 (2026-11-01)'
+VERSION = 'HarmonicDrive 1.2 (2026-11-01)'
 CM = 0.1                                   # Fusion works in centimetres: millimetres x 0.1
 P3 = adsk.core.Point3D.create
 VI = adsk.core.ValueInput.createByReal
@@ -31,6 +31,8 @@ HA, HF = 0.75, 0.90                        # addendum and dedendum, in modules, 
 JB = 0.06                                  # backlash on the pitch line (mm)
 WG_GAP = 0.03                              # wave generator inside the flexspline's bore (mm)
 N_CURVE = 360                              # points of the bore, the root line and the wave generator
+OVERLAP = 0.05                             # mm each joined part reaches into the last, so the join never rests on a touch
+BUILT = 'mdfc build'                       # the name of every sketch and plane the builders make
 CUP, HUB = 20.0, 10.0                      # the flexspline's wall below the teeth, the output hub's radius (mm)
 _STATE = {}
 
@@ -112,7 +114,9 @@ def plane_at(comp, z_mm):
         return comp.xYConstructionPlane
     ci = comp.constructionPlanes.createInput()
     ci.setByOffset(comp.xYConstructionPlane, VI(z_mm * CM))
-    return comp.constructionPlanes.add(ci)
+    plane = comp.constructionPlanes.add(ci)
+    plane.name = BUILT
+    return plane
 
 
 def extrude(comp, prof, length_mm, op=NEW, body=None):
@@ -138,6 +142,7 @@ def sketch_of(comp, z_mm, curves=(), circles=()):
     """A sketch at height z with closed polylines and circles (x, y, r); returns (sketch, the profile with the most
     loops: the ring between them, or the one region)."""
     sk = comp.sketches.add(plane_at(comp, z_mm))
+    sk.name = BUILT
     sk.isComputeDeferred = True
     for pts in curves:
         polyline(sk, pts)
@@ -183,16 +188,28 @@ def _flexspline(comp, k, phi):
                   k['b']).bodies.item(0)
     rim.name = 'Flexspline'
     extrude(comp, sketch_of(comp, -CUP, [flex_curve(k, -k['hf'], phi), flex_curve(k, -k['hf'] - k['t'], phi)])[1],
-            CUP, JOIN, rim)
-    r_d = k['r_f'] - k['hf'] - k['t'] / 2.0
-    extrude(comp, sketch_of(comp, -CUP - 2.0, circles=[(0, 0, r_d)])[1], 2.0, JOIN, rim)            # the diaphragm
-    extrude(comp, sketch_of(comp, -CUP - 6.0, circles=[(0, 0, HUB)])[1], 4.0, JOIN, rim)            # the output hub
+            CUP + OVERLAP, JOIN, rim)
+    r_d = k['r_f'] - k['hf'] + k['w0'] + 0.5     # the diaphragm covers the cup's bent end, so the join meets a whole face
+    extrude(comp, sketch_of(comp, -CUP - 2.0, circles=[(0, 0, r_d)])[1], 2.0 + OVERLAP, JOIN, rim)  # the diaphragm
+    extrude(comp, sketch_of(comp, -CUP - 6.0, circles=[(0, 0, HUB)])[1], 4.0 + OVERLAP, JOIN, rim)  # the output hub
 
 
 def _wave_generator(comp, k, phi):
     plug = extrude(comp, sketch_of(comp, 0.0, [flex_curve(k, -k['hf'] - k['t'] - WG_GAP, phi)])[1], k['b']).bodies.item(0)
     plug.name = 'WaveGenerator'
-    extrude(comp, sketch_of(comp, k['b'], circles=[(0, 0, 5.0)])[1], 12.0, JOIN, plug)
+    extrude(comp, sketch_of(comp, k['b'] - OVERLAP, circles=[(0, 0, 5.0)])[1], 12.0 + OVERLAP, JOIN, plug)
+
+
+def _clear(comp):
+    """Delete what the builders made: the extrusions (and with them the bodies), then their sketches and planes. Deleting
+    only the bodies would leave every rebuild's features in the timeline, which grows and slows each turn."""
+    ext = comp.features.extrudeFeatures
+    for i in reversed(range(ext.count)):
+        ext.item(i).deleteMe()
+    for coll in (comp.sketches, comp.constructionPlanes):
+        for i in reversed(range(coll.count)):
+            if coll.item(i).name == BUILT:
+                coll.item(i).deleteMe()
 
 
 def turn_to(phi_deg):
@@ -203,9 +220,10 @@ def turn_to(phi_deg):
     phi = math.radians(phi_deg)
     for name, make in (('Flexspline', _flexspline), ('WaveGenerator', _wave_generator)):
         comp = _occ(root, name).component
-        for i in reversed(range(comp.bRepBodies.count)):
-            comp.bRepBodies.item(i).deleteMe()
+        _clear(comp)
         make(comp, k, phi)
+        if comp.bRepBodies.count != 1:
+            raise RuntimeError('%s rebuilt at %.4f deg as %d bodies' % (name, phi_deg, comp.bRepBodies.count))
     _STATE['phi'] = phi_deg
     return math.degrees(rho_of(k, phi))
 
