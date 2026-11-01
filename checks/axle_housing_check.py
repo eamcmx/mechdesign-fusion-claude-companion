@@ -1,6 +1,7 @@
 # AxleHousing (Chapter 30) against the acceptance criteria of its prompt, measured on what Fusion built: the wheel
 # end's sizing recomputed here; the parts counted from Fusion's components; no interference at rest or with the half
-# shafts turned; each wheel bearing's inner ring on the shaft's seat and its outer ring in the tube's bore; the
+# shafts turned; each wheel bearing's inner ring on the shaft's seat and its outer ring in the tube's bore; each
+# wheel end able to go together (the bearing and its retaining ring pressed on from the shaft's inner end); the
 # housing's lowest point; three refusals.
 import math, sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
@@ -39,6 +40,32 @@ def cyl_radii(o):
     return out
 
 
+def span(entity, s):
+    """An entity's extent along the axle, outwards from the middle, in mm."""
+    bb = entity.boundingBox
+    a, b = s * bb.minPoint.y * 10, s * bb.maxPoint.y * 10
+    return min(a, b), max(a, b)
+
+
+def assembly_order(leaves, tag, s):
+    """The bearing's inner ring and the retaining ring are pressed onto the half shaft from its inner end, the flange
+    being part of the shaft: everything on the shaft inboard of the bearing's outboard face must pass through their
+    bores, and a shoulder of at least d_S/2 must begin at that face for the bearing to be pressed against."""
+    ring_in, ring_out = span(leaves['Bearing 6213 inner ring %s' % tag].bRepBodies.item(0), s)
+    keep_in, keep_out = span(leaves['Retaining ring %s' % tag].bRepBodies.item(0), s)
+    inboard, shoulder = 0.0, 0.0
+    for f in leaves['Half shaft %s' % tag].bRepBodies.item(0).faces:
+        if f.geometry.surfaceType != adsk.core.SurfaceTypes.CylinderSurfaceType:
+            continue
+        r = f.geometry.radius * 10
+        lo, hi = span(f, s)
+        if hi <= ring_out + 0.01:
+            inboard = max(inboard, r)
+        elif abs(lo - ring_out) < 0.05:
+            shoulder = max(shoulder, r)
+    return dict(inboard=inboard, shoulder=shoulder, ring_inboard=keep_out <= ring_in + 0.01)
+
+
 def run(_context):
     ns = fc.load(PATH)
     print(ns['VERSION'])
@@ -61,6 +88,12 @@ def run(_context):
         good = (32.5 in cyl_radii(leaves['Bearing 6213 inner ring %s' % tag]) and 32.5 in cyl_radii(leaves['Half shaft %s' % tag])
                 and 60.0 in cyl_radii(leaves['Bearing 6213 outer ring %s' % tag]) and 60.0 in cyl_radii(leaves['Banjo housing']))
         fc.ok(good, 'wheel bearing %s: inner ring on the 65 mm seat, outer ring in the 120 mm bore' % tag)
+    for tag, s in (('L', -1), ('R', 1)):
+        fit = assembly_order(leaves, tag, s)
+        fc.ok(fit['inboard'] <= 32.5 + 1e-3 and fit['ring_inboard'] and fit['shoulder'] >= 37.0 - 1e-3,
+              'wheel end %s goes together: the shaft inboard of the bearing at most %.2f mm in radius against the 32.5 mm '
+              'bore, the retaining ring inboard of the bearing %s, a shoulder of %.2f mm radius at its outboard face'
+              % (tag, fit['inboard'], fit['ring_inboard'], fit['shoulder']))
     bb = leaves['Banjo housing'].bRepBodies.item(0).boundingBox
     low = -bb.minPoint.z * 10
     fc.ok(abs(low - 168.07) < 0.01, 'the housing reaches %.2f mm below the axle: %.2f mm above the road' % (low, 365 - low))

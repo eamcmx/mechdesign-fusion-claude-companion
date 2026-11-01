@@ -1,0 +1,51 @@
+Write a Fusion Python script that, when run, builds the housing of a light truck's live rear axle and its two
+semi-floating wheel ends, as real parts: a banjo housing that holds the carrier of Chapter 29 and carries the truck's
+rear from its spring seats to its wheel bearings, and in each tube's end a half shaft on a deep-groove bearing, the
+shaft's flange carrying the wheel's studs; the half shafts turning in their bearings.
+
+INPUTS (a command dialog, with these defaults):
+- the half shaft's body d_body (mm), 48
+- the tube's outside diameter D (mm), 80
+- the tube's wall t (mm), 8
+- the wheel bearing's bore (mm), 65
+
+DERIVED (computed from the inputs by lib/axle_design.py, never typed; Budynas and Nisbett 2015):
+- the six load cases at one wheel (Chapter 28): the moment about the bearing b V -/+ r S with b = 65 mm and
+  r = 365 mm, b X; the shaft on two supports 615 mm apart; the bearing's load
+- the shaft, 4140 Q&T 425 C (Table A-21): yield in the hardest turn with the design torque; DE-Goodman fatigue under
+  the static wheel load and the running torque (Eqs. 6-8, 6-19, 6-20, Table 7-1); torsion at the splines' minor
+  diameter
+- the wheel bearing from Table 11-2: life (C10 / F)^3 against 127.32 million turns; Eq. 11-12 with Table 11-1 in a turn
+- the tube, 1035 HR (Table A-20): the pothole's bearing load on the 140 mm from the bearing to the spring seat
+
+HARD CONSTRAINTS:
+- Refuse a shaft that keeps under 1.5 against yield in the hardest turn or in fatigue, a bearing that does not last
+  127.32 million turns, a tube under 1.5 in the pothole, saying which.
+- The axle along Y, forward +X, up +Z, the axle's middle at the origin.
+- The housing: a drum round the axle whose outside is 168.07 mm from the axis (195 mm of ground clearance with the
+  365 mm static radius); a front neck whose flange takes the carrier's plate at x = 165, both cut flat 166 mm below
+  the axle, with eight studs and nuts M12 on 370 mm (lib/axle_design.joint_bolts); a rear neck past the drum's back
+  with a cover, ten M8 screws, filler and drain plugs; a breather; tubes to each wheel; at each tube's end the
+  bearing's housing with the seal's bore and the bearing's shoulder, and the brake's flange; a spring seat on each
+  tube 575 mm from the middle.
+- Each wheel end: a half shaft with eight straight-sided splines 35 x 40 at its inner end, held by the side gear at
+  100 mm from the middle, a body of d_body, the bearing's seat, a shoulder of d_S against which the bearing is
+  pressed, and a flange of 190 mm with six M14 studs on 139.7 mm, the flange part of the shaft; a retaining ring
+  pressed on inboard of the bearing, the seal running on it. Nothing inboard of the shoulder wider than the
+  bearing's bore. The bearing's outer ring, a retainer plate and an oil seal 74 x 100 x 10 stay with the housing.
+- Nothing touches anything else, at rest or turning.
+
+FUSION CONVENTIONS:
+- A new design document. Three subassemblies: Housing (grounded), Wheel end L, Wheel end R; each part a component,
+  grounded to its parent, one body each; deep-groove bearings drawn as in Chapter 27 (inner ring, outer ring, balls).
+- Each wheel end turns on an As-built revolute joint about Y on the housing.
+- The API works in cm and radians. Materials: Steel; the breather Brass; the seals Rubber, Silicone.
+
+ACCEPTANCE CRITERIA:
+- A message gives the shaft's three factors, the bearing's life, the tube's stress and factor, the parts list and a
+  version tag. Defaults: 2.49, 3.17, 1.47; 172.9 million turns; 142.0 MPa, 1.90.
+- 57 components in 16 kinds; no interference at rest or with each half shaft turned 30 and 75 deg; each bearing's
+  inner ring on the 65 mm seat and its outer ring in the 120 mm bore; each wheel end able to go together, the shaft
+  inboard of the bearing no wider than its bore, the retaining ring inboard of it, a shoulder of d_S at its outboard
+  face; the housing no lower than 168.07 mm below the axle.
+- Refused: a body of 38 mm, a bearing of 60 mm bore, a tube 70 x 5.

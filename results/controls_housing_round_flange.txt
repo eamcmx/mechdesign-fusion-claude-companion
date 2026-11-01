@@ -1,0 +1,6 @@
+# controls/housing_round_flange
+# Autodesk Fusion 2706.1.17, run 2026-11-01 20:06, 9 s
+
+  the housing reaches 205.00 mm below the axle: 160.00 mm above the road
+  FAIL at least 195 mm of ground clearance
+CONTROL: the carrier's flange is round; the clearance check MUST fail

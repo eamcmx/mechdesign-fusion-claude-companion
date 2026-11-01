@@ -34,14 +34,15 @@ import mdfc_parts as mp         # noqa: E402
 importlib.reload(ad)
 importlib.reload(mp)
 
-VERSION = 'AxleHousing 1.1 (2026-11-01)'
+VERSION = 'AxleHousing 1.2 (2026-11-01)'
 CM = 0.1
 VI = adsk.core.ValueInput.createByReal
 VS = adsk.core.ValueInput.createByString
 DRUM_R, DRUM_Y = 168.07, 135.0      # the drum round the axle: its outside reaches 196.93 mm above the road
 NECK_R, NECK_X = 166.0, (60.0, 165.0)   # the neck that holds the carrier, its flange's face at x = 165
 REAR_R, REAR_X = 130.0, (-185.0, -60.0) # the rear neck, past the drum's back; its cover's face at x = -185
-SEAL_BORE, RET_IN = 50.0, 45.0      # the seal's bore radius; the retainer plate's and retaining ring's meeting radius
+SEAL_BORE, RET_IN = 50.0, 45.0      # the seal's bore radius; the retainer plate's bore
+RING_W = 22.0                       # the retaining ring, pressed on inboard of the bearing; the seal runs on it
 FILL_Z, DRAIN_Z = 30.0, -100.0
 WALL = 8.0
 SEAT_Y = 575.0                      # the spring seats
@@ -185,9 +186,12 @@ def wheel_end_asm(root, Dz, side):
     y_fl = y_b + Bb['B'] / 2.0 + 14.0                     # the flange's inner face, past the tube's end
     dmin, dmaj, n, wd = SPLINE
     sh = mp.spline_shaft((0, s * Y_INNER, 0), (0, s * (Y_INNER + 60.0), 0), dmin, dmaj, n, wd)
-    mp.union(sh, mp.cyl((0, s * (Y_INNER + 59.99), 0), (0, s * (y0 - 40.0), 0), Dz['d_body'] / 2.0))   # the body
-    mp.union(sh, mp.cyl((0, s * (y0 - 40.01), 0), (0, s * y0, 0), Bb['dS'] / 2.0))                   # the shoulder
-    mp.union(sh, mp.cyl((0, s * (y0 - 0.01), 0), (0, s * y_fl, 0), Bb['d'] / 2.0))                  # the seat
+    y1 = y0 + Bb['B']                                     # the bearing's outboard face, against the shoulder
+    # everything inboard of the shoulder is no wider than the bearing's bore, so that the bearing and then the
+    # retaining ring are pressed on from the inner end; the flange is part of the shaft
+    mp.union(sh, mp.cyl((0, s * (Y_INNER + 59.99), 0), (0, s * (y0 - RING_W), 0), Dz['d_body'] / 2.0))  # the body
+    mp.union(sh, mp.cyl((0, s * (y0 - RING_W - 0.01), 0), (0, s * (y1 + 0.01), 0), Bb['d'] / 2.0))  # the seat
+    mp.union(sh, mp.cyl((0, s * y1, 0), (0, s * y_fl, 0), Bb['dS'] / 2.0))                    # the shoulder
     fl = mp.cyl((0, s * (y_fl - 0.01), 0), (0, s * (y_fl + 14.0), 0), 95.0)
     for kk in range(6):
         t_ = 2 * math.pi * kk / 6
@@ -202,9 +206,9 @@ def wheel_end_asm(root, Dz, side):
         o = mp.new_occ(asm.component, 'Bearing 6213 %s %s' % (nm, tag))
         mp.add_body(o, body, nm, 'Steel')
         parts.append(o)
-    yr = y_b + Bb['B'] / 2.0
     o = mp.new_occ(asm.component, 'Retaining ring %s' % tag)
-    mp.add_body(o, mp.tube((0, s * yr, 0), (0, s * (yr + 8.0), 0), RET_IN - 0.5, Bb['d'] / 2.0), 'Retaining ring', 'Steel')
+    mp.add_body(o, mp.tube((0, s * (y0 - RING_W), 0), (0, s * y0, 0), Bb['dS'] / 2.0, Bb['d'] / 2.0), 'Retaining ring',
+                'Steel')
     parts.append(o)
     for kk in range(6):
         t_ = 2 * math.pi * kk / 6

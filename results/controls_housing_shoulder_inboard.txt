@@ -1,0 +1,7 @@
+# controls/housing_shoulder_inboard
+# Autodesk Fusion 2706.1.17, run 2026-11-01 20:06, 8 s
+
+  interference at rest: none
+  the shaft inboard of the bearing reaches 37.00 mm in radius; the bearing's bore is 32.50
+  FAIL the bearing goes on from the shaft's inner end
+CONTROL: the shoulder is inboard of the bearing; the assembly check MUST fail
