@@ -1,0 +1,55 @@
+Write a Fusion Python script that, when run, builds a linear axis: a trapezoidal lead screw turning in a frame and a
+carriage with the nut, sliding on a guide rod, assembled so that Drive Joints on the screw moves the carriage; and
+that reports the screw's torque, efficiency and whether it locks itself.
+
+INPUTS (a command dialog, with these defaults):
+- screw major diameter d (mm), 12
+- pitch P (mm), 3
+- number of starts (count), 1
+- axial load on the nut F (N), 500
+- thread friction coefficient f, assumed (count), 0.15
+
+DERIVED (computed from the inputs, never typed):
+- trapezoidal thread, 30 deg included angle (flanks at alpha = 15 deg): lead L = starts * P; pitch diameter
+  d2 = d - P / 2; screw minor diameter d3 = d - P - 0.5; nut minor diameter D1 = d - P; nut major D4 = d + 0.5
+  (0.25 mm clearance at every crest and root)
+- thread thickness on the pitch line P / 2 - 0.1 mm for the screw and for the nut; the two together leave 0.2 mm
+- lead angle lambda = atan(L / (pi d2))
+- torque to move the load against it T = F d2 / 2 * (L + pi f d2 sec(alpha)) / (pi d2 - f L sec(alpha));
+  efficiency F L / (2 pi T); self-locking when pi f d2 sec(alpha) > L, the torque to lower the load then
+  F d2 / 2 * (pi f d2 sec(alpha) - L) / (pi d2 + f L sec(alpha))
+- carriage travel per screw turn = L, the carriage going towards -x when the screw turns positively about +x
+  (a right-hand thread)
+- travel limits: the carriage stays 2 mm clear of the frame's end blocks
+
+HARD CONSTRAINTS:
+- d from 8 to 40 mm and P from 2 to 10 mm, the thread depth P / 2 at most d / 4, or refuse.
+- A right-hand thread. In the screw's section square to its axis, the thread fills the angles
+  |phi - 2 pi x / L| <= 2 pi h(rho) / L, h(rho) its half-thickness along the axis at radius rho; the nut's thread
+  fills the same angles turned by half a lead (pi for one start).
+- The screw's and the nut's threads never touch: 0.25 mm at the crests and roots, 0.2 mm along the axis.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created at the origin, drawn in place, the screw's axis along world x at z = 20:
+  Frame (grounded): a plate from z = -6 to 0 and two end blocks; Guide rod: 8 mm, at y = 20, z = 20, between the
+  end blocks; Screw: a threaded length of 20 leads centred on x = 0, journals of 8 mm into the end blocks' bores;
+  Carriage: a block 20 mm long round the screw and the rod, its nut threaded in it.
+- Each thread is its section, ONE closed polyline, swept along the axis with a twist of a whole number of turns
+  (Fusion keeps a twist in tenths of a degree: Chapter 13).
+- The API works in cm and radians.
+- AsBuiltJoints: rigid for the guide rod to the frame; revolute about the screw's axis between the screw and the
+  frame, the direction tried and its sign measured (Chapter 16); a slider along x between the carriage and the
+  frame, limited to the travel. A Motion Link: 360 deg of the screw for L of the carriage, its direction from the
+  measured sign.
+
+ACCEPTANCE CRITERIA:
+- A message gives d2, d3, D1, D4, L, lambda, T, the efficiency, whether it locks (and the lowering torque) and a
+  version tag.
+- Defaults: d2 = 10.5 mm, d3 = 8.5 mm, D1 = 9 mm, D4 = 12.5 mm, L = 3 mm, lambda = 5.197 deg, T = 655.63 N.mm,
+  efficiency 0.364, self-locking, lowering torque 166.56 N.mm.
+- The screw stepped one turn about +x, 30 deg at a time: the carriage moves -0.25 mm per step, -3 mm in all,
+  by its joint and by its body; the screw and the nut never touch.
+- Refused: d = 6; P = 7 with d = 12 (thread depth 3.5 mm is more than d / 4 = 3 mm).
+
+Give me one Python file and its .manifest.

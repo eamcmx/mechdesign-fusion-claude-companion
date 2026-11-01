@@ -1,0 +1,26 @@
+# lead_screw_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 05:03, 155 s
+
+LeadScrewAxis 1.0 (2026-11-01)
+  ok   all values recomputed independently, self-locking 
+  ok   the rounded values of the prompt (5.197, 655.63, 0.364, 166.56)
+  ok   Run opens the dialog
+Lead screw axis built: Tr 12 x 3, 1 start(s), lead L = 3.00 mm.
+
+d2 = 10.50, d3 = 8.50, D1 = 9.00, D4 = 12.50 mm; lead angle 5.197 deg
+Against F = 500 N with f = 0.15: T = 655.63 N.mm, efficiency 0.364; self-locking: lowering the load takes 166.56 N.mm
+Carriage travel plus and minus 20.0 mm; 3.00 mm per screw turn, towards -x for a positive turn
+
+[LeadScrewAxis 1.0 (2026-11-01)] LeadScrewAxis 1.0 (2026-11-01)
+  OK pressed, built in 10 s
+  ok   a new design opened
+  ok   four components: ['Carriage', 'Frame', 'Guide rod', 'Screw']
+  ok   one body each
+  ok   As-built Joints: rigid, revolute, slider; one Motion Link
+  ok   no interference at rest 
+  ok   one screw turn (positive about +x): the carriage moved -3.0000 mm, its joint -3.0000 mm; -0.25 mm per positive 30 deg step (worst 4.44e-16 mm)
+  ok   a positive turn about +x moves the carriage towards -x (a right-hand thread)
+  ok   the screw and the nut never touch at the 12 steps 
+  ok   {'d': 6.0} refused: Screw 6.0 x 3.0: keep d from 8 to 40 mm and P from 2 to 10 mm.
+  ok   {'P': 7.0} refused: Thread depth P / 2 = 3.50 mm is more than d / 4 = 3.00 mm.
+ALL PASS

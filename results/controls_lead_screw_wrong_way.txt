@@ -1,0 +1,7 @@
+# controls/lead_screw_wrong_way
+# Autodesk Fusion 2706.1.17, run 2026-11-01 05:00, 68 s
+
+  ok   no interference at rest
+  steps with the threads in contact (screw deg, mm^3): [(30, 129.638), (60, 291.239), (90, 388.795), (120, 291.243), (150, 129.638)]
+  FAIL the screw and the nut never touch
+CONTROL: the carriage driven the wrong way; the stepped check MUST fail
