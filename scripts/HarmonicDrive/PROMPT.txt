@@ -1,0 +1,53 @@
+Write a Fusion Python script that, when run, builds a cup-type harmonic drive (strain wave gear): a rigid circular
+spline, a flexspline bent into an oval by the wave generator at a chosen angle, and the wave generator itself. The
+script turns the drive by building the flexspline bent at a new wave generator angle, since a rigid body cannot bend.
+
+INPUTS (a command dialog, with these defaults):
+- module m (mm), 0.3
+- flexspline teeth z_f (count), 200
+- tooth difference z_c - z_f (count), 2
+- face width b (mm), 8
+- flexspline wall under the teeth t (mm), 0.6
+- wave generator angle phi (deg), 0
+
+DERIVED (computed from the inputs, never typed):
+- circular spline teeth z_c = z_f + (z_c - z_f); ratio -z_f / (z_c - z_f) with the circular spline held (the
+  flexspline turns the other way, (z_c - z_f) / z_f of the wave generator)
+- pitch radii r_f = m z_f / 2 and r_c = m z_c / 2; the wave generator's push w0 = m (z_c - z_f) / 2, so that the bent
+  pitch line reaches r_c on the long axis
+- the flexspline turned as a whole by rho = -phi (z_c - z_f) / z_f
+- the bent pitch line, taken as inextensible: at material angle theta (on the flexspline already turned by rho), with
+  psi = theta - phi, it moves out by w = w0 cos 2 psi and along by v = -(w0 / 2) sin 2 psi
+- teeth on both parts: straight flanks at 30 deg, addendum 0.75 m, dedendum 0.9 m (0.15 m beyond the partner's
+  tip), thickness on the pitch line pi m / 2 - 0.03 mm (0.06 mm backlash); every point of a flexspline tooth is
+  carried on the normal of the bent pitch line, at its own distance from that line
+- circular spline: tooth k centred at 360 (k + 1/2) / z_c deg, so that a space faces 0 deg
+- the flexspline's bore t below its root line, bent the same way; the wave generator's outline 0.03 mm inside the
+  bore (the wave generator is drawn with its flexible bearing as one body)
+
+HARD CONSTRAINTS:
+- z_c - z_f must be 2 (a two-lobed wave generator), or refuse.
+- z_f from 60 to 320, or refuse.
+- The flexspline's teeth must not come to a point: their tip width must stay positive, or refuse.
+- At phi = 0 flexspline tooth 0 stands on the long axis at 0 deg, facing the circular spline's space there.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, at the origin with their geometry drawn in place: CircularSpline (grounded), a ring
+  from z = 0 to b, outside radius r_c + 0.9 m + 4 mm, with its internal teeth; Flexspline, the toothed rim from z = 0
+  to b, its wall bent the same way down to z = -20, and a round diaphragm with the output hub from z = -22 to -20;
+  WaveGenerator, the oval plug from z = 0 to b and an input shaft of 10 mm from z = b to b + 12.
+- Each toothed outline is one closed polyline whose lines share their points. The API works in cm and radians.
+- AsBuiltJoints: WaveGenerator revolute about z on CircularSpline; Flexspline revolute about z on CircularSpline.
+  No Motion Link: a rigid body cannot keep its oval turning with the wave generator. turn_to(phi) replaces the bodies
+  of Flexspline and WaveGenerator with new ones bent at phi, the flexspline turned by rho.
+
+ACCEPTANCE CRITERIA:
+- A message gives z_c, the ratio, r_f, r_c, w0, the tooth form and a version tag.
+- Defaults: z_c = 202, ratio -100; r_f = 30, r_c = 30.3, w0 = 0.3 mm.
+- Measured on the bodies at phi = 0: the flexspline's tooth tip 30.525 mm from the axis on the long axis and
+  29.925 mm on the short axis; the circular spline's tips 30.075 mm from the axis.
+- turn_to at 12 angles across one mesh period (360 / z_c deg) and at 45, 90 and 180 deg: no interference at any.
+- Refused: z_c - z_f = 1; z_f = 40.
+
+Give me one Python file and its .manifest.

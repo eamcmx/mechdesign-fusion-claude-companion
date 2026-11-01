@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 19: a cup-type harmonic drive, the flexspline's teeth carried on its bent pitch line and turned by rebuilding it at each wave generator angle."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "HarmonicDrive"
+}
