@@ -1,0 +1,45 @@
+Write a Fusion Python script that, when run, builds a disc cam with a translating roller follower: a cam whose outline
+is generated from a cycloidal rise, dwell, cycloidal return and dwell, and a follower on a straight guide; and that
+reports the cam's largest pressure angle and the pitch curve's smallest radius of curvature.
+
+INPUTS (a command dialog, with these defaults):
+- base circle radius R_b (mm), 25
+- roller radius R_r (mm), 6
+- lift h (mm), 10
+- rise angle beta1 (deg), 120
+- dwell at the top (deg), 60
+- return angle beta2 (deg), 120
+
+DERIVED (computed from the inputs, never typed):
+- the follower's lift s(theta): cycloidal rise s = h (u - sin(2 pi u) / (2 pi)), u = theta / beta1; dwell at h;
+  cycloidal return s = h (1 - (u - sin(2 pi u) / (2 pi))), u from 0 to 1 over beta2; dwell at 0 for the rest
+- prime circle radius R_p = R_b + R_r; the roller's centre at (0, R_p + s) on the +y axis
+- the pitch curve, the roller centre's path in the cam's frame for a cam turning anticlockwise by theta:
+  (R_p + s) (sin(theta), cos(theta)); the cam's outline that curve offset towards the centre by R_r + 0.05 mm
+  (a running gap), 1 point per degree, one closed polyline
+- pressure angle phi = atan((ds / dtheta) / (R_p + s)); its largest value
+- the pitch curve's radius of curvature, (r^2 + r'^2)^(3/2) / (r^2 + 2 r'^2 - r r''), r = R_p + s; its smallest value
+
+HARD CONSTRAINTS:
+- beta1 + dwell + beta2 at most 360 deg, or refuse.
+- The pressure angle at most 30 deg, or refuse giving it.
+- The pitch curve's smallest radius of curvature larger than the roller radius (no undercut), and no concave part
+  sharper than the roller, or refuse.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created at the origin, drawn in place at theta = 0: Ground (grounded), a plate from
+  z = -6 to 0; Cam from z = 1 to 9 with a 10 mm bore; Follower from z = 1 to 9: the roller (radius R_r round
+  (0, R_p)) and a stem 6 mm wide up the +y axis, one body (the roller's own spin is not modelled).
+- The API works in cm and radians.
+- AsBuiltJoints: Cam revolute about z on Ground at the origin; Follower slider along y on Ground. No Motion Link:
+  a Motion Link keeps a constant ratio, and a cam's is not constant. Whoever turns the cam sets the follower to s.
+
+ACCEPTANCE CRITERIA:
+- A message gives the largest pressure angle, the smallest radius of curvature and a version tag.
+- Defaults: largest pressure angle 14.97 deg; smallest radius of curvature of the pitch curve 29.38 mm.
+- The cam stepped through one turn, 10 deg at a time, the follower set to s(theta) at each step: no interference,
+  and the smallest distance between the roller and the cam, measured by Fusion, 0.05 mm at every step.
+- Refused: a rise angle of 40 deg (pressure angle 38.7 deg); a return of 200 deg (120 + 60 + 200 = 380 deg).
+
+Give me one Python file and its .manifest.

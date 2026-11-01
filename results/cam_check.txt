@@ -1,0 +1,26 @@
+# cam_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 05:17, 7 s
+
+CamFollower 1.0 (2026-11-01)
+  ok   the script's lift agrees with the motion law (worst 9.8e-15 mm)
+  ok   largest pressure angle 14.97 deg, smallest radius of curvature 29.38 mm
+  ok   Run opens the dialog
+Cam and roller follower built: base circle 25.0 mm, roller 6.0 mm, lift 10.0 mm.
+
+Cycloidal rise over 120 deg, dwell 60 deg, cycloidal return over 120 deg
+Largest pressure angle 14.97 deg; the pitch curve's smallest radius of curvature 29.38 mm
+
+Turn "Cam turns" and set "Follower slides" to s(theta): Fusion cannot link them.
+
+[CamFollower 1.0 (2026-11-01)] CamFollower 1.0 (2026-11-01)
+  OK pressed, built in 5 s
+  ok   a new design opened
+  ok   three components: ['Cam', 'Follower', 'Ground']
+  ok   one body each
+  ok   a revolute and a slider As-built Joint, no Motion Link
+  smallest distance roller to cam (mm): 0: 0.0500, 30: 0.0500, 60: 0.0500, 90: 0.0500, 120: 0.0500, 150: 0.0500, 180: 0.0500, 210: 0.0500, 240: 0.0500, 270: 0.0500, 300: 0.0500, 330: 0.0500
+  ok   no interference at the 36 steps 
+  ok   the gap measured by Fusion from 0.0500 to 0.0500 mm (0.05 wanted)
+  ok   {'beta1': 40.0} refused: The pressure angle reaches 38.7 deg: above 30 deg. Use a longer rise or a larger base circle.
+  ok   {'beta2': 200.0} refused: The motion takes 120 + 60 + 200 = 380 deg: more than one turn.
+ALL PASS

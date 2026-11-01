@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 23: a disc cam generated from a cycloidal motion law, and a translating roller follower."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "CamFollower"
+}
