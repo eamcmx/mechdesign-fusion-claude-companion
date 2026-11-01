@@ -1,0 +1,55 @@
+Write a Fusion Python script that, when run, builds a worm driving a worm wheel on shafts at right angles,
+assembled and ready to turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- axial module m (mm), 2
+- diameter factor q = d1 / m (count), 10
+- wheel teeth z2, 30
+- axial pressure angle alpha_x (deg), 20
+- wheel face width b (mm), 8
+- number of starts of the worm (count), 1
+
+DERIVED (computed from the inputs, never typed):
+- worm: pitch diameter d1 = q m; lead L = starts * pi * m; lead angle lambda = atan(starts / q); an Archimedean
+  thread, straight-sided in the axial section, addendum m, dedendum 1.25 m, thickness pi m / 2 - 0.1 mm on the pitch
+  line; 5 leads long
+- wheel: pitch diameter d2 = m z2 (the worm's axial module is the wheel's transverse module); its teeth are
+  Chapter 11's in the transverse plane, at the pressure angle alpha_x, turning by theta = b tan(lambda) / r2 over
+  the face width (a helical gear of the worm's lead angle)
+- centre distance a = (d1 + d2) / 2; ratio z2 / starts
+- normal pressure angle phi_n = atan(tan(alpha_x) cos(lambda)); efficiency driving from the worm
+  (cos phi_n - f tan lambda) / (cos phi_n + f / tan lambda) and back-driving from the wheel
+  (cos phi_n - f / tan lambda) / (cos phi_n + f tan lambda), at f = 0.05 and 0.10; self-locking above
+  f = cos(phi_n) tan(lambda)
+- Fusion keeps a sweep's twist in tenths of a degree (Chapter 13): adjust the wheel's face width to b', the nearest
+  width that makes theta a whole number of tenths
+
+HARD CONSTRAINTS:
+- z2 at least 18, or refuse; lambda at most 25 degrees, or refuse.
+- The worm right-handed; the wheel right-handed too (crossed shafts: the same hand).
+- The worm's axis lies in the wheel's mid-plane, along world +X, at y = -a; the wheel's axis is world +Z.
+- At the wheel's mid-plane, the thread facing the wheel meets a gap of the wheel.
+- One turn of the worm turns the wheel 360 / ratio degrees, the way the thread pushes it.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong (Matrix3D.setWithCoordinateSystem, local z along each
+  axis): Worm shaft and Wheel shaft (both grounded, 8 mm), Worm, Wheel; each bore 0.2 mm larger than its shaft.
+- The worm's thread: its section square to the axis, a lobe between two spirals (at radius rho the thread fills
+  the angles |phi| <= 2 pi hw(rho) / L, hw the half-thickness of the axial profile at rho), ONE closed polyline,
+  swept along the axis with a twist of 5 turns. The wheel's tooth swept the same way with the twist theta, then
+  patterned z2 times.
+- The API works in cm and radians.
+- AsBuiltJoints: revolute between the worm and its shaft and between the wheel and its shaft, the joint direction
+  tried and its sign measured (Chapter 16); a Motion Link at the ratio, its direction set from the signs.
+
+ACCEPTANCE CRITERIA:
+- A message gives d1, L, lambda, d2, a, the ratio, b', phi_n, the efficiencies and a version tag.
+- Defaults: d1 = 20 mm, L = 6.2832 mm, lambda = 5.7106 deg, d2 = 60 mm, a = 40 mm, ratio 30, b' = 7.854 mm,
+  phi_n = 19.909 deg, efficiency 0.649 (f = 0.05) and 0.479 (f = 0.10), back-driving -0.063 at f = 0.10 (self-locking),
+  self-locking above f = 0.0940.
+- One worm turn about +X turns the wheel -12 deg about +Z.
+- No interference at rest, and none at 13 positions through one turn of the worm.
+- Refused: z2 = 16; q = 2 (lambda = 26.6 deg).
+
+Give me one Python file and its .manifest.

@@ -1,0 +1,6 @@
+# controls/worm_wheel_left_hand
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:39, 5 s
+
+  1 overlaps: [('Worm', 'Wheel', 6.68)]
+  FAIL no interference at rest
+CONTROL: the wheel left-handed; the check above MUST fail
