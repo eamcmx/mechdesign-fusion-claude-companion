@@ -171,8 +171,8 @@ def build(dr=8, d=1.5, D=12.0, Nt=10, L0=36.0, L1=30.0, stroke=8.0, dp=3.0):
     dr, Nt = int(round(dr)), int(round(Nt))
     if dr not in DIN471:
         raise ValueError('Rod diameter %d mm: the DIN 471 table here has %s mm.' % (dr, ', '.join(map(str, DIN471))))
-    if not 0.84 <= d <= 3.17:
-        raise ValueError('Wire diameter %.2f mm is outside the music wire rows used (0.84 to 3.17 mm).' % d)
+    if not 0.84 <= d <= 3.175:
+        raise ValueError('Wire diameter %.2f mm is outside the music wire rows used (0.84 to 3.175 mm).' % d)
     s = spring(d, D, Nt, L0, L1, stroke, dp)
     if not 4 <= s['C'] <= 12:
         raise ValueError('Spring index C = D / d = %.1f: keep it between 4 and 12.' % s['C'])

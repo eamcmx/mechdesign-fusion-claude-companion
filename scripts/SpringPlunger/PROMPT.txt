@@ -32,7 +32,7 @@ DERIVED (computed from the inputs, never typed):
 
 HARD CONSTRAINTS:
 - 4 <= C <= 12 and 3 <= N_a <= 15 (Shigley's recommended ranges), or refuse.
-- Wire diameter between 0.84 and 3.17 mm (the music wire rows used), or refuse.
+- Wire diameter between 0.84 and 3.175 mm (the music wire rows used), or refuse.
 - L1 < L0: the spring is preloaded when installed, or refuse.
 - Robust linearity: xi >= 0.15, or refuse giving xi (this also refuses a stroke that closes the spring solid).
 - Solid-safe: n_s >= 1.2, or refuse giving n_s.
