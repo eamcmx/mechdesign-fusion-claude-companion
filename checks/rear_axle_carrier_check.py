@@ -162,6 +162,9 @@ def run(_context):
             gear_hits.append((th, h))
     fc.ok(not gear_hits, 'no tooth collision in the differential with the side gears turned 4, 8.18 (half a pitch) and '
           '12 deg in the case and the spiders 22/15 as far %s' % (gear_hits or ''))
+    bb = leaves['Carrier casting'].bRepBodies.item(0).boundingBox
+    fc.ok(abs(bb.minPoint.z * 10 + 166.0) < 0.01, 'the plate stops %.2f mm below the axle, above the bowl\'s bottom'
+          % (-bb.minPoint.z * 10))
     mass = sum(x.physicalProperties.mass for x in leaves.values())
     print('  mass of the carrier assembly %.2f kg; the crown wheel %.2f kg, the casting %.2f kg'
           % (mass, leaves['Crown wheel z47'].physicalProperties.mass, leaves['Carrier casting'].physicalProperties.mass))

@@ -1,0 +1,12 @@
+# axle_housing_try
+# Autodesk Fusion 2706.1.17, run 2026-11-01 19:41, 9 s
+
+AxleHousing 1.0 (2026-11-01)
+Rear axle housing and wheel ends built: half shafts of 4140 Q&T, body 48 mm, splines 8 x 35 x 40; factors 2.49 against yield in the hardest turn, 3.17 in fatigue, 1.47 at the splines.
+Wheel bearings 6213: 172.9 million turns of 127.3 needed.
+Tubes 80 x 8: 142.0 MPa in the pothole at the spring seat, factor 1.90.
+
+Parts: 61 components; 1 Banjo housing, 2 Bearing 6213 balls, 2 Bearing 6213 inner ring, 2 Bearing 6213 outer ring, 1 Breather, 10 Carrier nut M12, 10 Carrier stud M12, 10 Cover screw M8x20, 1 Drain plug M22, 1 Filler plug M22, 2 Half shaft, 2 Oil seal 74x100x10, 1 Rear cover, 2 Retainer plate, 2 Retaining ring, 12 Wheel stud M14.
+
+[AxleHousing 1.0 (2026-11-01)]
+  built in 9 s

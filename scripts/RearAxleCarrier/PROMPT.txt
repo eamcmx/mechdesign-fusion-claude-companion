@@ -34,8 +34,10 @@ HARD CONSTRAINTS:
 - The case: one casting, a spherical cavity of 76 mm, two windows, a flange for ten M12 bolts on 186 mm, a spigot;
   the crown wheel's bore 170.4 mm passes over the case. The gears' backs spherical (74 mm) on spherical washers; the
   side gears' hubs splined 8 x 35 x 40 for the half shafts.
-- The carrier: a mounting plate with ten holes on 370 mm, the nose with the cups' bores and the seal's, two legs with
-  the saddles, bearing caps with two M12 bolts each, threaded adjusters behind the case's cups.
+- The carrier: a mounting plate 400 mm across, cut flat 166 mm below the axle so that it stays above the housing's
+  bowl, with eight holes on 370 mm over its upper three quarters (lib/axle_design.joint_bolts); the nose with the
+  cups' bores and the seal's, two legs with the saddles, bearing caps with two M12 bolts each, threaded adjusters
+  behind the case's cups.
 - Nothing touches anything else, at rest or turning.
 
 FUSION CONVENTIONS:
@@ -51,7 +53,8 @@ ACCEPTANCE CRITERIA:
   points, the bearings and their spacing, the differential's factors, the parts list and a version tag.
 - Defaults: bending factor 1.078 and contact 1.718 at the design torque; 1.861 and 1.809 at full power; crown wheel
   308.1 mm, clearance 196.9 mm; the differential's side gear 1.114 and spider 1.377.
-- 49 components in 27 kinds; no interference at rest; every bearing's cone on its seat and its cup in its bore.
+- 49 components in 27 kinds; no interference at rest; every bearing's cone on its seat and its cup in its bore; the
+  plate no lower than 166 mm below the axle.
 - The pinion turned 30 deg about +X: the case 7.6596 deg about +Y. No tooth collision while the pinion turns one
   pitch, nor with the side gears turned 4, 8.18 and 12 deg in the case.
 - Refused: module 5.9 (bending), 6.75 (clearance), face 56 mm, three spiders.

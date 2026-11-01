@@ -263,6 +263,19 @@ def tapered_pair(FrA, FrB, Fae, KA_, KB_):
     return dict(FiA=FiA, FiB=FiB, FeA=max(FeA, FrA), FeB=max(FeB, FrB), carries=carries)
 
 
+# The carrier's joint to the housing (Chapters 29 to 31): a plate and a flange no lower than the bowl's bottom, which
+# the ground clearance sets (Change 1: 195 mm leaves 365 - 196.93 = 168.07 mm under the axle), so eight studs on a
+# circle of 370 mm spread over the top three quarters, none in the bottom quarter
+JOINT_BOTTOM = -166.0                                       # mm, the plate's and the flange's flat bottom
+JOINT_BOLT_R = 185.0
+JOINT_BOLT_DEG = [-30.0 + k * 240.0 / 7.0 for k in range(8)]
+
+
+def joint_bolts():
+    """The studs' positions on the joint face, (y, z) in mm."""
+    return [(JOINT_BOLT_R * math.cos(math.radians(a)), JOINT_BOLT_R * math.sin(math.radians(a))) for a in JOINT_BOLT_DEG]
+
+
 # SKF single row tapered roller bearings, read on skf.com's product pages, 1 November 2026:
 # d, D, T, a (side face to pressure point), C kN, C0 kN, e, Y, Y0
 SKF_TRB = {'32307': (35, 80, 32.75, 20.15, 117.0, 106.0, 0.31, 1.9, 1.1),

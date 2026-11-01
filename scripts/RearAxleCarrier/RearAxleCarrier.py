@@ -38,7 +38,7 @@ importlib.reload(ad)
 importlib.reload(sb)
 importlib.reload(mp)
 
-VERSION = 'RearAxleCarrier 1.3 (2026-11-01)'
+VERSION = 'RearAxleCarrier 1.4 (2026-11-01)'
 CM = 0.1
 P3 = adsk.core.Point3D.create
 V3 = adsk.core.Vector3D.create
@@ -427,7 +427,8 @@ def carrier(root, D, L):
     cupB = (xB - B[2], xB - B[2] + 27.0)
     # the casting: the mounting plate, the nose round the pinion's bearings, two legs to the case's bearings
     x_plate = (165.0, 181.0)
-    body = mp.cyl((x_plate[0], 0, 0), (x_plate[1], 0, 0), 200.0)
+    body = mp.intersect(mp.cyl((x_plate[0], 0, 0), (x_plate[1], 0, 0), 200.0),        # the plate, flat at the bottom
+                        mp.box(x_plate[0] - 1, x_plate[1] + 1, -201.0, 201.0, ad.JOINT_BOTTOM, 201.0))
     nose = mp.cyl((x_plate[0], 0, 0), (cupB[1] + 22.0, 0, 0), 62.0)
     mp.union(body, nose)
     yC = HUB_Y + C[2]                                  # the cups' outer faces
@@ -443,10 +444,8 @@ def carrier(root, D, L):
     mp.cut(body, mp.cyl((cupA[1] - 0.01, 0, 0), (cupB[0] + 0.01, 0, 0), 46.5))
     mp.cut(body, mp.cyl((cupB[0], 0, 0), (cupB[1] + 12.0, 0, 0), B[1] / 2.0 + 0.05))
     mp.cut(body, mp.cyl((cupB[1] + 11.9, 0, 0), (cupB[1] + 23.0, 0, 0), 42.6))
-    for kk in range(10):
-        t = 2 * math.pi * kk / 10
-        mp.cut(body, mp.cyl((x_plate[0] - 1, 185 * math.cos(t), 185 * math.sin(t)),
-                            (x_plate[1] + 1, 185 * math.cos(t), 185 * math.sin(t)), 7.0))
+    for yb, zb in ad.joint_bolts():
+        mp.cut(body, mp.cyl((x_plate[0] - 1, yb, zb), (x_plate[1] + 1, yb, zb), 7.0))
     o = mp.new_occ(asm.component, 'Carrier casting')
     mp.add_body(o, body, 'Carrier casting', 'Iron, Cast')
     parts.append(o)

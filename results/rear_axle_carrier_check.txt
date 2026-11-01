@@ -1,7 +1,7 @@
 # rear_axle_carrier_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 19:22, 53 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 19:45, 53 s
 
-RearAxleCarrier 1.3 (2026-11-01)
+RearAxleCarrier 1.4 (2026-11-01)
   ok   the rating and the forces recomputed independently: S_F 1.0783, W_t 61693.9, W_a 48637.2, W_r 15873.6 N 
   ok   Run opens the dialog
 Rear axle carrier built: spiral bevel 12:47 (3.9167), module 6.50, face 52 mm, crown wheel 308.1 mm across, ground clearance 196.9 mm.
@@ -11,8 +11,8 @@ Differential: 4 spiders of 15 teeth, side gears of 22, module 5.5, face 24: bend
 
 Parts: 49 components; 2 Adjuster, 1 Bearing A 32309 cone, 1 Bearing A 32309 cup, 1 Bearing B 32308 cone, 1 Bearing B 32308 cup, 1 Bearing C1 32213 cone, 1 Bearing C1 32213 cup, 1 Bearing C2 32213 cone, 1 Bearing C2 32213 cup, 2 Bearing cap, 4 Cap bolt M12x90, 1 Carrier casting, 1 Companion flange, 1 Cross, 10 Crown wheel bolt M12x35, 1 Crown wheel z47, 1 Differential case, 1 Pinion depth shim, 1 Pinion nut M30, 1 Pinion seal 60x85x10, 1 Pinion shaft z12, 2 Side gear, 2 Side gear washer, 1 Spacer, 4 Spider, 4 Spider washer, 1 Washer.
 
-[RearAxleCarrier 1.3 (2026-11-01)] RearAxleCarrier 1.3 (2026-11-01)
-  OK pressed, built in 39 s
+[RearAxleCarrier 1.4 (2026-11-01)] RearAxleCarrier 1.4 (2026-11-01)
+  OK pressed, built in 40 s
   ok   a new design opened
   ok   three subassemblies: ['Carrier', 'Pinion assembly', 'Differential assembly']
   ok   the parts, counted from Fusion: 49 components, 27 kinds 
@@ -27,7 +27,8 @@ Parts: 49 components; 2 Adjuster, 1 Bearing A 32309 cone, 1 Bearing A 32309 cup,
   ok   no tooth collision while the pinion turns 0 to 30 deg, one pitch 
   ok   all 8 parts of the pinion assembly turned with it (worst Pinion shaft z12, 6.1e-20 mm)
   ok   no tooth collision in the differential with the side gears turned 4, 8.18 (half a pitch) and 12 deg in the case and the spiders 22/15 as far 
-  mass of the carrier assembly 68.76 kg; the crown wheel 9.09 kg, the casting 29.35 kg
+  ok   the plate stops 166.00 mm below the axle, above the bowl's bottom
+  mass of the carrier assembly 68.21 kg; the crown wheel 9.09 kg, the casting 28.80 kg
   ok   {'m': 5.9, 'F': 47.0} refused: At module 5.90 the pinion keeps a bending factor of 0.818 at the design torque: under 1.
   ok   {'m': 6.75, 'F': 54.0} refused: At module 6.75 the crown wheel (320.0 mm across) leaves 191.0 mm of ground clearance, under 195.
   ok   {'F': 56.0} refused: Face width 56.0 mm is more than a third of the cone distance, 52.55 mm.
