@@ -1,0 +1,7 @@
+# controls/cycloidal_disc_not_turning
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:45, 8 s
+
+  ok   no interference at rest
+  steps with the disc in collision (input deg, mm^3): [(30, 85.661), (60, 270.736), (90, 495.764), (120, 746.455), (150, 985.617), (180, 1153.033), (210, 1229.316), (240, 1227.001), (270, 1164.914), (300, 1069.963), (330, 982.56), (360, 918.073)]
+  FAIL no interference at any of the 12 steps
+CONTROL: the disc does not turn on its eccentric; the stepped check MUST fail

@@ -1,0 +1,28 @@
+# cycloidal_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:45, 8 s
+
+CycloidalDrive 1.0 (2026-11-01)
+  ok   N_d 10, ratio -10, K1 0.550, outline 25.40 to 28.40 mm 
+  ok   the outline's points from 25.4000 to 28.4000 mm from the disc's centre
+  ok   Run opens the dialog
+Cycloidal drive built: 11 ring pins on R = 30.0 mm, a disc of 10 lobes, eccentricity 1.50 mm.
+
+Ratio -10 (the output turns the other way, 1/10 of the input)
+K1 = e N_p / R = 0.550; the disc outline runs from 25.400 to 28.400 mm; gap 0.10 mm
+
+Step the input 30 deg at a time: the output turns -3.0 deg per step.
+
+[CycloidalDrive 1.0 (2026-11-01)] CycloidalDrive 1.0 (2026-11-01)
+  OK pressed, built in 6 s
+  ok   a new design opened
+  ok   four components: ['Disc', 'Housing', 'Input', 'Output']
+  ok   one body each
+  ok   three revolute As-built Joints, two Motion Links
+  ok   no interference at rest 
+  ok   output at -input / 10 at every step (worst 0.00000 deg); after one turn -36.000 deg
+  ok   the disc itself turned -input / 10 at every step (worst 0.00000 deg)
+  ok   the disc's centre on the eccentric circle at every step (worst 1.09e-15 mm)
+  ok   no interference at any of the 12 steps 
+  ok   {'n_p': 40} refused: The pins overlap: 2 R sin(pi / N_p) = 4.71 mm is not more than the pin diameter + 1 mm.
+  ok   {'e': 3.0} refused: K1 = e N_p / R = 1.100: the curve of the pin centre loops. Use a smaller eccentricity.
+ALL PASS
