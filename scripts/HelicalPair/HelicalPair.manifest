@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 13: a pair of helical or herringbone gears on a base plate, each tooth swept along the axis with a twist."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "HelicalPair"
+}

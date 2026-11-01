@@ -1,0 +1,40 @@
+# helical_pair_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:14, 31 s
+
+HelicalPair 1.0 (2026-11-01)
+  ok   all values recomputed independently 
+  ok   the rounded values of the prompt (2.12836, 21.173, 63.851, 12.043, 11.8, 5.9, 14.41, 1.504, 0.656)
+  ok   Run opens the dialog
+Helical pair built: normal module 2.00, 20 : 40 teeth, helix angle 20.0 deg (gear 1 right hand).
+
+m_t = 2.12836 mm, alpha_t = 21.173 deg, centre distance a = 63.851 mm
+Face width 12.043 mm (asked 12.000): twist over it, gear 1 11.800 deg, gear 2 -5.900 deg
+Twist per sweep kept by Fusion: gear 1 11.8 deg, gear 2 -5.9 deg
+z_min = 14.41; transverse contact ratio 1.504, overlap ratio 0.656
+
+[HelicalPair 1.0 (2026-11-01)] HelicalPair 1.0 (2026-11-01)
+  OK pressed, built in 5 s
+  ok   a new design opened
+  ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each
+  ok   gear 2 at x = a = 63.851 mm (measured 63.851)
+  ok   Gear 1: 1320 points along the tooth tips, mean -0.0000 deg from a helical twist of 11.800 deg
+  ok   Gear 2: 2640 points along the tooth tips, mean -0.0000 deg from a helical twist of -5.900 deg
+  ok   four As-built Joints, no plain Joints, one Motion Link
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: gear 2 joint -45.000, body -45.000
+  ok   no tooth collision while gear 1 turns 0 to 18 deg in 13 positions 
+  herringbone:
+  Twist per sweep kept by Fusion: gear 1 5.9 deg, gear 2 -3.0 deg
+  ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each
+  ok   gear 2 at x = a = 63.851 mm (measured 63.851)
+  ok   Gear 1: 2640 points along the tooth tips, mean 0.0000 deg from a herringbone twist of 11.800 deg
+  ok   Gear 2: 5280 points along the tooth tips, mean -0.0250 deg from a herringbone twist of -5.900 deg
+  ok   four As-built Joints, no plain Joints, one Motion Link
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: gear 2 joint -45.000, body -45.000
+  ok   no tooth collision while gear 1 turns 0 to 18 deg in 13 positions 
+  ok   {'z1': 14} refused: 14 teeth: below z_min = 2 cos(beta) / sin^2(alpha_t) = 14.41 the involute is undercut.
+  ok   {'beta': 50.0} refused: Helix angle 50.0 deg: keep it from 5 to 45 degrees.
+ALL PASS

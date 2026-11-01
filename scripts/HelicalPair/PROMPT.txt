@@ -1,0 +1,56 @@
+Write a Fusion Python script that, when run, builds a parametric pair of helical (or herringbone) gears on a base plate,
+assembled and ready to turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- normal module m_n (mm), 2
+- driver teeth z1, 20
+- driven teeth z2, 40
+- helix angle beta (deg), 20
+- normal pressure angle alpha_n (deg), 20
+- face width b (mm), 12
+- herringbone (one of no, yes), no
+
+DERIVED (computed from the inputs, never typed):
+- transverse module m_t = m_n / cos(beta); transverse pressure angle alpha_t = atan(tan(alpha_n) / cos(beta))
+- pitch radius r = m_t z / 2, base radius r cos(alpha_t), tip radius r + m_n, root radius r - 1.25 m_n
+- centre distance a = m_t (z1 + z2) / 2
+- turn of a tooth over the face width, at the pitch circle: theta = b tan(beta) / r (gear 1 one way, gear 2 the other)
+- smallest number of teeth without undercut: z_min = 2 cos(beta) / sin^2(alpha_t)
+- transverse contact ratio (Chapter 11, with m_t and alpha_t) and overlap ratio b sin(beta) / (pi m_n)
+- tooth thickness on the pitch circle, transverse: pi m_t / 2 - 0.1 mm (backlash 0.2 mm)
+- Fusion keeps a sweep's twist in tenths of a degree. So the face width is adjusted to b', the nearest width that
+  makes gear 1's twist a whole number of tenths (two tenths for a herringbone, each half then a whole number):
+  b' = theta1' r1 / tan(beta); every value above is then worked out with b'. Read back the twist Fusion stored.
+
+HARD CONSTRAINTS:
+- Gear 1 right-handed, gear 2 left-handed: two external helical gears mesh only with opposite hands.
+- True involute flanks in the transverse plane, starting at the base circle, with a radial line below it.
+- z1 and z2 at least z_min, or refuse giving z_min.
+- Helix angle from 5 to 45 degrees, or refuse.
+- The driven gear is turned so that a tooth of the driver sits in a gap of the driven gear on the line of centres.
+- Herringbone: the face width in two halves of opposite hand, the teeth meeting at the middle (draw the upper half
+  from the twist Fusion stored for the lower one).
+- Gear 2's twist per sweep, kept in tenths of a degree, must not move its tips by more than a quarter of the
+  backlash, or refuse.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components: Base plate (grounded), Shaft 1, Shaft 2, Gear 1, Gear 2, one body each, as in Chapter 11; gear 1 at
+  the origin, gear 2 at (a, 0).
+- Each tooth: the transverse outline as ONE closed polyline of sketch lines sharing their points, swept along the
+  gear's axis with a twist angle (right hand: the teeth turn anticlockwise, seen from above, as z rises); then a
+  circular pattern of the swept tooth.
+- The API works in cm and radians.
+- AsBuiltJoints: rigid between the plate and each shaft, revolute about z between each gear and its shaft; a Motion
+  Link between the revolute joints, the opposite way, at the ratio of the teeth.
+
+ACCEPTANCE CRITERIA:
+- A message gives m_t, alpha_t, a, b', theta for each gear, z_min, both contact ratios and a version tag.
+- Defaults: m_t = 2.12836 mm, alpha_t = 21.173 deg, a = 63.851 mm, b' = 12.043 mm, theta1 = 11.800 deg,
+  theta2 = 5.900 deg, z_min = 14.41, transverse contact ratio 1.504, overlap ratio 0.656.
+- The tips of gear 1's teeth at the top face are turned +11.800 deg from those at the bottom, gear 2's -5.900 deg.
+- At rest no interference; gear 1 driven 90 deg turns gear 2 -45 deg; no tooth collision through one tooth pitch.
+- The same with herringbone = yes.
+- Refused: z1 = 14 (z_min = 14.41); beta = 50.
+
+Give me one Python file and its .manifest.

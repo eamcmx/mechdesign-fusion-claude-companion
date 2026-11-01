@@ -1,0 +1,6 @@
+# controls/helical_same_hand
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:14, 6 s
+
+  1 overlaps: [('Gear 1', 'Gear 2', 104.537)]
+  FAIL no interference at rest
+CONTROL: both gears right-handed; the check above MUST fail
