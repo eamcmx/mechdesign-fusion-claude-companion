@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 34: the drive of a SCARA's first joint. The load's inertia measured on the model, a move, and the motor's torque and speed choose the harmonic gearhead's ratio."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "JointDrive"
+}

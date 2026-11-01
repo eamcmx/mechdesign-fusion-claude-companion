@@ -1,0 +1,6 @@
+# controls/joint_drive_same_way
+# Autodesk Fusion 2706.1.17, run 2026-11-01 09:38, 2 s
+
+  the motor shaft turned 90 deg: the arm 1.800 deg
+  FAIL the arm turned -1.8 deg, against the motor
+CONTROL: the gearhead turning the arm the same way as the motor; the check above MUST fail

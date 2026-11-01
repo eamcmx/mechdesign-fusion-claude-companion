@@ -1,0 +1,50 @@
+Write a Fusion Python script that, when run, builds the SCARA of Chapter 33 with the drive of its first joint inside
+its hollow column, a servo motor and a harmonic gearhead; measures the load's inertia about the joint on the model,
+and chooses the gearhead's ratio for a given move and motor.
+
+INPUTS (a command dialog, with these defaults):
+- move angle (deg), 90; move time (s), 0.4; dwell after the move (s), 0.2
+- payload (kg), 2
+- motor: rotor inertia (kg cm2), 0.3; rated torque (N m), 1.27; peak torque (N m), 3.82; top speed (rpm), 3000
+- gearhead efficiency eta (%), 80
+
+DERIVED (computed from the inputs, never typed):
+- the move in thirds (accelerate, cruise, brake): top speed w = theta / (2 t / 3), acceleration w / (t / 3)
+- the load's inertia J_L about J1: the arm's moving parts measured on the bodies (Fusion's moments of inertia about
+  the world z axis), stretched, plus the payload as a point at full reach; the same folded to J2 = 150 deg
+- the motor's torque at ratio n: (J_m n + J_L / (eta n)) times the acceleration; its RMS over the cycle, the torque
+  acting for 2 t / 3 of t + dwell
+- the best ratio for the inertias sqrt(J_L / (eta J_m)); the largest the top speed allows, top speed / w
+- for each standard ratio 30, 50, 80, 100, 120, 160: the peak and RMS torque, and whether the speed, the peak and
+  the rated torque allow it; the ratio chosen, the allowed one with the least RMS torque
+
+HARD CONSTRAINTS:
+- An efficiency in (0, 100] %, or refuse.
+- If no standard ratio is allowed, refuse, saying whether the speed or the torque rules them all out.
+- The SCARA of Chapter 33 with its defaults, the column a tube (bore 92 mm); in it the motor (60 mm across, 110 mm
+  long) on the base plate, its shaft (12 mm) up into the gearhead (88 mm across, 60 mm high, a 16 mm bore), and on
+  the gearhead, 1 mm above it, the first arm's hub (80 mm across). Nothing touches anything else.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each: Base, Motor, Gearhead (all three grounded), Motor shaft, Arm 1 (with its hub), Arm 2,
+  Quill, Tool; bodies from TemporaryBRepManager.
+- Materials from the Fusion Material Library: Aluminum for the arms, Steel for the quill and the tool.
+- The API works in cm and radians; moments of inertia come in kg cm2.
+- AsBuiltJoints: J1 to J4 as in Chapter 33, and the motor shaft revolute about z on the Motor.
+- The harmonic gearhead cannot bend in Fusion (Chapter 19): draw its housing, and make its ratio a Motion Link from
+  the motor shaft to J1 at n : 1, reversed: with the circular spline held, the flexspline turns against the wave
+  generator.
+
+ACCEPTANCE CRITERIA:
+- A message gives the inertias, the move, the joint's torque, the two ratios, the table, the ratio chosen with its
+  torques, and a version tag.
+- Defaults: arm 0.47480 kg m2 stretched, 0.12769 folded; J_L 0.87980 kg m2; 5.8905 rad/s, 44.179 rad/s2, 38.868 N m;
+  best ratio 191.5, the speed allows 53.33; chosen 50:1, 1.038 N m peak, 0.692 N m RMS.
+- Each moving part's inertia equals a hand calculation (plates with round ends, cylinders, parallel axes), stretched
+  and folded.
+- 8 components; 5 As-built Joints, 1 Motion Link; no interference at rest.
+- The motor shaft turned 90 deg four times: the arm turns -1.8 deg each time, measured on its body.
+- Refused: an efficiency of 120 %; a move in 0.12 s (speed); a payload of 20 kg (torque).
+
+Give me one Python file and its .manifest.

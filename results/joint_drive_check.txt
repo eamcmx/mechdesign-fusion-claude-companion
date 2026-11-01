@@ -1,0 +1,35 @@
+# joint_drive_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 09:38, 6 s
+
+JointDrive 1.0 (2026-11-01)
+  ok   Run opens the dialog
+SCARA joint 1 drive built: a 90 deg move in 0.40 s, then 0.20 s still; 2.0 kg payload.
+
+Inertia about J1, measured on the bodies: arm 0.47480 kg m2 stretched, 0.12769 kg m2 folded to 150 deg (the tool 126.1 mm from the axis); with the payload 0.87980 kg m2.
+The move: 5.8905 rad/s at the top, 44.179 rad/s2; 38.868 N m at the joint.
+Best ratio for the inertias 191.5; the motor's 3000 rpm allow 53.33 at most.
+   30:1   1.659 N m peak, 1.106 N m RMS
+   50:1   1.038 N m peak, 0.692 N m RMS
+   80:1   0.713 N m peak, 0.476 N m RMS   (no)
+  100:1   0.618 N m peak, 0.412 N m RMS   (no)
+  120:1   0.564 N m peak, 0.376 N m RMS   (no)
+  160:1   0.516 N m peak, 0.344 N m RMS   (no)
+Chosen: 50:1, 1.038 N m peak and 0.692 N m RMS at the motor.
+
+[JointDrive 1.0 (2026-11-01)] JointDrive 1.0 (2026-11-01)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   8 components: ['Base', 'Motor', 'Gearhead', 'Motor shaft', 'Arm 1', 'Arm 2', 'Quill', 'Tool']
+  ok   materials {'Arm 1': 'Aluminum', 'Arm 2': 'Aluminum', 'Quill': 'Steel', 'Tool': 'Steel'}
+  densities 2700.0 and 7850.0 kg/m3
+  ok   five As-built Joints, one Motion Link: ['RevoluteJointMotion', 'RevoluteJointMotion', 'SliderJointMotion', 'RevoluteJointMotion', 'RevoluteJointMotion']
+  ok   no interference at rest 
+  ok   J2 at 0 deg, kg m2 measured (by hand): Arm 1 0.065963 (0.065963), Arm 2 0.145579 (0.145579), Quill 0.223009 (0.223009), Tool 0.040250 (0.040250)
+  ok   J2 at 150 deg, kg m2 measured (by hand): Arm 1 0.065963 (0.065963), Arm 2 0.040941 (0.040941), Quill 0.017581 (0.017581), Tool 0.003205 (0.003205)
+  ok   the move and the drive recomputed independently
+  arm 0.47480 stretched, 0.12769 folded; with the payload 0.87980 kg m2; 5.8905 rad/s, 44.179 rad/s2, 38.868 N m at the joint; best ratio 191.5, speed allows 53.33; chosen 50:1, 1.038 N m peak, 0.692 N m RMS
+  ok   the motor shaft turned 90 deg four times: the arm -1.800, -3.600, -5.400, -7.200 deg (want -1.8 each)
+  ok   {'eta': 120.0} refused: An efficiency of 120 %: it lies between 0 and 100 %.
+  ok   {'t': 0.12} refused: The move needs 187.5 rpm at the arm: the motor's 3000 rpm allow a ratio of 16.0 at most, below every standard ratio.
+  ok   {'m': 20.0} refused: No standard ratio up to 53.3 keeps the motor within 3.82 N m peak and 1.27 N m RMS: at 50 it needs 5.06 N m peak and 3.38 N m RMS.
+ALL PASS
