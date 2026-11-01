@@ -1,0 +1,56 @@
+Write a Fusion Python script that, when run, builds the star gearbox of a geared turbofan: a planetary gear set
+whose carrier is held, so that the sun, driven by the low-pressure turbine, turns star gears on fixed pins and the
+stars turn the ring, which drives the fan the other way; assembled and ready to turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- module m (mm), 3
+- sun teeth Zs, 32
+- star teeth Zp, 33
+- number of stars N, 5
+- pressure angle alpha (deg), 20
+- face width b (mm), 40
+- backlash on the pitch circle (mm), 0.3
+- star pin diameter (mm), 20
+- sun shaft diameter, from the turbine (mm), 30
+- fan shaft diameter (mm), 60
+- carrier and ring plates (mm), 8
+- ring wall outside the tooth spaces (mm), 10
+
+DERIVED (computed from the inputs, never typed):
+- ring teeth Zr = Zs + 2 Zp; centre distance a = m (Zs + Zp) / 2; star i at theta_i = 2 pi i / N
+- star phases and the ring's phase as in Chapter 15: psi_i = [theta_i (Zs + Zp) + pi (Zp - 1)] / Zp (mod 2 pi / Zp);
+  the ring's tooth spaces at k 2 pi / Zr + phi_r with phi_r = 0 for Zp odd, pi / Zr for Zp even
+- with the carrier held the ring turns -Zs / Zr of the sun's angle; the ratio Zr / Zs; each star -Zs / Zp of it
+- for 20 MW from a turbine at 10 000 rpm: the sun's torque, the ring's (times Zr / Zs), the carrier's reaction (their
+  sum), the tangential force at each sun mesh (the sun's torque over N times its pitch radius), and the heat if
+  0.5 % of the power is lost in the meshes
+- whether the stars' phases are all equal: (Zs + Zp) / N whole
+
+HARD CONSTRAINTS:
+- Every gear at least 18 teeth (Chapter 12), or refuse.
+- (Zs + Zr) / N whole, or refuse: the stars cannot be spaced evenly.
+- Neighbouring stars must not touch: 2 a sin(pi / N) > m (Zp + 2), or refuse.
+- The carrier on the turbine's side, its pins through the stars; the ring closed on the fan's side by a plate and
+  the fan shaft, 1 mm clear of the gears' faces. Nothing touches anything else.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Star carrier (grounded), Ring (teeth, plate and fan shaft
+  as one body), Sun (with its shaft), Star 1 to N.
+- Gears as in Chapter 15: a root disc, one tooth outline as a closed polyline, joined and patterned; the ring an
+  annulus with one tooth space cut and patterned.
+- The API works in cm and radians.
+- AsBuiltJoints: revolute about z for the sun, the ring and each star, all on the star carrier. Motion Links: the sun
+  to the ring at Zr : Zs and the sun to each star at Zp : Zs, all reversed.
+
+ACCEPTANCE CRITERIA:
+- A message gives Zr, a, the ratio, the fan speed, the torques, the mesh force, the heat and a version tag.
+- Defaults: Zr = 98, a = 97.500 mm, ratio 3.0625 : 1, fan -3265.3 rpm; sun 19 098.6 N m, ring 58 489.4 N m, carrier
+  77 588.0 N m; 79 577 N at each sun mesh; 100 kW of heat; (Zs + Zr) / N = 26, (Zs + Zp) / N = 13.
+- 8 components with one body each; 7 revolute As-built Joints; 6 Motion Links.
+- No interference at rest.
+- The sun driven 90 deg in 30 deg steps: the ring -29.388 deg and each star -87.273 deg, measured on the bodies.
+- No tooth collision while the sun turns through one tooth pitch (11.25 deg) in 0.9 deg steps.
+- Refused: N = 4 ((Zs + Zr) / N = 32.50); Zs = 20, Zp = 40 (the stars touch); Zs = 16 (undercut).
+
+Give me one Python file and its .manifest.

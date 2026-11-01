@@ -1,0 +1,30 @@
+# star_gearbox_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:56, 54 s
+
+StarGearbox 1.0 (2026-11-01)
+  ok   all values recomputed independently 
+  ok   the rounded values of the prompt (98, 97.5, 3.0625, -3265.3, 19098.6, 58489.4, 77588.0, 79577, 100)
+  ok   Run opens the dialog
+Star gearbox built: sun 32, 5 stars of 33, ring 98 teeth (Zs + 2 Zp), module 3.00 mm, centre distance 97.500 mm.
+
+Carrier held: the ring turns against the sun at Zs / Zr; ratio 3.0625 : 1. A turbine at 10000 rpm turns the fan at -3265.3 rpm.
+At 20 MW: sun 19098.6 N m, ring 58489.4 N m, carrier reaction 77588.0 N m; 79577 N tangential at each sun mesh.
+Losing 0.5 % of the power heats the oil with 100 kW.
+(Zs + Zr) / N = 26; (Zs + Zp) / N = 13.00: the stars all have the same phase.
+
+Drive Joints on "Sun (from the turbine)": the stars and the ring follow.
+
+[StarGearbox 1.0 (2026-11-01)] StarGearbox 1.0 (2026-11-01)
+  OK pressed, built in 21 s
+  ok   a new design opened
+  ok   8 components: ['Ring', 'Star 1', 'Star 2', 'Star 3', 'Star 4', 'Star 5', 'Star carrier', 'Sun']
+  ok   one body each
+  ok   seven revolute As-built Joints, six Motion Links
+  ok   no interference at rest 
+  ok   the sun turned 90.000 deg: the ring -29.388 deg (want -29.388)
+  ok   each star -87.273, -87.273, -87.273, -87.273, -87.273 deg (want -87.273)
+  ok   no tooth collision while the sun turns 0 to 11.7 deg in 0.9 deg steps 
+  ok   {'n': 4} refused: (Zs + Zr) / N = (32 + 98) / 4 = 32.50 is not whole: 4 stars cannot be spaced evenly.
+  ok   {'zs': 20, 'zp': 40} refused: Neighbouring stars touch: 2 a sin(180 / N) = 105.80 mm is not more than their tip diameter 126.0 mm.
+  ok   {'zs': 16} refused: A gear of 16 teeth: below 18 an outside gear is undercut at 20 deg (Chapter 12).
+ALL PASS

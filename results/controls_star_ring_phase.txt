@@ -1,0 +1,6 @@
+# controls/star_ring_phase
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:57, 30 s
+
+  5 overlaps: [('Ring', 'Star 1', 3228.285), ('Ring', 'Star 2', 3269.175), ('Ring', 'Star 3', 3239.05), ('Ring', 'Star 4', 3239.05), ('Ring', 'Star 5', 3269.175)]
+  FAIL no interference at rest
+CONTROL: the ring given the wrong phase; the check above MUST fail

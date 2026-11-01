@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 32: the star gearbox of a geared turbofan. A planetary set with the carrier held: the sun drives five stars on fixed pins and the ring drives the fan the other way."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "StarGearbox"
+}
