@@ -38,6 +38,7 @@ ACCEPTANCE CRITERIA:
 - With the defaults, driving gear 1's joint 90° turns gear 2 by 45° the other way.
 - At rest the two gears do not overlap anywhere (Interference finds nothing).
 - Changing z2 to 50 in the dialog gives a centre distance of 70 mm with nothing else edited.
+- z1 = 12 is refused (fewer than 18 teeth undercut).
 
 A WORKED EXAMPLE of the polyline I mean (it works in my Fusion; P3 = adsk.core.Point3D.create, points in cm):
 
