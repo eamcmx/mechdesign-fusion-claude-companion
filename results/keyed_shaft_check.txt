@@ -1,5 +1,5 @@
 # keyed_shaft_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 03:09, 5 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 06:27, 4 s
 
 KeyedShaft 1.0 (2026-11-01)
   ok   Run opens the dialog
@@ -14,7 +14,7 @@ Torque 30.0 N.m: force on the key F = 2T/D = 3000 N
   shaft torsion stress 16T / (pi D^3)           = 19.10 MPa
 
 [KeyedShaft 1.0 (2026-11-01)] KeyedShaft 1.0 (2026-11-01)
-  OK pressed, built in 2 s
+  OK pressed, built in 1 s
   ok   a new design opened
   ok   four components: ['Bearing block', 'Hub', 'Key', 'Shaft']
   ok   one body each

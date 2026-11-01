@@ -1,5 +1,5 @@
 # knee_toggle_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 05:12, 2 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 06:27, 2 s
 
 KneeToggle 1.0 (2026-11-01)
   ok   F at 30, 10, 5, 2, 1 deg: [86.6, 283.56, 571.5, 1431.81, 2864.5] N
@@ -13,7 +13,7 @@ With P = 100 N: F = 86.60 N at 30 deg, F = 283.56 N at 10 deg, F = 571.50 N at 5
 Drive "Upper link turns" towards negative angles (2 deg at a time) to straighten the knee.
 
 [KneeToggle 1.0 (2026-11-01)] KneeToggle 1.0 (2026-11-01)
-  OK pressed, built in 2 s
+  OK pressed, built in 1 s
   ok   a new design opened
   ok   four components: ['Frame', 'Lower link', 'Ram', 'Upper link']
   ok   one body each

@@ -1,5 +1,5 @@
 # worm_wheel_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 04:39, 10 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 06:31, 13 s
 
 WormWheel 1.0 (2026-11-01)
   ok   all values recomputed independently 
@@ -13,7 +13,7 @@ Wheel face width 7.854 mm (asked 8.000): its teeth turn 1.5 deg over it
 Normal pressure angle 19.909 deg; efficiency 0.649 at f = 0.05, 0.479 at f = 0.10; back-driving at f = 0.10: -0.063; self-locking above f = 0.0940
 
 [WormWheel 1.0 (2026-11-01)] WormWheel 1.0 (2026-11-01)
-  OK pressed, built in 4 s
+  OK pressed, built in 5 s
   ok   a new design opened
   ok   four components: ['Wheel', 'Wheel shaft', 'Worm', 'Worm shaft']
   ok   one body each

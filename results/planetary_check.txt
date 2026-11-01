@@ -1,5 +1,5 @@
 # planetary_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 02:56, 37 s
+# Autodesk Fusion 2706.1.17, run 2026-11-01 06:30, 39 s
 
 PlanetaryPrompt 1.0 (2026-11-01)
   ok   Run opens the dialog
@@ -13,7 +13,7 @@ Sun held (ring in, carrier out):    1 + Zs / Zr = 1.2857
 Drive Joints on "Sun (input)": one turn moves the carrier 80.00 deg the same way.
 
 [PlanetaryPrompt 1.0 (2026-11-01)] PlanetaryPrompt 1.0 (2026-11-01)
-  OK pressed with the defaults, built in 7 s
+  OK pressed with the defaults, built in 8 s
   ok   a new design opened
   ok   parts: ['Carrier', 'Planet 1', 'Planet 2', 'Planet 3', 'Ring', 'Sun', 'Sun bearing']
   ok   one body each
