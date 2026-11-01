@@ -1,0 +1,30 @@
+# engine_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:13, 27 s
+
+SingleCylinderEngine 1.0 (2026-11-01)
+  ok   all values recomputed independently (lambda, swept volume, events, x(theta), the lift law)
+  ok   the rounded values of the prompt (0.3, 152.68, 240.0, 240.0, 20.0, 26.64)
+  ok   Run opens the dialog
+Single-cylinder engine built: bore 60.0 mm, stroke 54.0 mm, rod 90.0 mm (lambda = r / l = 0.3000), swept volume 152.68 cm3.
+
+Valves, crank degrees from TDC at the start of the inlet stroke: inlet -10 to 230 (240 deg), exhaust 490 to 730 (240 deg), overlap 20 deg; lift 6.0 mm.
+Lobes: base circle 15.0 mm, roller 5.0 mm; largest pressure angle 26.64 deg (inlet), 26.64 deg (exhaust).
+
+Built at top dead centre of compression, both valves shut. Drive Joints on "Crank turns" moves the piston and the camshaft; set each valve with its slider: Fusion cannot link a cam.
+
+[SingleCylinderEngine 1.0 (2026-11-01)] SingleCylinderEngine 1.0 (2026-11-01)
+  OK pressed, built in 17 s
+  ok   a new design opened
+  ok   9 components: ['Block', 'Cam gear', 'Camshaft', 'Connecting rod', 'Crank gear', 'Crankshaft', 'Exhaust valve', 'Inlet valve', 'Piston']
+  ok   one body each
+  ok   four revolute, three slider and two rigid As-built Joints, one Motion Link
+  ok   no interference at rest 
+  ok   the piston pin on x(theta) at all 24 steps of two turns (worst 4.8e-13 mm)
+  ok   the crank at theta and the camshaft at -theta / 2 at every step (worst 5.7e-14 deg)
+  roller to lobe (mm): 390 in 0.0500, 450 in 0.0500, 510 in 0.0500, 570 in 0.0500, 630 in 0.0500, 690 in 0.0500, 750 in 0.0500, 810 in 0.0500, 870 in 0.0500, 930 in 0.0500, 990 in 0.0500, 1050 in 0.0500
+  ok   each roller 0.05 mm from its lobe at every step: 0.0500 to 0.0500 mm
+  ok   nothing interferes at any of the 24 steps 
+  ok   {'l': 75.0} refused: A rod of 75.0 mm is shorter than 3 r = 81.0 mm: the piston would be pushed hard against the wall (lambda = 0.360).
+  ok   {'IVO': 0.0, 'IVC': 20.0} refused: The inlet lobe (open 200 crank deg) reaches a pressure angle of 31.0 deg: above 30 deg.
+  ok   {'Rb': 8.0, 'Rr': 12.0} refused: The inlet lobe's pitch curve bends to 11.18 mm, not more than the roller's 12.0 mm: undercut.
+ALL PASS

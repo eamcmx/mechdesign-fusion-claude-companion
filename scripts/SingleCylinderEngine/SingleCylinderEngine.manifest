@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 28: a four-stroke side-valve single-cylinder engine. Slider-crank, timing gears 20:40 and two cam-driven valves, built at top dead centre of compression."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "SingleCylinderEngine"
+}

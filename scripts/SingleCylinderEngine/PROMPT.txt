@@ -1,0 +1,66 @@
+Write a Fusion Python script that, when run, builds a four-stroke, side-valve single-cylinder engine: crankshaft,
+connecting rod and piston, a camshaft geared 2:1 to the crankshaft, and an inlet and an exhaust valve lifted by
+cams through roller followers, assembled and ready to turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- bore B (mm), 60
+- stroke S (mm), 54
+- connecting rod length l (mm), 90
+- valve lift h (mm), 6
+- cam base circle radius Rb (mm), 15
+- roller radius Rr (mm), 5
+- inlet opens before top dead centre IVO (deg), 10
+- inlet closes after bottom dead centre IVC (deg), 50
+- exhaust opens before bottom dead centre EVO (deg), 50
+- exhaust closes after top dead centre EVC (deg), 10
+
+DERIVED (computed from the inputs, never typed):
+- crank radius r = S / 2; lambda = r / l; swept volume pi B^2 S / 4
+- crank angle theta from top dead centre (TDC) at the start of the inlet stroke; piston pin at
+  x(theta) = r cos(theta) + sqrt(l^2 - r^2 sin^2(theta)) from the crank axis
+- valve events in crank degrees: inlet from -IVO to 180 + IVC, exhaust from 540 - EVO to 720 + EVC; each valve's
+  open duration D; overlap = (720 + EVC) - 720 - (-IVO)
+- the camshaft turns at half the crank's speed; each lobe lifts its valve by a cycloidal rise over D / 4 cam degrees
+  and a cycloidal return over the next D / 4, shut for the rest of the turn; lift at crank angle theta
+  = s((theta - opening) / 2)
+- each lobe's pressure angle and its pitch curve's smallest radius of curvature (Chapter 24); the lobe's outline is
+  the roller centre's path offset towards the camshaft by Rr + 0.05 mm
+- timing gears: module 2 mm, 20 and 40 teeth, 10 mm wide, 60 mm apart (Chapter 12)
+
+HARD CONSTRAINTS:
+- l at least 3 r, or refuse giving lambda.
+- Each lobe's pressure angle at most 30 deg, or refuse giving it; each pitch curve's radius of curvature more than
+  Rr, or refuse (undercut).
+- Crank axis world Z through the origin, cylinder axis world +Y, the crank turning anticlockwise seen from +Z; the
+  camshaft at (60, 0) turning the other way at half the speed; the rollers on +Y above it, the inlet lobe at z = 12
+  to 20 mm, the exhaust lobe at z = 32 to 40 mm.
+- Built at top dead centre of compression (theta = 360 deg), where both valves are shut; the lobes' outlines are
+  laid out for that position.
+- No part touches another: a shut valve's head 1 mm more than the lift below the head; the roller 0.05 mm off its
+  lobe; the piston 0.2 mm inside the bore.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Block (cylinder, head and valve guides, grounded),
+  Crankshaft, Crank gear, Connecting rod, Piston (with its pin), Camshaft (with both lobes), Cam gear, Inlet valve,
+  Exhaust valve (each with its roller).
+- Bodies from TemporaryBRepManager through base features; gear teeth and lobes as closed polylines in sketches.
+- The API works in cm and radians.
+- AsBuiltJoints: revolute for the crankshaft and the camshaft on the block, the rod on the crankpin and the piston
+  on the rod's small end; sliders along Y for the piston (closing the loop) and each valve; rigid for each gear on
+  its shaft. A Motion Link of 720 deg of the crank for 360 deg of the camshaft, its direction set from the measured
+  turning senses. The valves cannot be linked to a cam: the check sets them.
+
+ACCEPTANCE CRITERIA:
+- A message gives lambda, the swept volume, the valve events, the overlap, the pressure angles and a version tag.
+- Defaults: lambda = 0.3000; swept volume 152.68 cm3; inlet -10 to 230 deg (240), exhaust 490 to 730 deg (240),
+  overlap 20 deg; pressure angle 26.64 deg on both lobes.
+- 9 components with one body each; 4 revolute, 3 slider and 2 rigid As-built Joints; 1 Motion Link.
+- No interference at rest.
+- The crank turned through two turns in 30 deg steps from TDC of compression: the piston pin on x(theta) at every
+  step and the camshaft at -theta / 2, measured on the bodies; each valve set to its lift, its roller 0.05 mm from
+  its lobe and nothing interfering at every step.
+- Refused: l = 75 (lambda = 0.360); inlet open 200 deg (IVO 0, IVC 20: pressure angle 31.05 deg); Rb 8 with Rr 12
+  (radius of curvature 11.18 mm).
+
+Give me one Python file and its .manifest.

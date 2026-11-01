@@ -1,0 +1,8 @@
+# controls/engine_cam_same_way
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:14, 21 s
+
+  ok   no interference at rest 
+  roller to lobe from 0.0000 to 6.0275 mm; 14 steps with overlaps, the first: [(510.0, [('Camshaft', 'Inlet valve', 1.493)]), (540.0, [('Camshaft', 'Inlet valve', 72.625)])]
+  FAIL each roller 0.05 mm from its lobe at every step
+  FAIL nothing interferes at any of the 24 steps
+CONTROL: the camshaft turning with the crank; the motion checks above MUST fail
