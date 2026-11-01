@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 31: a trailing-edge flap driven by a ball screw through a nut, a link and the flap's horn; travel, transmission angle, efficiencies, air load and the screw's torque."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "FlapActuator"
+}

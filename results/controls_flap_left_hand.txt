@@ -1,0 +1,7 @@
+# controls/flap_left_hand
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:49, 2 s
+
+  ok   no interference at rest 
+  the screw turned 36.0 deg about +x; the nut moved 0.500 mm along x
+  FAIL a right-hand screw: a turn about +x moves the nut towards -x
+CONTROL: the screw linked as a left-hand one; the hand check above MUST fail

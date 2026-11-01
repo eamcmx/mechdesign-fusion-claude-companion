@@ -1,0 +1,31 @@
+# flap_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:48, 3 s
+
+FlapActuator 1.0 (2026-11-01)
+  ok   travel, efficiencies, hinge moment and nut force recomputed independently
+  ok   the rounded values of the prompt (5.681, 66.939, 13.388, 49.09, 0.933, 0.9283, 0.0703, 980.0, 127.008, 1245.1, 1.062, 0.9197)
+  ok   Run opens the dialog
+Flap actuator built: ball screw 16 x 5 (lead angle 5.681 deg), horn 100 mm at -45 deg, link 150 mm, nut line 60 mm above the hinge.
+
+Nut travel to 40 deg of flap: 66.939 mm, 13.388 turns of the screw; smallest transmission angle 49.09 deg.
+Efficiency 0.9330 driving, 0.9283 back-driving (self-locking only above mu = 0.0703): the screw needs a brake.
+At 40 m/s (q = 980.0 Pa) the hinge moment reaches 127.01 N m; the largest nut force is 1245.1 N at 40.0 deg, which takes 1.0620 N m at the screw and puts 0.9197 N m back on it.
+
+Drive Joints on "Screw turns": the nut, the link and the flap follow.
+
+[FlapActuator 1.0 (2026-11-01)] FlapActuator 1.0 (2026-11-01)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   5 components: ['Flap', 'Link', 'Nut', 'Screw', 'Wing']
+  ok   one body each
+  ok   four revolute and one slider As-built Joints, one Motion Link
+  ok   no interference at rest 
+  ok   a right-hand screw: 36.0 deg about +x moved the nut -0.500 mm along x
+  ok   the nut at 5 mm per turn of the screw at all 34 steps (worst 5.7e-14 mm)
+  ok   the flap at the angle worked out for the nut, at every step (worst 3.6e-13 deg); at the end 40.000 deg
+  ok   full travel brings the flap to 40 deg (39.9999)
+  ok   nothing interferes at any step 
+  ok   {'zs': 100.0} refused: The link and the horn come within 33.74 deg of a straight line (transmission angle): below 40 deg.
+  ok   {'mu': 0.08} refused: With a friction coefficient of 0.080 the screw would lock itself (at 0.0703): a ball screw is chosen to run free, with a brake.
+  ok   {'l': 10.0} refused: A link of 10.0 mm cannot reach from the nut line to the horn (10.7 mm apart).
+ALL PASS
