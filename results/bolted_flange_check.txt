@@ -1,0 +1,26 @@
+# bolted_flange_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 03:27, 4 s
+
+BoltedFlange 1.0 (2026-11-01)
+  ok   Fp 21228, Fi 15921, T 25.47 N.m, kb 378810, km 1665398, C 0.18531, Fb 16848, Fm 11848, np 1.260, n0 3.908 
+  ok   the rounded values of the prompt
+  ok   Run opens the dialog
+Bolted flange built: 4 x M8, property class 8.8, on a 60 mm bolt circle; grip 20 mm.
+
+At = 36.6 mm^2, Fp = At Sp = 21228 N, preload Fi = 0.75 Fp = 15921 N
+Tightening torque T = K Fi d = 25.47 N.m (K = 0.2)
+kb = 378810 N/mm, km = 1665398 N/mm, joint constant C = 0.18531
+Load per bolt P = 5000 N: bolt load Fb = 16848 N, clamping left Fm = 11848 N
+Yield factor np = 1.260, factor against separation n0 = 3.908
+
+[BoltedFlange 1.0 (2026-11-01)] BoltedFlange 1.0 (2026-11-01)
+  OK pressed, built in 4 s
+  ok   a new design opened
+  ok   plates, 4 bolts, 4 nuts: ['Bolt 1', 'Bolt 2', 'Bolt 3', 'Bolt 4', 'Nut 1', 'Nut 2', 'Nut 3', 'Nut 4', 'Plate 1', 'Plate 2']
+  ok   one body each
+  ok   9 rigid As-built Joints
+  ok   each bolt and nut on the 60 mm bolt circle at 360 i / 4 degrees (worst 7.89e-31 mm)
+  ok   no interference 
+  ok   {'N': 12} refused: 12 bolts on a 60 mm circle are 15.5 mm apart: less than 26 mm, two across-flats, leaves no room for a socket.
+  ok   {'F_ext': 80000.0} refused: The joint separates: n0 = Fi / (P (1 - C)) = 0.977. Use more or larger bolts.
+ALL PASS

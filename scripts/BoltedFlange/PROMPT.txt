@@ -1,0 +1,47 @@
+Write a Fusion Python script that, when run, builds two round flange plates clamped together by hexagon bolts and nuts
+on a bolt circle, assembled as one rigid joint, and that reports the preload, the tightening torque and the safety
+factors of the joint under an external tensile load.
+
+INPUTS (a command dialog, with these defaults):
+- bolt size (one of M5, M6, M8, M10, M12), M8
+- number of bolts N (count), 4
+- bolt circle diameter BCD (mm), 60
+- plate thicknesses t1 and t2 (mm), 10 and 10
+- external tensile load on the joint F_ext (N), 20000
+
+DERIVED (computed from the inputs, never typed):
+- metric coarse thread data, mm: tensile stress area At (M5 14.2, M6 20.1, M8 36.6, M10 58.0, M12 84.3);
+  clearance hole d_h, ISO 273 medium (5.5, 6.6, 9, 11, 13.5); hexagon across flats s and head height k, ISO 4017
+  (8 and 3.5, 10 and 4, 13 and 5.3, 16 and 6.4, 18 and 7.5); nut height m, ISO 4032 (4.7, 5.2, 6.8, 8.4, 10.8)
+- property class 8.8: proof stress Sp = 580 MPa; steel E = 207000 MPa
+- grip l = t1 + t2; proof load Fp = At * Sp; preload Fi = 0.75 * Fp; tightening torque T = K * Fi * d with K = 0.2
+- bolt stiffness (fully threaded bolt, ISO 4017) kb = At * E / l
+- member stiffness, two steel members: km = 0.5774 * pi * E * d / (2 * ln(5 * (0.5774 l + 0.5 d) / (0.5774 l + 2.5 d)))
+- joint constant C = kb / (kb + km); load per bolt P = F_ext / N
+- bolt load Fb = Fi + C * P; clamping force left Fm = Fi - (1 - C) * P
+- yield factor np = Fp / Fb; factor against separation n0 = Fi / (P * (1 - C))
+- plate diameter BCD + 4 * d_h; bolt length = l + m + 2 mm
+
+HARD CONSTRAINTS:
+- Room for a socket between neighbouring bolts: BCD * sin(pi / N) >= 2 * s, or refuse.
+- The joint must not separate: n0 > 1, or refuse, giving n0.
+- The bolts must stay below their proof load: np > 1, or refuse.
+- Each bolt goes through a clearance hole in both plates; bolt and hole never touch.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Plate 1 (grounded) from z = -t1 to 0; Plate 2 from z = 0 to
+  t2; Bolt 1 .. Bolt N, each a hexagon head on top of plate 2 and a plain shank of diameter d down through both
+  plates; Nut 1 .. Nut N, each a hexagon with a hole of diameter d, under plate 1. Bolt i on the bolt circle at angle
+  360 * (i - 1) / N degrees. Each hexagon is one closed polyline with shared sketch points.
+- The API works in cm: convert every mm input.
+- Joints, As-built only, all rigid: Plate 2, each Bolt, and each Nut to Plate 1.
+
+ACCEPTANCE CRITERIA:
+- A message gives At, Fp, Fi, T, kb, km, C, P, Fb, Fm, np, n0 and a version tag.
+- M8, 4 bolts, 10 + 10 mm, 20 kN: Fp = 21228 N, Fi = 15921 N, T = 25.47 N.m, kb = 378810 N/mm,
+  km = 1665398 N/mm, C = 0.18531, P = 5000 N, Fb = 16848 N, Fm = 11848 N, np = 1.260, n0 = 3.908.
+- 4 bolts and 4 nuts, each bolt at its angle on the bolt circle; no interference anywhere.
+- Refused: 12 bolts (60 * sin(15 deg) = 15.5 mm < 26 mm); F_ext = 80000 N (n0 = 0.977, the joint separates).
+
+Give me one Python file and its .manifest.
