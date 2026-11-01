@@ -1,0 +1,6 @@
+# controls/compound_train_stage2_phase
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:02, 9 s
+
+  1 overlaps: [('Cluster', 'Gear 4', 186.449)]
+  FAIL no interference at rest
+CONTROL: gear 4 not turned half a tooth; the check above MUST fail

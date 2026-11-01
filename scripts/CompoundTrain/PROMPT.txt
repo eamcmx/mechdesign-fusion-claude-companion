@@ -1,0 +1,50 @@
+Write a Fusion Python script that, when run, builds a two-stage reverted compound spur gear train on a base plate:
+input and output gears turn on the same fixed spindle, a cluster gear on a countershaft carries the two middle gears,
+and the train is assembled and ready to turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- module of the first stage m1 (mm), 1.5
+- module of the second stage m2 (mm), 2
+- input gear teeth z1, 20
+- first cluster gear teeth z2, 60
+- second cluster gear teeth z3, 20
+- face width b (mm), 10
+- shaft diameter d_s (mm), 8
+
+DERIVED (computed from the inputs, never typed):
+- centre distance a = m1 (z1 + z2) / 2; the output gear's teeth z4 = 2 a / m2 - z3, so that the second stage has
+  the same centre distance (a reverted train: input and output on one axis)
+- ratio of the train, input speed over output speed: (z2 / z1) * (z4 / z3); the output turns the same way as the
+  input (two external meshes)
+- contact ratio of each stage, as in Chapter 11, pressure angle 20 degrees
+- levels: stage 1 from z = 1 to 1 + b above the plate, stage 2 from z = 3 + b to 3 + 2b
+
+HARD CONSTRAINTS:
+- z4 must come out a whole number, or refuse, giving m1 (z1 + z2) / m2.
+- Every gear at least 18 teeth (fewer undercut at 20 degrees), or refuse.
+- Each driven gear is turned so that a tooth of its driver sits in one of its gaps on the line of centres.
+- Gears turning at different speeds never touch; the gap between the two stages is filled by a spacer on the
+  spindle and by the cluster's hub on the countershaft.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Base plate (grounded), top face at z = 0; Spindle at the
+  origin and Countershaft at (a, 0), shafts of d_s standing on the plate, 3 mm taller than stage 2; Gear 1 (z1) on
+  the spindle at stage 1; Cluster on the countershaft: gear z2 at stage 1, gear z3 at stage 2 and a hub of
+  1.6 d_s between them, one body; Spacer on the spindle between the stages, outside diameter 1.6 d_s; Gear 4 (z4)
+  on the spindle at stage 2. Every gear bore d_s + 0.2 mm.
+- Each tooth outline is one closed polyline of sketch lines sharing their points; the API works in cm and radians.
+- Joints, As-built only: rigid for Spindle and Countershaft to Base plate and Spacer to Spindle; revolute about z
+  for Gear 1 and Gear 4 on Spindle and Cluster on Countershaft. Two Motion Links, one per mesh, each the opposite
+  way at the ratio of its teeth.
+
+ACCEPTANCE CRITERIA:
+- A message gives a, z4, the ratio, each stage's contact ratio and a version tag.
+- Defaults: a = 60 mm, z4 = 40, ratio 6 (3 x 2), contact ratios 1.671 and 1.635.
+- Gear 1 driven 90 degrees: the cluster turns -30 degrees and Gear 4 turns +15 degrees, by their joints and by
+  their bodies.
+- No interference at rest, and no tooth collision while Gear 1 turns through one tooth pitch (18 degrees).
+- z3 = 24 gives z4 = 36 and a ratio of 4.5 with nothing else edited.
+- Refused: m2 = 1.75 (z3 + z4 would be 68.57 teeth); z3 = 12 (undercut).
+
+Give me one Python file and its .manifest.

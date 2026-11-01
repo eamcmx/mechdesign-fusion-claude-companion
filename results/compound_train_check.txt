@@ -1,0 +1,38 @@
+# compound_train_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:01, 26 s
+
+CompoundTrain 1.0 (2026-11-01)
+  ok   a 60.00, z4 40, ratio 6.000, contact ratios 1.671 and 1.635 
+  ok   the rounded contact ratios of the prompt
+  ok   Run opens the dialog
+Compound train built: two stages on a centre distance a = m1 (z1 + z2) / 2 = 60.00 mm.
+
+Stage 1: module 1.50, 20 : 60 teeth, contact ratio 1.671
+Stage 2: module 2.00, 20 : 40 teeth (z4 = 2 a / m2 - z3), contact ratio 1.635
+Ratio (z2 / z1) (z4 / z3) = 6.000, the output turning the same way as the input
+
+Drive Joints on "Gear 1 turns": 90 deg turns the cluster -30.0 deg and gear 4 15.0 deg.
+
+[CompoundTrain 1.0 (2026-11-01)] CompoundTrain 1.0 (2026-11-01)
+  OK pressed, built in 9 s
+  ok   a new design opened
+  ok   seven components: ['Base plate', 'Cluster', 'Countershaft', 'Gear 1', 'Gear 4', 'Spacer', 'Spindle']
+  ok   one body each
+  ok   cluster and countershaft at x = a = 60.00 mm (60.000, 60.000)
+  ok   As-built Joints only, three revolute and three rigid
+  ok   two Motion Links: ['Mesh 20:60', 'Mesh 20:40']
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: cluster joint -30.000, body -30.000; gear 4 joint 15.000, body 15.000 (want -30.000 and 15.000)
+  ok   no tooth collision while gear 1 turns 0 to 18.0 deg in 13 positions 
+  ok   z3 = 24 gives z4 = 36 and a ratio of 4.5 in the message
+  ok   seven components: ['Base plate', 'Cluster', 'Countershaft', 'Gear 1', 'Gear 4', 'Spacer', 'Spindle']
+  ok   one body each
+  ok   cluster and countershaft at x = a = 60.00 mm (60.000, 60.000)
+  ok   As-built Joints only, three revolute and three rigid
+  ok   two Motion Links: ['Mesh 20:60', 'Mesh 24:36']
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: cluster joint -30.000, body -30.000; gear 4 joint 20.000, body 20.000 (want -30.000 and 20.000)
+  ok   no tooth collision while gear 1 turns 0 to 18.0 deg in 13 positions 
+  ok   {'m2': 1.75} refused: The second stage needs z3 + z4 = m1 (z1 + z2) / m2 = 68.57 teeth: not a whole number. Change m2 or the first stage.
+  ok   {'z3': 12} refused: 12 teeth: below 18 teeth at 20 degrees the involute is undercut.
+ALL PASS
