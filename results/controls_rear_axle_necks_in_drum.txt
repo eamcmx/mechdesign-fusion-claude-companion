@@ -1,0 +1,6 @@
+# controls/rear_axle_necks_in_drum
+# Autodesk Fusion 2706.1.17, run 2026-11-01 20:36, 82 s
+
+  interference at rest: [('Banjo housing', 'Cap', 10608.178), ('Banjo housing', 'Bolt', 2276.625), ('Banjo housing', 'Bolt', 2276.625), ('Banjo housing', 'Cap', 10608.178), ('Banjo housing', 'Bolt', 2276.625), ('Banjo housing', 'Bolt', 2276.625), ('Banjo housing', 'Crown wheel', 12277.892)]
+  FAIL no interference among the 106 parts at rest
+CONTROL: the necks stand inside the drum; the interference check MUST fail

@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 31: the rear axle put together. The carrier of Chapter 29 bolted into the housing of Chapter 30, the half shafts splined into the side gears; the axle turns straight and in a turn."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "RearAxle"
+}

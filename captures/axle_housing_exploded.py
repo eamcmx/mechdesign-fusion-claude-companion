@@ -15,17 +15,17 @@ VIEW = (0.55, -0.62, 0.56)      # towards the camera: from the front, the left a
 MOVES = {
     'Rear cover': (-120, 0, 0), 'Cover screw': (-170, 0, 0), 'Filler plug': (-150, 0, 0), 'Drain plug': (-150, 0, 0),
     'Breather': (0, 0, 60), 'Carrier stud': (90, 0, 0), 'Carrier nut': (140, 0, 0),
-    'Oil seal 74x100x10 L': (0, -70, 0), 'Oil seal 74x100x10 R': (0, 70, 0),
-    'Bearing 6213 outer ring L': (0, -100, 0), 'Bearing 6213 outer ring R': (0, 100, 0),
-    'Retainer plate L': (0, -125, 0), 'Retainer plate R': (0, 125, 0),
-    'Wheel stud M14 L': (0, -150, 0), 'Wheel stud M14 R': (0, 150, 0),
-    'Retaining ring L': (0, 95, 0), 'Retaining ring R': (0, -95, 0),
-    'Bearing 6213 inner ring L': (0, 78, 0), 'Bearing 6213 inner ring R': (0, -78, 0),
-    'Bearing 6213 balls L': (0, 78, 0), 'Bearing 6213 balls R': (0, -78, 0),
+    'Oil seal 74x100x10 R': (0, -70, 0), 'Oil seal 74x100x10 L': (0, 70, 0),
+    'Bearing 6213 outer ring R': (0, -100, 0), 'Bearing 6213 outer ring L': (0, 100, 0),
+    'Retainer plate R': (0, -125, 0), 'Retainer plate L': (0, 125, 0),
+    'Wheel stud M14 R': (0, -150, 0), 'Wheel stud M14 L': (0, 150, 0),
+    'Retaining ring R': (0, 95, 0), 'Retaining ring L': (0, -95, 0),
+    'Bearing 6213 inner ring R': (0, 78, 0), 'Bearing 6213 inner ring L': (0, -78, 0),
+    'Bearing 6213 balls R': (0, 78, 0), 'Bearing 6213 balls L': (0, -78, 0),
 }
-ITEMS = ['Banjo housing', 'Rear cover', 'Half shaft L', 'Bearing 6213 inner ring L', 'Bearing 6213 balls L',
-         'Bearing 6213 outer ring L', 'Retaining ring L', 'Retainer plate L', 'Oil seal 74x100x10 L',
-         'Wheel stud M14 L 1', 'Carrier stud M12 1', 'Carrier nut M12 1', 'Cover screw M8x20 1', 'Breather',
+ITEMS = ['Banjo housing', 'Rear cover', 'Half shaft R', 'Bearing 6213 inner ring R', 'Bearing 6213 balls R',
+         'Bearing 6213 outer ring R', 'Retaining ring R', 'Retainer plate R', 'Oil seal 74x100x10 R',
+         'Wheel stud M14 R 1', 'Carrier stud M12 1', 'Carrier nut M12 1', 'Cover screw M8x20 1', 'Breather',
          'Filler plug M22', 'Drain plug M22']
 
 
@@ -50,7 +50,7 @@ def run(_context):
     for top in root.occurrences:
         top.isGrounded = False
         if top.component.name.startswith('Wheel end'):
-            s = 1 if top.component.name.endswith('R') else -1
+            s = 1 if top.component.name.endswith('L') else -1
             m = top.transform2
             m.translation = adsk.core.Vector3D.create(0, s * END_OUT * 0.1, 0)
             top.transform2 = m

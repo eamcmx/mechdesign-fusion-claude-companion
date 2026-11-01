@@ -496,6 +496,22 @@ def housing_tube(b, w, D=80.0, t=8.0, y_seat=575.0, Sy=270.0):
     return h
 
 
+def spline_engagement(y_tip, y_end, y_hub, T, d_minor=35.0, d_major=40.0, n=8, Sy=1140.0, share=0.5, n_min=2.0):
+    """The half shaft's straight-sided splines in the side gear (Chapter 31). The side gear's splined bore runs from
+    its toe out to the end of its hub, y_hub; the shaft's splines from its tip, y_tip, to y_end. Engaged: from the
+    tip to the nearer of the two ends. The flanks carry T at the mean radius on the tooth's height; `share` of the
+    teeth are taken to carry it (an assumption for spacing errors, not from a source), and the pressure must keep
+    n_min against the shaft's yield."""
+    l = min(y_end, y_hub) - y_tip
+    rm = (d_minor + d_major) / 4.0
+    h = (d_major - d_minor) / 2.0
+    out = dict(l=l, rm=rm, h=h, share=share, n_min=n_min)
+    out['l_need'] = n_min * T / (share * n * rm * h * Sy)
+    out['p'] = T / (share * n * rm * h * l) if l > 0 else float('inf')
+    out['n'] = Sy / out['p']
+    return out
+
+
 if __name__ == '__main__':
     b = brief()
     for k, v in tyre(b).items():

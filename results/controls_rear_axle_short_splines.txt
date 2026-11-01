@@ -1,0 +1,7 @@
+# controls/rear_axle_short_splines
+# Autodesk Fusion 2706.1.17, run 2026-11-01 20:34, 84 s
+
+  interference at rest: none
+  the splines reach 6.75 mm into the side gear
+  FAIL at least 35.3 mm of spline in the side gear
+CONTROL: the splines start at 100 mm; the engagement check MUST fail

@@ -1,0 +1,42 @@
+Write a Fusion Python script that, when run, puts the rear axle of a light truck together from its two subsystems:
+the carrier of Chapter 29 (RearAxleCarrier.py) bolted into the housing of Chapter 30 (AxleHousing.py), each half
+shaft splined into its side gear, so that the axle turns as one machine: the pinion drives the differential's case
+through the spiral bevel pair, the case drives both wheels, and in a turn the side gears let the outer wheel run
+faster than the inner one.
+
+INPUTS: none. Each subsystem keeps its own defaults and its own refusals.
+
+DERIVED (from the two scripts and lib/axle_design.py, never typed):
+- the carrier: RearAxleCarrier.design() and layout(); the housing and wheel ends: AxleHousing.design()
+- the splines in the side gears (lib/axle_design.spline_engagement): engaged from the shaft's tip to the end of the
+  side gear's hub (74 + 32.75 mm); the flanks carrying the design torque, 3777.4 N m, at their mean radius on their
+  height with half the teeth taken to carry it; at least 2 against the shaft's yield (1140 MPa)
+
+HARD CONSTRAINTS:
+- Use the two subsystems' own builders; draw nothing twice. Refuse what either refuses, and refuse splines that reach
+  less than the length needed into the side gears, saying how far they reach.
+- The axle along Y, forward +X, up +Z, Y to the left (ISO 8855), the axle's middle at the origin: L at +Y, R at -Y in
+  both subsystems.
+- The carrier's plate on the housing's neck flange at x = 165, on the eight studs.
+- Each half shaft's splines from 35 mm, deep in its side gear, to 115 mm.
+- The drum's cavity clear of the necks' walls: the carrier's caps and the crown wheel turn inside it.
+- Nothing touches anything else, at rest, driving straight or in a turn.
+
+FUSION CONVENTIONS:
+- A new design document. Six subassemblies: Housing (grounded), Carrier, Pinion assembly, Differential assembly, Wheel
+  end L, Wheel end R.
+- AsBuiltJoints: the carrier rigid on the housing; the pinion revolute about X and the case about Y on the carrier,
+  with the Motion Link of the final drive (47 turns of the pinion to 12 of the case, the case turning about +Y when the
+  pinion turns about +X); the spiders and side gears revolute in the case, made in the root between proxies; each half
+  shaft rigid in its side gear. Motion Links for the differential: each spider turns 22 for 15 of a side gear, the
+  other way as seen along their own axes; side gear L to every spider, spider 1 to side gear R.
+- The API works in cm and radians.
+
+ACCEPTANCE CRITERIA:
+- A message gives the final drive, the differential, the splines' engagement with their pressure and factor, the
+  parts list and a version tag. Defaults: 71.75 mm engaged, 35.3 mm needed, 280.8 MPa, factor 4.06.
+- 106 components in 43 kinds; no interference at rest; each half shaft's splines 71.75 mm into its side gear.
+- Driving straight, the pinion turned 30 deg: the case and both half shafts 7.6596 deg about +Y, no interference.
+- In a turn, the pinion 47 deg and spider 1 2.5 deg: the case 12 deg, the half shafts 12 -/+ 1.7045 deg, no
+  interference.
+- Refused: splines from 100 mm.

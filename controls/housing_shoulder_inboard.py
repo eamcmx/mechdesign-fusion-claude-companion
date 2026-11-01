@@ -10,10 +10,10 @@ import adsk.core
 
 PATH = '__COMPANION__/scripts/AxleHousing/AxleHousing.py'
 SWAPS = [
-    ("    mp.union(sh, mp.cyl((0, s * (Y_INNER + 59.99), 0), (0, s * (y0 - RING_W), 0), Dz['d_body'] / 2.0))  # the body\n"
+    ("    mp.union(sh, mp.cyl((0, s * (SPLINE_END - 0.01), 0), (0, s * (y0 - RING_W), 0), Dz['d_body'] / 2.0))  # the body\n"
      "    mp.union(sh, mp.cyl((0, s * (y0 - RING_W - 0.01), 0), (0, s * (y1 + 0.01), 0), Bb['d'] / 2.0))  # the seat\n"
      "    mp.union(sh, mp.cyl((0, s * y1, 0), (0, s * y_fl, 0), Bb['dS'] / 2.0))                    # the shoulder\n",
-     "    mp.union(sh, mp.cyl((0, s * (Y_INNER + 59.99), 0), (0, s * (y0 - 40.0), 0), Dz['d_body'] / 2.0))\n"
+     "    mp.union(sh, mp.cyl((0, s * (SPLINE_END - 0.01), 0), (0, s * (y0 - 40.0), 0), Dz['d_body'] / 2.0))\n"
      "    mp.union(sh, mp.cyl((0, s * (y0 - 40.01), 0), (0, s * y0, 0), Bb['dS'] / 2.0))\n"
      "    mp.union(sh, mp.cyl((0, s * (y0 - 0.01), 0), (0, s * y_fl, 0), Bb['d'] / 2.0))\n"),
     ("    mp.add_body(o, mp.tube((0, s * (y0 - RING_W), 0), (0, s * y0, 0), Bb['dS'] / 2.0, Bb['d'] / 2.0), 'Retaining ring',\n",
@@ -35,9 +35,9 @@ def run(_context):
     leaves = {x.component.name: x for x in root.allOccurrences if x.component.bRepBodies.count}
     c = fc.interference(list(leaves.values()))
     print('  interference at rest: %s' % (c or 'none'))
-    ring_in, ring_out = span(leaves['Bearing 6213 inner ring R'].bRepBodies.item(0), 1)
+    ring_in, ring_out = span(leaves['Bearing 6213 inner ring L'].bRepBodies.item(0), 1)
     inboard = 0.0
-    for f in leaves['Half shaft R'].bRepBodies.item(0).faces:
+    for f in leaves['Half shaft L'].bRepBodies.item(0).faces:
         if f.geometry.surfaceType == adsk.core.SurfaceTypes.CylinderSurfaceType and span(f, 1)[1] <= ring_out + 0.01:
             inboard = max(inboard, f.geometry.radius * 10)
     print('  the shaft inboard of the bearing reaches %.2f mm in radius; the bearing\'s bore is 32.50' % inboard)

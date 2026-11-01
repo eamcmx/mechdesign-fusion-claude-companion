@@ -34,7 +34,7 @@ import mdfc_parts as mp         # noqa: E402
 importlib.reload(ad)
 importlib.reload(mp)
 
-VERSION = 'AxleHousing 1.2 (2026-11-01)'
+VERSION = 'AxleHousing 1.3 (2026-11-01)'
 CM = 0.1
 VI = adsk.core.ValueInput.createByReal
 VS = adsk.core.ValueInput.createByString
@@ -47,7 +47,8 @@ FILL_Z, DRAIN_Z = 30.0, -100.0
 WALL = 8.0
 SEAT_Y = 575.0                      # the spring seats
 SPLINE = (35.0, 40.0, 8, 7.0)       # minor, major, number, width (mm)
-Y_INNER = 100.0                     # the shaft's inner end in the side gear
+Y_INNER = 100.0                     # where the side gear is taken to hold the shaft (the sizing's support)
+Y_TIP, SPLINE_END = 35.0, 115.0     # the splines: from the shaft's tip, deep in the side gear, out past its hub
 STUD_PCD = 139.7
 
 
@@ -94,6 +95,9 @@ def housing(root, Dz):
     mp.union(body, mp.tube((REAR_X[0], 0, 0), (REAR_X[0] + 8.0, 0, 0), 160.0, REAR_R - WALL))    # the cover's flange
     mp.cut(body, mp.cyl((NECK_X[0] - 1, 0, 0), (NECK_X[1] + 40.0, 0, 0), NECK_R - WALL))              # the openings
     mp.cut(body, mp.cyl((REAR_X[0] - 30.0, 0, 0), (0, 0, 0), REAR_R - WALL))
+    # the drum's cavity once more: the necks are tubes along x, and their walls must not stand inside the drum, where
+    # the carrier's caps and the crown wheel turn (found when the axle was put together, Chapter 31)
+    mp.cut(body, mp.cyl((0, -(DRUM_Y - WALL), 0), (0, DRUM_Y - WALL, 0), DRUM_R - WALL))
     for yb, zb in ad.joint_bolts():
         mp.cut(body, mp.cyl((NECK_X[1] - 15, yb, zb), (NECK_X[1] + 1, yb, zb), 6.05))
     for kk in range(10):
@@ -155,7 +159,7 @@ def housing(root, Dz):
         parts.append(o)
     # the parts of each wheel end that stay with the housing: the bearing's outer ring, its retainer plate, the seal
     for side in (-1, 1):
-        tag = 'R' if side > 0 else 'L'
+        tag = 'L' if side > 0 else 'R'                    # ISO 8855: x forward, y left, z up
         _, outer, _, _ = mp.bearing_bodies(Bb['d'], Bb['D'], Bb['B'], y0 if side > 0 else -y0 - Bb['B'])
         o = mp.new_occ(asm.component, 'Bearing 6213 outer ring %s' % tag)
         mp.add_body(o, outer, 'Outer ring', 'Steel')
@@ -178,18 +182,18 @@ def wheel_end_asm(root, Dz, side):
     side = +1 (right) or -1 (left)."""
     w = Dz['w']
     s = side
-    tag = 'R' if s > 0 else 'L'
+    tag = 'L' if s > 0 else 'R'
     asm = mp.new_occ(root, 'Wheel end %s' % tag)
     parts = []
     y_b, Bb = w['y_b'], w['bearing']
     y0 = y_b - Bb['B'] / 2.0
     y_fl = y_b + Bb['B'] / 2.0 + 14.0                     # the flange's inner face, past the tube's end
     dmin, dmaj, n, wd = SPLINE
-    sh = mp.spline_shaft((0, s * Y_INNER, 0), (0, s * (Y_INNER + 60.0), 0), dmin, dmaj, n, wd)
+    sh = mp.spline_shaft((0, s * Y_TIP, 0), (0, s * SPLINE_END, 0), dmin, dmaj, n, wd)
     y1 = y0 + Bb['B']                                     # the bearing's outboard face, against the shoulder
     # everything inboard of the shoulder is no wider than the bearing's bore, so that the bearing and then the
     # retaining ring are pressed on from the inner end; the flange is part of the shaft
-    mp.union(sh, mp.cyl((0, s * (Y_INNER + 59.99), 0), (0, s * (y0 - RING_W), 0), Dz['d_body'] / 2.0))  # the body
+    mp.union(sh, mp.cyl((0, s * (SPLINE_END - 0.01), 0), (0, s * (y0 - RING_W), 0), Dz['d_body'] / 2.0))  # the body
     mp.union(sh, mp.cyl((0, s * (y0 - RING_W - 0.01), 0), (0, s * (y1 + 0.01), 0), Bb['d'] / 2.0))  # the seat
     mp.union(sh, mp.cyl((0, s * y1, 0), (0, s * y_fl, 0), Bb['dS'] / 2.0))                    # the shoulder
     fl = mp.cyl((0, s * (y_fl - 0.01), 0), (0, s * (y_fl + 14.0), 0), 95.0)
@@ -276,7 +280,7 @@ def build(d_body=48.0, D=80.0, t=8.0, d_seat=65):
     root = design_.rootComponent
     hs, _ = housing(root, Dz)
     hs.isGrounded = True
-    ends = [wheel_end_asm(root, Dz, s)[0] for s in (-1, 1)]
+    ends = [wheel_end_asm(root, Dz, s)[0] for s in (1, -1)]          # L (+y) first
     for e in ends:
         revolute_y(root, e, hs, 'Half shaft %s turns' % e.component.name[-1])
     for occ, c in ((hs, 'Paint - Enamel Glossy (Grey)'), (ends[0], 'Paint - Enamel Glossy (Blue)'),

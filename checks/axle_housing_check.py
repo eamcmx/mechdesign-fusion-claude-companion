@@ -88,7 +88,7 @@ def run(_context):
         good = (32.5 in cyl_radii(leaves['Bearing 6213 inner ring %s' % tag]) and 32.5 in cyl_radii(leaves['Half shaft %s' % tag])
                 and 60.0 in cyl_radii(leaves['Bearing 6213 outer ring %s' % tag]) and 60.0 in cyl_radii(leaves['Banjo housing']))
         fc.ok(good, 'wheel bearing %s: inner ring on the 65 mm seat, outer ring in the 120 mm bore' % tag)
-    for tag, s in (('L', -1), ('R', 1)):
+    for tag, s in (('L', 1), ('R', -1)):
         fit = assembly_order(leaves, tag, s)
         fc.ok(fit['inboard'] <= 32.5 + 1e-3 and fit['ring_inboard'] and fit['shoulder'] >= 37.0 - 1e-3,
               'wheel end %s goes together: the shaft inboard of the bearing at most %.2f mm in radius against the 32.5 mm '
