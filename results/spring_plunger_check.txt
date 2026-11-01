@@ -1,0 +1,34 @@
+# spring_plunger_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 03:49, 5 s
+
+SpringPlunger 1.0 (2026-11-01)
+  ok   C 8.000, K_B 1.17241, N_a 9, L_s 15.00, k 3.32438, F1 19.95, F2 46.54, F_s 69.81, tau2 494.0, tau_s 741.1, S_sy 938.1, n2 1.899, n_s 1.266, xi 0.500, tau_p 3.29 
+  ok   the rounded values of the prompt (1.17241, 3.32438, 19.95, 46.54, 69.81, 494.0, 741.1, 938.1, 1.899, 1.266, 0.5, 3.29)
+  ok   Run opens the dialog
+Spring plunger built: rod 8 mm, DIN 471 ring 8 x 0.8, cross pin 3.0 mm.
+
+Spring (music wire, plain and ground ends): d = 1.50 mm, D = 12.0 mm, N_t = 10
+C = 8.000, K_B = 1.17241, N_a = 9, L_s = 15.00 mm, k = 3.32438 N/mm
+F1 = 19.95 N at L1 = 30.0 mm, F2 = 46.54 N at L2 = 22.0 mm, F_s = 69.81 N at solid
+tau(F2) = 494.0 MPa, tau(F_s) = 741.1 MPa, S_sy = 938.1 MPa
+n2 = 1.899, n_s = 1.266, xi = 0.500
+Cross pin in double shear: tau_p = 3.29 MPa
+
+[SpringPlunger 1.0 (2026-11-01)] SpringPlunger 1.0 (2026-11-01)
+  OK pressed, built in 4 s
+  ok   a new design opened
+  ok   six components: ['Base', 'Pin', 'Retaining ring', 'Rod', 'Sleeve', 'Spring']
+  ok   one body each
+  ok   the base is grounded
+  ok   As-built Joints only, four rigid and one slider: ['RigidJointMotion', 'RigidJointMotion', 'RigidJointMotion', 'RigidJointMotion', 'SliderJointMotion']
+  ok   the spring stands on the base, 30.000 mm high
+  ok   the spring's outside diameter 13.500 mm (13.5 wanted)
+  ok   the ring from z = 38.000 to 38.800 mm, on top of the sleeve
+  ok   no interference anywhere at rest 
+  ok   the slider is limited to -8 .. 0 mm
+  ok   driven to the full stroke, the sleeve moved -8.000 mm
+  asked for 12 mm: the sleeve stands 8.000 mm below rest
+  ok   {'stroke': 14.0} refused: Robust linearity: xi = F_s / F2 - 1 = 0.050, below 0.15. Shorten the stroke or add coils.
+  ok   {'D': 20.0} refused: Spring index C = D / d = 13.3: keep it between 4 and 12.
+  ok   {'dr': 12} refused: The spring's inside diameter 10.5 mm does not clear the 12 mm rod by 1 mm.
+ALL PASS

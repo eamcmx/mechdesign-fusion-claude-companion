@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 9: a sleeve on a helical compression spring, held by a DIN 471 retaining ring on a rod pinned into a base; the spring's rate, forces, stresses and safety factors."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "SpringPlunger"
+}

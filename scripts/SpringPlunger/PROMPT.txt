@@ -1,0 +1,68 @@
+Write a Fusion Python script that, when run, builds a spring plunger: a sleeve that slides down a rod against a
+helical compression spring and is held up by a retaining ring, with the rod fixed in a base block by a cross pin;
+and that reports the spring's rate, forces, stresses and safety factors.
+
+INPUTS (a command dialog, with these defaults):
+- rod diameter d_r (one of 6, 8, 10, 12 mm), 8
+- spring wire diameter d (mm), 1.5
+- mean coil diameter D (mm), 12
+- total coils N_t (count), 10
+- free length L0 (mm), 36
+- installed length L1 (mm), 30
+- stroke of the sleeve (mm), 8
+- cross pin diameter d_p (mm), 3
+
+DERIVED (computed from the inputs, never typed):
+- spring: music wire ASTM A228, plain and ground ends (Shigley, Tables 10-1, 10-4, 10-5, 10-6):
+  G = 81.7 GPa for d up to 1.60 mm, 81.0 GPa above; S_ut = A / d^m with A = 2211 MPa.mm^m and m = 0.145;
+  S_sy = 0.45 * S_ut
+- spring index C = D / d; Bergstrasser factor K_B = (4C + 2) / (4C - 3)
+- active coils N_a = N_t - 1; solid length L_s = d * N_t; rate k = d^4 * G / (8 * D^3 * N_a)
+- installed force F1 = k (L0 - L1); length at full stroke L2 = L1 - stroke; force F2 = k (L0 - L2);
+  force at solid F_s = k (L0 - L_s)
+- shear stress tau = K_B * 8 * F * D / (pi * d^3), at F1, F2 and F_s
+- safety factor at full stroke n2 = S_sy / tau(F2); at solid n_s = S_sy / tau(F_s);
+  fractional overrun to solid xi = F_s / F2 - 1
+- cross pin in double shear: tau_p = F2 / (2 * pi * d_p^2 / 4)
+- retaining ring DIN 471 for the rod, mm (ring thickness s, lug width a, back width b, lug hole d5, groove
+  diameter d2, groove width m): 6: 0.7, 2.7, 1.3, 1.2, 5.7, 0.8; 8: 0.8, 3.2, 1.5, 1.2, 7.6, 0.9;
+  10: 1.0, 3.3, 1.8, 1.5, 9.6, 1.1; 12: 1.0, 3.3, 1.8, 1.7, 11.5, 1.1
+- base block: square of side max(30, D + d + 12), height 1.5 d_r + 4, rod bore 1.5 d_r deep; sleeve 8 mm high,
+  outer diameter D + d + 4, bore d_r + 0.2
+
+HARD CONSTRAINTS:
+- 4 <= C <= 12 and 3 <= N_a <= 15 (Shigley's recommended ranges), or refuse.
+- Wire diameter between 0.84 and 3.17 mm (the music wire rows used), or refuse.
+- L1 < L0: the spring is preloaded when installed, or refuse.
+- Robust linearity: xi >= 0.15, or refuse giving xi (this also refuses a stroke that closes the spring solid).
+- Solid-safe: n_s >= 1.2, or refuse giving n_s.
+- The spring's inside diameter D - d clears the rod by at least 1 mm, or refuse.
+- Cross pin d_p at most 0.4 d_r, or refuse.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Base (grounded), top face at z = 0; Rod, standing in the
+  base's bore, its top 2 mm above the groove; Pin, along x through base and rod at half the bore depth, as long
+  as the base is wide; Spring, standing on the base, drawn at its installed length L1; Sleeve, sitting on the
+  spring, from z = L1 to L1 + 8; Retaining ring, on top of the sleeve.
+- The groove is cut in the rod: diameter d2, width m, its upper flank level with the ring's top face.
+- The ring: thickness s, inside diameter d2 (installed), a 30 degree gap, two lugs of radial width a and 30
+  degrees each beside the gap with a hole d5 in each, back of radial width b; true arcs, not polylines.
+- The spring: Fusion's API cannot create a coil, so sweep a circle of diameter d along a 3D spline through
+  points of the helix (24 per turn, N_t turns from z = 0 to L1), then grind the ends: cut the body flat at
+  z = 0 and z = L1.
+- The API works in cm: convert every mm input.
+- Joints, As-built only: rigid for Rod, Pin and Spring to Base and for Retaining ring to Rod; a slider along z
+  for Sleeve on Rod, limited from -stroke to 0.
+
+ACCEPTANCE CRITERIA:
+- A message gives C, K_B, N_a, L_s, k, F1, F2, F_s, tau at F2 and at solid, S_sy, n2, n_s, xi, tau_p and a
+  version tag.
+- Defaults: C = 8, K_B = 1.17241, N_a = 9, L_s = 15 mm, k = 3.32438 N/mm, F1 = 19.95 N, F2 = 46.54 N,
+  F_s = 69.81 N, tau(F2) = 494.0 MPa, tau(F_s) = 741.1 MPa, S_sy = 938.1 MPa, n2 = 1.899, n_s = 1.266,
+  xi = 0.500, tau_p = 3.29 MPa.
+- Six components; the spring 30 mm high, its outside diameter 13.5 mm; no interference anywhere at rest.
+- The sleeve slides 8 mm down and no further; the ring sits in the groove.
+- Refused: stroke 14 (xi = 0.050); D = 20 (C = 13.3); rod 12 (inside diameter 10.5 mm does not clear it).
+
+Give me one Python file and its .manifest.
