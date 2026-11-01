@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 5: a shaft turning in a bearing block, with a hub fixed to it by a DIN 6885 parallel key; the key's stresses checked against the torque."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "KeyedShaft"
+}

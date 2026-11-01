@@ -1,0 +1,56 @@
+Write a Fusion Python script that, when run, builds a shaft turning in a bearing block, with a hub fixed to the shaft
+by a DIN 6885 parallel key, assembled so that Drive Joints on the shaft turns shaft, key and hub together.
+
+INPUTS (a command dialog, with these defaults):
+- shaft diameter D (mm), 20
+- shaft length L_shaft (mm), 80
+- hub length L_hub (mm), 25
+- hub wall t_wall (mm), 8
+- key length L_key (mm), 18
+- torque to transmit T (N.m), 30
+- allowable shear stress in the key tau_allow (MPa), 60
+- allowable crushing stress on the key's sides sigma_allow (MPa), 100
+
+DERIVED (computed from the inputs, never typed):
+- key width b, key height h, shaft slot depth t1, hub slot depth t2 from DIN 6885 for D:
+    D above 10 up to 12: b 4, h 4, t1 2.5, t2 1.8
+    D above 12 up to 17: b 5, h 5, t1 3.0, t2 2.3
+    D above 17 up to 22: b 6, h 6, t1 3.5, t2 2.8
+    D above 22 up to 30: b 8, h 7, t1 4.0, t2 3.3
+    D above 30 up to 38: b 10, h 8, t1 5.0, t2 3.3
+    D above 38 up to 44: b 12, h 8, t1 5.0, t2 3.3
+    D above 44 up to 50: b 14, h 9, t1 5.5, t2 3.8
+    D above 50 up to 58: b 16, h 10, t1 6.0, t2 4.3
+- hub bore D + 0.1 (0.05 mm clearance on the radius); hub outside diameter D + 2 * t_wall
+- force on the key at the shaft's surface F = 2 * T / D
+- key shear stress tau = F / (b * L_key); crushing stress on the hub side sigma = F / ((h - t1) * L_key)
+- shaft torsion stress tau_shaft = 16 * T / (pi * D^3)
+
+HARD CONSTRAINTS:
+- D outside the table (10 mm or less, more than 58 mm): refuse.
+- L_key > L_hub: refuse (the key must not stick out of the hub).
+- tau > tau_allow or sigma > sigma_allow: refuse, and say which stress and by how much.
+- The key sits with t1 of its height in the shaft's slot and the rest in the hub's slot; it straddles the joint between
+  shaft and hub, which is how it carries the torque.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Four components, one body each: Bearing block (grounded), Shaft, Key, Hub. The shaft is along z, its axis at the
+  origin, from z = 0 to z = L_shaft. The bearing block is square round the shaft, max(40, D + 20) mm a side, from z = 0 to
+  20 mm, with a bore of D + 0.2. The hub's top face is 5 mm below the shaft's end; the key is centred on the hub's length.
+- The shaft's slot: b wide, t1 deep, L_key + 1 long, on the +y side, centred on the hub. The hub's slot: b wide,
+  reaching t2 above the shaft's surface, through the hub's whole length.
+- Create every component where it belongs; never move one afterwards. The API works in cm: convert every mm input.
+- Joints, As-built only: the Shaft turns on the Bearing block about z; the Key and the Hub are rigid to the Shaft
+  (the key locks the hub to the shaft, so they turn together).
+
+ACCEPTANCE CRITERIA:
+- A message gives b, h, t1, t2, the hub's outside diameter, the three stresses and a version tag.
+- With the defaults: key 6 x 6, t1 3.5, t2 2.8, hub outside diameter 36 mm; F = 3000 N; tau = 27.78 MPa,
+  sigma = 66.67 MPa, tau_shaft = 19.10 MPa.
+- With D = 30: key 8 x 7, t1 4.0, t2 3.3, hub outside diameter 46 mm, nothing else edited.
+- No two parts overlap, at rest and with the shaft's joint at 90 degrees.
+- Shaft joint at 90 degrees: shaft, key and hub all turn 90 degrees about z; the bearing block does not move.
+- Refused: L_key = 30 (longer than the hub); D = 70 (outside the table); T = 100 N.m (sigma = 222.2 MPa > 100).
+
+Give me one Python file and its .manifest.

@@ -1,0 +1,6 @@
+# controls/keyed_shaft_key_on_top
+# Autodesk Fusion 2706.1.17, run 2026-11-01 03:09, 2 s
+
+  interference: [('Key', 'Hub', 345.6)]
+  FAIL no interference
+CONTROL: the key stands on the shaft instead of in its slot; the check above MUST fail
