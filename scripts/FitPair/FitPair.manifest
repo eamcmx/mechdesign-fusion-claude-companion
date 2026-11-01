@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 6: a pin in a hole, each made at a chosen limit of its ISO 286 tolerance, so that a clearance, transition or interference fit can be measured."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "FitPair"
+}

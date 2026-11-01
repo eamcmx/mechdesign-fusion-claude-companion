@@ -1,0 +1,48 @@
+Write a Fusion Python script that, when run, builds a pin in a hole through a block, each made at a chosen limit of its
+ISO 286 tolerance, assembled so that the fit can be seen and measured: a clearance fit turns, the others are fixed.
+
+INPUTS (a command dialog, with these defaults):
+- nominal size D (mm), 20
+- hole tolerance class, H7
+- shaft tolerance class (one of f7, g6, h6, k6, n6, p6), g6
+- condition (maximum material = smallest hole and largest pin; minimum material = largest hole and smallest
+  pin), maximum material
+- engaged length L (mm), 20
+
+DERIVED (computed from the inputs, never typed):
+- standard tolerance grades IT6 and IT7 and the fundamental deviations, in micrometres, from ISO 286 for the range of D:
+    range (mm)   IT6  IT7   f es  g es  h es  k ei  n ei  p ei
+    above 3 to 6    8   12   -10    -4     0    +1    +8   +12
+    above 6 to 10   9   15   -13    -5     0    +1   +10   +15
+    above 10 to 18  11   18   -16    -6     0    +1   +12   +18
+    above 18 to 30  13   21   -20    -7     0    +2   +15   +22
+    above 30 to 50  16   25   -25    -9     0    +2   +17   +26
+- hole H7: lower deviation EI = 0, upper ES = IT7
+- shafts f7: es from the table, ei = es - IT7; g6, h6: es from the table, ei = es - IT6; k6, n6, p6: ei from the table,
+  es = ei + IT6
+- largest clearance = ES - ei; smallest clearance = EI - es (negative = interference)
+- fit: clearance if the smallest clearance >= 0; interference if the largest clearance <= 0; otherwise transition
+- the hole's diameter is D + EI (maximum material) or D + ES (minimum material); the pin's is D + es or D + ei
+
+HARD CONSTRAINTS:
+- D outside the table (3 mm or less, more than 50 mm): refuse.
+- A shaft class not in the table: refuse.
+- The model is made at the chosen limits, not at the nominal size: a CAD model at nominal size hides every fit.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Two components, one body each: Block (grounded), a cube of side 2 * D with the hole along z through it, from
+  z = -L/2 to L/2; Pin, a cylinder along z from z = -L/2 - 5 to L/2 + 5. Create both where they belong.
+- The API works in cm: convert every mm input, and micrometres to mm (1 um = 0.001 mm).
+- Join with an As-built Joint: revolute about z if the pair is a clearance fit at the chosen condition, rigid otherwise.
+
+ACCEPTANCE CRITERIA:
+- A message gives the four limits, the largest and smallest clearance in micrometres, the kind of fit and a version tag.
+- 20 H7/g6: hole 20.000 to 20.021, pin 19.980 to 19.993; clearance 7 to 41 um; a clearance fit; no interference
+  at either condition; the joint is revolute.
+- 20 H7/p6 at maximum material: pin 20.035 in a 20.000 hole, 35 um interference on the diameter; Fusion's
+  interference check finds an overlap of pi/4 * (20.035^2 - 20.000^2) * 20 = 22.010 mm^3; the joint is rigid.
+- 15 H7/k6: from 12 um interference to 17 um clearance, a transition fit.
+- Refused: D = 60 (outside the table); shaft class r6 (not in the table).
+
+Give me one Python file and its .manifest.

@@ -1,0 +1,28 @@
+# fit_pair_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 03:16, 4 s
+
+FitPair 1.0 (2026-11-01)
+  ok   20 H7/g6: hole 0/+21, pin -20/-7 um; clearance 7 to 41 um, clearance
+  ok   15 H7/k6: from -12 to 17 um, transition
+  ok   Run opens the dialog
+Fit 20 H7/g6 built at maximum material.
+
+Hole 20.000 to 20.021 mm (EI +0, ES +21 um)
+Pin  19.980 to 19.993 mm (ei -20, es -7 um)
+Clearance from +7 to +41 um (negative = interference): a clearance fit
+As built: hole 20.000, pin 19.993, clearance 7 um on the diameter; joint "Pin turns (clearance)"
+
+[FitPair 1.0 (2026-11-01)] FitPair 1.0 (2026-11-01)
+  OK pressed, built in 1 s
+  ok   a new design opened
+  ok   H7/g6 at maximum material: hole 20.0000, pin 19.9930 mm
+  ok   no interference
+  ok   the joint is revolute
+  ok   H7/g6 at minimum material: hole 20.0210, pin 19.9800 mm, no interference
+  ok   H7/p6 at maximum material: hole 20.0000, pin 20.0350 mm
+  ok   interference found 22.010 mm^3 (pi/4 * (20.035^2 - 20^2) * 20 = 22.010)
+  ok   the joint is rigid
+  H7/p6 at minimum material: hole 20.0210, pin 20.0220 mm; interference found 0.629 mm^3 (by hand 0.629)
+  ok   {'D': 60.0} refused: A size of 60.0 mm is outside the ISO 286 table used here (above 3 mm, up to 50 mm).
+  ok   {'shaft': 'r6'} refused: The class H7/r6 is not in the table: hole H7 with a shaft f7, g6, h6, k6, n6, p6.
+ALL PASS

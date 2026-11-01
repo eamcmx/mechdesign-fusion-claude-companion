@@ -42,9 +42,16 @@ def lint(path):
     res.append(('goal names the deliverable', bool(re.search(r'script that,? when run,? builds', b['GOAL'], re.I))))
     for name in BLOCKS:
         res.append(('%s block present' % name.lower(), name in b))
-    items = [l for l in b.get('INPUTS', '').split('\n') if l.strip().startswith('-')]
-    unitless = [l.strip() for l in items if not re.search(r'\((mm|deg|rpm|N|N\.m|N·m|kg|s|%|MPa|GPa|h)\)|teeth|count|number of|\b[zZN]\w*,', l)]
-    nodefault = [l.strip() for l in items if not re.search(r',\s*-?[\d.]+\s*$', l.strip())]
+    items = []                                  # an input may run on to the next, indented line
+    for l in b.get('INPUTS', '').split('\n'):
+        if l.strip().startswith('-'):
+            items.append(l.strip())
+        elif items and l.startswith('  ') and l.strip():
+            items[-1] += ' ' + l.strip()
+    unit = r'\((mm|deg|rpm|N|N\.m|N·m|kg|s|%|MPa|GPa|h|um)\)|teeth|count|number of|\b[zZN]\w*,'
+    choice = r'class|one of|condition|\bor\b'   # a choice needs no unit
+    unitless = [l for l in items if not re.search(unit, l) and not re.search(choice, l)]
+    nodefault = [l for l in items if not re.search(r',\s*[-+\w.]+(\s+\w+)*\s*$', l)]
     res.append(('every input has a unit or is a count (%d inputs)' % len(items), bool(items) and not unitless))
     res.append(('every input has a default', bool(items) and not nodefault))
     res.append(('a hard constraint refuses bad input', 'refuse' in b.get('HARD CONSTRAINTS', '').lower()))
