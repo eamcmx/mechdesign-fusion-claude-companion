@@ -1,4 +1,4 @@
-Write a Fusion 360 Python script that, when run, builds a parametric spur gear pair on a base plate, assembled and ready to turn with Drive Joints.
+Write a Fusion Python script that, when run, builds a parametric spur gear pair on a base plate, assembled and ready to turn with Drive Joints.
 
 INPUTS (a command dialog, with these defaults):
 - module m (mm), 2

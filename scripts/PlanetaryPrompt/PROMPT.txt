@@ -1,4 +1,4 @@
-Write a Fusion 360 Python script that, when run, builds a parametric planetary gearbox, assembled so that
+Write a Fusion Python script that, when run, builds a parametric planetary gearbox, assembled so that
 ASSEMBLE > Drive Joints on the sun turns the planets round the ring and turns the carrier.
 
 INPUTS (a command dialog, with these defaults):

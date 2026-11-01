@@ -1,4 +1,4 @@
-Write a Fusion 360 Python script that, when run, builds the bevel-gear differential of a robot wrist as one
+Write a Fusion Python script that, when run, builds the bevel-gear differential of a robot wrist as one
 complete, jointed assembly: driving the yoke's joint pitches the wrist, driving the output gear's joint rolls it, and
 the two side gears follow as they would on the two motors.
 
