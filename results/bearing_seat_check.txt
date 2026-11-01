@@ -1,0 +1,31 @@
+# bearing_seat_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 03:23, 4 s
+
+BearingSeat 1.0 (2026-11-01)
+  ok   6002: L10 1601.613 Mrev, L10h 26693.55 h, s0 5.70
+  ok   6002: dm 23.50, Dw 5.10, Z 11, n_cage/n 0.391489
+  ok   Run opens the dialog
+Bearing 6002 seated.
+
+d 15, D 32, B 9 mm; C 5.85 kN, C0 2.85 kN
+P = Fr = 500 N at n = 1000 rpm
+L10 = (C / P)^3 = 1601.6 million revolutions; L10h = 26694 h (required 10000 h)
+s0 = C0 / P0 = 5.70
+Simplified internals: dm 23.50 mm, Dw 5.10 mm, Z = 11 balls
+Cage speed n_cage = n / 2 * (1 - Dw / dm) = 0.39149 n = 391.5 rpm
+
+[BearingSeat 1.0 (2026-11-01)] BearingSeat 1.0 (2026-11-01)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   five components: ['Balls', 'Housing', 'Inner ring', 'Outer ring', 'Shaft']
+  ok   one body each (the balls are one body)
+  ok   As-built Joints 4, plain Joints 0, Motion Links 1
+  ok   no interference at rest 
+  ok   shaft at 90: shaft 90.000, inner ring 90.000 deg
+  ok   balls 35.234 deg (0.391489 * 90 = 35.234)
+  ok   outer ring 0.000, housing 0.000 deg
+  ok   no interference at 90 degrees 
+  ok   61902: L10 663.055 Mrev, L10h 11051 h, Z 13, n_cage/n 0.409302
+  ok   61902 builds with no interference
+  ok   {'Fr': 2000.0} refused: Rating life L10h = 417 h is below the required 10000 h. The 6002 reaches 10000 h at 1000 rpm only up to Fr = 694 N.
+ALL PASS

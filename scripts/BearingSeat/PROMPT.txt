@@ -1,0 +1,46 @@
+Write a Fusion Python script that, when run, builds a deep groove ball bearing seated on a shaft and in a housing,
+assembled so that Drive Joints on the shaft turns the inner ring with it and carries the balls round at the cage's
+speed, and that reports the bearing's rating life.
+
+INPUTS (a command dialog, with these defaults):
+- bearing (one of 6002, 61902), 6002
+- shaft speed n (rpm), 1000
+- radial load Fr (N), 500
+- required rating life L10h_req (h), 10000
+
+DERIVED (computed from the inputs, never typed):
+- bearing data (SKF): 6002: d 15, D 32, B 9 mm, C 5.85 kN, C0 2.85 kN; 61902: d 15, D 28, B 7 mm, C 4.36 kN, C0 2.24 kN
+- pure radial load: P = Fr, P0 = Fr
+- basic rating life L10 = (C / P)^3 million revolutions (ball bearings); L10h = 10^6 * L10 / (60 * n) hours
+- static safety factor s0 = C0 / P0
+- simplified internal geometry: pitch diameter dm = (d + D) / 2; ball diameter Dw = 0.3 * (D - d); number of balls
+  Z = floor(pi * dm / (1.25 * Dw)); inner ring outside diameter dm - Dw - 0.1; outer ring inside diameter dm + Dw + 0.1
+- cage speed with the outer ring held and no contact angle: n_cage = n / 2 * (1 - Dw / dm)
+
+HARD CONSTRAINTS:
+- L10h < L10h_req: refuse, giving L10h and the load at which the bearing would just reach L10h_req.
+- The balls must not touch each other: dm * sin(pi / Z) > Dw.
+- The balls orbit at the cage's speed, not the shaft's: the shaft-to-balls Motion Link has the ratio n_cage / n.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Five components, one body each, created where they belong, all on the z axis: Housing (grounded), Outer ring,
+  Inner ring, Balls (all Z balls as one body, their centres at radius dm / 2 and height B / 2), Shaft.
+  The bearing occupies z = 0 to B. The housing is a square block of side D + 16, from z = -3 to B, with a bore D from
+  z = 0 to B and a smaller bore D - 4 below it (the shoulder the outer ring sits on). The shaft has diameter d from
+  z = 0 to B + 20 and a shoulder of diameter d + 3 from z = -10 to 0 (the shoulder the inner ring sits on).
+- The API works in cm: convert every mm input.
+- Joints, As-built only: Outer ring rigid to the Housing; Shaft revolute on the Housing about z; Inner ring rigid to
+  the Shaft; Balls revolute on the Housing about z; a Motion Link from the shaft's joint to the balls' joint, same
+  direction, 360 deg to 360 * n_cage / n deg.
+
+ACCEPTANCE CRITERIA:
+- A message gives d, D, B, C, C0, P, L10, L10h, s0, Z, n_cage and a version tag.
+- 6002 at 500 N and 1000 rpm: L10 = (5850 / 500)^3 = 1601.6 million revolutions; L10h = 26694 h; s0 = 5.70;
+  dm = 23.5 mm, Dw = 5.1 mm, Z = 11; n_cage / n = 0.5 * (1 - 5.1 / 23.5) = 0.39149.
+- Shaft joint at 90 degrees: inner ring 90 degrees, balls 35.234 degrees, outer ring and housing 0.
+- No interference at rest nor at 90 degrees.
+- 61902 at 500 N: L10 = 663.1 million revolutions, L10h = 11051 h, Z = 13, n_cage / n = 0.40930.
+- Refused: 6002 with Fr = 2000 N (L10h = 417 h).
+
+Give me one Python file and its .manifest.
