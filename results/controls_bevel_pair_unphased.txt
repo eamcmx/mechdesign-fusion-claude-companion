@@ -1,0 +1,6 @@
+# controls/bevel_pair_unphased
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:29, 3 s
+
+  1 overlaps: [('Pinion', 'Gear', 189.231)]
+  FAIL no interference at rest
+CONTROL: the gear not turned half a tooth; the check above MUST fail

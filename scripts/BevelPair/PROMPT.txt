@@ -1,0 +1,48 @@
+Write a Fusion Python script that, when run, builds a pair of straight bevel gears on shafts at right angles,
+assembled and ready to turn with Drive Joints.
+
+INPUTS (a command dialog, with these defaults):
+- module m at the heel (mm), 2
+- pinion teeth z1, 20
+- gear teeth z2, 40
+- pressure angle alpha (deg), 20
+- face width b (mm), 12
+- shaft diameter d (mm), 8
+
+DERIVED (computed from the inputs, never typed):
+- pitch cone angles delta1 = atan(z1 / z2), delta2 = 90 deg - delta1
+- pitch radii r = m z / 2; cone distance R = r1 / sin(delta1) (the same for both); k = (R - b) / R
+- Tredgold's approximation: each tooth is the tooth of a virtual spur gear of pitch radius r_v = R tan(delta) and
+  z_v = z / cos(delta) teeth, drawn at the heel on the back cone; tip r_v + m, root r_v - 1.25 m, base
+  r_v cos(alpha), thickness pi m / 2 - 0.1 mm (backlash 0.2 mm) on the virtual pitch circle; below the base circle
+  the flank is a radial line
+- contact ratio of the virtual spur gears (Chapter 11); ratio z2 / z1
+- the blank as in the bevel wrist of Topic 5: root cone from toe to heel, back cone, back face 2 mm behind the heel
+  root, a hub of radius d / 2 + 6.2 mm, 8 mm long, and a bore of d + 0.4 mm
+
+HARD CONSTRAINTS:
+- b at most R / 3, or refuse.
+- The pinion's virtual teeth z_v1 at least 2 / sin^2(alpha) = 17.1 (fewer undercut), or refuse.
+- Both pitch cones have their apex at the origin; the pinion's axis is world +Z, the gear's world +X.
+- The pinion's tooth 0 points at the gear (world +X); the gear is turned half a tooth so that a gap meets it.
+- The pinion turning anticlockwise about +Z turns the gear the other way about +X, at z1 / z2 of the angle.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each: Shaft 1 and Shaft 2 (both grounded), Pinion, Gear. Each created where it belongs, its
+  own z along its axis and its origin at the apex (Matrix3D.setWithCoordinateSystem).
+- The blanks from TemporaryBRepManager cones put in through a base feature; each tooth lofted from its heel
+  outline to its toe outline (the heel scaled by k towards the apex), joined, then patterned round the axis.
+- The API works in cm and radians.
+- AsBuiltJoints: revolute between each gear and its shaft. Try the joint directions and keep the one that really
+  turns the part about its axis, measuring the sign of the turn. A Motion Link between the two revolute joints at
+  the ratio of the teeth, its direction set from the measured signs.
+
+ACCEPTANCE CRITERIA:
+- A message gives the two cone angles, R, z_v1, z_v2, the contact ratio and a version tag.
+- Defaults: delta1 = 26.565 deg, delta2 = 63.435 deg, R = 44.721 mm, z_v1 = 22.36, z_v2 = 89.44, contact ratio 1.712.
+- The pinion driven 90 deg about +Z turns the gear -45 deg about +X, measured on the gear's body.
+- No interference at rest; no tooth collision while the pinion turns through one tooth pitch (18 deg).
+- Refused: b = 16 (more than R / 3 = 14.91); z1 = 15 (z_v1 = 16.02).
+
+Give me one Python file and its .manifest.

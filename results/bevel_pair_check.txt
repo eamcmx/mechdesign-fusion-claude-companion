@@ -1,0 +1,26 @@
+# bevel_pair_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 04:29, 5 s
+
+BevelPair 1.0 (2026-11-01)
+  ok   all values recomputed independently 
+  ok   the rounded values of the prompt (26.565, 63.435, 44.721, 22.36, 89.44, 1.712)
+  ok   Run opens the dialog
+Bevel pair built: module 2.00 at the heel, 20 : 40 teeth, shafts at 90 deg.
+
+Pitch cone angles delta1 = 26.565 deg, delta2 = 63.435 deg; cone distance R = 44.721 mm
+Virtual (Tredgold) teeth z_v1 = 22.36, z_v2 = 89.44; contact ratio 1.712
+
+Drive Joints on "Pinion turns": 90 deg turns the gear -45.0 deg about +X.
+
+[BevelPair 1.0 (2026-11-01)] BevelPair 1.0 (2026-11-01)
+  OK pressed, built in 3 s
+  ok   a new design opened
+  ok   four components: ['Gear', 'Pinion', 'Shaft 1', 'Shaft 2']
+  ok   one body each
+  ok   two revolute As-built Joints, one Motion Link
+  ok   no interference at rest 
+  ok   the pinion turned 90.000 deg about +Z: the gear turned -45.000 deg about +X (want -45.000)
+  ok   no tooth collision while the pinion turns through 18 deg in 13 positions 
+  ok   {'b': 16.0} refused: Face width 16.0 mm is more than R / 3 = 14.91 mm.
+  ok   {'z1': 15} refused: The pinion has z_v1 = z1 / cos(delta1) = 16.02 virtual teeth: below 17.1 it is undercut.
+ALL PASS
