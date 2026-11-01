@@ -1,0 +1,59 @@
+Write a Fusion Python script that, when run, builds the retracting main landing gear of a light aircraft: a leg on
+a trunnion and a two-link drag brace that locks it down over centre, assembled and ready to retract with Drive
+Joints.
+
+INPUTS (a command dialog, with these defaults):
+- leg length L, trunnion to axle (mm), 900
+- wheel radius Rw (mm), 250
+- brace point on the leg b, from the trunnion (mm), 400
+- brace pivot on the airframe, forward of the trunnion Ax (mm), 125
+- brace pivot on the airframe, above the trunnion Az (mm), 75
+- upper brace link a1 (mm), 300
+- over-centre angle of the knee when down (deg), 3
+
+DERIVED (computed from the inputs, never typed):
+- x forward, z up, the trunnion at the origin, the leg turning forward by alpha (0 = down, 90 deg = up); the brace
+  point B = b (sin(alpha), -cos(alpha)); the brace pivot A = (Ax, Az)
+- the lower brace link a2: the knee angle is 180 deg - over-centre when the leg is down, so
+  |AB|^2 = a1^2 + a2^2 - 2 a1 a2 cos(180 deg - over)
+- dead centre: the leg angle aft of down where |AB| = a1 + a2 (bisection); the leg must move that far aft to unlock
+- the drive angle of the upper link at A: down (knee on the locked side, the right of A to B), at dead centre (along
+  A to B) and up (knee on the fold side, the left of A to B), and the knee's angle when up
+- the brace's line passes at a distance from the trunnion; a drag load of 10 000 N at the ground (L + Rw below the
+  trunnion) puts P (L + Rw) / distance into the brace
+- the torque at A to lift a gear of 300 N at 500 mm from the trunnion: W r_g sin(alpha) d(alpha)/d(theta), its
+  largest value during retraction
+
+HARD CONSTRAINTS:
+- The over-centre angle from 1 to 10 deg, or refuse.
+- |AB| must fall steadily through the 90 deg of retraction, or refuse: the brace would have to stretch.
+- When up, the knee folded to at least 20 deg, or refuse giving the angle.
+- Each part on its own level along y, joined by pins: airframe plate -65 to -25 mm, leg -20 to 20, upper brace 25 to
+  35, lower brace 40 to 50 mm. Nothing touches anything else.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created where they belong: Airframe (a plate with the trunnion pin and the brace
+  pin; grounded), Leg (with its trunnion boss, the pin at B and the wheel), Upper brace (with the knee pin), Lower
+  brace.
+- Bodies from TemporaryBRepManager through base features; joint points from an XZ sketch through
+  modelToSketchSpace (Chapter 11).
+- The API works in cm and radians.
+- AsBuiltJoints, all revolute about y, the direction tried and its sign measured (Chapter 17): the leg on the
+  airframe, the upper brace on the airframe, the lower brace on the upper (the knee), the lower brace on the leg
+  (closing the loop). No Motion Links.
+
+ACCEPTANCE CRITERIA:
+- A message gives a2, the leg's travel aft to unlock, the three drive angles, the knee when up, the brace's
+  distance and force, the largest drive torque and a version tag.
+- Defaults: a2 = 191.332 mm; the leg 0.0902 deg aft at dead centre; drive angle -105.912 deg down, -104.815 deg at
+  dead centre, 22.815 deg up; knee 66.73 deg up; brace line 101.797 mm from the trunnion, 112 970 N in the brace;
+  largest drive torque 106.12 N m.
+- 4 components with one body each; 4 revolute As-built Joints; no Motion Link.
+- No interference at rest.
+- The upper brace driven from down to up in steps: the leg at the angle worked out independently at every step,
+  measured on its body; aft of down by 0.0902 deg at dead centre, then 90 deg forward; nothing interfering.
+- Refused: an over-centre angle of 12 deg; Az = -100 mm (the brace would have to stretch); a1 = 385 mm (the knee
+  folded to 16.98 deg).
+
+Give me one Python file and its .manifest.

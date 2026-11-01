@@ -1,0 +1,7 @@
+# controls/landing_gear_under_centre
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:40, 2 s
+
+  ok   no interference at rest 
+  pushed 0.5 deg forward from down, the upper brace turned 2.2190 deg
+  FAIL the knee goes further the locked way when the leg is pushed forward
+CONTROL: the knee short of centre; the lock check above MUST fail

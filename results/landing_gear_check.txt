@@ -1,0 +1,33 @@
+# landing_gear_check
+# Autodesk Fusion 2706.1.17, run 2026-11-01 08:40, 3 s
+
+LandingGear 1.0 (2026-11-01)
+  ok   a2 and the drive angle down recomputed independently (191.332 mm, -105.912 deg)
+  ok   the rounded values of the prompt (191.332, 0.0902, -105.912, -104.815, 22.815, 66.73, 101.797, 112970, 106.12)
+  ok   Run opens the dialog
+Landing gear built: leg 900 mm, wheel 250 mm, brace pivot (125, 75) mm, upper link 300 mm, lower link 191.332 mm.
+
+Down and locked, the knee is 3.0 deg past straight. To unlock, the leg moves 0.0902 deg aft to dead centre.
+Drive angle of the upper brace: -105.912 deg down, -104.815 deg at dead centre, 22.815 deg up (knee 66.73 deg).
+The brace line passes 101.797 mm from the trunnion: a drag load of 10000 N at the ground puts 112970 N in the brace.
+Lifting 300 N at 500 mm takes up to 106.12 N m at the upper brace.
+
+Drive Joints on "Upper brace turns" unlocks and retracts the gear.
+
+[LandingGear 1.0 (2026-11-01)] LandingGear 1.0 (2026-11-01)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   4 components: ['Airframe', 'Leg', 'Lower brace', 'Upper brace']
+  ok   one body each
+  ok   four revolute As-built Joints, no Motion Link
+  ok   no interference at rest 
+  ok   pushed 0.5 deg forward from down, the upper brace turned -1.4309 deg the locked way (worked out -1.4309)
+  the drive angle Fusion kept differed from the one asked by up to 0.0265 deg (it keeps tenths)
+  ok   the leg at the angle worked out here for the drive angle held, at all 44 steps (worst 2.4e-13 deg)
+  ok   at dead centre the leg stood 0.0902 deg aft of down: the travel to unlock
+  ok   up: the leg turned 89.982 deg forward (90 at the drive angle asked, 22.815 deg)
+  ok   nothing interferes at any step 
+  ok   {'over': 12.0} refused: An over-centre angle of 12.0 deg: keep it from 1 to 10 deg.
+  ok   {'Az': -100.0} refused: The brace does not fold steadily: the distance from its pivot to the leg grows somewhere in the 90 deg of retraction (a2 = 25.0 mm).
+  ok   {'a1': 385.0} refused: Retracted, the knee is folded to 16.98 deg: below 20 deg the brace locks itself.
+ALL PASS

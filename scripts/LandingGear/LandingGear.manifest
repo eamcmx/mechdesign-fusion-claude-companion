@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 30: the retracting main landing gear of a light aircraft. A leg on a trunnion and a two-link drag brace locked over centre; driving the brace through dead centre unlocks and retracts the leg."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "LandingGear"
+}
