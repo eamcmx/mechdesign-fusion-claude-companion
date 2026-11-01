@@ -1,0 +1,42 @@
+Write a Fusion Python script that, when run, builds a four-bar crank-rocker linkage on a base plate, assembled as one
+closed loop of revolute joints so that Drive Joints on the crank swings the rocker.
+
+INPUTS (a command dialog, with these defaults):
+- crank length a (mm), 15
+- coupler length b (mm), 55
+- rocker length c (mm), 50
+- ground length d (mm), 55
+
+DERIVED (computed from the inputs, never typed):
+- pivots A = (0, 0) for the crank and D = (d, 0) for the rocker; at crank angle theta2 the crank's end
+  B = a (cos theta2, sin theta2); the rocker's end C where the circle of radius b round B meets the circle of
+  radius c round D, on the upper branch (the open linkage)
+- the rocker angle theta4 = atan2(C_y, C_x - d); its swing over a full turn of the crank
+- the transmission angle mu, between coupler and rocker: cos(mu) = (b^2 + c^2 - BD^2) / (2 b c) with
+  BD^2 = a^2 + d^2 - 2 a d cos(theta2); its smallest and largest values (at theta2 = 0 and 180 deg)
+
+HARD CONSTRAINTS:
+- Grashof: s + l <= p + q for the shortest s, longest l and the other two p, q, and the crank the shortest link,
+  so that the crank turns fully, or refuse.
+- The transmission angle never below 40 deg, or refuse giving it.
+- Built at theta2 = 0, on the upper branch.
+
+FUSION CONVENTIONS:
+- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
+- Components, one body each, created at the origin, drawn in place: Ground (grounded), a plate from z = -6 to 0;
+  Crank from A to B, z 0 to 4; Coupler from B to C, z 4 to 8; Rocker from D to C, z 8 to 12. Each link a bar 8 mm
+  wide with round ends (two arcs and two lines sharing their sketch points), a 3 mm hole at each end. The pins are
+  not drawn.
+- The API works in cm and radians.
+- AsBuiltJoints, all revolute about z: Crank on Ground at A, Rocker on Ground at D, Coupler on Crank at B, Coupler
+  on Rocker at C (the last one closes the loop).
+
+ACCEPTANCE CRITERIA:
+- A message gives theta4 at the start, the rocker's swing, the transmission angle's range and a version tag.
+- Defaults: theta4 = 105.590 deg at the start; the rocker swings 39.006 deg, from 96.525 to 135.532 deg; the
+  transmission angle from 44.47 to 83.48 deg.
+- The crank stepped through one turn, 30 deg at a time: at every step the rocker's body at theta4(theta2), as
+  Freudenstein's equation gives it (worked independently of the circle intersection); no interference.
+- Refused: a = 60 (the crank is not the shortest link); a = 20 (transmission angle 38.57 deg).
+
+Give me one Python file and its .manifest.

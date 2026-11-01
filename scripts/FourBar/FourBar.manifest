@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 21: a four-bar crank-rocker linkage, one closed loop of four revolute joints."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "FourBar"
+}
