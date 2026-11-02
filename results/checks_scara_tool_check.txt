@@ -1,0 +1,34 @@
+# checks/scara_tool_check
+# Autodesk Fusion 2706.1.17, run 2026-11-02 08:24, 7 s
+
+ScaraToolJoints 1.0 (2026-11-02)
+  ok   the screw's cube mean 66.65 N and the shaft's swing 21.12 Hz worked again (the module: 66.65, 21.12)
+  ok   Run opens the dialog
+SCARA J3 and J4 built.
+SP20: the shaft swings at 21.1 Hz at the full stroke; fatigue factor 1.60 at 100 mm, 1.01 at 200 mm, so the horizontal acceleration is scaled to 0.632 there.
+Screw: cube mean 66.7 N, life 910708 h. J3 motor 0.699 N m peak, 0.407 RMS, 3092 rev/min; J4 motor 0.342 N m peak, 0.209 RMS.
+Belts 3MR-474 and 3MR-489, centre distances 173.48 and 175.10 mm.
+
+Parts: 48 components; 1 Ball screw spline shaft SP20, 1 Base plate, 1 Belt 3MR-474-09 J3, 1 Belt 3MR-489-09 J4, 8 Flange bolt M4, 4 Motor bolt M4, 4 Motor bolt M5, 1 Motor shaft J3, 1 Motor shaft J4, 1 Pulley 18T motor J4, 1 Pulley 28T motor J3, 1 Pulley 56T nut J3, 1 Pulley 72T nut J4, 12 Pulley screw M5, 1 Screw nut SP20 flange, 1 Screw nut SP20 rotor, 1 Servo motor J3, 1 Servo motor J4, 1 Side wall left, 1 Side wall right, 1 Spline nut SP20 flange, 1 Spline nut SP20 rotor, 1 Tool flange, 1 Top plate.
+
+[ScaraToolJoints 1.0 (2026-11-02)] ScaraToolJoints 1.0 (2026-11-02)
+  OK pressed, built in 6 s
+  ok   a new design opened
+  ok   seven groups: ['Arm end', 'J3 carriage', 'J3 motor side', 'J4 motor side', 'Screw side', 'Spline side', 'Tool shaft']
+  parts: 48 components, 24 kinds: [('Ball screw spline shaft SP20', 1), ('Base plate', 1), ('Belt 3MR-474-09 J3', 1), ('Belt 3MR-489-09 J4', 1), ('Flange bolt M4', 8), ('Motor bolt M4', 4), ('Motor bolt M5', 4), ('Motor shaft J3', 1), ('Motor shaft J4', 1), ('Pulley 18T motor J4', 1), ('Pulley 28T motor J3', 1), ('Pulley 56T nut J3', 1), ('Pulley 72T nut J4', 1), ('Pulley screw M5', 12), ('Screw nut SP20 flange', 1), ('Screw nut SP20 rotor', 1), ('Servo motor J3', 1), ('Servo motor J4', 1), ('Side wall left', 1), ('Side wall right', 1), ('Spline nut SP20 flange', 1), ('Spline nut SP20 rotor', 1), ('Tool flange', 1), ('Top plate', 1)]
+  ok   the parts as listed 
+  ok   no interference among the 48 parts at J3 0 mm, J4 0 deg 
+  ok   no interference among the 48 parts at J3 100 mm, J4 90 deg 
+  ok   no interference among the 48 parts at J3 200 mm, J4 180 deg 
+  ok   J4 90 deg alone: the spline nut 90.0, its motor 360.0, the screw nut 90.0, its motor 180.0 deg
+  ok   J3 7 mm alone: the shaft down 7.000 mm, the spline nut -0.0, the screw nut 234.0 (-126), its motor 468.0 (-252) deg, within a turn
+  ok   at the full stroke the shaft's top 186.00 mm, the screw nut's rotor's top 181.00 mm
+  ok   J3 belt: centre distance 173.485 mm measured, 173.485 for the 3MR-474
+  ok   J4 belt: centre distance 175.098 mm measured, 175.098 for the 3MR-489
+  the shaft, the nuts, their pulleys, screws and bolts and the tool flange: 3.327 kg (Chapter 35: 1.5 kg)
+  the motors at their specified 1.0 and 0.6 kg, their shafts and pulleys: 1.690 kg (Chapter 35: 2.0 kg)
+  Belt 3MR-474-09 J3: 0.0048 kg
+  Belt 3MR-489-09 J4: 0.0049 kg
+  ok   {'size': 16.0} refused: The SP16 falls short: its shaft swings at 13.1 Hz at the full stroke against 20; its fatigue factor at 100 mm is 0.81 against 1.5.
+  ok   {'size': 25.0} refused: The SP25 falls short: its mass at the tool costs the first joint its life (19784 h against 20 000).
+ALL PASS

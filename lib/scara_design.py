@@ -433,6 +433,427 @@ def modules(b=None):
     return out
 
 
+# ============================================================================================================
+# Chapter 37: J3 and J4, the ball screw spline. HIWIN GmbH (2022), Ballscrews BS-08-9-EN-2204-K: the ball spline FB
+# type, Tables 9.2 and 9.3 (p. 90) and the working modes, Table 9.4 (p. 91); the operating factor f_p and its short
+# stroke rule, F 3.8 to F 3.10 (p. 26); DN (p. 30). Gates (2026 download), Light Power and Precision Drive Design
+# Manual: the drive selection procedure (p. 12), the 3 mm stock belt lengths (p. 15), the 3MGT ratings with the
+# width multipliers and length factors (p. 19), the formulas for the pitch length, the arc of contact, the teeth in
+# mesh and the tensions (pp. 103-104). Shigley (Budynas & Nisbett, 2015): E of steel (Table A-5), the Marin factors
+# (Eqs. 6-8, 6-19, 6-20). The layout below and every value marked so are assumed.
+# ============================================================================================================
+SP = {   # HIWIN FB ball screw spline: shaft d and the catalogue's inner diameter, lead; screw nut (Table 9.2): C, C0,
+         # D2, A2, L2, F2, T2, E2, Z2, W2, C2 (four flange holes), W3 and m2 (six tapped holes); spline nut (Table
+         # 9.3): Cs, C0s, the torsional ratings CT, C0T, the permissible static moment MA, D1, A1, L1, F1, T1, E1, Z1,
+         # W, C1, W1, m1; the support bearings' Ca, Coa (N, N m, mm)
+    16: dict(d=16, d_in=11, l=16, C=4700, C0=9600, D2=48, A2=64, L2=40, F2=36.0, T2=21, E2=10, Z2=6, W2=56, C2=4.5,
+             W3=25, m2=4, Cs=7200, C0s=13500, CT=32.1, C0T=34.4, MA=67.6, D1=48, A1=64, L1=50, F1=36.0, T1=21, E1=10,
+             Z1=6, W=56, C1=4.5, W1=30, m1=4, Ca=9300, Coa=11500),
+    20: dict(d=20, d_in=14, l=20, C=6400, C0=14000, D2=56, A2=72, L2=46, F2=43.5, T2=21, E2=11, Z2=6, W2=64, C2=4.5,
+             W3=31, m2=5, Cs=10400, C0s=20000, CT=57.8, C0T=63.2, MA=118.0, D1=56, A1=72, L1=63, F1=43.5, T1=21,
+             E1=12, Z1=6, W=64, C1=4.5, W1=36, m1=5, Ca=9800, Coa=13300),
+    25: dict(d=25, d_in=18, l=25, C=9500, C0=21900, D2=66, A2=86, L2=58, F2=52.0, T2=25, E2=13, Z2=7, W2=75, C2=5.5,
+             W3=38, m2=6, Cs=15400, C0s=27500, CT=106.5, C0T=108.8, MA=210.0, D1=66, A1=86, L1=71, F1=52.0, T1=25,
+             E1=13, Z1=7, W=75, C1=5.5, W1=44, m1=5, Ca=13100, Coa=22000),
+    32: dict(d=32, d_in=23, l=32, C=13000, C0=29800, D2=78, A2=103, L2=72, F2=63.0, T2=25, E2=14, Z2=8, W2=89, C2=6.6,
+             W3=48, m2=6, Cs=20500, C0s=34400, CT=181.5, C0T=173.1, MA=290.0, D1=78, A1=103, L1=80, F1=63.0, T1=25,
+             E1=17, Z1=8, W=89, C1=6.6, W1=54, m1=6, Ca=13700, Coa=25200),
+}
+E_STEEL = 207000.0                  # MPa (Shigley Table A-5)
+RHO_STEEL, RHO_AL = 7.85e-6, 2.70e-6   # kg/mm3
+F_P = 3.0                           # HIWIN's operating factor: the short-stroke range, 3.0 to 5.0 (p. 26)
+MU_BALL, ALPHA_BALL = 0.005, 45.0   # the balls' friction and contact angle, as Chapter 33 (assumed)
+
+
+def screw_eta(l, d, mu=MU_BALL, alpha=ALPHA_BALL):
+    """Childs (2014), Eq. 16.33, as Chapter 33: a ball screw's efficiency from its lead angle on the nominal
+    diameter, the balls' friction and their contact angle."""
+    lam = math.atan(l / (pi * d))
+    a = math.radians(alpha)
+    return (math.cos(a) - mu * math.tan(lam)) / (math.cos(a) + mu / math.tan(lam))
+
+
+ETA_SCREW = screw_eta(20.0, 20.0)   # the SP20's lead on its diameter: 0.976, taken against the motor both ways
+ETA_BELT = 0.98                     # a toothed belt drive's efficiency (assumed)
+SF_BELT = 2.0                       # Gates' service factor, the top of its 1.5 to 2.0 (p. 12)
+MOTOR34 = {3: dict(Jm=0.18e-4, nmax=6000.0, flange=60.0, L=100.0, D=56.0, mass=1.0, shaft=45.0),   # assumed
+           4: dict(Jm=0.05e-4, nmax=6000.0, flange=40.0, L=90.0, D=38.0, mass=0.6, shaft=45.0)}
+
+# the layout at the second arm's end (mm): x along the arm from J2, the shaft's axis at x = 250, y across, z up from
+# the base plate's top face; the spline nut under the base plate, its pulley below; the screw nut on the top plate,
+# its pulley above; the two motors inside the box, side by side, their shafts through the plates (assumed)
+LAY37 = dict(x_s=250.0, H=150.0, t_base=12.0, t_top=10.0, half_w=74.0, wall=8.0, y_m=34.0,
+             gap_pulley=10.0,       # the tool flange's top below the spline pulley at J3 = 0
+             flange_t=10.0, flange_d=50.0, tool_c=60.0,   # the tool flange; the gripper's and payload's centre below it
+             above=5.0)             # the shaft's top above the screw nut's rotor at the full stroke
+BELT_W = {3: 9.0, 4: 9.0}           # mm
+PULLEYS = {3: (28, 56), 4: (18, 72)}   # grooves: motor, nut
+GT3_LENGTHS = [99, 111, 123, 129, 159, 165, 180, 183, 189, 201, 219, 225, 240, 243, 255, 267, 282, 291, 300, 339, 348,
+               357, 360, 375, 393, 408, 414, 420, 447, 450, 474, 480, 483, 489, 501, 504, 510, 513, 537, 552, 564, 600,
+               630, 684, 735, 750, 786, 840, 945, 1050, 1080, 1536, 1587, 2061]   # stock 3MR pitch lengths (p. 15)
+GT3_WIDTH = {6: 1.00, 9: 1.64, 12: 2.32, 15: 3.03}                                  # p. 19
+GT3_LENGTH_F = [(126, 0.70), (150, 0.75), (177, 0.80), (210, 0.85), (249, 0.90), (291, 0.95), (345, 1.00),
+                (405, 1.05), (477, 1.10), (564, 1.15), (663, 1.20), (783, 1.25), (921, 1.30), (1089, 1.35),
+                (1200, 1.40)]       # up to that length (mm): the factor (p. 19)
+GT3_RPM = [600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2400, 2800, 3200, 3600, 4000]
+GT3_NM = {   # 3MGT, 6 mm, rated torque (N m) for the small sprocket at those speeds (p. 19)
+    16: [1.19, 1.13, 1.08, 1.04, 1.01, 0.98, 0.95, 0.93, 0.89, 0.86, 0.83, 0.80, 0.78],
+    18: [1.41, 1.34, 1.28, 1.24, 1.20, 1.17, 1.14, 1.11, 1.07, 1.03, 1.00, 0.97, 0.94],
+    20: [1.62, 1.54, 1.48, 1.43, 1.39, 1.35, 1.32, 1.29, 1.24, 1.20, 1.16, 1.13, 1.10],
+    22: [1.83, 1.74, 1.67, 1.62, 1.57, 1.53, 1.50, 1.47, 1.41, 1.37, 1.33, 1.29, 1.26],
+    24: [2.03, 1.94, 1.87, 1.81, 1.76, 1.72, 1.68, 1.64, 1.58, 1.53, 1.49, 1.45, 1.42],
+    26: [2.24, 2.14, 2.06, 2.00, 1.94, 1.89, 1.85, 1.82, 1.75, 1.70, 1.65, 1.61, 1.57],
+    28: [2.44, 2.34, 2.25, 2.18, 2.12, 2.07, 2.03, 1.99, 1.92, 1.86, 1.81, 1.76, 1.72],
+    30: [2.65, 2.53, 2.44, 2.36, 2.30, 2.25, 2.20, 2.16, 2.08, 2.02, 1.96, 1.91, 1.87],
+}
+
+
+def pd(z, p=3.0):
+    """A toothed pulley's pitch diameter (mm)."""
+    return p * z / pi
+
+
+def nut_layout(size=20):
+    """Heights (mm) of the nuts, pulleys, belts and the shaft at J3 = 0 (shaft up), from the catalogue's lengths and
+    LAY37. The spline nut's flange under the base plate, its rotor's pilot down; the screw nut's flange on the top
+    plate, its pilot up."""
+    s, L = SP[size], LAY37
+    zb = -L['t_base']                                  # the base plate's underside
+    spl = dict(flange=(zb - s['E1'], zb), body=(zb, zb + s['L1'] - s['T1']), rotor=(zb - s['T1'], zb - s['T1'] + s['L1']))
+    zt = L['H'] + L['t_top']                           # the top plate's top face
+    scr = dict(flange=(zt, zt + s['E2']), body=(zt - (s['L2'] - s['T2']), zt), rotor=(zt + s['T2'] - s['L2'], zt + s['T2']))
+    rim = BELT_W[4] + 3.0                              # the pulley's toothed rim: the belt and 1.5 either side
+    p4 = (spl['rotor'][0] - rim - 3.0, min(spl['rotor'][0] + s['Z1'], spl['flange'][0] - 5.0))   # clear of the bolt heads
+    p3 = (scr['rotor'][1] - s['Z2'], scr['rotor'][1] + rim + 3.0)
+    belt4 = (p4[0] + 1.5, p4[0] + 1.5 + BELT_W[4])
+    belt3 = (p3[1] - 1.5 - BELT_W[3], p3[1] - 1.5)
+    tool_top = p4[0] - L['gap_pulley']
+    shaft_top = scr['rotor'][1] + L['above'] + 200.0   # the shaft's top at J3 = 0, so that at 200 down it still clears
+    return dict(spl=spl, scr=scr, p4=p4, p3=p3, belt4=belt4, belt3=belt3, tool_top=tool_top, shaft=(tool_top, shaft_top),
+                spl_c=sum(spl['rotor']) / 2, scr_c=sum(scr['rotor']) / 2)
+
+
+def shaft_cantilever(size=20, payload=2.0, stroke=200.0, b=None):
+    """The shaft at the full stroke as a cantilever from the spline nut's lower end: its section taken as the solid
+    circle of the catalogue's inner diameter (the least it could be), its mass as the solid outer diameter (the most);
+    the tool flange, the gripper and the payload at their places. Stiffness, the swing's frequency, and under the
+    tool's largest horizontal acceleration the moment on the spline nut, the bending stress and the nuts' reactions."""
+    b = b or brief()
+    s, L = SP[size], LAY37
+    lay = nut_layout(size)
+    z0 = lay['spl']['rotor'][0]                        # where the shaft leaves the spline nut
+    zf = lay['tool_top'] - stroke                      # the tool flange's top at the full stroke
+    zc = zf - L['flange_t'] - L['tool_c']              # the gripper's and payload's centre
+    Lc = z0 - zc
+    I = pi * s['d_in'] ** 4 / 64
+    k = 3 * E_STEEL * I / Lc ** 3                      # N/mm at the mass centre
+    over = z0 - zf
+    m_over = pi / 4 * s['d'] ** 2 * over * RHO_STEEL
+    m_fl = pi / 4 * L['flange_d'] ** 2 * L['flange_t'] * RHO_AL
+    m_t = b['m_tool'] + payload
+    # the flange and the shaft's overhang brought to the mass centre with the cantilever's shape factors
+    m_eff = m_t + m_fl * ((z0 - zf + L['flange_t'] / 2) / Lc) ** 2 * 1.0 + 0.236 * m_over * (over / Lc) ** 3
+    f = math.sqrt(k * 1000 / m_eff) / (2 * pi)
+    # the tool's largest horizontal acceleration: on the horizontal leg, its distance from J1 times the largest of
+    # sqrt(qdd1^2 + qd1^4) over the cycloid
+    A = (b['x0'], -b['across'] / 2)
+    qa, qb = ik(b, *A), ik(b, b['x0'], b['across'] / 2)
+    d1 = qb[0] - qa[0]
+    acc = max(math.hypot(2 * pi * d1 / b['t_h'] ** 2 * math.sin(2 * pi * i / 4000),
+                         (d1 / b['t_h'] * (1 - math.cos(2 * pi * i / 4000))) ** 2) for i in range(4001))
+    a_tool = acc * math.hypot(*A) / 1000               # m/s2
+    a_rad = 2 * pi * (b['across'] / 1000) / b['t_r'] ** 2
+    F_t = m_t * a_tool
+    F_fl = m_fl * a_tool
+    F_sh = m_over * a_tool
+    M_face = F_t * Lc / 1000 + F_fl * (z0 - zf + L['flange_t'] / 2) / 1000 + F_sh * over / 2000    # N m
+    zc_n = lay['spl_c']
+    arm = zc_n - z0                                    # the nut's middle above the shaft's exit
+    M_c = M_face + (F_t + F_fl + F_sh) * arm / 1000                                                 # at the nut's middle
+    sigma = M_face * 1000 / (pi * s['d_in'] ** 3 / 32)
+    span = lay['scr_c'] - lay['spl_c']
+    F_all = F_t + F_fl + F_sh
+    R_up = M_c * 1000 / span
+    R_low = F_all + R_up
+    return dict(size=size, Lc=Lc, I=I, k=k, over=over, m_over=m_over, m_fl=m_fl, m_t=m_t, m_eff=m_eff, f=f,
+                a_tool=a_tool, a_rad=a_rad, acc=acc, F_t=F_t, F_all=F_all, M_face=M_face, M_c=M_c, MA=s['MA'],
+                sigma=sigma, span=span, R_up=R_up, R_low=R_low, r_tool=math.hypot(*A))
+
+
+def shaft_fatigue(sigma, d=14.0, Sut=700.0, Kf=2.0):
+    """The shaft's reversed bending against Shigley's endurance limit with the Marin factors for a ground surface and
+    the size; the material's strength and the grooves' notch factor assumed (the catalogue gives neither)."""
+    Se_p = 0.5 * Sut
+    ka = 1.58 * Sut ** -0.085
+    kb = 1.24 * d ** -0.107
+    Se = ka * kb * Se_p
+    return dict(Se_p=Se_p, ka=ka, kb=kb, Se=Se, Kf=Kf, n=Se / (Kf * sigma))
+
+
+def j34_timeline(b=None, n=2000):
+    """The standard cycle for J3 and J4 (0.50 s): four vertical legs of 25 mm, each 0.10 s, up at 0, down at 0.15,
+    up at 0.25, down at 0.40; J4 turns 180 deg during each horizontal leg, 0.025 to 0.225 and 0.275 to 0.475 s, the
+    other way on the way back. Rows: t, dt, J3's speed and acceleration (mm/s, mm/s2, + up), J4's (rad/s, rad/s2)."""
+    b = b or brief()
+    T3, T4 = b['t_v'], b['t4']
+    legs = [(0.0, +1), (0.15, -1), (0.25, +1), (0.40, -1)]
+    turns = [(0.025, +1), (0.275, -1)]
+    q4 = math.radians(b['q4_move'])
+    rows = []
+    for i in range(n):
+        t = b['cycle'] * (i + 0.5) / n
+        v3 = a3 = w4 = a4 = 0.0
+        for t0, sg in legs:
+            if t0 <= t < t0 + T3:
+                _, v, a = cycloid(b['up'], T3, t - t0)
+                v3, a3 = sg * v, sg * a
+        for t0, sg in turns:
+            if t0 <= t < t0 + T4:
+                _, w, a = cycloid(q4, T4, t - t0)
+                w4, a4 = sg * w, sg * a
+        rows.append((t, b['cycle'] / n, v3, a3, w4, a4))
+    return rows
+
+
+def screw_life(size=20, payload=None, b=None, fp=F_P):
+    """The screw nut over the cycle: the axial force m_z (g + a3), its cube mean weighted by the nut's turns on the
+    shaft (F 3.8), the operating factor, the life in turns and hours (F 3.10), the static factor at the largest
+    payload, the short-stroke rule, and DN."""
+    b = b or brief()
+    payload = b['m_rated'] if payload is None else payload
+    s = SP[size]
+    m_z = MASS['spline'] + b['m_tool'] + payload
+    rows = j34_timeline(b)
+    num = den = 0.0
+    Fmax = 0.0
+    for t, dt, v3, a3, w4, a4 in rows:
+        F = m_z * (G + a3 / 1000)
+        Fmax = max(Fmax, abs(F))
+        num += dt * abs(v3) * abs(F) ** 3
+        den += dt * abs(v3)
+    Fm = (num / den) ** (1 / 3)
+    rev_cycle = 4 * b['up'] / s['l']
+    rev_h = rev_cycle * 3600 / b['cycle']
+    L = (s['C'] / (fp * Fm)) ** 3 * 1e6
+    m_max = MASS['spline'] + b['m_tool'] + b['m_max']
+    F_static = m_max * (G + 2 * pi * b['up'] / b['t_v'] ** 2 / 1000)
+    n_rel = 2 * b['up'] / b['t_v'] / s['l'] * 60
+    return dict(m_z=m_z, Fm=Fm, Fmax=Fmax, Fmin=m_z * (G - 2 * pi * b['up'] / b['t_v'] ** 2 / 1000), F_bm=fp * Fm,
+                L=L, rev_cycle=rev_cycle, rev_h=rev_h, Lh=L / rev_h, F_static=F_static, S0=s['C0'] / F_static,
+                short=b['up'] < 3 * s['L2'], n_rel=n_rel, DN=s['d'] * n_rel, fp=fp)
+
+
+def inertias34(size=20):
+    """The rotating parts' inertias (kg m2), drawn as in the Fusion script: each nut's rotor a steel tube from the
+    shaft to its pilot's diameter over the nut's length; the pulleys aluminium rings from the pilot (or the motor's
+    shaft) to the pitch circle less 0.76 mm, the rim's width; the shaft solid steel over its length."""
+    s = SP[size]
+    lay = nut_layout(size)
+
+    def tube(r1, r2, h, rho):
+        m = pi * (r2 ** 2 - r1 ** 2) * h * rho
+        return m, 0.5 * m * (r1 ** 2 + r2 ** 2) * 1e-6
+    out = {}
+    out['rotor_scr'] = tube(s['d'] / 2 + 0.3, s['F2'] / 2, s['L2'], RHO_STEEL)
+    out['rotor_spl'] = tube(s['d'] / 2 + 0.3, s['F1'] / 2, s['L1'], RHO_STEEL)
+    rim = BELT_W[3] + 3.0
+    for j, (zm, zn) in PULLEYS.items():
+        bore_n = (s['F2'] if j == 3 else s['F1']) / 2
+        out['pulley_nut%d' % j] = tube(bore_n, (pd(zn) - 0.76) / 2, rim, RHO_AL)
+        out['pulley_m%d' % j] = tube(4.0, (pd(zm) - 0.76) / 2, rim, RHO_AL)
+    Ls = lay['shaft'][1] - lay['shaft'][0]
+    m_sh = pi / 4 * s['d'] ** 2 * Ls * RHO_STEEL
+    out['shaft'] = (m_sh, 0.5 * m_sh * (s['d'] / 2) ** 2 * 1e-6)
+    return out
+
+
+def motors34(size=20, payload=None, b=None):
+    """The J3 and J4 motors' torques over the cycle. The screw nut turns at 2 pi v3 / l on the shaft plus J4's speed;
+    its torque is the screw's, F l / (2 pi eta), and its rotor's and pulley's inertia; the J3 motor turns R3 times as
+    fast. The spline nut turns with the shaft: its motor accelerates the shaft, the tool, the payload, its rotor and
+    pulley, and holds the screw's torque on the shaft. The belts' and the screw's losses taken against the motor
+    both ways."""
+    b = b or brief()
+    payload = b['m_rated'] if payload is None else payload
+    s = SP[size]
+    J = inertias34(size)
+    m_z = MASS['spline'] + b['m_tool'] + payload
+    I4 = payload * (b['k4'] / 1000) ** 2 + 0.5 * b['m_tool'] * 0.04 ** 2
+    R3 = PULLEYS[3][1] / PULLEYS[3][0]
+    R4 = PULLEYS[4][1] / PULLEYS[4][0]
+    J_n3 = J['rotor_scr'][1] + J['pulley_nut3'][1]
+    J_m3 = MOTOR34[3]['Jm'] + J['pulley_m3'][1]
+    J_n4 = I4 + J['shaft'][1] + J['rotor_spl'][1] + J['pulley_nut4'][1]
+    J_m4 = MOTOR34[4]['Jm'] + J['pulley_m4'][1]
+    l = s['l'] / 1000
+    out = {3: [], 4: []}
+    for sg in (+1, -1):                                 # J4's turn with J3's sense, or against it
+        r3, r4 = [], []
+        for t, dt, v3, a3, w4, a4 in j34_timeline(b):
+            F = m_z * (G + a3 / 1000)
+            T_screw = F * l / (2 * pi * ETA_SCREW)
+            wn = 2 * pi * v3 / 1000 / l + sg * w4
+            an = 2 * pi * a3 / 1000 / l + sg * a4
+            Tn = T_screw + J_n3 * an
+            Tm3 = Tn / (R3 * ETA_BELT) + J_m3 * an * R3
+            T_spl = J_n4 * a4 + T_screw
+            Tm4 = T_spl / (R4 * ETA_BELT) + J_m4 * a4 * R4
+            r3.append((dt, abs(wn) * R3 * 60 / (2 * pi), Tm3, Tn))
+            r4.append((dt, abs(w4) * R4 * 60 / (2 * pi), Tm4, T_spl))
+        for j, rows in ((3, r3), (4, r4)):
+            tot = sum(r[0] for r in rows)
+            out[j].append(dict(sense=sg, peak=max(abs(r[2]) for r in rows), rms=math.sqrt(sum(r[0] * r[2] ** 2 for r in rows) / tot),
+                               nmax=max(r[1] for r in rows), nut=max(abs(r[3]) for r in rows)))
+    res = {j: dict(max(out[j], key=lambda d: d['peak'])) for j in (3, 4)}
+    for j in (3, 4):
+        res[j]['rms'] = max(d['rms'] for d in out[j])
+        res[j]['nmax'] = max(d['nmax'] for d in out[j])
+        res[j]['nut'] = max(d['nut'] for d in out[j])
+    hold = m_z * G * l / (2 * pi * ETA_SCREW)
+    return dict(J=J, I4=I4, J_n3=J_n3, J_m3=J_m3, J_n4=J_n4, J_m4=J_m4, R3=R3, R4=R4, m3=res[3], m4=res[4],
+                hold_spl=hold, hold_m4=hold / (R4 * ETA_BELT))
+
+
+def gt3_rating(z, rpm, width, length):
+    """Gates' rating for the small sprocket at the next tabled speed at or above rpm, times the width multiplier and
+    the length factor."""
+    i = next(k for k, r in enumerate(GT3_RPM) if r >= rpm)
+    lf = next(f for Lmax, f in GT3_LENGTH_F if length <= Lmax)
+    return GT3_NM[z][i] * GT3_WIDTH[width] * lf, GT3_RPM[i], lf
+
+
+def belt_drive(j, x_m, y_m, size=20, Tpeak=None, rpm=None):
+    """One belt drive by Gates' procedure (pp. 12, 103-104): pitch diameters, the centre distance in plan, the exact
+    pitch length, the stock belt and the centre distance it gives (iterated), the arc of contact and the teeth in mesh
+    on the small pulley, and the rating against the peak design load, the motor's peak times the service factor."""
+    zm, zn = PULLEYS[j]
+    D, d_ = pd(zn), pd(zm)
+
+    def length(CD):
+        phi = math.asin((D - d_) / (2 * CD))
+        return 2 * CD * math.cos(phi) + pi * (D + d_) / 2 + phi * (D - d_)
+    CD0 = math.hypot(LAY37['x_s'] - x_m, y_m)
+    PL0 = length(CD0)
+    stock = min((Lb for Lb in GT3_LENGTHS if Lb >= PL0))
+    lo, hi = CD0, CD0 + 50
+    for _ in range(100):
+        mid = (lo + hi) / 2
+        if length(mid) < stock:
+            lo = mid
+        else:
+            hi = mid
+    CD = (lo + hi) / 2
+    arc = 180 - 60 * (D - d_) / CD
+    tim = int(arc * zm / 360)
+    rating, rpm_row, lf = gt3_rating(zm, rpm, int(BELT_W[j]), stock)
+    design = Tpeak * SF_BELT
+    Te = 2 * Tpeak / (d_ / 1000)
+    x_m_new = LAY37['x_s'] - math.sqrt(CD ** 2 - y_m ** 2)
+    return dict(j=j, z=(zm, zn), D=D, d=d_, CD0=CD0, PL0=PL0, stock=stock, teeth=stock // 3, CD=CD, arc=arc, tim=tim,
+                x_m=x_m_new, y_m=y_m,
+                rating=rating, rpm_row=rpm_row, lf=lf, design=design, ratio=rating / design, Te=Te,
+                TT=2.286 * Tpeak / (d_ / 1000), total=2.571 * Tpeak / (d_ / 1000), v=pi * d_ * rpm / 60000)
+
+
+def brakes34(size=20, b=None, factor=2.0, Tb3=0.32):
+    """The two brakes with the power off. The load, the spline, the gripper and the largest payload, pulls on the
+    screw nut with F l / (2 pi), the efficiency taken as 1, and turns the shaft with the same torque through the
+    spline nut: the J3 brake must hold the first, the J4 brake the second, each through its belt, with a factor of 2.
+    Then the J3 brake's stop of the shaft falling at 500 mm/s with the largest payload, the other inertias brought to
+    the shaft's travel."""
+    b = b or brief()
+    s = SP[size]
+    m = MASS['spline'] + b['m_tool'] + b['m_max']
+    F = m * G
+    l = s['l'] / 1000
+    T = F * l / (2 * pi)
+    R3 = PULLEYS[3][1] / PULLEYS[3][0]
+    R4 = PULLEYS[4][1] / PULLEYS[4][0]
+    J = inertias34(size)
+    J_side = J['rotor_scr'][1] + J['pulley_nut3'][1] + (MOTOR34[3]['Jm'] + J['pulley_m3'][1]) * R3 ** 2
+    m_eq = m + J_side * (2 * pi / l) ** 2
+    F_b = Tb3 * R3 * 2 * pi / l
+    a = (F_b - F) / m_eq
+    v = 2 * b['up'] / b['t_v'] / 1000
+    return dict(F=F, T=T, Tb3_min=factor * T / R3, Tb4_min=factor * T / R4, m_eq=m_eq, J_side=J_side, Tb3=Tb3, F_b=F_b,
+                a=a, stop=v ** 2 / (2 * a) * 1000, t=v / a)
+
+
+def depth_rule(size=20, s_full=100.0, n_min=1.5, b=None):
+    """The shaft's bending decides how deep the tool may work at the full horizontal acceleration: the fatigue
+    factor at s_full and at the full stroke, and the share of the acceleration that keeps the moment at its value
+    at s_full when the tool is at the bottom, with the horizontal leg's time that gives."""
+    b = b or brief()
+    c1 = shaft_cantilever(size, b['m_rated'], stroke=s_full, b=b)
+    c2 = shaft_cantilever(size, b['m_rated'], stroke=200.0, b=b)
+    n1 = shaft_fatigue(c1['sigma'], SP[size]['d_in'])['n']
+    n2 = shaft_fatigue(c2['sigma'], SP[size]['d_in'])['n']
+    scale = c1['M_face'] / c2['M_face']
+    return dict(s_full=s_full, c1=c1, c2=c2, n1=n1, n2=n2, scale=scale, t_leg=b['t_h'] / math.sqrt(scale), n_min=n_min)
+
+
+def sp25_cost(b=None):
+    """What the SP25 would cost the first joint: its shaft's extra mass at the tool, 427.2 mm from J1 on the
+    horizontal leg, added to M11; the first joint's torque grows in proportion, and its life with the cube."""
+    b = b or brief()
+    m = {}
+    for k in (20, 25):
+        lay = nut_layout(k)
+        m[k] = pi / 4 * SP[k]['d'] ** 2 * (lay['shaft'][1] - lay['shaft'][0]) * RHO_STEEL
+    r = math.hypot(b['x0'], b['across'] / 2) / 1000
+    p = inertia(b, b['m_rated'])
+    qa = ik(b, b['x0'], -b['across'] / 2)
+    M11 = dynamics(p, qa[1], 0, 0, 0, 0)[2]['M11']
+    dM = (m[25] - m[20]) * r ** 2
+    life = modules(b)['j1'][40]['Lh'] / ((M11 + dM) / M11) ** 3
+    return dict(m20=m[20], m25=m[25], dm=m[25] - m[20], r=r, M11=M11, dM=dM, share=dM / M11, life=life)
+
+
+def remass(m_spline, m_motors, b=None):
+    """Chapter 36's sizing again with the masses at the second arm's end that Fusion measured in Chapter 37: the
+    ball screw spline's group at the arm's end and the J3 and J4 motors at 80 mm from J2; MASS is restored."""
+    b = b or brief()
+    saved = dict(MASS)
+    try:
+        MASS['spline'] = m_spline
+        MASS['j34_motors'] = m_motors
+        p = inertia(b, b['m_rated'])
+        qa = ik(b, b['x0'], -b['across'] / 2)
+        Mx = dynamics(p, qa[1], 0, 0, 0, 0)[2]
+        o = modules(b)
+        return dict(M11=Mx['M11'], M22=Mx['M22'], j1=o['j1'][40], j2=o['j2'][20], j1_motor=o['j1_motor'],
+                    j2_motor=o['j2_motor'], c=cycle(b, b['m_rated']))
+    finally:
+        MASS.clear()
+        MASS.update(saved)
+
+
+def tool_joints(b=None, size=20):
+    """Chapter 37's sizing, in the order of the chapter."""
+    b = b or brief()
+    out = dict(sizes={k: shaft_cantilever(k, b['m_rated'], b=b) for k in SP})
+    out['cant'] = out['sizes'][size]
+    out['cant_max'] = shaft_cantilever(size, b['m_max'], b=b)
+    out['fatigue'] = shaft_fatigue(out['cant']['sigma'], SP[size]['d_in'])
+    out['screw'] = screw_life(size, b=b)
+    out['screw_max'] = screw_life(size, b['m_max'], b=b)
+    c = cycle(b, b['m_rated'])
+    out['T4'] = c['T4']
+    out['mot'] = motors34(size, b=b)
+    J = out['mot']
+    out['spline_T'] = J['m4']['nut']
+    out['belts'] = {}
+    for j, ym in ((3, LAY37['y_m']), (4, -LAY37['y_m'])):
+        m = out['mot']['m%d' % j]
+        out['belts'][j] = belt_drive(j, 80.0, ym, size, m['peak'], m['nmax'])
+    out['brakes'] = brakes34(size, b)
+    out['lay'] = nut_layout(size)
+    out['depth'] = depth_rule(size, b=b)
+    out['sp25'] = sp25_cost(b)
+    out['eta_screw'] = ETA_SCREW
+    return out
+
+
 if __name__ == '__main__':
     b = brief()
     print(workspace(b))

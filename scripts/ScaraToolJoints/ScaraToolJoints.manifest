@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 37: the SCARA's J3 and J4. A HIWIN SP20 FB ball screw spline at the second arm's end, its two nuts driven by Gates GT3 belts from two servo motors with brakes."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "ScaraToolJoints"
+}

@@ -1,0 +1,49 @@
+Write a Fusion Python script that, when run, builds the SCARA's third and fourth joints of Chapter 37 at the end of
+its second arm: a HIWIN FB ball screw spline, whose one shaft carries a screw and a spline, with the screw nut on the
+arm's top plate and the spline nut under its base plate, each turning in its own support bearing; a toothed pulley on
+each nut; two Gates GT3 3 mm belts to the J3 and J4 servo motors inside the arm's end; the shaft sliding (J3) and
+turning (J4) with a tool flange at its lower end.
+
+INPUTS (a command dialog, with this default):
+- the ball screw spline's size, SP 20
+
+DERIVED (from lib/scara_design.py, never typed):
+- tool_joints(): the shaft at the full stroke as a cantilever (its swing and its bending against the endurance
+  limit), the depth rule, the screw's cube-mean force and life with the short-stroke operating factor, the spline's
+  torque, the motors' peak and RMS torques, the belts by Gates' procedure, the brakes
+- SP: the catalogue's dimensions and ratings (HIWIN Tables 9.2 and 9.3); nut_layout(): every height; LAY37: the
+  layout; MOTOR34: the motors' specification
+
+HARD CONSTRAINTS:
+- Refuse a size whose shaft swings under 20 Hz at the full stroke, whose fatigue factor with the tool 100 mm down
+  is under 1.5, or whose mass at the tool costs the first joint its life of 20 000 h, saying which and by how much.
+- The screw nut's flange on the top plate, its rotor's pilot up, its pulley above it; the spline nut's flange under
+  the base plate, its rotor's pilot down, its pulley below it; each pulley located on its nut's pilot and held by
+  six M5 screws in the pilot's tapped holes; each flange held by four M4 bolts.
+- Pulleys of 28 and 56 teeth for J3, 18 and 72 for J4; 9 mm belts of the stock lengths Gates' procedure gives, the
+  motors placed at the centre distances those lengths give, 34 mm either side of the arm's middle line.
+- The shaft long enough to stay 5 mm beyond the screw nut's rotor at the full stroke of 200 mm.
+- Nothing touches anything else at J3 0, 100 and 200 mm with J4 at 0, 90 and 180 deg.
+
+FUSION CONVENTIONS:
+- A new design document. Seven groups: the arm's end (grounded), the screw side, the spline side, each motor's side,
+  a body-less carriage and the tool's shaft.
+- The carriage slides along z on an As-built slider joint; the shaft turns on it on an As-built revolute joint, so
+  that J3 and J4 are two joints. The spline nut turns with the shaft (a Motion Link, one to one); each motor turns
+  with its nut through its belt's ratio, the same way (Motion Links).
+- The screw nut's angle depends on both joints (the shaft's turn less the travel over the lead), which a Motion Link
+  cannot hold: pose(j3, j4) sets it by the numbers, and the check measures the result.
+- The temporary-body manager makes no belt: sketch each belt's band (the external tangents and arcs) and extrude it.
+- The API works in cm and radians.
+
+ACCEPTANCE CRITERIA:
+- A message gives the shaft's swing, the fatigue factors at 100 and 200 mm and the acceleration's scale at the
+  bottom, the screw's cube-mean force and life, the motors' torques, the belts and their centre distances, the parts
+  list and a version tag. Defaults: 21.1 Hz, 1.60 and 1.01, 0.632; 66.7 N, 910 708 h; J3 motor 0.699 N m peak,
+  0.407 RMS, 3092 rev/min; J4 motor 0.342 and 0.209; 3MR-474 and 3MR-489, 173.48 and 175.10 mm.
+- 48 components in 24 kinds.
+- J4 turned 90 deg alone: both nuts turn 90, the J4 motor 360, the J3 motor 180. J3 down 7 mm alone: the spline nut
+  still, the screw nut -126 deg, the J3 motor -252 deg.
+- At the full stroke the shaft's top 5 mm above the screw nut's rotor; the belts' centre distances measured on the
+  pulleys' faces as Gates' lengths give them.
+- Refused: SP16 and SP25.
