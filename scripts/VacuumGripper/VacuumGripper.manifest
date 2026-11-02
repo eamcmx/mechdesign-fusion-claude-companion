@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 46: the palletizer's vacuum gripper: adapter, beams and plate, six zones of six SPB1 80 cups on spring compensators, manifolds and SCPSi 2-14 ejectors."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "VacuumGripper"
+}

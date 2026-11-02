@@ -1,0 +1,28 @@
+# vacuum_gripper_check
+# Autodesk Fusion 2706.1.17, run 2026-11-03 00:45, 51 s
+
+VacuumGripper 1.0 (2026-11-03)
+  ok   Run opens the dialog
+Vacuum gripper built on 6 cartons of 6.5 kg.
+Six SPB1 80 cups over each, on spring compensators of 25 mm; two SCPSi 2-14 per zone; the cups used 0.87 in the worst stop at S = 2.0.
+
+Parts: 193 components; 1 Adapter plate, 2 Beam, 6 Cap screw M10x25, 16 Cap screw M6x14, 4 Cap screw M8x20, 36 Cup SPB1 80, 1 Dowel pin 10x17, 12 Ejector SCPSi 2-14, 6 Manifold, 1 Plate, 36 Plunger, 36 Sleeve, 36 Spring.
+
+[VacuumGripper 1.0 (2026-11-03)] VacuumGripper 1.0 (2026-11-03)
+  OK pressed, built in 48 s
+  ok   a new design opened
+  parts: 193 components, 13 kinds
+  Adapter plate 1, Beam 2, Cap screw M10x25 6, Cap screw M6x14 16, Cap screw M8x20 4, Cup SPB1 80 36, Dowel pin 10x17 1, Ejector SCPSi 2-14 12, Manifold 6, Plate 1, Plunger 36, Sleeve 36, Spring 36
+  ok   on the layer: no interference among the 193 parts and the 6 cartons 
+  ok   every one of the 36 cups' lips on its carton, the largest gap 0.0000 mm
+  ok   every zone and its cartons pushed up the whole 25 mm stroke: nothing in the way but the springs 
+  ok   pushed up, the lips still on the cartons, the largest gap 0.0000 mm
+  ok   the 36 springs: 50.00 mm long installed, 21.50 mm across, against 50.0 and 21.5
+  ok   the plate held by 16 M6 x 14, their heads on the beams' bottom walls, each 9.00 mm into the plate
+  ok   the adapter: six M10 holes on the 160 circle at [30.0, 90.0, 150.0, 210.0, 270.0, 330.0] deg, the pin on +Xm, the spigot on the axis
+  weighed: adapter 1.64 kg, frame 48.79 kg, a zone 1.14 kg; the gripper 57.28 kg, its centre at z -108.0 mm, 9.35 kg m2 about its axis (cups 2.56 kg)
+  written: lib/vacuum_gripper_weighed.json
+  ok   {'n': 7} refused: 7 cartons: the gripper has six zones, one carton under each.
+  ok   {'n': 1, 'm': 7.5} refused: A carton of 7.5 kg on six cups, 1 under the gripper: the cups would be used 1.07 times over in the worst stop at S = 2.0.
+  ok   {'p_bar': 0.5} refused: A vacuum of 0.50 bar: the cups' holding is worked at 0.6 bar; less holds less.
+ALL PASS
