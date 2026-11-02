@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 43: the whole palletizer. Chapter 42's drives (J1 on an RV-700N), the lower arm to the elbow, the upper arm with its yoke, front fork and rear lever, the parallel rod, the levelling rods and the triangle, the wrist with J4's RV-80N; every pin on its SKF bearing."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "PalletizerRobot"
+}

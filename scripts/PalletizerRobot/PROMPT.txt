@@ -1,0 +1,53 @@
+Write a Fusion Python script that, when run, builds the whole palletizer of Chapter 43: Chapter 42's base, slewing
+ring, turret, drives, balancer and crank, with J1 now on a Nabtesco RV-700N; and this chapter's links: the lower arm's
+box up to the elbow, the upper arm with its yoke, its front fork and its rear lever on a torque tube, the parallel
+rod, the levelling loop's two rods and the elbow's triangle, and the wrist housing with J4's RV-80N, its motor and
+the tool flange. Every pin turns on its bearing.
+
+INPUTS (a command dialog, with these defaults):
+- the pose to show, q1, q2 and q3 in degrees: 0, 25.988 and -51.036, the standard cycle's low point
+
+DERIVED (from lib/palletizer_design.py, lib/palletizer_drives.py and lib/palletizer_links.py, never typed):
+- the layout: the shoulder A at (300, 1000) mm, the lower arm 1300, the upper arm 1400, the crank and the rear lever
+  450, the levelling offsets (-390, 150) and (0, 250), J4's axis 250 ahead of the wrist pin, the flange 380 below it;
+  the working range
+- SECTIONS: the lower arm a box 220 x 300 x 12 mm, the upper arm 200 x 260 x 10, the torque tube 300 x 12, the
+  parallel rod a flat bar 40 x 70, the levelling rods tubes 60 x 5
+- Y: each part's layer across the arm's plane; STANDOFFS: where the counterweight's standoffs stand on the crank
+- the bearings' sizes from SKF's product data; the balancer (GAS) and the block's thickness as in Chapter 42
+
+HARD CONSTRAINTS:
+- Refuse a pose outside the working range: the joints' limits, and psi = 90 - q2 - q3 between 25 and 140 deg.
+- Build each group at q = 0 and place every group by one function, set_pose(q1, q2, q3): the lower arm turned by q2
+  about the shoulder; the crank and the upper arm turned by q3 about the shoulder and the elbow; the parallel rod
+  turned by q2 about its pin C; the levelling rods turned by q2 about E and by q3 about G; the triangle and the wrist
+  moved with the elbow and the wrist pin; the balancer's barrels and rods as in Chapter 42; then all turned by q1.
+  Fusion's joints do not close a parallelogram's loop; its geometry does.
+- The layers across the arm's plane (y, mm): the crank's web 610 to 670 and the parallel rod 675 to 745 on its
+  outer face; the upper arm's rear lever 610 to 670 on a torque tube round the elbow's axis from 200; the
+  counterweight block 750 to 810 on four standoffs where the rod never swings; the levelling rods -310 to -250; the
+  triangle and the wrist's plate up to H -245 to -215.
+- The parallel rod 40 mm deep in the arm's plane: at full reach it passes 190.2 mm from J3's axis, beside the
+  reducer's case of 162.5 mm.
+- The bearings: SKF 32213 pairs in the upper arm's cheeks at y = -180 and +180 (the elbow) and at -150 and +150 (the
+  wrist); 22213 E in the parallel rod's eyes; 22207 E in the levelling rods' eyes and under the triangle; 61856 MA for
+  the lower arm on the J3 side; 61836 for the crank in the J3 cheek.
+- The wrist's plate up to H leaves the housing 230 mm ahead of the wrist pin, outside the circle the front fork's
+  cheeks sweep round the pin.
+- Nothing touches anything else at the cycle's low and high points, with J1 at -30 deg, at the working range's six
+  corners and at full reach.
+
+FUSION CONVENTIONS:
+- A new design document; millimetres in the world, J1's axis along Z through the origin, the arm in the XZ plane
+  facing +X, J2 and J3 about the line through A along Y.
+- Top-level groups: Base (grounded), Turret, Lower arm, Crank, Upper arm, Parallel rod, Levelling rod 1 and 2,
+  Triangle, Wrist, and one each for the balancer's barrels and rods; each group's parts grounded inside it.
+- The API works in cm and radians.
+
+ACCEPTANCE CRITERIA:
+- A message gives the pose, the reducers, the sections, the bearings, the parts list and a version tag.
+- At every pose the check visits, each pin's two or three parts meet on one axis to 0.001 mm, and the flange's face
+  is where the kinematics of Chapter 41 put it to 0.001 mm.
+- No interference at those poses; the parallel rod at least 5 mm from J3's reducer at every one of them.
+- Refused: q2 = 85 and q3 = 60 deg (psi -55).
+- Each moving group weighed, its mass, centre and inertia about its centre, for the cycle worked again.

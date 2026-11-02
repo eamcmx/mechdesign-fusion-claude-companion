@@ -1,0 +1,6 @@
+# controls/palletizer_robot_rod_depth
+# Autodesk Fusion 2706.1.17, run 2026-11-02 20:21, 12 s
+
+  FAIL full reach: no interference [('RV-500N case J3', 'Parallel rod body', 5515.603)]
+  FAIL full reach: the parallel rod clear of J3's reducer by at least 5 mm: 0.0 mm
+CONTROL: the parallel rod 60 mm deep; the checks above MUST fail
