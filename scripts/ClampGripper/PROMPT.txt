@@ -1,0 +1,56 @@
+Write a Fusion Python script that, when run, builds the palletizer's parallel-jaw gripper for cartons of Chapter 45:
+an adapter to ISO 9409-1-160-6-M10 under the tool changer's tool plate, an aluminium beam with two linear rails, two
+jaws that run on the rails and squeeze a pack of cartons between rubber pads, one ballscrew with a right-hand thread
+on one half and a left-hand thread on the other that moves the two jaws together, its bearing units, and a motor with
+a gearhead and a brake. The script also builds the pack it grips.
+
+INPUTS (a command dialog, with these defaults):
+- the cartons along the squeeze (count), 2
+- the cartons across (count), 2
+- the squeeze, the jaws' normal force (N), 4700
+- the state, gripping or open, gripping
+
+DERIVED (from lib/clamp_gripper.py, never typed):
+- CARTON: 400 x 400 x 300 mm, 40 kg; MU_PAD 0.5, P_SIDE 40 kPa, the holding factors 2.0 on the cycle and 1.25 in
+  a brake stop
+- LAY: the layout, every height and length below
+- SCREW (HIWIN peeled 32 x 10, R32-10K5-DEB nuts), BK25 and BF25, GUIDE (HGR25 rails, HGH25CA blocks)
+- squeeze_needed(): the squeeze each pack needs, with the stops' accelerations of the payload that pack makes, and
+  the most its sides accept
+
+HARD CONSTRAINTS:
+- Refuse a pack over 160 kg, or of more than three cartons along or two across.
+- Refuse a squeeze over 5000 N, the most the screw, the guides and the arms are built for.
+- Refuse a squeeze under the pack's need, and one that presses the cartons' sides over 40 kPa.
+- The adapter 200 x 16 with its spigot of 100 g6 standing 8 mm into the tool plate's recess, six M10 x 25 on the
+  160 circle at 30 + 60 k deg in counterbores, the 10 mm pin on +Xm; the beam's four M8 from inside the beam into
+  the adapter, reached through holes in its bottom.
+- The beam 1900 x 200 x 100 from z -16 to -116, its ends at x = -1000 and +900; the rails under it at y = +-70;
+  the blocks' faces at -156; the carriages from -156 to -176.
+- Each jaw: the pad's face at x = +-j, the pad 10 mm, the arm 12 mm with two ribs 20 x 60 on its outer face at
+  y = +-250, the carriage 194 long outboard of the arm on four blocks, 110 apart along x.
+- The screw's axis at z = -225, under the carriages and over the pack's top at -265; its right-hand groove from
+  x = 215 to 760, its left-hand groove from -760 to -215; the nut's flange on the arm's outer face, held by six M8.
+- The fixed bearing BK25 at x = -880 and the supported BF25 at +880, outside the jaws' carriages at their widest,
+  each on a seat hanging from the beam; the motor, its gearhead and the coupling beyond the bracket at -1000.
+- The jaws from j = 200 to 650 mm, nothing touching anything else anywhere in that range.
+
+FUSION CONVENTIONS:
+- A new design document (FusionDesignDocumentType), parametric; millimetres in the world, z = 0 the gripper's
+  mounting face, z up; x the squeeze, y across.
+- Top-level groups: Adapter, Frame and Screw (grounded), Jaw A (+x), Jaw B (-x), Pack. One function,
+  set_state(j), places the two jaws at +-j by their transforms: the screw's two hands keep them symmetric. No
+  joints, as-built or otherwise.
+- The API works in cm and radians.
+- Each ball groove is the swept section of Chapter 21, right-hand with a positive twist about +x, left-hand mirrored.
+
+ACCEPTANCE CRITERIA:
+- A message gives the pack, the squeeze against its need and the sides' limit, the screw, nuts, bearings and guides,
+  the parts list and a version tag.
+- Gripping the 2 x 2 pack, no interference, and both pads on the pack (least distance under 0.001 mm).
+- Open, the pads 50 mm off the pack.
+- The jaws from 200 to 650 mm in 25 mm steps, no interference.
+- The screw's grooves probed: right-hand on +x, left-hand on -x.
+- The adapter's six holes and pin measured on the 160 circle at the ISO angles, the spigot on the axis.
+- Each group weighed, its centre and its inertia about the gripper's axis, written for the envelope.
+- Refused: a 3 x 2 pack; 5500 N; 4500 N for the 2 x 2 pack; 4700 N for a row of three.

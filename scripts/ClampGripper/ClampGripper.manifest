@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 45: the palletizer's parallel-jaw carton gripper: an adapter to ISO 9409-1-160-6-M10, an aluminium beam on HGR25 rails, two jaws moved together by a right- and left-hand ballscrew, its bearings, the motor with gearhead and brake."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "ClampGripper"
+}

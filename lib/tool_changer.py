@@ -103,12 +103,13 @@ def cycle_loads(n=600, depth=0.0, b=None, nangle=8):
     return out
 
 
-def estop_loads(depth=0.0, b=None, theta4=None):
-    """The emergency stops: each joint stopped by its brake (Chapter 42's decelerations with the weighed robot; J4
-    stopped from its top speed within the same 20 deg the others are), at the cycle's high and low points, the
-    payload held, J1's centripetal acceleration at its top speed on the cycle added; either sense of each stop."""
+def estop_loads(depth=0.0, b=None, theta4=None, decel=None):
+    """The emergency stops: each joint stopped by its brake (Chapter 42's decelerations with the weighed robot and
+    the full payload, or `decel` {1: , 2: , 3: } for another payload; J4 stopped from its top speed within the same
+    20 deg the others are), at the cycle's high and low points, the payload held, J1's centripetal acceleration at
+    its top speed on the cycle added; either sense of each stop."""
     b = b or P.brief()
-    acc = dict(D.CHOICE_ESTOP) if hasattr(D, 'CHOICE_ESTOP') else {1: 3.559, 2: 6.645, 3: 7.964}
+    acc = dict(decel) if decel else (dict(D.CHOICE_ESTOP) if hasattr(D, 'CHOICE_ESTOP') else {1: 3.559, 2: 6.645, 3: 7.964})
     w4 = math.radians(b['w_max'][3])
     th = theta4 or D.CHOICE['theta_stop']
     acc[4] = w4 ** 2 / (2 * th)

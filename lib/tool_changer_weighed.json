@@ -1,0 +1,5 @@
+{"note": "ToolChanger 1.0 weighed in Fusion 2706.1.17 on 2 November 2026 (groups' mass in kg and centre z in mm below the robot plate's face, z up)",
+ "Master": {"m": 14.136346126653416, "z": -34.19647789901387},
+ "Piston": {"m": 2.3094742936925954, "z": -63.962869393133815},
+ "Tool plate": {"m": 6.551343091129125, "z": -92.85609799130813},
+ "Segments": {"m": 0.464540250027111, "z": -84.84855859170688}}
