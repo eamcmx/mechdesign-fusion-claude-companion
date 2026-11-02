@@ -1,0 +1,48 @@
+Write a Fusion Python script that, when run, builds the pitch-roll wrist of Chapter 39: a miter bevel differential
+whose two side gears turn on the pitch axis and whose output gear turns the tool flange about the roll axis, each
+side gear driven by a toothed belt from a servo motor with a planetary gearhead, the two motors on the frame, so
+that the wrist can be posed at any pitch and roll and its parts checked for interference and weighed.
+
+INPUTS (a command dialog, with these defaults):
+- the bevel set: module 1.5 mm, 40 teeth, face width 11 mm
+
+DERIVED (from lib/wrist_design.py, never typed):
+- bevel(): the set in Shigley's proportions (Table 13-3): addendum m, clearance 0.188 m + 0.05 mm, the toe's
+  section the heel's scaled about the apex; the front face through the toe's root
+- layout(): every axial position from the gear set and the bearings: the carrier's faces, the trunnions' flanges,
+  the spacers, the 61902s and 6002s, the pulley on each side gear's hub, the cheeks, the roll shaft's collar and
+  bearings, the output gear's back and hub, the tool flange; the belt's centre distance from its stock length
+- MOTOR39 and GEARHEAD: the motors' and gearheads' outlines (assumed)
+
+HARD CONSTRAINTS:
+- Refuse a set whose face is above 0.3 R or 10 m, or under R / 4, or whose front face is nearer the apex than the
+  carrier needs (the roll bearing's radius, its seat's wall, the trunnion's flange and a shim space: 22.5 mm), or
+  whose teeth fail the duty or the drives' torque limit; refuse any set but the 40-tooth, 60 mm one, for which the
+  layout is drawn and the geometry factors were read.
+- A gap of the output gear faces each side gear's tooth at rest.
+- Each side gear runs on two 61902s on its trunnion, the one at its front in the gear, the other inside the
+  pulley's hub; the inner rings, the spacers and the frame's 6002 clamped by an end washer and an M5 screw.
+- The carrier: 7075, its walls 3 mm beside the roll bearings' seats, chamfered at 45 deg under the output gear's
+  toe; the upper roll bearing held by a DIN 472 ring, the lower one free to slide in its seat.
+- The two motors side by side under the carrier, each in its own belt's plane with its body across the frame and
+  through a window in the far cheek; the small pulleys flanged both sides.
+- Threads drawn as plain holes at their nominal size.
+- Nothing touches anything else, at rest and at the poses of the check.
+
+FUSION CONVENTIONS:
+- A new design document (FusionDesignDocumentType). Origin at the gears' apex, y along the pitch axis, z along the
+  roll axis at rest, x forward; L is +y, as in Chapter 31.
+- Groups: the frame (grounded); the carrier, on an As-built revolute joint about y; the roll output on the
+  carrier, about z; the two inputs on the carrier, about y; on each motor's axis a body-less belt helper on the
+  frame and the motor's output on it.
+- Motion links, two joints each: gear L turns -psi and gear R +psi on the carrier; each helper turns 2 phi; motor L
+  turns -2 psi and motor R +2 psi on its helper; the pitch limited to +-120 deg.
+- pose(pitch, roll) in degrees. The API works in cm and radians.
+
+ACCEPTANCE CRITERIA:
+- A message gives the set, its front face, the safety factors, the motors and the parts list with a version tag.
+- 89 components in 34 kinds.
+- Pitch alone, roll alone and both: every gear and motor at its equation's angle.
+- No interference at rest and at eight poses.
+- The moving groups' masses and inertias measured.
+- Refused: module 1.25 with 40 teeth; a face of 13 mm; module 2 with 30 teeth.

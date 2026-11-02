@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 39: the pitch-roll wrist. A miter bevel differential on two trunnions, two side gears with pulleys cut on their hubs, an output gear on the roll shaft, two belt-driven servo motors with gearheads; pitch and roll as joints, the gears and motors on motion links."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "WristDifferential"
+}
