@@ -512,6 +512,131 @@ def trunnion(b=None, M=None, d=15.0):
     return dict(M=Mz, sigma=sigma, fat=sd.shaft_fatigue(sigma, d))
 
 
+# =============================================================================
+# Chapter 40: the wrist integrated (the flange to the standard, the services, the stops, the play, the arm)
+# =============================================================================
+# ISO 9409-1, size 31.5: the pitch circle, four M5, a 5 H7 pin hole on +X (clause 4.1), the 20 H7 centring recess
+# that the mating plate's 20 g7 spigot, 2.5 mm high, enters (Weiss Robotics, n.d., customer drawing of the adapter
+# ISO31.5-ISO50); a hollow centre no larger than the centring diameter (clause 4.4)
+FLANGE40 = dict(d1=31.5, n=4, thread=5.0, pin=5.0, pin_depth=6.0, d2=20.0, d2_depth=3.0, spigot=2.5, D=45.0, T=11.0,
+                pocket=22.0)
+BORE40 = 5.0                    # mm, the roll shaft's bore for the tool's wires, assumed
+SLIPRING = dict(D=22.0, L=24.0, circuits=6, amps=2.0, rpm=300.0, mass=0.03, flange=(7.5, 2.0))   # a capsule slip ring, assumed
+STOP40 = dict(soft=120.0, switch=121.0, delay=0.020, contact=128.0, travel=2.0, r=30.0, lug=25.0, pad=6.0,
+              r_in=24.0, r_out=36.0, width=10.0)       # deg, deg, s, deg, mm, mm, deg, mm, mm, mm, mm; assumed
+LAY40 = dict(S5=(62.5, 71.0), disc=(71.0, 80.0), lug_r=(11.9, 35.0), key=(72.0, 80.0), tr_end=80.0,
+             cap_plate=(64.0, 70.0), block=(70.0, 80.0), shaft_top=46.0, ring2=(44.15, 45.05),
+             rotor=(-25.5, -23.5), stator=(-50.0, -26.0), pin_z=-38.0)                     # mm, +y side and roll axis
+KEY40 = dict(b=5.0, h=5.0, L=8.0, t1=3.0)              # DIN 6885 A 5 x 5 x 8 in the trunnion's end
+BACKLASH40 = dict(gearhead_arcmin=15.0, bevel_mm=0.08, belt_mm=0.05)   # assumed: a standard two-stage planetary,
+                                                                       # the bevel set shimmed, the belt tensioned
+
+
+def hollow_roll_shaft(d=15.0, di=BORE40):
+    """Chapter 39's beam with the bored section: I falls by (di/d)^4; the frequency by its square root."""
+    rs = roll_shaft(d)
+    ratio = 1 - (di / d) ** 4
+    f = rs['f'] * math.sqrt(ratio)
+    return dict(ratio=ratio, I=rs['I'] * ratio, f=f, k=rs['k'] * ratio)
+
+
+def stops40(b=None, M=None):
+    """The pitch stops. The software limit at 120 deg; an overtravel switch at 121 deg cuts the drives and drops the
+    brakes, which close after a delay; the brakes then stop the carrier before the hard stop's contact at 128 deg. The
+    hard stop alone (switch or brakes failed) takes the pitching group's and the motors' kinetic energy at full speed
+    and gravity's work over the buffer's travel, the buffer taken as a linear spring at the lug's radius."""
+    b = b or brief()
+    o = loads(b, M)
+    mv = moves(b)
+    s = STOP40
+    i = GEARHEAD['i'] * I_BELT
+    J_mot = 2 * (MOTOR39['Jm'] + GEARHEAD['J_in']) * i ** 2       # both motors turn i times the pitch in a pitch move
+    J = o['J_P2'] + J_mot
+    w = mv['wp']
+    KE = 0.5 * J * w ** 2
+    T_brake = 2 * MOTOR39['brake'] * i                              # both brakes, efficiency taken as 1
+    coast = math.degrees(w * s['delay'])
+    brake = math.degrees(KE / (T_brake - o['Tg']))
+    stop_at = s['switch'] + coast + brake
+    dth = s['travel'] / s['r']
+    E = KE + o['Tg'] * dth
+    k = 2 * E / dth ** 2
+    T_pk = k * dth
+    F = T_pk / (s['r'] / 1000)
+    pad = (s['r_out'] - s['r_in']) * s['width']
+    kk = KEY40
+    tau_key = 2 * T_pk * 1000 / (15.0 * kk['b'] * kk['L'])
+    sig_key = 4 * T_pk * 1000 / (15.0 * kk['h'] * kk['L'])
+    tau_tr = 16 * T_pk * 1000 / (pi * 15.0 ** 3)
+    lug_half = s['lug'] / 2
+    pad_deg = math.degrees(s['pad'] / s['r'])
+    block_half = 180 - s['contact'] - lug_half - pad_deg
+    return dict(J_mot=J_mot, J=J, KE=KE, T_brake=T_brake, coast=coast, brake=brake, stop_at=stop_at, dth=dth,
+                dth_deg=math.degrees(dth), E=E, k=k, T_pk=T_pk, F=F, pad=pad, p=F / pad, tau_key=tau_key, sig_key=sig_key,
+                tau_tr=tau_tr, block_half=block_half, pad_deg=pad_deg, end=s['contact'] + math.degrees(dth))
+
+
+def backlash40(b=None):
+    """The play at the payload's centre, r_p from the pitch axis, when the load on the drive reverses: each gearhead's
+    play at its output, halved by the belt; the belt's play at the side gear's pitch radius; the bevel set's at the
+    heel's pitch radius."""
+    b = b or brief()
+    L = layout()
+    r_p = L['h_f'] + b['e_p']
+    p = BACKLASH40
+    a_gh = math.radians(p['gearhead_arcmin'] / 60) / I_BELT
+    a_belt = p['belt_mm'] / (pd5(PULLEYS39[1]) / 2)
+    a_bev = p['bevel_mm'] / (L['g']['d'] / 2)
+    rows = [('gearhead', a_gh), ('belt', a_belt), ('bevel set', a_bev)]
+    tot = sum(a for _, a in rows)
+    return dict(r_p=r_p, rows=[(n, a, a * r_p) for n, a in rows], total=tot, at_tool=tot * r_p,
+                precise=(math.radians(3 / 60) / I_BELT + a_belt + a_bev) * r_p)
+
+
+# measured on the integrated model by checks/wrist_integration_check.py (WristIntegration 1.0), the motors drawn solid
+MEAS40 = dict(total=5.560264, cg_z=-64.9657481, motors_drawn=2.0735354, roll=0.4485168, roll_z=28.3889836,
+              roll_Iz=0.0001222, roll_Ix=0.0001839, carrier=0.4185501, carrier_z=0.1063995, carrier_Iy=8.55e-05)
+
+
+def wrist_mass40():
+    """The wrist with its motors at their specified masses: the drawn motors taken out at their common centre, on the
+    pitch axis's plane x = y = 0 at the motors' height z_m (the two are the same part turned 180 deg about z)."""
+    L = layout()
+    m_spec = 2 * (MOTOR39['mass'] + GEARHEAD['mass'])
+    md = MEAS40['motors_drawn']
+    m = MEAS40['total'] - md + m_spec
+    z = (MEAS40['total'] * MEAS40['cg_z'] - md * L['z_m'] + m_spec * L['z_m']) / m
+    return dict(m=m, z=z, m_spec=m_spec, above_base=z - L['base'][0])
+
+
+def arm_loads40(b=None):
+    """The base plate on the arm: the wrist and the payload at g + a in the worst direction. The largest moment about
+    the base's underside comes with the payload at rest, highest, and g + a across: each mass's weight times its
+    height. The four M6 at (+-45, +-10) and the two 6 mm pins at (+-55, 0): the screws' tension from the moment, the
+    rows 90 mm apart about one axis and 20 mm about the other, the worse taken."""
+    b = b or brief()
+    o = loads(b)
+    L = layout()
+    w = wrist_mass40()
+    ga = o['g_eff']
+    zb = -L['base'][0]
+    h_p = (zb + L['h_f'] + b['e_p']) / 1000
+    h_w = w['above_base'] / 1000
+    F = (w['m'] + b['m_p']) * ga
+    M = b['m_p'] * ga * h_p + w['m'] * ga * h_w
+    r_out = math.hypot(o['r_p'], zb / 1000)
+    M_out = b['m_p'] * ga * r_out + w['m'] * ga * h_w
+    return dict(F=F, h_p=h_p, h_w=h_w, M=M, M_out=M_out, r_out=r_out, T_screw_wide=M / 0.090 / 2, T_screw_narrow=M / 0.020 / 2,
+                Fi_M6=0.75 * 20.1 * 600)
+
+
+def loads40():
+    """Chapter 39's loads again with the integrated wrist's moving groups."""
+    M = dict(roll=MEAS40['roll'], roll_z=MEAS40['roll_z'], roll_Iz=MEAS40['roll_Iz'], roll_Ix=MEAS40['roll_Ix'],
+             carrier=MEAS40['carrier'], carrier_z=MEAS40['carrier_z'], carrier_Iy=MEAS40['carrier_Iy'])
+    return loads(M=M)
+
+
 def report():
     b = brief()
     print('moves', moves(b))

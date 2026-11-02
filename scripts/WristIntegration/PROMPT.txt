@@ -1,0 +1,42 @@
+Write a Fusion Python script that, when run, builds Chapter 39's pitch-roll wrist with WristDifferential.py, loaded
+and not copied, and makes it ready for its arm: the tool flange drawn to ISO 9409-1-31.5-4-M5, the tool's wires
+carried across the roll by a slip ring, and hard stops for the pitch, so that the wrist can be posed over its whole
+range and checked for interference, and its stops shown to engage.
+
+INPUTS (a command dialog, with this default):
+- the hard stop's contact angle (deg), 128
+
+DERIVED (from lib/wrist_design.py, never typed):
+- stops40(): the brakes' stopping angle from the switch at 121 deg, the brakes' delay and torque; the block's half
+  angle from the contact angle, the lug's width and the pads' thickness
+- FLANGE40, BORE40, SLIPRING, STOP40, KEY40 and LAY40: the flange's interface, the bore, the slip ring's outline,
+  the stop's radii and every new axial position
+
+HARD CONSTRAINTS:
+- Refuse a contact angle the brakes would not stop the carrier short of, or one that leaves the block less than
+  10 deg either side.
+- The tool flange: four M5 on 31.5, a 5 H7 pin hole on +X between two of them, the 20 H7 centring recess 3 deep
+  carried down to a DIN 471 ring on the roll shaft, which holds the flange; no screw in the shaft's end.
+- The roll shaft bored 5 mm through; the slip ring's rotor on its lower end, its stator under the carrier, held
+  from turning by a pin in a bracket screwed to the carrier.
+- On the left (+y) side only: the trunnion longer, a spacer, a stop disc keyed to it with a lug on +z, an end
+  washer and screw; the fixed cap replaced by a stop cap with four countersunk screws, a block on -z and two buffer
+  pads.
+- Nothing touches anything else at rest, at Chapter 39's poses and over +-127 deg of pitch with the roll turned.
+
+FUSION CONVENTIONS:
+- A new design document (FusionDesignDocumentType), as WristDifferential.py makes it; the API works in cm and
+  radians.
+- Chapter 39's parts that change are deleted from their groups and the new ones added to the groups they move with,
+  with the joints at rest; the As-built joints and motion links are Chapter 39's; the pitch's limits opened to
+  +-140 deg so that the check can reach the stops.
+- Every body keeps the material it had before the deletions.
+
+ACCEPTANCE CRITERIA:
+- A message gives the stop's numbers, the bored shaft's frequency, the play, and the parts list with a version tag.
+- 97 components in 43 kinds.
+- The links as in Chapter 39.
+- No interference at rest, at the eleven poses of the check; at +-129 deg the stop disc inside a pad and nothing
+  else.
+- The flange's faces include its 20 mm recess, its 5 mm pin hole and its 45 mm outside.
+- Refused: a contact at 125 deg; a contact at 155 deg.

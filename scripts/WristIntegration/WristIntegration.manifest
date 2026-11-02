@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 40: the pitch-roll wrist made ready for its arm. Chapter 39's wrist with the tool flange to ISO 9409-1-31.5-4-M5, a bored roll shaft and a slip ring for the tool's wires, and pitch stops with buffer pads on the left trunnion."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "WristIntegration"
+}
