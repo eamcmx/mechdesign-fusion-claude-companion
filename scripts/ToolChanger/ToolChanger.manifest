@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 44: the palletizer's tool flange to ISO 9409-1-160-6-M10 and its tool changer: the master with a piston whose cam drives six segments into the tool plate's ring; the tool plate with the same ISO pattern for the gripper."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "ToolChanger"
+}

@@ -1,0 +1,57 @@
+Write a Fusion Python script that, when run, builds the palletizer's mechanical interface of Chapter 44: the robot's
+plate under J4's RV-80N to ISO 9409-1-160-6-M10, and on it a tool changer: a master with its cover held by six M10
+cap screws, a double-acting piston whose rod passes a gland down to a cam, six segments the cam drives out into a
+ring of the tool plate, and the tool plate with the same ISO pattern underneath for the gripper. The script shows the
+changer locked or free.
+
+INPUTS (a command dialog, with these defaults):
+- the cam's locking angle (deg), 5
+- the supply's least pressure (bar), 5.5
+- the state, locked or free, locked
+
+DERIVED (from lib/tool_changer.py, never typed):
+- ISO9409: Table 1 of ISO 9409-1 for the pitch circle 160: d2 200 h8, d3 100 H7, six M10 at 30 + 60 k deg, the pin
+  hole d5 10 H7 on +Xm, t1 8 and t2 10
+- CHANGER: the piston 100 mm, the cam's 5 deg locking zone and 30 deg lead, the ring's 15 deg face, six segments 36 mm
+  wide and 16 mm high travelling 3 mm, the coupling face's ring R 90 to 100
+- GEOM: every radius and height of the lock, the gland, the cover, the piston's place and its 20 mm stroke, the two
+  air ports
+
+HARD CONSTRAINTS:
+- Refuse a locking angle that friction as low as 0.10 does not hold (5.71 deg or more): the lock must not let go when
+  the air fails.
+- Refuse a pressure whose clamp, F_c = F_p / (tan(alpha + phi) tan(beta + phi)) with mu 0.15, falls under 1.5 times
+  the clamp that keeps the coupling face closed over the standard cycle.
+- The cover from 0 to -7 mm with the spigot into the robot's recess; the master's body from -7 to -70 with the lock's
+  spigot (R 65) down to -95; the piston's bore (R 50) from -51 up to the cover over a gland from -55 to -51 that the
+  rod (R 20) passes; the cam's bore under the gland.
+- The piston's face at -47 when locked, 20 mm higher when free; its rod reaches the cam at -76 in both states, so
+  the gland always seals on the rod.
+- The release port (3 mm, at 15 deg, z -49) opens between the gland and the piston, and the lock port (195 deg,
+  z -10) over the piston, locked and free.
+- The cam is a separate part on the rod's end, so the piston goes in from above and the cam from below.
+- Segments with parallel sides in straight windows, so they slide in and out without jamming.
+- The tool plate's ring face only touches the master on R 90 to 100.
+
+FUSION CONVENTIONS:
+- A new design document (FusionDesignDocumentType), parametric; millimetres in the world, the interface's axis along Z with the robot's face at z = 0, +Xm
+  along X.
+- Top-level groups: Robot plate (grounded), Master (grounded, with its body, cover, screws and pins), Piston (the
+  piston with its rod, and the cam), Segment 1 to 6, Tool plate. One function, set_state(locked, tool_down), places
+  the moving groups by their transforms; tool_down lowers the tool plate to test the lock. No joints, as-built or
+  otherwise: the lock's states are poses, not motions.
+- The API works in cm and radians.
+
+ACCEPTANCE CRITERIA:
+- A message gives the ISO designation, the screws, the piston, the angles, the clamp against the need, the parts
+  list and a version tag.
+- No interference locked and free.
+- Locked, each segment's 15 deg face touches the ring's (least distance under 0.001 mm), and the tool plate lowered
+  0.5 mm runs into all six segments.
+- Free, the segments clear the tool plate by more than 0.2 mm, and the tool plate comes off through 45 mm with
+  nothing in the way.
+- The rod spans the gland and the two ports open on their sides of the piston, locked and free, measured.
+- The robot plate's six M10 holes and the pin hole measured on the 160 circle at the ISO angles, and the recess on
+  the axis.
+- Each group weighed.
+- Refused: a 6 deg locking angle; 1.5 bar.

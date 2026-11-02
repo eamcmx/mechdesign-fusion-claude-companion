@@ -1,0 +1,28 @@
+# tool_changer_check
+# Autodesk Fusion 2706.1.17, run 2026-11-02 21:07, 4 s
+
+ToolChanger 1.0 (2026-11-02)
+  ok   Run opens the dialog
+Tool changer built, locked.
+Robot side and tool side ISO 9409-1-160-6-M10; master on the robot plate by 6 M10 x 35 class 10.9.
+Lock: piston 100 mm at 5.5 bar, air to lock and to free; cam 5.0 deg (holds itself without air), ring face 15 deg; 6 segments; clamp 41.2 kN against the cycle's 25.7 kN (1.5 x its need).
+
+Parts: 21 components; 1 Cam, 6 Cap screw M10x35, 1 Master body, 1 Master cover, 1 Pin 10 robot, 2 Pin 12 tool, 1 Piston with rod, 1 Robot plate ISO 9409-1-160-6-M10, 6 Segment, 1 Tool plate ISO 9409-1-160-6-M10.
+
+[ToolChanger 1.0 (2026-11-02)] ToolChanger 1.0 (2026-11-02)
+  OK pressed, built in 3 s
+  ok   a new design opened
+  parts: 21 components, 10 kinds
+  Cam 1, Cap screw M10x35 6, Master body 1, Master cover 1, Pin 10 robot 1, Pin 12 tool 2, Piston with rod 1, Robot plate ISO 9409-1-160-6-M10 1, Segment 6, Tool plate ISO 9409-1-160-6-M10 1
+  ok   locked: no interference among the 21 parts 
+  ok   locked: every segment's 15 deg face on the lip's face, least distance 0.0000 mm
+  ok   locked, the tool plate lowered 0.5 mm runs into all six segments (6 clashes, 300.7 mm3): the lock holds it
+  ok   free: no interference 
+  ok   free: the segments clear of the tool plate by 0.747 mm
+  ok   free: the tool plate comes off through 45 mm in 5 mm steps with nothing in the way 
+  ok   the rod through the gland (-55 to -51) locked and free, its end at -76.0 and -56.0; the release port (-49) under the piston's face (-47.0, -27.0), the lock port (-10) over its top (-32.0, -12.0)
+  ok   the robot plate: six M10 holes and the 10 H7 pin hole on the 160 circle at [0.0, 30.0, 90.0, 150.0, 210.0, 270.0, 330.0] deg, the 100 H7 recess on the axis
+  weighed: robot plate 5.47 kg, master with piston and segments 16.91 kg, tool plate 6.55 kg
+  ok   {'alpha': 6.0} refused: A locking angle of 6.0 deg is not held by friction as low as 0.10 (atan = 5.71 deg): the lock would let go without air.
+  ok   {'p_bar': 1.5} refused: At 1.5 bar the clamp is 11.2 kN, under 1.5 times the cycle's need (25.7 kN).
+ALL PASS

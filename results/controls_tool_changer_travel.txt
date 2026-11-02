@@ -1,0 +1,5 @@
+# controls/tool_changer_travel
+# Autodesk Fusion 2706.1.17, run 2026-11-02 21:08, 3 s
+
+  FAIL free: the tool plate comes off through 45 mm [(5.0, 6, 266.8), (10.0, 6, 571.8), (15.0, 6, 430.3), (20.0, 6, 123.0)]
+CONTROL: the segments drawn in by 2.5 mm; the check above MUST fail
