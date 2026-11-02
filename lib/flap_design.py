@@ -336,6 +336,137 @@ def actuator_design(b=None, fp=3.0):
     return out
 
 
+# ============================================================================================================
+# Chapter 34: the horn, the hinges, the spar's fitting and the system put together. Sources: SKF product page for
+# GE 20 ES; Shigley (Budynas & Nisbett, 2015): Section 8-12, Eqs. 8-52 to 8-55 (pp. 443-445), Table 8-1 (p. 404),
+# Table 8-11 (p. 427), Tables A-21 and A-22.
+# ============================================================================================================
+GE20 = dict(d=20.0, D=35.0, B=16.0, C_out=12.0, C=30000.0, C0=146000.0, mass=0.0627)   # SKF GE 20 ES
+SYS = dict(
+    span=3200.0, hinges=(-1100.0, 1100.0),         # mm along the span from the actuator's station (the flap's middle)
+    spar=(-470.0, -455.0),                           # the rear spar's web, x in the section (Chapter 33's Change 1)
+    bracket_at=(-200.0, -110.0), bracket_t=12.0, eye_r=27.5, rib_gap=5.0, bracket_top=-20.0,
+    rib=(-300.0, -90.0), rib_t=6.0, bracket_bolts=[(-185.0, -40.0), (-125.0, -40.0)],
+    cheek=(8.2, 18.2), pin_head=(18.2, 24.2), slot=26.0,          # the hinges: mm from a station's middle along the span
+    horn_cheek=(16.2, 26.2), horn_head=(26.2, 32.2), spacer=(8.0, 16.2), horn_slot=26.2,
+    horn_root=70.0, horn_eye_r=18.0, horn_neck=(40.0, 14.0), hinge_eye_r=30.0, hinge_arm=45.0,
+    lug=(64.0, 76.0), lug_eye_r=27.5, base=(-455.0, -447.0), base_x=90.0, base_z=(70.0, 158.0),
+    bolts=[(82.0, 78.0), (-82.0, 78.0), (82.0, 150.0), (-82.0, 150.0)],
+)
+
+
+def flap_outline(delta=0.0, chord=550.0):
+    """The flap's section (x aft, z up, the hinge at the origin): a round nose about the hinge and a tapering body
+    to the trailing edge, turned down by delta. The same outline as Chapter 32's figure."""
+    pts = []
+    for k in range(13):
+        a = math.radians(90 + 15 * k)
+        pts.append((40 * math.cos(a), 40 * math.sin(a)))
+    pts += [(120, -38), (300, -26), (chord - 40, -8), (chord, 0), (chord - 40, 6), (300, 30), (120, 42)]
+    c, s = math.cos(math.radians(-delta)), math.sin(math.radians(-delta))
+    return [(x * c - z * s, x * s + z * c) for x, z in pts]
+
+
+def skin_up(x):
+    return 175 + (160 - 175) * (x + 430) / 370.0
+
+
+def skin_low(x):
+    return -90 + (-55 + 90) * (x + 430) / 340.0
+
+
+def flap_forces(b, delta, ult=False):
+    """The flap as a free body in its section: the air's normal force at the centre of pressure, the actuator's push
+    on the horn, and the hinges' reaction that balances them (N, x aft and z up). Moments about the hinge in N mm,
+    positive trailing edge up."""
+    a = air(b, delta)
+    k = linkage(delta)
+    f = b['ult'] if ult else 1.0
+    d = math.radians(delta)
+    n_hat = (math.sin(d), math.cos(d))
+    N = f * a['N']
+    F = f * a['H'] * 1000.0 / k['arm']
+    Nv = (N * n_hat[0], N * n_hat[1])
+    Fv = (F * k['u'][0], F * k['u'][1])
+    R = (-(Nv[0] + Fv[0]), -(Nv[1] + Fv[1]))
+    r_cp = (a['arm'] * 1000 * math.cos(d), -a['arm'] * 1000 * math.sin(d))
+    M_air = r_cp[0] * Nv[1] - r_cp[1] * Nv[0]
+    M_act = k['tip'][0] * Fv[1] - k['tip'][1] * Fv[0]
+    return dict(N=N, F=F, Nv=Nv, Fv=Fv, R=R, R_mag=math.hypot(*R), M_air=M_air, M_act=M_act, tip=k['tip'], u=k['u'])
+
+
+def lug(P, D, w, t, e=None):
+    """A lug or a fork's cheek carrying P through a hole of diameter D, w wide, t thick: Shigley Section 8-12 -
+    the net section in tension (Eq. 8-54), bearing on the hole (Eq. 8-55) and shearing of the margin beyond it."""
+    e = e or w / 2.0
+    return dict(net=P / ((w - D) * t), bearing=P / (D * t), tear=P / (2 * t * (e - D / 2.0)))
+
+
+def clevis_pin(P, d, b, t, gap=0.2):
+    """A pin through a fork: P spread over the middle part b wide, held at the middles of two cheeks t thick, a gap
+    between. Double shear (Eq. 8-53) and the bending of the pin as a simply supported beam."""
+    M = P / 2.0 * (t / 2.0 + gap + b / 4.0)
+    return dict(tau=P / (2 * pi * d ** 2 / 4), M=M, sigma=32 * M / (pi * d ** 3))
+
+
+def system_design(b=None):
+    """Chapter 34's sizing, in the order of the chapter."""
+    b = b or brief()
+    out = dict()
+    rows = [flap_forces(b, 40.0 * i / 40) for i in range(41)]
+    out['rows'] = rows
+    worst = max(rows, key=lambda r: r['R_mag'])
+    out['worst_delta'] = 40.0 * rows.index(worst) / 40
+    lim = flap_forces(b, 40.0)
+    ult = flap_forces(b, 40.0, ult=True)
+    out['lim'], out['ult'] = lim, ult
+    out['R_hinge'] = ult['R_mag'] / 2                      # each of two hinges, symmetric about the horn
+    out['R_hinge_lim'] = lim['R_mag'] / 2
+    S = SYS
+    # the hinge bracket as a beam from the hinge to the middle of its attachment on the lower skin
+    xa = 0.5 * (S['bracket_bolts'][0][0] + S['bracket_bolts'][1][0])
+    za = 0.5 * (S['bracket_bolts'][0][1] + S['bracket_bolts'][1][1])
+    Lb = math.hypot(xa, za)
+    e = (xa / Lb, za / Lb)
+    Pb = (-ult['R'][0] / 2, -ult['R'][1] / 2)               # on the bracket, from the flap
+    axial = -(Pb[0] * e[0] + Pb[1] * e[1])                  # tension positive
+    perp = Pb[0] * e[1] - Pb[1] * e[0]
+    h = 60.0
+    t = S['bracket_t']
+    out.update(bracket_L=Lb, bracket_axial=axial, bracket_perp=perp, bracket_M=abs(perp) * Lb,
+               bracket_sigma=axial / (t * h) + 6 * abs(perp) * Lb / (t * h ** 2), bracket_h=h)
+    out['bracket_n'] = SY_7075 / out['bracket_sigma']
+    out['bracket_lug'] = lug(out['R_hinge'], GE20['D'], 2 * S['eye_r'], t)
+    # its two M8 bolts through the rib, in single shear, and their bearing on the rib's web (class 10.9: S_y 940 MPa,
+    # Table 8-11; shear yield 0.577 S_y, Eq. 5-21)
+    Vb = out['R_hinge'] / 2
+    out['bracket_bolt_tau'] = Vb / (pi * 8.0 ** 2 / 4)
+    out['bracket_bolt_n'] = 0.577 * 940.0 / out['bracket_bolt_tau']
+    out['rib_bearing'] = Vb / (8.0 * S['rib_t'])
+    out['rib_bearing_n'] = SY_7075 / out['rib_bearing']
+    out['hinge_pin'] = clevis_pin(out['R_hinge'], 20.0, GE20['B'], S['cheek'][1] - S['cheek'][0])
+    out['hinge_cheek'] = lug(out['R_hinge'] / 2, 20.0, 2 * S['hinge_eye_r'], S['cheek'][1] - S['cheek'][0])
+    out['hinge_bearing_static'] = GE20['C0'] / out['R_hinge']
+    # the horn: the actuator's ultimate push at its pin, the hinge moment at its root
+    Fu = ult['F']
+    tc = S['horn_cheek'][1] - S['horn_cheek'][0]
+    out['horn_pin'] = clevis_pin(Fu, 20.0, ROD_END['B'], tc, gap=S['horn_cheek'][0] - ROD_END['B'] / 2)
+    out['horn_cheek'] = lug(Fu / 2, 20.0, 2 * S['horn_eye_r'], tc)
+    out['horn_M'] = -ult['M_act']                            # N mm, the moment the horn passes to the flap
+    out['horn_sigma'] = 6 * out['horn_M'] / (2 * tc * S['horn_root'] ** 2)
+    out['horn_n'] = SY_7075 / out['horn_sigma']
+    out['torsion_half'] = out['horn_M'] / 2                  # the flap's box either side of the horn
+    # the spar's fitting: two lugs, each with a GE 20 ES on a trunnion, half the ultimate force each
+    P = Fu / 2
+    tl = S['lug'][1] - S['lug'][0]
+    out['fit_lug'] = lug(P, GE20['D'], 2 * S['lug_eye_r'], tl)
+    out['fit_bearing_static'] = GE20['C0'] / P
+    out['fit_bolt_load'] = Fu / 4                            # if the force were ever reversed, on four M8
+    out['fit_bolt_proof'] = 36.6 * 830.0                     # M8 class 10.9: A_t 36.6 mm2 x 830 MPa
+    out['fit_bearing_on_spar'] = Fu / ((2 * S['base_x']) * (S['base_z'][1] - S['base_z'][0]))
+    return out
+
+
 if __name__ == '__main__':
     b = brief()
     for d in (0.0, 15.0, 40.0):

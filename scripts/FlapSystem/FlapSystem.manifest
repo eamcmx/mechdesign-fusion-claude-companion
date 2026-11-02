@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 34: the flap actuation system put together. The actuator of Chapter 33 on the spar fitting, its rod end in the horn on the flap, the flap on two hinge brackets; posed from 0 to 40 deg."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "FlapSystem"
+}

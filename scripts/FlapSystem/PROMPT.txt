@@ -1,0 +1,43 @@
+Write a Fusion Python script that, when run, puts one flap's actuation system together as one machine: the actuator
+of Chapter 33 (FlapActuator.py) hung on its trunnions in a fitting on the rear spar, its rod end pinned in the fork
+of a horn on the flap's middle, and the flap on two hinge brackets, with the wing's spar and skins drawn from the
+brief's section, so that the flap can be posed anywhere from 0 to 40 deg with the actuator following it.
+
+INPUTS (a command dialog, with this default):
+- the screw's operating factor f_p, 3.0, passed to the actuator
+
+DERIVED (from lib/flap_design.py, never typed):
+- system_design(): the flap's forces at each angle, the hinges' reaction, the horn's root, the pins as beams, the
+  cheeks, eyes and lugs (Shigley Section 8-12), the brackets, their bolts and the ribs, the fitting and its bolts
+- linkage(): the actuator's angle about its gimbal and its rod's travel for each flap angle; SYS: the positions
+
+HARD CONSTRAINTS:
+- Build the actuator with FlapActuator.py's own functions, loaded, not copied; draw nothing of it twice. Refuse what
+  it refuses, and any part of the system under 2 against yield at the ultimate load, saying which and by how much.
+- The hinge line on X, along the span, the flap's middle at x = 0; Y aft, Z up; the gimbal at (y, z) = (-420, 114).
+- Two hinges, 1100 mm either side of the middle, each a bracket bolted to a trailing-edge rib inside the wing and out
+  through the cove to an SKF GE 20 ES on the hinge line; the rib 6 mm thick at the bolts.
+- The spar's fitting: a base plate on the spar's aft face (455 mm forward of the hinge) and two lugs with SKF GE 20 ES
+  bearings on the trunnions, 64 to 76 mm from the actuator's axis.
+- The horn: a fork whose root fills a slot in the flap's nose, its cheeks 16.2 to 26.2 mm from the middle, a spacer
+  each side of the rod end so that the horn's cheeks stand clear of its shank; the pin 20 mm.
+- The pins a clearance fit in their 20 mm bores. Nothing touches anything else at 0, 10, 20, 30 or 40 deg.
+
+FUSION CONVENTIONS:
+- A new design document. Three subassemblies: Wing (grounded), Actuator (with its own six), Flap.
+- The flap turns on an As-built revolute joint about X. The actuator is placed by its occurrence's transform, turned
+  about the gimbal's axis by the exact angle: Fusion holds a joint's angle to 0.1 deg and the actuator swings less
+  than 1 deg. Its rod slides on its own joint, and its Motion Links turn the screw and the gears.
+- pose(delta) sets the flap, the actuator and the rod from the linkage; the loop is closed by the numbers, and the
+  check measures it.
+- The API works in cm and radians.
+
+ACCEPTANCE CRITERIA:
+- A message gives the hinges' load, the horn's stress and factor, the pin's, the brackets' and the lugs' stresses, the
+  parts list and a version tag. Defaults: hinges 13 956 N each, horn 144.1 MPa (3.76), pin 228.3 MPa.
+- 85 components in 51 kinds.
+- At 0, 10, 20, 30 and 40 deg: the rod end's centre within 0.01 mm of the horn's pin; the transmission angle
+  measured in Fusion 69.81 deg flap up and 70.15 deg at 40; no interference among the system's parts and the
+  actuator's outer ones.
+- Both hinges' bearings on the hinge line.
+- Refused: f_p 5.0.

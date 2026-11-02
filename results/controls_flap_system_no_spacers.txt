@@ -1,0 +1,6 @@
+# controls/flap_system_no_spacers
+# Autodesk Fusion 2706.1.17, run 2026-11-02 06:47, 54 s
+
+  ok   flap at 0 deg: no interference between the horn and the rod end 
+  FAIL flap at 40 deg: no interference between the horn and the rod end [('Housing', 'Horn', 43.907)]
+CONTROL: the horn's cheeks are brought in and the spacers left out; the check at 40 deg MUST fail
