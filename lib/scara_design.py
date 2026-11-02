@@ -176,6 +176,9 @@ CSG = {      # ratio 50, grease; N m, rev/min, kg m2, N m/rad, m, N, kg, mm
     40: dict(Tr=178, Trep=523, Tav=255, Tmom=892, nmax=4000, nav=3000, Iwg=4.50e-4, K1=13e4, T1=54, K2=20e4, T2=196,
              K3=23e4, dp=0.096, R=0.0145, C=21300, C0=36500, Mc=450, Km=91.0e4, mass=5.0, A=160, B=72.5, E=50.5,
              O=127, Q=109, S=24, T=110, U=14, b=144, nc=10, d=9),
+    45: dict(Tr=229, Trep=650, Tav=345, Tmom=1235, nmax=3800, nav=3000, Iwg=8.68e-4, K1=18e4, T1=76, K2=29e4, T2=275,
+             K3=33e4, dp=0.111, R=0.0155, C=23000, C0=42600, Mc=686, Km=141e4, mass=7.0, A=180, B=79.5, E=58,
+             O=148, Q=127, S=25, T=124, U=19, b=164, nc=12, d=9),   # Table 4 (p. 12), Tables 28-30, product page
 }
 LN_CSG, NR = 10000.0, 2000.0          # h, rev/min: the CSG's rated L10 life at its rated input speed (p. 14)
 ETA_50 = 0.65                         # housed unit 17-65, ratio 50, grease, 3500 rev/min, 20 C (chart p. 42, read)
@@ -183,10 +186,10 @@ MOTOR = {1: dict(Jm=1.5e-4, nmax=5000.0, flange=130.0, L=150.0, D=110.0, mass=4.
          2: dict(Jm=0.5e-4, nmax=6500.0, flange=60.0, L=110.0, D=56.0, mass=1.2)}          # specification, assumed
 
 
-def leg_pattern(b, A, B, payload, T, joint, rest=0.0, n=200, elbow=1):
+def leg_pattern(b, A, B, payload, T, joint, rest=0.0, n=200, elbow=1, p=None):
     """The joint's output speed (rev/min), torque (N m) and acceleration (rad/s2) in small steps over a move from A
     to B and back, with `rest` s at rest after each: the load pattern of the catalogue's selection (p. 15)."""
-    p = inertia(b, payload)
+    p = p or inertia(b, payload)
     qa, qb = ik(b, *A, elbow=elbow), ik(b, *B, elbow=elbow)
     d1, d2 = qb[0] - qa[0], qb[1] - qa[1]
     rows = []
@@ -851,6 +854,222 @@ def tool_joints(b=None, size=20):
     out['depth'] = depth_rule(size, b=b)
     out['sp25'] = sp25_cost(b)
     out['eta_screw'] = ETA_SCREW
+    return out
+
+
+# ============================================================================================================
+# Chapter 38: the SCARA put together. The layout of the robot (mm, world: J1's axis at x = y = 0, z up from the
+# floor) and the arms' sections; every value assumed unless the text gives a source.
+# ============================================================================================================
+LAY38 = dict(z_col=200.0,          # the base column's top face, where the J1 module plate sits
+             col_r=110.0, col_t=10.0, foot=300.0, foot_t=15.0, top_r=125.0, top_t=12.0,
+             a1_w=110.0, a1_h=70.0, a1_t=4.0, a1_back=75.0, a1_front=50.0,     # the first arm: an aluminium box
+             a2_back=45.0,          # the second arm reaches 45 mm behind J2
+             skin=4.0, wall2=3.0)   # the second arm's skins and walls, with bosses where bolts and nuts need more
+
+
+def heights(size1=40):
+    """The robot's heights (world mm) from the layout: the J1 unit's input face, the first arm, the J2 module plate,
+    the J2 output flange, the second arm's base plate."""
+    L = LAY38
+    z1 = L['z_col'] + 12.0                       # the J1 module plate is 12 thick on the column's top
+    a1_bot = z1 + CSG[size1]['B']
+    a1_top = a1_bot + L['a1_h']
+    z2 = a1_top + 8.0                             # the J2 module plate, 8 thick, on the arm's top
+    f2 = z2 + CSG[20]['B']
+    arm2 = f2 + LAY37['t_base']                   # the second arm's base plate's top face
+    return dict(z1=z1, a1_bot=a1_bot, a1_top=a1_top, z2=z2, f2=f2, arm2=arm2,
+                tool_top0=arm2 + nut_layout(20)['tool_top'])
+
+
+def box_section(b, h, t):
+    """A hollow rectangle b wide and h high, walls t: area, I about the horizontal axis (vertical bending) and the
+    vertical one (horizontal bending), and the torsion constant 4 Am^2 t / perimeter (Bredt)."""
+    A = b * h - (b - 2 * t) * (h - 2 * t)
+    Iv = (b * h ** 3 - (b - 2 * t) * (h - 2 * t) ** 3) / 12
+    Ih = (h * b ** 3 - (h - 2 * t) * (b - 2 * t) ** 3) / 12
+    Am = (b - t) * (h - t)
+    J = 4 * Am ** 2 * t / (2 * ((b - t) + (h - t)))
+    return dict(A=A, Iv=Iv, Ih=Ih, J=J)
+
+
+
+def mass_model(rows, size1=40, b=None, catalogue=True):
+    """The robot's mass properties from Fusion's parts (rows: link, name, kg, x, y, z mm at rest, the part's own
+    inertia about a vertical axis through its centre, kg m2): each motor at its specified mass and each strain wave
+    unit at the catalogue's (their drawn centres kept, their own inertia scaled with the mass), the HIWIN nuts as
+    drawn; the gripper and the rated payload added at the tool. The first link about J1, the second about J2, and
+    the a, b, d of Chapter 35's equations of motion."""
+    b = b or brief()
+    drawn = {}
+    for r in rows:
+        for size in (size1, 20):
+            if r[1].startswith('CSG-%d' % size) or r[1].endswith(' %d' % size) and r[1].split()[0] in (
+                    'Cross', 'Output', 'Flexspline', 'Wave'):
+                drawn[size] = drawn.get(size, 0.0) + r[2]
+    spec = {'Servo motor J1': MOTOR[1]['mass'], 'Servo motor J2': MOTOR[2]['mass'],
+            'Servo motor J3': MOTOR34[3]['mass'], 'Servo motor J4': MOTOR34[4]['mass']}
+    out = []
+    for link, name, m, x, y, z, Iz in rows:
+        f = 1.0
+        if catalogue and name in spec:
+            f = spec[name] / m
+        elif catalogue:
+            for size in (size1, 20):
+                if name.startswith('CSG-%d' % size) or (name.endswith(' %d' % size) and name.split()[0] in
+                                                        ('Cross', 'Output', 'Flexspline', 'Wave')):
+                    f = CSG[size]['mass'] / drawn[size]
+        out.append((link, name, m * f, x, y, z, Iz * f))
+    L1 = b['L1'] / 1000
+    m_tool = b['m_tool'] + b['m_rated']
+    I_tool = b['m_rated'] * (b['k4'] / 1000) ** 2 + 0.5 * b['m_tool'] * 0.04 ** 2
+    one = [r for r in out if r[0] == 1]
+    two = [r for r in out if r[0] == 2]
+    I1 = sum(r[6] + r[2] * (r[3] ** 2 + r[4] ** 2) * 1e-6 for r in one)
+    m1 = sum(r[2] for r in one)
+    c1 = sum(r[2] * r[3] for r in one) / m1
+    m2 = sum(r[2] for r in two) + m_tool
+    mx = sum(r[2] * (r[3] - b['L1']) for r in two) + m_tool * b['L2']
+    my = sum(r[2] * r[4] for r in two)
+    d = sum(r[6] + r[2] * ((r[3] - b['L1']) ** 2 + r[4] ** 2) * 1e-6 for r in two) + I_tool + m_tool * (b['L2'] / 1000) ** 2
+    c2 = mx / m2 / 1000
+    bq = m2 * c2 * L1
+    a = I1 + m2 * L1 ** 2 + d
+    base = sum(r[2] for r in out if r[0] == 0)
+    return dict(I1=I1, m1=m1, c1=c1, m2=m2, c2=c2, c2y=my / m2, d=d, b=bq, a=a, m_base=base, rows=out, drawn=drawn,
+                m_two_parts=sum(r[2] for r in two))
+
+
+def p_from_abd(a, bq, d, m2, L1=0.35, L2=0.25):
+    """The equivalent two-body arm of dynamics() for given a, b, d: everything beyond J2 as one body."""
+    c2 = bq / (m2 * L1)
+    return dict(L1=L1, L2=L2, I1=a - m2 * L1 ** 2 - d, m2=m2, c2=c2, I2c=d - m2 * c2 ** 2, m3=0.0)
+
+
+def sizing_measured(mm, size1=40, b=None):
+    """Chapter 36's selection again on the measured arm: the J1 and J2 load patterns, the units' averages and lives,
+    the motors, the peak torques; the bearing's moment with the arms stretched out."""
+    b = b or brief()
+    p = p_from_abd(mm['a'], mm['b'], mm['d'], mm['m2'])
+    A = (b['x0'], -b['across'] / 2)
+    B = (b['x0'], b['across'] / 2)
+    rest = (b['cycle'] - 2 * b['t_h']) / 2
+    r1 = leg_pattern(b, A, B, b['m_rated'], b['t_h'], 1, rest=rest, p=p)
+    R0, R1 = (b['L1'] + b['L2'] - 30 - b['across'], 0.0), (b['L1'] + b['L2'] - 30, 0.0)
+    r2 = leg_pattern(b, R0, R1, b['m_rated'], b['t_r'], 2, rest=b['t_v'] / 2, p=p)
+    qa = ik(b, *A)
+    M11 = dynamics(p, qa[1], 0, 0, 0, 0)[2]['M11']
+    j1 = hd_select(r1, size1)
+    j2 = hd_select(r2, 20)
+    return dict(M11=M11, M22=mm['d'], j1=j1, j2=j2, m1=motor(r1, size1, 1), m2=motor(r2, 20, 2), p=p)
+
+
+
+W_LIM = {1: 5.0, 2: 8.5}             # rad/s: the joints' speed near the ends of their ranges (Chapter 38)
+
+
+def integration(rows, b=None):
+    """Chapter 38's numbers on the robot as Fusion measured it (rows), the motors and the strain wave units at their
+    specified and catalogue masses: the links against Chapter 35's assumptions; J1 on the CSG-40 and the CSG-45;
+    J2 on the CSG-20 and its duty; the motors; the output bearings; the stops and the brakes."""
+    b = b or brief()
+    mm = mass_model(rows, 45, b)
+    dr = mass_model(rows, 45, b, catalogue=False)
+    out = dict(mm=mm, drawn=dr)
+    out['s40'] = sizing_measured(mm, 40, b)
+    out['s45'] = sizing_measured(mm, 45, b)
+    s45 = out['s45']
+    out['j2_share'] = s45['j2']['Lh'] / b['life_h']
+    # the J1 bearing (CSG-45): the weights with the arms stretched out, the horizontal force on the leg
+    L1, L2 = b['L1'] / 1000, b['L2'] / 1000
+    m1, c1, m2, c2 = mm['m1'], mm['c1'] / 1000, mm['m2'], mm['c2']
+    Fa = (m1 + m2) * G
+    Mw = (m1 * c1 + m2 * (L1 + c2)) * G
+    qa = ik(b, b['x0'], -b['across'] / 2)
+    sx = m1 * c1 + m2 * (L1 + c2 * math.cos(qa[1]))
+    sy = m2 * c2 * math.sin(qa[1])
+    first = math.hypot(sx, sy)
+    acc = 113.4851
+    Fr = first * acc
+    u = CSG[45]
+    Lr = 0.05
+    Mmax = Fr * (Lr + u['R']) + Mw
+    P0 = Fr + 2 * Mmax / u['dp'] + 0.44 * Fa
+    out['b1'] = dict(Fa=Fa, Mw=Mw, La=Mw / Fa, first=first, Fr=Fr, Mmax=Mmax, Mc=u['Mc'], P0=P0, fs=u['C0'] / P0)
+    # the J2 bearing (CSG-20)
+    u2 = CSG[20]
+    c = cycle(b, b['m_rated'])
+    a2 = c['radial']['a2']
+    Fa2 = m2 * G
+    Mw2 = m2 * c2 * G
+    Fr2 = m2 * c2 * a2
+    M2 = Fr2 * (0.04 + u2['R']) + Mw2
+    P02 = Fr2 + 2 * M2 / u2['dp'] + 0.44 * Fa2
+    out['b2'] = dict(Fa=Fa2, Mw=Mw2, Fr=Fr2, Mmax=M2, Mc=u2['Mc'], P0=P02, fs=u2['C0'] / P02)
+    # the case bolts of the CSG-45: twelve M8 on 164 mm
+    Fi = 0.75 * 36.6 * 970
+    T = 12 * Fi * 0.15 * u['b'] / 2000
+    out['bolts45'] = dict(Fi=Fi, T=T, n=T / u['Tmom'])
+    # the stops: the motor's side through the teeth, as Chapter 36, with the measured inertias
+    w1 = c['across']['w1']
+    w2 = c['radial']['w2']
+    Ja1, Ja2 = s45['M11'], mm['d']
+    Jr1 = 2500 * (MOTOR[1]['Jm'] + u['Iwg'])
+    Jr2 = 2500 * (MOTOR[2]['Jm'] + u2['Iwg'])
+    st = {}
+    for k, Ja, Jr, w0, Tmom, Trep, wl, rs, R, dp, C0 in (
+            (1, Ja1, Jr1, w1, u['Tmom'], u['Trep'], W_LIM[1], 0.120, u['R'], u['dp'], u['C0']),
+            (2, Ja2, Jr2, w2, u2['Tmom'], u2['Trep'], W_LIM[2], 0.100, u2['R'], u2['dp'], u2['C0'])):
+        full_th = Jr * w0 ** 2 / Tmom
+        full_F = Tmom * (Ja + Jr) / Jr / rs
+        th = Jr * wl ** 2 / Trep                      # the buffer keeps the teeth under the repeated peak
+        Tb = Trep * (Ja + Jr) / Jr
+        F = Tb / rs
+        P0 = F + 2 * F * R / dp                       # the stop's force at the output flange's face, R above the rollers
+        st[k] = dict(Ja=Ja, Jr=Jr, w0=w0, E_full=0.5 * (Ja + Jr) * w0 ** 2, full_deg=math.degrees(full_th),
+                     full_F=full_F, full_fs=C0 / (full_F + 2 * full_F * R / dp), w_lim=wl,
+                     E=0.5 * (Ja + Jr) * wl ** 2, theta=th, deg=math.degrees(th), rs=rs, travel=th * rs * 1000,
+                     T_buffer=Tb, F=F, P0=P0, fs=C0 / P0)
+    out['stops'] = st
+    # the brakes: J1 within 15 deg under the repeated peak; J2 against its momentary limit
+    br = {}
+    for k, Ja, Jr, w0, Trep, Tmom, Tb, ang in ((1, Ja1, Jr1, w1, u['Trep'], u['Tmom'], 12.0, 15.0),
+                                               (2, Ja2, Jr2, w2, u2['Trep'], u2['Tmom'], 3.4, 15.0)):
+        Jt = Ja + Jr
+        lo = w0 ** 2 / (2 * math.radians(ang)) * Jt / 50
+        hi_rep = Trep * Jt / (Ja * 50)
+        hi_mom = Tmom * Jt / (Ja * 50)
+        al = 50 * Tb / Jt
+        stop = math.degrees(w0 ** 2 / (2 * al))
+        wl = W_LIM[k]
+        br[k] = dict(Tb=Tb, lo=lo, hi_rep=hi_rep, hi_mom=hi_mom, alpha=al, stop=stop, Tg=Ja * al, w0=w0,
+                     stop_lim=math.degrees(wl ** 2 / (2 * al)))
+    # where the tool would meet the first arm when J2 overruns: the flange's edge (25 mm) and the arm's half-width
+    br[2]['q2_hit'] = 180.0 - math.degrees(math.asin((LAY38['a1_w'] / 2 + LAY37['flange_d'] / 2) / b['L2']))
+    out['brakes'] = br
+    return out
+
+
+
+GROUPS38 = [   # Chapter 35's masses (Table 35.4) against the robot's groups as measured
+    ('first arm', 3.5, lambda n, l: n == 'First arm beam'),
+    ('J2 module', 3.0, lambda n, l: l == 1 and n != 'First arm beam' and not n.endswith(' 45')),
+    ('second arm', 2.0, lambda n, l: n == 'Second arm structure'),
+    ('J3 and J4 motors', 2.0, lambda n, l: l == 2 and ('motor' in n.lower() and 'Pulley' not in n or
+                                                      n.startswith('Pulley') and 'motor' in n)),
+    ('ball screw spline', 1.5, lambda n, l: l == 2 and (n.startswith(('Ball screw', 'Screw nut', 'Spline nut',
+                                                                     'Pulley screw', 'Flange bolt', 'Tool flange',
+                                                                     'Belt')) or n.startswith('Pulley') and 'nut' in n)),
+]
+
+
+def groups38(mm):
+    """The measured groups' masses (the motors and units at their specified and catalogue masses) against Chapter
+    35's, with what is left in each link (the gear's output flange and flexspline, carried by the next link)."""
+    out = []
+    for name, assumed, pick in GROUPS38:
+        m = sum(r[2] for r in mm['rows'] if r[0] in (1, 2) and pick(r[1], r[0]))
+        out.append((name, assumed, m))
     return out
 
 

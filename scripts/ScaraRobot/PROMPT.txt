@@ -1,0 +1,43 @@
+Write a Fusion Python script that, when run, puts the SCARA of Chapters 35 to 37 together as one robot: a base column
+with the J1 module of Chapter 36 on its top, a first arm on J1's output flange carrying the J2 module of Chapter 36
+at its end, and a second arm on J2's output flange whose end is Chapter 37's ball screw spline with its belts and
+motors, so that the robot can be posed anywhere in its workspace and its mass properties measured.
+
+INPUTS (a command dialog, with this default):
+- the J1 unit's size, CSG 45 (a CSG 40 may be asked for comparison)
+
+DERIVED (from lib/scara_design.py, never typed):
+- LAY38 and heights(): the column's top at 200 mm, the first arm's box section, every height from the units' B
+- the J1 and J2 modules from ScaraJointModules.py's module(), the arm's end from ScaraToolJoints.py's design() and
+  build_parts(), loaded, not copied
+
+HARD CONSTRAINTS:
+- Refuse a J1 unit other than a CSG-40 or a CSG-45.
+- The base: a steel foot 300 mm square with four anchor holes, an aluminium tube 220 mm across with 10 mm walls, a
+  top flange clear of the J1 motor's flange; the J1 module plate on the flange.
+- The first arm: an aluminium box 110 wide, 70 high, 4 mm walls, from 75 mm behind J1 to 50 mm beyond J2, on J1's
+  output flange; a window through it at J2 for the J2 motor, which hangs from the J2 module's plate on the arm's top.
+- The second arm: in place of Chapter 37's plates and walls, 4 mm skins over the whole arm from 45 mm behind J2,
+  the full 12 and 10 mm only in bosses round the nuts, the motors' mounts and J2's output flange; 3 mm walls and a
+  back wall; the arm's end's other aluminium parts kept aluminium.
+- Nothing touches anything else where the links meet, at rest, at both ends of the standard cycle's horizontal leg,
+  with J2 at +150 and -150 deg, and at J1's range ends.
+
+FUSION CONVENTIONS:
+- A new design document. Three groups: the base (grounded), the first arm and the second arm, the base's and the
+  first arm's frames at J1's unit's input face, the second arm's at J2's axis on its base plate's top face.
+- J1 and J2: As-built revolute joints about z. J3: the arm's end's carriage slides; J4: the tool's shaft turns on it.
+- Each strain wave unit's output held to the next arm by an As-built rigid joint; the units' inputs and the arm's
+  end's nuts and motors held still in their groups.
+- pose(q1, q2, j3, j4) in degrees and millimetres.
+- The API works in cm and radians.
+
+ACCEPTANCE CRITERIA:
+- A message gives the units and the parts list with a version tag.
+- 93 components in 41 kinds with the CSG-45.
+- No interference where the links meet at the seven poses.
+- The robot's mass properties measured part by part; on them, with the motors at their specified masses and the
+  units at the catalogue's, J1 lasts 20 000 h or more on the CSG-45 and less on the CSG-40; J2's peak and average
+  torques within the CSG-20's limits.
+- The tool flange's underside 359 mm above the floor at J3 0.
+- Refused: a CSG-32.

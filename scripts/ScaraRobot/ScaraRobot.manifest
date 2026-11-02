@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 38: the SCARA put together. The base column with the J1 module, the first arm with the J2 module, the second arm with the ball screw spline, J1 to J4 as joints."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "ScaraRobot"
+}
