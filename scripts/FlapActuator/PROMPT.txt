@@ -1,59 +1,47 @@
-Write a Fusion Python script that, when run, builds the drive of an aircraft's trailing-edge flap: a ball screw
-whose nut pushes a link to the flap's horn, swinging the flap down about its hinge, assembled and ready to move
-with Drive Joints.
+Write a Fusion Python script that, when run, builds the electromechanical actuator of one trailing-edge flap of a
+light twin (Chapter 32): a ball screw turned through a spur gear, an idler and a pinion by a bought motor unit
+(brushless motor, planetary gearhead, spring-applied brake) pushes a rod out of an aluminium housing that hangs from
+the rear spar on two trunnions, and the rod ends in a rod end on the flap's horn. Assembled from real parts, ready to
+move with its joints.
 
 INPUTS (a command dialog, with these defaults):
-- lead L (mm), 5
-- screw diameter d0 (mm), 16
-- horn radius r, hinge to the link's pin (mm), 100
-- horn angle phi0 with the flap up, from straight up towards aft (deg), -45
-- nut line zs, above the hinge (mm), 60
-- link l (mm), 150
-- flap chord c (mm), 400
-- flap span s (mm), 1500
+- the screw's operating factor f_p (HIWIN F 3.8), 3.0
+- the gearhead's ratio, 24
 
-DERIVED (computed from the inputs, never typed):
-- x aft, z up, the hinge at the origin; with the flap down by d the horn's tip is at r (sin(phi0 + d), cos(phi0 + d));
-  the nut's pin on z = zs, forward of the tip by sqrt(l^2 - (zs - tip z)^2)
-- the nut's travel from 0 to 40 deg of flap and the screw's turns for it; the smallest transmission angle between
-  link and horn; the nut must move aft all the way
-- the ball screw: lead angle atan(L / (pi d0)); with the balls' contact angle 45 deg and a rolling friction
-  coefficient of 0.005, the efficiency driving (cos a - mu tan l) / (cos a + mu cot l) and back-driving
-  (cos a - mu cot l) / (cos a + mu tan l) (Childs, 2014, Eq. 16.33); self-locking above mu = tan l cos a
-- the air load at 40 m/s (q = rho V^2 / 2, rho 1.225 kg/m3): at full flap a normal force coefficient of 1.2 on the
-  flap's area at 45 % of its chord from the hinge, taken as rising linearly with d; the nut's force M / (dx/dd) by
-  virtual work; the screw's torque F L / (2 pi eta) to drive and F L eta' / (2 pi) put back by the load
+DERIVED (from lib/flap_design.py, never typed):
+- actuator_design(): the force over the stroke and its cube mean; the nut's life, static rating and the largest f_p
+  it passes; the screw's torque and its back-driving torque; buckling and critical speed; the thrust bearings'
+  life; the gears' stresses; the motor unit's speed, torque, power and brake; the rod as a column; the trunnions
+- the positions of LAY: the actuator along its own axis from the gimbal
 
 HARD CONSTRAINTS:
-- The smallest transmission angle at least 40 deg (Norton, 2008, Sec. 3.3), or refuse giving it.
-- The nut moving aft steadily from 0 to 40 deg, or refuse; a link that cannot reach the horn, refuse.
-- A ball screw that would lock itself (mu at least tan l cos a), refuse: it is chosen to run free, with a brake.
-- A right-hand screw: a turn about +x moves the nut towards -x; the flap goes down as the nut runs aft.
-- Each part on its own level along y, joined by pins: the screw and the nut at y = 0, the horn from -10 to 10, the
-  link from 17 to 27 mm; the hinge's brackets outboard of the flap. Nothing touches anything else.
+- Nut HIWIN R32-10T4-RSI on a 32 x 10 screw; thrust bearings two SKF BSD 2562 CGA back to back; rod end SKF SI 20 ES;
+  idler bearings two 6201; gears module 1.5, 20 deg, 54 on the screw, 30 on the idler, 18 on the pinion, 26 on the
+  encoder's pinion, 14 mm wide.
+- Refuse a nut that lasts less than 60 000 strokes, a nut whose static rating is less than the ultimate force,
+  gears under 1.5 against yield at the ultimate or in fatigue at the limit, a rod that buckles under twice the
+  ultimate force, a motor faster than 6000 rev/min; say by how much.
+- The rod end's centre 378.96 mm from the gimbal's axis retracted and 461.04 mm extended.
+- Nothing more than 25 mm forward of the gimbal's axis (the spar's fitting); the actuator inside the wing's skins
+  with the flap anywhere from 0 to 40 deg.
+- The guide key on the rod runs in a slot along the housing's bore, to the gland.
+- Nothing touches anything else, retracted, part way or extended.
 
 FUSION CONVENTIONS:
-- Create a new Fusion design document (FusionDesignDocumentType), not a part design.
-- Components, one body each, created where they belong: Wing (the rear spar, the hinge's brackets and pin;
-  grounded), Flap (slab, nose round the hinge, horn and its pin), Screw, Nut (with its pin), Link.
-- Bodies from TemporaryBRepManager through base features; joint points from an XZ sketch through
-  modelToSketchSpace (Chapter 11).
+- A new design document. The actuator along +Y from the gimbal's axis (y = 0) to the rod end, Z up, X along the span.
+- Six subassemblies: Housing (grounded), Screw, Rod, Idler, Pinion, Encoder pinion; every part a component.
+- As-built Joints: the screw, the idler, the pinion and the encoder's pinion revolute about their axes; the rod a
+  slider along Y, limited to the stroke. Motion Links: 54:30 to the idler and 54:26 to the encoder's pinion, each
+  turning the other way; 54:18 to the pinion, the same way; one turn of the screw moves the rod 10 mm aft.
+- The ball groove is Chapter 21's: the section swept along the screw with one turn of twist per lead.
 - The API works in cm and radians.
-- AsBuiltJoints, the direction tried and its sign measured (Chapter 17): revolute about x for the screw, slider along
-  x for the nut, revolute about y for the flap on its hinge, the link on the nut's pin and the link on the horn's pin
-  (closing the loop). A Motion Link of 360 deg of the screw for L of the nut, its direction set from the signs.
 
 ACCEPTANCE CRITERIA:
-- A message gives the lead angle, the travel and turns, the transmission angle, both efficiencies, the hinge moment,
-  the largest nut force, the screw's torques and a version tag.
-- Defaults: lead angle 5.681 deg; 66.939 mm of nut, 13.388 turns; smallest transmission angle 49.09 deg; efficiency
-  0.9330 driving, 0.9283 back-driving, self-locking only above 0.0703; q = 980.0 Pa; hinge moment 127.008 N m at 40
-  deg; largest nut force 1245.1 N at 40 deg, 1.0620 N m to drive, 0.9197 N m put back.
-- 5 components with one body each; 4 revolute and 1 slider As-built Joints; 1 Motion Link.
-- No interference at rest.
-- The screw turned in 144 deg steps to 40 deg of flap: the nut at the lead per turn and the flap at the angle worked
-  out independently for the nut's position, measured on the bodies, at every step; nothing interfering.
-- Refused: zs = 100 mm (transmission angle 33.74 deg); mu = 0.08 (self-locking above 0.0703); l = 10 mm (the link
-  cannot reach).
-
-Give me one Python file and its .manifest.
+- A message gives the nut, its life and static margin, the torques, the gears' factors, the motor unit and the brake,
+  the rod end's position, the parts list and a version tag. Defaults: life 4.27 of 60 000 strokes, f_p up to 4.87,
+  C0 3.41 of the ultimate force, 23.71 N m, 30.80 N m backwards, factors 9.73 and 4.91, 2955 rev/min, 0.428 N m.
+- 43 components in 31 kinds; no interference retracted and with the flap at 10, 20, 30 and 40 deg.
+- The rod end's centre 378.96 mm from the gimbal retracted and 461.04 mm extended, the screw turned 8.2084 turns.
+- At least 2 mm of room to the skins above and below; the mass, with the motor unit at its specified 1.6 kg, at
+  most 9 kg.
+- Refused: f_p 5.0.

@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "Chapter 31: a trailing-edge flap driven by a ball screw through a nut, a link and the flap's horn; travel, transmission angle, efficiencies, air load and the screw's torque."
+        "": "Chapter 33: the flap actuator. A ball screw 32 x 10 turned through a spur gear, an idler and a pinion by a bought motor unit; thrust bearings, nut, rod, rod end, aluminium housing on two trunnions; checked over the whole stroke."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,
