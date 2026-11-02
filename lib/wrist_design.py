@@ -594,7 +594,7 @@ def backlash40(b=None):
 
 
 # measured on the integrated model by checks/wrist_integration_check.py (WristIntegration 1.0), the motors drawn solid
-MEAS40 = dict(total=5.560264, cg_z=-64.9657481, motors_drawn=2.0735354, roll=0.4485168, roll_z=28.3889836,
+MEAS40 = dict(total=5.5589896, cg_z=-64.9746643, motors_drawn=2.0735354, roll=0.4485168, roll_z=28.3889836,
               roll_Iz=0.0001222, roll_Ix=0.0001839, carrier=0.4185501, carrier_z=0.1063995, carrier_Iy=8.55e-05)
 
 
