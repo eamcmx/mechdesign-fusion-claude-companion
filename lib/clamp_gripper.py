@@ -17,7 +17,7 @@ import tool_changer as tc
 
 G = 9.81
 pi = math.pi
-E_AL, E_STEEL = 70e9, 207e9
+E_AL, E_STEEL = 71.7e9, 207e9       # Pa (Budynas & Nisbett, 2015, Table A-5, p. 1015)
 
 # ------------------------------------------------------------------------------------------------------------------
 # The task (assumed, the customer's to confirm): cartons of drinks, 400 x 400 x 300 mm, up to 40 kg; a pack of up to
