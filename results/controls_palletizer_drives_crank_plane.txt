@@ -1,0 +1,6 @@
+# controls/palletizer_drives_crank_plane
+# Autodesk Fusion 2706.1.17, run 2026-11-02 18:46, 23 s
+
+  FAIL no interference at rest [('Cheek J3 side', 'Crank web', 700519.916), ('Cheek J3 side', 'Counterweight block', 3208794.384), ('J2 support bearing', 'Crank web', 1206170.378), ('J3 support bearing', 'Crank web', 95661.496), ('Hub boss J3 side', 'Crank shaft', 494800.843), ('Hub boss J3 side', 'Crank web', 1759291.886), ('Crank shaft', 'Crank web', 1017876.02)]
+  FAIL J3 at 60 deg: the crank clear of the base's flange [('Base flange', 'Crank web', 427371.425)]
+CONTROL: the crank at y = 495 mm; the checks above MUST fail

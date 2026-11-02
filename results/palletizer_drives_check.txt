@@ -1,0 +1,31 @@
+# palletizer_drives_check
+# Autodesk Fusion 2706.1.17, run 2026-11-02 18:45, 23 s
+
+PalletizerDrives 1.0 (2026-11-02)
+  ok   Run opens the dialog
+Palletizer drives built.
+J1: slewing ring RKS.23 0841; RV-500N, ratio 192.75.
+J2: RV-500N with the gas balancer, two cylinders of 63 mm bore, together 54.0 to 69.5 kN, 8.66 to 11.14 MPa.
+J3: RV-500N; counterweight 100 kg at 600 mm.
+Lives (h, the reducers, against the hours each joint moves): J1 12 497 of 11 667, J2 120 984 of 10 667, J3 13 074 of 10 667 (Table 42.4).
+
+Parts: 48 components; 2 Balancer barrel, 1 Balancer cross pin Q, 3 Balancer lug, 1 Balancer pin P, 2 Balancer rod, 1 Base flange, 1 Cheek J2 side, 1 Cheek J3 side, 1 Column, 1 Counterweight block, 2 Coupling disc, 1 Coupling spacer, 1 Crank shaft, 1 Crank web, 1 Floor plate, 2 Fork plate, 2 Gas bottle, 1 Hub boss J2 side, 1 Hub boss J3 side, 1 J1 reducer plate, 1 J1 stop, 1 J1 stop dog, 1 J2 support bearing, 1 J3 bracket, 2 J3 bracket post, 1 J3 support bearing, 1 Lower arm root box, 1 RV-500N case J1, 1 RV-500N case J2, 1 RV-500N case J3, 1 RV-500N output J1, 1 RV-500N output J2, 1 RV-500N output J3, 1 Servo motor J1, 1 Servo motor J2, 1 Servo motor J3, 1 Slewing ring balls, 1 Slewing ring inner ring, 1 Slewing ring outer ring, 1 Turret plate.
+
+[PalletizerDrives 1.0 (2026-11-02)] PalletizerDrives 1.0 (2026-11-02)
+  OK pressed, built in 22 s
+  ok   a new design opened
+  ok   two top-level groups: ['Base', 'Turret']
+  parts: 48 components, 40 kinds
+  ok   the parts as listed 
+  ok   no interference among the 48 parts at rest 
+  ok   J1 at -30 and +30 deg: no interference 
+  ok   J2 at -42, 0, 13, 26, 60 and 85 deg: the pins' distance measured against sqrt(a^2 + b^2 + 2 a b cos q2), worst 0.0000 mm
+  ok   each piston inside its barrel's travel, 60 to 470 mm from the pin: [(-42.0, 283.3), (0.0, 340.0), (13.0, 334.5), (26.0, 318.1), (60.0, 225.8), (85.0, 117.2)]
+  ok   J2 at its six poses, the balancer set to each: no interference 
+  ok   J3 at -75, -51, 0, 30 and 60 deg: no interference 
+  masses as drawn: Base 979.0 kg, Crank 286.0 kg, Lower arm 426.8 kg, Turret 1277.3 kg
+  the slewing ring as drawn 60.5 kg (SKF 48.0); each RV-500N as drawn 68.2 kg (Nabtesco 57.2)
+  ok   the counterweight block 100.00 kg
+  ok   {'cw': 300.0} refused: A counterweight of 300 kg is over 200 kg: J1's RV-500N then falls short of its life.
+  ok   {'r_cw': 1100.0} refused: With the crank turned down to 60 deg the block would reach -267 mm above the floor: it must stay 20 mm clear.
+ALL PASS
