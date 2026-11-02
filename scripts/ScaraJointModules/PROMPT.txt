@@ -1,0 +1,45 @@
+Write a Fusion Python script that, when run, builds the SCARA's two arm joints of Chapter 36 as two modules side
+by side: each a servo motor with its holding brake on a module plate, its shaft in the wave generator of a Harmonic
+Drive CSG-2UH housed unit, ratio 50, whose output flange carries the next arm. J1 is a CSG-40-50-2UH, J2 a
+CSG-20-50-2UH. The output turns one fiftieth of the motor's shaft, the other way.
+
+INPUTS (a command dialog, with this default):
+- the J1 unit's size, 40 (the J2 unit's is 20)
+
+DERIVED (from lib/scara_design.py, never typed):
+- modules(): each joint's load pattern over the standard cycle (J1 the horizontal leg, J2 the radial move), the
+  catalogue's average torque, average and largest input speeds and life (pp. 14-15); the motors' peak and RMS
+  torques through the ratio, the efficiency and the inertia; the output bearings' static safety and life
+  (pp. 34-35); the case bolts' friction torque; the joints' natural frequencies from K1
+- CSG: the catalogue's ratings (Table 3) and outlines (Tables 28 to 30); MOTOR: the motors' specification
+
+HARD CONSTRAINTS:
+- Refuse a J1 unit whose repeated peak torque, average torque or largest input speed is over its catalogue limit,
+  or whose life is under the brief's 20 000 h, saying which and by how much.
+- Draw each unit from its catalogue outline: the housing A across and E high from the input face, the output flange
+  O across reaching B, its bore S; the case bolts on the circle b, as many and as large as Table 29 gives, class
+  12.9, through the housing into the module plate.
+- Inside each unit, at concept level: the housing with the circular spline; one row of cross rollers, their axes
+  alternately at +45 and -45 deg; the output flange's hub inside the rollers; the flexspline's cup under the hub;
+  the elliptical wave generator on the motor's shaft inside the cup.
+- The motor's flange square under the module plate on four bolts; the motor and its brake below; the motor's shaft
+  up through the plate into the wave generator, and no further.
+- Nothing touches anything else at rest or with an output turned.
+
+FUSION CONVENTIONS:
+- A new design document. Two modules, J1 at the origin and J2 400 mm along X, each along +Z from its housing's input
+  face. In each, three subassemblies: stator (the housing, the rollers, the plate, the motor and the bolts),
+  output (the flange and the flexspline) and input (the wave generator and the motor's shaft).
+- As-built revolute joints about each module's axis for its output and its input; a Motion Link of 50 turns in to
+  one out, the output turning the other way (the circular spline is fixed).
+- The temporary-body manager makes no ellipse: sketch the wave generator and extrude it in its own component.
+- The API works in cm and radians.
+
+ACCEPTANCE CRITERIA:
+- A message gives each joint's unit, average torque against its limit, life and largest input speed, the J1 motor's
+  peak and RMS torques, the parts list and a version tag. Defaults: J1 CSG-40, 150.8 N m (limit 255), 23 984 h,
+  3426 rev/min, motor 9.56 N m peak and 6.04 RMS; J2 CSG-20, 26.4 N m (limit 44), 15 121 h on radial moves.
+- 42 components in 16 kinds.
+- Each output turned 7.2 and 30 deg: its input turned 50 times as far, the other way; no interference.
+- Each housing A across and each output flange's face B from the input face, as the catalogue gives them.
+- Refused: a CSG-32 at J1.

@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 36: the SCARA's J1 and J2 modules. A servo motor with its brake on a module plate driving a Harmonic Drive CSG-2UH housed unit, ratio 50: J1 a CSG-40, J2 a CSG-20."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "ScaraJointModules"
+}
