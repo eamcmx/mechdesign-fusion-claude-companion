@@ -23,11 +23,13 @@ python tools/capture.py captures/compliance_unit_exploded.py $B/vol2/figures/ch4
 python tools/balloons.py $B/vol2/figures/ch48_exploded_current.png --width 115
 python tools/run_check.py --cleanup
 
-# Chapter 49: the check, the control, the two pictures
+# Chapter 49: the check, the control, the two pictures and the exploded view with its balloons (Table 49.3's items)
 python tools/run_check.py part_numbers_check
 python tools/run_check.py --cleanup
 python tools/run_check.py controls/part_numbers_names
 python tools/run_check.py --cleanup
 python tools/capture.py captures/part_numbers_bag.py $B/vol3/figures/ch49_bag_numbered current
 python tools/capture.py captures/part_numbers_robot.py $B/vol3/figures/ch49_robot_numbered current
+python tools/capture.py captures/part_numbers_exploded.py $B/vol3/figures/ch49_exploded current
+python tools/balloons.py $B/vol3/figures/ch49_exploded_current.png --width 115
 python tools/run_check.py --cleanup
