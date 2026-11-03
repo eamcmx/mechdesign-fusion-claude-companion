@@ -1,7 +1,7 @@
 # Pictures for Chapter 48: the compliance unit taken apart: the housing up with its screws and plugs, the rails in off
 # the cheeks with their screws further in, the spring seats up, the springs down, the stop blocks out along y and
-# their screws out of the cheeks, the tube in its place, the sensor out, the carriage down with its blocks out and its O-ring and plugs off. The design is turned to
-# direct modelling first; the anchors are printed.
+# their screws out of the cheeks, the tube in its place, the sensor out, the carriage down with its blocks out and its
+# O-ring and plugs off. The design is turned to direct modelling first; the anchors are printed.
 import sys, importlib, math, json
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc
