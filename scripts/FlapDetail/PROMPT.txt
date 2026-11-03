@@ -1,0 +1,45 @@
+Write a Fusion Python script that, when run, builds Chapter 34's flap actuation system in detail: the motor unit drawn
+to the catalogue products its specification is now written against, the pinion keyed on the gearhead's shaft as that
+shaft is made, the bearing seats on the hinge pins and the horn pin split out as the zones that are hardened, and every
+made part's material and every fitting face's class and roughness as Chapter 51 decided them.
+
+INPUTS (a command dialog, with this default):
+- the gearhead's ratio, one of the two-stage GP 52 C's ratios, 26
+
+DERIVED (from lib/flap_detail.py, lib/flap_design.py and Chapter 51's MaterialsFits.py, never typed):
+- numbers(i): the motor's point at that ratio, its speed at 28 V, its current, the brake it needs, the bus current
+- MOTOR, GEARHEAD, OVERALL, SPEC, PIN: maxon's figures, the catalogue's overall length, Table ch33motor's envelope,
+  the pinion's layout along the actuator's axis
+- pinion_force(), pinion_rim(), pinion_key(), hinge_zones()
+- MaterialsFits.apply(): the materials and the fits on the open design
+
+HARD CONSTRAINTS:
+- Build with FlapSystem.py's own build() and apply MaterialsFits.py's apply(); copy neither, nor FlapActuator.py.
+  Change the parts by replacing, before the build, the functions that draw them, each replacement recognising only
+  the calls it means and passing every other through: the body adder for the motor unit's gearhead, motor and brake,
+  the gear for the pinion, the part for the gearhead's shaft. Restore every replaced function after the build.
+- The motor unit behind its flange (6 thick from the housing's back face): the GP 52 C 52 across and 65 long, the
+  EC-i 52 to maxon's overall 145.1 with it, the brake 52 across in what is left of the specification's 176.
+- The gearhead's shaft 12 across from the flange's face 29.5 forward, its keyseat 2.5 deep with maxon's 4 x 4 x 20
+  key 2 mm from its end, its centre hole for an M4; the pinion with a hub 18 across forward to the shaft's end and a
+  keyway 4 wide, 1.8 over the bore, through hub and teeth; an end washer 18 across and 2 thick on the hub, so that
+  it bears on the hub and not on the shaft's end, and an M4 x 10 cap screw through it into the shaft's centre hole.
+- The hinge pins' and the horn pin's cylinders split across at the edges of the ring that sits on them (16 wide) and
+  the faces between marked as hardened. The horn pin's seat h6 Rz 10, the pinion's bore K7 and its keyway JS9, by
+  hand, the census not reaching them; every other class Chapter 51's.
+- Refuse a ratio maxon does not make, and one at which the motor would exceed its continuous torque or the speed it
+  reaches at 28 V.
+
+FUSION CONVENTIONS:
+- FlapSystem's own new design document and groups; nothing moved; lengths in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives the unit's length and the brake's, the key in the hub, the motor's point and current, the brake,
+  the pinion's force against the gearhead's rating, the rim factor, the zones and the faces given, and a version tag.
+- The motor unit's bodies: the flange 6, the gearhead 65, the motor 80.1, the brake 24.9 long, all 52 across but the
+  flange, ending 176 from the flange's face.
+- The gearhead's shaft 12 across from 10.5 to 46 mm, the key 20 long in it, the pinion's hub 18 across from 10.5,
+  the end washer against the hub at 10.5, the M4 x 10 through it, 8 mm of it in the shaft.
+- Three zones hardened, each 16 long and centred on its ring; the faces' classes as above.
+- No interference among the system's parts and the actuator's outside at 0, 10, 20, 30 and 40 deg.
+- Refused: the 21:1 gearhead, at which the motor would give 478 mN m over its 438 continuous.

@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 53: builds Chapter 34's flap actuation system in detail, the motor unit drawn to maxon's figures, the pinion keyed on the gearhead's shaft with its end screw, the pins' bearing seats split out as the zones that are hardened, and every part's material and fit as Chapter 51 decided them."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "FlapDetail"
+}
