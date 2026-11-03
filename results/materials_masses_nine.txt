@@ -1,0 +1,23 @@
+# materials_masses
+# Autodesk Fusion 2706.1.17, run 2026-11-03 10:41, 425 s
+
+MaterialsFits 1.0 (2026-11-03)
+  wrist: 29 made parts given their materials (polyurethane not in Fusion's library); the made parts weigh 3.05 kg, 3.05 kg with Fusion's generic materials; faces given a class and a roughness: 12 bearing seat, 8 dowel hole, 20 key seat, 3 keyed, 17 located.
+  ok   wrist: 29 of 31 made parts given a library material, 2 lacking one (['polyurethane']); 60 faces given a class
+  flap: 32 made parts given their materials (none not in Fusion's library); the made parts weigh 335.07 kg, 334.93 kg with Fusion's generic materials; faces given a class and a roughness: 3 bearing seat, 7 key seat, 21 located, 8 plain bearing seat.
+  ok   flap: 32 of 32 made parts given a library material, 0 lacking one (none); 39 faces given a class
+  axle: 30 made parts given their materials (none not in Fusion's library); the made parts weigh 153.07 kg, 153.07 kg with Fusion's generic materials; faces given a class and a roughness: 14 bearing seat, 2 located, 18 sliding.
+  ok   axle: 30 of 30 made parts given a library material, 0 lacking one (none); 34 faces given a class
+  robot: 72 made parts given their materials (none not in Fusion's library); the made parts weigh 3205.52 kg, 3204.61 kg with Fusion's generic materials; faces given a class and a roughness: 24 bearing seat, 11 located.
+  ok   robot: 72 of 72 made parts given a library material, 0 lacking one (none); 35 faces given a class
+  changer: 12 made parts given their materials (none not in Fusion's library); the made parts weigh 28.65 kg, 28.65 kg with Fusion's generic materials; faces given a class and a roughness: 7 dowel hole, 6 sliding.
+  ok   changer: 12 of 12 made parts given a library material, 0 lacking one (none); 13 faces given a class
+  clamp: 11 made parts given their materials (none not in Fusion's library); the made parts weigh 64.72 kg, 64.72 kg with Fusion's generic materials; faces given a class and a roughness: 1 dowel hole.
+  ok   clamp: 11 of 11 made parts given a library material, 0 lacking one (none); 1 faces given a class
+  vacuum: 82 made parts given their materials (none not in Fusion's library); the made parts weigh 51.89 kg, 51.89 kg with Fusion's generic materials; faces given a class and a roughness: 1 dowel hole, 108 sliding.
+  ok   vacuum: 82 of 82 made parts given a library material, 0 lacking one (none); 109 faces given a class
+  bag: 41 made parts given their materials (none not in Fusion's library); the made parts weigh 72.77 kg, 72.73 kg with Fusion's generic materials; faces given a class and a roughness: 8 bearing seat, 1 dowel hole, 14 key seat, 2 keyed, 2 located, 4 sliding.
+  ok   bag: 41 of 41 made parts given a library material, 0 lacking one (none); 31 faces given a class
+  unit: 12 made parts given their materials (none not in Fusion's library); the made parts weigh 13.66 kg, 13.31 kg with Fusion's generic materials; faces given a class and a roughness: 1 dowel hole, 8 located, 2 pressed, 2 sliding.
+  ok   unit: 12 of 12 made parts given a library material, 0 lacking one (none); 13 faces given a class
+ALL PASS

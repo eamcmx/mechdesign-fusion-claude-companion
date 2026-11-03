@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 51: builds one of the nine assemblies, gives every made part its material from Fusion's library and every fitting face its tolerance class and roughness, found on the model and decided by rule."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "MaterialsFits"
+}

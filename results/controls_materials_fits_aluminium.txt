@@ -1,0 +1,24 @@
+# controls/materials_fits_aluminium
+# Autodesk Fusion 2706.1.17, run 2026-11-03 10:47, 15 s
+
+MaterialsFits 1.0 (2026-11-03)
+  ok   Run opens the dialog
+bag: 41 made parts given their materials (none not in Fusion's library); the made parts weigh 72.77 kg, 72.73 kg with Fusion's generic materials; faces given a class and a roughness: 8 bearing seat, 1 dowel hole, 14 key seat, 2 keyed, 2 located, 4 sliding.
+
+[MaterialsFits 1.0 (2026-11-03)] MaterialsFits 1.0 (2026-11-03)
+  OK pressed, built in 14 s
+  ok   a new design opened
+  ok   every made part's bodies in the library's material for its alloy: 41 parts, wrong []; the library lacks none
+  aluminium 6082-T6: Aluminum 6061; steel 1020: Steel AISI 1020 107 HR; steel 1045 (C45): Steel AISI 1045 225 ANLD
+  ok   every decided face carries its class and roughness: 31 faces, wrong [], carried and not decided 0
+  ok   the bearing seats coloured Paint - Enamel Glossy (Red): 8 faces
+  ok   the four 6206-2RS1 on the stub shafts k5: [('Stub shaft long', 'k5'), ('Stub shaft short', 'k5')]
+  FAIL the four 6206-2RS1 in the aluminium end plates J7: [('End plate', 'H7')]
+  ok   the lever's hub H7 on the bearing's k5 seat: [('Stub shaft long', 'Lever', 'H7/k5')]
+  ok   the key seats' faces coloured Paint - Enamel Glossy (Black): 14 faces
+  ok   the key seats N9 in the shafts and JS9 in the hubs: [('Lever', 'JS9'), ('Stub shaft long', 'N9')]
+  ok   the dowel's hole H7: [('Adapter plate', 'H7')]
+  ok   the made parts weigh 72.7746 kg, volume times the library's density 72.7746 kg (72.7342 kg with the generic materials)
+  ok   {'key': 'gearbox'} refused: No assembly called gearbox: the nine are wrist, flap, axle, robot, changer, clamp, vacuum, bag, unit.
+1 FAILED
+CONTROL: the aluminium housing's J7 removed; the end plates' line above MUST fail, and it alone

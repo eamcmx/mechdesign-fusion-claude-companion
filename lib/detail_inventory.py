@@ -198,18 +198,15 @@ SCRIPTS = {'wrist': 'WristIntegration', 'flap': 'FlapSystem', 'axle': 'RearAxle'
 
 
 def kind_of(name, known):
-    """The name on the parts list that a Fusion component's name stands for: Fusion's (1) dropped, then a jaw's A or
-    B, then the part's own number, until a known name is reached; None for a body that is not a part (the bag, the
+    """The name on the parts list that a Fusion component's name stands for: Fusion's (1) dropped, then the longest
+    run of the name's first words that is a name on the parts list, whatever the assembly's script added after it (a
+    copy's number, a jaw's A or B, a side's L or R, a cup's 3-1); None for a body that is not a part (the bag, the
     station's rollers)."""
     nm = re.sub(r' \(\d+\)$', '', name)
     wds = nm.split()
-    while wds:
-        if ' '.join(wds) in known:
-            return ' '.join(wds)
-        if len(wds) > 1 and (wds[-1] in ('A', 'B') or wds[-1].isdigit()):
-            wds = wds[:-1]
-        else:
-            return None
+    for n in range(len(wds), 0, -1):
+        if ' '.join(wds[:n]) in known:
+            return ' '.join(wds[:n])
     return None
 
 

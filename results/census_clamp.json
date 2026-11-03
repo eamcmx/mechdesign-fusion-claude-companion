@@ -1,0 +1,583 @@
+{
+ "key": "clamp",
+ "components": [
+  {
+   "name": "Adapter plate",
+   "occ": "Adapter:1+Adapter plate:1",
+   "kind": "Adapter plate",
+   "status": "made",
+   "designation": "Adapter plate",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Adapter"
+  },
+  {
+   "name": "Cap screw M10x25 1",
+   "occ": "Adapter:1+Cap screw M10x25 1:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Adapter"
+  },
+  {
+   "name": "Cap screw M10x25 2",
+   "occ": "Adapter:1+Cap screw M10x25 2:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Adapter"
+  },
+  {
+   "name": "Cap screw M10x25 3",
+   "occ": "Adapter:1+Cap screw M10x25 3:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Adapter"
+  },
+  {
+   "name": "Cap screw M10x25 4",
+   "occ": "Adapter:1+Cap screw M10x25 4:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Adapter"
+  },
+  {
+   "name": "Cap screw M10x25 5",
+   "occ": "Adapter:1+Cap screw M10x25 5:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Adapter"
+  },
+  {
+   "name": "Cap screw M10x25 6",
+   "occ": "Adapter:1+Cap screw M10x25 6:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Adapter"
+  },
+  {
+   "name": "Dowel pin 10x17",
+   "occ": "Adapter:1+Dowel pin 10x17:1",
+   "kind": "Dowel pin 10x17",
+   "status": "bought",
+   "designation": "Dowel pin 10x17",
+   "group": "pins and keys",
+   "material": "Steel",
+   "top": "Adapter"
+  },
+  {
+   "name": "Beam",
+   "occ": "Frame:1+Beam:1",
+   "kind": "Beam",
+   "status": "made",
+   "designation": "Beam",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Frame"
+  },
+  {
+   "name": "Cap screw M8x25 1",
+   "occ": "Frame:1+Cap screw M8x25 1:1",
+   "kind": "Cap screw M8x25",
+   "status": "bought",
+   "designation": "Cap screw M8x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Cap screw M8x25 2",
+   "occ": "Frame:1+Cap screw M8x25 2:1",
+   "kind": "Cap screw M8x25",
+   "status": "bought",
+   "designation": "Cap screw M8x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Cap screw M8x25 3",
+   "occ": "Frame:1+Cap screw M8x25 3:1",
+   "kind": "Cap screw M8x25",
+   "status": "bought",
+   "designation": "Cap screw M8x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Cap screw M8x25 4",
+   "occ": "Frame:1+Cap screw M8x25 4:1",
+   "kind": "Cap screw M8x25",
+   "status": "bought",
+   "designation": "Cap screw M8x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Rail HGR25 1",
+   "occ": "Frame:1+Rail HGR25 1:1",
+   "kind": "Rail HGR25",
+   "status": "bought",
+   "designation": "Rail HGR25",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Rail HGR25 2",
+   "occ": "Frame:1+Rail HGR25 2:1",
+   "kind": "Rail HGR25",
+   "status": "bought",
+   "designation": "Rail HGR25",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Seat BK25",
+   "occ": "Frame:1+Seat BK25:1",
+   "kind": "Seat BK25",
+   "status": "made",
+   "designation": "Seat BK25",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Frame"
+  },
+  {
+   "name": "Seat BF25",
+   "occ": "Frame:1+Seat BF25:1",
+   "kind": "Seat BF25",
+   "status": "made",
+   "designation": "Seat BF25",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Frame"
+  },
+  {
+   "name": "Fixed bearing BK25",
+   "occ": "Frame:1+Fixed bearing BK25:1",
+   "kind": "Fixed bearing BK25",
+   "status": "bought",
+   "designation": "Fixed bearing BK25",
+   "group": "bearings",
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Angular contact bearing 7205 1",
+   "occ": "Frame:1+Angular contact bearing 7205 1:1",
+   "kind": "Angular contact bearing 7205",
+   "status": "part of",
+   "designation": "with the Fixed bearing BK25",
+   "group": null,
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Angular contact bearing 7205 2",
+   "occ": "Frame:1+Angular contact bearing 7205 2:1",
+   "kind": "Angular contact bearing 7205",
+   "status": "part of",
+   "designation": "with the Fixed bearing BK25",
+   "group": null,
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Supported bearing BF25",
+   "occ": "Frame:1+Supported bearing BF25:1",
+   "kind": "Supported bearing BF25",
+   "status": "bought",
+   "designation": "Supported bearing BF25",
+   "group": "bearings",
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Deep groove bearing 6205",
+   "occ": "Frame:1+Deep groove bearing 6205:1",
+   "kind": "Deep groove bearing",
+   "status": "part of",
+   "designation": "with the Supported bearing BF25",
+   "group": null,
+   "material": "Steel",
+   "top": "Frame"
+  },
+  {
+   "name": "Motor bracket",
+   "occ": "Frame:1+Motor bracket:1",
+   "kind": "Motor bracket",
+   "status": "made",
+   "designation": "Motor bracket",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Frame"
+  },
+  {
+   "name": "Coupling",
+   "occ": "Frame:1+Coupling:1",
+   "kind": "Coupling",
+   "status": "bought",
+   "designation": "Coupling",
+   "group": "transmission parts",
+   "material": "Aluminum",
+   "top": "Frame"
+  },
+  {
+   "name": "Gearhead 3:1",
+   "occ": "Frame:1+Gearhead 3:1:1",
+   "kind": "Gearhead 3:1",
+   "status": "bought",
+   "designation": "Gearhead 3:1",
+   "group": "transmission parts",
+   "material": "Aluminum",
+   "top": "Frame"
+  },
+  {
+   "name": "Motor with brake",
+   "occ": "Frame:1+Motor with brake:1",
+   "kind": "Motor with brake",
+   "status": "bought",
+   "designation": "Motor with brake",
+   "group": "motors, cylinders and vacuum",
+   "material": "Aluminum",
+   "top": "Frame"
+  },
+  {
+   "name": "Ballscrew 32x10 right and left",
+   "occ": "Screw:1+Ballscrew 32x10 right and left:1",
+   "kind": "Ballscrew 32x10 right and left",
+   "status": "bought",
+   "designation": "Ballscrew 32x10 right and left",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Screw"
+  },
+  {
+   "name": "Carriage plate",
+   "occ": "Jaw A:1+Carriage plate:1",
+   "kind": "Carriage plate",
+   "status": "made",
+   "designation": "Carriage plate",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Block HGH25CA i+",
+   "occ": "Jaw A:1+Block HGH25CA i+:1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Block HGH25CA i-",
+   "occ": "Jaw A:1+Block HGH25CA i-:1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Block HGH25CA o+",
+   "occ": "Jaw A:1+Block HGH25CA o+:1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Block HGH25CA o-",
+   "occ": "Jaw A:1+Block HGH25CA o-:1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Arm",
+   "occ": "Jaw A:1+Arm:1",
+   "kind": "Arm",
+   "status": "made",
+   "designation": "Arm",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Pad",
+   "occ": "Jaw A:1+Pad:1",
+   "kind": "Pad",
+   "status": "made",
+   "designation": "Pad",
+   "group": null,
+   "material": "Rubber",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Ball nut R32-10K5-DEB right",
+   "occ": "Jaw A:1+Ball nut R32-10K5-DEB right:1",
+   "kind": "Ball nut R32-10K5-DEB right",
+   "status": "bought",
+   "designation": "Ball nut R32-10K5-DEB right",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Cap screw M8x25 nut 1",
+   "occ": "Jaw A:1+Cap screw M8x25 nut 1:1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Cap screw M8x25 nut 2",
+   "occ": "Jaw A:1+Cap screw M8x25 nut 2:1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Cap screw M8x25 nut 3",
+   "occ": "Jaw A:1+Cap screw M8x25 nut 3:1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Cap screw M8x25 nut 4",
+   "occ": "Jaw A:1+Cap screw M8x25 nut 4:1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Cap screw M8x25 nut 5",
+   "occ": "Jaw A:1+Cap screw M8x25 nut 5:1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Cap screw M8x25 nut 6",
+   "occ": "Jaw A:1+Cap screw M8x25 nut 6:1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw A"
+  },
+  {
+   "name": "Carriage plate (1)",
+   "occ": "Jaw B:1+Carriage plate (1):1",
+   "kind": "Carriage plate",
+   "status": "made",
+   "designation": "Carriage plate",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Block HGH25CA i+ (1)",
+   "occ": "Jaw B:1+Block HGH25CA i+ (1):1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Block HGH25CA i- (1)",
+   "occ": "Jaw B:1+Block HGH25CA i- (1):1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Block HGH25CA o+ (1)",
+   "occ": "Jaw B:1+Block HGH25CA o+ (1):1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Block HGH25CA o- (1)",
+   "occ": "Jaw B:1+Block HGH25CA o- (1):1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Arm (1)",
+   "occ": "Jaw B:1+Arm (1):1",
+   "kind": "Arm",
+   "status": "made",
+   "designation": "Arm",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Pad (1)",
+   "occ": "Jaw B:1+Pad (1):1",
+   "kind": "Pad",
+   "status": "made",
+   "designation": "Pad",
+   "group": null,
+   "material": "Rubber",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Ball nut R32-10K5-DEB left",
+   "occ": "Jaw B:1+Ball nut R32-10K5-DEB left:1",
+   "kind": "Ball nut R32-10K5-DEB left",
+   "status": "bought",
+   "designation": "Ball nut R32-10K5-DEB left",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Cap screw M8x25 nut 1 (1)",
+   "occ": "Jaw B:1+Cap screw M8x25 nut 1 (1):1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Cap screw M8x25 nut 2 (1)",
+   "occ": "Jaw B:1+Cap screw M8x25 nut 2 (1):1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Cap screw M8x25 nut 3 (1)",
+   "occ": "Jaw B:1+Cap screw M8x25 nut 3 (1):1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Cap screw M8x25 nut 4 (1)",
+   "occ": "Jaw B:1+Cap screw M8x25 nut 4 (1):1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Cap screw M8x25 nut 5 (1)",
+   "occ": "Jaw B:1+Cap screw M8x25 nut 5 (1):1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw B"
+  },
+  {
+   "name": "Cap screw M8x25 nut 6 (1)",
+   "occ": "Jaw B:1+Cap screw M8x25 nut 6 (1):1",
+   "kind": "Cap screw M8x25 nut",
+   "status": "bought",
+   "designation": "Cap screw M8x25 nut",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Jaw B"
+  }
+ ],
+ "seats": [
+  {
+   "bought": "Dowel pin 10x17",
+   "designation": "Dowel pin 10x17",
+   "group": "pins and keys",
+   "piece": "Dowel pin 10x17",
+   "occ": "Adapter:1+Dowel pin 10x17:1",
+   "face": "outside",
+   "made": "Adapter plate",
+   "made_name": "Adapter plate",
+   "made_occ": "Adapter:1+Adapter plate:1",
+   "top": "Adapter",
+   "made_top": "Adapter",
+   "d": 10.0,
+   "gap": 0.0
+  }
+ ],
+ "fits": [],
+ "tops": {
+  "Adapter": true,
+  "Frame": true,
+  "Screw": true,
+  "Jaw A": false,
+  "Jaw B": false,
+  "Pack": false
+ },
+ "links": [],
+ "gaps": []
+}

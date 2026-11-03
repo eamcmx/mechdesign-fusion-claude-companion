@@ -1,0 +1,44 @@
+Write a Fusion Python script that, when run, builds one of the nine assemblies and gives every made part the material
+Chapter 51 decided, and every fitting face its tolerance class and its roughness, found on the model and decided by
+rule.
+
+INPUTS (a command dialog, with this default):
+- the assembly, one of the nine of lib/detail_inventory.py's MACHINES, the bag gripper
+
+DERIVED (from lib/materials_fits.py, lib/fusion_joints.py and lib/detail_inventory.py, never typed):
+- build(): the assembly built by its own script, the bag gripper by StandardParts.py as Chapter 50 detailed it
+- parts(): each component's kind, number, status, designation and group, read as Chapter 49 reads them
+- records(): the seats of the bought parts on the made ones (a bearing's bore or outside diameter, a dowel's or pin's
+  cylinder, on one axis and of one diameter, touching or within 0.2 mm) and the made parts each key touches; the
+  cylindrical fits of made parts in made parts
+- material(): each made kind's material from Volume 2's parts lists, the default grade where a list names none;
+  FUSION: the entry of Fusion's library that stands for it
+- decide(): each seat's and fit's class, roughness and kind of joint
+
+HARD CONSTRAINTS:
+- Refuse an assembly that is not one of the nine.
+- Build with the assembly's own script and find the joints with fusion_joints.records(); copy neither, and type no
+  class, roughness or material: every one comes from decide() and FUSION.
+- A material the library does not hold is reported in the message and the model's material kept, never guessed.
+- Give the library's material to every body of every made part; leave the bought parts as their scripts made them.
+- Colour each decided face by its kind of joint: bearing seats red, sliding fits blue, located, keyed and pressed fits
+  green, dowel holes and key seats black; give it an attribute in the group 'mdfc', named 'fit', whose value is the
+  class and the roughness ('k5 Ra 0.8', 'N7 Rz 16.0'). A fit's shaft face carries the shaft's class, its bore the
+  hole's; a face the rules give two classes carries both, joined by ' + ', one for each zone of it.
+- Weigh the made parts before and after the materials are given.
+
+FUSION CONVENTIONS:
+- The assembly's script makes its own new design document; nothing is moved and no joint is added; appearances from
+  Fusion's library ('Paint - Enamel Glossy (Red)' and the others); lengths in mm in the records, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives the assembly, how many made parts got their materials and which materials the library lacks, the
+  made parts' mass with the library's materials and with the model's generic ones, the faces coloured by kind, and a
+  version tag.
+- Every made part's bodies carry FUSION's material for its alloy, or the model's where the library lacks it.
+- Every seat and fit decide() gives a class carries it in its 'mdfc' 'fit' attribute and its colour; no other face
+  carries the attribute.
+- The bag gripper: the four 6206-2RS1 seats k5 on the stub shafts and J7 in the aluminium end plates; the lever's hub
+  on the bearing's k5 seat; the key seats N9 in the shafts and JS9 in the hubs; the dowel's hole H7.
+- The made parts' mass equals the sum, body by body, of the volume times the library's density.
+- Refused: an assembly called 'gearbox'.

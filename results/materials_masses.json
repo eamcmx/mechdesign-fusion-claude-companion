@@ -1,0 +1,123 @@
+{
+ "wrist": {
+  "made": 31,
+  "given": 29,
+  "missing": [
+   "polyurethane"
+  ],
+  "before": 3.046646279098235,
+  "after": 3.0500584711268335,
+  "total": 5.5623997912364045,
+  "coloured": {
+   "bearing seat": 12,
+   "dowel hole": 8,
+   "key seat": 20,
+   "keyed": 3,
+   "located": 17
+  }
+ },
+ "flap": {
+  "made": 32,
+  "given": 32,
+  "missing": [],
+  "before": 334.9268318909812,
+  "after": 335.1710257593103,
+  "total": 339.810782451105,
+  "coloured": {
+   "plain bearing seat": 8,
+   "bearing seat": 3,
+   "key seat": 7,
+   "located": 21
+  }
+ },
+ "axle": {
+  "made": 30,
+  "given": 30,
+  "missing": [],
+  "before": 153.06661021232253,
+  "after": 153.06661021232253,
+  "total": 162.52504666716578,
+  "coloured": {
+   "bearing seat": 14,
+   "located": 2,
+   "sliding": 18
+  }
+ },
+ "robot": {
+  "made": 72,
+  "given": 72,
+  "missing": [],
+  "before": 3204.6131679232985,
+  "after": 3205.518079772839,
+  "total": 3608.9555038583007,
+  "coloured": {
+   "bearing seat": 24,
+   "located": 11
+  }
+ },
+ "changer": {
+  "made": 12,
+  "given": 12,
+  "missing": [],
+  "before": 28.652506095068656,
+  "after": 28.652506095068656,
+  "total": 28.930391903330744,
+  "coloured": {
+   "dowel hole": 7,
+   "sliding": 6
+  }
+ },
+ "clamp": {
+  "made": 11,
+  "given": 11,
+  "missing": [],
+  "before": 64.72368419932916,
+  "after": 64.72368419932916,
+  "total": 286.34144413010546,
+  "coloured": {
+   "dowel hole": 1
+  }
+ },
+ "vacuum": {
+  "made": 82,
+  "given": 82,
+  "missing": [],
+  "before": 51.8878905336646,
+  "after": 51.8878905336646,
+  "total": 325.1152968719049,
+  "coloured": {
+   "dowel hole": 1,
+   "sliding": 108
+  }
+ },
+ "bag": {
+  "made": 41,
+  "given": 41,
+  "missing": [],
+  "before": 72.73423379056386,
+  "after": 72.77463379056385,
+  "total": 314.7165157448343,
+  "coloured": {
+   "dowel hole": 1,
+   "bearing seat": 8,
+   "key seat": 14,
+   "keyed": 2,
+   "located": 2,
+   "sliding": 4
+  }
+ },
+ "unit": {
+  "made": 12,
+  "given": 12,
+  "missing": [],
+  "before": 13.306616715313021,
+  "after": 13.657060229248318,
+  "total": 19.815598140002567,
+  "coloured": {
+   "dowel hole": 1,
+   "pressed": 2,
+   "sliding": 2,
+   "located": 8
+  }
+ }
+}

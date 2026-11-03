@@ -1,0 +1,163 @@
+# joint_census
+# Autodesk Fusion 2706.1.17, run 2026-11-03 10:24, 221 s
+
+  wrist: counted before
+  wrist: 97 components, 31 made; 30 seats of bought parts (0 with a gap, 2 key seats), 18 made-in-made fits; bearings with a seat 8 of 8
+  ok   wrist: every bearing has its seats on made faces, touching or with its gap recorded: 8 bearings, alone []; the nearest []
+  flap: counted before
+  flap: 85 components, 32 made; 15 seats of bought parts (2 with a gap, 2 key seats), 17 made-in-made fits; bearings with a seat 9 of 9
+      a gap: Bearing GE 20 ES hinge L bore 20.000 mm off Hinge pin, 0.0100 mm
+      a gap: Bearing GE 20 ES hinge R bore 20.000 mm off Hinge pin, 0.0100 mm
+      drawn clear: Actuator housing in Gear cover, 32.020 mm, 0.0100 mm
+      drawn clear: Actuator housing in Gear cover, 32.020 mm, 0.0100 mm
+      drawn clear: Actuator housing in Gear cover, 32.020 mm, 0.0100 mm
+      drawn clear: Actuator housing in Gear cover, 32.020 mm, 0.0100 mm
+      drawn clear: Horn pin in Horn, 20.000 mm, 0.0100 mm
+      drawn clear: Horn pin in Horn, 20.000 mm, 0.0100 mm
+      drawn clear: Horn pin in Spacer R, 20.000 mm, 0.0100 mm
+      drawn clear: Horn pin in Spacer L, 20.000 mm, 0.0100 mm
+      drawn clear: Hinge pin L in Hinge fitting Lo, 20.000 mm, 0.0100 mm
+      drawn clear: Hinge pin L in Hinge fitting Li, 20.000 mm, 0.0100 mm
+      drawn clear: Hinge pin R in Hinge fitting Ro, 20.000 mm, 0.0100 mm
+      drawn clear: Hinge pin R in Hinge fitting Ri, 20.000 mm, 0.0100 mm
+  ok   flap: every bearing has its seats on made faces, touching or with its gap recorded: 9 bearings, alone []; the nearest []
+  axle: counted before
+  axle: 106 components, 30 made; 8 seats of bought parts (6 with a gap, 0 key seats), 42 made-in-made fits; bearings with a seat 12 of 12
+      a gap: Bearing A 32309 cup outside 100.000 mm off Carrier casting, 0.0500 mm
+      a gap: Bearing B 32308 cup outside 90.000 mm off Carrier casting, 0.0500 mm
+      a gap: Bearing C1 32213 cup outside 120.000 mm off Carrier casting, 0.0500 mm
+      a gap: Bearing C1 32213 cup outside 120.000 mm off Bearing cap, 0.0500 mm
+      a gap: Bearing C2 32213 cup outside 120.000 mm off Carrier casting, 0.0500 mm
+      a gap: Bearing C2 32213 cup outside 120.000 mm off Bearing cap, 0.0500 mm
+      drawn clear: Retainer plate R in Banjo housing, 120.000 mm, 0.0100 mm
+      drawn clear: Retainer plate L in Banjo housing, 120.000 mm, 0.0100 mm
+      drawn clear: Adjuster C1 in Carrier casting, 120.100 mm, 0.0500 mm
+      drawn clear: Adjuster C1 in Bearing cap C1, 120.100 mm, 0.0500 mm
+      drawn clear: Adjuster C2 in Carrier casting, 120.100 mm, 0.0500 mm
+      drawn clear: Adjuster C2 in Bearing cap C2, 120.100 mm, 0.0500 mm
+      drawn clear: Pinion shaft z12 in Pinion depth shim, 45.100 mm, 0.0500 mm
+      drawn clear: Pinion shaft z12 in Spacer, 45.100 mm, 0.0500 mm
+      drawn clear: Pinion shaft z12 in Companion flange, 32.200 mm, 0.0900 mm
+      drawn clear: Pinion shaft z12 in Companion flange, 32.200 mm, 0.0900 mm
+      drawn clear: Pinion shaft z12 in Companion flange, 32.200 mm, 0.0900 mm
+      drawn clear: Pinion shaft z12 in Companion flange, 32.200 mm, 0.0900 mm
+      drawn clear: Pinion shaft z12 in Companion flange, 32.200 mm, 0.0900 mm
+      drawn clear: Pinion shaft z12 in Companion flange, 32.200 mm, 0.0900 mm
+      drawn clear: Pinion shaft z12 in Companion flange, 32.200 mm, 0.0900 mm
+      drawn clear: Pinion shaft z12 in Companion flange, 32.200 mm, 0.0900 mm
+      drawn clear: Cross in Differential case, 22.100 mm, 0.0500 mm
+      drawn clear: Cross in Differential case, 22.100 mm, 0.0500 mm
+      drawn clear: Cross in Differential case, 22.100 mm, 0.0500 mm
+      drawn clear: Cross in Differential case, 22.100 mm, 0.0500 mm
+      drawn clear: Cross in Spider 1, 22.200 mm, 0.1000 mm
+      drawn clear: Cross in Spider washer 1, 22.400 mm, 0.2000 mm
+      drawn clear: Cross in Spider 2, 22.200 mm, 0.1000 mm
+      drawn clear: Cross in Spider 3, 22.200 mm, 0.1000 mm
+      drawn clear: Cross in Spider washer 3, 22.400 mm, 0.2000 mm
+      drawn clear: Cross in Spider 4, 22.200 mm, 0.1000 mm
+      drawn clear: Half shaft L in Side gear L, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft L in Side gear L, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft L in Side gear L, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft L in Side gear L, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft L in Side gear L, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft L in Side gear L, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft L in Side gear L, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft L in Side gear L, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
+      drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
+  ok   axle: every bearing has its seats on made faces, touching or with its gap recorded: 12 bearings, alone []; the nearest []
+  robot: 100 components, 72 made; 26 seats of bought parts (0 with a gap, 0 key seats), 7 made-in-made fits; bearings with a seat 13 of 13
+      drawn clear: J1 reducer plate in Column, 580.000 mm, 0.0100 mm
+  ok   robot: every bearing has its seats on made faces, touching or with its gap recorded: 13 bearings, alone []; the nearest []
+  changer: 21 components, 12 made; 7 seats of bought parts (0 with a gap, 0 key seats), 3 made-in-made fits; bearings with a seat 0 of 0
+      drawn clear: Master cover in Robot plate ISO 9409-1-160-6-M10, 100.000 mm, 0.0100 mm
+      drawn clear: Piston with rod in Master body, 40.200 mm, 0.1000 mm
+      drawn clear: Piston with rod in Master body, 100.000 mm, 0.0500 mm
+  ok   changer: every bearing has its seats on made faces, touching or with its gap recorded: 0 bearings, alone []; the nearest []
+  clamp: 55 components, 11 made; 1 seats of bought parts (0 with a gap, 0 key seats), 0 made-in-made fits; bearings with a seat 0 of 0
+  ok   clamp: every bearing has its seats on made faces, touching or with its gap recorded: 0 bearings, alone []; the nearest []
+  vacuum: 193 components, 82 made; 1 seats of bought parts (0 with a gap, 0 key seats), 72 made-in-made fits; bearings with a seat 0 of 0
+      drawn clear: Plunger 1-1 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-1 in Sleeve 1, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-2 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-2 in Sleeve 2, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-3 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-3 in Sleeve 3, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-4 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-4 in Sleeve 4, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-5 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-5 in Sleeve 5, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-6 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 1-6 in Sleeve 6, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-1 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-1 in Sleeve 7, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-2 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-2 in Sleeve 8, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-3 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-3 in Sleeve 9, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-4 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-4 in Sleeve 10, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-5 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-5 in Sleeve 11, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-6 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 2-6 in Sleeve 12, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-1 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-1 in Sleeve 13, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-2 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-2 in Sleeve 14, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-3 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-3 in Sleeve 15, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-4 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-4 in Sleeve 16, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-5 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-5 in Sleeve 17, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-6 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 3-6 in Sleeve 18, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-1 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-1 in Sleeve 19, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-2 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-2 in Sleeve 20, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-3 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-3 in Sleeve 21, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-4 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-4 in Sleeve 22, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-5 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-5 in Sleeve 23, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-6 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 4-6 in Sleeve 24, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-1 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-1 in Sleeve 25, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-2 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-2 in Sleeve 26, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-3 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-3 in Sleeve 27, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-4 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-4 in Sleeve 28, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-5 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-5 in Sleeve 29, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-6 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 5-6 in Sleeve 30, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-1 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-1 in Sleeve 31, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-2 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-2 in Sleeve 32, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-3 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-3 in Sleeve 33, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-4 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-4 in Sleeve 34, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-5 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-5 in Sleeve 35, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-6 in Plate, 16.200 mm, 0.1000 mm
+      drawn clear: Plunger 6-6 in Sleeve 36, 16.200 mm, 0.1000 mm
+  ok   vacuum: every bearing has its seats on made faces, touching or with its gap recorded: 0 bearings, alone []; the nearest []
+  bag: 82 components, 41 made; 13 seats of bought parts (0 with a gap, 2 key seats), 6 made-in-made fits; bearings with a seat 4 of 4
+  ok   bag: every bearing has its seats on made faces, touching or with its gap recorded: 4 bearings, alone []; the nearest []
+  unit: 53 components, 12 made; 1 seats of bought parts (0 with a gap, 0 key seats), 7 made-in-made fits; bearings with a seat 0 of 0
+  ok   unit: every bearing has its seats on made faces, touching or with its gap recorded: 0 bearings, alone []; the nearest []
+ALL PASS

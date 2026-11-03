@@ -1,0 +1,644 @@
+{
+ "key": "unit",
+ "components": [
+  {
+   "name": "Plug housing 1",
+   "occ": "Body:1+Plug housing 1:1",
+   "kind": "Plug housing",
+   "status": "bought",
+   "designation": "Gallery plug 8",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Plug housing 2",
+   "occ": "Body:1+Plug housing 2:1",
+   "kind": "Plug housing",
+   "status": "bought",
+   "designation": "Gallery plug 8",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Plug housing 3",
+   "occ": "Body:1+Plug housing 3:1",
+   "kind": "Plug housing",
+   "status": "bought",
+   "designation": "Gallery plug 8",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M10x25 1",
+   "occ": "Body:1+Cap screw M10x25 1:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M10x25 2",
+   "occ": "Body:1+Cap screw M10x25 2:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M10x25 3",
+   "occ": "Body:1+Cap screw M10x25 3:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M10x25 4",
+   "occ": "Body:1+Cap screw M10x25 4:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M10x25 5",
+   "occ": "Body:1+Cap screw M10x25 5:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M10x25 6",
+   "occ": "Body:1+Cap screw M10x25 6:1",
+   "kind": "Cap screw M10x25",
+   "status": "bought",
+   "designation": "Cap screw M10x25",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Dowel pin 10x17",
+   "occ": "Body:1+Dowel pin 10x17:1",
+   "kind": "Dowel pin 10x17",
+   "status": "bought",
+   "designation": "Dowel pin 10x17",
+   "group": "pins and keys",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Housing",
+   "occ": "Body:1+Housing:1",
+   "kind": "Housing",
+   "status": "made",
+   "designation": "Housing",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Rail HGR25 1",
+   "occ": "Body:1+Rail HGR25 1:1",
+   "kind": "Rail HGR25",
+   "status": "bought",
+   "designation": "Rail HGR25 218",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M6x20 1",
+   "occ": "Body:1+Cap screw M6x20 1:1",
+   "kind": "Cap screw M6x20",
+   "status": "bought",
+   "designation": "Cap screw M6x20",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M6x20 2",
+   "occ": "Body:1+Cap screw M6x20 2:1",
+   "kind": "Cap screw M6x20",
+   "status": "bought",
+   "designation": "Cap screw M6x20",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M6x20 3",
+   "occ": "Body:1+Cap screw M6x20 3:1",
+   "kind": "Cap screw M6x20",
+   "status": "bought",
+   "designation": "Cap screw M6x20",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M6x20 4",
+   "occ": "Body:1+Cap screw M6x20 4:1",
+   "kind": "Cap screw M6x20",
+   "status": "bought",
+   "designation": "Cap screw M6x20",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Rail HGR25 2",
+   "occ": "Body:1+Rail HGR25 2:1",
+   "kind": "Rail HGR25",
+   "status": "bought",
+   "designation": "Rail HGR25 218",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M6x20 5",
+   "occ": "Body:1+Cap screw M6x20 5:1",
+   "kind": "Cap screw M6x20",
+   "status": "bought",
+   "designation": "Cap screw M6x20",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M6x20 6",
+   "occ": "Body:1+Cap screw M6x20 6:1",
+   "kind": "Cap screw M6x20",
+   "status": "bought",
+   "designation": "Cap screw M6x20",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M6x20 7",
+   "occ": "Body:1+Cap screw M6x20 7:1",
+   "kind": "Cap screw M6x20",
+   "status": "bought",
+   "designation": "Cap screw M6x20",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M6x20 8",
+   "occ": "Body:1+Cap screw M6x20 8:1",
+   "kind": "Cap screw M6x20",
+   "status": "bought",
+   "designation": "Cap screw M6x20",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Tube 20x16",
+   "occ": "Body:1+Tube 20x16:1",
+   "kind": "Tube 20x16",
+   "status": "made",
+   "designation": "Tube 20x16",
+   "group": null,
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Spring seat 1",
+   "occ": "Body:1+Spring seat 1:1",
+   "kind": "Spring seat",
+   "status": "made",
+   "designation": "Spring seat",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Spring 1",
+   "occ": "Body:1+Spring 1:1",
+   "kind": "Spring",
+   "status": "bought",
+   "designation": "Spring 4 x 40",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Spring seat 2",
+   "occ": "Body:1+Spring seat 2:1",
+   "kind": "Spring seat",
+   "status": "made",
+   "designation": "Spring seat",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Spring 2",
+   "occ": "Body:1+Spring 2:1",
+   "kind": "Spring",
+   "status": "bought",
+   "designation": "Spring 4 x 40",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Spring seat 3",
+   "occ": "Body:1+Spring seat 3:1",
+   "kind": "Spring seat",
+   "status": "made",
+   "designation": "Spring seat",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Spring 3",
+   "occ": "Body:1+Spring 3:1",
+   "kind": "Spring",
+   "status": "bought",
+   "designation": "Spring 4 x 40",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Spring seat 4",
+   "occ": "Body:1+Spring seat 4:1",
+   "kind": "Spring seat",
+   "status": "made",
+   "designation": "Spring seat",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Spring 4",
+   "occ": "Body:1+Spring 4:1",
+   "kind": "Spring",
+   "status": "bought",
+   "designation": "Spring 4 x 40",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M8x30 1",
+   "occ": "Body:1+Cap screw M8x30 1:1",
+   "kind": "Cap screw M8x30",
+   "status": "bought",
+   "designation": "Cap screw M8x30",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M8x30 2",
+   "occ": "Body:1+Cap screw M8x30 2:1",
+   "kind": "Cap screw M8x30",
+   "status": "bought",
+   "designation": "Cap screw M8x30",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Stop block 1",
+   "occ": "Body:1+Stop block 1:1",
+   "kind": "Stop block",
+   "status": "made",
+   "designation": "Stop block",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M8x30 3",
+   "occ": "Body:1+Cap screw M8x30 3:1",
+   "kind": "Cap screw M8x30",
+   "status": "bought",
+   "designation": "Cap screw M8x30",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M8x30 4",
+   "occ": "Body:1+Cap screw M8x30 4:1",
+   "kind": "Cap screw M8x30",
+   "status": "bought",
+   "designation": "Cap screw M8x30",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Stop block 2",
+   "occ": "Body:1+Stop block 2:1",
+   "kind": "Stop block",
+   "status": "made",
+   "designation": "Stop block",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M8x30 5",
+   "occ": "Body:1+Cap screw M8x30 5:1",
+   "kind": "Cap screw M8x30",
+   "status": "bought",
+   "designation": "Cap screw M8x30",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M8x30 6",
+   "occ": "Body:1+Cap screw M8x30 6:1",
+   "kind": "Cap screw M8x30",
+   "status": "bought",
+   "designation": "Cap screw M8x30",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Stop block 3",
+   "occ": "Body:1+Stop block 3:1",
+   "kind": "Stop block",
+   "status": "made",
+   "designation": "Stop block",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M8x30 7",
+   "occ": "Body:1+Cap screw M8x30 7:1",
+   "kind": "Cap screw M8x30",
+   "status": "bought",
+   "designation": "Cap screw M8x30",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Cap screw M8x30 8",
+   "occ": "Body:1+Cap screw M8x30 8:1",
+   "kind": "Cap screw M8x30",
+   "status": "bought",
+   "designation": "Cap screw M8x30",
+   "group": "fasteners",
+   "material": "Steel",
+   "top": "Body"
+  },
+  {
+   "name": "Stop block 4",
+   "occ": "Body:1+Stop block 4:1",
+   "kind": "Stop block",
+   "status": "made",
+   "designation": "Stop block",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Sensor M12",
+   "occ": "Body:1+Sensor M12:1",
+   "kind": "Sensor M12",
+   "status": "bought",
+   "designation": "Sensor M12",
+   "group": "motors, cylinders and vacuum",
+   "material": "ABS Plastic",
+   "top": "Body"
+  },
+  {
+   "name": "Sensor bracket",
+   "occ": "Body:1+Sensor bracket:1",
+   "kind": "Sensor bracket",
+   "status": "made",
+   "designation": "Sensor bracket",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Body"
+  },
+  {
+   "name": "Plug carriage 1",
+   "occ": "Carriage:1+Plug carriage 1:1",
+   "kind": "Plug carriage",
+   "status": "bought",
+   "designation": "Gallery plug 8",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Carriage"
+  },
+  {
+   "name": "Plug carriage 2",
+   "occ": "Carriage:1+Plug carriage 2:1",
+   "kind": "Plug carriage",
+   "status": "bought",
+   "designation": "Gallery plug 8",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Carriage"
+  },
+  {
+   "name": "Plug carriage 3",
+   "occ": "Carriage:1+Plug carriage 3:1",
+   "kind": "Plug carriage",
+   "status": "bought",
+   "designation": "Gallery plug 8",
+   "group": "seals, rings and springs",
+   "material": "Steel",
+   "top": "Carriage"
+  },
+  {
+   "name": "Carriage (1)",
+   "occ": "Carriage:1+Carriage (1):1",
+   "kind": "Carriage",
+   "status": "made",
+   "designation": "Carriage",
+   "group": null,
+   "material": "Aluminum",
+   "top": "Carriage"
+  },
+  {
+   "name": "O-ring 20x2.5",
+   "occ": "Carriage:1+O-ring 20x2.5:1",
+   "kind": "O-ring 20x2.5",
+   "status": "bought",
+   "designation": "O-ring 20x2.5",
+   "group": "seals, rings and springs",
+   "material": "Rubber",
+   "top": "Carriage"
+  },
+  {
+   "name": "Block HGH25CA 1",
+   "occ": "Carriage:1+Block HGH25CA 1:1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Carriage"
+  },
+  {
+   "name": "Block HGH25CA 2",
+   "occ": "Carriage:1+Block HGH25CA 2:1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Carriage"
+  },
+  {
+   "name": "Block HGH25CA 3",
+   "occ": "Carriage:1+Block HGH25CA 3:1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Carriage"
+  },
+  {
+   "name": "Block HGH25CA 4",
+   "occ": "Carriage:1+Block HGH25CA 4:1",
+   "kind": "Block HGH25CA",
+   "status": "bought",
+   "designation": "Block HGH25CA",
+   "group": "transmission parts",
+   "material": "Steel",
+   "top": "Carriage"
+  }
+ ],
+ "seats": [
+  {
+   "bought": "Dowel pin 10x17",
+   "designation": "Dowel pin 10x17",
+   "group": "pins and keys",
+   "piece": "Dowel pin 10x17",
+   "occ": "Body:1+Dowel pin 10x17:1",
+   "face": "outside",
+   "made": "Housing",
+   "made_name": "Housing",
+   "made_occ": "Body:1+Housing:1",
+   "top": "Body",
+   "made_top": "Body",
+   "d": 10.0,
+   "gap": 0.0
+  }
+ ],
+ "fits": [
+  {
+   "shaft": "Tube 20x16",
+   "shaft_name": "Tube 20x16",
+   "shaft_occ": "Body:1+Tube 20x16:1",
+   "bore": "Housing",
+   "bore_name": "Housing",
+   "bore_occ": "Body:1+Housing:1",
+   "shaft_top": "Body",
+   "bore_top": "Body",
+   "d": 20.0,
+   "gap": 0.0
+  },
+  {
+   "shaft": "Tube 20x16",
+   "shaft_name": "Tube 20x16",
+   "shaft_occ": "Body:1+Tube 20x16:1",
+   "bore": "Carriage",
+   "bore_name": "Carriage (1)",
+   "bore_occ": "Carriage:1+Carriage (1):1",
+   "shaft_top": "Body",
+   "bore_top": "Carriage",
+   "d": 20.0,
+   "gap": 0.0
+  },
+  {
+   "shaft": "Tube 20x16",
+   "shaft_name": "Tube 20x16",
+   "shaft_occ": "Body:1+Tube 20x16:1",
+   "bore": "Carriage",
+   "bore_name": "Carriage (1)",
+   "bore_occ": "Carriage:1+Carriage (1):1",
+   "shaft_top": "Body",
+   "bore_top": "Carriage",
+   "d": 20.0,
+   "gap": 0.0
+  },
+  {
+   "shaft": "Spring seat",
+   "shaft_name": "Spring seat 1",
+   "shaft_occ": "Body:1+Spring seat 1:1",
+   "bore": "Housing",
+   "bore_name": "Housing",
+   "bore_occ": "Body:1+Housing:1",
+   "shaft_top": "Body",
+   "bore_top": "Body",
+   "d": 10.0,
+   "gap": 0.0
+  },
+  {
+   "shaft": "Spring seat",
+   "shaft_name": "Spring seat 2",
+   "shaft_occ": "Body:1+Spring seat 2:1",
+   "bore": "Housing",
+   "bore_name": "Housing",
+   "bore_occ": "Body:1+Housing:1",
+   "shaft_top": "Body",
+   "bore_top": "Body",
+   "d": 10.0,
+   "gap": 0.0
+  },
+  {
+   "shaft": "Spring seat",
+   "shaft_name": "Spring seat 3",
+   "shaft_occ": "Body:1+Spring seat 3:1",
+   "bore": "Housing",
+   "bore_name": "Housing",
+   "bore_occ": "Body:1+Housing:1",
+   "shaft_top": "Body",
+   "bore_top": "Body",
+   "d": 10.0,
+   "gap": 0.0
+  },
+  {
+   "shaft": "Spring seat",
+   "shaft_name": "Spring seat 4",
+   "shaft_occ": "Body:1+Spring seat 4:1",
+   "bore": "Housing",
+   "bore_name": "Housing",
+   "bore_occ": "Body:1+Housing:1",
+   "shaft_top": "Body",
+   "bore_top": "Body",
+   "d": 10.0,
+   "gap": 0.0
+  }
+ ],
+ "tops": {
+  "Body": true,
+  "Carriage": false
+ },
+ "links": [],
+ "gaps": []
+}

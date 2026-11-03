@@ -1,0 +1,7 @@
+# materials_masses
+# Autodesk Fusion 2706.1.17, run 2026-11-03 10:43, 82 s
+
+MaterialsFits 1.0 (2026-11-03)
+  flap: 32 made parts given their materials (none not in Fusion's library); the made parts weigh 335.17 kg, 334.93 kg with Fusion's generic materials; faces given a class and a roughness: 3 bearing seat, 7 key seat, 21 located, 8 plain bearing seat.
+  ok   flap: 32 of 32 made parts given a library material, 0 lacking one (none); 39 faces given a class
+ALL PASS
