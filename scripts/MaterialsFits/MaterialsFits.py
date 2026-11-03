@@ -77,6 +77,12 @@ def build(key='bag'):
     if key not in D.SCRIPTS:
         raise ValueError('No assembly called %s: the nine are %s.' % (key, ', '.join(D.SCRIPTS)))
     J.build(key, SCRIPTS)                                   # the bag gripper as Chapter 50 detailed it
+    return apply(key)
+
+
+def apply(key):
+    """The materials and the fits given to the design that is open, built as one of the nine (by build() above, or
+    by a later chapter's script that details it further)."""
     app = adsk.core.Application.get()
     des = adsk.fusion.Design.cast(app.activeProduct)
     root = des.rootComponent

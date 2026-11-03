@@ -112,6 +112,9 @@ def parts(root, key):
     if key == 'bag':
         import standard_parts as S
         nmap.update(S.detail_numbers())
+    if key == 'wrist':
+        import wrist_detail as WDET                 # the names Chapter 52's detail gives; absent from Chapter 40's model
+        nmap.update(WDET.detail_numbers(nmap))
     inv = D.inventory(key)
     group_of = {dsg: g for g, dd in inv['groups'].items() for dsg in dd}
     out = []

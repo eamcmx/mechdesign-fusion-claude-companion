@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 52: builds Chapter 40's wrist in detail, its motors, gear units and slip ring drawn to their makers' figures, its bearings' abutments inside SKF's bands, the stop disc's key the length that is made, and every part's material and fit as Chapter 51 decided them."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "WristDetail"
+}

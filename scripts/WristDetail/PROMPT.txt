@@ -1,0 +1,46 @@
+Write a Fusion Python script that, when run, builds Chapter 40's robotic wrist in detail: its bought products drawn to
+their makers' figures, its bearings' abutments inside SKF's bands, the stop disc's key the length that is made, and
+every made part's material and every fitting face's class and roughness as Chapter 51 decided them.
+
+INPUTS (a command dialog, with this default):
+- the hard stop's contact angle (deg), 128
+
+DERIVED (from lib/wrist_detail.py, lib/wrist_design.py and Chapter 51's MaterialsFits.py, never typed):
+- products(): the motor's, the gear unit's and the slip ring's figures in place of Chapter 39's and 40's assumptions,
+  for the build and for the numbers
+- numbers(): the motors' duty, the stop, the play at the tool, the wrist's mass, each motor's end
+- abutments(): the shoulders against SKF's da and Da; DETAIL_ABUT, the diameter the detail gives those outside
+- load_classes(): each bearing position's load against SKF's C and its class
+- detail_numbers(): the detail's new names and their part numbers
+- MaterialsFits.apply(): the materials and the fits on the open design
+
+HARD CONSTRAINTS:
+- Build with WristIntegration.py's own build() and apply MaterialsFits.py's apply(); copy neither. Change the wrist's
+  parts by replacing, before the build, the functions that draw them, each replacement recognising only the calls it
+  means and passing every other through: the gear motor, the motor's output shaft and pulley, the motor bracket, the
+  slip ring's parts, the ring that draws spacers S4 and S5, the cylinder that draws the roll shaft's collar, the
+  frame and the screw that place the slip ring bracket's screw. Restore every replaced function after the build.
+- The gear motor: the PLE040's square 40 flange 5 thick at the gearhead's face with its 26 h7 spigot, its round body
+  40 across to the adapter, the adapter square 40 and 28.5 long; the AM8111 square 40 and 129 long with its brake.
+- The output: the pulley and two M4 set screws on the unit's smooth 12 mm shaft, 26 long.
+- The motor bracket's middle slot 27 mm across, so that the 26 mm spigot passes it over the slot's travel.
+- The slip ring: its stator 22 across and 19.5 long, its 44.5 mm flange at the top against the bracket's tab; the
+  bracket's bar and the stator's pin gone; the bracket's screw M3 x 10 through the flange and the tab.
+- The roll shaft's collar and spacers S4 and S5 18 mm across; the stop disc 71 to 82 mm, its key 5 x 5 x 10 from 72
+  to 82 and renamed so, the trunnion's end at 82.
+- The front side-gear bearings' housings M7, their load being light; every other class Chapter 51's.
+
+FUSION CONVENTIONS:
+- WristIntegration's own new design document and groups; nothing moved; lengths in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives each motor's end, the slip ring, the abutments, the key, the motors' duty, the stop, the play, the
+  wrist's mass, the front housings' class, the materials and faces given, and a version tag.
+- Each gear motor 209.5 mm from the gearhead's face to the motor's end, its spigot 2 mm beyond, 40 mm square; the
+  output shaft 12 across.
+- The slip ring's stator 22 across, 19.5 long, its flange 44.5 across; no pin; the bracket's screw M3 x 10.
+- The collar and S4 and S5 18 across, each 6002's shoulders inside 17 to 18.5.
+- The key 10 long, 1 mm inside the stop disc at its inner face.
+- The front side gears' two bores carry M7, every other decided face what the rules decide.
+- No interference at rest, nor at pitch -120, 0 and +120 deg with the roll turned 0, 90 and 180 deg.
+- Refused: a contact angle of 123 deg, which the brakes with the AM8111's brake do not stop short of.
