@@ -1,0 +1,55 @@
+Write a Fusion Python script that, when run, builds one of the palletizer's assemblies of Chapters 41 to 48 in detail
+(the bag gripper by default, the robot, the compliance unit or the vacuum gripper), each with its own script, and then
+gives every made part its material and every fitting face its class and roughness as Chapter 51 decided them, with this
+chapter's decisions by hand where they differ from the rules.
+
+INPUTS (a command dialog, with these defaults):
+- the assembly, bag
+- the plugs' fillet weld leg (mm), 4
+
+DERIVED (from lib/palletizer_detail.py and Chapter 51's MaterialsFits.py, never typed):
+- eyes(), SRB: each rod eye's shoulder, seat and DIN 472 groove, its pin's collar, seat and end washer, from SKF's
+  abutment dimensions for the 22207 E and the 22213 E
+- robot_bearings(): each robot bearing held on both rings, its shaft's class and the clearance class it needs
+- jaw_ends(), bag_6206(): the jaws' locating and floating ends, the 6206's clearance class
+- plug_weld(): the fillet weld's stresses and its size against Shigley's Table 9-6
+- gland(), gallery_plug(): the O-ring's groove to ERIKS's dynamic table, the DIN 908 plugs
+- vacuum_joint(): the plate's through bolts, their length and preload
+- HIWIN: the guideways' order codes
+- MaterialsFits.apply(): the materials and the fits on the open design
+
+HARD CONSTRAINTS:
+- Build with each assembly's own script (PalletizerRobot.py; StandardParts.py, the bag gripper as Chapter 50 detailed
+  it; ComplianceUnit.py; VacuumGripper.py) and apply MaterialsFits.py's apply(); copy none of them. Change the parts by
+  replacing, before the build, the functions that draw them, each replacement recognising only the calls it means and
+  passing every other through.
+- The robot: each rod eye bored to its bearing's outside with a shoulder of 64 (22207 E) or 110 (22213 E) on its pin's
+  root side and a DIN 472 groove and circlip on the free side; each pin with a collar of 43 or 76 from its link to
+  the inner ring, the seat through the ring, its end 0.5 mm short, an end washer and an ISO 4762 screw.
+- The bag gripper: in each end plate the locating boss holds its 6206's outer ring between a lip 56 across and a DIN
+  472 62 circlip, the floating boss leaves it 1 mm either way; the bosses lengthened to 451 mm; the short stubs with a
+  shoulder 36 across and a DIN 471 30 circlip; the plugs set 4 mm into the tube's ends and a fillet weld all round.
+- The compliance unit: the O-ring's groove 24.30 across and 3.40 wide; the O-ring drawn squeezed; six DIN 908
+  M10 x 1 plugs with their collars in counterbores 15 across; the tube's outside split where it leaves its boss
+  before the census.
+- The vacuum gripper: the plate held by ISO 4762 M6 through bolts, a washer under each head and under each nut, the
+  plate's holes 6.6 through.
+- By hand after the census: H7 in the rods' eyes, H7 in the floating bosses, the jaws' tubes, stubs and welds in 1020,
+  the tube's zones s6 Ra 0.8 in the boss and g6 Ra 0.4 below, the stubs' seats marked ground after welding, and the
+  clearance classes and the HIWIN codes in the descriptions.
+- Refuse a weld leg under Table 9-6's minimum for the 4 mm wall, or over the wall.
+
+FUSION CONVENTIONS:
+- Each assembly's own new design document and groups; lengths in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message names the assembly, the faces given by hand and the descriptions, and a version tag.
+- The bag gripper: the bosses' lip, seat and groove; four DIN 472 and two DIN 471 circlips; four welds from 401 to
+  405 mm; the short stubs' shoulder and groove; the jaws in 1020; J7 at the locating ends and H7 at the floating; the
+  6206-2RS1/C4; no interference closed nor open.
+- The robot: the six eyes and pins as above, their circlips, washers and screws; the eyes H7, the triangle K7; the
+  clearance classes in the designations; no interference at the pick pose nor at full reach.
+- The compliance unit: the groove, the squeezed O-ring, the six plugs, the tube's two zones, the HIWIN codes; no
+  interference at rest, nor risen but for the springs.
+- The vacuum gripper: 16 through bolts, 32 washers, 16 nuts, no tapped hole; no interference.
+- Refused: a weld leg of 3 mm.

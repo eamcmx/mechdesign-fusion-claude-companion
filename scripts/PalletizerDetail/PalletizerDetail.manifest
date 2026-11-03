@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 55: builds one of the palletizer's assemblies in detail (the robot, the bag gripper, the compliance unit or the vacuum gripper) with its own script: the rods' eyes and pins, the jaws' locating and floating ends and the plugs' welds, the O-ring's gland and the gallery plugs, the plate's through bolts; then every part's material and fit as Chapter 51 decided them, and this chapter's classes by hand."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "PalletizerDetail"
+}
