@@ -26,7 +26,13 @@ CHANGER = ('Master', 'Piston', 'Tool plate', 'Segments')
 # the float's layout (mm; z = 0 the unit's top face on the tool plate, z up): a top plate with two cheeks at x = +-c/2,
 # an HGR25 rail on each cheek's inner face, two HGH25CA blocks on each rail d apart; the carriage hangs on stops at the
 # cheeks' feet; its underside is the gripper's mounting face, H below the unit's top
-LAY = dict(top_t=20.0, plate=200.0, c=170.0, d=100.0, stroke=30.0, carriage_t=20.0, sense=3.0)
+LAY = dict(top_t=20.0, plate=(260.0, 200.0), cheek_x=(105.0, 125.0), cheek_y=60.0, c=166.0, d=100.0, stroke=30.0,
+           gap=2.0, carriage_t=20.0, wing_x=(50.0, 65.0), wing_y=60.0, sense=3.0,
+           hangers=((25.0, 50.0), (-25.0, 50.0), (-25.0, -50.0), (25.0, -50.0)), hanger_d=12.0, head=(20.0, 8.0),
+           boss=(25.0, 6.5), boss_bottom=-138.0)
+# the rails' axes: the cheeks' inner faces at x = +-105 carry the rails (HR 22 high), so the rails' running faces
+# stand at +-83 and the blocks' tops, H = 40 over the rail's foot, at +-65 where the carriage's wings carry them; the
+# rails c = 166 apart between their running faces
 GUIDE = dict(name='HGH25CA', C0=36490.0, Cdyn=26480.0, L=84.0, H=40.0, W=48.0, rail='HGR25R', WR=23.0, HR=22.0,
              fSL_min=3.0)       # HIWIN GmbH (2017), Table 3.4 p. 30, Table 3.6 p. 32, Table 2.1 p. 10 (shocks: 3 to 5)
 SPRING = dict(n=4, d=3.0, D=24.0, A=2211.0, m=0.145, G=81.7e3, ssy=0.45)   # music wire A228 (Shigley Tables 10-4 to 10-6)
@@ -35,7 +41,7 @@ SPRING = dict(n=4, d=3.0, D=24.0, A=2211.0, m=0.145, G=81.7e3, ssy=0.45)   # mus
 def height(lay=LAY, g=GUIDE):
     """The unit's height from its top to the gripper's face: the top plate, the rail's length (the blocks d apart,
     a block's length and the stroke), the carriage's plate."""
-    rail = lay['d'] + g['L'] + lay['stroke']
+    rail = lay['d'] + g['L'] + lay['stroke'] + 2 * lay['gap']
     return dict(rail=rail, H=lay['top_t'] + rail + lay['carriage_t'])
 
 

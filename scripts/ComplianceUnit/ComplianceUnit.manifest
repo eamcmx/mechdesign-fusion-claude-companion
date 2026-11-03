@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 48: the palletizer's compliance unit: a vertical float between the tool changer and the vacuum or bag gripper, on two HGR25 rails and four HGH25CA blocks, held down by four springs on hanger bolts, with a touch-down sensor."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "ComplianceUnit"
+}

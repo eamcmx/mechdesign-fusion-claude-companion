@@ -1,0 +1,44 @@
+Write a Fusion Python script that, when run, builds the palletizer's compliance unit of Chapter 48: a vertical float
+between the tool changer's ISO face and the vacuum or bag gripper. The gripper hangs on a carriage that slides up on
+two rails when its load touches the stack, held down onto stops by springs, and a sensor sees it rise.
+
+INPUTS (a command dialog, with these defaults):
+- the gripper (bag, vacuum or clamp), bag
+- the stroke (mm), 30
+- the springs' preload (N), 894.6
+
+DERIVED (from lib/compliance_unit.py, never typed):
+- LAY: the layout below; GUIDE: HIWIN HGR25 rails and HGH25CA blocks (C0 36 490 N, 84 long, 40 high, 48 wide)
+- the springs chosen to Shigley's chapter 10 (music wire 4 x 40, 100 installed), the ring factor with each gripper
+
+HARD CONSTRAINTS:
+- Refuse the clamp gripper (Chapter 44's ring would open in the worst stop with the unit in the stack), a stroke
+  over the rails' 30 mm, and a preload under what keeps the carriage down in the stops that throw the load up.
+- The top plate 260 x 200 x 20 with the spigot 100 g6 and six M10 x 25 from below on the 160 circle, the 10 pin; two
+  cheeks 20 thick at x = +-105 to +-125, 120 wide, down to the rails' foot, each on two M8 x 30 from above.
+- An HGR25 rail on each cheek's inner face, 218 long under the top plate, on four M6 x 20 in counterbores; two
+  HGH25CA blocks on each rail, their centres 100 apart, the upper one 2 mm under the wings' tops.
+- The carriage: a plate 206 x 160 x 20 whose underside is the gripper's face, with the gripper's four M8, and two
+  wings 15 thick at x = +-50 to +-65 carrying the blocks; the wings' tops the stroke under the top plate.
+- Four hanger bolts at x = +-25, y = +-50, 12 across, screwed into the top plate, the carriage resting on their heads;
+  a spring seat 50 across around each from the top plate down to -138; a spring between each seat and the carriage.
+- An M12 proximity sensor 40 long looking along -y at the +x wing's side, 2 mm off it, its face's lower edge 3 mm
+  over the wing's top; held by a bracket under the top plate.
+
+FUSION CONVENTIONS:
+- A new design document (FusionDesignDocumentType), parametric; millimetres in the world, z = 0 the unit's top face
+  on the tool plate, z up.
+- Top-level groups: Body (grounded) and Carriage. One function, set_state(lift), raises the carriage by its
+  transform. No joints, as-built or otherwise.
+- The API works in cm and radians. A spring is swept once along a helix and copied as a temporary body.
+
+ACCEPTANCE CRITERIA:
+- A message gives the gripper, the unit's height and stroke, the guides' static factor, the springs, the ring factor,
+  the parts list and a version tag.
+- At rest: no interference; the carriage on the four hangers' heads (gap under 0.001 mm).
+- The springs 100 mm long installed and 44 mm across.
+- The sensor 3.606 mm from the carriage at rest and 2.000 mm once it has risen 3 mm.
+- Raised the whole stroke: no interference but the springs; the wings on the top plate; the blocks still on the rails.
+- The top plate's ISO pattern measured.
+- The body and the carriage weighed and written.
+- Refused: the clamp gripper; a stroke of 40 mm; a preload of 500 N.
