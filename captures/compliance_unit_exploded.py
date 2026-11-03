@@ -1,6 +1,6 @@
 # Pictures for Chapter 48: the compliance unit taken apart: the housing up with its screws and plugs, the rails in off
-# the cheeks with their screws further in, the spring seats up, the springs and shoulder screws down, the tube in its
-# place, the sensor out, the carriage down with its blocks out and its O-ring and plugs off. The design is turned to
+# the cheeks with their screws further in, the spring seats up, the springs down, the stop blocks out along y and
+# their screws out of the cheeks, the tube in its place, the sensor out, the carriage down with its blocks out and its O-ring and plugs off. The design is turned to
 # direct modelling first; the anchors are printed.
 import sys, importlib, math, json
 sys.path.insert(0, '__COMPANION__/tools')
@@ -15,15 +15,17 @@ IN = {
              ('Plug housing 3', (0, -50, 160)), ('Plug housing', (50, 0, 160)),
              ('Rail HGR25 1', (-30, 0, -40)), ('Rail HGR25 2', (30, 0, -40))] +
             [('Cap screw M6x20 %d' % k, (-80 if k <= 4 else 80, 0, -40)) for k in range(1, 9)] +
-            [('Spring seat', (0, 0, 70)), ('Shoulder screw', (0, 0, -330)), ('Spring', (0, 0, -120)),
-             ('Sensor M12', (0, 90, 0)), ('Sensor bracket', (0, 60, 60))],
+            [('Spring seat', (0, 0, 70)), ('Spring', (0, 0, -120))] +
+            [('Stop block %d' % k, (0, 60 if k % 2 else -60, 0)) for k in range(1, 5)] +
+            [('Cap screw M8x30 %d' % k, (60 if k <= 4 else -60, 0, 0)) for k in range(1, 9)] +
+            [('Sensor M12', (0, 90, 0)), ('Sensor bracket', (0, 60, 60))],
     'Carriage': [('Block HGH25CA 1', (60, 0, 0)), ('Block HGH25CA 2', (60, 0, 0)), ('Block HGH25CA 3', (-60, 0, 0)),
                  ('Block HGH25CA 4', (-60, 0, 0)), ('O-ring', (0, 0, 60)), ('Plug carriage 3', (0, -50, 0)),
                  ('Plug carriage', (50, 0, 0))],
 }
 AT = {}
 ITEMS = ['Housing', 'Cap screw M10x25 2', 'Dowel pin 10x17', 'Plug housing 3', 'Rail HGR25 1', 'Cap screw M6x20 1',
-         'Spring seat 1', 'Shoulder screw 1', 'Spring 1', 'Tube 20x16', 'Sensor M12', 'Sensor bracket', 'O-ring 20x2.5',
+         'Spring seat 1', 'Stop block 1', 'Cap screw M8x30 1', 'Spring 1', 'Tube 20x16', 'Sensor M12', 'Sensor bracket', 'O-ring 20x2.5',
          'Carriage', 'Block HGH25CA 1']
 
 

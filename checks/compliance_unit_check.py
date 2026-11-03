@@ -1,5 +1,5 @@
 # ComplianceUnit (Chapter 48) against the acceptance criteria of its prompt, measured on what Fusion built: the parts
-# counted; at rest no interference, the carriage on the shoulder screws' heads and nothing below the gripper's face;
+# counted; at rest no interference, the carriage's lugs on the stop blocks and nothing below the gripper's face;
 # the springs measured; raised by the sensing distance, the sensor 2 mm off the wing's face; raised the whole stroke,
 # nothing in the way but the springs, the wings on the top plate, the blocks still on their rails and the tube's foot
 # still in the receiver below its O-ring; the ISO pattern on both faces and the passages lined up; weighed and
@@ -40,13 +40,13 @@ def run(_context):
     dist = lambda a, b: mm_.measureMinimumDistance(a.bRepBodies.item(0), b.bRepBodies.item(0)).value * 10
     one = lambda nm: [o for o in leaves if o.component.name == nm][0]
     car = one('Carriage')
-    hangers = [o for o in leaves if o.component.name.startswith('Shoulder screw')]
+    stops = [o for o in leaves if o.component.name.startswith('Stop block')]
     springs = [o for o in leaves if o.component.name.startswith('Spring ') and not o.component.name.startswith('Spring seat')]
     ns['set_state'](G, 0.0)
     c = fc.interference(leaves)
     fc.ok(not c, 'at rest: no interference among the %d parts %s' % (len(leaves), c or ''))
-    fc.ok(len(hangers) == 4 and max(dist(car, h) for h in hangers) < 0.001,
-          'the carriage on the four shoulder screws\' heads, the largest gap %.4f mm' % max(dist(car, h) for h in hangers))
+    fc.ok(len(stops) == 4 and max(dist(car, h) for h in stops) < 0.001,
+          'the carriage\'s lugs on the four stop blocks, the largest gap %.4f mm' % max(dist(car, h) for h in stops))
     z_face = ns['Z_CAR'][1]
     low = min(o.bRepBodies.item(0).boundingBox.minPoint.z * 10 for o in leaves)
     fc.ok(low >= z_face - 0.001, 'nothing below the gripper\'s face at z %.1f: the lowest point %.3f mm' % (z_face, low))
