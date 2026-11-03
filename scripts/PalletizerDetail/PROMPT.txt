@@ -33,7 +33,8 @@ HARD CONSTRAINTS:
   M10 x 1 plugs with their collars in counterbores 15 across; the tube's outside split where it leaves its boss
   before the census.
 - The vacuum gripper: the plate held by ISO 4762 M6 through bolts, a washer under each head and under each nut, the
-  plate's holes 6.6 through.
+  plate's holes 6.6 through; each cup's sleeve on a foot flange 48 across and 5 thick with three ISO 4762 M4 x 12
+  on a circle of 38, tapped 7 mm into the plate.
 - By hand after the census: H7 in the rods' eyes, H7 in the floating bosses, the jaws' tubes, stubs and welds in 1020,
   the tube's zones s6 Ra 0.8 in the boss and g6 Ra 0.4 below, the stubs' seats marked ground after welding, and the
   clearance classes and the HIWIN codes in the descriptions.
@@ -51,5 +52,6 @@ ACCEPTANCE CRITERIA:
   clearance classes in the designations; no interference at the pick pose nor at full reach.
 - The compliance unit: the groove, the squeezed O-ring, the six plugs, the tube's two zones, the HIWIN codes; no
   interference at rest, nor risen but for the springs.
-- The vacuum gripper: 16 through bolts, 32 washers, 16 nuts, no tapped hole; no interference.
+- The vacuum gripper: 16 through bolts, 32 washers, 16 nuts, no tapped hole; 36 sleeves on their flanges with 108
+  M4 screws; no interference.
 - Refused: a weld leg of 3 mm.

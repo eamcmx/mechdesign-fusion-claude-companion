@@ -456,6 +456,7 @@ NEW_NUMBERS = [  # (number, designation, assembly, quantity, where)
     ('S-0116', 'ISO 4762 M6 x 25 - 8.8 - zinc-plated', 'vacuum', 16, 'the plate\'s through bolts'),
     ('S-0117', 'ISO 7089 6 - 200 HV', 'vacuum', 32, 'under the bolts\' heads and nuts'),
     ('S-0118', 'ISO 4032 M6 - 8', 'vacuum', 16, 'the bolts\' nuts'),
+    ('S-0119', 'ISO 4762 M4 x 12 - 8.8 - zinc-plated', 'vacuum', 108, 'the cups\' sleeves, three each'),
     ('P01-060', 'end washer 43 x 6, hole 9, steel 1045', 'robot', 4, 'the levelling rods\' pins'),
     ('P01-061', 'end washer 76 x 8, hole 13, steel 1045', 'robot', 2, 'the parallel rod\'s pins'),
     ('P13-016', 'jaw weldment: the tube and its two stubs, welded, the seats ground', 'bag', 2, 'each jaw'),
@@ -471,3 +472,33 @@ CHANGED_NUMBERS = [  # (number, as it was, as it is now)
     ('S-0103', 'O-ring 20 x 2.5', 'O-ring 20 x 2.5 in a groove 24.30 x 3.40 (ERIKS)'),
     ('S-0021', 'HIWIN HGH25CA', 'HIWIN HGH25CAZ0C'),
 ]
+
+
+# ---- the vacuum gripper's sleeves: held by a foot flange and three screws (Chapter 46 left them on the plate loose) --
+SLEEVE = dict(flange_d=48.0, flange_t=5.0, n=3, pcd=38.0, d=4.0, L=12.0, At=8.78, Sp=580.0)   # ISO 4762 M4; the detail's:
+#                                     the screws' heads (7 across) clear of the sleeve's 30, the holes 2.8 from the edge
+
+
+def sleeve_fixing():
+    """Each plunger's guide reaction at the sleeve's top in the stop (Chapter 46: the plunger as a beam guided by the
+    sleeve and the plate's bore) over the sleeve's height gives the moment at its foot; the flange's three screws on
+    their circle take it as a bolt group tipping about the flange's edge, the farthest screw the most (Shigley's
+    method for a bolted bracket under a moment); the screws' length by L > h + 1.5 d (Table 8-7) into the 10 mm plate,
+    and their preload, Volume 1's 0.75 Fp, against that pull."""
+    import standard_parts as S
+    import vacuum_gripper as V
+    pl = V.design()['plunger']
+    lay = V.LAY
+    h = lay['sleeve'][1] - lay['sleeve'][0]                    # 50 mm, the plate's top to the sleeve's top
+    s = SLEEVE
+    M = pl['R_up'] * h                                          # N mm
+    R = s['flange_d'] / 2.0
+    rb = s['pcd'] / 2.0
+    d = [R + rb * math.cos(math.radians(a)) for a in (0.0, 120.0, 240.0)]
+    F_max = M * max(d) / sum(x * x for x in d)
+    need = s['flange_t'] + 1.5 * s['d']
+    L = S.shortest(S.commercial('DIN_EN_ISO_4762')['4'], need + 1e-9)
+    Fi = 0.75 * s['At'] * s['Sp']
+    n_cups = len(lay['zone_x']) * len(lay['zone_y']) * len(lay['cup_dx']) * len(lay['cup_dy'])
+    return dict(R_up=pl['R_up'], h=h, M=M / 1000.0, d=d, F_max=F_max, need=need, L=L, thread=L - s['flange_t'],
+                plate=lay['plate'][0] - lay['plate'][1], Fi=Fi, ratio=Fi / F_max, shear=pl['R_up'] / s['n'], cups=n_cups)

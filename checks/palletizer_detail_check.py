@@ -186,6 +186,10 @@ def check_vacuum(ns):
           and not named(ls, 'Cap screw M6x14'),
           'the plate on 16 through bolts M6 x %d, 32 washers and 16 nuts, its holes 6.6 through, none tapped'
           % J['L'])
+    sl = named(ls, 'Sleeve ')
+    m4 = named(ls, 'Cap screw M4x12')
+    fc.ok(len(sl) == 36 and all(24.0 in radii(o) for o in sl) and len(m4) == 108 and 2.0 in radii(pl),
+          'the 36 sleeves on their flanges 48 across, held by 108 M4 x 12 tapped into the plate')
     c = fc.interference(ls)
     fc.ok(not c, 'the vacuum gripper: no interference among %d parts %s' % (len(ls), c or ''))
 

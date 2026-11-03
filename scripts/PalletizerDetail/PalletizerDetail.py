@@ -26,6 +26,7 @@
 # =============================================================================
 import importlib
 import importlib.util
+import math
 import os
 import sys
 import traceback
@@ -329,7 +330,28 @@ def build_vacuum():
             return plain_zcyl(p1 - 1.0, p0 + 1.0, ps['clear_r'], x, y)         # through the plate, not tapped
         return plain_zcyl(z0, z1, r, x, y)
 
+    SL = XP.SLEEVE
+    sx = XP.sleeve_fixing()
+    holes = lambda x, y: [(x + SL['pcd'] / 2.0 * math.cos(math.radians(a)), y + SL['pcd'] / 2.0 * math.sin(math.radians(a)))
+                          for a in (90.0, 210.0, 330.0)]
+
     def part(g, name, tb, material='Steel'):
+        if name == 'Plate':                                            # the sleeves' tapped holes, the thread's depth
+            for _, x, y in VG.cups_xy():
+                for hx, hy in holes(x, y):
+                    mp.cut(tb, plain_zcyl(p0 - sx['thread'] - 1.0, p0 + 0.01, SL['d'] / 2.0, hx, hy))
+            return plain_part(g, name, tb, material)
+        if name.startswith('Sleeve '):                                 # each sleeve on a foot flange, three M4 screws
+            (x, y, _), _ = centre_mm(tb)
+            mp.union(tb, mp.tube((x, y, p0), (x, y, p0 + SL['flange_t']), SL['flange_d'] / 2.0, VG.L['sleeve_r'][1]))
+            for hx, hy in holes(x, y):
+                mp.cut(tb, plain_zcyl(p0 - 1.0, p0 + SL['flange_t'] + 1.0, SL['d'] / 2.0 + 0.2, hx, hy))
+            o = plain_part(g, name, tb, material)
+            k = name.split()[-1]
+            for j, (hx, hy) in enumerate(holes(x, y)):
+                plain_part(g, 'Cap screw M4x%d s%s %d' % (sx['L'], k, j + 1),
+                           mp.cap_screw(SL['d'], float(sx['L']), (hx, hy, p0 + SL['flange_t']), (0, 0, -1)))
+            return o
         if not name.startswith('Cap screw M6x14 '):
             return plain_part(g, name, tb, material)
         k = name.split()[-1]
@@ -434,6 +456,7 @@ def by_hand(key, des, mod):
         describe(root, 'Cap screw M6x%d' % J['L'], 'ISO 4762 M6 x %d - 8.8 - zinc-plated' % J['L'], desc)
         describe(root, 'Washer ISO 7089 6', 'ISO 7089 6 - 200 HV', desc)
         describe(root, 'Nut ISO 4032 M6', 'ISO 4032 M6 - 8', desc)
+        describe(root, 'Cap screw M4x%d' % XP.sleeve_fixing()['L'], 'ISO 4762 M4 x %d - 8.8 - zinc-plated' % XP.sleeve_fixing()['L'], desc)
     return changed, new, desc
 
 
