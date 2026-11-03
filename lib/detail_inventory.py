@@ -25,7 +25,15 @@ MACHINES = [
     ('clamp', 'The clamp gripper', 'clamp_gripper_check.txt', 45),
     ('vacuum', 'The vacuum gripper', 'vacuum_gripper_check.txt', 46),
     ('bag', 'The bag gripper', 'bag_gripper_check.txt', 47),
+    ('unit', 'The compliance unit', 'compliance_unit_check.txt', 48),
 ]
+# the first eight were numbered together (Chapter 49); a machine added after them takes the next free serials for the
+# designations it brings, so that no number already given moves
+FIRST = 8
+# a name one machine gives a part that another machine's part of the same name is not, or two names for one part:
+# the designation the buyer orders it by
+OWN = {('unit', 'Spring'): 'Spring 4 x 40', ('unit', 'Rail HGR25'): 'Rail HGR25 218',
+       ('unit', 'Plug housing'): 'Gallery plug 8', ('unit', 'Plug carriage'): 'Gallery plug 8'}
 
 # the bodies of one bought part that the model holds apart: dropped from the name, counted once per set
 PIECES = (' balls', ' inner ring', ' outer ring', ' cone', ' cup', ' rotor', ' stator')
@@ -34,7 +42,7 @@ PART_OF = {'Piston rod': 'Cylinder', 'Angular contact bearing 7205': 'Fixed bear
            'Deep groove bearing': 'Supported bearing BF25', 'Motor output': 'Servo motor',
            'Gearhead shaft': 'Motor unit'}
 # made, although the name starts like a bought part's
-MADE = ('Bearing cap', 'Bearing cap floating', 'Motor bracket', 'Slip ring bracket')
+MADE = ('Bearing cap', 'Bearing cap floating', 'Motor bracket', 'Slip ring bracket', 'Sensor bracket')
 # what is bought, by a pattern in its name; the group it belongs to, the first that matches (a ball screw and its nut
 # are transmission parts, tried before the fasteners' "screw" and "nut")
 BOUGHT = [
@@ -43,7 +51,7 @@ BOUGHT = [
     (r'screw|[Bb]olt M\d|\bnut\b|[Nn]ut M\d|stud M\d|plug M\d|^Washer( M\d|$)', 'fasteners'),
     (r'^Dowel|^Pin \d|^Key DIN|^Key \d|^Nut key', 'pins and keys'),
     (r'^Servo motor|^Motor|^Encoder$|^Sensor|^Cylinder DSBC|^Cup |^Ejector', 'motors, cylinders and vacuum'),
-    (r'[Ss]eal\b|[Rr]etaining ring|^O-ring|^Breather|^Spring$', 'seals, rings and springs'),
+    (r'[Ss]eal\b|[Rr]etaining ring|^O-ring|^Breather|^Spring$|^Plug (housing|carriage)$', 'seals, rings and springs'),
 ]
 
 
@@ -113,7 +121,7 @@ def inventory(key):
             groups[sn] = grp
     bought, bgroup = {}, {}
     for sn, n in sets.items():
-        dsg = designation(sn)
+        dsg = OWN.get((k, sn), designation(sn))
         bought[dsg] = bought.get(dsg, 0) + n
         bgroup[dsg] = groups[sn]
     by_group = {}
@@ -137,7 +145,7 @@ def totals(rows=None):
 # the part numbers: a made part is <machine><subassembly>-<item>, the subassembly's own number ending in 000; a bought
 # part is S-<serial>, one number for one designation wherever it is used, its maker's designation in the description
 SUB = {'wrist': 'W01', 'flap': 'F01', 'axle': 'A01', 'robot': 'P01', 'changer': 'P10', 'clamp': 'P11',
-       'vacuum': 'P12', 'bag': 'P13'}
+       'vacuum': 'P12', 'bag': 'P13', 'unit': 'P14'}
 
 
 def numbering(rows=None):
@@ -145,8 +153,10 @@ def numbering(rows=None):
     all the assemblies once, in the order of their designations. Returns {key: [(number, name, quantity, 'made' or
     'bought')]} and the bought parts' numbers."""
     rows = rows or all_machines()
-    bought = sorted({d for r in rows for d in r['bought']})
-    snum = {d: 'S-%04d' % (k + 1) for k, d in enumerate(bought)}
+    order = sorted({d for r in rows[:FIRST] for d in r['bought']})
+    for r in rows[FIRST:]:
+        order += sorted(d for d in r['bought'] if d not in order)
+    snum = {d: 'S-%04d' % (k + 1) for k, d in enumerate(order)}
     out = {}
     for r in rows:
         sub = SUB[r['key']]
@@ -174,7 +184,8 @@ def number_map(key, rows=None):
         if c == 'made':
             out[name] = ('%s-%03d' % (SUB[key], made.index(name) + 1), name)
         elif c == 'bought':
-            d = designation(set_name(name))
+            sn = set_name(name)
+            d = OWN.get((key, sn), designation(sn))
             out[name] = (snum[d], d)
         else:
             out[name] = (None, 'with the ' + grp)
@@ -182,7 +193,8 @@ def number_map(key, rows=None):
 
 
 SCRIPTS = {'wrist': 'WristIntegration', 'flap': 'FlapSystem', 'axle': 'RearAxle', 'robot': 'PalletizerRobot',
-           'changer': 'ToolChanger', 'clamp': 'ClampGripper', 'vacuum': 'VacuumGripper', 'bag': 'BagGripper'}
+           'changer': 'ToolChanger', 'clamp': 'ClampGripper', 'vacuum': 'VacuumGripper', 'bag': 'BagGripper',
+           'unit': 'ComplianceUnit'}
 
 
 def kind_of(name, known):

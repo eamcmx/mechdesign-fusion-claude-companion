@@ -1,25 +1,29 @@
-Write a Fusion Python script that, when run, builds one of the eight assemblies of Volume 2 that Volume 3 details and
+Write a Fusion Python script that, when run, builds one of the nine assemblies of Volume 2 that Volume 3 details and
 writes every part's part number and description into its component, so that a parts list drawn from the model carries
 them (Chapter 49).
 
 INPUTS (a command dialog, with these defaults):
 - the assembly (the robotic wrist, the flap actuation system, the rear axle, the palletizer's robot, the tool changer,
-  the clamp gripper, the vacuum gripper or the bag gripper), the bag gripper
+  the clamp gripper, the vacuum gripper, the bag gripper or the compliance unit), the bag gripper
 
 DERIVED (from lib/detail_inventory.py, never typed):
-- MACHINES and SCRIPTS: each assembly's title, its Volume 2 chapter, its check's parts list and its script
+- MACHINES and SCRIPTS: each assembly's title, its Volume 2 chapter, its check's parts list and its script; OWN:
+  the designations of names that would otherwise mean two parts, or two names for one part
 - numbering() and number_map(): each name on the assembly's parts list with its number and description
 - kind_of(): the name on the parts list that a component's name stands for
 
 HARD CONSTRAINTS:
-- Refuse an assembly that is not one of the eight.
+- Refuse an assembly that is not one of the nine.
 - Build the assembly with its own script's build() and its defaults; never redraw it.
 - A made part's number is the machine's letter (W, F, A, P), the subassembly's two digits (W01, F01, A01; the
-  palletizer's robot P01, the tool changer P10, the clamp, vacuum and bag grippers P11 to P13) and a three-digit item
-  in the order of the made parts' names; the assembly itself is item 000, written into the root component.
-- A bought part's number is S and a four-digit serial, one for each designation across all eight assemblies; its
-  description is the designation. A bearing's rings and balls, a reducer's case and output, a slip ring's rotor and
-  stator get the one number of the part they make up.
+  palletizer's robot P01, the tool changer P10, the clamp, vacuum and bag grippers P11 to P13, the compliance unit
+  P14) and a three-digit item in the order of the made parts' names; the assembly itself is item 000, written into
+  the root component.
+- A bought part's number is S and a four-digit serial, one for each designation across the nine assemblies: the
+  first eight's in the order of their designations, then the compliance unit's new ones, so that no number given
+  moves. Its description is the designation; a name that two assemblies give different parts, or one assembly two
+  names for one part, takes the designation OWN gives it. A bearing's rings and balls, a reducer's case and output,
+  a slip ring's rotor and stator get the one number of the part they make up.
 - A body that comes with a bought part (a cylinder's piston rod, the bearings inside a support unit) gets no number;
   its description says which part it comes with.
 - A component whose name is on no parts list (the bag, the station's rollers) is left unnumbered and named in the
@@ -38,4 +42,6 @@ ACCEPTANCE CRITERIA:
 - One number for one kind: components of the same kind share a number and no number names two kinds.
 - The bag gripper: 13 made kinds, P13-001 to P13-013, 8 bought kinds, 2 piston rods with their cylinders, the bag and
   the rollers left unnumbered; the root P13-000.
-- Refused: an assembly that is not one of the eight.
+- The compliance unit: 6 made kinds, P14-001 to P14-006, 10 bought kinds, its 6 new designations S-0101 to S-0106,
+  the housing's and the carriage's plugs one part, S-0102; nothing left unnumbered; the root P14-000.
+- Refused: an assembly that is not one of the nine.

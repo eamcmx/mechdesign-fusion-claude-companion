@@ -5,7 +5,7 @@
 # lib/detail_inventory.py gives the number: a made part <machine><subassembly>-<item>, a bought part S-<serial> with
 # its designation as the description. Written from PROMPT.txt beside it; checked by checks/part_numbers_check.py.
 #
-#   INPUTS        the dialog: the assembly (one of the eight of Volume 2 that Volume 3 details)
+#   INPUTS        the dialog: the assembly (one of the nine of Volume 2 that Volume 3 details)
 #   DERIVED       detail_inventory: numbering(), number_map(), kind_of(); the assembly's script and its build()
 #   HARD RULES    a component whose name is on no parts list (the bag, the station's rollers) is left unnumbered and
 #                 reported; a body that comes with a bought part gets no number of its own
@@ -30,7 +30,7 @@ if LIB not in sys.path:
 import detail_inventory as D   # noqa: E402
 importlib.reload(D)
 
-VERSION = 'PartNumbers 1.0 (2026-11-03)'
+VERSION = 'PartNumbers 1.1 (2026-11-03)'
 
 
 def _load(name):
@@ -71,7 +71,7 @@ _last = {}
 
 def build(key='bag'):
     if key not in D.SCRIPTS:
-        raise ValueError('No assembly called %s: the eight are %s.' % (key, ', '.join(D.SCRIPTS)))
+        raise ValueError('No assembly called %s: the nine are %s.' % (key, ', '.join(D.SCRIPTS)))
     mod = _load(D.SCRIPTS[key])
     mod.build()
     des = adsk.fusion.Design.cast(adsk.core.Application.get().activeProduct)

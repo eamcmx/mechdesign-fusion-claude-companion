@@ -43,6 +43,7 @@ CITED = [
     (r'^Cup SPB|^Ejector', 'J. Schmalz GmbH (n.d.)'),
     (r'^Belt HTD', 'Gates Corporation (n.d.)'),
     (r'^Spring$', 'designed to Budynas & Nisbett (2015), Chapter 10 (Chapter 46)'),
+    (r'^Spring 4 x 40$', 'designed to Budynas & Nisbett (2015), Chapter 10 (Chapter 48)'),
 ]
 # Fasten.it's tables of the standards (book/tools/norm_tables.py)
 FASTEN = {n: 'Fasten.it_%s_%s.md' % (n, DAY) for n in
@@ -149,6 +150,9 @@ FASTENERS = {
     'Cap screw M6x14': F(std='ISO 4762', d=6, L=14, h=5.0, plate=10.0,
                          why='the plate\'s screws pass the beam\'s 5 mm wall into a plate 10 mm thick'),
     'Cap screw M6x16': F(std='ISO 4762', d=6, L=16), 'Cap screw M8x20': F(std='ISO 4762', d=8, L=20),
+    'Cap screw M6x20': F(std='ISO 4762', d=6, L=20, h=13.0, plate=20.0,
+                         why='the compliance unit\'s rails: HIWIN\'s M6 x 20 for the HGR25R (2017, Table 3.9, p. 35), '
+                             'through the rail\'s 13 mm under the head into the aluminium cheek, 20 thick'),
     'Cap screw M8x25': F(std='ISO 4762', d=8, L=25), 'Cap screw M8x25 nut': F(std='ISO 4762', d=8, L=25,
                                                                             why='the ball nuts\' flange screws'),
     'Cap screw M8x30': F(std='ISO 4762', d=8, L=30),
@@ -201,16 +205,20 @@ def fastener(name):
     norm = STD_TABLE.get(f['std'])
     if norm:
         Ls = commercial(norm)[str(f['d'])]
-        if f['L'] not in Ls:
-            need = f.get('h', 0) + SCREW_IN * f['d'] if 'h' in f else f['L']
+        need = f['h'] + SCREW_IN * f['d'] if 'h' in f else f['L']
+        short = 'h' in f and f['L'] <= need                  # Shigley's L > h + 1.5 d, where the joint gives h
+        if f['L'] not in Ls or short:
             nxt = shortest(Ls, need)
             if 'plate' in f and nxt - f['h'] > f['plate']:
                 return dict(full=full, status='open', source=src,
                             note='%d is not a commercial length; L > h + 1.5 d = %.0f needs %d, which would pass '
                                  'through the %.0f mm plate: the joint changes with the vacuum gripper\'s detail '
                                  '(Chapter 55)' % (f['L'], need, nxt, f['plate']))
+            why = ('%d is not a commercial length' % f['L'] if f['L'] not in Ls else
+                   'L > h + 1.5 d = %.0f: the %d leaves %.0f mm of thread, the %d leaves %.0f' %
+                   (need, f['L'], f['L'] - f['h'], nxt, nxt - f['h']))
             return dict(full='%s M%d x %d - %s - %s' % (f['std'], f['d'], nxt, cls, fin), status='changed',
-                        source=src, note='%d is not a commercial length' % f['L'])
+                        source=src, note=why)
     return dict(full=full, status='completed', source=src, note=f.get('why', ''))
 
 
@@ -236,8 +244,11 @@ OTHERS = {
     'Ballscrew 32x10 right and left': O(status='to drawing', note='as the flap actuator\'s screw'),
     'Belt HTD 350-5M-15': O(status='as named'),
     'Block HGH25CA': O(status='specified', note='the preload and accuracy classes in HIWIN\'s code are chosen with the '
-                       'clamp gripper\'s detail'),
-    'Rail HGR25': O(status='specified', note='its length and accuracy class with the blocks\''),
+                       'clamp gripper\'s and the compliance unit\'s detail'),
+    'Rail HGR25': O(status='specified', note='the clamp gripper\'s rails, 1720 long; the accuracy class with the '
+                    'blocks\''),
+    'Rail HGR25 218': O(status='specified', note='the compliance unit\'s rails, 218 long; the accuracy class with the '
+                        'blocks\''),
     'Coupling': O(status='specified', note='torque and bores from Chapter 45'),
     'Gearhead 3:1': O(status='specified', note='ratio 3, the motor\'s flange'),
     'RV-500N': O(full='Nabtesco RV-500N, ratio 192.75', status='completed', note='J2 and J3 (Chapter 42)'),
@@ -255,7 +266,8 @@ OTHERS = {
     'Servo motor with brake and 15:1 gearhead': O(status='specified'),
     # pins and keys
     'Dowel ISO 8734 5x16': O(std=('DIN_EN_ISO_8734', '5', 16)),
-    'Dowel pin 10x17': O(std=('DIN_EN_ISO_8734', '10', 17), note='8 mm in the adapter and 9 in the tool plate'),
+    'Dowel pin 10x17': O(std=('DIN_EN_ISO_8734', '10', 17), note='8 mm in the adapter or the compliance unit\'s top '
+                         'plate and 9 in the tool plate'),
     'Pin 10 robot': O(std=('DIN_EN_ISO_8734', '10', 18), note='the robot side\'s locating pin, 8 + 10 mm'),
     'Pin 12 tool': O(std=('DIN_EN_ISO_8734', '12', 24), note='the tool side\'s locating pins, 12 + 12 mm'),
     'Key DIN 6885 A 5x5x18': O(key=(5, 5, 18)), 'Key DIN 6885 A 5x5x8': O(key=(5, 5, 8)),
@@ -273,6 +285,14 @@ OTHERS = {
     'Breather': O(status='specified', note='the axle\'s breather'),
     'Rod seal': O(status='specified', note='the flap actuator\'s rod seal, with its groove (Chapter 53)'),
     'Spring': O(status='to drawing', note='music wire, made to the spring\'s specification of Chapter 46'),
+    'Spring 4 x 40': O(status='to drawing', note='music wire, made to the spring\'s specification of Chapter 48'),
+    'O-ring 20x2.5': O(status='specified', note='the compliance unit\'s tube seal in the receiver: its size, compound '
+                       'and groove to the seal maker\'s tables (Chapter 51)'),
+    'Gallery plug 8': O(status='specified', note='the compliance unit\'s galleries, drilled 8 and plugged at the '
+                        'edges: a plug that holds the air\'s 6 bar, its kind with the housing\'s detail (Chapter 55)'),
+    # motors, cylinders and vacuum: the compliance unit's sensor
+    'Sensor M12': O(status='specified', note='an M12 proximity sensor: its sensing distance on the aluminium wing, '
+                    'assumed 4 mm in Chapter 48, and its output from the maker\'s data (Chapter 55)'),
 }
 AS_NAMED_PAGES = {v for v in PAGES.values()} - {'Bearing 6206', 'Slewing ring'}
 

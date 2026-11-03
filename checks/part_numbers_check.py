@@ -1,6 +1,7 @@
 # PartNumbers (Chapter 49) against the acceptance criteria of its prompt, measured on what Fusion holds after the run:
 # the bag gripper built by its own script and numbered; every component with a body numbered, or with a bought part,
-# or one of the gripper's non-parts; one number for one kind; Chapter 49's counts; the root P13-000; a refusal.
+# or one of the gripper's non-parts; one number for one kind; Chapter 49's counts; the root P13-000; then the
+# compliance unit numbered after the eight, its new designations on the next free serials; a refusal.
 import re, sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 sys.path.insert(0, '__COMPANION__/lib')
@@ -52,5 +53,29 @@ def run(_context):
     fc.ok(len(part_of) == 2 and all(n.startswith('Piston rod') for n in part_of), 'with a cylinder: %s' % sorted(part_of))
     fc.ok(root.partNumber == 'P13-000', 'the root: %s, %s' % (root.partNumber, root.description))
     fc.ok(bool(non_parts), 'left unnumbered, not parts: %s' % sorted(set(non_parts))[:6])
+    # the compliance unit, numbered after the eight: its made parts P14, its new designations the next free serials
+    print('  ' + ns['build']('unit').splitlines()[0])
+    root = fc.design().rootComponent
+    nmap = D.number_map('unit')
+    nums, wrong = {}, []
+    for o in root.allOccurrences:
+        c = o.component
+        if not c.bRepBodies.count:
+            continue
+        kind = D.kind_of(c.name, nmap)
+        if kind is None or not SCHEME.match(c.partNumber) or c.description != nmap[kind][1]:
+            wrong.append(c.name)
+        else:
+            nums.setdefault(c.partNumber, set()).add(kind)
+    made = sorted(n for n in nums if not n.startswith('S-'))
+    new = sorted(n for n in nums if n.startswith('S-') and n > 'S-0100')
+    fc.ok(not wrong and root.partNumber == 'P14-000' and made == ['P14-%03d' % k for k in range(1, 7)]
+          and len(nums) - len(made) == 10 and new == ['S-%04d' % k for k in range(101, 107)],
+          'the compliance unit: root %s; made %s to %s; %d bought, the new ones %s to %s; wrong %s'
+          % (root.partNumber, made[0] if made else '-', made[-1] if made else '-', len(nums) - len(made),
+             new[0] if new else '-', new[-1] if new else '-', sorted(wrong)[:4]))
+    fc.ok(len(nums['S-0102']) == 2 and len(nums['S-0106']) == 1,
+          'two names, one part: %s as S-0102; the unit\'s spring S-0106, not the vacuum gripper\'s'
+          % sorted(nums['S-0102']))
     fc.refused(ns, 'No assembly', key='crane')
     fc.verdict()
