@@ -328,14 +328,14 @@ DOWEL, DOWEL_HOLE = 'm6', 'H7'                  # Wurth (n.d.), ISO 8734; the ho
 OTHER_RA = 3.2                                  # a machined surface that fits nothing: within turning's and milling's ranges
 
 
-# spherical plain bearings and rod ends, steel/steel (SKF, n.d.-c, tables 1 and 2; the seats' Rz): a pin that turns
+# spherical plain bearings and rod ends, steel/steel (SKF, n.d.-e, tables 1 and 2; the seats' Rz): a pin that turns
 # in the bore where Volume 2 drew it clear is the clearance fit on a hardened pin; any other inner ring is located by
 # interference; the outer ring's class by the housing's material
 PLAIN_SHAFT = {'interference': 'm6', 'clearance': 'h6'}
 PLAIN_HOUSING = {'aluminium': 'N7', 'steel': 'M7'}
 PLAIN_RZ = (10.0, 16.0)                       # um, shaft and housing seats (ISO 4288)
 PLAIN_HARD = 50                               # HRC, a seat the bore slides on, hardened and ground
-# angular contact thrust ball bearings for screw drives (SKF, n.d.-d, tables 1 and 2)
+# angular contact thrust ball bearings for screw drives (SKF, n.d.-f, tables 1 and 2)
 SCREW_SEATS = ('h4', 'H5')
 
 

@@ -225,18 +225,40 @@ def build(contact=128.0):
         numbers = WDET.numbers()[1]
     msg51 = MF.apply('wrist')
     front = front_bearings(root, L)
-    _last.update(L=L, numbers=numbers, front=front, mf=dict(MF._last), renamed=renamed)
+    floating = floating_bearing(root, L)
+    _last.update(L=L, numbers=numbers, front=front, floating=floating, mf=dict(MF._last), renamed=renamed)
     a = numbers
     return ('Wrist in detail: the AM8111 with its brake and the PLE040 at 15:1 drawn to their makers\' figures, each '
             'motor\'s end %.1f mm off the middle; the SNM022A-06 with its 44.5 mm flange; the collar and spacers S4 and '
             'S5 at %.0f mm; the key 5 x 5 x 10.\nMotor %.3f N m rms of %.2f rated, %.3f peak of %.2f; the stop by %.2f deg; '
-            'play at the tool %.3f mm; the wrist %.3f kg.\nFront side-gear housings %s: %d faces.\n%s\n\n[%s]'
+            'play at the tool %.3f mm; the wrist %.3f kg.\nFront side-gear housings %s: %d faces; the floating roll '
+            'bearing\'s bore %s: %d face.\n%s\n\n[%s]'
             % (a['m_end'], WDET.DETAIL_ABUT, a['motors']['rms'], WDET.MOTOR['rated'], a['motors']['peak'],
                WDET.MOTOR['peak'], a['stops']['stop_at'], a['play']['at_tool'], a['mass']['m'], FRONT_CLS, len(front),
-               msg51.split('\n')[0], VERSION))
+               FLOAT_CLS, len(floating), msg51.split('\n')[0], VERSION))
 
 
 FRONT_CLS = 'M7'      # SKF table 4: rotating outer ring load, light (P <= 0.05 C), the front 61902s (lib/wrist_detail)
+FLOAT_CLS = 'J7'      # SKF table 4: load direction indeterminate, P <= 0.1 C, axial displacement desirable: the roll
+                      # shaft's lower 6002, the floating one, whose outer ring must slide in the carrier's bore
+
+
+def floating_bearing(root, L):
+    """The carrier block's bore for the roll shaft's lower 6002 (32 across, from the carrier's underside up past the
+    bearing): J7, where Chapter 51's rule for both seats moving gave K7, which in most cases holds the ring."""
+    out = []
+    for o in root.allOccurrences:
+        if o.component.name != 'Carrier block':
+            continue
+        for b in o.bRepBodies:
+            for f in b.faces:
+                g = f.geometry
+                if isinstance(g, adsk.core.Cylinder) and abs(g.radius - 1.6) < 1e-4:
+                    bb = f.boundingBox
+                    if bb.maxPoint.z * 10 < L['B5'][1] + 1.0:
+                        f.attributes.add('mdfc', 'fit', '%s Ra 3.2' % FLOAT_CLS)
+                        out.append(f)
+    return out
 
 
 def front_bearings(root, L):

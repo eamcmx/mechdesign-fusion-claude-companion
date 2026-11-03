@@ -28,7 +28,8 @@ HARD CONSTRAINTS:
   bracket's bar and the stator's pin gone; the bracket's screw M3 x 10 through the flange and the tab.
 - The roll shaft's collar and spacers S4 and S5 18 mm across; the stop disc 71 to 82 mm, its key 5 x 5 x 10 from 72
   to 82 and renamed so, the trunnion's end at 82.
-- The front side-gear bearings' housings M7, their load being light; every other class Chapter 51's.
+- The front side-gear bearings' housings M7, their load being light; the carrier's bore for the roll shaft's lower,
+  floating 6002 J7, so that its outer ring can slide; every other class Chapter 51's.
 
 FUSION CONVENTIONS:
 - WristIntegration's own new design document and groups; nothing moved; lengths in mm, the API's cm inside.
@@ -41,6 +42,7 @@ ACCEPTANCE CRITERIA:
 - The slip ring's stator 22 across, 19.5 long, its flange 44.5 across; no pin; the bracket's screw M3 x 10.
 - The collar and S4 and S5 18 across, each 6002's shoulders inside 17 to 18.5.
 - The key 10 long, 1 mm inside the stop disc at its inner face.
-- The front side gears' two bores carry M7, every other decided face what the rules decide.
+- The front side gears' two bores carry M7, the floating roll bearing's bore J7 and the fixed one's K7, every other
+  decided face what the rules decide.
 - No interference at rest, nor at pitch -120, 0 and +120 deg with the roll turned 0, 90 and 180 deg.
 - Refused: a contact angle of 123 deg, which the brakes with the AM8111's brake do not stop short of.
