@@ -35,12 +35,13 @@ PART_OF = {'Piston rod': 'Cylinder', 'Angular contact bearing 7205': 'Fixed bear
            'Gearhead shaft': 'Motor unit'}
 # made, although the name starts like a bought part's
 MADE = ('Bearing cap', 'Bearing cap floating', 'Motor bracket', 'Slip ring bracket')
-# what is bought, by a pattern in its name; the group it belongs to
+# what is bought, by a pattern in its name; the group it belongs to, the first that matches (a ball screw and its nut
+# are transmission parts, tried before the fasteners' "screw" and "nut")
 BOUGHT = [
     (r'^[Bb]earing |^Slewing ring|^Slip ring|^Fixed bearing BK|^Supported bearing BF|^Rod end SI', 'bearings'),
+    (r'^Belt |^Ball nut|^Ball ?screw|^Rail |^Block |^Gearhead|^RV-|^Coupling$', 'transmission parts'),
     (r'screw|[Bb]olt M\d|\bnut\b|[Nn]ut M\d|stud M\d|plug M\d|^Washer( M\d|$)', 'fasteners'),
     (r'^Dowel|^Pin \d|^Key DIN|^Key \d|^Nut key', 'pins and keys'),
-    (r'^Belt |^Ball nut|^Ball ?screw|^Rail |^Block |^Gearhead|^RV-|^Coupling$', 'transmission parts'),
     (r'^Servo motor|^Motor|^Encoder$|^Sensor|^Cylinder DSBC|^Cup |^Ejector', 'motors, cylinders and vacuum'),
     (r'[Ss]eal\b|[Rr]etaining ring|^O-ring|^Breather|^Spring$', 'seals, rings and springs'),
 ]
