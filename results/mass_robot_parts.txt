@@ -1,0 +1,120 @@
+# the palletizer robot built by RangeSweep.py: every part as Fusion weighs it (tools/probe_parts.py, Fusion 2706.1.17, 3 November 2026)
+robot: total 3609.9058 kg, 118 parts
+560.7651 kg  Turret plate                                       Steel AISI 1045 225 ANLD       71435.0 cm3
+379.9400 kg  Floor plate                                        Steel AISI 1045 225 ANLD       48400.0 cm3
+262.9903 kg  Column                                             Steel AISI 1045 225 ANLD       33501.9 cm3
+224.9129 kg  Base flange                                        Steel AISI 1045 225 ANLD       28651.3 cm3
+217.5650 kg  Cheek J3 side                                      Steel AISI 1045 225 ANLD       27715.3 cm3
+192.2623 kg  Cheek J2 side                                      Steel AISI 1045 225 ANLD       24492.0 cm3
+133.9255 kg  Crank web                                          Steel AISI 1045 225 ANLD       17060.6 cm3
+122.3211 kg  Hub boss J3 side                                   Steel AISI 1045 225 ANLD       15582.3 cm3
+102.5918 kg  Hub boss J2 side                                   Steel AISI 1045 225 ANLD       13069.0 cm3
+100.0000 kg  Counterweight block                                Steel AISI 1045 225 ANLD       12738.9 cm3
+ 84.6082 kg  Rear lever                                         Steel AISI 1020 107 HR         10750.7 cm3
+ 81.7066 kg  Elbow hub                                          Steel AISI 1045 225 ANLD       10408.5 cm3
+ 63.5028 kg  Fork plate 2                                       Steel AISI 1045 225 ANLD        8089.5 cm3
+ 63.5028 kg  Fork plate 1                                       Steel AISI 1045 225 ANLD        8089.5 cm3
+ 59.5602 kg  Upper arm box                                      Steel AISI 1020 107 HR          7568.0 cm3
+ 53.0854 kg  RV-700N case J1                                    Steel                           6762.5 cm3
+ 52.8121 kg  Lower arm box                                      Steel AISI 1020 107 HR          6710.6 cm3
+ 49.8631 kg  RV-700N output J1                                  Steel                           6352.0 cm3
+ 48.5472 kg  Wrist housing                                      Steel AISI 1045 225 ANLD        6184.4 cm3
+ 41.5422 kg  J3 bracket                                         Steel AISI 1045 225 ANLD        5292.0 cm3
+ 37.0632 kg  RV-500N case J2                                    Steel                           4721.4 cm3
+ 37.0632 kg  RV-500N case J3                                    Steel                           4721.4 cm3
+ 35.0334 kg  Torque tube                                        Steel AISI 1020 107 HR          4451.5 cm3
+ 31.1333 kg  RV-500N output J3                                  Steel                           3966.0 cm3
+ 31.1333 kg  RV-500N output J2                                  Steel                           3966.0 cm3
+ 29.2948 kg  Wrist hub                                          Steel AISI 1045 225 ANLD        3731.8 cm3
+ 27.9890 kg  Slewing ring outer ring                            Steel                           3565.5 cm3
+ 26.5686 kg  Upper arm cheek 2                                  Steel AISI 1020 107 HR          3375.9 cm3
+ 26.5686 kg  Upper arm cheek 1                                  Steel AISI 1020 107 HR          3375.9 cm3
+ 26.0262 kg  Slewing ring inner ring                            Steel                           3315.4 cm3
+ 25.3414 kg  Parallel rod body                                  Steel AISI 1020 107 HR          3220.0 cm3
+ 20.9746 kg  Crank shaft                                        Steel AISI 1045 225 ANLD        2671.9 cm3
+ 18.2727 kg  J1 reducer plate                                   Steel AISI 1045 225 ANLD        2327.7 cm3
+ 18.2471 kg  Triangle plate                                     Steel AISI 1045 225 ANLD        2324.5 cm3
+ 18.1336 kg  J2 support housing                                 Steel AISI 1045 225 ANLD        2310.0 cm3
+ 18.0775 kg  RV-80N case J4                                     Steel                           2302.9 cm3
+ 17.6071 kg  Servo motor J3                                     Aluminum                        6521.2 cm3
+ 17.6071 kg  Servo motor J2                                     Aluminum                        6521.2 cm3
+ 15.3106 kg  Servo motor J1                                     Aluminum                        5670.6 cm3
+ 14.5852 kg  H plate                                            Steel AISI 1045 225 ANLD        1858.0 cm3
+ 13.0349 kg  E bracket                                          Steel AISI 1045 225 ANLD        1660.5 cm3
+ 12.5920 kg  Yoke bulkhead                                      Steel AISI 1020 107 HR          1600.0 cm3
+ 11.5601 kg  Tool flange                                        Steel AISI 1045 225 ANLD        1472.6 cm3
+ 10.8349 kg  Elbow pin                                          Steel AISI 1045 225 ANLD        1380.2 cm3
+  8.9725 kg  Bearing 61856 MA lower arm                         Steel                           1143.0 cm3
+  8.8566 kg  Wrist pin                                          Steel AISI 1045 225 ANLD        1128.2 cm3
+  8.8389 kg  Levelling rod 2 body                               Steel AISI 1020 107 HR          1123.1 cm3
+  8.1590 kg  Levelling rod 1 body                               Steel AISI 1020 107 HR          1036.7 cm3
+  8.0002 kg  Front fork cheek 2                                 Steel AISI 1020 107 HR          1016.5 cm3
+  8.0002 kg  Front fork cheek 1                                 Steel AISI 1020 107 HR          1016.5 cm3
+  7.2505 kg  Coupling disc 2                                    Steel AISI 1045 225 ANLD         923.6 cm3
+  7.2505 kg  Coupling disc 1                                    Steel AISI 1045 225 ANLD         923.6 cm3
+  7.1675 kg  Servo motor J4                                     Aluminum                        2654.6 cm3
+  6.5158 kg  Slewing ring balls                                 Steel                            830.0 cm3
+  5.6546 kg  Balancer barrel 1                                  Steel AISI 1045 225 ANLD         720.3 cm3
+  5.6546 kg  Balancer barrel 2                                  Steel AISI 1045 225 ANLD         720.3 cm3
+  4.4294 kg  Balancer rod 2                                     Steel AISI 1045 225 ANLD         564.3 cm3
+  4.4294 kg  Balancer rod 1                                     Steel AISI 1045 225 ANLD         564.3 cm3
+  4.2418 kg  Gas bottle 2                                       Steel AISI 1045 225 ANLD         540.4 cm3
+  4.2418 kg  Gas bottle 1                                       Steel AISI 1045 225 ANLD         540.4 cm3
+  3.7473 kg  Parallel rod end 2 eye                             Steel AISI 1045 225 ANLD         477.4 cm3
+  3.7473 kg  Parallel rod end 1 eye                             Steel AISI 1045 225 ANLD         477.4 cm3
+  3.6992 kg  J3 bracket post 2                                  Steel AISI 1045 225 ANLD         471.2 cm3
+  3.6992 kg  J3 bracket post 1                                  Steel AISI 1045 225 ANLD         471.2 cm3
+  3.6738 kg  J1 stop                                            Steel AISI 1045 225 ANLD         468.0 cm3
+  3.4403 kg  J3 support housing                                 Steel AISI 1045 225 ANLD         438.3 cm3
+  2.9520 kg  Coupling spacer                                    Steel AISI 1045 225 ANLD         376.0 cm3
+  2.4720 kg  Bearing 61836 crank                                Steel                            314.9 cm3
+  2.0545 kg  Bearing 32213 elbow 2                              Steel                            261.7 cm3
+  2.0545 kg  Bearing 32213 elbow 1                              Steel                            261.7 cm3
+  2.0545 kg  Bearing 32213 wrist 2                              Steel                            261.7 cm3
+  2.0545 kg  Bearing 32213 wrist 1                              Steel                            261.7 cm3
+  1.9447 kg  Bearing 22213 E Parallel rod end 2                 Steel                            247.7 cm3
+  1.9447 kg  Bearing 22213 E Parallel rod end 1                 Steel                            247.7 cm3
+  1.6647 kg  Balancer cross pin Q                               Steel AISI 1045 225 ANLD         212.1 cm3
+  1.6457 kg  Pin D                                              Steel AISI 1045 225 ANLD         209.6 cm3
+  1.6457 kg  Pin C                                              Steel AISI 1045 225 ANLD         209.6 cm3
+  1.4363 kg  RV-80N output J4                                   Steel                            183.0 cm3
+  1.3872 kg  Balancer pin P                                     Steel AISI 1045 225 ANLD         176.7 cm3
+  1.2375 kg  Levelling rod 2 end 2 eye                          Steel AISI 1045 225 ANLD         157.6 cm3
+  1.2375 kg  Levelling rod 1 end 2 eye                          Steel AISI 1045 225 ANLD         157.6 cm3
+  1.2375 kg  Levelling rod 2 end 1 eye                          Steel AISI 1045 225 ANLD         157.6 cm3
+  1.2375 kg  Levelling rod 1 end 1 eye                          Steel AISI 1045 225 ANLD         157.6 cm3
+  1.2331 kg  Counterweight standoff 4                           Steel AISI 1045 225 ANLD         157.1 cm3
+  1.2331 kg  Counterweight standoff 3                           Steel AISI 1045 225 ANLD         157.1 cm3
+  1.2331 kg  Counterweight standoff 2                           Steel AISI 1045 225 ANLD         157.1 cm3
+  1.2331 kg  Counterweight standoff 1                           Steel AISI 1045 225 ANLD         157.1 cm3
+  0.8679 kg  Balancer lug 2                                     Steel AISI 1045 225 ANLD         110.6 cm3
+  0.8478 kg  J1 stop dog                                        Steel AISI 1045 225 ANLD         108.0 cm3
+  0.7232 kg  Balancer lug 3                                     Steel AISI 1045 225 ANLD          92.1 cm3
+  0.7232 kg  Balancer lug 1                                     Steel AISI 1045 225 ANLD          92.1 cm3
+  0.5614 kg  Bearing 22207 E Levelling rod 1 end 2              Steel                             71.5 cm3
+  0.5614 kg  Bearing 22207 E Levelling rod 1 end 1              Steel                             71.5 cm3
+  0.5614 kg  Bearing 22207 E triangle                           Steel                             71.5 cm3
+  0.5614 kg  Bearing 22207 E Levelling rod 2 end 1              Steel                             71.5 cm3
+  0.5614 kg  Bearing 22207 E Levelling rod 2 end 2              Steel                             71.5 cm3
+  0.4315 kg  Pin F                                              Steel AISI 1045 225 ANLD          55.0 cm3
+  0.4315 kg  Pin H                                              Steel AISI 1045 225 ANLD          55.0 cm3
+  0.4315 kg  Pin G                                              Steel AISI 1045 225 ANLD          55.0 cm3
+  0.4315 kg  Pin E                                              Steel AISI 1045 225 ANLD          55.0 cm3
+  0.2766 kg  End washer pin D                                   Steel                             35.2 cm3
+  0.2766 kg  End washer pin C                                   Steel                             35.2 cm3
+  0.1094 kg  Circlip DIN 472 120x4 Parallel rod end 2           Steel                             13.9 cm3
+  0.1094 kg  Circlip DIN 472 120x4 Parallel rod end 1           Steel                             13.9 cm3
+  0.0654 kg  End washer pin E                                   Steel                              8.3 cm3
+  0.0654 kg  End washer pin H                                   Steel                              8.3 cm3
+  0.0654 kg  End washer pin G                                   Steel                              8.3 cm3
+  0.0654 kg  End washer pin F                                   Steel                              8.3 cm3
+  0.0467 kg  Cap screw M12x30 pin D                             Steel                              5.9 cm3
+  0.0467 kg  Cap screw M12x30 pin C                             Steel                              5.9 cm3
+  0.0271 kg  Circlip DIN 472 72x2.5 Levelling rod 2 end 2       Steel                              3.4 cm3
+  0.0271 kg  Circlip DIN 472 72x2.5 Levelling rod 2 end 1       Steel                              3.4 cm3
+  0.0271 kg  Circlip DIN 472 72x2.5 Levelling rod 1 end 2       Steel                              3.4 cm3
+  0.0271 kg  Circlip DIN 472 72x2.5 Levelling rod 1 end 1       Steel                              3.4 cm3
+  0.0138 kg  Cap screw M8x20 pin G                              Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 pin F                              Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 pin H                              Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 pin E                              Steel                              1.8 cm3

@@ -1,0 +1,33 @@
+# controls/mass_properties_axis
+# Autodesk Fusion 2706.1.17, run 2026-11-03 19:33, 846 s
+
+MassProperties 1.1 (2026-11-03)
+  ok   Run opens the dialog
+Weighed: the robot, 118 parts, 3609.91 kg, centre (193.9, 98.7, 924.3) mm; 14 groups.
+Palletizer in detail: the robot, built by PalletizerRobot; then Chapter 51's materials and fits, and by hand 12 faces (6 new) and 9 descriptions.
+
+[MassProperties 1.1 (2026-11-03)]
+  OK pressed, built in 32 s
+  ok   a new design opened
+  ok   the robot: 118 parts, 3609.906 kg, its 14 groups 3609.906 kg; centre (193.9, 98.7, 924.3) mm
+  ok   the robot's moving bodies in Chapter 43's form: ['turret 1281.8', 'lower arm 530.1', 'crank and counterweight 292.9', 'parallel rod 36.9', 'levelling rod 1 11.8', 'triangle 19.8', 'upper arm 271.1', 'levelling rod 2 12.5', 'wrist housing 127.0', 'tool flange 13.0', 'balancer 20.2']
+  FAIL each body within 10 % of the concept's mass and moments of inertia; the most changed: ['tool flange Izz +51477.1 %', 'wrist housing Izz +13026.7 %', 'crank and counterweight Ia +9050.5 %']
+  Weighed: the wrist, 97 parts, 7.36 kg, centre (0.0, 1.2, -74.3) mm; 7 groups.
+  ok   the wrist: 97 parts, 7.357 kg, its 7 groups 7.357 kg; centre (0.0, 1.2, -74.3) mm
+  Weighed: the flap, 87 parts, 339.82 kg, centre (0.0, 81.3, 11.2) mm; 3 groups.
+  ok   the flap: 87 parts, 339.817 kg, its 3 groups 339.817 kg; centre (0.0, 81.3, 11.2) mm
+  Weighed: the axle, 106 parts, 162.65 kg, centre (34.9, -3.7, 1.9) mm; 6 groups.
+  ok   the axle: 106 parts, 162.647 kg, its 6 groups 162.647 kg; centre (34.9, -3.7, 1.9) mm
+  Weighed: the bag, 138 parts, 323.50 kg, centre (0.0, 0.0, -394.2) mm; 11 groups.
+  ok   the bag: 138 parts, 323.499 kg, its 11 groups 323.499 kg; centre (0.0, 0.0, -394.2) mm
+  Weighed: the clamp, 59 parts, 286.34 kg, centre (-34.7, 0.0, -334.6) mm; 6 groups.
+  ok   the clamp: 59 parts, 286.341 kg, its 6 groups 286.341 kg; centre (-34.7, 0.0, -334.6) mm
+  Weighed: the vacuum, 355 parts, 325.90 kg, centre (0.0, 0.0, -347.9) mm; 9 groups.
+  ok   the vacuum: 355 parts, 325.904 kg, its 9 groups 325.904 kg; centre (0.0, 0.0, -347.9) mm
+  Weighed: the changer, 21 parts, 28.93 kg, centre (-0.0, 0.0, -41.7) mm; 10 groups.
+  ok   the changer: 21 parts, 28.930 kg, its 10 groups 28.930 kg; centre (-0.0, 0.0, -41.7) mm
+  Weighed: the unit, 53 parts, 19.84 kg, centre (0.2, 0.2, -126.6) mm; 2 groups.
+  ok   the unit: 53 parts, 19.842 kg, its 2 groups 19.842 kg; centre (0.1, 0.2, -126.6) mm
+  ok   refused: No machine called crane: Chapter 57 weighs robot, wrist, flap, axle, bag, clamp, vacuum, changer, unit.
+1 FAILED
+CONTROL: the moments of inertia left about the origin; the bodies' inertia line above MUST fail, and it alone

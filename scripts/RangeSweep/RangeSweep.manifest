@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 56: builds one of Part 9's detailed assemblies, the bag gripper with or without its stops, and sweeps it over its whole range of motion, reporting every interference, the contacts made in motion and the small gaps left."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "RangeSweep"
+}

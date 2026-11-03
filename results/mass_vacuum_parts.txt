@@ -1,0 +1,357 @@
+# the vacuum gripper with its cartons, built by RangeSweep.py: every part as Fusion weighs it (tools/probe_parts.py, Fusion 2706.1.17, 3 November 2026)
+vacuum: total 325.9038 kg, 355 parts
+ 44.6400 kg  Carton 6                                           Paper                          48000.0 cm3
+ 44.6400 kg  Carton 5                                           Paper                          48000.0 cm3
+ 44.6400 kg  Carton 4                                           Paper                          48000.0 cm3
+ 44.6400 kg  Carton 3                                           Paper                          48000.0 cm3
+ 44.6400 kg  Carton 2                                           Paper                          48000.0 cm3
+ 44.6400 kg  Carton 1                                           Paper                          48000.0 cm3
+ 27.8448 kg  Plate                                              Aluminum 6061                  10312.9 cm3
+  4.9938 kg  Beam 2                                             Aluminum 6061                   1849.5 cm3
+  4.9938 kg  Beam 1                                             Aluminum 6061                   1849.5 cm3
+  1.4675 kg  Adapter plate                                      Aluminum 6061                    543.5 cm3
+  0.9720 kg  Manifold 6                                         Aluminum 6061                    360.0 cm3
+  0.9720 kg  Manifold 5                                         Aluminum 6061                    360.0 cm3
+  0.9720 kg  Manifold 4                                         Aluminum 6061                    360.0 cm3
+  0.9720 kg  Manifold 3                                         Aluminum 6061                    360.0 cm3
+  0.9720 kg  Manifold 2                                         Aluminum 6061                    360.0 cm3
+  0.9720 kg  Manifold 1                                         Aluminum 6061                    360.0 cm3
+  0.1757 kg  Ejector SCPSi 2-14 9                               ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 4                               ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 3                               ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 10                              ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 8                               ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 7                               ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 6                               ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 5                               ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 2                               ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 12                              ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 11                              ABS Plastic                      165.7 cm3
+  0.1757 kg  Ejector SCPSi 2-14 1                               ABS Plastic                      165.7 cm3
+  0.1192 kg  Plunger 6-4                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 4-6                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 3-1                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 1-3                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 6-1                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 5-6                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 5-4                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 4-3                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 3-4                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 2-3                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 2-1                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 1-6                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 5-5                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 2-2                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 5-2                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 2-5                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 5-3                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 5-1                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 2-6                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 2-4                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 6-6                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 6-5                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 4-5                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 4-4                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 3-3                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 3-2                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 1-2                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 1-1                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 6-3                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 6-2                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 4-2                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 4-1                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 3-6                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 3-5                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 1-5                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.1192 kg  Plunger 1-4                                        Steel AISI 1045 225 ANLD          15.2 cm3
+  0.0819 kg  Sleeve 34                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 3                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 24                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 13                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 9                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 8                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 7                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 36                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 35                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 30                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 29                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 28                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 23                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 22                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 2                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 15                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 14                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 1                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 6                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 5                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 4                                           Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 33                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 32                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 31                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 26                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 21                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 20                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 19                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 18                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 17                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 16                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 11                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 27                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 25                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 12                                          Aluminum 6061                     30.3 cm3
+  0.0819 kg  Sleeve 10                                          Aluminum 6061                     30.3 cm3
+  0.0711 kg  Cup SPB1 80 6-4                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 6-1                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 4-6                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 4-3                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 3-4                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 3-1                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 1-6                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 1-3                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 5-6                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 5-5                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 5-2                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 2-5                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 2-3                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 2-2                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 5-4                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 5-3                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 5-1                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 2-6                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 2-4                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 2-1                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 6-6                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 6-5                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 6-3                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 6-2                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 4-5                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 4-4                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 4-2                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 4-1                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 3-6                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 3-5                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 3-3                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 3-2                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 1-5                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 1-4                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 1-2                                    Rubber                            76.5 cm3
+  0.0711 kg  Cup SPB1 80 1-1                                    Rubber                            76.5 cm3
+  0.0270 kg  Cap screw M10x25 6                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 5                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 4                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 3                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 1                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 2                                 Steel                              3.4 cm3
+  0.0138 kg  Cap screw M8x20 4                                  Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 3                                  Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 2                                  Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 1                                  Steel                              1.8 cm3
+  0.0112 kg  Spring 36                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 22                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 33                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 15                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 19                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 18                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 1                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 23                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 4                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 29                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 24                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 20                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 28                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 2                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 30                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 26                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 8                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 21                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 5                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 34                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 3                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 25                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 11                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 7                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 6                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 27                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 9                                           Steel                              1.4 cm3
+  0.0112 kg  Spring 10                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 31                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 13                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 12                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 16                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 35                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 32                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 14                                          Steel                              1.4 cm3
+  0.0112 kg  Spring 17                                          Steel                              1.4 cm3
+  0.0105 kg  Dowel pin 10x17                                    Steel                              1.3 cm3
+  0.0081 kg  Cap screw M6x25 9                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 8                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 7                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 2                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 16                                 Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 15                                 Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 10                                 Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 1                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 5                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 4                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 13                                 Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 12                                 Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 6                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 3                                  Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 14                                 Steel                              1.0 cm3
+  0.0081 kg  Cap screw M6x25 11                                 Steel                              1.0 cm3
+  0.0019 kg  Cap screw M4x12 s26 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s26 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s11 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s9 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s9 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s9 1                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s8 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s8 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s8 1                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s7 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s7 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s7 1                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s6 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s6 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s6 1                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s5 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s5 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s5 1                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s4 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s4 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s4 1                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s36 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s36 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s36 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s35 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s35 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s35 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s34 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s34 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s34 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s33 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s33 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s33 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s32 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s32 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s32 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s31 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s31 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s31 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s30 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s30 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s30 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s3 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s3 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s3 1                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s29 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s29 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s29 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s28 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s28 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s28 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s27 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s27 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s27 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s26 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s25 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s25 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s25 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s24 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s24 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s24 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s23 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s23 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s23 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s22 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s22 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s22 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s21 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s21 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s21 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s20 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s20 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s20 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s2 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s2 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s2 1                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s19 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s19 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s19 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s18 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s18 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s18 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s17 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s17 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s17 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s16 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s16 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s16 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s15 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s15 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s15 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s14 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s14 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s14 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s13 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s13 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s13 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s12 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s12 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s12 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s11 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s11 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s10 3                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s10 2                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s10 1                              Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s1 3                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s1 2                               Steel                              0.2 cm3
+  0.0019 kg  Cap screw M4x12 s1 1                               Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 6                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 3                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 14                                 Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 11                                 Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 9                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 8                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 7                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 2                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 16                                 Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 15                                 Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 10                                 Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 1                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 5                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 4                                  Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 13                                 Steel                              0.2 cm3
+  0.0017 kg  Nut ISO 4032 M6 12                                 Steel                              0.2 cm3
+  0.0010 kg  Washer ISO 7089 6 head 9                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 8                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 7                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 2                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 16                          Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 15                          Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 10                          Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 1                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 6                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 3                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 14                          Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 11                          Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 5                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 4                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 13                          Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 head 12                          Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 9                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 8                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 7                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 2                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 16                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 15                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 10                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 1                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 6                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 3                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 14                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 11                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 5                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 4                            Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 13                           Steel                              0.1 cm3
+  0.0010 kg  Washer ISO 7089 6 nut 12                           Steel                              0.1 cm3

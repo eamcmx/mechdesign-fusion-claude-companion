@@ -1,0 +1,35 @@
+# controls/stack_gaps_pin
+# Autodesk Fusion 2706.1.17, run 2026-11-03 20:13, 358 s
+
+StackGaps 1.1 (2026-11-03)
+  ok   Run opens the dialog
+Stack gaps: 6 measured.
+unit: Cap screw M10x25 2 / Carriage (1) 0.707 mm along (0.71, 0.00, -0.71)
+flap: Rod end SI 20 ES / Horn pin 0.010 mm along (0.00, 1.00, -0.00)
+wrist: Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm along (-0.00, -1.00, 0.00)
+changer: Cam / Tool plate ISO 9409-1-160-6-M10 1.500 mm along (0.00, 0.00, -1.00)
+axle_casting: Crown wheel bolt M12x35 1 / Carrier casting 1.000 mm along (0.00, -1.00, 0.00)
+axle_cap: Crown wheel bolt M12x35 4 / Bearing cap C1 1.000 mm along (0.00, -1.00, 0.00)
+
+[StackGaps 1.1 (2026-11-03)]
+  OK pressed, built in 357 s
+  ok   a new design opened
+  ok   the unit: Cap screw M10x25 2 / Carriage (1) 0.707 mm at ('float', 30.0), as the sweep found, along (0.707, 0.000, -0.707) from (-72.5, 0.0, -19.5)
+       at ('float', 27.0): 3.536 mm, Cap screw M10x25 2 / Carriage (1)
+  FAIL the flap: Rod end SI 20 ES / Horn pin 0.010 mm at ('deflection', 40.0), as the sweep found, along (0.000, 1.000, -0.003) from (-8.0, 31.0, 112.8)
+       at ('deflection', 38.0): 0.010 mm, Rod end SI 20 ES / Horn pin
+       at ('deflection', 36.0): 0.010 mm, Rod end SI 20 ES / Horn pin
+       at ('deflection', 43.55): 0.000 mm, Rod end SI 20 ES / Horn pin
+  ok   the wrist: Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at ('pitch', (24.0, 0.0)), as the sweep found, along (-0.000, -1.000, 0.000) from (8.8, 71.0, 11.9)
+       at ('pitch', (32.0, 0.0)): 1.000 mm, Stop disc / Countersunk screw ISO 10642 M4x12
+       at ('pitch', (112.0, 0.0)): 1.000 mm, Stop disc / Countersunk screw ISO 10642 M4x12
+  ok   the changer: Cam / Tool plate ISO 9409-1-160-6-M10 1.500 mm at ('lock', (True, 0.0)), as the sweep found, along (0.000, 0.000, -1.000) from (47.2, 0.0, -94.5)
+       at ('lock', (False, 0.0)): 16.412 mm, Cam / Tool plate ISO 9409-1-160-6-M10
+  ok   the axle_casting: Crown wheel bolt M12x35 1 / Carrier casting 1.000 mm at ('straight', (0.0, 0.0)), as the sweep found, along (0.000, -1.000, 0.000) from (83.3, -81.0, 28.7)
+       at ('straight', (15.0, 0.0)): 1.000 mm, Crown wheel bolt M12x35 1 / Carrier casting
+       at ('turning', (0.0, 2.5)): 1.000 mm, Crown wheel bolt M12x35 1 / Carrier casting
+  ok   the axle_cap: Crown wheel bolt M12x35 4 / Bearing cap C1 1.000 mm at ('turning', (30.0, 2.5)), as the sweep found, along (0.000, -1.000, 0.000) from (-38.3, -81.0, 75.0)
+       at ('straight', (30.0, 0.0)): 1.000 mm, Crown wheel bolt M12x35 4 / Bearing cap C1
+  ok   refused: No gap called crane: Chapter 61 measures unit, flap, wrist, changer, axle_casting, axle_cap.
+1 FAILED
+CONTROL: the horn's pin measured with the horn; the flap's line above MUST fail, and it alone

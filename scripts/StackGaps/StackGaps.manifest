@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 61: measures the small gaps Chapter 56's sweep found, each at its closest approach and in the states either side, with its direction, for the tolerance stack-ups."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "StackGaps"
+}

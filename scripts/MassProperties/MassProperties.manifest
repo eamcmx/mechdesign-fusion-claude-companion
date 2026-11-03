@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 57: builds one of Part 9's detailed assemblies and weighs it: every group's mass, centre and moments of inertia about its centre, and for the robot its eleven moving bodies in the form Chapter 43's cycle reads."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "MassProperties"
+}

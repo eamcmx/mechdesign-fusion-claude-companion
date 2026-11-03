@@ -1,0 +1,140 @@
+# the bag gripper with its stops, its bag and the pick-up station, built by RangeSweep.py: every part as Fusion weighs it (tools/probe_parts.py, Fusion 2706.1.17, 3 November 2026)
+bag: total 323.4988 kg, 138 parts
+ 59.5200 kg  Bag (1)                                            Paper                          64000.0 cm3
+ 18.6441 kg  Roller 9                                           Steel                           2375.0 cm3
+ 18.6441 kg  Roller 8                                           Steel                           2375.0 cm3
+ 18.6441 kg  Roller 7                                           Steel                           2375.0 cm3
+ 18.6441 kg  Roller 3                                           Steel                           2375.0 cm3
+ 18.6441 kg  Roller 2                                           Steel                           2375.0 cm3
+ 18.6441 kg  Roller 1                                           Steel                           2375.0 cm3
+ 18.6441 kg  Roller 6                                           Steel                           2375.0 cm3
+ 18.6441 kg  Roller 5                                           Steel                           2375.0 cm3
+ 18.6441 kg  Roller 4                                           Steel                           2375.0 cm3
+  9.1149 kg  End plate 2                                        Aluminum 6061                   3375.9 cm3
+  9.1149 kg  End plate 1                                        Aluminum 6061                   3375.9 cm3
+  7.5600 kg  Press plate                                        Aluminum 6061                   2800.0 cm3
+  6.5453 kg  Beam                                               Aluminum 6061                   2424.2 cm3
+  5.7117 kg  Tube A                                             Steel AISI 1020 107 HR           725.8 cm3
+  5.7117 kg  Tube B                                             Steel AISI 1020 107 HR           725.8 cm3
+  5.0138 kg  Cylinder DSBC-80-125-C B                           Aluminum                        1857.0 cm3
+  5.0138 kg  Cylinder DSBC-80-125-C A                           Aluminum                        1857.0 cm3
+  2.1597 kg  Bracket 2                                          Steel AISI 1045 225 ANLD         275.1 cm3
+  2.1597 kg  Bracket 1                                          Steel AISI 1045 225 ANLD         275.1 cm3
+  1.4665 kg  Adapter plate                                      Aluminum 6061                    543.1 cm3
+  1.3850 kg  Lever B                                            Steel AISI 1045 225 ANLD         176.4 cm3
+  1.3850 kg  Lever A                                            Steel AISI 1045 225 ANLD         176.4 cm3
+  1.1372 kg  Stop bracket closed 1                              Steel AISI 1045 225 ANLD         144.9 cm3
+  1.1372 kg  Stop bracket closed 2                              Steel AISI 1045 225 ANLD         144.9 cm3
+  1.0463 kg  End block 2                                        Aluminum 6061                    387.5 cm3
+  1.0463 kg  End block 1                                        Aluminum 6061                    387.5 cm3
+  0.9936 kg  Tine 8 B                                           Steel AISI 1020 107 HR           126.3 cm3
+  0.9936 kg  Tine 1 B                                           Steel AISI 1020 107 HR           126.3 cm3
+  0.9936 kg  Tine 8 A                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 7 B                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 7 A                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 6 B                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 6 A                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 5 A                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 4 A                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 3 B                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 3 A                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 2 B                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 2 A                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 1 A                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 5 B                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.9936 kg  Tine 4 B                                           Steel AISI 1020 107 HR           126.2 cm3
+  0.8936 kg  Shock absorber DYSC-25-25-Y1F open 1               Steel                            113.8 cm3
+  0.8936 kg  Shock absorber DYSC-25-25-Y1F open 2               Steel                            113.8 cm3
+  0.8936 kg  Shock absorber DYSC-25-25-Y1F closed 2             Steel                            113.8 cm3
+  0.8936 kg  Shock absorber DYSC-25-25-Y1F closed 1             Steel                            113.8 cm3
+  0.7803 kg  Stop bracket open 2                                Steel AISI 1045 225 ANLD          99.4 cm3
+  0.7803 kg  Stop bracket open 1                                Steel AISI 1045 225 ANLD          99.4 cm3
+  0.7675 kg  Stub shaft long A                                  Steel AISI 1020 107 HR            97.5 cm3
+  0.7675 kg  Stub shaft long B                                  Steel AISI 1020 107 HR            97.5 cm3
+  0.7653 kg  Cylinder DSBC-32-50 2                              Aluminum                         283.5 cm3
+  0.7653 kg  Cylinder DSBC-32-50 1                              Aluminum                         283.5 cm3
+  0.7337 kg  Piston rod A                                       Steel                             93.5 cm3
+  0.7337 kg  Piston rod B                                       Steel                             93.5 cm3
+  0.4895 kg  Stub shaft short B                                 Steel AISI 1020 107 HR            62.2 cm3
+  0.4895 kg  Stub shaft short A                                 Steel AISI 1020 107 HR            62.2 cm3
+  0.2824 kg  Bearing 6206 4                                     Steel                             36.0 cm3
+  0.2824 kg  Bearing 6206 3                                     Steel                             36.0 cm3
+  0.2824 kg  Bearing 6206 2                                     Steel                             36.0 cm3
+  0.2824 kg  Bearing 6206 1                                     Steel                             36.0 cm3
+  0.2497 kg  Rod end B                                          Steel AISI 1045 225 ANLD          31.8 cm3
+  0.2497 kg  Rod end A                                          Steel AISI 1045 225 ANLD          31.8 cm3
+  0.0675 kg  Press rod 2                                        Steel AISI 1045 225 ANLD           8.6 cm3
+  0.0675 kg  Press rod 1                                        Steel AISI 1045 225 ANLD           8.6 cm3
+  0.0659 kg  Spacer B                                           Steel AISI 1045 225 ANLD           8.4 cm3
+  0.0659 kg  Spacer A                                           Steel AISI 1045 225 ANLD           8.4 cm3
+  0.0468 kg  End washer B                                       Steel AISI 1045 225 ANLD           6.0 cm3
+  0.0468 kg  End washer A                                       Steel AISI 1045 225 ANLD           6.0 cm3
+  0.0270 kg  Cap screw M10x25 6                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 5                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 4                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 3                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 1                                 Steel                              3.4 cm3
+  0.0270 kg  Cap screw M10x25 2                                 Steel                              3.4 cm3
+  0.0244 kg  Lock nut DYSC-25-25-Y1F closed 1                   Steel                              3.1 cm3
+  0.0244 kg  Lock nut DYSC-25-25-Y1F closed 2                   Steel                              3.1 cm3
+  0.0244 kg  Lock nut DYSC-25-25-Y1F open 1                     Steel                              3.1 cm3
+  0.0244 kg  Lock nut DYSC-25-25-Y1F open 2                     Steel                              3.1 cm3
+  0.0217 kg  Cap screw ISO 4762 M8x40 stop 7                    Steel                              2.8 cm3
+  0.0217 kg  Cap screw ISO 4762 M8x40 stop 8                    Steel                              2.8 cm3
+  0.0217 kg  Cap screw ISO 4762 M8x40 stop 6                    Steel                              2.8 cm3
+  0.0217 kg  Cap screw ISO 4762 M8x40 stop 5                    Steel                              2.8 cm3
+  0.0217 kg  Cap screw ISO 4762 M8x40 stop 3                    Steel                              2.8 cm3
+  0.0217 kg  Cap screw ISO 4762 M8x40 stop 1                    Steel                              2.8 cm3
+  0.0217 kg  Cap screw ISO 4762 M8x40 stop 2                    Steel                              2.8 cm3
+  0.0217 kg  Cap screw ISO 4762 M8x40 stop 4                    Steel                              2.8 cm3
+  0.0192 kg  Fillet weld long A                                 Steel AISI 1020 107 HR             2.4 cm3
+  0.0192 kg  Fillet weld short A                                Steel AISI 1020 107 HR             2.4 cm3
+  0.0192 kg  Fillet weld long B                                 Steel AISI 1020 107 HR             2.4 cm3
+  0.0192 kg  Fillet weld short B                                Steel AISI 1020 107 HR             2.4 cm3
+  0.0178 kg  Cap screw M8x30 4                                  Steel                              2.3 cm3
+  0.0178 kg  Cap screw M8x30 3                                  Steel                              2.3 cm3
+  0.0178 kg  Cap screw M8x30 2                                  Steel                              2.3 cm3
+  0.0178 kg  Cap screw M8x30 1                                  Steel                              2.3 cm3
+  0.0178 kg  Cap screw M8x30 8                                  Steel                              2.3 cm3
+  0.0178 kg  Cap screw M8x30 7                                  Steel                              2.3 cm3
+  0.0178 kg  Cap screw M8x30 6                                  Steel                              2.3 cm3
+  0.0178 kg  Cap screw M8x30 5                                  Steel                              2.3 cm3
+  0.0161 kg  Circlip DIN 472 62x2 4                             Steel                              2.1 cm3
+  0.0161 kg  Circlip DIN 472 62x2 3                             Steel                              2.1 cm3
+  0.0161 kg  Circlip DIN 472 62x2 2                             Steel                              2.1 cm3
+  0.0161 kg  Circlip DIN 472 62x2 1                             Steel                              2.1 cm3
+  0.0138 kg  Cap screw M8x20 B                                  Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 A                                  Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 4                                  Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 3                                  Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 2                                  Steel                              1.8 cm3
+  0.0138 kg  Cap screw M8x20 1                                  Steel                              1.8 cm3
+  0.0136 kg  Dowel pin 10x17                                    Steel                              1.7 cm3
+  0.0102 kg  Key 8x7x25 B                                       Steel                              1.3 cm3
+  0.0102 kg  Key 8x7x25 A                                       Steel                              1.3 cm3
+  0.0061 kg  Cap screw M6x16 8                                  Steel                              0.8 cm3
+  0.0061 kg  Cap screw M6x16 7                                  Steel                              0.8 cm3
+  0.0061 kg  Cap screw M6x16 6                                  Steel                              0.8 cm3
+  0.0061 kg  Cap screw M6x16 5                                  Steel                              0.8 cm3
+  0.0061 kg  Cap screw M6x16 4                                  Steel                              0.8 cm3
+  0.0061 kg  Cap screw M6x16 3                                  Steel                              0.8 cm3
+  0.0061 kg  Cap screw M6x16 2                                  Steel                              0.8 cm3
+  0.0061 kg  Cap screw M6x16 1                                  Steel                              0.8 cm3
+  0.0042 kg  Nut ISO 4032 M8 stop 8                             Steel                              0.5 cm3
+  0.0042 kg  Nut ISO 4032 M8 stop 6                             Steel                              0.5 cm3
+  0.0042 kg  Nut ISO 4032 M8 stop 4                             Steel                              0.5 cm3
+  0.0042 kg  Nut ISO 4032 M8 stop 2                             Steel                              0.5 cm3
+  0.0042 kg  Nut ISO 4032 M8 stop 5                             Steel                              0.5 cm3
+  0.0042 kg  Nut ISO 4032 M8 stop 1                             Steel                              0.5 cm3
+  0.0042 kg  Nut ISO 4032 M8 stop 7                             Steel                              0.5 cm3
+  0.0042 kg  Nut ISO 4032 M8 stop 3                             Steel                              0.5 cm3
+  0.0042 kg  Circlip DIN 471 30x1.5 B                           Steel                              0.5 cm3
+  0.0042 kg  Circlip DIN 471 30x1.5 A                           Steel                              0.5 cm3
+  0.0018 kg  Washer ISO 7089 8 stop 6                           Steel                              0.2 cm3
+  0.0018 kg  Washer ISO 7089 8 stop 5                           Steel                              0.2 cm3
+  0.0018 kg  Washer ISO 7089 8 stop 2                           Steel                              0.2 cm3
+  0.0018 kg  Washer ISO 7089 8 stop 1                           Steel                              0.2 cm3
+  0.0018 kg  Washer ISO 7089 8 stop 7                           Steel                              0.2 cm3
+  0.0018 kg  Washer ISO 7089 8 stop 3                           Steel                              0.2 cm3
+  0.0018 kg  Washer ISO 7089 8 stop 8                           Steel                              0.2 cm3
+  0.0018 kg  Washer ISO 7089 8 stop 4                           Steel                              0.2 cm3

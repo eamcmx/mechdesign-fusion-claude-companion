@@ -1,0 +1,27 @@
+# the wrist built by RangeSweep.py, its 25 heaviest parts as Fusion weighs them (Fusion 2706.1.17, 3 November 2026)
+total 7.3575 kg, 97 parts
+  1.9252 kg  Servo motor with brake and 15:1 gearhead           ABS Plastic, Aluminum 6061,      319.9 cm3
+  1.9252 kg  Servo motor with brake and 15:1 gearhead           ABS Plastic, Aluminum 6061,      319.9 cm3
+  0.5259 kg  Base plate                                         Aluminum 6061                    194.8 cm3
+  0.3674 kg  Side cheek                                         Aluminum 6061                    136.1 cm3
+  0.3674 kg  Side cheek                                         Aluminum 6061                    136.1 cm3
+  0.3661 kg  Side bevel gear with 36-groove pulley              Steel AISI 4142 380 QT            46.6 cm3
+  0.3661 kg  Side bevel gear with 36-groove pulley              Steel AISI 4142 380 QT            46.6 cm3
+  0.2213 kg  Output bevel gear                                  Steel AISI 4142 380 QT            28.2 cm3
+  0.1103 kg  Tool flange ISO 9409-1-31.5-4-M5                   Stainless Steel                   13.8 cm3
+  0.1042 kg  Trunnion with stop end                             Steel AISI 4142 380 QT            13.3 cm3
+  0.0968 kg  Roll shaft, bored                                  Steel AISI 4142 380 QT            12.3 cm3
+  0.0872 kg  Carrier block                                      Aluminum 7075                     31.0 cm3
+  0.0783 kg  Trunnion                                           Steel AISI 4142 380 QT            10.0 cm3
+  0.0700 kg  Stop cap                                           Aluminum 6061                     25.9 cm3
+  0.0522 kg  Motor output                                       Aluminum 6061, Steel              12.5 cm3
+  0.0522 kg  Motor output                                       Aluminum 6061, Steel              12.5 cm3
+  0.0516 kg  Tie bar                                            Aluminum 6061                     19.1 cm3
+  0.0516 kg  Tie bar                                            Aluminum 6061                     19.1 cm3
+  0.0431 kg  Stop disc                                          Steel AISI 1045 225 ANLD           5.5 cm3
+  0.0352 kg  Motor bracket                                      Aluminum 6061                     13.0 cm3
+  0.0352 kg  Motor bracket                                      Aluminum 6061                     13.0 cm3
+  0.0269 kg  Bearing 6002-2RSH                                  Rubber, Steel                      3.7 cm3
+  0.0269 kg  Bearing 6002-2RSH                                  Rubber, Steel                      3.7 cm3
+  0.0269 kg  Bearing 6002-2RSH                                  Rubber, Steel                      3.7 cm3
+  0.0269 kg  Bearing 6002-2RSH                                  Rubber, Steel                      3.7 cm3
