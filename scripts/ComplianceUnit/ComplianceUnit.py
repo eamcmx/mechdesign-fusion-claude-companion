@@ -1,10 +1,11 @@
 # =============================================================================
 # ComplianceUnit.py  -  Chapter 48 of "Mechanical Design in Autodesk Fusion with Claude": the compliance unit, a
 # vertical float between the tool changer and the vacuum or bag gripper. A top plate to ISO 9409-1-160-6-M10 with two
-# cheeks; an HGR25 rail on each cheek; a carriage with two wings on four HGH25CA blocks; four hanger bolts that carry
-# the carriage on their heads and guide its four springs, which sit in seats hanging from the top plate; a sensor
-# that sees the carriage rise. The sizes are lib/compliance_unit.py's. Written from PROMPT.txt beside it; checked by
-# checks/compliance_unit_check.py.
+# cheeks; an HGR25 rail on each cheek; a carriage with two wings on four HGH25CA blocks, its underside repeating the
+# tool plate's, hanging by four lugs on stop blocks on the cheeks; four springs between round seats screwed into the
+# top plate and the carriage; the air's galleries and the tube that carries it across the float into a sealed
+# receiver; a sensor that sees the carriage rise. The sizes are lib/compliance_unit.py's. Written from PROMPT.txt
+# beside it; checked by checks/compliance_unit_check.py.
 #
 #   INPUTS        the dialog: the gripper (vacuum or bag), the stroke (mm), the springs' preload (N)
 #   DERIVED       compliance_unit: LAY, GUIDE, the springs chosen to Shigley, the ring factor with each gripper
@@ -12,8 +13,9 @@
 #                 the rails' 30 mm, and a preload under what keeps the carriage down in the stops
 #   CONVENTIONS   z = 0 the unit's top face on the tool plate, z up; groups Body (grounded) and Carriage;
 #                 set_state(lift) raises the carriage by its transform
-#   ACCEPTANCE    the message; the check: no interference at rest and raised but the springs, the carriage on the
-#                 hangers' heads, the rails' and blocks' places, the sensor's gap, the ISO pattern, weighed
+#   ACCEPTANCE    the message; the check: no interference at rest and raised but the springs, the carriage's lugs on
+#                 the stops, nothing below the gripper's face, the rails' and blocks' places, the tube in its
+#                 receiver, the sensor's gap, the ISO pattern on both faces and the passages lined up, weighed
 #
 #   Emmanuel Merchan, TSI Engineering Faculty - AI Augmented Education
 # =============================================================================
@@ -39,7 +41,7 @@ import mdfc_parts as mp       # noqa: E402
 for _m in (tool_changer, clamp_gripper, vacuum_gripper, bag_gripper, cu, mp):
     importlib.reload(_m)                      # the modules this one builds on, as Fusion keeps old ones
 
-VERSION = 'ComplianceUnit 1.0 (2026-11-03)'
+VERSION = 'ComplianceUnit 1.2 (2026-11-03)'
 CM = 0.1
 P3 = adsk.core.Point3D.create
 V3 = adsk.core.Vector3D.create
@@ -47,14 +49,19 @@ VI = adsk.core.ValueInput.createByReal
 
 L = cu.LAY
 GD = cu.GUIDE
-ISO = (30.0, 90.0, 150.0, 210.0, 270.0, 330.0)
-M8 = ((55.0, 55.0), (-55.0, 55.0), (-55.0, -55.0), (55.0, -55.0))
+ISO = cu.ISO_B                 # the six M10 on the 160 circle, in the body's angles (the body turned 90 deg to the changer)
+PIN = cu.PIN_B
+AIR = cu.AIR
 HZ = cu.height()
 Z_TOP = -L['top_t']                                   # the top plate's underside
 Z_RAIL = (Z_TOP, Z_TOP - HZ['rail'])                  # the rails, from the top plate down
 Z_CAR = (Z_RAIL[1], Z_RAIL[1] - L['carriage_t'])      # the carriage's plate; its underside is the gripper's face
 Z_WING = Z_TOP - L['stroke']                          # the wings' tops, the stroke under the top plate
 BLOCKS = (Z_WING - L['gap'] - GD['L'] / 2, Z_WING - L['gap'] - GD['L'] / 2 - L['d'])   # the blocks' centres
+Z_GAL = (AIR['z_gal'], Z_CAR[1] + 10.0 + (L['carriage_t'] - 10.0) / 2)   # the galleries' axes: housing, carriage
+PASS = [(AIR['r'] * math.cos(math.radians(a_)), AIR['r'] * math.sin(math.radians(a_))) for a_ in AIR['angles']]
+XA = max(abs(x) for x, y in PASS)                     # the passages along the galleries
+YA = max(abs(y) for x, y in PASS)                     # the galleries along x at y = +-YA
 
 
 def zcyl(z0, z1, r, x=0.0, y=0.0):
@@ -133,6 +140,25 @@ def moved(tb, dx, dy, dz):
     return b
 
 
+# ---------- the air's path, the same in the housing and in the carriage ----------
+def galleries(b, z, x_edge, y_edge, z_face, plugs, g, tag):
+    """Cut into b the four passages from the face z_face to the galleries at z, the galleries along x at y = +-YA from
+    their plugged ends at x_edge, and the one along y at x = 0 from its plugged end at -y_edge; add the plugs."""
+    r = AIR['gallery'] / 2
+    for x, y in PASS:
+        if z < z_face:                                                       # down from the face to the gallery's foot
+            mp.cut(b, zcyl(z - r, z_face + 1.0, AIR['passage'] / 2, x, y))
+        else:                                                                # up from the face to the gallery's top
+            mp.cut(b, zcyl(z_face - 1.0, z + r, AIR['passage'] / 2, x, y))
+    for ys in (1, -1):
+        mp.cut(b, mp.cyl((-XA - r, ys * YA, z), (x_edge + 1.0, ys * YA, z), r))
+    mp.cut(b, mp.cyl((0.0, -y_edge - 1.0, z), (0.0, YA + r, z), r))
+    if plugs:
+        for k, ys in enumerate((1, -1)):
+            part(g, 'Plug %s %d' % (tag, k + 1), mp.cyl((x_edge - 6.0, ys * YA, z), (x_edge, ys * YA, z), r))
+        part(g, 'Plug %s 3' % tag, mp.cyl((0.0, -y_edge, z), (0.0, -y_edge + 6.0, z), r))
+
+
 # ---------- the body ----------
 def body(root, sp):
     g = group(root, 'Body', True)
@@ -143,19 +169,24 @@ def body(root, sp):
         x, y = at(80.0, a)
         mp.cut(b, zcyl(Z_TOP - 1.0, 1.0, 5.5, x, y))
         mp.cut(b, zcyl(Z_TOP - 1.0, Z_TOP + 10.5, 8.75, x, y))            # counterbored from below
-    mp.cut(b, zcyl(-8.0, 9.0, 5.0, 80.0, 0.0))
+    xp, yp = at(80.0, PIN)
+    mp.cut(b, zcyl(-8.0, 9.0, 5.0, xp, yp))
     x0, x1 = L['cheek_x']
     cy = L['cheek_y']
     for xs in (-1, 1):                                                       # the cheeks, machined with the plate
         a, c = sorted((xs * x0, xs * x1))
         mp.union(b, mp.box(a, c, -cy, cy, Z_RAIL[1], Z_TOP + 0.01))
-    for x, y in L['hangers']:
-        mp.cut(b, zcyl(Z_TOP - 1.0, 1.0, 5.0, x, y))                        # the hangers' M10, tapped
+    for x, y in L['spring_xy']:
+        mp.cut(b, zcyl(Z_TOP - 1.0, 1.0, 5.0, x, y))                        # the seats' M10 studs, tapped
+    # the tube's boss under the plate and its bore up to the galleries
+    mp.union(b, zcyl(Z_TOP - AIR['boss'][1], Z_TOP + 0.01, AIR['boss'][0]))
+    mp.cut(b, zcyl(Z_TOP - AIR['boss'][1] - 1.0, Z_GAL[0], AIR['tube'][0] / 2))
+    galleries(b, Z_GAL[0], px / 2, py / 2, 0.0, True, g, 'housing')
     b_ref = [b]
     for k, a in enumerate(ISO):
         x, y = at(80.0, a)
         part(g, 'Cap screw M10x25 %d' % (k + 1), mp.cap_screw(10.0, 25.0, (x, y, Z_TOP + 10.5), (0, 0, 1)))
-    part(g, 'Dowel pin 10x17', zcyl(-8.0, 9.0, 5.0, 80.0, 0.0))
+    part(g, 'Dowel pin 10x17', zcyl(-8.0, 9.0, 5.0, xp, yp))
     # the rails on the cheeks' inner faces, their screws tapped into the cheeks
     rail_y = GD['WR'] / 2
     rail = mp.box(x0 - GD['HR'], x0, -rail_y, rail_y, Z_RAIL[1], Z_RAIL[0])
@@ -165,21 +196,46 @@ def body(root, sp):
             mp.cut(b_ref[0], mp.cyl((xs * (x0 - 1.0), 0.0, z), (xs * (x0 + 16.0), 0.0, z), 3.0))
         mp.cut(rail, mp.cyl((x0 - GD['HR'] - 1.0, 0.0, z), (x0 + 1.0, 0.0, z), 3.0))
         mp.cut(rail, mp.cyl((x0 - GD['HR'] - 1.0, 0.0, z), (x0 - GD['HR'] + 9.0, 0.0, z), 5.5))   # counterbored, D 11 h 9
+    # the holes in the cheeks for the stop blocks' M8
+    for xs in (1, -1):
+        for ys in (1, -1):
+            ym = ys * (L['lug_y'][0] + L['lug_y'][1]) / 2
+            for z in L['stop_screws']:
+                mp.cut(b_ref[0], mp.cyl((xs * (x0 - 1.0), ym, z), (xs * (x1 + 1.0), ym, z), 4.0))
     part(g, 'Housing', b, 'Aluminum')
     for k, xs in enumerate((1, -1)):
         part(g, 'Rail HGR25 %d' % (k + 1), rail if xs > 0 else mirrored_x(rail))
         for j, z in enumerate(ry):
             sc = mp.cap_screw(6.0, 20.0, (x0 - GD['HR'] + 9.0, 0.0, z), (1, 0, 0))
             part(g, 'Cap screw M6x20 %d' % (4 * k + j + 1), sc if xs > 0 else mirrored_x(sc))
-    # the spring seats and the hanger bolts
-    r_o, r_i = L['boss']
-    for k, (x, y) in enumerate(L['hangers']):
-        part(g, 'Spring seat %d' % (k + 1), mp.tube((x, y, L['boss_bottom']), (x, y, Z_TOP), r_o, L['hanger_d'] / 2 + 0.01), 'Aluminum')
-        hb = zcyl(Z_CAR[1] - L['head'][1], Z_TOP, L['hanger_d'] / 2, x, y)
-        mp.union(hb, zcyl(Z_TOP - 0.01, 0.0 - 4.0, 5.0, x, y))
-        mp.union(hb, zcyl(Z_CAR[1] - L['head'][1], Z_CAR[1], L['head'][0] / 2, x, y))
-        part(g, 'Hanger bolt %d' % (k + 1), hb)
-        part(g, 'Spring %d' % (k + 1), moved(sp, x, y, L['boss_bottom']))
+    # the tube, pressed into its boss, down into the receiver
+    ai = cu.air()
+    part(g, 'Tube 20x16', mp.tube((0.0, 0.0, ai['tube_bot']), (0.0, 0.0, ai['tube_top']), AIR['tube'][0] / 2, AIR['tube'][1] / 2))
+    # the spring seats: round bars screwed into the top plate by an M10 stud, a spigot into each spring's top
+    r_o, r_sp, h_sp = L['seat']
+    zs = L['seat_bottom']
+    for k, (x, y) in enumerate(L['spring_xy']):
+        st = zcyl(zs, Z_TOP, r_o, x, y)
+        mp.union(st, zcyl(Z_TOP - 0.01, -4.0, 5.0, x, y))
+        mp.union(st, zcyl(zs - h_sp, zs + 0.01, r_sp, x, y))
+        part(g, 'Spring seat %d' % (k + 1), st, 'Aluminum')
+        part(g, 'Spring %d' % (k + 1), moved(sp, x, y, zs))
+    # the stops: a block on each cheek's inner face either side of the rail, two M8 from the cheek's outside; the
+    # carriage's lugs rest on their tops
+    lz1 = Z_WING - L['lug_t']
+    lz0 = lz1 - L['stop_h']
+    k = 0
+    for xs in (1, -1):
+        for ys in (1, -1):
+            k += 1
+            a, c = sorted((xs * L['stop_x'][0], xs * L['stop_x'][1]))
+            y_a, y_b = sorted((ys * L['lug_y'][0], ys * L['lug_y'][1]))
+            sb = mp.box(a, c, y_a, y_b, lz0, lz1)
+            ym = ys * (L['lug_y'][0] + L['lug_y'][1]) / 2
+            for j, z in enumerate(L['stop_screws']):
+                mp.cut(sb,mp.cyl((xs * (x0 + 1.0), ym, z), (xs * (x0 - 12.0), ym, z), 4.0))
+                part(g, 'Cap screw M8x30 %d' % (2 * (k - 1) + j + 1), mp.cap_screw(8.0, 30.0, (xs * x1, ym, z), (-xs, 0, 0)))
+            part(g, 'Stop block %d' % k, sb, 'Aluminum')
     # the sensor: an M12 proximity sensor 40 long looking along -y at the +x wing's side face, 2 mm off it, its face's
     # lower edge `sense` over the wing's top: the wing's face enters its field once the carriage has risen that much,
     # and passes it, 2 mm off, through the rest of the stroke; held by a bracket under the top plate
@@ -193,17 +249,37 @@ def body(root, sp):
 
 def carriage(root):
     g = group(root, 'Carriage')
-    px, py = L['plate']
-    b = mp.box(-L['cheek_x'][0] + 2.0, L['cheek_x'][0] - 2.0, -py / 2 + 20.0, py / 2 - 20.0, Z_CAR[1], Z_CAR[0])
+    cx, cy = L['carriage_xy']
+    b = mp.box(-cx, cx, -cy, cy, Z_CAR[1], Z_CAR[0])
     w0, w1 = L['wing_x']
     for xs in (-1, 1):
         a, c = sorted((xs * w0, xs * w1))
         mp.union(b, mp.box(a, c, -L['wing_y'], L['wing_y'], Z_CAR[0] - 0.01, Z_WING))
-    for x, y in L['hangers']:
-        mp.cut(b, zcyl(Z_CAR[1] - 1.0, Z_CAR[0] + 1.0, L['hanger_d'] / 2 + 0.5, x, y))
-    for x, y in M8:
-        mp.cut(b, zcyl(Z_CAR[1] - 1.0, Z_CAR[1] + 16.0, 4.0, x, y))          # the gripper's M8, tapped
+    # the gripper's face, as the tool plate's: the 100 H7 recess 10 deep, six M10 tapped 15 deep, the pin hole
+    mp.cut(b, zcyl(Z_CAR[1] - 1.0, Z_CAR[1] + 10.0, 50.0))
+    for a in ISO:
+        x, y = at(80.0, a)
+        mp.cut(b, zcyl(Z_CAR[1] - 1.0, Z_CAR[1] + 15.0, 4.25, x, y))
+    xp, yp = at(80.0, PIN)
+    mp.cut(b, zcyl(Z_CAR[1] - 1.0, Z_CAR[1] + 10.0, 5.0, xp, yp))
+    # the lugs that rest on the stops, two on each wing, and the spigots for the springs' feet
+    for xs in (1, -1):
+        for ys in (1, -1):
+            a, c = sorted((xs * (L['lug_x'][0] - 0.01), xs * L['lug_x'][1]))
+            y_a, y_b = sorted((ys * L['lug_y'][0], ys * L['lug_y'][1]))
+            mp.union(b, mp.box(a, c, y_a, y_b, Z_WING - L['lug_t'], Z_WING))
+    r_o, r_sp, h_sp = L['seat']
+    for x, y in L['spring_xy']:
+        mp.union(b, zcyl(Z_CAR[0] - 0.01, Z_CAR[0] + h_sp, r_sp, x, y))
+    # the receiver: the tube slides in its bore, sealed by an O-ring in a groove near its top
+    rr, rh = AIR['receiver']
+    mp.union(b, zcyl(Z_CAR[0] - 0.01, Z_CAR[0] + rh, rr))
+    mp.cut(b, zcyl(Z_GAL[1], Z_CAR[0] + rh + 1.0, AIR['tube'][0] / 2))
+    z_or = Z_CAR[0] + rh - 7.0
+    mp.cut(b, zcyl(z_or - 1.75, z_or + 1.75, AIR['tube'][0] / 2 + 2.5))
+    galleries(b, Z_GAL[1], cx, cy, Z_CAR[1], True, g, 'carriage')
     part(g, 'Carriage', b, 'Aluminum')
+    part(g, 'O-ring 20x2.5', mp.tube((0.0, 0.0, z_or - 1.7), (0.0, 0.0, z_or + 1.7), AIR['tube'][0] / 2 + 2.45, AIR['tube'][0] / 2), 'Rubber')
     k = 0
     for xs in (1, -1):
         for zc in BLOCKS:

@@ -1,6 +1,7 @@
 Write a Fusion Python script that, when run, builds the palletizer's compliance unit of Chapter 48: a vertical float
 between the tool changer's ISO face and the vacuum or bag gripper. The gripper hangs on a carriage that slides up on
-two rails when its load touches the stack, held down onto stops by springs, and a sensor sees it rise.
+two rails when its load touches the stack, held down onto stops by springs, and a sensor sees it rise. The gripper's
+air crosses the float through a tube that slides in a sealed receiver.
 
 INPUTS (a command dialog, with these defaults):
 - the gripper (bag, vacuum or clamp), bag
@@ -9,20 +10,29 @@ INPUTS (a command dialog, with these defaults):
 
 DERIVED (from lib/compliance_unit.py, never typed):
 - LAY: the layout below; GUIDE: HIWIN HGR25 rails and HGH25CA blocks (C0 36 490 N, 84 long, 40 high, 48 wide)
+- AIR: the passages, galleries, tube and receiver; ISO_B and PIN_B: the ISO pattern in the body's angles
 - the springs chosen to Shigley's chapter 10 (music wire 4 x 40, 100 installed), the ring factor with each gripper
 
 HARD CONSTRAINTS:
 - Refuse the clamp gripper (Chapter 44's ring would open in the worst stop with the unit in the stack), a stroke
   over the rails' 30 mm, and a preload under what keeps the carriage down in the stops that throw the load up.
-- The housing machined from one block of 2024-T3: a top plate 260 x 200 x 20 with the spigot 100 g6, six M10 x 25
-  from below on the 160 circle and the 10 pin, and two cheeks 20 thick at x = +-105 to +-125, 120 wide, down to the
-  rails' foot.
+- The body is turned 90 deg to the changer: the ISO pattern's +X, with its pin and the changer's docking frame, lies
+  along the body's +y. In the body's angles the six M10 are at 0, 60, ... 300 deg on the 160 circle, the pin at 90,
+  and the tool plate's four passages at 30, 150, 210 and 330.
+- The housing machined from one block of 2024-T3: a top plate 274 x 200 x 20 with the spigot 100 g6, six M10 x 25
+  from below and the 10 pin, and two cheeks 20 thick at x = +-112 to +-132, 120 wide, down to the rails' foot.
 - An HGR25 rail on each cheek's inner face, 218 long under the top plate, on four M6 x 20 in counterbores; two
   HGH25CA blocks on each rail, their centres 100 apart, the upper one 2 mm under the wings' tops.
-- The carriage: a plate 206 x 160 x 20 whose underside is the gripper's face, with the gripper's four M8, and two
-  wings 15 thick at x = +-50 to +-65 carrying the blocks; the wings' tops the stroke under the top plate.
-- Four hanger bolts at x = +-25, y = +-50, 12 across, screwed into the top plate, the carriage resting on their heads;
-  a spring seat 50 across around each from the top plate down to -138; a spring between each seat and the carriage.
+- The carriage: a plate 176 x 200 x 28, 2 mm clear of the rails' running faces, whose underside repeats the tool
+  plate's (the 100 H7 recess 10 deep, six M10 tapped 15 deep, the 10 pin hole), and two wings 15 thick at x = +-57
+  to +-72 carrying the blocks; the wings' tops the stroke under the top plate.
+- Four shoulder screws (shank 12, M10, head 18 x 8) at x = +-25, y = +-60, screwed into the top plate, their heads in
+  counterbores 19 x 9 in the carriage's underside, the carriage resting on them; a spring seat 46 across around each
+  from the top plate down to -138; a spring between each seat and the carriage. Nothing below the gripper's face.
+- The air: four passages 10 across from the housing's face, galleries 8 across along x at y = +-40 and along y at
+  x = 0 (drilled from the -y edge), plugged at the edges, 10 under the face; a steel tube 20 x 16 pressed into a boss
+  32 across and 20 deep under the top plate, its foot 15 mm into a receiver 36 across and 50 tall on the carriage,
+  sealed by an O-ring in a groove 7 mm under the receiver's top; the carriage's galleries the same, 19 over its face.
 - An M12 proximity sensor 40 long looking along -y at the +x wing's side, 2 mm off it, its face's lower edge 3 mm
   over the wing's top; held by a bracket under the top plate.
 
@@ -36,10 +46,12 @@ FUSION CONVENTIONS:
 ACCEPTANCE CRITERIA:
 - A message gives the gripper, the unit's height and stroke, the guides' static factor, the springs, the ring factor,
   the parts list and a version tag.
-- At rest: no interference; the carriage on the four hangers' heads (gap under 0.001 mm).
+- At rest: no interference; the carriage on the four shoulder screws' heads (gap under 0.001 mm); nothing below the
+  gripper's face.
 - The springs 100 mm long installed and 44 mm across.
 - The sensor 3.606 mm from the carriage at rest and 2.000 mm once it has risen 3 mm.
-- Raised the whole stroke: no interference but the springs; the wings on the top plate; the blocks still on the rails.
-- The top plate's ISO pattern measured.
+- Raised the whole stroke: no interference but the springs; the wings on the top plate; the blocks still on the
+  rails; the tube's foot still in the receiver, below its O-ring, and clear of its floor.
+- The ISO pattern measured on the housing's face and on the carriage's, and the passages of the two lined up.
 - The body and the carriage weighed and written.
 - Refused: the clamp gripper; a stroke of 40 mm; a preload of 500 N.

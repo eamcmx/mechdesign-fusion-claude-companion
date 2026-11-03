@@ -23,16 +23,38 @@ pi = math.pi
 S_STOP = 1.25
 CHANGER = ('Master', 'Piston', 'Tool plate', 'Segments')
 
-# the float's layout (mm; z = 0 the unit's top face on the tool plate, z up): a top plate with two cheeks at x = +-c/2,
-# an HGR25 rail on each cheek's inner face, two HGH25CA blocks on each rail d apart; the carriage hangs on stops at the
-# cheeks' feet; its underside is the gripper's mounting face, H below the unit's top
-LAY = dict(top_t=20.0, plate=(260.0, 200.0), cheek_x=(105.0, 125.0), cheek_y=60.0, c=166.0, d=100.0, stroke=30.0,
-           gap=2.0, carriage_t=20.0, wing_x=(50.0, 65.0), wing_y=60.0, sense=3.0,
-           hangers=((25.0, 50.0), (-25.0, 50.0), (-25.0, -50.0), (25.0, -50.0)), hanger_d=12.0, head=(20.0, 8.0),
-           boss=(25.0, 6.5), boss_bottom=-138.0)
-# the rails' axes: the cheeks' inner faces at x = +-105 carry the rails (HR 22 high), so the rails' running faces
-# stand at +-83 and the blocks' tops, H = 40 over the rail's foot, at +-65 where the carriage's wings carry them; the
-# rails c = 166 apart between their running faces
+# the float's layout (mm; z = 0 the unit's top face on the tool plate, z up; x along the cheeks): a top plate with two
+# cheeks at x = +-(112 to 132), an HGR25 rail on each cheek's inner face, two HGH25CA blocks on each rail d apart on the
+# carriage's wings; the carriage hangs by two lugs on each wing on four stop blocks screwed to the cheeks, inside the
+# unit, so nothing fixed reaches below the gripper's mounting face, H below the unit's top, as the carriage rises. The
+# carriage stops 2 mm short of the rails' running faces at x = +-90, so its plate never meets their lower ends as it
+# rises. The four springs stand between round seats screwed into the top plate and the carriage, each end on a spigot.
+# The carriage is the stroke and 2 mm thick, so that a gripper's adapter, 200 across, stays under the rails' lower
+# ends at the top of the stroke.
+LAY = dict(top_t=20.0, plate=(274.0, 200.0), cheek_x=(112.0, 132.0), cheek_y=60.0, c=180.0, d=100.0, stroke=30.0,
+           gap=2.0, carriage_t=32.0, carriage_xy=(88.0, 100.0), wing_x=(57.0, 72.0), wing_y=60.0, sense=3.0,
+           spring_xy=((25.0, 60.0), (-25.0, 60.0), (-25.0, -60.0), (25.0, -60.0)), seat=(23.0, 17.5, 5.0),
+           seat_bottom=-138.0, lug_x=(72.0, 100.0), lug_y=(30.0, 55.0), lug_t=15.0, stop_x=(76.0, 112.0), stop_h=35.0,
+           stop_screws=(-90.0, -75.0))
+# the interfaces: the unit's top face meets the tool plate's underside and its carriage's underside repeats it
+# (ISO 9409-1-160-6-M10: six M10 on the 160 circle, the 100 H7 centring recess 10 deep, the 10 mm pin hole on the
+# pattern's +X), so a gripper goes onto the unit as it goes onto the changer. The unit's body is turned 90 deg to the
+# changer: the pattern's +X, with the pin and Chapter 47's docking frame, lies along the body's +y, beyond the plate's
+# 200 mm side, and no screw, pin or passage lies on a rail's axis. In the body's angles: the screws at 0, 60, ... 300
+# deg, the pin at 90, the tool plate's four passages (Chapter 47: r 80 at 60, 120, 240, 300 deg of the pattern) at 30,
+# 150, 210 and 330. The air crosses the float through one tube: galleries along x at y = +-40 join each pair of
+# passages, and one along y at x = 0, drilled from the -y edge and plugged, joins them at the middle, where a steel
+# tube 20 x 16 hangs from a boss under the top plate. It slides in a receiver on the carriage, sealed by an O-ring on
+# its outside, and the carriage's galleries repeat the housing's down to the four passages in its face.
+TURN = 90.0
+ISO_B = tuple((a + TURN) % 360.0 for a in (30.0, 90.0, 150.0, 210.0, 270.0, 330.0))
+PIN_B = TURN
+AIR = dict(r=80.0, angles=tuple((a + TURN) % 360.0 for a in (60.0, 120.0, 240.0, 300.0)), passage=10.0, gallery=8.0,
+           z_gal=-10.0, tube=(20.0, 16.0), boss=(16.0, 20.0), receiver=(18.0, 50.0), engaged=15.0, p=6.0,
+           friction=20.0)   # friction per seal, N, assumed
+# the rails' axes: the cheeks' inner faces at x = +-112 carry the rails (HR 22 high), so the rails' running faces
+# stand at +-90 and the blocks' tops, H = 40 over the rail's foot, at +-72 where the carriage's wings carry them; the
+# rails c = 180 apart between their running faces
 GUIDE = dict(name='HGH25CA', C0=36490.0, Cdyn=26480.0, L=84.0, H=40.0, W=48.0, rail='HGR25R', WR=23.0, HR=22.0,
              fSL_min=3.0)       # HIWIN GmbH (2017), Table 3.4 p. 30, Table 3.6 p. 32, Table 2.1 p. 10 (shocks: 3 to 5)
 SPRING = dict(n=4, d=3.0, D=24.0, A=2211.0, m=0.145, G=81.7e3, ssy=0.45)   # music wire A228 (Shigley Tables 10-4 to 10-6)
@@ -215,16 +237,20 @@ def touchdown(lay=LAY, a_stop=None, t_react=0.010, early=None):
 
 def structure(g, sp, lay=LAY):
     """The housing's cheek at its root under its rail's couple, against 2024-T3 (Sy 345 MPa, Budynas & Nisbett, 2015,
-    Table A-24, p. 1055); the hanger bolts in the stop, the axial pull with the springs' preload over four, on the
-    shank and on an M10's stress area (Table 8-1, p. 404); the springs in fatigue if every placement used the whole
-    stroke, unpeened, Zimmerli's Ssa 241 and Ssm 379 MPa (Eq. 10-28, p. 528), Ssu = 0.67 Sut (Eq. 10-30), Gerber."""
+    Table A-24, p. 1055); the four stops in the stop, the axial pull with the springs' preload over four: a lug bent
+    at its root by the force at the middle of its contact, and the stop block's two M8 in shear on their stress area
+    (Table 8-1, p. 404); the springs in fatigue if every placement used the whole stroke, unpeened, Zimmerli's Ssa 241
+    and Ssm 379 MPa (Eq. 10-28, p. 528), Ssu = 0.67 Sut (Eq. 10-30), Gerber."""
     w = g['worst']
     M_ch = w['M'] / 2
     b, t = 2 * lay['cheek_y'], lay['cheek_x'][1] - lay['cheek_x'][0]
     W = b * t * t / 6.0
     s_ch = M_ch * 1000.0 / W
     F_h = (w['Fa'] + g['springs']['F_pre']) / 4
-    A_sh = pi * lay['hanger_d'] ** 2 / 4
+    arm = (max(lay['lug_x'][0], lay['stop_x'][0]) + lay['lug_x'][1]) / 2 - lay['wing_x'][1]
+    b_l, t_l = lay['lug_y'][1] - lay['lug_y'][0], lay['lug_t']
+    W_l = b_l * t_l ** 2 / 6.0
+    s_lug = F_h * arm / W_l
     # the springs in fatigue
     KB, D, d = sp['KB'], sp['D'], sp['d']
     t1 = KB * 8 * sp['F1'] * D / (pi * d ** 3)
@@ -233,8 +259,60 @@ def structure(g, sp, lay=LAY):
     Ssu = 0.67 * sp['Sut']
     Sse = 241.0 / (1 - (379.0 / Ssu) ** 2)
     nf = 0.5 * (Ssu / tm) ** 2 * (ta / Sse) * (-1 + math.sqrt(1 + (2 * tm * Sse / (Ssu * ta)) ** 2))
-    return dict(M_cheek=M_ch, W=W, s_cheek=s_ch, n_cheek=345.0 / s_ch, F_hanger=F_h, s_shank=F_h / A_sh,
-                s_thread=F_h / 58.0, t1=t1, t2=t2, ta=ta, tm=tm, Ssu=Ssu, Sse=Sse, nf=nf)
+    return dict(M_cheek=M_ch, W=W, s_cheek=s_ch, n_cheek=345.0 / s_ch, F_stop=F_h, arm=arm, W_lug=W_l, s_lug=s_lug,
+                n_lug=345.0 / s_lug, s_screw=F_h / 2 / 36.6, t1=t1, t2=t2, ta=ta, tm=tm, Ssu=Ssu, Sse=Sse, nf=nf)
+
+
+def air(dp_turns_l=0.3):
+    """The air through the unit for the bag gripper's closing, Chapter 47's largest flow, by Atlas Copco's formula
+    (Atlas Copco Airpower NV, 2019, p. 92); every path in the housing and repeated in the carriage: four passages of
+    10 mm in parallel from the face to the galleries, a quarter of the flow along each gallery of 8 mm from a passage to
+    the cross gallery, half along the cross gallery to the middle, all of it down the tube. The turns' equivalent
+    length, dp_turns_l metres of 8 mm gallery at half the flow, is assumed (p. 93). The force the pressure puts on the
+    carriage through the tube's seal, and the seal's friction (assumed)."""
+    import bag_gripper as bgm
+    sv = bgm.services()
+    q, pa = sv['q'], AIR['p'] + 1.013
+    dp = sv['dp']
+    hz = height()
+    a = AIR
+    y = abs(a['r'] * math.cos(math.radians(a['angles'][0])))  # a passage's distance along its gallery to the cross one
+    x = abs(a['r'] * math.sin(math.radians(a['angles'][0])))  # the galleries along x from the middle
+    z_top = LAY['top_t'] + a['z_gal'] - a['gallery'] / 2       # the passage from the face down to the gallery's foot
+    z_car = LAY['carriage_t'] + a['z_gal'] - a['gallery'] / 2
+    tube_top = -(-a['z_gal'] + a['gallery'] / 2)
+    tube_bot = -LAY['top_t'] - hz['rail'] + a['receiver'][1] - a['engaged']
+    l_tube = tube_top - tube_bot
+    parts = dict(passages=dp(q / 4, (-a['z_gal'] + a['gallery'] / 2) / 1000.0, a['passage'], pa)
+                 + dp(q / 4, (10.0 + (LAY['carriage_t'] - 10.0) / 2 + a['gallery'] / 2) / 1000.0, a['passage'], pa),
+                 galleries=2 * dp(q / 4, y / 1000.0, a['gallery'], pa) + 2 * dp(q / 2, x / 1000.0, a['gallery'], pa),
+                 tube=dp(q, l_tube / 1000.0, a['tube'][1], pa),
+                 turns=dp(q / 2, dp_turns_l, a['gallery'], pa))
+    total = sum(parts.values())
+    hose, chan = sv['hose'][16.0], sv['passages'][4]
+    left = 0.2 - hose - chan                                   # Chapter 47's supply, 0.2 bar over the 6 at the base
+    base = 0.3                                                 # with the unit, set 0.3 over
+    F_air = a['p'] / 10.0 * pi * a['tube'][0] ** 2 / 4
+    return dict(q=q, pa=pa, parts=parts, total=total, hose=hose, changer=chan, left=left, after=left - total, base=base,
+                after_base=base - hose - chan - total,
+                F_air=F_air, friction=a['friction'], l_tube=l_tube, tube_top=tube_top, tube_bot=tube_bot,
+                stroke_end=tube_bot - LAY['stroke'], car_top=-LAY['top_t'] - hz['rail'])
+
+
+def stack_cost(H=None):
+    """What the unit costs the stack: the brief gives the flange's heights, and with the unit everything under the
+    flange hangs H lower. The highest flange height at which the arm still reaches the pallet's far corners (Chapter
+    41's station), by bisection on its largest radius; the margin over the brief's top; the stack lost at the corners."""
+    H = height()['H'] if H is None else H
+    st = P.stations()
+    lo, hi = st['z_top'], st['z_top'] + 1000.0
+    for _ in range(60):
+        m = 0.5 * (lo + hi)
+        lo, hi = (m, hi) if P.radius_range(m)['r_max'] >= st['corner'] else (lo, m)
+    z_with = st['z_top'] + H
+    return dict(H=H, corner=st['corner'], z_top=st['z_top'], z_corner=lo, margin=lo - st['z_top'], loss=H - (lo - st['z_top']),
+                r_top=P.radius_range(st['z_top'])['r_max'], z_with=z_with, r_with=P.radius_range(z_with)['r_max'],
+                z_bottom=st['z_bottom'] + H, r_bottom=P.radius_range(st['z_bottom'] + H)['r_min'], r0=st['r0'])
 
 
 def spacing(ds=(60.0, 80.0, 100.0, 120.0, 140.0)):
