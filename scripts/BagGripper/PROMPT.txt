@@ -1,0 +1,48 @@
+Write a Fusion Python script that, when run, builds the palletizer's bag gripper of Chapter 47: the adapter to
+ISO 9409-1-160-6-M10 of Chapter 45 on an aluminium box beam, two end plates carrying two jaws of tines that close
+under a bag from its long sides, each jaw turned by a pneumatic cylinder with a clamping unit, and a press plate on
+two cylinders over the bag. The script also builds the bag and the rollers of the pick-up station it lies on.
+
+INPUTS (a command dialog, with these defaults):
+- the bag's mass (kg), 50
+- the bag's width (mm), 500
+- the supply pressure (bar), 6
+
+DERIVED (from lib/bag_gripper.py, never typed):
+- LAY: the layout below; DSBC: Festo DSBC-32 to -80 at 6 bar (forces, clamping units, sizes); BRG: 02-series bearings
+- CYL: DSBC-80-125 with a clamping unit, on an SNCB swivel flange, closed at full stroke
+- jaw_moment(): the moment that opens a jaw, the bag's weight on the tines and its sideways push on the legs, in
+  every brake stop for the payload
+
+HARD CONSTRAINTS:
+- Refuse a bag the cylinder or its clamping unit does not hold 1.25 times in the worst stop, a bag narrower than
+  280 or wider than 520 mm, and a supply under 6 bar.
+- The beam 820 x 160 x 100, walls 6, from z -16 to -116, an end block in each end; the adapter's four M8 from inside
+  the beam; the end plates 15 thick at x = +-410 to +-425, 720 wide down to -245 and a wall 400 wide down to -380,
+  each held by four M8 x 30 into its end block.
+- Each jaw a steel box tube 60 x 4 from x -405 to +405 on its hinge at y = +-300, z = -200, outboard of the whole
+  foot, capped at both ends with stub shafts 30 in 6206 bearings in bosses on the end plates; eight tines 10 thick
+  at x = +-50, +-150, +-250, +-350, each a leg 25 wide from the tube's underside down the bag's side (y 270 to 295)
+  and a foot 25 deep under the bag to its tip at y = +-40, its top on the bag's underside at z -480.
+- On the long stub shaft a lever 150 to the cylinder's rod end; the cylinder's rear pin on a bracket on the end plate,
+  pin to pin 594.6 closed; the -y jaw and its cylinder the +y ones turned half a turn about z.
+- The press plate 700 x 400 x 10 on the rods of two DSBC-32-50 under the beam at x = +-250, each on four M6 x 16.
+- The bag 800 x 500 x 160 from z -480 to -320; nine rollers 60 across at a pitch of 100 under it.
+
+FUSION CONVENTIONS:
+- A new design document (FusionDesignDocumentType), parametric; millimetres in the world, z = 0 the gripper's
+  mounting face, z up; x along the bag's 800.
+- Top-level groups: Adapter and Frame (grounded), Jaw A and B, Cylinder A and B, Rod A and B, Press, Bag, Station.
+  One function, set_state(phi, e), opens the jaws by phi and sets the press plate's extension e, by the groups'
+  transforms. No joints, as-built or otherwise.
+- The API works in cm and radians. Every part is built closed and axis-aligned; the motion is only transforms.
+
+ACCEPTANCE CRITERIA:
+- A message gives the bag, the jaw's moment in the worst stop and its factors, the parts list and a version tag.
+- Closed: no interference among the parts, the bag and the rollers; every tine's foot and the press plate on the bag
+  (gap under 0.001 mm); the end plates 10 mm off the bag's ends.
+- Opened 5 to 45 degrees in steps of 5, the press up: no interference; the tines clear of the bag and the rollers.
+- The cylinders 594.60 mm pin to pin closed and 490.51 open, measured between the pins.
+- The adapter's ISO pattern measured.
+- Each group weighed, the gripper's centre and inertia about its axis, a jaw's inertia about its hinge, written.
+- Refused: a bag of 80 kg; a bag 600 mm wide; 5 bar.

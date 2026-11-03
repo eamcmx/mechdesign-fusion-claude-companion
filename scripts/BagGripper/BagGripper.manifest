@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 47: the palletizer's bag gripper: adapter, beam and end plates, two jaws of tines on 6206 bearings turned by DSBC-80 cylinders with clamping units, a press plate, the bag and the pick-up station's rollers."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "BagGripper"
+}

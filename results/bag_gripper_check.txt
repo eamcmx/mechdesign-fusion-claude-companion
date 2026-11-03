@@ -1,0 +1,31 @@
+# bag_gripper_check
+# Autodesk Fusion 2706.1.17, run 2026-11-03 01:31, 12 s
+
+BagGripper 1.0 (2026-11-03)
+  ok   Run opens the dialog
+Bag gripper built on a bag of 50 kg, 500 mm wide.
+Two jaws of eight tines, each turned by a DSBC-80-125 with a clamping unit on a 150 mm lever; the worst stop opens a jaw with 262.0 N m, held 1.73 times by the cylinder and 2.86 times by its clamping unit.
+
+Parts: 74 components; 1 Adapter plate, 1 Beam, 4 Bearing 6206, 2 Bracket, 6 Cap screw M10x25, 8 Cap screw M6x16, 4 Cap screw M8x20, 8 Cap screw M8x30, 2 Cylinder DSBC-32-50, 2 Cylinder DSBC-80-125-C, 1 Dowel pin 10x17, 2 End block, 2 End plate, 2 Lever, 2 Piston rod, 1 Press plate, 2 Press rod, 2 Rod end, 2 Stub shaft long, 2 Stub shaft short, 16 Tine, 2 Tube.
+
+[BagGripper 1.0 (2026-11-03)] BagGripper 1.0 (2026-11-03)
+  OK pressed, built in 9 s
+  ok   a new design opened
+  parts: 74 components, 22 kinds
+  Adapter plate 1, Beam 1, Bearing 6206 4, Bracket 2, Cap screw M10x25 6, Cap screw M6x16 8, Cap screw M8x20 4, Cap screw M8x30 8, Cylinder DSBC-32-50 2, Cylinder DSBC-80-125-C 2, Dowel pin 10x17 1, End block 2, End plate 2, Lever 2, Piston rod 2, Press plate 1, Press rod 2, Rod end 2, Stub shaft long 2, Stub shaft short 2, Tine 16, Tube 2
+  ok   closed on the bag: no interference among the 74 parts, the bag and the 9 rollers 
+  ok   every one of the 16 tines and the press plate on the bag, the largest gap 0.0000 mm
+  ok   the end plates 10.00 and 10.00 mm off the bag's ends
+  ok   opened 5 to 45 deg in steps of 5, the press up: nothing in the way; the tines' least distances to the bag and to the rollers, their lowest point and the cylinder's pin to pin: [(5, 5.42, 15.0, -526.5, 581.53), (10, 12.94, 15.0, -545.5, 568.56), (15, 22.48, 15.0, -561.9, 555.8), (20, 33.99, 15.0, -575.5, 543.37), (25, 47.36, 15.0, -586.3, 531.39), (30, 62.51, 15.0, -594.1, 519.99), (35, 79.32, 15.0, -599.0, 509.29), (40, 85.44, 15.0, -600.8, 499.42), (45, 90.21, 15.0, -599.5, 490.51)]
+  ok   open: the cylinders 490.51 mm pin to pin, against 490.51; 104.09 of the stroke used
+  ok   cylinder A at 0 deg: 594.60 mm between its pins, against 594.60
+  ok   cylinder B at 0 deg: 594.60 mm between its pins, against 594.60
+  ok   cylinder A at 45 deg: 490.51 mm between its pins, against 490.51
+  ok   cylinder B at 45 deg: 490.51 mm between its pins, against 490.51
+  ok   the adapter: six M10 holes on the 160 circle at [30.0, 90.0, 150.0, 210.0, 270.0, 330.0] deg
+  weighed: adapter 1.64 kg, frame 33.84 kg, each jaw 15.85 kg, each cylinder 5.01 + rod 0.98 kg, press 7.69 kg; the gripper 86.86 kg, its centre at z -198.3 mm, 15.02 kg m2 about its axis; a jaw 0.5675 kg m2 about its hinge
+  written: lib/bag_gripper_weighed.json
+  ok   {'m': 80.0} refused: A bag of 80 kg: the worst stop opens a jaw with 377.4 N m; the cylinder holds it 1.20 times and its clamping unit 1.99 times, under 1.25.
+  ok   {'w': 600.0} refused: A bag 600 mm wide: the jaws take bags from 280 to 520 mm across.
+  ok   {'p_bar': 5.0} refused: A supply of 5.0 bar: the cylinders are worked at 6 bar; less closes the jaws with less.
+ALL PASS
