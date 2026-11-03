@@ -1,0 +1,41 @@
+Write a Fusion Python script that, when run, builds one of the eight assemblies of Volume 2 that Volume 3 details and
+writes every part's part number and description into its component, so that a parts list drawn from the model carries
+them (Chapter 49).
+
+INPUTS (a command dialog, with these defaults):
+- the assembly (the robotic wrist, the flap actuation system, the rear axle, the palletizer's robot, the tool changer,
+  the clamp gripper, the vacuum gripper or the bag gripper), the bag gripper
+
+DERIVED (from lib/detail_inventory.py, never typed):
+- MACHINES and SCRIPTS: each assembly's title, its Volume 2 chapter, its check's parts list and its script
+- numbering() and number_map(): each name on the assembly's parts list with its number and description
+- kind_of(): the name on the parts list that a component's name stands for
+
+HARD CONSTRAINTS:
+- Refuse an assembly that is not one of the eight.
+- Build the assembly with its own script's build() and its defaults; never redraw it.
+- A made part's number is the machine's letter (W, F, A, P), the subassembly's two digits (W01, F01, A01; the
+  palletizer's robot P01, the tool changer P10, the clamp, vacuum and bag grippers P11 to P13) and a three-digit item
+  in the order of the made parts' names; the assembly itself is item 000, written into the root component.
+- A bought part's number is S and a four-digit serial, one for each designation across all eight assemblies; its
+  description is the designation. A bearing's rings and balls, a reducer's case and output, a slip ring's rotor and
+  stator get the one number of the part they make up.
+- A body that comes with a bought part (a cylinder's piston rod, the bearings inside a support unit) gets no number;
+  its description says which part it comes with.
+- A component whose name is on no parts list (the bag, the station's rollers) is left unnumbered and named in the
+  message.
+
+FUSION CONVENTIONS:
+- The assembly's script makes its own new design document (FusionDesignDocumentType); the numbers go into
+  Component.partNumber and Component.description, once for each component however many occurrences it has.
+- Nothing is moved and no joint is added, as-built or otherwise; no length is used, so the API's cm do not arise.
+- The assembly's script is loaded from its folder beside this one as a module; nothing of it is copied.
+
+ACCEPTANCE CRITERIA:
+- A message gives the assembly, its number, the components numbered, the made kinds with their first and last numbers,
+  the bought kinds, the bodies that come with a bought part, the names left unnumbered and a version tag.
+- Every component with a body is numbered, or comes with a bought part, or is one of the assembly's non-parts.
+- One number for one kind: components of the same kind share a number and no number names two kinds.
+- The bag gripper: 13 made kinds, P13-001 to P13-013, 8 bought kinds, 2 piston rods with their cylinders, the bag and
+  the rollers left unnumbered; the root P13-000.
+- Refused: an assembly that is not one of the eight.

@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 49: builds one of Volume 2's assemblies with its own script and writes every part's part number and description into its component: made parts by machine, subassembly and item, bought parts by serial with their designation."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "PartNumbers"
+}

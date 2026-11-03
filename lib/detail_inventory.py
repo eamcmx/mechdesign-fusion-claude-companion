@@ -158,6 +158,48 @@ def numbering(rows=None):
     return out, snum
 
 
+def number_map(key, rows=None):
+    """For one assembly, each name on its parts list with its part number and description: a made part its own number
+    and its name, a bought part the number and the designation of what is ordered, a body that comes with a bought
+    part no number and 'with the <part>'."""
+    rows = rows or all_machines()
+    nb, snum = numbering(rows)
+    k, title, fname, ch = [m for m in MACHINES if m[0] == key][0]
+    pl, total = parts(fname)
+    made = [n for n, num, q, kind in [(x[1], x[0], x[2], x[3]) for x in nb[key]] if kind == 'made']
+    out = {}
+    for name in pl:
+        c, grp = classify(name, pl)
+        if c == 'made':
+            out[name] = ('%s-%03d' % (SUB[key], made.index(name) + 1), name)
+        elif c == 'bought':
+            d = designation(set_name(name))
+            out[name] = (snum[d], d)
+        else:
+            out[name] = (None, 'with the ' + grp)
+    return out
+
+
+SCRIPTS = {'wrist': 'WristIntegration', 'flap': 'FlapSystem', 'axle': 'RearAxle', 'robot': 'PalletizerRobot',
+           'changer': 'ToolChanger', 'clamp': 'ClampGripper', 'vacuum': 'VacuumGripper', 'bag': 'BagGripper'}
+
+
+def kind_of(name, known):
+    """The name on the parts list that a Fusion component's name stands for: Fusion's (1) dropped, then a jaw's A or
+    B, then the part's own number, until a known name is reached; None for a body that is not a part (the bag, the
+    station's rollers)."""
+    nm = re.sub(r' \(\d+\)$', '', name)
+    wds = nm.split()
+    while wds:
+        if ' '.join(wds) in known:
+            return ' '.join(wds)
+        if len(wds) > 1 and (wds[-1] in ('A', 'B') or wds[-1].isdigit()):
+            wds = wds[:-1]
+        else:
+            return None
+    return None
+
+
 def shared(rows=None):
     """The bought parts used in more than one assembly: {designation: [keys]}."""
     rows = rows or all_machines()
