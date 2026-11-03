@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 50: builds the bag gripper with its own script, numbers it as Chapter 49 does, describes every bought part by its full designation and details the driven stub shafts with their standard parts."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "StandardParts"
+}

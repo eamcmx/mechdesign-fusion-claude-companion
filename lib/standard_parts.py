@@ -442,6 +442,51 @@ def vacuum_m6():
                 below=[x for x in sorted(Ls) if x < need][-1], engaged_below=[x for x in sorted(Ls) if x < need][-1] - f['h'])
 
 
+# ---- the driven stub shaft in detail (the Fusion step of Chapter 50) -------------------------------------------
+END_WASHER = dict(D=40.0, t=5.0, hole=9.0)       # made: a plain disc that clamps the hub, the spacer and the inner ring
+SEAL_SET_IN = 0.5                                 # mm: the seals' faces set in from the rings' (not on SKF's page)
+
+
+def stub_detail():
+    """The bag gripper's driven stub shaft in detail, along the jaw's hinge (x, mm) from the tube's end: the shoulder
+    at the bearing's abutment (bearing_6206), the 6206-2RS1 in the end plate's boss, a spacer to the lever's hub, the
+    hub lengthened into a boss that holds the key of lever_key() with 2.5 mm at each end, the key's seats (DIN 6885-1:
+    t1 in the shaft, t2 in the hub), and an end washer and screw that clamp hub, spacer and inner ring against the
+    shoulder; the shaft ends 1 mm inside the hub's face so that the washer bears on the hub."""
+    import bag_gripper as B
+    L = B.LAY
+    brg, key = bearing_6206(), lever_key()
+    b, h, t1, t2 = din6885_row(L['stub_d'])
+    boss = key['L'] + 5.0
+    x_lev = L['lever_x']
+    hub = (x_lev[1] - boss, x_lev[1])
+    end = x_lev[1] - 1.0
+    screw = FASTENERS['Cap screw M8x20']
+    under_head = END_WASHER['t'] + (x_lev[1] - end)
+    return dict(d=L['stub_d'], shoulder=brg['shoulder'], da_min=brg['skf']['da_min'], da_max=brg['skf']['da_max'],
+                r_max=brg['skf']['ra_max'], x_tube=L['tube_x'], x_brg=L['bearing_x'], x_lever=x_lev, hub=hub, boss=boss,
+                hub_r=25.0, key=(hub[0] + 2.5, hub[1] - 2.5), b=b, h=h, t1=t1, t2=t2, key_L=key['L'], key_need=key['l_crush'],
+                spacer=(L['bearing_x'][1], hub[0]), end=end, washer=END_WASHER, screw=(screw['d'], screw['L']),
+                under_head=under_head, thread=screw['L'] - under_head, thread_need=SCREW_IN * screw['d'],
+                bore=(brg['skf']['d'], brg['skf']['D'], brg['skf']['B'], brg['skf']['d1'], brg['skf']['D2']),
+                set_in=SEAL_SET_IN)
+
+
+def detail_numbers(rows=None):
+    """The part numbers of the kinds the detail adds to the bag gripper: its made parts the next free items of P13 in
+    the order of their names, the key the next free serial; with their descriptions."""
+    nb, sn = D.numbering(rows)
+    made = [n for n, _, _, k in nb['bag'] if k == 'made']
+    nxt = int(made[-1].split('-')[1]) + 1
+    out = {}
+    for k, name in enumerate(sorted(('End washer', 'Spacer'))):
+        out[name] = ('P13-%03d' % (nxt + k), name)
+    key = lever_key()
+    out['Key %dx%dx%d' % (key['b'], key['h'], key['L'])] = ('S-%04d' % (len(sn) + 1),
+                                                         'DIN 6885-1 A %d x %d x %d' % (key['b'], key['h'], key['L']))
+    return out
+
+
 if __name__ == '__main__':
     wl = work_list()
     for g in sorted({w['group'] for w in wl}):

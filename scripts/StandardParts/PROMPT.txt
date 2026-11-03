@@ -1,0 +1,49 @@
+Write a Fusion Python script that, when run, builds the bag gripper with its bought parts described by their full
+designations and its driven stub shafts detailed with their standard parts, as Chapter 50 decided them.
+
+INPUTS (a command dialog, with these defaults):
+- the shaft's shoulder (mm), 36
+- the key's length (mm), 25
+
+DERIVED (from lib/standard_parts.py and lib/detail_inventory.py, never typed):
+- stub_detail(): the shoulder from bearing_6206() (the first whole millimetre over SKF's da min), SKF's band, the
+  bearing's d, D, B, d1 and D2, the key's row of DIN 6885-1 (b, h, t1, t2) and its length from lever_key(), the hub,
+  the spacer, the end washer and the end screw, the shaft's end 1 mm inside the hub's face
+- dowel_adapter(): the ISO 8734 dowel's made length and its depth in the adapter
+- decide(): every bought designation's full designation; detail_numbers(): the new kinds' numbers
+- number_map(), kind_of() and Chapter 49's PartNumbers.py for the numbers
+
+HARD CONSTRAINTS:
+- Refuse a shoulder outside SKF's band (35.6 to 40.3 mm), a key shorter than crushing in the brake stop allows
+  (23.70 mm) and a key length DIN 6885-1 does not make at 8 mm wide.
+- Build the gripper with BagGripper.py's own build() and number it with PartNumbers.py's number(); copy neither. Change
+  the gripper's parts by replacing, before the build, three of BagGripper's functions: the jaw's bodies (the driven
+  stub shaft, the lever, and the parts the detail adds), the tube that draws the bearings, and the cylinder that
+  draws the dowel and its hole; each replacement recognises only the calls it means and passes every other through.
+- The driven stub shaft: the end cap in the tube, the shoulder from the tube's end to the bearing, the 30 mm seat to
+  1 mm inside the hub's face, a form-A keyseat t1 deep on top, a tapped hole for the end screw at its nominal
+  diameter.
+- The four 6206-2RS1: d 30, D 62, B 16, the seals between d1 and D2 set in 0.5 mm from the rings' faces.
+- The lever's hub lengthened into a boss 5 mm longer than the key, bored 30 and keywayed t2 deep through; the key
+  2.5 mm inside each end of the boss; a spacer, 36 outside and 30 inside, from the inner ring to the boss; an end
+  washer 40 x 5 with a 9 mm hole, and an ISO 4762 M8 x 20 through it into the shaft's end.
+- The adapter's dowel ISO 8734 10 x 22, 13 mm in the adapter and 9 in the tool plate.
+- Both jaws alike: the -y jaw's parts are the +y jaw's turned, as the gripper's own script makes them.
+- Numbers: Chapter 49's; the detail's new made kinds the next free items of P13 in the order of their names, the key
+  the next free serial. Descriptions: a bought part's full designation from decide().
+
+FUSION CONVENTIONS:
+- The gripper's script makes its own new design document; the numbers and descriptions go into Component.partNumber
+  and Component.description; no joint is added and nothing is moved; lengths in mm, the API's cm inside mdfc_parts.
+
+ACCEPTANCE CRITERIA:
+- A message gives the shoulder and SKF's band, the bearing, the spacer, the hub and the key, the end washer and the
+  screw, the dowel, the bought components described, the new numbers and a version tag.
+- 82 parts: the gripper's 74 and four more on each jaw's driven end.
+- Every bought component described by its full designation; the new kinds numbered alike on both jaws.
+- The shoulder measured on the model inside SKF's band; the bearings' faces at d, d1, D2 and D, 16 wide.
+- The key inside the hub's boss, 2.5 mm from each end; the stack closed from the shoulder to the end washer, the
+  washer 1 mm clear of the shaft's end; the end screw's thread at least 1.5 d.
+- The dowel 22 long, 13 in the adapter.
+- No interference closed on the bag, nor with the jaws open 45 deg and the press up.
+- Refused: a shoulder of 35 mm; a key of 22 mm; a key of 26 mm.

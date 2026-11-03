@@ -1,0 +1,27 @@
+# standard_parts_check
+# Autodesk Fusion 2706.1.17, run 2026-11-03 08:29, 12 s
+
+StandardParts 1.0 (2026-11-03)
+  ok   Run opens the dialog
+Bag gripper detailed: the driven stub shafts with a 36.0 mm shoulder (SKF: 35.6 to 40.3), SKF 6206-2RS1, a spacer of 27, the lever's hub 30 long with DIN 6885-1 A 8 x 7 x 25, an end washer 40 x 5 and ISO 4762 M8 x 20; the dowel ISO 8734 10 x 22, 13 mm in the adapter. 37 bought components described by their full designations; new parts P13-014, P13-015, S-0107.
+
+[StandardParts 1.0 (2026-11-03)] StandardParts 1.0 (2026-11-03)
+  OK pressed, built in 11 s
+  ok   a new design opened
+  parts: 82, the bag and the station's 9 rollers apart
+  ok   the parts: 82, the gripper's 74 and four more on each jaw's driven end
+  ok   every bought component described by its full designation: 39 components, 9 numbers; wrong []
+  S-0016 SKF 6206-2RS1; S-0032 ISO 4762 M10 x 25 - 10.9 - zinc-plated; S-0035 ISO 4762 M6 x 16 - 8.8 - zinc-plated; S-0036 ISO 4762 M8 x 20 - 8.8 - zinc-plated; S-0039 ISO 4762 M8 x 30 - 8.8 - zinc-plated; S-0049 Cylinder DSBC-32-50; S-0050 Cylinder DSBC-80-125-C; S-0052 ISO 8734 10 x 22; S-0107 DIN 6885-1 A 8 x 7 x 25
+  ok   the detail's new kinds numbered on both jaws: P13-014 End washer, S-0107 DIN 6885-1 A 8 x 7 x 25, P13-015 Spacer
+  ok   the shoulder [36.0] mm across, inside SKF's 35.6 to 40.3
+  ok   the four 6206-2RS1: faces at [30.0, 40.36, 54.06, 62.0] mm across, 16 wide
+  ok   the key (472.5, 497.5) inside the hub's boss (470.0, 500.0), 25 long
+  ok   the stack closed from the shoulder to the end washer, the largest gap 0.0000 mm; the washer 1.000 mm clear of the shaft's end
+  ok   the end screw's thread in the shaft 14.0 mm, against 1.5 d = 12.0
+  ok   the dowel 22.0 mm long, 13.0 in the adapter (16 thick), 9.0 in the tool plate
+  ok   closed on the bag: no interference among the 92 components 
+  ok   the jaws open 45 deg, the press up: no interference 
+  ok   {'shoulder': 35.0} refused: A shoulder of 35.0 mm: SKF's 6206-2RS1 asks for 35.6 to 40.3 mm.
+  ok   {'key_len': 22.0} refused: A key 22 mm long: in the brake stop it is crushed unless it is at least 23.70 mm.
+  ok   {'key_len': 26.0} refused: A key 26 mm long: DIN 6885-1 makes keys 8 wide in 18, 20, 22, 25, 28, 32, 36, 40, 45, 50 mm.
+ALL PASS
