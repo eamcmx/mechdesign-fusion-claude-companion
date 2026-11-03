@@ -1,0 +1,23 @@
+# fatigue_spots_check
+# Autodesk Fusion 2706.1.17, run 2026-11-03 21:04, 35 s
+
+FatigueSpots 1.0 (2026-11-03)
+  ok   Run opens the dialog
+Fatigue spots: 4 measured.
+Jaw stops: the levers carried on to 200 mm as strikers; four DYSC-25-25-Y1F on four brackets, 8 M8 x 40 through the end plates.
+bolts: the grip 28.60 mm, the head 8.00, the shank 8.00 across
+Stop bracket closed 1: 2 bolt holes, fillets none, sharp (rounds over 10: [15.0])
+Stop bracket open 1: 2 bolt holes, fillets none, sharp (rounds over 10: [15.0, 24.0])
+keyseat: the stub 30.00 across, the key 8.00 x 7.00 x 24.99, the keyseat 4.00 deep
+groove: 28.60 across, from 443.00 to 444.60 mm out; the bearing 427.00 to 443.00; beyond it: True
+
+[FatigueSpots 1.0 (2026-11-03)]
+  OK pressed, built in 35 s
+  ok   a new design opened
+  ok   the bolts: the grip 28.60 mm, the head 8.00, the shank 8.00 across
+  ok   Stop bracket closed 1: 2 bolt holes, fillets none, sharp
+  ok   Stop bracket open 1: 2 bolt holes, fillets none, sharp
+  ok   the keyseat: the stub 30.00 across, the key 8.00 x 7.00 x 24.99, the keyseat 4.00 deep
+  ok   the groove: 28.60 across, from 443.00 to 444.60 mm out, the bearing 427.00 to 443.00
+  ok   refused: No spot called crane: Chapter 60 measures bolts, roots, keyseat, groove.
+ALL PASS

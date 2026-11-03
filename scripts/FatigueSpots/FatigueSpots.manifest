@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 60: builds the bag gripper with its stops and measures in the model the geometry the fatigue calculations take: the stop bolts' grip, the brackets' roots, the long stub's keyseat and key, the short stub's circlip groove against its bearing."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "FatigueSpots"
+}

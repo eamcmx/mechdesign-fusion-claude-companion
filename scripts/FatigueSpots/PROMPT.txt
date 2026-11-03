@@ -1,0 +1,38 @@
+Write a Fusion Python script that, when run, measures in the model the geometry Chapter 60's fatigue calculations take
+for the bag gripper's ends, so that the hand calculations rest on the parts as drawn: the stop brackets' bolts, the
+brackets' roots, the long stub shaft's keyseat with its key, and the short stub shaft's circlip groove.
+
+INPUTS (a command dialog, with this default):
+- the spot: all, bolts, roots, keyseat or groove; all
+
+DERIVED (never typed):
+- RangeSweep.py's machine('bag'): the bag gripper with Chapter 56's stops, through PalletizerDetail.py
+- the parts by their names: Cap screw ISO 4762 M8x40 stop 1, Nut ISO 4032 M8 stop 1, Stop bracket closed 1, Stop
+  bracket open 1, Stub shaft long A, Key 8x7x25 A, Stub shaft short A, the Bearing 6206 round the short stub
+
+HARD CONSTRAINTS:
+- Build the gripper through RangeSweep.py's machine(), loaded, not copied.
+- Measure from the parts' faces, not from the numbers the scripts were built with.
+- The bolts' grip: along the bolt's axis, from the head's underside (the edge of the head's cylinder nearer the
+  shank) to the nut's face nearer the head.
+- The roots: list every cylindrical face of each bracket under 10 mm in radius that is not a bolt hole, and every
+  torus; a bracket with none has sharp roots.
+- The keyseat: the stub's diameter there, and the key's length along the stub's axis, its height out from the axis
+  and its width, from its mesh (its round ends have no vertices); the keyseat's depth as the stub's radius less the
+  key's nearest distance from the axis.
+- The groove: its diameter and its place, and the bearing's, as distances from the gripper's middle.
+- Colour the brackets and the key red, the bolts and the nuts yellow; the stubs keep the colours Chapter 51 gave
+  their fits.
+- Write the measures to results/fatigue_spots.json.
+- Refuse a spot that is not one of the four.
+
+FUSION CONVENTIONS:
+- A new design document; lengths in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives each spot's measures, the gripper's own first line, and a version tag.
+- The grip 28.6 mm, the bolt's head 8 and its shank 8 across, within 0.01.
+- Both brackets' roots sharp, with their two bolt holes each.
+- The stub 30 across, the key 8 x 7 x 25 and the keyseat 4.0 deep, within 0.02.
+- The groove 28.6 across, outside the bearing.
+- Refused: a spot called crane.
