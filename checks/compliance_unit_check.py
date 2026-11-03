@@ -38,7 +38,7 @@ def run(_context):
     leaves = [x for x in root.allOccurrences if x.component.bRepBodies.count]
     mm_ = adsk.core.Application.get().measureManager
     dist = lambda a, b: mm_.measureMinimumDistance(a.bRepBodies.item(0), b.bRepBodies.item(0)).value * 10
-    one = lambda nm: [o for o in leaves if o.component.name == nm][0]
+    one = lambda nm: [o for o in leaves if o.component.name.split(' (')[0] == nm][0]   # Fusion's ' (1)' on a repeated name
     car = one('Carriage')
     stops = [o for o in leaves if o.component.name.startswith('Stop block')]
     springs = [o for o in leaves if o.component.name.startswith('Spring ') and not o.component.name.startswith('Spring seat')]

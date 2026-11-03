@@ -1,0 +1,6 @@
+# controls/compliance_unit_carriage
+# Autodesk Fusion 2706.1.17, run 2026-11-03 08:00, 10 s
+
+  ok   at rest: no interference 
+  FAIL raised the whole stroke: no interference but the springs (4 clashes, 26527.3 mm3) [('Cap screw M6x20 4', 'Carriage'), ('Cap screw M6x20 8', 'Carriage'), ('Rail HGR25 1', 'Carriage')]
+CONTROL: the carriage 220 across; the raised check above MUST fail

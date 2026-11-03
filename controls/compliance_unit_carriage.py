@@ -1,4 +1,4 @@
-# CONTROL for the prompt line "the carriage: a plate 176 x 200 x 28, 2 mm clear of the rails' running faces": the
+# CONTROL for the prompt line "the carriage: a plate 176 x 200 x 32, 2 mm clear of the rails' running faces": the
 # carriage made as wide as the cheeks allow, 220 across. Expected: at rest its top only meets the rails' lower ends,
 # so it passes; raised the whole stroke it runs 28 mm up into both rails, and the raised check fails.
 import sys, importlib

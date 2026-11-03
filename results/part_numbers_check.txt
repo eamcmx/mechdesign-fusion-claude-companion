@@ -1,0 +1,20 @@
+# part_numbers_check
+# Autodesk Fusion 2706.1.17, run 2026-11-03 07:49, 12 s
+
+PartNumbers 1.0 (2026-11-03)
+  ok   Run opens the dialog
+Bag gripper numbered P13-000: 74 components; 13 made kinds (P13-001 to P13-013), 8 bought kinds; 2 bodies with a bought part; left unnumbered: Bag (1), Roller 1, Roller 2, Roller 3, Roller 4, Roller 5, Roller 6, Roller 7, Roller 8, Roller 9.
+
+[PartNumbers 1.0 (2026-11-03)] PartNumbers 1.0 (2026-11-03)
+  OK pressed, built in 12 s
+  ok   a new design opened
+  components with a body: 84
+  ok   every component numbered, with a bought part, or not a part: 72, 2, 10; wrong []
+  ok   one number for one kind: 21 numbers for 21 kinds
+  ok   the made kinds: 13, P13-001 to P13-013
+  ok   the bought kinds: 8 (S-0016, S-0032, S-0035, S-0036, S-0039, S-0049, S-0050, S-0052)
+  ok   with a cylinder: ['Piston rod A', 'Piston rod B']
+  ok   the root: P13-000, Bag gripper
+  ok   left unnumbered, not parts: ['Bag (1)', 'Roller 1', 'Roller 2', 'Roller 3', 'Roller 4', 'Roller 5']
+  ok   {'key': 'crane'} refused: No assembly called crane: the eight are wrist, flap, axle, robot, changer, clamp, vacuum, bag.
+ALL PASS

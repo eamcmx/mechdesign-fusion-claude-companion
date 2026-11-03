@@ -6,7 +6,7 @@ air crosses the float through a tube that slides in a sealed receiver.
 INPUTS (a command dialog, with these defaults):
 - the gripper (bag, vacuum or clamp), bag
 - the stroke (mm), 30
-- the springs' preload (N), 894.6
+- the springs' preload (N), 853.3
 
 DERIVED (from lib/compliance_unit.py, never typed):
 - LAY: the layout below; GUIDE: HIWIN HGR25 rails and HGH25CA blocks (C0 36 490 N, 84 long, 40 high, 48 wide)
@@ -23,7 +23,7 @@ HARD CONSTRAINTS:
   from below and the 10 pin, and two cheeks 20 thick at x = +-112 to +-132, 120 wide, down to the rails' foot.
 - An HGR25 rail on each cheek's inner face, 218 long under the top plate, on four M6 x 20 in counterbores; two
   HGH25CA blocks on each rail, their centres 100 apart, the upper one 2 mm under the wings' tops.
-- The carriage: a plate 176 x 200 x 28, 2 mm clear of the rails' running faces, whose underside repeats the tool
+- The carriage: a plate 176 x 200 x 32, 2 mm clear of the rails' running faces, whose underside repeats the tool
   plate's (the 100 H7 recess 10 deep, six M10 tapped 15 deep, the 10 pin hole), and two wings 15 thick at x = +-57
   to +-72 carrying the blocks; the wings' tops the stroke under the top plate.
 - The stops: two lugs on each wing, 25 wide (y = +-30 to +-55), 15 thick, from the wing's face out to x = +-100, their
@@ -35,7 +35,7 @@ HARD CONSTRAINTS:
 - The air: four passages 10 across from the housing's face, galleries 8 across along x at y = +-40 and along y at
   x = 0 (drilled from the -y edge), plugged at the edges, 10 under the face; a steel tube 20 x 16 pressed into a boss
   32 across and 20 deep under the top plate, its foot 15 mm into a receiver 36 across and 50 tall on the carriage,
-  sealed by an O-ring in a groove 7 mm under the receiver's top; the carriage's galleries the same, 19 over its face.
+  sealed by an O-ring in a groove 7 mm under the receiver's top; the carriage's galleries the same, 21 over its face.
 - An M12 proximity sensor 40 long looking along -y at the +x wing's side, 2 mm off it, its face's lower edge 3 mm
   over the wing's top; held by a bracket under the top plate.
 

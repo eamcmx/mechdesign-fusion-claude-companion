@@ -10,7 +10,9 @@ each gripper. Then the float for the vacuum and bag grippers: the springs agains
 the guides against the tipping moment, the sensor and the robot's stop within the remaining travel, and the
 envelope with the unit in it.
 """
+import json
 import math
+import os
 
 import clamp_gripper as cg
 import vacuum_gripper as vg
@@ -67,16 +69,37 @@ def height(lay=LAY, g=GUIDE):
     return dict(rail=rail, H=lay['top_t'] + rail + lay['carriage_t'])
 
 
-def rows_with_unit(env, H, m_unit=12.0):
+# the unit as Fusion weighed it: checks/compliance_unit_check.py writes compliance_unit_weighed.json beside this file,
+# the body (housing, rails, seats and springs, stops, sensor, tube) and the carriage (with its blocks, O-ring and plugs),
+# each with its mass and its centre's z at rest. Before the first weighing the unit was taken as 12 kg at its middle and
+# the carriage as 8 kg at the middle of its plate.
+WEIGHED = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'compliance_unit_weighed.json')
+
+
+def weighed():
+    """The unit's mass and the carriage's, each with its centre's depth under the unit's top as a fraction of the
+    unit's height, so that a unit of another height keeps the float's masses and their proportions."""
+    H = height()['H']
+    if os.path.exists(WEIGHED):
+        w = json.load(open(WEIGHED, encoding='utf-8'))
+        mb, zb = w['Body']['m'], -w['Body']['z']
+        mc, zc = w['Carriage']['m'], -w['Carriage']['z']
+        return dict(m_unit=mb + mc, f_unit=(mb * zb + mc * zc) / (mb + mc) / H, m_car=mc, f_car=zc / H, weighed=True)
+    return dict(m_unit=12.0, f_unit=0.5, m_car=8.0, f_car=(H - LAY['carriage_t'] / 2) / H, weighed=False)
+
+
+def rows_with_unit(env, H, m_unit=None):
     """A gripper's envelope rows with the unit inserted under the changer: the gripper and its load H lower, the unit's
-    mass at its middle."""
+    mass (as weighed) at its centre."""
+    w = weighed()
+    m_unit = w['m_unit'] if m_unit is None else m_unit
     rows = [(n, m, (z + H / 1000.0) if n not in CHANGER else z) for n, m, z in env['rows']]
     if H > 0:
-        rows.append(('unit', m_unit, -tc.GEOM['z_tool'] / 1000.0 + H / 2000.0))
+        rows.append(('unit', m_unit, -tc.GEOM['z_tool'] / 1000.0 + w['f_unit'] * H / 1000.0))
     return rows
 
 
-def ring_factor(env, H, m_unit=12.0):
+def ring_factor(env, H, m_unit=None):
     """Chapter 44's ring kept closed in the worst stop with the unit H mm tall in the stack."""
     rows = rows_with_unit(env, H, m_unit)
     M = sum(r[1] for r in rows)
@@ -95,10 +118,12 @@ def envelopes():
     return dict(clamp=cg.envelope(), vacuum=vg.envelope(), bag=bg.envelope())
 
 
-def below(env, H, m_lower=8.0):
-    """What hangs on the unit's carriage: the gripper and its load, H lower, and the carriage itself."""
+def below(env, H, m_lower=None):
+    """What hangs on the unit's carriage: the gripper and its load, H lower, and the carriage itself (as weighed)."""
+    w = weighed()
+    m_lower = w['m_car'] if m_lower is None else m_lower
     rows = [(n, m, z + H / 1000.0) for n, m, z in env['rows'] if n not in CHANGER]
-    rows.append(('carriage', m_lower, -tc.GEOM['z_tool'] / 1000.0 + (H - LAY['carriage_t'] / 2) / 1000.0))
+    rows.append(('carriage', m_lower, -tc.GEOM['z_tool'] / 1000.0 + w['f_car'] * H / 1000.0))
     m = sum(r[1] for r in rows)
     return dict(rows=rows, m=m, z=sum(r[1] * r[2] for r in rows) / m)
 

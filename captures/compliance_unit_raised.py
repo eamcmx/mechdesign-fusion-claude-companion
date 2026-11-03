@@ -1,5 +1,5 @@
-# Pictures for Chapter 48: the compliance unit raised its whole stroke, from the -y side along the rails' faces, the
-# top plate's cheek toward the camera hidden so that the blocks, the springs and the sensor show.
+# Pictures for Chapter 48: the compliance unit raised its whole stroke, from the -y side between the cheeks, so that the
+# carriage's wings against the top plate, the blocks on the rails and the springs compressed show.
 import sys, importlib, math
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc
