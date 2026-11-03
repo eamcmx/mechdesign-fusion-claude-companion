@@ -146,37 +146,31 @@ def body(root, sp):
     mp.cut(b, zcyl(-8.0, 9.0, 5.0, 80.0, 0.0))
     x0, x1 = L['cheek_x']
     cy = L['cheek_y']
-    for xs in (-1, 1):
-        for y in (-40.0, 40.0):
-            mp.cut(b, zcyl(Z_TOP - 1.0, 1.0, 4.5, xs * (x0 + x1) / 2, y))   # the cheeks' M8 from above
-            mp.cut(b, zcyl(-9.0, 1.0, 7.0, xs * (x0 + x1) / 2, y))
+    for xs in (-1, 1):                                                       # the cheeks, machined with the plate
+        a, c = sorted((xs * x0, xs * x1))
+        mp.union(b, mp.box(a, c, -cy, cy, Z_RAIL[1], Z_TOP + 0.01))
     for x, y in L['hangers']:
         mp.cut(b, zcyl(Z_TOP - 1.0, 1.0, 5.0, x, y))                        # the hangers' M10, tapped
-    part(g, 'Top plate', b, 'Aluminum')
+    b_ref = [b]
     for k, a in enumerate(ISO):
         x, y = at(80.0, a)
         part(g, 'Cap screw M10x25 %d' % (k + 1), mp.cap_screw(10.0, 25.0, (x, y, Z_TOP + 10.5), (0, 0, 1)))
     part(g, 'Dowel pin 10x17', zcyl(-8.0, 9.0, 5.0, 80.0, 0.0))
-    # the cheeks and their rails
-    ch = mp.box(x0, x1, -cy, cy, Z_RAIL[1], Z_TOP)
-    for y in (-40.0, 40.0):
-        mp.cut(ch, zcyl(Z_TOP - 21.0, Z_TOP + 1.0, 4.0, (x0 + x1) / 2, y))
+    # the rails on the cheeks' inner faces, their screws tapped into the cheeks
     rail_y = GD['WR'] / 2
     rail = mp.box(x0 - GD['HR'], x0, -rail_y, rail_y, Z_RAIL[1], Z_RAIL[0])
     ry = [Z_RAIL[0] - 29.0 - 60.0 * k for k in range(4)]
     for z in ry:
-        mp.cut(ch, mp.cyl((x0 - 1.0, 0.0, z), (x0 + 16.0, 0.0, z), 3.0))
+        for xs in (1, -1):
+            mp.cut(b_ref[0], mp.cyl((xs * (x0 - 1.0), 0.0, z), (xs * (x0 + 16.0), 0.0, z), 3.0))
         mp.cut(rail, mp.cyl((x0 - GD['HR'] - 1.0, 0.0, z), (x0 + 1.0, 0.0, z), 3.0))
         mp.cut(rail, mp.cyl((x0 - GD['HR'] - 1.0, 0.0, z), (x0 - GD['HR'] + 9.0, 0.0, z), 5.5))   # counterbored, D 11 h 9
+    part(g, 'Housing', b, 'Aluminum')
     for k, xs in enumerate((1, -1)):
-        part(g, 'Cheek %d' % (k + 1), ch if xs > 0 else mirrored_x(ch), 'Aluminum')
         part(g, 'Rail HGR25 %d' % (k + 1), rail if xs > 0 else mirrored_x(rail))
         for j, z in enumerate(ry):
             sc = mp.cap_screw(6.0, 20.0, (x0 - GD['HR'] + 9.0, 0.0, z), (1, 0, 0))
             part(g, 'Cap screw M6x20 %d' % (4 * k + j + 1), sc if xs > 0 else mirrored_x(sc))
-        for j, y in enumerate((-40.0, 40.0)):
-            sc = mp.cap_screw(8.0, 30.0, (xs * (x0 + x1) / 2, y, -9.0), (0, 0, -1))
-            part(g, 'Cap screw M8x30 %d' % (2 * k + j + 1), sc)
     # the spring seats and the hanger bolts
     r_o, r_i = L['boss']
     for k, (x, y) in enumerate(L['hangers']):

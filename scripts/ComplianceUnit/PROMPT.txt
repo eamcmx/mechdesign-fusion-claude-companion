@@ -14,8 +14,9 @@ DERIVED (from lib/compliance_unit.py, never typed):
 HARD CONSTRAINTS:
 - Refuse the clamp gripper (Chapter 44's ring would open in the worst stop with the unit in the stack), a stroke
   over the rails' 30 mm, and a preload under what keeps the carriage down in the stops that throw the load up.
-- The top plate 260 x 200 x 20 with the spigot 100 g6 and six M10 x 25 from below on the 160 circle, the 10 pin; two
-  cheeks 20 thick at x = +-105 to +-125, 120 wide, down to the rails' foot, each on two M8 x 30 from above.
+- The housing machined from one block of 2024-T3: a top plate 260 x 200 x 20 with the spigot 100 g6, six M10 x 25
+  from below on the 160 circle and the 10 pin, and two cheeks 20 thick at x = +-105 to +-125, 120 wide, down to the
+  rails' foot.
 - An HGR25 rail on each cheek's inner face, 218 long under the top plate, on four M6 x 20 in counterbores; two
   HGH25CA blocks on each rail, their centres 100 apart, the upper one 2 mm under the wings' tops.
 - The carriage: a plate 206 x 160 x 20 whose underside is the gripper's face, with the gripper's four M8, and two

@@ -108,6 +108,15 @@ def breakaway(env, r=0.085, S=S_STOP):
     return dict(r=r, F=need, M=max(c['M'] for c in sc['cases']))
 
 
+def largest_coil(d=12.7, C=6.0, A=1783.0, m=0.190, ssy=0.45):
+    """The most a helical spring of Shigley's wires carries: hard-drawn A227 at its largest diameter, 12.7 mm (Table
+    10-4, p. 517; Ssy = 0.45 Sut, Table 10-6), wound to an index of 6: F = Ssy pi d^3/(8 K_B D)."""
+    Sut = A / d ** m
+    KB = (4 * C + 2) / (4 * C - 3)
+    F = ssy * Sut * pi * d ** 3 / (8 * KB * C * d)
+    return dict(d=d, D=C * d, Sut=Sut, KB=KB, F=F)
+
+
 def springs(m_below, a_lift, s=SPRING, lay=LAY):
     """The springs that keep the carriage on its stops when a stop throws the load up: their preload, at S, at least
     the load's mass times the lift; the touch-down force; the spring of Shigley's chapter 10 for it."""
@@ -204,12 +213,53 @@ def touchdown(lay=LAY, a_stop=None, t_react=0.010, early=None):
     return dict(rem=rem, rows=out, v_peak=2 * S / T)
 
 
+def structure(g, sp, lay=LAY):
+    """The housing's cheek at its root under its rail's couple, against 2024-T3 (Sy 345 MPa, Budynas & Nisbett, 2015,
+    Table A-24, p. 1055); the hanger bolts in the stop, the axial pull with the springs' preload over four, on the
+    shank and on an M10's stress area (Table 8-1, p. 404); the springs in fatigue if every placement used the whole
+    stroke, unpeened, Zimmerli's Ssa 241 and Ssm 379 MPa (Eq. 10-28, p. 528), Ssu = 0.67 Sut (Eq. 10-30), Gerber."""
+    w = g['worst']
+    M_ch = w['M'] / 2
+    b, t = 2 * lay['cheek_y'], lay['cheek_x'][1] - lay['cheek_x'][0]
+    W = b * t * t / 6.0
+    s_ch = M_ch * 1000.0 / W
+    F_h = (w['Fa'] + g['springs']['F_pre']) / 4
+    A_sh = pi * lay['hanger_d'] ** 2 / 4
+    # the springs in fatigue
+    KB, D, d = sp['KB'], sp['D'], sp['d']
+    t1 = KB * 8 * sp['F1'] * D / (pi * d ** 3)
+    t2 = KB * 8 * sp['F2'] * D / (pi * d ** 3)
+    ta, tm = (t2 - t1) / 2, (t2 + t1) / 2
+    Ssu = 0.67 * sp['Sut']
+    Sse = 241.0 / (1 - (379.0 / Ssu) ** 2)
+    nf = 0.5 * (Ssu / tm) ** 2 * (ta / Sse) * (-1 + math.sqrt(1 + (2 * tm * Sse / (Ssu * ta)) ** 2))
+    return dict(M_cheek=M_ch, W=W, s_cheek=s_ch, n_cheek=345.0 / s_ch, F_hanger=F_h, s_shank=F_h / A_sh,
+                s_thread=F_h / 58.0, t1=t1, t2=t2, ta=ta, tm=tm, Ssu=Ssu, Sse=Sse, nf=nf)
+
+
+def spacing(ds=(60.0, 80.0, 100.0, 120.0, 140.0)):
+    """The blocks' spacing along a rail against the unit's height, the worst block's static factor with the bag gripper,
+    and the changer's ring factor with the bag and vacuum grippers."""
+    envs = envelopes()
+    rows = []
+    for d in ds:
+        lay = dict(LAY, d=d)
+        H = height(lay)['H']
+        sc = stop_cases(envs['bag'], H)
+        w = max(sc['cases'], key=lambda c: guides(c, lay)['P'])
+        g = guides(w, lay)
+        rows.append(dict(d=d, H=H, P=g['P'], fSL=g['fSL'], ring_bag=ring_factor(envs['bag'], H)['n'],
+                         ring_vac=ring_factor(envs['vacuum'], H)['n']))
+    return rows
+
+
 def design():
     envs = envelopes()
     hz = height()
     out = dict(height=hz)
     out['ring'] = {k: {H: ring_factor(e, H)['n'] for H in (0.0, 100.0, 150.0, 200.0, hz['H'])} for k, e in envs.items()}
     out['breakaway'] = {k: breakaway(e) for k, e in envs.items()}
+    out['largest_coil'] = largest_coil()
     out['grippers'] = {}
     for k in ('vacuum', 'bag'):
         sc = stop_cases(envs[k], hz['H'])
@@ -233,6 +283,13 @@ def design():
         e = 0.5 * (lo + hi)
         lo, hi = (e, hi) if touchdown(a_stop=a3, early=e)['rows'][0]['ok'] else (lo, e)
     td['limit'] = lo
+    for k, g in out['grippers'].items():
+        g['structure'] = structure(g, out['coil'])
+    v_lim = touchdown(a_stop=a3, early=lo)['rows'][0]['v']
+    m_bag = out['grippers']['bag']['m']
+    out['impact'] = dict(v=v_lim, m=m_bag, E=0.5 * m_bag * v_lim ** 2,
+                         v30=touchdown(a_stop=a3, early=0.030)['rows'][0]['v'],
+                         E30=0.5 * m_bag * touchdown(a_stop=a3, early=0.030)['rows'][0]['v'] ** 2)
     return out
 
 

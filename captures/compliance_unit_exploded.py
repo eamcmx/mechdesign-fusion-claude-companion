@@ -1,5 +1,5 @@
-# Pictures for Chapter 48: the compliance unit taken apart: the top plate up with its screws, the cheeks out along x
-# with their rails and screws further out, the spring seats up, the springs and hanger bolts down, the sensor out,
+# Pictures for Chapter 48: the compliance unit taken apart: the housing up with its screws, the rails in off the
+# cheeks with their screws further in, the spring seats up, the springs and hanger bolts down, the sensor out,
 # the carriage down with its blocks out. The design is turned to direct modelling first; the anchors are printed.
 import sys, importlib, math, json
 sys.path.insert(0, '__COMPANION__/tools')
@@ -10,17 +10,16 @@ import adsk.core, adsk.fusion
 VIEW = (0.75, -1.00, 0.55)      # towards the camera
 TOP = {'Carriage': (0, 0, -200)}
 IN = {
-    'Body': [('Top plate', (0, 0, 160)), ('Cap screw M10x25', (0, 0, 250)), ('Dowel pin', (0, 0, 220)),
-             ('Cap screw M8x30', (0, 0, 300)), ('Cheek 1', (110, 0, 0)), ('Cheek 2', (-110, 0, 0)),
-             ('Rail HGR25 1', (60, 0, 0)), ('Rail HGR25 2', (-60, 0, 0))] +
-            [('Cap screw M6x20 %d' % k, (170 if k <= 4 else -170, 0, 0)) for k in range(1, 9)] +
+    'Body': [('Housing', (0, 0, 160)), ('Cap screw M10x25', (0, 0, 250)), ('Dowel pin', (0, 0, 220)),
+             ('Rail HGR25 1', (-30, 0, -40)), ('Rail HGR25 2', (30, 0, -40))] +
+            [('Cap screw M6x20 %d' % k, (-80 if k <= 4 else 80, 0, -40)) for k in range(1, 9)] +
             [('Spring seat', (0, 0, 70)), ('Hanger bolt', (0, 0, -330)), ('Spring', (0, 0, -120)),
              ('Sensor M12', (0, 90, 0)), ('Sensor bracket', (0, 60, 60))],
     'Carriage': [('Block HGH25CA 1', (60, 0, 0)), ('Block HGH25CA 2', (60, 0, 0)), ('Block HGH25CA 3', (-60, 0, 0)),
                  ('Block HGH25CA 4', (-60, 0, 0))],
 }
 AT = {}
-ITEMS = ['Top plate', 'Cap screw M10x25 2', 'Dowel pin 10x17', 'Cheek 1', 'Cap screw M8x30 1', 'Rail HGR25 1',
+ITEMS = ['Housing', 'Cap screw M10x25 2', 'Dowel pin 10x17', 'Rail HGR25 1',
          'Cap screw M6x20 1', 'Spring seat 1', 'Hanger bolt 1', 'Spring 1', 'Sensor M12', 'Sensor bracket', 'Carriage',
          'Block HGH25CA 1']
 

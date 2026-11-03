@@ -60,7 +60,7 @@ def run(_context):
     ns['set_state'](G, L['stroke'])
     rest = [o for o in leaves if o not in springs]
     c = fc.interference(rest)
-    top = one('Top plate')
+    top = one('Housing')
     blocks = [o for o in leaves if o.component.name.startswith('Block')]
     rails = [o for o in leaves if o.component.name.startswith('Rail')]
     on = all(bl.bRepBodies.item(0).boundingBox.maxPoint.z <= max(r.bRepBodies.item(0).boundingBox.maxPoint.z for r in rails) + 1e-6
@@ -72,7 +72,7 @@ def run(_context):
     th = holes(top.bRepBodies.item(0), 5.5)
     ang = sorted(round(math.degrees(math.atan2(y, x)) % 360.0, 3) for x, y in th)
     fc.ok(ang == [30.0, 90.0, 150.0, 210.0, 270.0, 330.0] and all(abs(math.hypot(x, y) - 80.0) < 0.001 for x, y in th),
-          'the top plate: six M10 holes on the 160 circle at %s deg' % ang)
+          'the housing: six M10 holes on the 160 circle at %s deg' % ang)
     out = {}
     for name in ('Body', 'Carriage'):
         pp = G[name].physicalProperties
