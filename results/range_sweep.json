@@ -1,0 +1,3712 @@
+{
+ "wrist": {
+  "states": 71,
+  "parts": 97,
+  "groups": 7,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Stop disc",
+    "b": "Buffer pad",
+    "min": 0.0,
+    "at": [
+     "pitch",
+     [
+      128.0,
+      0.0
+     ]
+    ],
+    "max": 12.0,
+    "seen": 71
+   },
+   {
+    "a": "Stop disc",
+    "b": "Buffer pad (1)",
+    "min": 0.0,
+    "at": [
+     "pitch",
+     [
+      -128.0,
+      0.0
+     ]
+    ],
+    "max": 12.0,
+    "seen": 71
+   },
+   {
+    "a": "Stop disc",
+    "b": "Countersunk screw ISO 10642 M4x12",
+    "min": 1.0,
+    "at": [
+     "pitch",
+     [
+      24.0,
+      0.0
+     ]
+    ],
+    "max": 2.236,
+    "seen": 71
+   },
+   {
+    "a": "Stop disc",
+    "b": "Countersunk screw ISO 10642 M4x12",
+    "min": 1.0,
+    "at": [
+     "pitch",
+     [
+      112.0,
+      0.0
+     ]
+    ],
+    "max": 2.236,
+    "seen": 71
+   },
+   {
+    "a": "Stop disc",
+    "b": "Countersunk screw ISO 10642 M4x12",
+    "min": 1.0,
+    "at": [
+     "pitch",
+     [
+      -128.0,
+      0.0
+     ]
+    ],
+    "max": 2.236,
+    "seen": 71
+   },
+   {
+    "a": "Output bevel gear",
+    "b": "Belt HTD 350-5M-15",
+    "min": 3.438,
+    "at": [
+     "roll",
+     [
+      -120.0,
+      150.0
+     ]
+    ],
+    "max": 4.839,
+    "seen": 71
+   },
+   {
+    "a": "Output bevel gear",
+    "b": "Belt HTD 350-5M-15",
+    "min": 3.438,
+    "at": [
+     "roll",
+     [
+      0.0,
+      60.0
+     ]
+    ],
+    "max": 4.839,
+    "seen": 71
+   },
+   {
+    "a": "Key DIN 6885 A 5x5x10",
+    "b": "Countersunk screw ISO 10642 M4x12",
+    "min": 4.631,
+    "at": [
+     "pitch",
+     [
+      -120.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 24
+   },
+   {
+    "a": "Key DIN 6885 A 5x5x10",
+    "b": "Countersunk screw ISO 10642 M4x12",
+    "min": 4.631,
+    "at": [
+     "pitch",
+     [
+      120.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 24
+   },
+   {
+    "a": "Key DIN 6885 A 5x5x10",
+    "b": "Countersunk screw ISO 10642 M4x12",
+    "min": 4.64,
+    "at": [
+     "pitch",
+     [
+      -32.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 47
+   },
+   {
+    "a": "Key DIN 6885 A 5x5x10",
+    "b": "Countersunk screw ISO 10642 M4x12",
+    "min": 4.64,
+    "at": [
+     "pitch",
+     [
+      32.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 47
+   },
+   {
+    "a": "Output bevel gear",
+    "b": "Bearing 61902-2RS1",
+    "min": 19.071,
+    "at": [
+     "roll",
+     [
+      120.0,
+      120.0
+     ]
+    ],
+    "max": 19.151,
+    "seen": 71
+   },
+   {
+    "a": "Output bevel gear",
+    "b": "Bearing 61902-2RS1",
+    "min": 19.071,
+    "at": [
+     "roll",
+     [
+      0.0,
+      330.0
+     ]
+    ],
+    "max": 19.151,
+    "seen": 71
+   }
+  ],
+  "seconds": 379.9,
+  "pairs": {
+   "all": 4656,
+   "cross": 2912,
+   "near": 357,
+   "kept": 107,
+   "measured": 107
+  }
+ },
+ "flap": {
+  "states": 21,
+  "parts": 87,
+  "groups": 8,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Rod end SI 20 ES",
+    "b": "Horn",
+    "min": 0.859,
+    "at": [
+     "deflection",
+     40.0
+    ],
+    "max": 2.01,
+    "seen": 21
+   },
+   {
+    "a": "Ring nut M66x1.5",
+    "b": "Piston rod",
+    "min": 2.0,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 3
+   },
+   {
+    "a": "Idler gear z30",
+    "b": "Encoder pinion z26",
+    "min": 2.156,
+    "at": [
+     "deflection",
+     4.0
+    ],
+    "max": 2.72,
+    "seen": 21
+   },
+   {
+    "a": "Ring nut M66x1.5",
+    "b": "Nut retaining ring",
+    "min": 3.0,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 2
+   },
+   {
+    "a": "Upper skin",
+    "b": "Rod end SI 20 ES",
+    "min": 3.336,
+    "at": [
+     "deflection",
+     24.0
+    ],
+    "max": 10.0,
+    "seen": 20
+   },
+   {
+    "a": "Idler gear z30",
+    "b": "Pinion end washer",
+    "min": 3.905,
+    "at": [
+     "deflection",
+     12.0
+    ],
+    "max": 4.111,
+    "seen": 21
+   },
+   {
+    "a": "Idler gear z30",
+    "b": "Gearhead shaft",
+    "min": 4.303,
+    "at": [
+     "deflection",
+     34.0
+    ],
+    "max": 6.242,
+    "seen": 21
+   },
+   {
+    "a": "Bearing 6201 1",
+    "b": "Pinion z18",
+    "min": 5.0,
+    "at": [
+     "deflection",
+     4.0
+    ],
+    "max": 5.24,
+    "seen": 21
+   },
+   {
+    "a": "Bearing 6201 2",
+    "b": "Pinion z18",
+    "min": 5.0,
+    "at": [
+     "deflection",
+     4.0
+    ],
+    "max": 5.24,
+    "seen": 21
+   },
+   {
+    "a": "Ring nut M66x1.5",
+    "b": "Ball nut R32-10T4-RSI",
+    "min": 6.0,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 2
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Encoder pinion z26",
+    "min": 6.899,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 7.214,
+    "seen": 21
+   },
+   {
+    "a": "End stop",
+    "b": "Ball nut R32-10T4-RSI",
+    "min": 6.916,
+    "at": [
+     "deflection",
+     40.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   },
+   {
+    "a": "Motor screw M5x12 2",
+    "b": "Idler gear z30",
+    "min": 7.008,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 7.069,
+    "seen": 21
+   },
+   {
+    "a": "Trunnion L",
+    "b": "Screw gear z54",
+    "min": 7.159,
+    "at": [
+     "deflection",
+     12.0
+    ],
+    "max": 7.263,
+    "seen": 21
+   },
+   {
+    "a": "Trunnion R",
+    "b": "Screw gear z54",
+    "min": 7.159,
+    "at": [
+     "deflection",
+     12.0
+    ],
+    "max": 7.263,
+    "seen": 21
+   },
+   {
+    "a": "Bearing BSD 2562 CGA 2",
+    "b": "Piston rod",
+    "min": 8.0,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   },
+   {
+    "a": "Upper skin",
+    "b": "Actuator housing",
+    "min": 8.086,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 9.462,
+    "seen": 21
+   },
+   {
+    "a": "Bearing BSD 2562 CGA 1",
+    "b": "Idler gear z30",
+    "min": 8.544,
+    "at": [
+     "deflection",
+     12.0
+    ],
+    "max": 8.678,
+    "seen": 21
+   },
+   {
+    "a": "Bearing BSD 2562 CGA 1",
+    "b": "Encoder pinion z26",
+    "min": 8.544,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 8.695,
+    "seen": 21
+   },
+   {
+    "a": "Bearing BSD 2562 CGA 2",
+    "b": "Nut retaining ring",
+    "min": 9.04,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   },
+   {
+    "a": "Cover screw M5x16 6",
+    "b": "Pinion z18",
+    "min": 9.434,
+    "at": [
+     "deflection",
+     4.0
+    ],
+    "max": 9.721,
+    "seen": 21
+   },
+   {
+    "a": "Cover screw M5x16 5",
+    "b": "Idler gear z30",
+    "min": 9.791,
+    "at": [
+     "deflection",
+     12.0
+    ],
+    "max": 10.032,
+    "seen": 21
+   },
+   {
+    "a": "Cover screw M5x16 4",
+    "b": "Idler gear z30",
+    "min": 9.791,
+    "at": [
+     "deflection",
+     2.0
+    ],
+    "max": 10.012,
+    "seen": 21
+   },
+   {
+    "a": "Idler gear z30",
+    "b": "Cap screw ISO 4762 M4x10",
+    "min": 10.0,
+    "at": [
+     "deflection",
+     12.0
+    ],
+    "max": 10.264,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Cover screw M5x16 2",
+    "min": 10.128,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 10.309,
+    "seen": 21
+   },
+   {
+    "a": "Bearing 6201 1",
+    "b": "Encoder pinion z26",
+    "min": 10.152,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 10.334,
+    "seen": 21
+   },
+   {
+    "a": "Bearing 6201 2",
+    "b": "Encoder pinion z26",
+    "min": 10.152,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 10.334,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Gear cover",
+    "min": 10.654,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 10.729,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Cover screw M5x16 2",
+    "min": 13.369,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 14.141,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Cover screw M5x16 1",
+    "min": 13.612,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 14.065,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Cover screw M5x16 3",
+    "min": 13.612,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 14.065,
+    "seen": 21
+   },
+   {
+    "a": "Bearing GE 20 ES fitting L",
+    "b": "Encoder pinion z26",
+    "min": 14.349,
+    "at": [
+     "deflection",
+     16.0
+    ],
+    "max": 14.569,
+    "seen": 21
+   },
+   {
+    "a": "Motor screw M5x12 2",
+    "b": "Encoder pinion z26",
+    "min": 15.585,
+    "at": [
+     "deflection",
+     22.0
+    ],
+    "max": 15.789,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Guide key",
+    "min": 16.361,
+    "at": [
+     "deflection",
+     26.0
+    ],
+    "max": 21.354,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Screw gear z54",
+    "min": 17.13,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 17.568,
+    "seen": 21
+   },
+   {
+    "a": "Motor screw M5x12 2",
+    "b": "Pinion z18",
+    "min": 17.869,
+    "at": [
+     "deflection",
+     18.0
+    ],
+    "max": 18.027,
+    "seen": 21
+   },
+   {
+    "a": "Motor screw M5x12 3",
+    "b": "Pinion z18",
+    "min": 17.869,
+    "at": [
+     "deflection",
+     18.0
+    ],
+    "max": 18.027,
+    "seen": 21
+   },
+   {
+    "a": "Motor screw M5x12 4",
+    "b": "Pinion z18",
+    "min": 17.87,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 18.136,
+    "seen": 21
+   },
+   {
+    "a": "Motor screw M5x12 1",
+    "b": "Pinion z18",
+    "min": 17.87,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 18.136,
+    "seen": 21
+   },
+   {
+    "a": "Fitting bolt M8x35 2",
+    "b": "Actuator housing",
+    "min": 18.714,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 19.322,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Piston rod",
+    "min": 18.746,
+    "at": [
+     "deflection",
+     26.0
+    ],
+    "max": 24.069,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Ring nut M66x1.5",
+    "min": 23.979,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 25.11,
+    "seen": 21
+   },
+   {
+    "a": "Washer M8 1",
+    "b": "Encoder pinion z26",
+    "min": 24.187,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 24.346,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "End bolt M8x20",
+    "min": 25.914,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 25.998,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Bearing BSD 2562 CGA 2",
+    "min": 26.305,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 27.332,
+    "seen": 21
+   },
+   {
+    "a": "Ball screw 32x10",
+    "b": "Encoder pinion z26",
+    "min": 26.5,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 26.661,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Bearing BSD 2562 CGA 1",
+    "min": 27.126,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 27.89,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Nut retaining ring",
+    "min": 27.437,
+    "at": [
+     "deflection",
+     30.0
+    ],
+    "max": 31.419,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Cover screw M5x16 1",
+    "min": 33.612,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 33.774,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Cover screw M5x16 3",
+    "min": 33.612,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 33.774,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Washer M8 1",
+    "min": 33.785,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 33.996,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Idler gear z30",
+    "min": 33.856,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 34.605,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Bearing 6201 1",
+    "min": 33.981,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 34.791,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Ball screw 32x10",
+    "min": 36.82,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 36.997,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Key 8x7x16",
+    "min": 38.805,
+    "at": [
+     "deflection",
+     24.0
+    ],
+    "max": 39.116,
+    "seen": 21
+   },
+   {
+    "a": "Spar fitting",
+    "b": "Bearing 6201 2",
+    "min": 43.953,
+    "at": [
+     "deflection",
+     0.0
+    ],
+    "max": 44.754,
+    "seen": 21
+   }
+  ],
+  "seconds": 166.8,
+  "pairs": {
+   "all": 3741,
+   "cross": 2963,
+   "near": 181,
+   "kept": 89,
+   "measured": 89
+  }
+ },
+ "axle": {
+  "states": 36,
+  "parts": 106,
+  "groups": 9,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 5",
+    "min": 1.0,
+    "at": [
+     "turning",
+     [
+      30.0,
+      2.5
+     ]
+    ],
+    "max": 10.0,
+    "seen": 35
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 6",
+    "min": 1.0,
+    "at": [
+     "turning",
+     [
+      180.0,
+      2.5
+     ]
+    ],
+    "max": 9.037,
+    "seen": 36
+   },
+   {
+    "a": "Carrier casting",
+    "b": "Crown wheel bolt M12x35 1",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 3.581,
+    "seen": 36
+   },
+   {
+    "a": "Carrier casting",
+    "b": "Crown wheel bolt M12x35 3",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      105.0,
+      0.0
+     ]
+    ],
+    "max": 9.055,
+    "seen": 36
+   },
+   {
+    "a": "Carrier casting",
+    "b": "Crown wheel bolt M12x35 9",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 21
+   },
+   {
+    "a": "Carrier casting",
+    "b": "Crown wheel bolt M12x35 10",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 35
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 4",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 21
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 7",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 9.053,
+    "seen": 36
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 8",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      105.0,
+      0.0
+     ]
+    ],
+    "max": 9.055,
+    "seen": 36
+   },
+   {
+    "a": "Carrier casting",
+    "b": "Crown wheel bolt M12x35 4",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      255.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 27
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 9",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      255.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 27
+   },
+   {
+    "a": "Pinion shaft z12",
+    "b": "Crown wheel bolt M12x35 2",
+    "min": 5.205,
+    "at": [
+     "turning",
+     [
+      210.0,
+      2.5
+     ]
+    ],
+    "max": 10.0,
+    "seen": 24
+   },
+   {
+    "a": "Pinion shaft z12",
+    "b": "Crown wheel bolt M12x35 3",
+    "min": 5.241,
+    "at": [
+     "straight",
+     [
+      345.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 12
+   },
+   {
+    "a": "Carrier casting",
+    "b": "Crown wheel bolt M12x35 5",
+    "min": 5.452,
+    "at": [
+     "straight",
+     [
+      345.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 12
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 10",
+    "min": 5.452,
+    "at": [
+     "straight",
+     [
+      345.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 12
+   },
+   {
+    "a": "Pinion shaft z12",
+    "b": "Crown wheel bolt M12x35 1",
+    "min": 5.922,
+    "at": [
+     "turning",
+     [
+      90.0,
+      2.5
+     ]
+    ],
+    "max": 10.0,
+    "seen": 21
+   },
+   {
+    "a": "Carrier casting",
+    "b": "Crown wheel bolt M12x35 8",
+    "min": 9.055,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 6
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 3",
+    "min": 9.055,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 6
+   },
+   {
+    "a": "Spider 2",
+    "b": "Side gear washer R",
+    "min": 9.306,
+    "at": [
+     "turning",
+     [
+      60.0,
+      2.5
+     ]
+    ],
+    "max": 9.68,
+    "seen": 36
+   },
+   {
+    "a": "Spider 4",
+    "b": "Side gear washer R",
+    "min": 9.306,
+    "at": [
+     "turning",
+     [
+      0.0,
+      2.5
+     ]
+    ],
+    "max": 9.68,
+    "seen": 36
+   },
+   {
+    "a": "Spider 1",
+    "b": "Side gear washer L",
+    "min": 9.306,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 9.68,
+    "seen": 36
+   },
+   {
+    "a": "Spider 3",
+    "b": "Side gear washer L",
+    "min": 9.306,
+    "at": [
+     "turning",
+     [
+      60.0,
+      2.5
+     ]
+    ],
+    "max": 9.68,
+    "seen": 36
+   },
+   {
+    "a": "Spider 2",
+    "b": "Spider 3",
+    "min": 11.13,
+    "at": [
+     "turning",
+     [
+      210.0,
+      2.5
+     ]
+    ],
+    "max": 11.835,
+    "seen": 36
+   },
+   {
+    "a": "Spider 1",
+    "b": "Spider 4",
+    "min": 11.13,
+    "at": [
+     "turning",
+     [
+      240.0,
+      2.5
+     ]
+    ],
+    "max": 11.835,
+    "seen": 36
+   },
+   {
+    "a": "Cap bolt M12x90 C1 lower",
+    "b": "Bearing C1 32213 cone",
+    "min": 11.297,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 11.937,
+    "seen": 36
+   },
+   {
+    "a": "Cap bolt M12x90 C1 upper",
+    "b": "Bearing C1 32213 cone",
+    "min": 11.297,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 11.937,
+    "seen": 36
+   },
+   {
+    "a": "Cap bolt M12x90 C2 lower",
+    "b": "Bearing C2 32213 cone",
+    "min": 11.297,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 11.937,
+    "seen": 36
+   },
+   {
+    "a": "Cap bolt M12x90 C2 upper",
+    "b": "Bearing C2 32213 cone",
+    "min": 11.297,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 11.937,
+    "seen": 36
+   },
+   {
+    "a": "Spider 3",
+    "b": "Spider 4",
+    "min": 11.835,
+    "at": [
+     "straight",
+     [
+      180.0,
+      0.0
+     ]
+    ],
+    "max": 12.071,
+    "seen": 36
+   },
+   {
+    "a": "Spider 1",
+    "b": "Spider 2",
+    "min": 11.835,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 12.071,
+    "seen": 36
+   },
+   {
+    "a": "Spider washer 3",
+    "b": "Side gear R",
+    "min": 16.729,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 17.081,
+    "seen": 36
+   },
+   {
+    "a": "Spider washer 1",
+    "b": "Side gear R",
+    "min": 16.729,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 17.081,
+    "seen": 36
+   },
+   {
+    "a": "Spider washer 2",
+    "b": "Side gear L",
+    "min": 16.729,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 17.081,
+    "seen": 36
+   },
+   {
+    "a": "Spider washer 4",
+    "b": "Side gear L",
+    "min": 16.729,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 17.081,
+    "seen": 36
+   },
+   {
+    "a": "Spider 3",
+    "b": "Half shaft L",
+    "min": 19.057,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 19.248,
+    "seen": 36
+   },
+   {
+    "a": "Spider 1",
+    "b": "Half shaft L",
+    "min": 19.057,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 19.248,
+    "seen": 36
+   },
+   {
+    "a": "Spider 4",
+    "b": "Half shaft R",
+    "min": 19.057,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 19.248,
+    "seen": 36
+   },
+   {
+    "a": "Spider 2",
+    "b": "Half shaft R",
+    "min": 19.057,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 19.248,
+    "seen": 36
+   },
+   {
+    "a": "Pinion shaft z12",
+    "b": "Differential case",
+    "min": 19.47,
+    "at": [
+     "straight",
+     [
+      30.0,
+      0.0
+     ]
+    ],
+    "max": 22.727,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 2",
+    "b": "Spider 1",
+    "min": 20.458,
+    "at": [
+     "turning",
+     [
+      150.0,
+      2.5
+     ]
+    ],
+    "max": 20.911,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 7",
+    "b": "Spider 3",
+    "min": 20.458,
+    "at": [
+     "turning",
+     [
+      210.0,
+      2.5
+     ]
+    ],
+    "max": 20.911,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 4",
+    "b": "Spider 1",
+    "min": 20.911,
+    "at": [
+     "straight",
+     [
+      90.0,
+      0.0
+     ]
+    ],
+    "max": 21.554,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 9",
+    "b": "Spider 3",
+    "min": 20.911,
+    "at": [
+     "straight",
+     [
+      90.0,
+      0.0
+     ]
+    ],
+    "max": 21.554,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 4",
+    "b": "Side gear R",
+    "min": 23.438,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 23.671,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 9",
+    "b": "Side gear R",
+    "min": 23.438,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 23.671,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 2",
+    "b": "Side gear R",
+    "min": 23.671,
+    "at": [
+     "straight",
+     [
+      105.0,
+      0.0
+     ]
+    ],
+    "max": 24.076,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 7",
+    "b": "Side gear R",
+    "min": 23.671,
+    "at": [
+     "straight",
+     [
+      15.0,
+      0.0
+     ]
+    ],
+    "max": 24.076,
+    "seen": 36
+   },
+   {
+    "a": "Banjo housing",
+    "b": "Crown wheel bolt M12x35 1",
+    "min": 46.0,
+    "at": [
+     "straight",
+     [
+      240.0,
+      0.0
+     ]
+    ],
+    "max": 52.346,
+    "seen": 36
+   },
+   {
+    "a": "Banjo housing",
+    "b": "Crown wheel bolt M12x35 2",
+    "min": 46.0,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 52.354,
+    "seen": 36
+   },
+   {
+    "a": "Banjo housing",
+    "b": "Crown wheel bolt M12x35 3",
+    "min": 46.0,
+    "at": [
+     "straight",
+     [
+      0.0,
+      0.0
+     ]
+    ],
+    "max": 52.33,
+    "seen": 36
+   },
+   {
+    "a": "Banjo housing",
+    "b": "Crown wheel bolt M12x35 10",
+    "min": 46.0,
+    "at": [
+     "straight",
+     [
+      105.0,
+      0.0
+     ]
+    ],
+    "max": 50.34,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 5",
+    "b": "Half shaft R",
+    "min": 63.856,
+    "at": [
+     "turning",
+     [
+      210.0,
+      2.5
+     ]
+    ],
+    "max": 63.953,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 10",
+    "b": "Half shaft R",
+    "min": 63.856,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 63.953,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 1",
+    "b": "Half shaft R",
+    "min": 63.953,
+    "at": [
+     "straight",
+     [
+      15.0,
+      0.0
+     ]
+    ],
+    "max": 64.072,
+    "seen": 36
+   },
+   {
+    "a": "Crown wheel bolt M12x35 6",
+    "b": "Half shaft R",
+    "min": 63.953,
+    "at": [
+     "straight",
+     [
+      45.0,
+      0.0
+     ]
+    ],
+    "max": 64.072,
+    "seen": 36
+   },
+   {
+    "a": "Pinion shaft z12",
+    "b": "Half shaft R",
+    "min": 81.381,
+    "at": [
+     "turning",
+     [
+      210.0,
+      2.5
+     ]
+    ],
+    "max": 81.969,
+    "seen": 36
+   },
+   {
+    "a": "Pinion shaft z12",
+    "b": "Half shaft L",
+    "min": 81.382,
+    "at": [
+     "straight",
+     [
+      210.0,
+      0.0
+     ]
+    ],
+    "max": 81.943,
+    "seen": 36
+   },
+   {
+    "a": "Banjo housing",
+    "b": "Spider washer 2",
+    "min": 84.12,
+    "at": [
+     "straight",
+     [
+      240.0,
+      0.0
+     ]
+    ],
+    "max": 105.656,
+    "seen": 36
+   },
+   {
+    "a": "Banjo housing",
+    "b": "Spider washer 3",
+    "min": 84.12,
+    "at": [
+     "straight",
+     [
+      135.0,
+      0.0
+     ]
+    ],
+    "max": 102.606,
+    "seen": 36
+   },
+   {
+    "a": "Banjo housing",
+    "b": "Spider washer 4",
+    "min": 84.12,
+    "at": [
+     "straight",
+     [
+      150.0,
+      0.0
+     ]
+    ],
+    "max": 104.675,
+    "seen": 36
+   },
+   {
+    "a": "Banjo housing",
+    "b": "Spider washer 1",
+    "min": 84.12,
+    "at": [
+     "straight",
+     [
+      15.0,
+      0.0
+     ]
+    ],
+    "max": 105.652,
+    "seen": 36
+   }
+  ],
+  "seconds": 315.6,
+  "pairs": {
+   "all": 5565,
+   "cross": 3942,
+   "near": 320,
+   "kept": 102,
+   "measured": 102
+  }
+ },
+ "robot": {
+  "states": 25,
+  "parts": 118,
+  "groups": 11,
+  "hits": [],
+  "rows": [
+   {
+    "a": "E bracket",
+    "b": "Levelling rod 1 body",
+    "min": 5.0,
+    "at": [
+     "outline",
+     [
+      -42.0,
+      -8.0
+     ]
+    ],
+    "max": 6.866,
+    "seen": 25
+   },
+   {
+    "a": "RV-500N case J3",
+    "b": "Parallel rod body",
+    "min": 7.678,
+    "at": [
+     "reach",
+     [
+      77.03,
+      -12.03
+     ]
+    ],
+    "max": 10.0,
+    "seen": 6
+   },
+   {
+    "a": "Lower arm box",
+    "b": "Upper arm cheek 1",
+    "min": 10.0,
+    "at": [
+     "outline",
+     [
+      8.25,
+      -58.25
+     ]
+    ],
+    "max": 14.142,
+    "seen": 25
+   },
+   {
+    "a": "Lower arm box",
+    "b": "Upper arm cheek 2",
+    "min": 10.0,
+    "at": [
+     "outline",
+     [
+      8.25,
+      -58.25
+     ]
+    ],
+    "max": 14.142,
+    "seen": 25
+   },
+   {
+    "a": "J3 bracket post 2",
+    "b": "Crank web",
+    "min": 37.69,
+    "at": [
+     "outline",
+     [
+      85.0,
+      -75.0
+     ]
+    ],
+    "max": 59.307,
+    "seen": 25
+   },
+   {
+    "a": "Front fork cheek 1",
+    "b": "H plate",
+    "min": 45.0,
+    "at": [
+     "outline",
+     [
+      85.0,
+      -61.25
+     ]
+    ],
+    "max": 53.679,
+    "seen": 25
+   },
+   {
+    "a": "J3 bracket post 1",
+    "b": "Crank web",
+    "min": 55.885,
+    "at": [
+     "outline",
+     [
+      -18.5,
+      60.0
+     ]
+    ],
+    "max": 59.307,
+    "seen": 25
+   }
+  ],
+  "seconds": 13.3,
+  "pairs": {
+   "all": 6903,
+   "cross": 5818,
+   "near": 151,
+   "kept": 37,
+   "measured": 37
+  }
+ },
+ "bag0": {
+  "states": 22,
+  "parts": 92,
+  "groups": 7,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Tine 7 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 8 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 1 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 2 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 3 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 4 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 5 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 6 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 7 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 8 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 4 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 5 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 6 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 1 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 2 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   },
+   {
+    "a": "Tine 3 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 131.545,
+    "seen": 22
+   }
+  ],
+  "seconds": 8.9,
+  "pairs": {
+   "all": 4186,
+   "cross": 2714,
+   "near": 56,
+   "kept": 18,
+   "measured": 18
+  }
+ },
+ "bag": {
+  "states": 16,
+  "parts": 128,
+  "groups": 7,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Shock absorber DYSC-25-25-Y1F closed 1",
+    "b": "Lever A",
+    "min": 0.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 15
+   },
+   {
+    "a": "Shock absorber DYSC-25-25-Y1F closed 2",
+    "b": "Lever B",
+    "min": 0.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 15
+   },
+   {
+    "a": "Shock absorber DYSC-25-25-Y1F open 1",
+    "b": "Lever A",
+    "min": 0.0,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 10
+   },
+   {
+    "a": "Shock absorber DYSC-25-25-Y1F open 2",
+    "b": "Lever B",
+    "min": 0.0,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 10
+   },
+   {
+    "a": "Lock nut DYSC-25-25-Y1F open 2",
+    "b": "Lever B",
+    "min": 2.0,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 10
+   },
+   {
+    "a": "Lock nut DYSC-25-25-Y1F open 1",
+    "b": "Lever A",
+    "min": 2.0,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 10
+   },
+   {
+    "a": "Lever A",
+    "b": "Piston rod A",
+    "min": 3.971,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 14
+   },
+   {
+    "a": "Lever B",
+    "b": "Piston rod B",
+    "min": 3.971,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 14
+   },
+   {
+    "a": "Lock nut DYSC-25-25-Y1F closed 1",
+    "b": "Lever A",
+    "min": 5.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 15
+   },
+   {
+    "a": "Lock nut DYSC-25-25-Y1F closed 2",
+    "b": "Lever B",
+    "min": 5.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 15
+   },
+   {
+    "a": "Lock nut DYSC-25-25-Y1F open 1",
+    "b": "Rod end A",
+    "min": 8.089,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 2
+   },
+   {
+    "a": "Lock nut DYSC-25-25-Y1F open 2",
+    "b": "Rod end B",
+    "min": 8.089,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 2
+   },
+   {
+    "a": "Shock absorber DYSC-25-25-Y1F open 1",
+    "b": "Rod end A",
+    "min": 8.978,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 2
+   },
+   {
+    "a": "Shock absorber DYSC-25-25-Y1F open 2",
+    "b": "Rod end B",
+    "min": 8.978,
+    "at": [
+     "jaws",
+     45.0
+    ],
+    "max": 10.0,
+    "seen": 2
+   },
+   {
+    "a": "Stop bracket closed 1",
+    "b": "Lever A",
+    "min": 15.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 80.186,
+    "seen": 16
+   },
+   {
+    "a": "Stop bracket closed 2",
+    "b": "Lever B",
+    "min": 15.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 80.186,
+    "seen": 16
+   },
+   {
+    "a": "Tine 7 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 8 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 1 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 2 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 3 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 4 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 5 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 6 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 7 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 8 A",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 4 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 5 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 6 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 1 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 2 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   },
+   {
+    "a": "Tine 3 B",
+    "b": "Press plate",
+    "min": 70.0,
+    "at": [
+     "jaws",
+     0.0
+    ],
+    "max": 120.69,
+    "seen": 16
+   }
+  ],
+  "seconds": 11.2,
+  "pairs": {
+   "all": 8128,
+   "cross": 4298,
+   "near": 84,
+   "kept": 46,
+   "measured": 46
+  }
+ },
+ "clamp": {
+  "states": 19,
+  "parts": 55,
+  "groups": 3,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Seat BK25",
+    "b": "Carriage plate (1)",
+    "min": 5.0,
+    "at": [
+     "jaws",
+     650.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   },
+   {
+    "a": "Fixed bearing BK25",
+    "b": "Carriage plate (1)",
+    "min": 5.099,
+    "at": [
+     "jaws",
+     650.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   },
+   {
+    "a": "Seat BK25",
+    "b": "Block HGH25CA o+ (1)",
+    "min": 7.81,
+    "at": [
+     "jaws",
+     650.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   },
+   {
+    "a": "Seat BK25",
+    "b": "Block HGH25CA o- (1)",
+    "min": 7.81,
+    "at": [
+     "jaws",
+     650.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   }
+  ],
+  "seconds": 405.3,
+  "pairs": {
+   "all": 1485,
+   "cross": 952,
+   "near": 36,
+   "kept": 4,
+   "measured": 4
+  }
+ },
+ "vacuum": {
+  "states": 6,
+  "parts": 313,
+  "groups": 2,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Sleeve 1",
+    "b": "Plunger 1-1",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 2",
+    "b": "Plunger 1-2",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 3",
+    "b": "Plunger 1-3",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 4",
+    "b": "Plunger 1-4",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 5",
+    "b": "Plunger 1-5",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 6",
+    "b": "Plunger 1-6",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 7",
+    "b": "Plunger 2-1",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 8",
+    "b": "Plunger 2-2",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 9",
+    "b": "Plunger 2-3",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 10",
+    "b": "Plunger 2-4",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 11",
+    "b": "Plunger 2-5",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 12",
+    "b": "Plunger 2-6",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 13",
+    "b": "Plunger 3-1",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 14",
+    "b": "Plunger 3-2",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 15",
+    "b": "Plunger 3-3",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 16",
+    "b": "Plunger 3-4",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 17",
+    "b": "Plunger 3-5",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 18",
+    "b": "Plunger 3-6",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 19",
+    "b": "Plunger 4-1",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 20",
+    "b": "Plunger 4-2",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 21",
+    "b": "Plunger 4-3",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 22",
+    "b": "Plunger 4-4",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 23",
+    "b": "Plunger 4-5",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 24",
+    "b": "Plunger 4-6",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 25",
+    "b": "Plunger 5-1",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 26",
+    "b": "Plunger 5-2",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 27",
+    "b": "Plunger 5-3",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 28",
+    "b": "Plunger 5-4",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 29",
+    "b": "Plunger 5-5",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 30",
+    "b": "Plunger 5-6",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 31",
+    "b": "Plunger 6-1",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 32",
+    "b": "Plunger 6-2",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 33",
+    "b": "Plunger 6-3",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 34",
+    "b": "Plunger 6-4",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 35",
+    "b": "Plunger 6-5",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Sleeve 36",
+    "b": "Plunger 6-6",
+    "min": 0.0,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 0.1,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 1",
+    "b": "Plunger 1-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 2",
+    "b": "Plunger 1-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 5",
+    "b": "Plunger 3-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 6",
+    "b": "Plunger 3-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 7",
+    "b": "Plunger 4-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 8",
+    "b": "Plunger 4-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 11",
+    "b": "Plunger 6-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 12",
+    "b": "Plunger 6-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 3",
+    "b": "Plunger 2-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 4",
+    "b": "Plunger 2-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 9",
+    "b": "Plunger 5-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 10",
+    "b": "Plunger 5-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 1",
+    "b": "Plunger 1-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 2",
+    "b": "Plunger 1-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 5",
+    "b": "Plunger 3-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 6",
+    "b": "Plunger 3-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 7",
+    "b": "Plunger 4-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 8",
+    "b": "Plunger 4-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 11",
+    "b": "Plunger 6-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 12",
+    "b": "Plunger 6-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 3",
+    "b": "Plunger 2-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 4",
+    "b": "Plunger 2-2",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 9",
+    "b": "Plunger 5-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   },
+   {
+    "a": "Ejector SCPSi 2-14 10",
+    "b": "Plunger 5-5",
+    "min": 8.597,
+    "at": [
+     "cups",
+     0.0
+    ],
+    "max": 12.597,
+    "seen": 6
+   }
+  ],
+  "seconds": 12.2,
+  "pairs": {
+   "all": 48828,
+   "cross": 17352,
+   "near": 204,
+   "kept": 60,
+   "measured": 60
+  }
+ },
+ "changer": {
+  "states": 4,
+  "parts": 21,
+  "groups": 9,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Master body",
+    "b": "Tool plate ISO 9409-1-160-6-M10",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 0.25,
+    "seen": 4
+   },
+   {
+    "a": "Segment 1 (1)",
+    "b": "Tool plate ISO 9409-1-160-6-M10",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 0.747,
+    "seen": 4
+   },
+   {
+    "a": "Segment 2 (1)",
+    "b": "Tool plate ISO 9409-1-160-6-M10",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 0.747,
+    "seen": 4
+   },
+   {
+    "a": "Segment 6 (1)",
+    "b": "Tool plate ISO 9409-1-160-6-M10",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 0.747,
+    "seen": 4
+   },
+   {
+    "a": "Segment 3 (1)",
+    "b": "Tool plate ISO 9409-1-160-6-M10",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 0.747,
+    "seen": 4
+   },
+   {
+    "a": "Segment 4 (1)",
+    "b": "Tool plate ISO 9409-1-160-6-M10",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 0.747,
+    "seen": 4
+   },
+   {
+    "a": "Segment 5 (1)",
+    "b": "Tool plate ISO 9409-1-160-6-M10",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 0.747,
+    "seen": 4
+   },
+   {
+    "a": "Cam",
+    "b": "Segment 6 (1)",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 1.5,
+    "seen": 4
+   },
+   {
+    "a": "Cam",
+    "b": "Segment 1 (1)",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 1.5,
+    "seen": 4
+   },
+   {
+    "a": "Cam",
+    "b": "Segment 4 (1)",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 1.5,
+    "seen": 4
+   },
+   {
+    "a": "Cam",
+    "b": "Segment 2 (1)",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 1.5,
+    "seen": 4
+   },
+   {
+    "a": "Cam",
+    "b": "Segment 5 (1)",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 1.5,
+    "seen": 4
+   },
+   {
+    "a": "Cam",
+    "b": "Segment 3 (1)",
+    "min": 0.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 1.5,
+    "seen": 4
+   },
+   {
+    "a": "Cam",
+    "b": "Tool plate ISO 9409-1-160-6-M10",
+    "min": 1.5,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 18.472,
+    "seen": 4
+   },
+   {
+    "a": "Master cover",
+    "b": "Piston with rod",
+    "min": 5.0,
+    "at": [
+     "lock",
+     [
+      false,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 3
+   },
+   {
+    "a": "Pin 12 tool 1",
+    "b": "Segment 1 (1)",
+    "min": 6.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 9.0,
+    "seen": 4
+   },
+   {
+    "a": "Pin 12 tool 2",
+    "b": "Segment 4 (1)",
+    "min": 6.0,
+    "at": [
+     "lock",
+     [
+      true,
+      0.0
+     ]
+    ],
+    "max": 9.0,
+    "seen": 4
+   }
+  ],
+  "seconds": 0.9,
+  "pairs": {
+   "all": 210,
+   "cross": 143,
+   "near": 38,
+   "kept": 28,
+   "measured": 28
+  }
+ },
+ "unit": {
+  "states": 11,
+  "parts": 45,
+  "groups": 2,
+  "hits": [],
+  "rows": [
+   {
+    "a": "Housing",
+    "b": "Carriage (1)",
+    "min": 0.0,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 12.0,
+    "seen": 11
+   },
+   {
+    "a": "Stop block 1",
+    "b": "Carriage (1)",
+    "min": 0.0,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 4.0,
+    "seen": 11
+   },
+   {
+    "a": "Stop block 2",
+    "b": "Carriage (1)",
+    "min": 0.0,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 4.0,
+    "seen": 11
+   },
+   {
+    "a": "Stop block 3",
+    "b": "Carriage (1)",
+    "min": 0.0,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 4.0,
+    "seen": 11
+   },
+   {
+    "a": "Stop block 4",
+    "b": "Carriage (1)",
+    "min": 0.0,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 4.0,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M10x25 2",
+    "b": "Carriage (1)",
+    "min": 0.707,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 10.0,
+    "seen": 4
+   },
+   {
+    "a": "Cap screw M10x25 5",
+    "b": "Carriage (1)",
+    "min": 0.707,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 10.0,
+    "seen": 4
+   },
+   {
+    "a": "Housing",
+    "b": "Block HGH25CA 1",
+    "min": 2.0,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 5.5,
+    "seen": 11
+   },
+   {
+    "a": "Housing",
+    "b": "Block HGH25CA 3",
+    "min": 2.0,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 5.5,
+    "seen": 11
+   },
+   {
+    "a": "Sensor M12",
+    "b": "Carriage (1)",
+    "min": 2.0,
+    "at": [
+     "float",
+     3.0
+    ],
+    "max": 3.606,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M10x25 2",
+    "b": "Block HGH25CA 3",
+    "min": 2.5,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 10.0,
+    "seen": 3
+   },
+   {
+    "a": "Cap screw M10x25 5",
+    "b": "Block HGH25CA 1",
+    "min": 2.5,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 10.0,
+    "seen": 3
+   },
+   {
+    "a": "Cap screw M6x20 4",
+    "b": "Block HGH25CA 2",
+    "min": 3.0,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 8
+   },
+   {
+    "a": "Cap screw M6x20 8",
+    "b": "Block HGH25CA 4",
+    "min": 3.0,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 10.0,
+    "seen": 8
+   },
+   {
+    "a": "Cap screw M6x20 4",
+    "b": "Carriage (1)",
+    "min": 5.0,
+    "at": [
+     "float",
+     6.0
+    ],
+    "max": 6.727,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M6x20 8",
+    "b": "Carriage (1)",
+    "min": 5.0,
+    "at": [
+     "float",
+     6.0
+    ],
+    "max": 6.727,
+    "seen": 11
+   },
+   {
+    "a": "Sensor bracket",
+    "b": "Carriage (1)",
+    "min": 6.0,
+    "at": [
+     "float",
+     15.0
+    ],
+    "max": 10.0,
+    "seen": 9
+   },
+   {
+    "a": "Cap screw M8x30 2",
+    "b": "Carriage (1)",
+    "min": 6.325,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 30.0,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M8x30 4",
+    "b": "Carriage (1)",
+    "min": 6.325,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 30.0,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M8x30 6",
+    "b": "Carriage (1)",
+    "min": 6.325,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 30.0,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M8x30 8",
+    "b": "Carriage (1)",
+    "min": 6.325,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 30.0,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M6x20 2",
+    "b": "Block HGH25CA 2",
+    "min": 9.014,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   },
+   {
+    "a": "Cap screw M6x20 6",
+    "b": "Block HGH25CA 4",
+    "min": 9.014,
+    "at": [
+     "float",
+     30.0
+    ],
+    "max": 10.0,
+    "seen": 1
+   },
+   {
+    "a": "Cap screw M8x30 1",
+    "b": "Carriage (1)",
+    "min": 21.095,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 30.0,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M8x30 3",
+    "b": "Carriage (1)",
+    "min": 21.095,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 30.0,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M8x30 5",
+    "b": "Carriage (1)",
+    "min": 21.095,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 30.0,
+    "seen": 11
+   },
+   {
+    "a": "Cap screw M8x30 7",
+    "b": "Carriage (1)",
+    "min": 21.095,
+    "at": [
+     "float",
+     0.0
+    ],
+    "max": 30.0,
+    "seen": 11
+   },
+   {
+    "a": "Housing",
+    "b": "Plug carriage 1",
+    "min": 24.0,
+    "at": [
+     "float",
+     6.0
+    ],
+    "max": 24.331,
+    "seen": 11
+   },
+   {
+    "a": "Housing",
+    "b": "Plug carriage 2",
+    "min": 24.0,
+    "at": [
+     "float",
+     6.0
+    ],
+    "max": 24.331,
+    "seen": 11
+   },
+   {
+    "a": "Housing",
+    "b": "Plug carriage 3",
+    "min": 110.86,
+    "at": [
+     "float",
+     12.0
+    ],
+    "max": 111.38,
+    "seen": 11
+   }
+  ],
+  "seconds": 4.1,
+  "pairs": {
+   "all": 990,
+   "cross": 324,
+   "near": 62,
+   "kept": 35,
+   "measured": 35
+  }
+ }
+}

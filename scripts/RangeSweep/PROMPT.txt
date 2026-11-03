@@ -1,0 +1,56 @@
+Write a Fusion Python script that, when run, builds one of Part 9's nine detailed assemblies with its own script,
+steps it through its whole range of motion, and at every state looks for interference among all its parts and
+measures how close the parts that move against each other come. For the bag gripper it also adds this chapter's
+stops: a shock absorber at each end of each jaw's travel.
+
+INPUTS (a command dialog, with this default):
+- the machine: wrist, flap, axle, robot, bag0 (the bag gripper as Part 9 left it), bag (with its stops), clamp,
+  vacuum, changer or unit; wrist
+
+DERIVED (from lib/range_sweep.py, never typed):
+- STATES: each machine's states from its own limits: the wrist's pitch from the hard stop's contact at -128 deg to
+  +128 every 8 deg with the software limit and the switch, and its roll round a turn every 30 deg at the pitch's two
+  limits and level; the flap from 0 to 40 deg every 2; the axle's pinion round a turn every 15 deg straight and every
+  30 with the spider turned 2.5 deg; the robot round its working range's outline and at full reach; the bag
+  gripper's jaws to the cylinders' retracted end (bag0) or to the opening stop at 45 deg (bag) every 3 deg, the
+  clamp's jaws from 200 to 650 mm, the vacuum gripper's cups, the tool changer's lock and the compliance unit's float
+  over their strokes
+- GAP 10 mm: pairs whose boxes come within it are measured; STEADY 0.05 mm: a pair whose gap changes by less is a
+  fixed gap or a designed contact
+- the stops: STRIKER, AXIS_X, DYSC (Festo's DYSC sizes), jaw_stops() (the size for both ends), stop_layout() (where
+  each absorber and bracket sits), bracket_bolts() (the brackets' M8 and their length)
+
+HARD CONSTRAINTS:
+- Build each machine with its detail script's own build() (WristDetail, FlapDetail, AxleDetail, PalletizerDetail for
+  the robot, the bag gripper, the vacuum gripper and the compliance unit, ClampGripper, ToolChanger) and put it in a
+  state with that script's own pose or set_state, or the axle's two joints; copy none of them.
+- For the bag gripper with its stops: before the build, wrap PalletizerDetail's own patch of BagGripper so that each
+  lever is carried on past its pin to 200 mm, 15 thick, as a striker, and the end plates are drilled 9 across for the
+  brackets' bolts; after the build add to the frame, for each end plate (the -x end's turned half a turn about z):
+  the closing bracket (foot, lip over the plate's end, lug) and the opening bracket (foot, arm, round lug) in steel
+  1045, a DYSC-25-25-Y1F in each in its end position with its lock nut, and each bracket's two ISO 4762 M8 x 40 with
+  an ISO 7089 washer and an ISO 4032 nut inside the plate; describe them.
+- Leave out the parts that are not the machine: the clamp's carton, the vacuum gripper's carton and pack, the bag
+  gripper's bag and rollers; and the vacuum gripper's and the compliance unit's springs, which are drawn rigid at
+  their installed length.
+- Group the parts by how they move: put the machine in four of its states, and parts whose transforms change alike
+  against the first are one rigid group. Measure only pairs from different groups.
+- Before the sweep, measure the pairs whose boxes come within GAP at the four states, and keep only those whose gap
+  varies by STEADY or more or that are not near at all four.
+- At every state: Fusion's interference among all the parts, touching faces not counted; and the minimum distance of
+  every kept pair whose boxes come within GAP. Key the pairs by the parts, not their names.
+- Report a pair only if its gap changes by STEADY or more over the sweep; a pair that reaches 0 is a contact made in
+  motion. Count the pairs at each step. Return to the first state at the end.
+- Refuse a machine that is not one of the ten.
+
+FUSION CONVENTIONS:
+- Each machine's own new design document; lengths in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives the machine, its states, its parts and groups, the states with interference, the contacts made in
+  motion, the three closest approaches with their states, the machine's own first line, and a version tag.
+- Each machine, the bag gripper both ways: no interference at any state.
+- The stops: each closing absorber touching its striker closed, each opening one the lever's bar at 45 deg, and
+  touching nothing else.
+- Each machine's contacts made in motion, closest approaches and pair counts kept in results/range_sweep.json.
+- Refused: a machine called crane.

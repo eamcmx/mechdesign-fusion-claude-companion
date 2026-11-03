@@ -18,7 +18,7 @@ import sys
 from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 RADIUS_MM = 2.3                                   # the balloon's radius on the page
-DISTANCES = (1.6, 2.2, 3.0, 4.0, 5.2, 6.6, 8.2, 10.0, 12.0)   # leader lengths tried, in balloon radii
+DISTANCES = (1.6, 2.2, 3.0, 4.0, 5.2, 6.6, 8.2, 10.0, 12.0, 14.5, 17.0)   # leader lengths tried, in balloon radii
 DIRECTIONS = 36
 
 
