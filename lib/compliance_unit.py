@@ -40,7 +40,7 @@ LAY = dict(top_t=20.0, plate=(274.0, 200.0), cheek_x=(112.0, 132.0), cheek_y=60.
 # (ISO 9409-1-160-6-M10: six M10 on the 160 circle, the 100 H7 centring recess 10 deep, the 10 mm pin hole on the
 # pattern's +X), so a gripper goes onto the unit as it goes onto the changer. The unit's body is turned 90 deg to the
 # changer: the pattern's +X, with the pin and Chapter 47's docking frame, lies along the body's +y, beyond the plate's
-# 200 mm side, and no screw, pin or passage lies on a rail's axis. In the body's angles: the screws at 0, 60, ... 300
+# 200 mm side, clear of the plate and the cheeks, which reach 137 mm out along x. In the body's angles: the screws at 0, 60, ... 300
 # deg, the pin at 90, the tool plate's four passages (Chapter 47: r 80 at 60, 120, 240, 300 deg of the pattern) at 30,
 # 150, 210 and 330. The air crosses the float through one tube: galleries along x at y = +-40 join each pair of
 # passages, and one along y at x = 0, drilled from the -y edge and plugged, joins them at the middle, where a steel
