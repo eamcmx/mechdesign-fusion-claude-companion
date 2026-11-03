@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 54: builds Chapter 31's rear axle in detail, its tapered bearings' abutments inside SKF's bands, the pinion's spacer from cone to cone, the cups' bores closed, the half shafts' splines to ISO 14, the adjusters threaded, and every part's material and fit as Chapter 51 decided them."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "AxleDetail"
+}
