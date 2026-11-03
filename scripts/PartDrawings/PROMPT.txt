@@ -1,0 +1,55 @@
+Write a Fusion Python script that, when run, makes an engineering drawing for one part of each machine, the part
+whose drawing Part 10 changed most, and puts on each sheet what Part 10 and Chapter 51 decided for it, so that a shop
+that never sees the model makes the part that passed the checks; and a sheet of the bag gripper's opening stop put
+together, which carries what the fitter must do.
+
+INPUTS (a command dialog, with this default):
+- the part: all, bracket, segment, spacer, fitting, disc or stop; all
+
+DERIVED (never typed):
+- lib/drawings_detail.py: the five parts and the stop's items, their numbers, their machines, and every value a sheet
+  carries
+- RangeSweep.py's machine(): each machine as its detail chapter built it; for the tool changer, MaterialsFits.apply()
+  first, which the other four builds already run
+- the part by its name in the machine; its classes and roughnesses from the attributes MaterialsFits.py left on its
+  faces; its material from lib/materials_fits.py
+
+HARD CONSTRAINTS:
+- Build each machine through RangeSweep.py's machine(), loaded, not copied.
+- Take the part's body out into a design of its own, in the part's frame: z along its largest cylinder's axis, x
+  towards its centre of mass, the origin on that axis at the body's lowest point.
+- Carry into the model what Part 10 decided for its shape before drawing it: the opening bracket's arm root filleted
+  2.5 mm on its four edges (Chapter 60).
+- Save each design to the folder the script is given in the cloud project, under '<number> <title>', and never over a
+  file already there; ask Fusion for its automatic ISO drawing (A3, millimetres), asking again while the design is
+  not yet ready; close the auto-dimension dialog it leaves open.
+- Read the classes off the faces; do not decide them again.
+- On each sheet, find the curves by their geometry, not by their order:
+  the bracket: the two bolt holes' size, their distance, a position frame of diameter 1.0 at maximum material from
+  datum A, the foot's bolting face;
+  the segment: datum A its top face, datum B its 15 deg face; each wedge face's profile of 0.02, the 15 deg face's
+  from A and the 5 deg face's from B, in its table (a profile frame from the API stops Fusion's drawing command);
+  the spacer: datum A the face on cone A, the other face parallel to it within IT5, the bore's size;
+  the spar fitting: the bores' size where they show round, and the bolt holes';
+  the stop disc: the bore's size.
+- The opening stop: its six kinds of item (the bracket, the DYSC-25 and its lock nut, the M8 screws, washers and
+  nuts of jaw A's opening bracket) as one component each with its part number and designation, a piece of each where
+  the machine has it, in the bracket's frame; Fusion's assembly sheet with its parts list; a table with the seat, the
+  screws' torque and preload of Chapter 60, and the absorber's lock nut.
+- Write on each part's sheet a table of requirements, one row each with the chapter that decided it: the material, the rows
+  of drawings_detail.rows() and the classes read off the faces, the general tolerance ISO 2768-mK.
+- Export each sheet as a PDF to results/drawings/<number>.pdf and write what was made, added and read back to
+  results/part_drawings.json.
+- Refuse a part that is not one of the six.
+
+FUSION CONVENTIONS:
+- ISO drawings, first-angle projection, millimetres; the API's cm in the model, mm on the sheet.
+
+ACCEPTANCE CRITERIA:
+- A message gives each drawing's views, dimensions, symbols and PDF, the folder, and a version tag.
+- Six sheets, each A3, each with its PDF on disk.
+- Each sheet gains the dimensions and symbols asked of it, counted on the sheet after the script.
+- The bracket's model has four faces of 2.5 mm radius at its root and two holes of 9.
+- The stop's six kinds with their pieces, and its torque row.
+- Every file in the folder once.
+- Refused: a part called crane.

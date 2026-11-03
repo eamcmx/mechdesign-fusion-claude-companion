@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 63: an ISO drawing for one part of each machine, built through RangeSweep.py and saved to a cloud folder, with the datums, geometric tolerances, dimensions and requirement table Part 10 and Chapter 51 decided, exported as PDF."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "PartDrawings"
+}
