@@ -1,0 +1,7103 @@
+{
+ "version": "BillOfMaterials 1.0 (2026-11-04)",
+ "machines": [
+  {
+   "key": "wrist",
+   "occurrences": 97,
+   "fusion_mass": 7.357518284158447,
+   "census_mass": 7.3575182841584486,
+   "loads": [],
+   "load_mass": 0,
+   "made_kinds": 22,
+   "made_pieces": 31,
+   "bought_kinds": 18,
+   "bought_pieces": 64,
+   "with_maker": 11,
+   "drawn": 7.3575182841584486,
+   "book": 5.777113614375676,
+   "bought_drawn": 4.314286704156645,
+   "bought_book": 2.733882034373872,
+   "wrong_numbers": [],
+   "csv": "wrist.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "W01-001",
+     "description": "Base plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 0.5258962738462486,
+     "book": 0.5258962738462486,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Base plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "W01-002",
+     "description": "Bearing cap floating",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 0.025532436062595188,
+     "book": 0.025532436062595188,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing cap floating"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "W01-003",
+     "description": "Buffer pad",
+     "kind": "made",
+     "qty": 2,
+     "material": "polyurethane",
+     "drawn": 0.0013391999999999966,
+     "book": 0.0013391999999999966,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Buffer pad",
+      "Buffer pad (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "W01-004",
+     "description": "Carrier block",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 7075-T6",
+     "drawn": 0.08716599636692235,
+     "book": 0.08716599636692235,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Carrier block"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "W01-005",
+     "description": "End washer 18x5.5x2.5",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.009055395387046906,
+     "book": 0.009055395387046906,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "End washer 18x5.5x2.5",
+      "End washer 18x5.5x2.5 (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "W01-006",
+     "description": "Motor bracket",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 6082-T6",
+     "drawn": 0.07041211531811635,
+     "book": 0.07041211531811635,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Motor bracket",
+      "Motor bracket"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "W01-007",
+     "description": "Output bevel gear",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 42CrMo4, through-hardened to 300 HB",
+     "drawn": 0.22129294208615677,
+     "book": 0.22129294208615677,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Output bevel gear"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "W01-008",
+     "description": "Roll shaft, bored",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 42CrMo4",
+     "drawn": 0.09682656750523348,
+     "book": 0.09682656750523348,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Roll shaft, bored"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "W01-009",
+     "description": "Side bevel gear with 36-groove pulley",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 42CrMo4, through-hardened to 300 HB",
+     "drawn": 0.7322528510262739,
+     "book": 0.7322528510262739,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Side bevel gear with 36-groove pulley",
+      "Side bevel gear with 36-groove pulley"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "W01-010",
+     "description": "Side cheek",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 6082-T6",
+     "drawn": 0.7347025924930133,
+     "book": 0.7347025924930133,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Side cheek",
+      "Side cheek"
+     ],
+     "with_": []
+    },
+    {
+     "item": 11,
+     "number": "W01-011",
+     "description": "Slip ring bracket",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6, T6",
+     "drawn": 0.0004628078686223898,
+     "book": 0.0004628078686223898,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Slip ring bracket"
+     ],
+     "with_": []
+    },
+    {
+     "item": 12,
+     "number": "W01-012",
+     "description": "Spacer S1",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.0014421609805074303,
+     "book": 0.0014421609805074303,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spacer S1",
+      "Spacer S1"
+     ],
+     "with_": []
+    },
+    {
+     "item": 13,
+     "number": "W01-013",
+     "description": "Spacer S2",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.015648260134654455,
+     "book": 0.015648260134654455,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spacer S2",
+      "Spacer S2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 14,
+     "number": "W01-014",
+     "description": "Spacer S3",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.004272605278790488,
+     "book": 0.004272605278790488,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spacer S3",
+      "Spacer S3"
+     ],
+     "with_": []
+    },
+    {
+     "item": 15,
+     "number": "W01-015",
+     "description": "Spacer S4",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.0026246003855427153,
+     "book": 0.0026246003855427153,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spacer S4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 16,
+     "number": "W01-016",
+     "description": "Spacer S5",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.005188163552817015,
+     "book": 0.005188163552817015,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spacer S5"
+     ],
+     "with_": []
+    },
+    {
+     "item": 17,
+     "number": "W01-017",
+     "description": "Stop cap",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 0.0699686765809429,
+     "book": 0.0699686765809429,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Stop cap"
+     ],
+     "with_": []
+    },
+    {
+     "item": 18,
+     "number": "W01-018",
+     "description": "Stop disc",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.04311506154763929,
+     "book": 0.04311506154763929,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Stop disc"
+     ],
+     "with_": []
+    },
+    {
+     "item": 19,
+     "number": "W01-019",
+     "description": "Tie bar",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 6082-T6",
+     "drawn": 0.1031447700026645,
+     "book": 0.1031447700026645,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Tie bar",
+      "Tie bar"
+     ],
+     "with_": []
+    },
+    {
+     "item": 20,
+     "number": "W01-020",
+     "description": "Tool flange ISO 9409-1-31.5-4-M5",
+     "kind": "made",
+     "qty": 1,
+     "material": "stainless steel",
+     "drawn": 0.11034050924234617,
+     "book": 0.11034050924234617,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Tool flange ISO 9409-1-31.5-4-M5"
+     ],
+     "with_": []
+    },
+    {
+     "item": 21,
+     "number": "W01-021",
+     "description": "Trunnion",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 42CrMo4",
+     "drawn": 0.07830952418904541,
+     "book": 0.07830952418904541,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Trunnion"
+     ],
+     "with_": []
+    },
+    {
+     "item": 22,
+     "number": "W01-022",
+     "description": "Trunnion with stop end",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 42CrMo4",
+     "drawn": 0.10423807014662403,
+     "book": 0.10423807014662403,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Trunnion with stop end"
+     ],
+     "with_": []
+    },
+    {
+     "item": 23,
+     "number": "S-0011",
+     "description": "Bearing 6002-2RSH",
+     "kind": "bought",
+     "qty": 4,
+     "material": "Bearing",
+     "drawn": 0.1076184180475696,
+     "book": 0.1192,
+     "maker": [
+      0.0298,
+      "SKF_6002-2RSH_2026-11-02.md",
+      "Product net weight 0.0298 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 6002-2RSH",
+      "Bearing 6002-2RSH",
+      "Bearing 6002-2RSH",
+      "Bearing 6002-2RSH"
+     ],
+     "with_": []
+    },
+    {
+     "item": 24,
+     "number": "S-0014",
+     "description": "Bearing 61902-2RS1",
+     "kind": "bought",
+     "qty": 4,
+     "material": "Bearing",
+     "drawn": 0.05874954945383998,
+     "book": 0.0636,
+     "maker": [
+      0.0159,
+      "SKF_product_net_weights_2026-11-04.md",
+      "61902-2RS1: 0.0159 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 61902-2RS1",
+      "Bearing 61902-2RS1",
+      "Bearing 61902-2RS1",
+      "Bearing 61902-2RS1"
+     ],
+     "with_": []
+    },
+    {
+     "item": 25,
+     "number": "S-0020",
+     "description": "Belt HTD 350-5M-15",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Belt",
+     "drawn": 0.017082149518905704,
+     "book": 0.017082149518905704,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Belt HTD 350-5M-15",
+      "Belt HTD 350-5M-15"
+     ],
+     "with_": []
+    },
+    {
+     "item": 26,
+     "number": "S-0027",
+     "description": "ISO 4762 M4 x 10 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4762",
+     "drawn": 0.01641982205819231,
+     "book": 0.0144,
+     "maker": [
+      0.0018,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M4 x 10: 1.8 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw ISO 4762 M4x10",
+      "Cap screw ISO 4762 M4x10",
+      "Cap screw ISO 4762 M4x10",
+      "Cap screw ISO 4762 M4x10",
+      "Cap screw ISO 4762 M4x10",
+      "Cap screw ISO 4762 M4x10",
+      "Cap screw ISO 4762 M4x10",
+      "Cap screw ISO 4762 M4x10"
+     ],
+     "with_": []
+    },
+    {
+     "item": 27,
+     "number": "S-0028",
+     "description": "ISO 4762 M4 x 12 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 4762",
+     "drawn": 0.008999079103677877,
+     "book": 0.0078,
+     "maker": [
+      0.00195,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M4 x 12: 1.95 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw ISO 4762 M4x12",
+      "Cap screw ISO 4762 M4x12",
+      "Cap screw ISO 4762 M4x12",
+      "Cap screw ISO 4762 M4x12"
+     ],
+     "with_": []
+    },
+    {
+     "item": 28,
+     "number": "S-0029",
+     "description": "ISO 4762 M5 x 12 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.022609328748523325,
+     "book": 0.0177,
+     "maker": [
+      0.0029500000000000004,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M5 x 12: 2.95 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw ISO 4762 M5x12",
+      "Cap screw ISO 4762 M5x12",
+      "Cap screw ISO 4762 M5x12",
+      "Cap screw ISO 4762 M5x12",
+      "Cap screw ISO 4762 M5x12",
+      "Cap screw ISO 4762 M5x12 (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 29,
+     "number": "S-0030",
+     "description": "ISO 4762 M5 x 16 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.02630855409812514,
+     "book": 0.020700000000000003,
+     "maker": [
+      0.0034500000000000004,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M5 x 16: 3.45 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw ISO 4762 M5x16",
+      "Cap screw ISO 4762 M5x16",
+      "Cap screw ISO 4762 M5x16",
+      "Cap screw ISO 4762 M5x16",
+      "Cap screw ISO 4762 M5x16",
+      "Cap screw ISO 4762 M5x16"
+     ],
+     "with_": []
+    },
+    {
+     "item": 30,
+     "number": "S-0031",
+     "description": "ISO 4762 M8 x 20 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 4762",
+     "drawn": 0.06054301953799808,
+     "book": 0.0536,
+     "maker": [
+      0.0134,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 20: 13.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw ISO 4762 M8x20",
+      "Cap screw ISO 4762 M8x20",
+      "Cap screw ISO 4762 M8x20",
+      "Cap screw ISO 4762 M8x20"
+     ],
+     "with_": []
+    },
+    {
+     "item": 31,
+     "number": "S-0042",
+     "description": "ISO 10642 M3 x 8 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 10642",
+     "drawn": 0.004043562762930102,
+     "book": 0.004043562762930102,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Countersunk screw ISO 10642 M3x8",
+      "Countersunk screw ISO 10642 M3x8",
+      "Countersunk screw ISO 10642 M3x8",
+      "Countersunk screw ISO 10642 M3x8",
+      "Countersunk screw ISO 10642 M3x8",
+      "Countersunk screw ISO 10642 M3x8",
+      "Countersunk screw ISO 10642 M3x8",
+      "Countersunk screw ISO 10642 M3x8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 32,
+     "number": "S-0043",
+     "description": "ISO 10642 M4 x 12 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 10642",
+     "drawn": 0.00531848273171238,
+     "book": 0.00531848273171238,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Countersunk screw ISO 10642 M4x12",
+      "Countersunk screw ISO 10642 M4x12",
+      "Countersunk screw ISO 10642 M4x12",
+      "Countersunk screw ISO 10642 M4x12"
+     ],
+     "with_": []
+    },
+    {
+     "item": 33,
+     "number": "S-0051",
+     "description": "ISO 8734 5 x 16",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 8734",
+     "drawn": 0.009864600932271528,
+     "book": 0.009864600932271528,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Dowel ISO 8734 5x16",
+      "Dowel ISO 8734 5x16",
+      "Dowel ISO 8734 5x16",
+      "Dowel ISO 8734 5x16"
+     ],
+     "with_": []
+    },
+    {
+     "item": 34,
+     "number": "S-0066",
+     "description": "DIN 6885-1 A 5 x 5 x 18",
+     "kind": "bought",
+     "qty": 1,
+     "material": "DIN 6885-1",
+     "drawn": 0.0034272109739168733,
+     "book": 0.0034272109739168733,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Key DIN 6885 A 5x5x18"
+     ],
+     "with_": []
+    },
+    {
+     "item": 35,
+     "number": "S-0067",
+     "description": "DIN 6885-1 A 5 x 5 x 10",
+     "kind": "bought",
+     "qty": 1,
+     "material": "DIN 6885-1",
+     "drawn": 0.001962499999999998,
+     "book": 0.001962499999999998,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Key DIN 6885 A 5x5x10"
+     ],
+     "with_": []
+    },
+    {
+     "item": 36,
+     "number": "S-0083",
+     "description": "DIN 471 - 15",
+     "kind": "bought",
+     "qty": 2,
+     "material": "DIN 471",
+     "drawn": 0.0019228881636010997,
+     "book": 0.00134,
+     "maker": [
+      0.00067,
+      "Fasten.it_DIN_471_2026-11-03.md",
+      "d1 15: 0.67 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Retaining ring DIN 471-15",
+      "Retaining ring DIN 471-15, flange"
+     ],
+     "with_": []
+    },
+    {
+     "item": 37,
+     "number": "S-0084",
+     "description": "DIN 472 - 32",
+     "kind": "bought",
+     "qty": 1,
+     "material": "DIN 472",
+     "drawn": 0.002716711096747815,
+     "book": 0.00221,
+     "maker": [
+      0.00221,
+      "Fasten.it_DIN_472_2026-11-03.md",
+      "d1 32: 2.21 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Retaining ring DIN 472-32"
+     ],
+     "with_": []
+    },
+    {
+     "item": 38,
+     "number": "S-0092",
+     "description": "Beckhoff AM8111 with holding brake, and AG2250-PLE040 15:1 with its adapter for the AM8111, two items",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Beckhoff",
+     "drawn": 3.9549090865725023,
+     "book": 2.38,
+     "maker": [
+      1.19,
+      "Beckhoff_AM8111_PLE040_2026-11-03.md",
+      "AM8111 with brake 0.74 kg; PLE040 two-stage 0.45 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Servo motor with brake and 15:1 gearhead",
+      "Servo motor with brake and 15:1 gearhead"
+     ],
+     "with_": [
+      "Motor output",
+      "Motor output"
+     ]
+    },
+    {
+     "item": 39,
+     "number": "S-0094",
+     "description": "Senring SNM022A-06, rotor and stator",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Senring",
+     "drawn": 0.010753527454135508,
+     "book": 0.010753527454135508,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Slip ring rotor",
+      "Slip ring stator"
+     ],
+     "with_": []
+    },
+    {
+     "item": 40,
+     "number": "S-0108",
+     "description": "ISO 4762 M3 x 10 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 4762",
+     "drawn": 0.0010382129019954657,
+     "book": 0.00088,
+     "maker": [
+      0.00088,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M3 x 10: 0.88 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw ISO 4762 M3x10"
+     ],
+     "with_": []
+    }
+   ]
+  },
+  {
+   "key": "flap",
+   "occurrences": 87,
+   "fusion_mass": 339.8169065823436,
+   "census_mass": 339.8169065823436,
+   "loads": [],
+   "load_mass": 0,
+   "made_kinds": 25,
+   "made_pieces": 33,
+   "bought_kinds": 26,
+   "bought_pieces": 53,
+   "with_maker": 14,
+   "drawn": 339.8169065823436,
+   "book": 340.35434335769327,
+   "bought_drawn": 4.642793359838675,
+   "bought_book": 5.180230135188316,
+   "wrong_numbers": [],
+   "csv": "flap.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "F01-001",
+     "description": "Actuator housing",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 7075-T6",
+     "drawn": 1.7188473762905032,
+     "book": 1.7188473762905032,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Actuator housing"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "F01-002",
+     "description": "Encoder pinion z26",
+     "kind": "made",
+     "qty": 1,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 0.12160089336164243,
+     "book": 0.12160089336164243,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Encoder pinion z26"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "F01-003",
+     "description": "Encoder shaft",
+     "kind": "made",
+     "qty": 1,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 0.01104835304414506,
+     "book": 0.01104835304414506,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Encoder shaft"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "F01-004",
+     "description": "End stop",
+     "kind": "made",
+     "qty": 1,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 0.04136967015971727,
+     "book": 0.04136967015971727,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "End stop"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "F01-005",
+     "description": "Flap panel",
+     "kind": "made",
+     "qty": 1,
+     "material": "Aluminum 6061",
+     "drawn": 273.51885545587083,
+     "book": 273.51885545587083,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Flap panel"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "F01-006",
+     "description": "Gear cover",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 7075-T6",
+     "drawn": 0.24844130263802677,
+     "book": 0.24844130263802677,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Gear cover"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "F01-007",
+     "description": "Guide key",
+     "kind": "made",
+     "qty": 1,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 0.012717000000000004,
+     "book": 0.012717000000000004,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Guide key"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "F01-008",
+     "description": "Hinge bracket",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 7075-T6",
+     "drawn": 0.7055995594025283,
+     "book": 0.7055995594025283,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Hinge bracket L",
+      "Hinge bracket R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "F01-009",
+     "description": "Hinge fitting",
+     "kind": "made",
+     "qty": 4,
+     "material": "aluminium 7075-T6",
+     "drawn": 0.40196257032158683,
+     "book": 0.40196257032158683,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Hinge fitting Li",
+      "Hinge fitting Lo",
+      "Hinge fitting Ri",
+      "Hinge fitting Ro"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "F01-010",
+     "description": "Hinge pin",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 0.24576290132197948,
+     "book": 0.24576290132197948,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Hinge pin L",
+      "Hinge pin R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 11,
+     "number": "F01-011",
+     "description": "Hinge rib",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 7075-T6",
+     "drawn": 1.6201150759797975,
+     "book": 1.6201150759797975,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Hinge rib L",
+      "Hinge rib R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 12,
+     "number": "F01-012",
+     "description": "Horn",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 7075-T6",
+     "drawn": 1.0737883920498528,
+     "book": 1.0737883920498528,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Horn"
+     ],
+     "with_": []
+    },
+    {
+     "item": 13,
+     "number": "F01-013",
+     "description": "Horn pin",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 0.16226097704102016,
+     "book": 0.16226097704102016,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Horn pin"
+     ],
+     "with_": []
+    },
+    {
+     "item": 14,
+     "number": "F01-014",
+     "description": "Idler gear z30",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 0.10683836015581906,
+     "book": 0.10683836015581906,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Idler gear z30"
+     ],
+     "with_": []
+    },
+    {
+     "item": 15,
+     "number": "F01-015",
+     "description": "Idler pin",
+     "kind": "made",
+     "qty": 1,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 0.041727261943512145,
+     "book": 0.041727261943512145,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Idler pin"
+     ],
+     "with_": []
+    },
+    {
+     "item": 16,
+     "number": "F01-016",
+     "description": "Lower skin",
+     "kind": "made",
+     "qty": 1,
+     "material": "Aluminum 6061",
+     "drawn": 6.70139999999998,
+     "book": 6.70139999999998,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Lower skin"
+     ],
+     "with_": []
+    },
+    {
+     "item": 17,
+     "number": "F01-017",
+     "description": "Pinion z18",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 0.049181153686444073,
+     "book": 0.049181153686444073,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pinion z18"
+     ],
+     "with_": []
+    },
+    {
+     "item": 18,
+     "number": "F01-018",
+     "description": "Piston rod",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 1.2680538391010339,
+     "book": 1.2680538391010339,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Piston rod"
+     ],
+     "with_": []
+    },
+    {
+     "item": 19,
+     "number": "F01-019",
+     "description": "Rear spar web",
+     "kind": "made",
+     "qty": 1,
+     "material": "Aluminum 6061",
+     "drawn": 37.54784944159021,
+     "book": 37.54784944159021,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Rear spar web"
+     ],
+     "with_": []
+    },
+    {
+     "item": 20,
+     "number": "F01-020",
+     "description": "Screw gear z54",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 0.3745058270321114,
+     "book": 0.3745058270321114,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Screw gear z54"
+     ],
+     "with_": []
+    },
+    {
+     "item": 21,
+     "number": "F01-021",
+     "description": "Spacer",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.03882706926942411,
+     "book": 0.03882706926942411,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spacer L",
+      "Spacer R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 22,
+     "number": "F01-022",
+     "description": "Spar fitting",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 7075-T6",
+     "drawn": 0.46682610977294936,
+     "book": 0.46682610977294936,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spar fitting"
+     ],
+     "with_": []
+    },
+    {
+     "item": 23,
+     "number": "F01-023",
+     "description": "Trunnion",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 0.1553674646832765,
+     "book": 0.1553674646832765,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Trunnion L",
+      "Trunnion R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 24,
+     "number": "F01-024",
+     "description": "Upper skin",
+     "kind": "made",
+     "qty": 1,
+     "material": "Aluminum 6061",
+     "drawn": 8.537400000000048,
+     "book": 8.537400000000048,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Upper skin"
+     ],
+     "with_": []
+    },
+    {
+     "item": 25,
+     "number": "F01-025",
+     "description": "Pinion end washer",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.003767167788523165,
+     "book": 0.003767167788523165,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pinion end washer"
+     ],
+     "with_": []
+    },
+    {
+     "item": 26,
+     "number": "S-0003",
+     "description": "HIWIN R32-10T4-RSI nut, without preload (with its screw, S-0004)",
+     "kind": "bought",
+     "qty": 1,
+     "material": "HIWIN",
+     "drawn": 0.7248066901606763,
+     "book": 0.7248066901606763,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Ball nut R32-10T4-RSI"
+     ],
+     "with_": []
+    },
+    {
+     "item": 27,
+     "number": "S-0004",
+     "description": "HIWIN R32-10T4-RSI-172-240-0.023, the end to the book's drawing (with its nut, S-0003)",
+     "kind": "bought",
+     "qty": 1,
+     "material": "HIWIN",
+     "drawn": 1.1939482984952685,
+     "book": 1.1939482984952685,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Ball screw 32x10"
+     ],
+     "with_": []
+    },
+    {
+     "item": 28,
+     "number": "S-0015",
+     "description": "Bearing 6201",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Bearing",
+     "drawn": 0.05829979150972903,
+     "book": 0.0708,
+     "maker": [
+      0.0354,
+      "SKF_product_net_weights_2026-11-04.md",
+      "6201: 0.0354 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 6201 1",
+      "Bearing 6201 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 29,
+     "number": "S-0018",
+     "description": "Bearing BSD 2562 CGA",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Bearing",
+     "drawn": 0.336121307235262,
+     "book": 0.46,
+     "maker": [
+      0.23,
+      "SKF_BSD2562CGA_2026-11-02.md",
+      "Product net weight 0.23 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing BSD 2562 CGA 1",
+      "Bearing BSD 2562 CGA 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 30,
+     "number": "S-0019",
+     "description": "SKF GE 20 ES-2LS",
+     "kind": "bought",
+     "qty": 2,
+     "material": "SKF",
+     "drawn": 0.13386402884786613,
+     "book": 0.1178,
+     "maker": [
+      0.0589,
+      "SKF_product_net_weights_2026-11-04.md",
+      "GE 20 ES-2LS: 0.0589 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing GE 20 ES hinge L",
+      "Bearing GE 20 ES hinge R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 31,
+     "number": "S-0022",
+     "description": "ISO 4762 M8 x 25 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 4762",
+     "drawn": 0.06319910475034309,
+     "book": 0.06,
+     "maker": [
+      0.015,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 25: 15 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bracket bolt M8x25 L1",
+      "Bracket bolt M8x25 L2",
+      "Bracket bolt M8x25 R1",
+      "Bracket bolt M8x25 R2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 32,
+     "number": "S-0023",
+     "description": "ISO 4032 M8 - 10 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4032",
+     "drawn": 0.03150611361247517,
+     "book": 0.0416,
+     "maker": [
+      0.0052,
+      "Fasten.it_DIN_934_2026-11-03.md",
+      "DIN 934 M8: 5.2 kg per 1000 (the nut ISO 4032 replaced, as wide across the flats)"
+     ],
+     "note": null,
+     "was": [
+      "S-0059"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bracket nut M8 L1",
+      "Bracket nut M8 L2",
+      "Bracket nut M8 R1",
+      "Bracket nut M8 R2",
+      "Fitting nut M8 1",
+      "Fitting nut M8 2",
+      "Fitting nut M8 3",
+      "Fitting nut M8 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 33,
+     "number": "S-0027",
+     "description": "ISO 4762 M4 x 10 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 4762",
+     "drawn": 0.001728357000141578,
+     "book": 0.0018,
+     "maker": [
+      0.0018,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M4 x 10: 1.8 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw ISO 4762 M4x10"
+     ],
+     "with_": []
+    },
+    {
+     "item": 34,
+     "number": "S-0029",
+     "description": "ISO 4762 M5 x 12 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 4762",
+     "drawn": 0.013194520284472568,
+     "book": 0.011800000000000001,
+     "maker": [
+      0.0029500000000000004,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M5 x 12: 2.95 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0068"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Motor screw M5x12 1",
+      "Motor screw M5x12 2",
+      "Motor screw M5x12 3",
+      "Motor screw M5x12 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 35,
+     "number": "S-0030",
+     "description": "ISO 4762 M5 x 16 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.02349100577631099,
+     "book": 0.020700000000000003,
+     "maker": [
+      0.0034500000000000004,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M5 x 16: 3.45 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0045"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cover screw M5x16 1",
+      "Cover screw M5x16 2",
+      "Cover screw M5x16 3",
+      "Cover screw M5x16 4",
+      "Cover screw M5x16 5",
+      "Cover screw M5x16 6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 36,
+     "number": "S-0031",
+     "description": "ISO 4762 M8 x 20 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 4762",
+     "drawn": 0.013826856001132627,
+     "book": 0.0134,
+     "maker": [
+      0.0134,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 20: 13.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0056"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "End bolt M8x20"
+     ],
+     "with_": []
+    },
+    {
+     "item": 37,
+     "number": "S-0055",
+     "description": "Encoder",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Encoder",
+     "drawn": 0.05320098663295328,
+     "book": 0.05320098663295328,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Encoder"
+     ],
+     "with_": []
+    },
+    {
+     "item": 38,
+     "number": "S-0058",
+     "description": "ISO 4762 M8 x 35 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 4762",
+     "drawn": 0.07898246624198414,
+     "book": 0.0756,
+     "maker": [
+      0.0189,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 35: 18.9 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Fitting bolt M8x35 1",
+      "Fitting bolt M8x35 2",
+      "Fitting bolt M8x35 3",
+      "Fitting bolt M8x35 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 39,
+     "number": "S-0062",
+     "description": "Hinge pin nut",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Hinge",
+     "drawn": 0.03699225349602279,
+     "book": 0.03699225349602279,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Hinge pin nut L",
+      "Hinge pin nut R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 40,
+     "number": "S-0063",
+     "description": "Horn pin nut",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Horn",
+     "drawn": 0.018496126748010717,
+     "book": 0.018496126748010717,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Horn pin nut"
+     ],
+     "with_": []
+    },
+    {
+     "item": 41,
+     "number": "S-0064",
+     "description": "Jam nut M20x1.5",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Jam",
+     "drawn": 0.03846701108878111,
+     "book": 0.03846701108878111,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Jam nut M20x1.5"
+     ],
+     "with_": []
+    },
+    {
+     "item": 42,
+     "number": "S-0065",
+     "description": "DIN 6885-1 A 8 x 7 x 18",
+     "kind": "bought",
+     "qty": 1,
+     "material": "DIN 6885-1",
+     "drawn": 0.006278888261036147,
+     "book": 0.006278888261036147,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Key 8x7x16"
+     ],
+     "with_": []
+    },
+    {
+     "item": 43,
+     "number": "S-0069",
+     "description": "maxon special unit: EC-i 52 with GP 52 C 26:1, flange, shaft, bearing and brake as Chapter 53 orders",
+     "kind": "bought",
+     "qty": 1,
+     "material": "maxon",
+     "drawn": 1.0611975469925248,
+     "book": 1.6,
+     "maker": [
+      1.6,
+      "maxon_ECi52_GP52C_2026-11-03.md",
+      "EC-i 52 0.823 kg; GP 52 C two-stage 0.620 kg; the brake 0.157 kg, Chapter 53's budget for it"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Motor unit"
+     ],
+     "with_": [
+      "Gearhead shaft"
+     ]
+    },
+    {
+     "item": 44,
+     "number": "S-0071",
+     "description": "Nut key 6x6.5x32",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Nut",
+     "drawn": 0.009796800000000005,
+     "book": 0.009796800000000005,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Nut key 6x6.5x32"
+     ],
+     "with_": []
+    },
+    {
+     "item": 45,
+     "number": "S-0072",
+     "description": "Nut retaining ring",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Nut",
+     "drawn": 0.010764745767342194,
+     "book": 0.010764745767342194,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Nut retaining ring"
+     ],
+     "with_": []
+    },
+    {
+     "item": 46,
+     "number": "S-0085",
+     "description": "Ring nut M66x1.5",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Ring",
+     "drawn": 0.06865762248861587,
+     "book": 0.06865762248861587,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Ring nut M66x1.5"
+     ],
+     "with_": []
+    },
+    {
+     "item": 47,
+     "number": "S-0086",
+     "description": "Rod end SI 20 ES",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Rod",
+     "drawn": 0.4684395776982805,
+     "book": 0.364,
+     "maker": [
+      0.364,
+      "SKF_SI20ES_2026-11-02.md",
+      "Product net weight 0.364 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Rod end SI 20 ES"
+     ],
+     "with_": []
+    },
+    {
+     "item": 48,
+     "number": "S-0087",
+     "description": "Rod seal",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Rod",
+     "drawn": 0.02086363097175587,
+     "book": 0.02086363097175587,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Rod seal"
+     ],
+     "with_": []
+    },
+    {
+     "item": 49,
+     "number": "S-0096",
+     "description": "ISO 4762 M8 x 16 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 4762",
+     "drawn": 0.01224851985196903,
+     "book": 0.0121,
+     "maker": [
+      0.0121,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 16: 12.1 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Stop bolt M8x16"
+     ],
+     "with_": []
+    },
+    {
+     "item": 50,
+     "number": "S-0099",
+     "description": "Washer M8",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Washer",
+     "drawn": 0.030557081077853362,
+     "book": 0.030557081077853362,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Washer M8 1",
+      "Washer M8 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 51,
+     "number": "S-0109",
+     "description": "SKF GE 20 ES-2LS/C3, C3's availability SKF's to confirm",
+     "kind": "bought",
+     "qty": 2,
+     "material": "SKF",
+     "drawn": 0.13386402884786694,
+     "book": 0.1178,
+     "maker": [
+      0.0589,
+      "SKF_product_net_weights_2026-11-04.md",
+      "GE 20 ES-2LS: 0.0589 kg (the C3 bearing the same)"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing GE 20 ES fitting L",
+      "Bearing GE 20 ES fitting R"
+     ],
+     "with_": []
+    }
+   ]
+  },
+  {
+   "key": "axle",
+   "occurrences": 106,
+   "fusion_mass": 162.6472270925931,
+   "census_mass": 162.64722709259323,
+   "loads": [],
+   "load_mass": 0,
+   "made_kinds": 18,
+   "made_pieces": 30,
+   "bought_kinds": 18,
+   "bought_pieces": 76,
+   "with_maker": 8,
+   "drawn": 162.64722709259323,
+   "book": 172.88758820194315,
+   "bought_drawn": 9.458436454843257,
+   "bought_book": 19.69879756419318,
+   "wrong_numbers": [],
+   "csv": "axle.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "A01-001",
+     "description": "Adjuster",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.3712352645810633,
+     "book": 1.3712352645810633,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Adjuster C1",
+      "Adjuster C2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "A01-002",
+     "description": "Banjo housing",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 58.26410105128647,
+     "book": 58.26410105128647,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Banjo housing"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "A01-003",
+     "description": "Bearing cap",
+     "kind": "made",
+     "qty": 2,
+     "material": "cast iron",
+     "drawn": 2.9668855281870634,
+     "book": 2.9668855281870634,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing cap C1",
+      "Bearing cap C2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "A01-004",
+     "description": "Carrier casting",
+     "kind": "made",
+     "qty": 1,
+     "material": "cast iron",
+     "drawn": 29.374840965871314,
+     "book": 29.374840965871314,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Carrier casting"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "A01-005",
+     "description": "Companion flange",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.5372205600204496,
+     "book": 1.5372205600204496,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Companion flange"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "A01-006",
+     "description": "Cross",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 0.9349773382947176,
+     "book": 0.9349773382947176,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cross"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "A01-007",
+     "description": "Crown wheel z47",
+     "kind": "made",
+     "qty": 1,
+     "material": "case-hardening steel, carburized and hardened",
+     "drawn": 9.09495256271607,
+     "book": 9.09495256271607,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Crown wheel z47"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "A01-008",
+     "description": "Differential case",
+     "kind": "made",
+     "qty": 1,
+     "material": "cast iron",
+     "drawn": 6.660046934956567,
+     "book": 6.660046934956567,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Differential case"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "A01-009",
+     "description": "Half shaft",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 4140, quenched and tempered at 425 deg C",
+     "drawn": 26.8447853933416,
+     "book": 26.8447853933416,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Half shaft L",
+      "Half shaft R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "A01-010",
+     "description": "Pinion depth shim",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.006794182238346863,
+     "book": 0.006794182238346863,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pinion depth shim"
+     ],
+     "with_": []
+    },
+    {
+     "item": 11,
+     "number": "A01-011",
+     "description": "Pinion shaft z12",
+     "kind": "made",
+     "qty": 1,
+     "material": "case-hardening steel, carburized and hardened",
+     "drawn": 3.6055587705863483,
+     "book": 3.6055587705863483,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pinion shaft z12"
+     ],
+     "with_": []
+    },
+    {
+     "item": 12,
+     "number": "A01-012",
+     "description": "Rear cover",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 4.962979375035533,
+     "book": 4.962979375035533,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Rear cover"
+     ],
+     "with_": []
+    },
+    {
+     "item": 13,
+     "number": "A01-013",
+     "description": "Retainer plate",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.6209963973468232,
+     "book": 0.6209963973468232,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Retainer plate L",
+      "Retainer plate R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 14,
+     "number": "A01-014",
+     "description": "Side gear",
+     "kind": "made",
+     "qty": 2,
+     "material": "case-hardening steel, carburized and hardened",
+     "drawn": 3.442540700581284,
+     "book": 3.442540700581284,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Side gear L",
+      "Side gear R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 15,
+     "number": "A01-015",
+     "description": "Side gear washer",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.22210047017719725,
+     "book": 0.22210047017719725,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Side gear washer L",
+      "Side gear washer R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 16,
+     "number": "A01-016",
+     "description": "Spacer",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.4606455557598719,
+     "book": 0.4606455557598719,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spacer"
+     ],
+     "with_": []
+    },
+    {
+     "item": 17,
+     "number": "A01-017",
+     "description": "Spider",
+     "kind": "made",
+     "qty": 4,
+     "material": "case-hardening steel, carburized and hardened",
+     "drawn": 2.7508377416184944,
+     "book": 2.7508377416184944,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spider 1",
+      "Spider 2",
+      "Spider 3",
+      "Spider 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 18,
+     "number": "A01-018",
+     "description": "Spider washer",
+     "kind": "made",
+     "qty": 4,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.0672918451507639,
+     "book": 0.0672918451507639,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spider washer 1",
+      "Spider washer 2",
+      "Spider washer 3",
+      "Spider washer 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 19,
+     "number": "S-0008",
+     "description": "Bearing 32213",
+     "kind": "bought",
+     "qty": 4,
+     "material": "Bearing",
+     "drawn": 2.6209156300640766,
+     "book": 5.92,
+     "maker": [
+      1.48,
+      "SKF_product_net_weights_2026-11-04.md",
+      "32213: 1.48 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing C1 32213 cone",
+      "Bearing C1 32213 cup",
+      "Bearing C2 32213 cone",
+      "Bearing C2 32213 cup"
+     ],
+     "with_": []
+    },
+    {
+     "item": 20,
+     "number": "S-0009",
+     "description": "Bearing 32308",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Bearing",
+     "drawn": 0.8705859500658326,
+     "book": 2.08,
+     "maker": [
+      1.04,
+      "SKF_product_net_weights_2026-11-04.md",
+      "32308: 1.04 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing B 32308 cone",
+      "Bearing B 32308 cup"
+     ],
+     "with_": []
+    },
+    {
+     "item": 21,
+     "number": "S-0010",
+     "description": "Bearing 32309",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Bearing",
+     "drawn": 1.1697658342137656,
+     "book": 2.72,
+     "maker": [
+      1.36,
+      "SKF_product_net_weights_2026-11-04.md",
+      "32309: 1.36 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing A 32309 cone",
+      "Bearing A 32309 cup"
+     ],
+     "with_": []
+    },
+    {
+     "item": 22,
+     "number": "S-0017",
+     "description": "Bearing 6213",
+     "kind": "bought",
+     "qty": 6,
+     "material": "Bearing",
+     "drawn": 1.6607733860794176,
+     "book": 5.9399999999999995,
+     "maker": [
+      0.99,
+      "SKF_product_net_weights_2026-11-04.md",
+      "6213: 0.99 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 6213 balls L",
+      "Bearing 6213 balls R",
+      "Bearing 6213 inner ring L",
+      "Bearing 6213 inner ring R",
+      "Bearing 6213 outer ring L",
+      "Bearing 6213 outer ring R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 23,
+     "number": "S-0024",
+     "description": "Breather",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Breather",
+     "drawn": 0.009335242570141707,
+     "book": 0.009335242570141707,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Breather"
+     ],
+     "with_": []
+    },
+    {
+     "item": 24,
+     "number": "S-0025",
+     "description": "ISO 4762 M12 x 90 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 4762",
+     "drawn": 0.39973793615233943,
+     "book": 0.3564,
+     "maker": [
+      0.0891,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M12 x 90: 89.1 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap bolt M12x90 C1 lower",
+      "Cap bolt M12x90 C1 upper",
+      "Cap bolt M12x90 C2 lower",
+      "Cap bolt M12x90 C2 upper"
+     ],
+     "with_": []
+    },
+    {
+     "item": 25,
+     "number": "S-0031",
+     "description": "ISO 4762 M8 x 20 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 10,
+     "material": "ISO 4762",
+     "drawn": 0.13826856001131452,
+     "book": 0.134,
+     "maker": [
+      0.0134,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 20: 13.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0046"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cover screw M8x20 1",
+      "Cover screw M8x20 10",
+      "Cover screw M8x20 2",
+      "Cover screw M8x20 3",
+      "Cover screw M8x20 4",
+      "Cover screw M8x20 5",
+      "Cover screw M8x20 6",
+      "Cover screw M8x20 7",
+      "Cover screw M8x20 8",
+      "Cover screw M8x20 9"
+     ],
+     "with_": []
+    },
+    {
+     "item": 26,
+     "number": "S-0040",
+     "description": "ISO 4032 M12 - 10 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4032",
+     "drawn": 0.10634449982987995,
+     "book": 0.1384,
+     "maker": [
+      0.0173,
+      "Fasten.it_DIN_934_2026-11-03.md",
+      "DIN 934 M12: 17.3 kg per 1000 (the nut ISO 4032 replaced, as wide across the flats)"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Carrier nut M12 1",
+      "Carrier nut M12 2",
+      "Carrier nut M12 3",
+      "Carrier nut M12 4",
+      "Carrier nut M12 5",
+      "Carrier nut M12 6",
+      "Carrier nut M12 7",
+      "Carrier nut M12 8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 27,
+     "number": "S-0041",
+     "description": "Carrier stud M12",
+     "kind": "bought",
+     "qty": 8,
+     "material": "Carrier",
+     "drawn": 0.2983055321918911,
+     "book": 0.2983055321918911,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Carrier stud M12 1",
+      "Carrier stud M12 2",
+      "Carrier stud M12 3",
+      "Carrier stud M12 4",
+      "Carrier stud M12 5",
+      "Carrier stud M12 6",
+      "Carrier stud M12 7",
+      "Carrier stud M12 8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 28,
+     "number": "S-0047",
+     "description": "ISO 4762 M12 x 35 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 10,
+     "material": "ISO 4762",
+     "drawn": 0.5110470942334517,
+     "book": 0.429,
+     "maker": [
+      0.0429,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M12 x 35: 42.9 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Crown wheel bolt M12x35 1",
+      "Crown wheel bolt M12x35 10",
+      "Crown wheel bolt M12x35 2",
+      "Crown wheel bolt M12x35 3",
+      "Crown wheel bolt M12x35 4",
+      "Crown wheel bolt M12x35 5",
+      "Crown wheel bolt M12x35 6",
+      "Crown wheel bolt M12x35 7",
+      "Crown wheel bolt M12x35 8",
+      "Crown wheel bolt M12x35 9"
+     ],
+     "with_": []
+    },
+    {
+     "item": 29,
+     "number": "S-0053",
+     "description": "Drain plug M22",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Drain",
+     "drawn": 0.06380352981174572,
+     "book": 0.06380352981174572,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Drain plug M22"
+     ],
+     "with_": []
+    },
+    {
+     "item": 30,
+     "number": "S-0057",
+     "description": "Filler plug M22",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Filler",
+     "drawn": 0.06380352981174572,
+     "book": 0.06380352981174572,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Filler plug M22"
+     ],
+     "with_": []
+    },
+    {
+     "item": 31,
+     "number": "S-0073",
+     "description": "Oil seal 74x100x10",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Oil",
+     "drawn": 0.0881452358780995,
+     "book": 0.0881452358780995,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Oil seal 74x100x10 L",
+      "Oil seal 74x100x10 R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 32,
+     "number": "S-0076",
+     "description": "Pinion nut M30",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Pinion",
+     "drawn": 0.15579805407007757,
+     "book": 0.15579805407007757,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pinion nut M30"
+     ],
+     "with_": []
+    },
+    {
+     "item": 33,
+     "number": "S-0077",
+     "description": "Pinion seal 60x85x10",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Pinion",
+     "drawn": 0.03547044637966835,
+     "book": 0.03547044637966835,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pinion seal 60x85x10"
+     ],
+     "with_": []
+    },
+    {
+     "item": 34,
+     "number": "S-0082",
+     "description": "Retaining ring",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Retaining",
+     "drawn": 0.33936693357243497,
+     "book": 0.33936693357243497,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Retaining ring L",
+      "Retaining ring R"
+     ],
+     "with_": []
+    },
+    {
+     "item": 35,
+     "number": "S-0098",
+     "description": "Washer",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Washer",
+     "drawn": 0.036841325101757284,
+     "book": 0.036841325101757284,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Washer"
+     ],
+     "with_": []
+    },
+    {
+     "item": 36,
+     "number": "S-0100",
+     "description": "Wheel stud M14",
+     "kind": "bought",
+     "qty": 12,
+     "material": "Wheel",
+     "drawn": 0.8901277348056174,
+     "book": 0.8901277348056174,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Wheel stud M14 L 1",
+      "Wheel stud M14 L 2",
+      "Wheel stud M14 L 3",
+      "Wheel stud M14 L 4",
+      "Wheel stud M14 L 5",
+      "Wheel stud M14 L 6",
+      "Wheel stud M14 R 1",
+      "Wheel stud M14 R 2",
+      "Wheel stud M14 R 3",
+      "Wheel stud M14 R 4",
+      "Wheel stud M14 R 5",
+      "Wheel stud M14 R 6"
+     ],
+     "with_": []
+    }
+   ]
+  },
+  {
+   "key": "robot",
+   "occurrences": 118,
+   "fusion_mass": 3609.90578269647,
+   "census_mass": 3609.905782696468,
+   "loads": [],
+   "load_mass": 0,
+   "made_kinds": 61,
+   "made_pieces": 78,
+   "bought_kinds": 18,
+   "bought_pieces": 40,
+   "with_maker": 14,
+   "drawn": 3609.905782696468,
+   "book": 3879.653670985326,
+   "bought_drawn": 403.91307628129863,
+   "bought_book": 673.6609645701562,
+   "wrong_numbers": [],
+   "csv": "robot.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "P01-001",
+     "description": "Balancer barrel",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn",
+     "drawn": 11.309133623410151,
+     "book": 11.309133623410151,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Balancer barrel 1",
+      "Balancer barrel 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "P01-002",
+     "description": "Balancer cross pin Q",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.6646514073209624,
+     "book": 1.6646514073209624,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Balancer cross pin Q"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "P01-003",
+     "description": "Balancer lug",
+     "kind": "made",
+     "qty": 3,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 2.314325925204356,
+     "book": 2.314325925204356,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Balancer lug 1",
+      "Balancer lug 2",
+      "Balancer lug 3"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "P01-004",
+     "description": "Balancer pin P",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.3872095061008043,
+     "book": 1.3872095061008043,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Balancer pin P"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "P01-005",
+     "description": "Balancer rod",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 8.85877304721695,
+     "book": 8.85877304721695,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Balancer rod 1",
+      "Balancer rod 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "P01-006",
+     "description": "Base flange",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 224.91290125579687,
+     "book": 224.91290125579687,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Base flange"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "P01-007",
+     "description": "Cheek J2 side",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 192.26228792378154,
+     "book": 192.26228792378154,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cheek J2 side"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "P01-008",
+     "description": "Cheek J3 side",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 217.56498931505803,
+     "book": 217.56498931505803,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cheek J3 side"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "P01-009",
+     "description": "Column",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 262.9902608543701,
+     "book": 262.9902608543701,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Column"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "P01-010",
+     "description": "Counterweight block",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 100.00000000000024,
+     "book": 100.00000000000024,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Counterweight block"
+     ],
+     "with_": []
+    },
+    {
+     "item": 11,
+     "number": "P01-011",
+     "description": "Counterweight standoff",
+     "kind": "made",
+     "qty": 4,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 4.932300466136185,
+     "book": 4.932300466136185,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Counterweight standoff 1",
+      "Counterweight standoff 2",
+      "Counterweight standoff 3",
+      "Counterweight standoff 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 12,
+     "number": "P01-012",
+     "description": "Coupling disc",
+     "kind": "made",
+     "qty": 2,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 14.500963370440388,
+     "book": 14.500963370440388,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Coupling disc 1",
+      "Coupling disc 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 13,
+     "number": "P01-013",
+     "description": "Coupling spacer",
+     "kind": "made",
+     "qty": 1,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 2.9519818289822166,
+     "book": 2.9519818289822166,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Coupling spacer"
+     ],
+     "with_": []
+    },
+    {
+     "item": 14,
+     "number": "P01-014",
+     "description": "Crank shaft",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 20.974607732244134,
+     "book": 20.974607732244134,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Crank shaft"
+     ],
+     "with_": []
+    },
+    {
+     "item": 15,
+     "number": "P01-015",
+     "description": "Crank web",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 133.9255140732089,
+     "book": 133.9255140732089,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Crank web"
+     ],
+     "with_": []
+    },
+    {
+     "item": 16,
+     "number": "P01-016",
+     "description": "E bracket",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 13.034925,
+     "book": 13.034925,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "E bracket"
+     ],
+     "with_": []
+    },
+    {
+     "item": 17,
+     "number": "P01-017",
+     "description": "Elbow hub",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 81.70663990933537,
+     "book": 81.70663990933537,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Elbow hub"
+     ],
+     "with_": []
+    },
+    {
+     "item": 18,
+     "number": "P01-018",
+     "description": "Elbow pin",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 10.834876914595107,
+     "book": 10.834876914595107,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Elbow pin"
+     ],
+     "with_": []
+    },
+    {
+     "item": 19,
+     "number": "P01-019",
+     "description": "Floor plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 379.93999999999994,
+     "book": 379.93999999999994,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Floor plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 20,
+     "number": "P01-020",
+     "description": "Fork plate",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 127.00551630894763,
+     "book": 127.00551630894763,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Fork plate 1",
+      "Fork plate 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 21,
+     "number": "P01-021",
+     "description": "Front fork cheek",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1020",
+     "drawn": 16.00047603061536,
+     "book": 16.00047603061536,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Front fork cheek 1",
+      "Front fork cheek 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 22,
+     "number": "P01-022",
+     "description": "Gas bottle",
+     "kind": "made",
+     "qty": 2,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 8.48355680175389,
+     "book": 8.48355680175389,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Gas bottle 1",
+      "Gas bottle 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 23,
+     "number": "P01-023",
+     "description": "H plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 14.585189128445304,
+     "book": 14.585189128445304,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "H plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 24,
+     "number": "P01-024",
+     "description": "Hub boss J2 side",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 102.59184969562729,
+     "book": 102.59184969562729,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Hub boss J2 side"
+     ],
+     "with_": []
+    },
+    {
+     "item": 25,
+     "number": "P01-025",
+     "description": "Hub boss J3 side",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 122.32105156017103,
+     "book": 122.32105156017103,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Hub boss J3 side"
+     ],
+     "with_": []
+    },
+    {
+     "item": 26,
+     "number": "P01-026",
+     "description": "J1 reducer plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 18.272742884560895,
+     "book": 18.272742884560895,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "J1 reducer plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 27,
+     "number": "P01-027",
+     "description": "J1 stop",
+     "kind": "made",
+     "qty": 1,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 3.6737999999999995,
+     "book": 3.6737999999999995,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "J1 stop"
+     ],
+     "with_": []
+    },
+    {
+     "item": 28,
+     "number": "P01-028",
+     "description": "J1 stop dog",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.8477999999999994,
+     "book": 0.8477999999999994,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "J1 stop dog"
+     ],
+     "with_": []
+    },
+    {
+     "item": 29,
+     "number": "P01-029",
+     "description": "J2 support housing",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 18.133602663748885,
+     "book": 18.133602663748885,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "J2 support housing"
+     ],
+     "with_": []
+    },
+    {
+     "item": 30,
+     "number": "P01-030",
+     "description": "J3 bracket",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 41.542199999999994,
+     "book": 41.542199999999994,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "J3 bracket"
+     ],
+     "with_": []
+    },
+    {
+     "item": 31,
+     "number": "P01-031",
+     "description": "J3 bracket post",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 7.398450699204283,
+     "book": 7.398450699204283,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "J3 bracket post 1",
+      "J3 bracket post 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 32,
+     "number": "P01-032",
+     "description": "J3 support housing",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 3.440279575129847,
+     "book": 3.440279575129847,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "J3 support housing"
+     ],
+     "with_": []
+    },
+    {
+     "item": 33,
+     "number": "P01-033",
+     "description": "Levelling rod 1 body",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1020",
+     "drawn": 8.159030280638058,
+     "book": 8.159030280638058,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Levelling rod 1 body"
+     ],
+     "with_": []
+    },
+    {
+     "item": 34,
+     "number": "P01-034",
+     "description": "Levelling rod 1 end 1 eye",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.2375101794594403,
+     "book": 1.2375101794594403,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Levelling rod 1 end 1 eye"
+     ],
+     "with_": []
+    },
+    {
+     "item": 35,
+     "number": "P01-035",
+     "description": "Levelling rod 1 end 2 eye",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.2375101794594758,
+     "book": 1.2375101794594758,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Levelling rod 1 end 2 eye"
+     ],
+     "with_": []
+    },
+    {
+     "item": 36,
+     "number": "P01-036",
+     "description": "Levelling rod 2 body",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1020",
+     "drawn": 8.838949470691237,
+     "book": 8.838949470691237,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Levelling rod 2 body"
+     ],
+     "with_": []
+    },
+    {
+     "item": 37,
+     "number": "P01-037",
+     "description": "Levelling rod 2 end 1 eye",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.2375101794594752,
+     "book": 1.2375101794594752,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Levelling rod 2 end 1 eye"
+     ],
+     "with_": []
+    },
+    {
+     "item": 38,
+     "number": "P01-038",
+     "description": "Levelling rod 2 end 2 eye",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.2375101794594785,
+     "book": 1.2375101794594785,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Levelling rod 2 end 2 eye"
+     ],
+     "with_": []
+    },
+    {
+     "item": 39,
+     "number": "P01-039",
+     "description": "Lower arm box",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1020",
+     "drawn": 52.81212205107964,
+     "book": 52.81212205107964,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Lower arm box"
+     ],
+     "with_": []
+    },
+    {
+     "item": 40,
+     "number": "P01-040",
+     "description": "Parallel rod body",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1020",
+     "drawn": 25.3414,
+     "book": 25.3414,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Parallel rod body"
+     ],
+     "with_": []
+    },
+    {
+     "item": 41,
+     "number": "P01-041",
+     "description": "Parallel rod end 1 eye",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 3.7473128129963085,
+     "book": 3.7473128129963085,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Parallel rod end 1 eye"
+     ],
+     "with_": []
+    },
+    {
+     "item": 42,
+     "number": "P01-042",
+     "description": "Parallel rod end 2 eye",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 3.7473128129963085,
+     "book": 3.7473128129963085,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Parallel rod end 2 eye"
+     ],
+     "with_": []
+    },
+    {
+     "item": 43,
+     "number": "P01-043",
+     "description": "Pin C",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.6456528024629264,
+     "book": 1.6456528024629264,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pin C"
+     ],
+     "with_": []
+    },
+    {
+     "item": 44,
+     "number": "P01-044",
+     "description": "Pin D",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.6456528024629264,
+     "book": 1.6456528024629264,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pin D"
+     ],
+     "with_": []
+    },
+    {
+     "item": 45,
+     "number": "P01-045",
+     "description": "Pin E",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.43151463703108917,
+     "book": 0.43151463703108917,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pin E"
+     ],
+     "with_": []
+    },
+    {
+     "item": 46,
+     "number": "P01-046",
+     "description": "Pin F",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.4315146370310897,
+     "book": 0.4315146370310897,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pin F"
+     ],
+     "with_": []
+    },
+    {
+     "item": 47,
+     "number": "P01-047",
+     "description": "Pin G",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.4315146370310896,
+     "book": 0.4315146370310896,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pin G"
+     ],
+     "with_": []
+    },
+    {
+     "item": 48,
+     "number": "P01-048",
+     "description": "Pin H",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.43151463703108967,
+     "book": 0.43151463703108967,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pin H"
+     ],
+     "with_": []
+    },
+    {
+     "item": 49,
+     "number": "P01-049",
+     "description": "Rear lever",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1020",
+     "drawn": 84.60815696754047,
+     "book": 84.60815696754047,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Rear lever"
+     ],
+     "with_": []
+    },
+    {
+     "item": 50,
+     "number": "P01-050",
+     "description": "Tool flange",
+     "kind": "made",
+     "qty": 1,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 11.560079217506685,
+     "book": 11.560079217506685,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Tool flange"
+     ],
+     "with_": []
+    },
+    {
+     "item": 51,
+     "number": "P01-051",
+     "description": "Torque tube",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1020",
+     "drawn": 35.03339256500873,
+     "book": 35.03339256500873,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Torque tube"
+     ],
+     "with_": []
+    },
+    {
+     "item": 52,
+     "number": "P01-052",
+     "description": "Triangle plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 18.247062542198417,
+     "book": 18.247062542198417,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Triangle plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 53,
+     "number": "P01-053",
+     "description": "Turret plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 560.7650986015914,
+     "book": 560.7650986015914,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Turret plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 54,
+     "number": "P01-054",
+     "description": "Upper arm box",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1020",
+     "drawn": 59.56016,
+     "book": 59.56016,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Upper arm box"
+     ],
+     "with_": []
+    },
+    {
+     "item": 55,
+     "number": "P01-055",
+     "description": "Upper arm cheek",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1020",
+     "drawn": 53.13712542858048,
+     "book": 53.13712542858048,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Upper arm cheek 1",
+      "Upper arm cheek 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 56,
+     "number": "P01-056",
+     "description": "Wrist housing",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 48.54717979548891,
+     "book": 48.54717979548891,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Wrist housing"
+     ],
+     "with_": []
+    },
+    {
+     "item": 57,
+     "number": "P01-057",
+     "description": "Wrist hub",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 29.29478208105604,
+     "book": 29.29478208105604,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Wrist hub"
+     ],
+     "with_": []
+    },
+    {
+     "item": 58,
+     "number": "P01-058",
+     "description": "Wrist pin",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 8.856562024505811,
+     "book": 8.856562024505811,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Wrist pin"
+     ],
+     "with_": []
+    },
+    {
+     "item": 59,
+     "number": "P01-059",
+     "description": "Yoke bulkhead",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1020",
+     "drawn": 12.592,
+     "book": 12.592,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Yoke bulkhead"
+     ],
+     "with_": []
+    },
+    {
+     "item": 60,
+     "number": "P01-060",
+     "description": "End washer 43 x 6, hole 9",
+     "kind": "made",
+     "qty": 4,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.2616092167238619,
+     "book": 0.2616092167238619,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "End washer pin E",
+      "End washer pin F",
+      "End washer pin G",
+      "End washer pin H"
+     ],
+     "with_": []
+    },
+    {
+     "item": 61,
+     "number": "P01-061",
+     "description": "End washer 76 x 8, hole 13",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.55310817427252,
+     "book": 0.55310817427252,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "End washer pin C",
+      "End washer pin D"
+     ],
+     "with_": []
+    },
+    {
+     "item": 62,
+     "number": "S-0006",
+     "description": "SKF 22207 E, Normal clearance, in the levelling rods' four eyes only",
+     "kind": "bought",
+     "qty": 4,
+     "material": "SKF",
+     "drawn": 2.2456024177248106,
+     "book": 1.752,
+     "maker": [
+      0.438,
+      "SKF_22207E_2026-11-02.md",
+      "Product net weight 0.438 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 22207 E Levelling rod 1 end 1",
+      "Bearing 22207 E Levelling rod 1 end 2",
+      "Bearing 22207 E Levelling rod 2 end 1",
+      "Bearing 22207 E Levelling rod 2 end 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 63,
+     "number": "S-0007",
+     "description": "SKF 22213 E/C3",
+     "kind": "bought",
+     "qty": 2,
+     "material": "SKF",
+     "drawn": 3.8894271863275085,
+     "book": 3.04,
+     "maker": [
+      1.52,
+      "SKF_22213E_2026-11-02.md",
+      "Product net weight 1.52 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 22213 E Parallel rod end 1",
+      "Bearing 22213 E Parallel rod end 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 64,
+     "number": "S-0008",
+     "description": "Bearing 32213",
+     "kind": "bought",
+     "qty": 4,
+     "material": "Bearing",
+     "drawn": 8.217983248530723,
+     "book": 5.92,
+     "maker": [
+      1.48,
+      "SKF_product_net_weights_2026-11-04.md",
+      "32213: 1.48 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 32213 elbow 1",
+      "Bearing 32213 elbow 2",
+      "Bearing 32213 wrist 1",
+      "Bearing 32213 wrist 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 65,
+     "number": "S-0012",
+     "description": "SKF 61836/C4, its availability SKF's to confirm",
+     "kind": "bought",
+     "qty": 1,
+     "material": "SKF",
+     "drawn": 2.472007339871322,
+     "book": 1.72,
+     "maker": [
+      1.72,
+      "SKF_61836_2026-11-02.md",
+      "Product net weight 1.72 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 61836 crank"
+     ],
+     "with_": []
+    },
+    {
+     "item": 66,
+     "number": "S-0013",
+     "description": "SKF 61856 MA/C4, its availability SKF's to confirm",
+     "kind": "bought",
+     "qty": 1,
+     "material": "SKF",
+     "drawn": 8.97247108545964,
+     "book": 7.34,
+     "maker": [
+      7.34,
+      "SKF_61856MA_2026-11-02.md",
+      "Product net weight 7.34 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 61856 MA lower arm"
+     ],
+     "with_": []
+    },
+    {
+     "item": 67,
+     "number": "S-0031",
+     "description": "ISO 4762 M8 x 20 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 4762",
+     "drawn": 0.05530742400453045,
+     "book": 0.0536,
+     "maker": [
+      0.0134,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 20: 13.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0036"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M8x20 pin E",
+      "Cap screw M8x20 pin F",
+      "Cap screw M8x20 pin G",
+      "Cap screw M8x20 pin H"
+     ],
+     "with_": []
+    },
+    {
+     "item": 68,
+     "number": "S-0078",
+     "description": "Nabtesco RV-500N, ratio 192.75",
+     "kind": "bought",
+     "qty": 4,
+     "material": "Nabtesco",
+     "drawn": 136.39289245930703,
+     "book": 228.8,
+     "maker": [
+      57.2,
+      "Nabtesco_RV-N_catalogue_CAT180410_2026-11-03.pdf",
+      "p. 9: RV-500N 57.2 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "RV-500N case J2",
+      "RV-500N case J3",
+      "RV-500N output J2",
+      "RV-500N output J3"
+     ],
+     "with_": []
+    },
+    {
+     "item": 69,
+     "number": "S-0079",
+     "description": "Nabtesco RV-700N, ratio 203.52",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Nabtesco",
+     "drawn": 102.94852283846129,
+     "book": 204.0,
+     "maker": [
+      102.0,
+      "Nabtesco_RV-N_catalogue_CAT180410_2026-11-03.pdf",
+      "p. 9: RV-700N 102.0 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "RV-700N case J1",
+      "RV-700N output J1"
+     ],
+     "with_": []
+    },
+    {
+     "item": 70,
+     "number": "S-0080",
+     "description": "Nabtesco RV-80N, ratio 101",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Nabtesco",
+     "drawn": 19.513783641685304,
+     "book": 18.6,
+     "maker": [
+      9.3,
+      "Nabtesco_RV-N_catalogue_CAT180410_2026-11-03.pdf",
+      "p. 9: RV-80N 9.3 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "RV-80N case J4",
+      "RV-80N output J4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 71,
+     "number": "S-0088",
+     "description": "Servo motor J1",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Servo",
+     "drawn": 15.310551797269197,
+     "book": 15.310551797269197,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Servo motor J1"
+     ],
+     "with_": []
+    },
+    {
+     "item": 72,
+     "number": "S-0089",
+     "description": "Servo motor J2",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Servo",
+     "drawn": 17.607134566861095,
+     "book": 17.607134566861095,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Servo motor J2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 73,
+     "number": "S-0090",
+     "description": "Servo motor J3",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Servo",
+     "drawn": 17.607134566861095,
+     "book": 17.607134566861095,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Servo motor J3"
+     ],
+     "with_": []
+    },
+    {
+     "item": 74,
+     "number": "S-0091",
+     "description": "Servo motor J4",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Servo",
+     "drawn": 7.167543639164805,
+     "book": 7.167543639164805,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Servo motor J4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 75,
+     "number": "S-0093",
+     "description": "SKF RKS.23 0841",
+     "kind": "bought",
+     "qty": 3,
+     "material": "SKF",
+     "drawn": 60.53096869350644,
+     "book": 144.0,
+     "maker": [
+      48.0,
+      "SKF_slewing_bearings_2026-11-02.md",
+      "RKS.23 0841: the row of dm 841, mass 48.0 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Slewing ring balls",
+      "Slewing ring inner ring",
+      "Slewing ring outer ring"
+     ],
+     "with_": []
+    },
+    {
+     "item": 76,
+     "number": "S-0112",
+     "description": "SKF 22207 E/C3",
+     "kind": "bought",
+     "qty": 1,
+     "material": "SKF",
+     "drawn": 0.5614006044312027,
+     "book": 0.438,
+     "maker": [
+      0.438,
+      "SKF_22207E_2026-11-02.md",
+      "Product net weight 0.438 kg (the C3 bearing the same)"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 22207 E triangle"
+     ],
+     "with_": []
+    },
+    {
+     "item": 77,
+     "number": "S-0113",
+     "description": "DIN 472 72 x 2.5",
+     "kind": "bought",
+     "qty": 4,
+     "material": "DIN 472",
+     "drawn": 0.1082738598326215,
+     "book": 0.0724,
+     "maker": [
+      0.0181,
+      "Fasten.it_DIN_472_2026-11-03.md",
+      "d1 72: 18.1 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Circlip DIN 472 72x2.5 Levelling rod 1 end 1",
+      "Circlip DIN 472 72x2.5 Levelling rod 1 end 2",
+      "Circlip DIN 472 72x2.5 Levelling rod 2 end 1",
+      "Circlip DIN 472 72x2.5 Levelling rod 2 end 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 78,
+     "number": "S-0114",
+     "description": "DIN 472 120 x 4",
+     "kind": "bought",
+     "qty": 2,
+     "material": "DIN 472",
+     "drawn": 0.21873963399239693,
+     "book": 0.154,
+     "maker": [
+      0.077,
+      "Fasten.it_DIN_472_2026-11-03.md",
+      "d1 120: 77 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Circlip DIN 472 120x4 Parallel rod end 1",
+      "Circlip DIN 472 120x4 Parallel rod end 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 79,
+     "number": "S-0115",
+     "description": "ISO 4762 M12 x 30 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 2,
+     "material": "ISO 4762",
+     "drawn": 0.09333127800764476,
+     "book": 0.07859999999999999,
+     "maker": [
+      0.039299999999999995,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M12 x 30: 39.3 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M12x30 pin C",
+      "Cap screw M12x30 pin D"
+     ],
+     "with_": []
+    }
+   ]
+  },
+  {
+   "key": "changer",
+   "occurrences": 21,
+   "fusion_mass": 28.930391903330737,
+   "census_mass": 28.930391903330744,
+   "loads": [],
+   "load_mass": 0,
+   "made_kinds": 7,
+   "made_pieces": 12,
+   "bought_kinds": 3,
+   "bought_pieces": 9,
+   "with_maker": 1,
+   "drawn": 28.930391903330744,
+   "book": 28.888618847144873,
+   "bought_drawn": 0.277885808262089,
+   "bought_book": 0.23611275207621849,
+   "wrong_numbers": [],
+   "csv": "changer.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "P10-001",
+     "description": "Cam",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), hardened to 600 HB",
+     "drawn": 1.1004432171247407,
+     "book": 1.1004432171247407,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cam"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "P10-002",
+     "description": "Master body",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45)",
+     "drawn": 11.630404537379441,
+     "book": 11.630404537379441,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Master body"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "P10-003",
+     "description": "Master cover",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45)",
+     "drawn": 2.228055781011887,
+     "book": 2.228055781011887,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Master cover"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "P10-004",
+     "description": "Piston with rod",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 1.2090310765678547,
+     "book": 1.2090310765678547,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Piston with rod"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "P10-005",
+     "description": "Robot plate ISO 9409-1-160-6-M10",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45)",
+     "drawn": 5.468688141828497,
+     "book": 5.468688141828497,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Robot plate ISO 9409-1-160-6-M10"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "P10-006",
+     "description": "Segment",
+     "kind": "made",
+     "qty": 6,
+     "material": "steel 1045 (C45), hardened to 600 HB",
+     "drawn": 0.46454025002711097,
+     "book": 0.46454025002711097,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Segment 1 (1)",
+      "Segment 2 (1)",
+      "Segment 3 (1)",
+      "Segment 4 (1)",
+      "Segment 5 (1)",
+      "Segment 6 (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "P10-007",
+     "description": "Tool plate ISO 9409-1-160-6-M10",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), lip face hardened",
+     "drawn": 6.551343091129125,
+     "book": 6.551343091129125,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Tool plate ISO 9409-1-160-6-M10"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "S-0033",
+     "description": "ISO 4762 M10 x 35 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.2241730561858705,
+     "book": 0.1824,
+     "maker": [
+      0.0304,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M10 x 35: 30.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M10x35 1",
+      "Cap screw M10x35 2",
+      "Cap screw M10x35 3",
+      "Cap screw M10x35 4",
+      "Cap screw M10x35 5",
+      "Cap screw M10x35 6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "S-0052",
+     "description": "ISO 8734 10 x 22",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 8734",
+     "drawn": 0.011097676048805473,
+     "book": 0.011097676048805473,
+     "maker": null,
+     "note": null,
+     "was": [
+      "S-0074"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pin 10 robot"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "S-0075",
+     "description": "ISO 8734 12 x 26",
+     "kind": "bought",
+     "qty": 2,
+     "material": "ISO 8734",
+     "drawn": 0.04261507602741302,
+     "book": 0.04261507602741302,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pin 12 tool 1",
+      "Pin 12 tool 2"
+     ],
+     "with_": []
+    }
+   ]
+  },
+  {
+   "key": "clamp",
+   "occurrences": 59,
+   "fusion_mass": 286.3414441301055,
+   "census_mass": 286.34144413010546,
+   "loads": [
+    [
+     "Carton 1",
+     44.64
+    ],
+    [
+     "Carton 2",
+     44.64
+    ],
+    [
+     "Carton 3",
+     44.64
+    ],
+    [
+     "Carton 4",
+     44.64
+    ]
+   ],
+   "load_mass": 178.56,
+   "made_kinds": 8,
+   "made_pieces": 11,
+   "bought_kinds": 13,
+   "bought_pieces": 41,
+   "with_maker": 4,
+   "drawn": 107.78144413010547,
+   "book": 102.51324406634085,
+   "bought_drawn": 43.05775993077632,
+   "bought_book": 37.78955986701169,
+   "wrong_numbers": [],
+   "csv": "clamp.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "P11-001",
+     "description": "Adapter plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 1.4675254089981435,
+     "book": 1.4675254089981435,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Adapter plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "P11-002",
+     "description": "Arm",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 6082-T6",
+     "drawn": 25.128823546478294,
+     "book": 25.128823546478294,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Arm",
+      "Arm (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "P11-003",
+     "description": "Beam",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 27.32609429607607,
+     "book": 27.32609429607607,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Beam"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "P11-004",
+     "description": "Carriage plate",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 6082-T6",
+     "drawn": 4.1904,
+     "book": 4.1904,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Carriage plate",
+      "Carriage plate (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "P11-005",
+     "description": "Motor bracket",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 1.495768947776647,
+     "book": 1.495768947776647,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Motor bracket"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "P11-006",
+     "description": "Pad",
+     "kind": "made",
+     "qty": 2,
+     "material": "rubber",
+     "drawn": 4.166399999999999,
+     "book": 4.166399999999999,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Pad",
+      "Pad (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "P11-007",
+     "description": "Seat BF25",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 0.3952799999999999,
+     "book": 0.3952799999999999,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Seat BF25"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "P11-008",
+     "description": "Seat BK25",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 0.5533919999999984,
+     "book": 0.5533919999999984,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Seat BK25"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "S-0001",
+     "description": "Ball nut R32-10K5-DEB left",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Ball",
+     "drawn": 1.0234602384039178,
+     "book": 1.0234602384039178,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Ball nut R32-10K5-DEB left"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "S-0002",
+     "description": "Ball nut R32-10K5-DEB right",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Ball",
+     "drawn": 1.0234602384039178,
+     "book": 1.0234602384039178,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Ball nut R32-10K5-DEB right"
+     ],
+     "with_": []
+    },
+    {
+     "item": 11,
+     "number": "S-0005",
+     "description": "Ballscrew 32x10 right and left",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Ballscrew",
+     "drawn": 10.80565651714679,
+     "book": 10.80565651714679,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Ballscrew 32x10 right and left"
+     ],
+     "with_": []
+    },
+    {
+     "item": 12,
+     "number": "S-0021",
+     "description": "HIWIN HGH25CAZ0C",
+     "kind": "bought",
+     "qty": 8,
+     "material": "HIWIN",
+     "drawn": 6.704146176000001,
+     "book": 4.08,
+     "maker": [
+      0.51,
+      "HIWIN_linear_guideways_HG_2026-11-02.md",
+      "Table 3.6: HGH25CA 0.51 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Block HGH25CA i+",
+      "Block HGH25CA i+ (1)",
+      "Block HGH25CA i-",
+      "Block HGH25CA i- (1)",
+      "Block HGH25CA o+",
+      "Block HGH25CA o+ (1)",
+      "Block HGH25CA o-",
+      "Block HGH25CA o- (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 13,
+     "number": "S-0032",
+     "description": "ISO 4762 M10 x 25 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.162033468763259,
+     "book": 0.15239999999999998,
+     "maker": [
+      0.0254,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M10 x 25: 25.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M10x25 1",
+      "Cap screw M10x25 2",
+      "Cap screw M10x25 3",
+      "Cap screw M10x25 4",
+      "Cap screw M10x25 5",
+      "Cap screw M10x25 6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 14,
+     "number": "S-0037",
+     "description": "ISO 4762 M8 x 25 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 16,
+     "material": "ISO 4762",
+     "drawn": 0.25279641900137295,
+     "book": 0.24,
+     "maker": [
+      0.015,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 25: 15 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0038"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M8x25 1",
+      "Cap screw M8x25 2",
+      "Cap screw M8x25 3",
+      "Cap screw M8x25 4",
+      "Cap screw M8x25 nut 1",
+      "Cap screw M8x25 nut 1 (1)",
+      "Cap screw M8x25 nut 2",
+      "Cap screw M8x25 nut 2 (1)",
+      "Cap screw M8x25 nut 3",
+      "Cap screw M8x25 nut 3 (1)",
+      "Cap screw M8x25 nut 4",
+      "Cap screw M8x25 nut 4 (1)",
+      "Cap screw M8x25 nut 5",
+      "Cap screw M8x25 nut 5 (1)",
+      "Cap screw M8x25 nut 6",
+      "Cap screw M8x25 nut 6 (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 15,
+     "number": "S-0044",
+     "description": "Coupling",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Coupling",
+     "drawn": 0.4641514650119506,
+     "book": 0.4641514650119506,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Coupling"
+     ],
+     "with_": []
+    },
+    {
+     "item": 16,
+     "number": "S-0052",
+     "description": "ISO 8734 10 x 22",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 8734",
+     "drawn": 0.010481138490538503,
+     "book": 0.010481138490538503,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Dowel pin 10x17"
+     ],
+     "with_": []
+    },
+    {
+     "item": 17,
+     "number": "S-0060",
+     "description": "Fixed bearing BK25",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Fixed",
+     "drawn": 2.361421860338488,
+     "book": 2.361421860338488,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Fixed bearing BK25"
+     ],
+     "with_": [
+      "Angular contact bearing 7205 1",
+      "Angular contact bearing 7205 2"
+     ]
+    },
+    {
+     "item": 18,
+     "number": "S-0061",
+     "description": "Gearhead 3:1",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Gearhead",
+     "drawn": 1.0814932709982397,
+     "book": 1.0814932709982397,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Gearhead 3:1"
+     ],
+     "with_": []
+    },
+    {
+     "item": 19,
+     "number": "S-0070",
+     "description": "Motor with brake",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Motor",
+     "drawn": 3.908219800881874,
+     "book": 3.908219800881874,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Motor with brake"
+     ],
+     "with_": []
+    },
+    {
+     "item": 20,
+     "number": "S-0081",
+     "description": "Rail HGR25",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Rail",
+     "drawn": 13.664023999999998,
+     "book": 11.042399999999999,
+     "maker": [
+      5.521199999999999,
+      "HIWIN_linear_guideways_HG_2026-11-02.md",
+      "HGR25R 3.21 kg/m, 1720 mm (Chapter 45)"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Rail HGR25 1",
+      "Rail HGR25 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 21,
+     "number": "S-0097",
+     "description": "Supported bearing BF25",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Supported",
+     "drawn": 1.596415337335973,
+     "book": 1.596415337335973,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Supported bearing BF25"
+     ],
+     "with_": [
+      "Deep groove bearing 6205"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "vacuum",
+   "occurrences": 355,
+   "fusion_mass": 325.9037968790556,
+   "census_mass": 325.9037968790554,
+   "loads": [
+    [
+     "Carton 1",
+     44.64
+    ],
+    [
+     "Carton 2",
+     44.64
+    ],
+    [
+     "Carton 3",
+     44.64
+    ],
+    [
+     "Carton 4",
+     44.64
+    ],
+    [
+     "Carton 5",
+     44.64
+    ],
+    [
+     "Carton 6",
+     44.64
+    ]
+   ],
+   "load_mass": 267.84000000000003,
+   "made_kinds": 6,
+   "made_pieces": 82,
+   "bought_kinds": 10,
+   "bought_pieces": 267,
+   "with_maker": 8,
+   "drawn": 58.0637968790554,
+   "book": 57.175411113513334,
+   "bought_drawn": 5.694654563246794,
+   "bought_book": 4.806268797704729,
+   "wrong_numbers": [],
+   "csv": "vacuum.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "P12-001",
+     "description": "Adapter plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 1.4675254089981435,
+     "book": 1.4675254089981435,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Adapter plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "P12-002",
+     "description": "Beam",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 6082-T6",
+     "drawn": 9.98754011364378,
+     "book": 9.98754011364378,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Beam 1",
+      "Beam 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "P12-003",
+     "description": "Manifold",
+     "kind": "made",
+     "qty": 6,
+     "material": "aluminium 6082-T6, T6",
+     "drawn": 5.831999999999999,
+     "book": 5.831999999999999,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Manifold 1",
+      "Manifold 2",
+      "Manifold 3",
+      "Manifold 4",
+      "Manifold 5",
+      "Manifold 6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "P12-004",
+     "description": "Plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 27.844827873195143,
+     "book": 27.844827873195143,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "P12-005",
+     "description": "Plunger",
+     "kind": "made",
+     "qty": 36,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 4.289917653426247,
+     "book": 4.289917653426247,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Plunger 1-1",
+      "Plunger 1-2",
+      "Plunger 1-3",
+      "Plunger 1-4",
+      "Plunger 1-5",
+      "Plunger 1-6",
+      "Plunger 2-1",
+      "Plunger 2-2",
+      "Plunger 2-3",
+      "Plunger 2-4",
+      "Plunger 2-5",
+      "Plunger 2-6",
+      "Plunger 3-1",
+      "Plunger 3-2",
+      "Plunger 3-3",
+      "Plunger 3-4",
+      "Plunger 3-5",
+      "Plunger 3-6",
+      "Plunger 4-1",
+      "Plunger 4-2",
+      "Plunger 4-3",
+      "Plunger 4-4",
+      "Plunger 4-5",
+      "Plunger 4-6",
+      "Plunger 5-1",
+      "Plunger 5-2",
+      "Plunger 5-3",
+      "Plunger 5-4",
+      "Plunger 5-5",
+      "Plunger 5-6",
+      "Plunger 6-1",
+      "Plunger 6-2",
+      "Plunger 6-3",
+      "Plunger 6-4",
+      "Plunger 6-5",
+      "Plunger 6-6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "P12-006",
+     "description": "Sleeve",
+     "kind": "made",
+     "qty": 36,
+     "material": "aluminium 6082-T6, T6",
+     "drawn": 2.9473312665452926,
+     "book": 2.9473312665452926,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Sleeve 1",
+      "Sleeve 10",
+      "Sleeve 11",
+      "Sleeve 12",
+      "Sleeve 13",
+      "Sleeve 14",
+      "Sleeve 15",
+      "Sleeve 16",
+      "Sleeve 17",
+      "Sleeve 18",
+      "Sleeve 19",
+      "Sleeve 2",
+      "Sleeve 20",
+      "Sleeve 21",
+      "Sleeve 22",
+      "Sleeve 23",
+      "Sleeve 24",
+      "Sleeve 25",
+      "Sleeve 26",
+      "Sleeve 27",
+      "Sleeve 28",
+      "Sleeve 29",
+      "Sleeve 3",
+      "Sleeve 30",
+      "Sleeve 31",
+      "Sleeve 32",
+      "Sleeve 33",
+      "Sleeve 34",
+      "Sleeve 35",
+      "Sleeve 36",
+      "Sleeve 4",
+      "Sleeve 5",
+      "Sleeve 6",
+      "Sleeve 7",
+      "Sleeve 8",
+      "Sleeve 9"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "S-0028",
+     "description": "ISO 4762 M4 x 12 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 108,
+     "material": "ISO 4762",
+     "drawn": 0.2079700940289811,
+     "book": 0.21059999999999998,
+     "maker": [
+      0.00195,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M4 x 12: 1.95 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0119"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M4x12 s1 1",
+      "Cap screw M4x12 s1 2",
+      "Cap screw M4x12 s1 3",
+      "Cap screw M4x12 s10 1",
+      "Cap screw M4x12 s10 2",
+      "Cap screw M4x12 s10 3",
+      "Cap screw M4x12 s11 1",
+      "Cap screw M4x12 s11 2",
+      "Cap screw M4x12 s11 3",
+      "Cap screw M4x12 s12 1",
+      "Cap screw M4x12 s12 2",
+      "Cap screw M4x12 s12 3",
+      "Cap screw M4x12 s13 1",
+      "Cap screw M4x12 s13 2",
+      "Cap screw M4x12 s13 3",
+      "Cap screw M4x12 s14 1",
+      "Cap screw M4x12 s14 2",
+      "Cap screw M4x12 s14 3",
+      "Cap screw M4x12 s15 1",
+      "Cap screw M4x12 s15 2",
+      "Cap screw M4x12 s15 3",
+      "Cap screw M4x12 s16 1",
+      "Cap screw M4x12 s16 2",
+      "Cap screw M4x12 s16 3",
+      "Cap screw M4x12 s17 1",
+      "Cap screw M4x12 s17 2",
+      "Cap screw M4x12 s17 3",
+      "Cap screw M4x12 s18 1",
+      "Cap screw M4x12 s18 2",
+      "Cap screw M4x12 s18 3",
+      "Cap screw M4x12 s19 1",
+      "Cap screw M4x12 s19 2",
+      "Cap screw M4x12 s19 3",
+      "Cap screw M4x12 s2 1",
+      "Cap screw M4x12 s2 2",
+      "Cap screw M4x12 s2 3",
+      "Cap screw M4x12 s20 1",
+      "Cap screw M4x12 s20 2",
+      "Cap screw M4x12 s20 3",
+      "Cap screw M4x12 s21 1",
+      "Cap screw M4x12 s21 2",
+      "Cap screw M4x12 s21 3",
+      "Cap screw M4x12 s22 1",
+      "Cap screw M4x12 s22 2",
+      "Cap screw M4x12 s22 3",
+      "Cap screw M4x12 s23 1",
+      "Cap screw M4x12 s23 2",
+      "Cap screw M4x12 s23 3",
+      "Cap screw M4x12 s24 1",
+      "Cap screw M4x12 s24 2",
+      "Cap screw M4x12 s24 3",
+      "Cap screw M4x12 s25 1",
+      "Cap screw M4x12 s25 2",
+      "Cap screw M4x12 s25 3",
+      "Cap screw M4x12 s26 1",
+      "Cap screw M4x12 s26 2",
+      "Cap screw M4x12 s26 3",
+      "Cap screw M4x12 s27 1",
+      "Cap screw M4x12 s27 2",
+      "Cap screw M4x12 s27 3",
+      "Cap screw M4x12 s28 1",
+      "Cap screw M4x12 s28 2",
+      "Cap screw M4x12 s28 3",
+      "Cap screw M4x12 s29 1",
+      "Cap screw M4x12 s29 2",
+      "Cap screw M4x12 s29 3",
+      "Cap screw M4x12 s3 1",
+      "Cap screw M4x12 s3 2",
+      "Cap screw M4x12 s3 3",
+      "Cap screw M4x12 s30 1",
+      "Cap screw M4x12 s30 2",
+      "Cap screw M4x12 s30 3",
+      "Cap screw M4x12 s31 1",
+      "Cap screw M4x12 s31 2",
+      "Cap screw M4x12 s31 3",
+      "Cap screw M4x12 s32 1",
+      "Cap screw M4x12 s32 2",
+      "Cap screw M4x12 s32 3",
+      "Cap screw M4x12 s33 1",
+      "Cap screw M4x12 s33 2",
+      "Cap screw M4x12 s33 3",
+      "Cap screw M4x12 s34 1",
+      "Cap screw M4x12 s34 2",
+      "Cap screw M4x12 s34 3",
+      "Cap screw M4x12 s35 1",
+      "Cap screw M4x12 s35 2",
+      "Cap screw M4x12 s35 3",
+      "Cap screw M4x12 s36 1",
+      "Cap screw M4x12 s36 2",
+      "Cap screw M4x12 s36 3",
+      "Cap screw M4x12 s4 1",
+      "Cap screw M4x12 s4 2",
+      "Cap screw M4x12 s4 3",
+      "Cap screw M4x12 s5 1",
+      "Cap screw M4x12 s5 2",
+      "Cap screw M4x12 s5 3",
+      "Cap screw M4x12 s6 1",
+      "Cap screw M4x12 s6 2",
+      "Cap screw M4x12 s6 3",
+      "Cap screw M4x12 s7 1",
+      "Cap screw M4x12 s7 2",
+      "Cap screw M4x12 s7 3",
+      "Cap screw M4x12 s8 1",
+      "Cap screw M4x12 s8 2",
+      "Cap screw M4x12 s8 3",
+      "Cap screw M4x12 s9 1",
+      "Cap screw M4x12 s9 2",
+      "Cap screw M4x12 s9 3"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "S-0031",
+     "description": "ISO 4762 M8 x 20 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 4,
+     "material": "ISO 4762",
+     "drawn": 0.0553074240045258,
+     "book": 0.0536,
+     "maker": [
+      0.0134,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 20: 13.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0036"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M8x20 1",
+      "Cap screw M8x20 2",
+      "Cap screw M8x20 3",
+      "Cap screw M8x20 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "S-0032",
+     "description": "ISO 4762 M10 x 25 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.162033468763259,
+     "book": 0.15239999999999998,
+     "maker": [
+      0.0254,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M10 x 25: 25.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M10x25 1",
+      "Cap screw M10x25 2",
+      "Cap screw M10x25 3",
+      "Cap screw M10x25 4",
+      "Cap screw M10x25 5",
+      "Cap screw M10x25 6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "S-0048",
+     "description": "Schmalz SPB1 80 ED-65 SC065, article 10.01.06.03071",
+     "kind": "bought",
+     "qty": 36,
+     "material": "Schmalz",
+     "drawn": 2.5602619060957394,
+     "book": 1.4436,
+     "maker": [
+      0.0401,
+      "Schmalz_vacuum_cups_ejectors_2026-11-03.md",
+      "SPB1 80 ED-65: weight 40.10 g"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cup SPB1 80 1-1",
+      "Cup SPB1 80 1-2",
+      "Cup SPB1 80 1-3",
+      "Cup SPB1 80 1-4",
+      "Cup SPB1 80 1-5",
+      "Cup SPB1 80 1-6",
+      "Cup SPB1 80 2-1",
+      "Cup SPB1 80 2-2",
+      "Cup SPB1 80 2-3",
+      "Cup SPB1 80 2-4",
+      "Cup SPB1 80 2-5",
+      "Cup SPB1 80 2-6",
+      "Cup SPB1 80 3-1",
+      "Cup SPB1 80 3-2",
+      "Cup SPB1 80 3-3",
+      "Cup SPB1 80 3-4",
+      "Cup SPB1 80 3-5",
+      "Cup SPB1 80 3-6",
+      "Cup SPB1 80 4-1",
+      "Cup SPB1 80 4-2",
+      "Cup SPB1 80 4-3",
+      "Cup SPB1 80 4-4",
+      "Cup SPB1 80 4-5",
+      "Cup SPB1 80 4-6",
+      "Cup SPB1 80 5-1",
+      "Cup SPB1 80 5-2",
+      "Cup SPB1 80 5-3",
+      "Cup SPB1 80 5-4",
+      "Cup SPB1 80 5-5",
+      "Cup SPB1 80 5-6",
+      "Cup SPB1 80 6-1",
+      "Cup SPB1 80 6-2",
+      "Cup SPB1 80 6-3",
+      "Cup SPB1 80 6-4",
+      "Cup SPB1 80 6-5",
+      "Cup SPB1 80 6-6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 11,
+     "number": "S-0052",
+     "description": "ISO 8734 10 x 22",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 8734",
+     "drawn": 0.010481138490538503,
+     "book": 0.010481138490538503,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Dowel pin 10x17"
+     ],
+     "with_": []
+    },
+    {
+     "item": 12,
+     "number": "S-0054",
+     "description": "Ejector SCPSi 2-14",
+     "kind": "bought",
+     "qty": 12,
+     "material": "Ejector",
+     "drawn": 2.10803472,
+     "book": 2.34,
+     "maker": [
+      0.195,
+      "Schmalz_vacuum_cups_ejectors_2026-11-03.md",
+      "SCPSi: weight 0.195 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Ejector SCPSi 2-14 1",
+      "Ejector SCPSi 2-14 10",
+      "Ejector SCPSi 2-14 11",
+      "Ejector SCPSi 2-14 12",
+      "Ejector SCPSi 2-14 2",
+      "Ejector SCPSi 2-14 3",
+      "Ejector SCPSi 2-14 4",
+      "Ejector SCPSi 2-14 5",
+      "Ejector SCPSi 2-14 6",
+      "Ejector SCPSi 2-14 7",
+      "Ejector SCPSi 2-14 8",
+      "Ejector SCPSi 2-14 9"
+     ],
+     "with_": []
+    },
+    {
+     "item": 13,
+     "number": "S-0095",
+     "description": "Spring",
+     "kind": "bought",
+     "qty": 36,
+     "material": "Spring",
+     "drawn": 0.40150765921419074,
+     "book": 0.40150765921419074,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spring 1",
+      "Spring 10",
+      "Spring 11",
+      "Spring 12",
+      "Spring 13",
+      "Spring 14",
+      "Spring 15",
+      "Spring 16",
+      "Spring 17",
+      "Spring 18",
+      "Spring 19",
+      "Spring 2",
+      "Spring 20",
+      "Spring 21",
+      "Spring 22",
+      "Spring 23",
+      "Spring 24",
+      "Spring 25",
+      "Spring 26",
+      "Spring 27",
+      "Spring 28",
+      "Spring 29",
+      "Spring 3",
+      "Spring 30",
+      "Spring 31",
+      "Spring 32",
+      "Spring 33",
+      "Spring 34",
+      "Spring 35",
+      "Spring 36",
+      "Spring 4",
+      "Spring 5",
+      "Spring 6",
+      "Spring 7",
+      "Spring 8",
+      "Spring 9"
+     ],
+     "with_": []
+    },
+    {
+     "item": 14,
+     "number": "S-0101",
+     "description": "ISO 4762 M6 x 25 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 16,
+     "material": "ISO 4762",
+     "drawn": 0.1288438413638148,
+     "book": 0.12143999999999999,
+     "maker": [
+      0.0075899999999999995,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M6 x 25: 7.59 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0116"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M6x25 1",
+      "Cap screw M6x25 10",
+      "Cap screw M6x25 11",
+      "Cap screw M6x25 12",
+      "Cap screw M6x25 13",
+      "Cap screw M6x25 14",
+      "Cap screw M6x25 15",
+      "Cap screw M6x25 16",
+      "Cap screw M6x25 2",
+      "Cap screw M6x25 3",
+      "Cap screw M6x25 4",
+      "Cap screw M6x25 5",
+      "Cap screw M6x25 6",
+      "Cap screw M6x25 7",
+      "Cap screw M6x25 8",
+      "Cap screw M6x25 9"
+     ],
+     "with_": []
+    },
+    {
+     "item": 15,
+     "number": "S-0117",
+     "description": "ISO 7089 6 - 200 HV",
+     "kind": "bought",
+     "qty": 32,
+     "material": "ISO 7089",
+     "drawn": 0.03252635136196281,
+     "book": 0.03264,
+     "maker": [
+      0.00102,
+      "Fasten.it_DIN_EN_ISO_7089_2026-11-03.md",
+      "6: 1.02 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Washer ISO 7089 6 head 1",
+      "Washer ISO 7089 6 head 10",
+      "Washer ISO 7089 6 head 11",
+      "Washer ISO 7089 6 head 12",
+      "Washer ISO 7089 6 head 13",
+      "Washer ISO 7089 6 head 14",
+      "Washer ISO 7089 6 head 15",
+      "Washer ISO 7089 6 head 16",
+      "Washer ISO 7089 6 head 2",
+      "Washer ISO 7089 6 head 3",
+      "Washer ISO 7089 6 head 4",
+      "Washer ISO 7089 6 head 5",
+      "Washer ISO 7089 6 head 6",
+      "Washer ISO 7089 6 head 7",
+      "Washer ISO 7089 6 head 8",
+      "Washer ISO 7089 6 head 9",
+      "Washer ISO 7089 6 nut 1",
+      "Washer ISO 7089 6 nut 10",
+      "Washer ISO 7089 6 nut 11",
+      "Washer ISO 7089 6 nut 12",
+      "Washer ISO 7089 6 nut 13",
+      "Washer ISO 7089 6 nut 14",
+      "Washer ISO 7089 6 nut 15",
+      "Washer ISO 7089 6 nut 16",
+      "Washer ISO 7089 6 nut 2",
+      "Washer ISO 7089 6 nut 3",
+      "Washer ISO 7089 6 nut 4",
+      "Washer ISO 7089 6 nut 5",
+      "Washer ISO 7089 6 nut 6",
+      "Washer ISO 7089 6 nut 7",
+      "Washer ISO 7089 6 nut 8",
+      "Washer ISO 7089 6 nut 9"
+     ],
+     "with_": []
+    },
+    {
+     "item": 16,
+     "number": "S-0118",
+     "description": "ISO 4032 M6 - 8",
+     "kind": "bought",
+     "qty": 16,
+     "material": "ISO 4032",
+     "drawn": 0.027687959923781896,
+     "book": 0.04,
+     "maker": [
+      0.0025,
+      "Fasten.it_DIN_934_2026-11-03.md",
+      "DIN 934 M6: 2.5 kg per 1000 (the nut ISO 4032 replaced, as wide across the flats)"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Nut ISO 4032 M6 1",
+      "Nut ISO 4032 M6 10",
+      "Nut ISO 4032 M6 11",
+      "Nut ISO 4032 M6 12",
+      "Nut ISO 4032 M6 13",
+      "Nut ISO 4032 M6 14",
+      "Nut ISO 4032 M6 15",
+      "Nut ISO 4032 M6 16",
+      "Nut ISO 4032 M6 2",
+      "Nut ISO 4032 M6 3",
+      "Nut ISO 4032 M6 4",
+      "Nut ISO 4032 M6 5",
+      "Nut ISO 4032 M6 6",
+      "Nut ISO 4032 M6 7",
+      "Nut ISO 4032 M6 8",
+      "Nut ISO 4032 M6 9"
+     ],
+     "with_": []
+    }
+   ]
+  },
+  {
+   "key": "bag",
+   "occurrences": 138,
+   "fusion_mass": 323.4988313028949,
+   "census_mass": 323.498831302895,
+   "loads": [
+    [
+     "Bag (1)",
+     59.519999999999996
+    ],
+    [
+     "Roller 1",
+     18.644095761994787
+    ],
+    [
+     "Roller 2",
+     18.644095761994787
+    ],
+    [
+     "Roller 3",
+     18.644095761994787
+    ],
+    [
+     "Roller 4",
+     18.644095761994784
+    ],
+    [
+     "Roller 5",
+     18.644095761994784
+    ],
+    [
+     "Roller 6",
+     18.644095761994784
+    ],
+    [
+     "Roller 7",
+     18.644095761994787
+    ],
+    [
+     "Roller 8",
+     18.644095761994787
+    ],
+    [
+     "Roller 9",
+     18.644095761994787
+    ]
+   ],
+   "load_mass": 227.31686185795309,
+   "made_kinds": 15,
+   "made_pieces": 41,
+   "bought_kinds": 15,
+   "bought_pieces": 73,
+   "with_maker": 12,
+   "drawn": 96.18196944494194,
+   "book": 94.107999715609,
+   "bought_drawn": 18.59181020597152,
+   "bought_book": 16.51784047663858,
+   "wrong_numbers": [],
+   "csv": "bag.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "P13-001",
+     "description": "Adapter plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 1.4664651214775568,
+     "book": 1.4664651214775568,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Adapter plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "P13-002",
+     "description": "Beam",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6",
+     "drawn": 6.5452927990980205,
+     "book": 6.5452927990980205,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Beam"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "P13-003",
+     "description": "Bracket",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 4.319403445966543,
+     "book": 4.319403445966543,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bracket 1",
+      "Bracket 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "P13-004",
+     "description": "End block",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 6082-T6, T6",
+     "drawn": 2.092516249262709,
+     "book": 2.092516249262709,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "End block 1",
+      "End block 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "P13-005",
+     "description": "End plate,  with four holes 9 across for the stop brackets' bolts",
+     "kind": "made",
+     "qty": 2,
+     "material": "aluminium 6082-T6",
+     "drawn": 18.229725955071693,
+     "book": 18.229725955071693,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "End plate 1",
+      "End plate 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "P13-006",
+     "description": "Lever, 150 from the hinge to the rod end's pin,  carried on to 200 mm, 15 thick, as the closing stop's striker",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 2.7700392201132304,
+     "book": 2.7700392201132304,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Lever A",
+      "Lever B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "P13-007",
+     "description": "Press plate",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6, T6",
+     "drawn": 7.56,
+     "book": 7.56,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Press plate"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "P13-008",
+     "description": "Press rod",
+     "kind": "made",
+     "qty": 2,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 0.13494774075347432,
+     "book": 0.13494774075347432,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Press rod 1",
+      "Press rod 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "P13-009",
+     "description": "Rod end",
+     "kind": "made",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.4993750279281593,
+     "book": 0.4993750279281593,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Rod end A",
+      "Rod end B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "P13-012",
+     "description": "Tine",
+     "kind": "made",
+     "qty": 16,
+     "material": "steel 1020",
+     "drawn": 15.897400000000003,
+     "book": 15.897400000000003,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Tine 1 A",
+      "Tine 1 B",
+      "Tine 2 A",
+      "Tine 2 B",
+      "Tine 3 A",
+      "Tine 3 B",
+      "Tine 4 A",
+      "Tine 4 B",
+      "Tine 5 A",
+      "Tine 5 B",
+      "Tine 6 A",
+      "Tine 6 B",
+      "Tine 7 A",
+      "Tine 7 B",
+      "Tine 8 A",
+      "Tine 8 B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 11,
+     "number": "P13-014",
+     "description": "End washer",
+     "kind": "made",
+     "qty": 2,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 0.09365205510076081,
+     "book": 0.09365205510076081,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "End washer A",
+      "End washer B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 12,
+     "number": "P13-015",
+     "description": "Spacer",
+     "kind": "made",
+     "qty": 2,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 0.13184039145981982,
+     "book": 0.13184039145981982,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spacer A",
+      "Spacer B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 13,
+     "number": "P13-016",
+     "description": "Jaw weldment: the tube and its two stubs, welded, the seats ground",
+     "kind": "made",
+     "qty": 2,
+     "material": "Steel AISI 1020 107 HR",
+     "drawn": 14.014427376024315,
+     "book": 14.014427376024315,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": [
+      "P13-013",
+      "P13-010",
+      "P13-011",
+      null
+     ],
+     "names": [],
+     "with_": []
+    },
+    {
+     "item": 14,
+     "number": "P13-017",
+     "description": "Stop bracket, closing",
+     "kind": "made",
+     "qty": 2,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 2.2743919185144463,
+     "book": 2.2743919185144463,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Stop bracket closed 1",
+      "Stop bracket closed 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 15,
+     "number": "P13-018",
+     "description": "Stop bracket, opening",
+     "kind": "made",
+     "qty": 2,
+     "material": "Steel AISI 1045 225 ANLD",
+     "drawn": 1.5606819381996873,
+     "book": 1.5606819381996873,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Stop bracket open 1",
+      "Stop bracket open 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": null,
+     "number": "P13-010",
+     "description": "Stub shaft long",
+     "kind": "in P13-016",
+     "qty": 2,
+     "material": "steel 1045 (C45)",
+     "drawn": 1.535002821008784,
+     "book": 1.535002821008784,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": 1.0,
+     "parts": null,
+     "names": [
+      "Stub shaft long A",
+      "Stub shaft long B"
+     ],
+     "with_": []
+    },
+    {
+     "item": null,
+     "number": "P13-011",
+     "description": "Stub shaft short",
+     "kind": "in P13-016",
+     "qty": 2,
+     "material": "steel 1045 (C45)",
+     "drawn": 0.9790521575187071,
+     "book": 0.9790521575187071,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": 1.0,
+     "parts": null,
+     "names": [
+      "Stub shaft short A",
+      "Stub shaft short B"
+     ],
+     "with_": []
+    },
+    {
+     "item": null,
+     "number": "P13-013",
+     "description": "Tube",
+     "kind": "in P13-016",
+     "qty": 2,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 11.423462399999966,
+     "book": 11.423462399999966,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": 1.0,
+     "parts": null,
+     "names": [
+      "Tube A",
+      "Tube B"
+     ],
+     "with_": []
+    },
+    {
+     "item": null,
+     "number": null,
+     "description": "the jaw weldment's fillet welds",
+     "kind": "in P13-016",
+     "qty": 4,
+     "material": "Steel AISI 1020 107 HR",
+     "drawn": 0.07690999749685799,
+     "book": 0.07690999749685799,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": 2.0,
+     "parts": null,
+     "names": [
+      "Fillet weld long A",
+      "Fillet weld long B",
+      "Fillet weld short A",
+      "Fillet weld short B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 16,
+     "number": "S-0016",
+     "description": "SKF 6206-2RS1/C4, its availability SKF's to confirm",
+     "kind": "bought",
+     "qty": 4,
+     "material": "SKF",
+     "drawn": 1.129754420798531,
+     "book": 0.8,
+     "maker": [
+      0.2,
+      "SKF_6206-2RS1_2026-11-03.md",
+      "Product net weight 0.2 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Bearing 6206 1",
+      "Bearing 6206 2",
+      "Bearing 6206 3",
+      "Bearing 6206 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 17,
+     "number": "S-0031",
+     "description": "ISO 4762 M8 x 20 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.08296113600678881,
+     "book": 0.0804,
+     "maker": [
+      0.0134,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 20: 13.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [
+      "S-0036"
+     ],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M8x20 1",
+      "Cap screw M8x20 2",
+      "Cap screw M8x20 3",
+      "Cap screw M8x20 4",
+      "Cap screw M8x20 A",
+      "Cap screw M8x20 B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 18,
+     "number": "S-0032",
+     "description": "ISO 4762 M10 x 25 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.162033468763259,
+     "book": 0.15239999999999998,
+     "maker": [
+      0.0254,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M10 x 25: 25.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M10x25 1",
+      "Cap screw M10x25 2",
+      "Cap screw M10x25 3",
+      "Cap screw M10x25 4",
+      "Cap screw M10x25 5",
+      "Cap screw M10x25 6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 19,
+     "number": "S-0035",
+     "description": "ISO 4762 M6 x 16 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4762",
+     "drawn": 0.048441267171627556,
+     "book": 0.046,
+     "maker": [
+      0.00575,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M6 x 16: 5.75 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M6x16 1",
+      "Cap screw M6x16 2",
+      "Cap screw M6x16 3",
+      "Cap screw M6x16 4",
+      "Cap screw M6x16 5",
+      "Cap screw M6x16 6",
+      "Cap screw M6x16 7",
+      "Cap screw M6x16 8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 20,
+     "number": "S-0039",
+     "description": "ISO 4762 M8 x 30 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4762",
+     "drawn": 0.14218157099232104,
+     "book": 0.1352,
+     "maker": [
+      0.0169,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 30: 16.9 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M8x30 1",
+      "Cap screw M8x30 2",
+      "Cap screw M8x30 3",
+      "Cap screw M8x30 4",
+      "Cap screw M8x30 5",
+      "Cap screw M8x30 6",
+      "Cap screw M8x30 7",
+      "Cap screw M8x30 8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 21,
+     "number": "S-0049",
+     "description": "Cylinder DSBC-32-50",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Cylinder",
+     "drawn": 1.5306677559462358,
+     "book": 1.2000000000000002,
+     "maker": [
+      0.6000000000000001,
+      "Ch47_bag_gripper_and_services_sources_2026-11-03.md",
+      "DSBC-32: 465 g at 0 mm stroke and 27 g per 10 mm, 50 mm: 600 g"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cylinder DSBC-32-50 1",
+      "Cylinder DSBC-32-50 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 22,
+     "number": "S-0050",
+     "description": "Cylinder DSBC-80-125-C",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Cylinder",
+     "drawn": 11.494946073834635,
+     "book": 11.494946073834635,
+     "maker": null,
+     "note": "Festo's page gives the basic DSBC-80, 3.81 kg at 125 mm, not the clamping unit's weight",
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cylinder DSBC-80-125-C A",
+      "Cylinder DSBC-80-125-C B"
+     ],
+     "with_": [
+      "Piston rod A",
+      "Piston rod B"
+     ]
+    },
+    {
+     "item": 23,
+     "number": "S-0052",
+     "description": "ISO 8734 10 x 22",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 8734",
+     "drawn": 0.013563826281873356,
+     "book": 0.013563826281873356,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Dowel pin 10x17"
+     ],
+     "with_": []
+    },
+    {
+     "item": 24,
+     "number": "S-0107",
+     "description": "DIN 6885-1 A 8 x 7 x 25",
+     "kind": "bought",
+     "qty": 2,
+     "material": "DIN 6885-1",
+     "drawn": 0.020470576522072317,
+     "book": 0.020470576522072317,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Key 8x7x25 A",
+      "Key 8x7x25 B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 25,
+     "number": "S-0110",
+     "description": "DIN 472 62 x 2",
+     "kind": "bought",
+     "qty": 4,
+     "material": "DIN 472",
+     "drawn": 0.06456381310171894,
+     "book": 0.0448,
+     "maker": [
+      0.0112,
+      "Fasten.it_DIN_472_2026-11-03.md",
+      "d1 62: 11.2 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Circlip DIN 472 62x2 1",
+      "Circlip DIN 472 62x2 2",
+      "Circlip DIN 472 62x2 3",
+      "Circlip DIN 472 62x2 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 26,
+     "number": "S-0111",
+     "description": "DIN 471 30 x 1.5",
+     "kind": "bought",
+     "qty": 2,
+     "material": "DIN 471",
+     "drawn": 0.008312159360556329,
+     "book": 0.00662,
+     "maker": [
+      0.00331,
+      "Fasten.it_DIN_471_2026-11-03.md",
+      "d1 30: 3.31 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Circlip DIN 471 30x1.5 A",
+      "Circlip DIN 471 30x1.5 B"
+     ],
+     "with_": []
+    },
+    {
+     "item": 27,
+     "number": "S-0120",
+     "description": "Festo DYSC-25-25-Y1F, part no. 2480234",
+     "kind": "bought",
+     "qty": 4,
+     "material": "Festo",
+     "drawn": 3.672056264728013,
+     "book": 2.3,
+     "maker": [
+      0.575,
+      "Festo_DYSC_shock_absorbers_2026-11-03.md",
+      "DYSC-25: product weight 575 g"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Shock absorber DYSC-25-25-Y1F closed 1",
+      "Shock absorber DYSC-25-25-Y1F closed 2",
+      "Shock absorber DYSC-25-25-Y1F open 1",
+      "Shock absorber DYSC-25-25-Y1F open 2"
+     ],
+     "with_": [
+      "Lock nut DYSC-25-25-Y1F closed 1",
+      "Lock nut DYSC-25-25-Y1F open 1",
+      "Lock nut DYSC-25-25-Y1F closed 2",
+      "Lock nut DYSC-25-25-Y1F open 2"
+     ]
+    },
+    {
+     "item": 28,
+     "number": "S-0121",
+     "description": "ISO 4762 M8 x 40 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4762",
+     "drawn": 0.17374829397558947,
+     "book": 0.1672,
+     "maker": [
+      0.0209,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 40: 20.9 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw ISO 4762 M8x40 stop 1",
+      "Cap screw ISO 4762 M8x40 stop 2",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      "Cap screw ISO 4762 M8x40 stop 5",
+      "Cap screw ISO 4762 M8x40 stop 6",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      "Cap screw ISO 4762 M8x40 stop 8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 29,
+     "number": "S-0122",
+     "description": "ISO 7089 8 - 200 HV - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 7089",
+     "drawn": 0.014634332775044395,
+     "book": 0.01464,
+     "maker": [
+      0.00183,
+      "Fasten.it_DIN_EN_ISO_7089_2026-11-03.md",
+      "8: 1.83 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Washer ISO 7089 8 stop 1",
+      "Washer ISO 7089 8 stop 2",
+      "Washer ISO 7089 8 stop 3",
+      "Washer ISO 7089 8 stop 4",
+      "Washer ISO 7089 8 stop 5",
+      "Washer ISO 7089 8 stop 6",
+      "Washer ISO 7089 8 stop 7",
+      "Washer ISO 7089 8 stop 8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 30,
+     "number": "S-0123",
+     "description": "ISO 4032 M8 - 8 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4032",
+     "drawn": 0.03347524571325482,
+     "book": 0.0416,
+     "maker": [
+      0.0052,
+      "Fasten.it_DIN_934_2026-11-03.md",
+      "DIN 934 M8: 5.2 kg per 1000 (the nut ISO 4032 replaced, as wide across the flats)"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Nut ISO 4032 M8 stop 1",
+      "Nut ISO 4032 M8 stop 2",
+      "Nut ISO 4032 M8 stop 3",
+      "Nut ISO 4032 M8 stop 4",
+      "Nut ISO 4032 M8 stop 5",
+      "Nut ISO 4032 M8 stop 6",
+      "Nut ISO 4032 M8 stop 7",
+      "Nut ISO 4032 M8 stop 8"
+     ],
+     "with_": []
+    }
+   ]
+  },
+  {
+   "key": "unit",
+   "occurrences": 53,
+   "fusion_mass": 19.84173080467439,
+   "census_mass": 19.841730804674384,
+   "loads": [],
+   "load_mass": 0,
+   "made_kinds": 6,
+   "made_pieces": 12,
+   "bought_kinds": 10,
+   "bought_pieces": 41,
+   "with_maker": 6,
+   "drawn": 19.841730804674384,
+   "book": 18.243314735481203,
+   "bought_drawn": 6.195449424232612,
+   "bought_book": 4.597033355039431,
+   "wrong_numbers": [],
+   "csv": "unit.csv",
+   "lines": [
+    {
+     "item": 1,
+     "number": "P14-001",
+     "description": "Carriage",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 2024-T3",
+     "drawn": 4.967371602455563,
+     "book": 4.967371602455563,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Carriage (1)"
+     ],
+     "with_": []
+    },
+    {
+     "item": 2,
+     "number": "P14-002",
+     "description": "Housing",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 2024-T3",
+     "drawn": 5.971570396887356,
+     "book": 5.971570396887356,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Housing"
+     ],
+     "with_": []
+    },
+    {
+     "item": 3,
+     "number": "P14-003",
+     "description": "Sensor bracket",
+     "kind": "made",
+     "qty": 1,
+     "material": "aluminium 6082-T6, T6",
+     "drawn": 0.02891699999999999,
+     "book": 0.02891699999999999,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Sensor bracket"
+     ],
+     "with_": []
+    },
+    {
+     "item": 4,
+     "number": "P14-004",
+     "description": "Spring seat",
+     "kind": "made",
+     "qty": 4,
+     "material": "aluminium 6082-T6, T6",
+     "drawn": 2.1834543322938824,
+     "book": 2.1834543322938824,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spring seat 1",
+      "Spring seat 2",
+      "Spring seat 3",
+      "Spring seat 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 5,
+     "number": "P14-005",
+     "description": "Stop block",
+     "kind": "made",
+     "qty": 4,
+     "material": "aluminium 6082-T6, T6",
+     "drawn": 0.32717118694703295,
+     "book": 0.32717118694703295,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Stop block 1",
+      "Stop block 2",
+      "Stop block 3",
+      "Stop block 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 6,
+     "number": "P14-006",
+     "description": "Tube 20x16",
+     "kind": "made",
+     "qty": 1,
+     "material": "steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",
+     "drawn": 0.1677968618579386,
+     "book": 0.1677968618579386,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Tube 20x16"
+     ],
+     "with_": []
+    },
+    {
+     "item": 7,
+     "number": "S-0021",
+     "description": "HIWIN HGH25CAZ0C",
+     "kind": "bought",
+     "qty": 4,
+     "material": "HIWIN",
+     "drawn": 3.3581923200000015,
+     "book": 2.04,
+     "maker": [
+      0.51,
+      "HIWIN_linear_guideways_HG_2026-11-02.md",
+      "Table 3.6: HGH25CA 0.51 kg"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Block HGH25CA 1",
+      "Block HGH25CA 2",
+      "Block HGH25CA 3",
+      "Block HGH25CA 4"
+     ],
+     "with_": []
+    },
+    {
+     "item": 8,
+     "number": "S-0032",
+     "description": "ISO 4762 M10 x 25 - 10.9 - zinc-plated",
+     "kind": "bought",
+     "qty": 6,
+     "material": "ISO 4762",
+     "drawn": 0.16203346876325903,
+     "book": 0.15239999999999998,
+     "maker": [
+      0.0254,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M10 x 25: 25.4 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M10x25 1",
+      "Cap screw M10x25 2",
+      "Cap screw M10x25 3",
+      "Cap screw M10x25 4",
+      "Cap screw M10x25 5",
+      "Cap screw M10x25 6"
+     ],
+     "with_": []
+    },
+    {
+     "item": 9,
+     "number": "S-0039",
+     "description": "ISO 4762 M8 x 30 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4762",
+     "drawn": 0.14218157099232032,
+     "book": 0.1352,
+     "maker": [
+      0.0169,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M8 x 30: 16.9 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M8x30 1",
+      "Cap screw M8x30 2",
+      "Cap screw M8x30 3",
+      "Cap screw M8x30 4",
+      "Cap screw M8x30 5",
+      "Cap screw M8x30 6",
+      "Cap screw M8x30 7",
+      "Cap screw M8x30 8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 10,
+     "number": "S-0052",
+     "description": "ISO 8734 10 x 22",
+     "kind": "bought",
+     "qty": 1,
+     "material": "ISO 8734",
+     "drawn": 0.010481138490538493,
+     "book": 0.010481138490538493,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Dowel pin 10x17"
+     ],
+     "with_": []
+    },
+    {
+     "item": 11,
+     "number": "S-0101",
+     "description": "ISO 4762 M6 x 25 - 8.8 - zinc-plated",
+     "kind": "bought",
+     "qty": 8,
+     "material": "ISO 4762",
+     "drawn": 0.05554377984286298,
+     "book": 0.060719999999999996,
+     "maker": [
+      0.0075899999999999995,
+      "Fasten.it_DIN_EN_ISO_4762_2026-11-03.md",
+      "M6 x 25: 7.59 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Cap screw M6x20 1",
+      "Cap screw M6x20 2",
+      "Cap screw M6x20 3",
+      "Cap screw M6x20 4",
+      "Cap screw M6x20 5",
+      "Cap screw M6x20 6",
+      "Cap screw M6x20 7",
+      "Cap screw M6x20 8"
+     ],
+     "with_": []
+    },
+    {
+     "item": 12,
+     "number": "S-0102",
+     "description": "DIN 908 M10 x 1, a sealing ring under its collar",
+     "kind": "bought",
+     "qty": 6,
+     "material": "DIN 908",
+     "drawn": 0.05134524785247772,
+     "book": 0.038040000000000004,
+     "maker": [
+      0.00634,
+      "Fasten.it_DIN_908_2026-11-03.md",
+      "M10 x 1: 6.34 kg per 1000"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Plug carriage 1",
+      "Plug carriage 2",
+      "Plug carriage 3",
+      "Plug housing 1",
+      "Plug housing 2",
+      "Plug housing 3"
+     ],
+     "with_": []
+    },
+    {
+     "item": 13,
+     "number": "S-0103",
+     "description": "O-ring 20 x 2.5 in a groove 24.30 x 3.40 (ERIKS)",
+     "kind": "bought",
+     "qty": 1,
+     "material": "O-ring",
+     "drawn": 0.0003176701810316407,
+     "book": 0.0003176701810316407,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "O-ring 20x2.5"
+     ],
+     "with_": []
+    },
+    {
+     "item": 14,
+     "number": "S-0104",
+     "description": "Rail HGR25 218",
+     "kind": "bought",
+     "qty": 2,
+     "material": "Rail",
+     "drawn": 1.6550396817422592,
+     "book": 1.39956,
+     "maker": [
+      0.69978,
+      "HIWIN_linear_guideways_HG_2026-11-02.md",
+      "HGR25R 3.21 kg/m, 218 mm"
+     ],
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Rail HGR25 1",
+      "Rail HGR25 2"
+     ],
+     "with_": []
+    },
+    {
+     "item": 15,
+     "number": "S-0105",
+     "description": "Sensor M12",
+     "kind": "bought",
+     "qty": 1,
+     "material": "Sensor",
+     "drawn": 0.004795327026439668,
+     "book": 0.004795327026439668,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Sensor M12"
+     ],
+     "with_": []
+    },
+    {
+     "item": 16,
+     "number": "S-0106",
+     "description": "Spring 4 x 40",
+     "kind": "bought",
+     "qty": 4,
+     "material": "Spring",
+     "drawn": 0.7555192193414213,
+     "book": 0.7555192193414213,
+     "maker": null,
+     "note": null,
+     "was": [],
+     "per": null,
+     "parts": null,
+     "names": [
+      "Spring 1",
+      "Spring 2",
+      "Spring 3",
+      "Spring 4"
+     ],
+     "with_": []
+    }
+   ]
+  }
+ ],
+ "superseded": {
+  "S-0036": "S-0031",
+  "S-0038": "S-0037",
+  "S-0045": "S-0030",
+  "S-0046": "S-0031",
+  "S-0056": "S-0031",
+  "S-0059": "S-0023",
+  "S-0068": "S-0029",
+  "S-0074": "S-0052",
+  "S-0116": "S-0101",
+  "S-0119": "S-0028"
+ }
+}

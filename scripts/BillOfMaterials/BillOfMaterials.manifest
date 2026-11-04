@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 64: builds each of the nine assemblies and makes its bill of materials from Fusion's census: part numbers, descriptions as ordered, quantities, materials or makers, masses (the makers' for bought parts where a saved page gives them); writes the numbers into the components."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "BillOfMaterials"
+}

@@ -1,0 +1,44 @@
+Write a Fusion Python script that, when run, makes the bill of materials of each of the nine assemblies as Parts 9
+and 10 left them: every part counted from the model, numbered by Chapter 49's scheme and the numbers Chapters 50 to 56
+added, described as a shop or a buyer orders it, with its mass, so that purchasing and the shop work from one list.
+
+INPUTS (a command dialog, with this default):
+- the machine: all, wrist, flap, axle, robot, changer, clamp, vacuum, bag or unit; all
+
+DERIVED (never typed):
+- RangeSweep.py's machine(): each machine as its detail chapter built it (the bag gripper with its stops)
+- lib/bom_detail.py: each component's line from its name (Chapter 49's names, then the kinds Volume 3 added), the
+  descriptions as they now stand, the weldment, the numbers that supersede others, and the makers' masses with the
+  saved page of each
+- lib/materials_fits.py: each made kind's material (Chapter 51)
+
+HARD CONSTRAINTS:
+- Build each machine through RangeSweep.py's machine(), loaded, not copied.
+- Take the census from Fusion: every occurrence that has a body, its name, Fusion's mass, its materials and volume.
+- Count a bought part once per set: a bearing's rings and balls, a tapered bearing's cone and cup, a reducer's case and
+  output are one piece; a body that comes with a bought part (a cylinder's piston rod, a shock absorber's lock nut) is
+  no line of its own.
+- Leave out the loads and the station (the bag, the cartons, the rollers), and say how many.
+- Give the jaw weldment one line, its tube, its two stubs and its welds under it.
+- Where two numbers name one designation, the lower number stands: one line, the other number recorded as superseded.
+- A made part's mass is Fusion's; a bought part's is its maker's where a saved page gives it, otherwise Fusion's, and
+  the line says which.
+- Write the part number and the description into each component of the design, so that Fusion's own parts lists carry
+  them, and read them back.
+- Write each machine's list to results/bom/<machine>.csv and all of them to results/bom.json; close each design
+  without saving but the last, which stays open with its numbered components for a look.
+- Refuse a machine that is not one of the nine.
+
+FUSION CONVENTIONS:
+- a new design document for each machine; masses in kg, lengths in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives each machine's kinds and pieces made and bought, its mass as drawn and with the makers' masses, and
+  a version tag.
+- Every occurrence is a line, a body of a line, or a load: the lines and the loads add up to Fusion's mass of the
+  machine.
+- Every line has a number except the welds and the bodies that come with a bought part; no superseded number is left.
+- The tool changer: seven made kinds in twelve pieces, three bought kinds in nine.
+- The bag gripper: the weldment twice, with its tube, its two stubs and four welds.
+- Every component carries its line's part number when read back.
+- Refused: a machine called crane.

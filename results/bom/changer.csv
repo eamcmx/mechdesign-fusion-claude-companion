@@ -1,0 +1,11 @@
+item,level,part number,description,qty,material or maker,kg each,kg,mass from,kg as drawn,superseded
+1,1,P10-001,Cam,1,"steel 1045 (C45), hardened to 600 HB",1.1004,1.1004,Fusion,1.1004,
+2,1,P10-002,Master body,1,steel 1045 (C45),11.6304,11.6304,Fusion,11.6304,
+3,1,P10-003,Master cover,1,steel 1045 (C45),2.2281,2.2281,Fusion,2.2281,
+4,1,P10-004,Piston with rod,1,"steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",1.2090,1.2090,Fusion,1.2090,
+5,1,P10-005,Robot plate ISO 9409-1-160-6-M10,1,steel 1045 (C45),5.4687,5.4687,Fusion,5.4687,
+6,1,P10-006,Segment,6,"steel 1045 (C45), hardened to 600 HB",0.0774,0.4645,Fusion,0.4645,
+7,1,P10-007,Tool plate ISO 9409-1-160-6-M10,1,"steel 1045 (C45), lip face hardened",6.5513,6.5513,Fusion,6.5513,
+8,1,S-0033,ISO 4762 M10 x 35 - 10.9 - zinc-plated,6,ISO 4762,0.0304,0.1824,maker: Fasten.it_DIN_EN_ISO_4762_2026-11-03.md,0.2242,
+9,1,S-0052,ISO 8734 10 x 22,1,ISO 8734,0.0111,0.0111,Fusion,0.0111,S-0074
+10,1,S-0075,ISO 8734 12 x 26,2,ISO 8734,0.0213,0.0426,Fusion,0.0426,

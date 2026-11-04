@@ -1,0 +1,17 @@
+item,level,part number,description,qty,material or maker,kg each,kg,mass from,kg as drawn,superseded
+1,1,P12-001,Adapter plate,1,aluminium 6082-T6,1.4675,1.4675,Fusion,1.4675,
+2,1,P12-002,Beam,2,aluminium 6082-T6,4.9938,9.9875,Fusion,9.9875,
+3,1,P12-003,Manifold,6,"aluminium 6082-T6, T6",0.9720,5.8320,Fusion,5.8320,
+4,1,P12-004,Plate,1,aluminium 6082-T6,27.8448,27.8448,Fusion,27.8448,
+5,1,P12-005,Plunger,36,"steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",0.1192,4.2899,Fusion,4.2899,
+6,1,P12-006,Sleeve,36,"aluminium 6082-T6, T6",0.0819,2.9473,Fusion,2.9473,
+7,1,S-0028,ISO 4762 M4 x 12 - 8.8 - zinc-plated,108,ISO 4762,0.0019,0.2106,maker: Fasten.it_DIN_EN_ISO_4762_2026-11-03.md,0.2080,S-0119
+8,1,S-0031,ISO 4762 M8 x 20 - 8.8 - zinc-plated,4,ISO 4762,0.0134,0.0536,maker: Fasten.it_DIN_EN_ISO_4762_2026-11-03.md,0.0553,S-0036
+9,1,S-0032,ISO 4762 M10 x 25 - 10.9 - zinc-plated,6,ISO 4762,0.0254,0.1524,maker: Fasten.it_DIN_EN_ISO_4762_2026-11-03.md,0.1620,
+10,1,S-0048,"Schmalz SPB1 80 ED-65 SC065, article 10.01.06.03071",36,Schmalz,0.0401,1.4436,maker: Schmalz_vacuum_cups_ejectors_2026-11-03.md,2.5603,
+11,1,S-0052,ISO 8734 10 x 22,1,ISO 8734,0.0105,0.0105,Fusion,0.0105,
+12,1,S-0054,Ejector SCPSi 2-14,12,Ejector,0.1950,2.3400,maker: Schmalz_vacuum_cups_ejectors_2026-11-03.md,2.1080,
+13,1,S-0095,Spring,36,Spring,0.0112,0.4015,Fusion,0.4015,
+14,1,S-0101,ISO 4762 M6 x 25 - 8.8 - zinc-plated,16,ISO 4762,0.0076,0.1214,maker: Fasten.it_DIN_EN_ISO_4762_2026-11-03.md,0.1288,S-0116
+15,1,S-0117,ISO 7089 6 - 200 HV,32,ISO 7089,0.0010,0.0326,maker: Fasten.it_DIN_EN_ISO_7089_2026-11-03.md,0.0325,
+16,1,S-0118,ISO 4032 M6 - 8,16,ISO 4032,0.0025,0.0400,maker: Fasten.it_DIN_934_2026-11-03.md,0.0277,

@@ -1,0 +1,46 @@
+# bill_of_materials_check
+# Autodesk Fusion 2706.1.17, run 2026-11-04 07:07, 652 s
+
+BillOfMaterials 1.0 (2026-11-04)
+  ok   Run opens the dialog
+Bills of materials: 9 machines, results/bom/.
+wrist    made 22 kinds,  31 pieces; bought 18 kinds,  63 pieces (11 with the maker's mass); 7.36 kg as drawn, 5.78 kg with the makers' masses
+flap     made 25 kinds,  33 pieces; bought 26 kinds,  53 pieces (14 with the maker's mass); 339.82 kg as drawn, 340.35 kg with the makers' masses
+axle     made 18 kinds,  30 pieces; bought 18 kinds,  68 pieces (8 with the maker's mass); 162.65 kg as drawn, 163.57 kg with the makers' masses
+robot    made 61 kinds,  78 pieces; bought 18 kinds,  34 pieces (14 with the maker's mass); 3609.91 kg as drawn, 3557.95 kg with the makers' masses
+changer  made  7 kinds,  12 pieces; bought  3 kinds,   9 pieces (1 with the maker's mass); 28.93 kg as drawn, 28.89 kg with the makers' masses
+clamp    made  8 kinds,  11 pieces; bought 13 kinds,  41 pieces (4 with the maker's mass); 107.78 kg as drawn, 102.51 kg with the makers' masses
+vacuum   made  6 kinds,  82 pieces; bought 10 kinds, 267 pieces (8 with the maker's mass); 58.06 kg as drawn, 57.18 kg with the makers' masses
+bag      made 15 kinds,  41 pieces; bought 15 kinds,  73 pieces (12 with the maker's mass); 96.18 kg as drawn, 94.11 kg with the makers' masses
+unit     made  6 kinds,  12 pieces; bought 10 kinds,  41 pieces (6 with the maker's mass); 19.84 kg as drawn, 18.24 kg with the makers' masses
+
+[BillOfMaterials 1.0 (2026-11-04)]
+  OK pressed, built in 650 s
+  ok   a new design opened
+  ok   nine lists, each in results/bom: wrist.csv, flap.csv, axle.csv, robot.csv, changer.csv, clamp.csv, vacuum.csv, bag.csv, unit.csv
+  ok   wrist: 97 occurrences, the lines and 0 loads 7.3575 kg, Fusion's design 7.3575 kg
+  ok   wrist: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   flap: 87 occurrences, the lines and 0 loads 339.8169 kg, Fusion's design 339.8169 kg
+  ok   flap: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   axle: 106 occurrences, the lines and 0 loads 162.6472 kg, Fusion's design 162.6472 kg
+  ok   axle: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   robot: 118 occurrences, the lines and 0 loads 3609.9058 kg, Fusion's design 3609.9058 kg
+  ok   robot: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   changer: 21 occurrences, the lines and 0 loads 28.9304 kg, Fusion's design 28.9304 kg
+  ok   changer: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   clamp: 59 occurrences, the lines and 4 loads 286.3414 kg, Fusion's design 286.3414 kg
+  ok   clamp: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   vacuum: 355 occurrences, the lines and 6 loads 325.9038 kg, Fusion's design 325.9038 kg
+  ok   vacuum: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   bag: 138 occurrences, the lines and 10 loads 323.4988 kg, Fusion's design 323.4988 kg
+  ok   bag: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   unit: 53 occurrences, the lines and 0 loads 19.8417 kg, Fusion's design 19.8417 kg
+  ok   unit: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   the tool changer: made 7 kinds in 12 pieces, bought 3 kinds in 9
+  ok   the bag gripper: the weldment P13-016 x2, under it {'P13-010': (2, 1.0), 'P13-011': (2, 1.0), 'P13-013': (2, 1.0), 'welds': (4, 2.0)}
+  ok   the bag gripper: 10 loads left out, 227.32 kg (Bag, Roller)
+  ok   the axle's bearings counted by sets: 6213 x2, 32213 x2, 32308 x1, 32309 x1
+  ok   the robot's reducers counted by sets: RV-500N x2, RV-700N x1, RV-80N x1
+  ok   the makers' masses: 78 lines, every page on disk 
+  ok   refused: No machine called crane: the bills of materials are of wrist, flap, axle, robot, changer, clamp, vacuum, bag, unit.
+ALL PASS

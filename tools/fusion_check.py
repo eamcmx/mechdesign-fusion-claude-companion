@@ -51,10 +51,10 @@ def run_dialog(ns, values=None):
     if before is not None:
         before.attributes.add('mdfc', 'before', 'yes')     # Fusion may close an empty start-up design, so count is no test
     ns['run'](None)
-    for _ in range(200):
-        if seen:
-            break
+    t_open = time.time()                    # the first command a Fusion session makes can take seconds to open
+    while not seen and time.time() - t_open < 30.0:
         adsk.doEvents()
+        time.sleep(0.02)
     ok(bool(seen), 'Run opens the dialog')
     if not seen:
         return None
