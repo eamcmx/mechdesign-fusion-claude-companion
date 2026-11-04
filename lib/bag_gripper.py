@@ -407,16 +407,22 @@ FITTINGS = 1.5        # m of equivalent length for the couplings and bends (assu
 
 
 def coupling(r_frame=140.0, changes_a_year=5000.0):
-    """The changer's electrical coupling: a HARTING docking frame for two modules, float mount (+-2 mm floating,
-    +-4 mm lock-in, >= 10 000 matings), with a Han E (6 contacts, 16 A, 500 V) for the clamp gripper's motor and a
-    Han DD (12 contacts, 10 A, 250 V) for 24 V, the bus and the encoder. The changer's own location error at the
-    frame's radius against the float; the matings against the tool changes (assumed)."""
+    """The changer's electrical coupling: a HARTING docking frame for three modules, float mount 09 14 010 1701
+    (+-2 mm floating, +-4 mm lock-in; 500 matings, 10 000 with HMC components), with a Han E (6 contacts, 16 A,
+    500 V) for the clamp gripper's motor, a Han DD (12 contacts, 10 A, 250 V) for 24 V, the bus and the encoder, and
+    a PE module for the motor's earth, leading. A docking frame has no PE contact of its own (HARTING's selection
+    guide, pp. 2-3, 6-7), hence three places, not two. Corrected 4 November 2026 from a frame for two modules and
+    10 000 matings for any module: the modules' standard versions last > 500 matings, their HMC versions > 10 000
+    (guide p. 2). The changer's own location error at the frame's radius against the float; the matings of the HMC
+    versions against the tool changes (assumed), and of the standard versions for comparison."""
     err = 0.0145 + 0.18e-3 * r_frame
     alloc = dict(HanE=['motor U', 'motor V', 'motor W', 'brake +', 'brake -', 'spare'],
                  HanDD=['24 V logic', '0 V logic', '24 V load', '0 V load', 'bus TD+', 'bus TD-', 'bus RD+', 'bus RD-',
-                        'encoder +', 'encoder -', 'spare', 'spare'])
-    return dict(err=err, float=2.0, lockin=4.0, ratio=2.0 / err, cycles=10000.0, changes=changes_a_year,
-                years=10000.0 / changes_a_year, alloc=alloc)
+                        'encoder +', 'encoder -', 'spare', 'spare'],
+                 PE=['motor PE, leading'])
+    return dict(frame='10 B', modules=3, err=err, float=2.0, lockin=4.0, ratio=2.0 / err, cycles=10000.0,
+                cycles_std=500.0, changes=changes_a_year, years=10000.0 / changes_a_year,
+                weeks_std=500.0 / changes_a_year * 52.0, alloc=alloc)
 
 
 def services(d=None, dv=None):
