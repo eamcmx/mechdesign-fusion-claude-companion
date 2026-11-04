@@ -1,0 +1,1115 @@
+[
+ {
+  "key": "bracket",
+  "number": "P13-018",
+  "title": "Stop bracket, opening",
+  "design": "P13-018 Stop bracket, opening",
+  "box": [
+   -24.0,
+   -49.497,
+   -0.0,
+   60.0,
+   49.497,
+   98.995
+  ],
+  "volume": 99541.24587716359,
+  "material": "Steel AISI 1045 225 ANLD",
+  "changes": {
+   "root_fillet": {
+    "edges": 4,
+    "r": 2.5
+   }
+  },
+  "drawing": "P13-018 Stop bracket, opening Drawing",
+  "fits": [],
+  "model": {
+   "radii": {
+    "2.5": 4,
+    "4.5": 2,
+    "15.0": 1,
+    "24.0": 1
+   }
+  },
+  "scale": 1.0000000000000004,
+  "items": null,
+  "sheets": 1,
+  "left_open": "FusionDrawingAutoDimensionEditCommand",
+  "pdf": "P13-018.pdf",
+  "added": {
+   "dims": 2,
+   "datums": 1,
+   "frames": 1,
+   "rows": 6
+  },
+  "read": {
+   "dims": 2,
+   "symbols": 2
+  },
+  "rows": [
+   [
+    "Material",
+    "steel 1045 (C45), hot rolled",
+    "Ch 51"
+   ],
+   [
+    "Root of the arm",
+    "R2.5 min, all round",
+    "Ch 60"
+   ],
+   [
+    "Holes",
+    "2 \u00d7 \u00d89 H13 through, 50 apart on the foot's diagonal",
+    "Ch 56"
+   ],
+   [
+    "Their position",
+    "\u00d81.0 (M) to A, the face on the end plate",
+    "Ch 63"
+   ],
+   [
+    "Lug",
+    "\u00d848 \u00d7 25, M30 \u00d7 1.5-6H through",
+    "Ch 56"
+   ],
+   [
+    "General",
+    "ISO 2768-mK",
+    "Ch 61"
+   ]
+  ],
+  "sheet": {
+   "sheet": "P13-018 Stop bracket  opening",
+   "size": [
+    420.0,
+    297.0
+   ],
+   "views": [
+    {
+     "type": 0,
+     "n": 17,
+     "box": [
+      119.60156249999454,
+      117.60156249999999,
+      203.60156249999454,
+      187.6015625
+     ],
+     "kinds": {
+      "0": 10,
+      "1": 3,
+      "2": 1,
+      "3": 3
+     },
+     "arcs": [
+      12.119,
+      15.0,
+      23.791,
+      24.0
+     ]
+    },
+    {
+     "type": 1,
+     "n": 16,
+     "box": [
+      229.34375002000039,
+      117.60156249999542,
+      299.34375002000036,
+      187.60156249999545
+     ],
+     "kinds": {
+      "0": 10,
+      "1": 4,
+      "3": 2
+     },
+     "arcs": [
+      4.5,
+      4.5,
+      24.0,
+      24.0
+     ]
+    }
+   ],
+   "dims": [
+    1,
+    1,
+    1,
+    5,
+    2
+   ],
+   "symbols": 2,
+   "tables": [
+    [
+     [
+      "REQUIREMENTS",
+      "",
+      ""
+     ],
+     [
+      "Material",
+      "steel 1045 (C45), hot rolled",
+      "Ch 51"
+     ],
+     [
+      "Root of the arm",
+      "R2.5 min, all round",
+      "Ch 60"
+     ],
+     [
+      "Holes",
+      "2 \u00d7 \u00d89 H13 through, 50 apart on the foot's diagonal",
+      "Ch 56"
+     ],
+     [
+      "Their position",
+      "\u00d81.0 (M) to A, the face on the end plate",
+      "Ch 63"
+     ],
+     [
+      "Lug",
+      "\u00d848 \u00d7 25, M30 \u00d7 1.5-6H through",
+      "Ch 56"
+     ],
+     [
+      "General",
+      "ISO 2768-mK",
+      "Ch 61"
+     ]
+    ]
+   ]
+  },
+  "seconds": 92.59647965431213
+ },
+ {
+  "key": "segment",
+  "number": "P10-006",
+  "title": "Segment",
+  "design": "P10-006 Segment",
+  "box": [
+   45.144,
+   -18.0,
+   0.0,
+   68.0,
+   18.0,
+   16.0
+  ],
+  "volume": 9862.850319046942,
+  "material": "Steel AISI 1045 225 ANLD",
+  "changes": {},
+  "drawing": "P10-006 Segment Drawing",
+  "fits": [],
+  "model": {
+   "radii": {
+    "68.0": 1
+   }
+  },
+  "scale": 4.0,
+  "items": null,
+  "sheets": 1,
+  "left_open": "FusionDrawingAutoDimensionEditCommand",
+  "pdf": "P10-006.pdf",
+  "added": {
+   "dims": 0,
+   "datums": 2,
+   "frames": 0,
+   "rows": 6
+  },
+  "read": {
+   "dims": 0,
+   "symbols": 2
+  },
+  "rows": [
+   [
+    "Material",
+    "steel 1045 (C45), hardened to 600 HB",
+    "Ch 51"
+   ],
+   [
+    "15\u00b0 face",
+    "profile of a surface 0.02 to A",
+    "Ch 61"
+   ],
+   [
+    "5\u00b0 face",
+    "profile of a surface 0.02 to B",
+    "Ch 61"
+   ],
+   [
+    "Wedge faces",
+    "ground after hardening",
+    "Ch 61"
+   ],
+   [
+    "Set",
+    "the 6 ground as one set, kept as one item",
+    "Ch 61"
+   ],
+   [
+    "General",
+    "ISO 2768-mK",
+    "Ch 61"
+   ]
+  ],
+  "sheet": {
+   "sheet": "P10-006 Segment",
+   "size": [
+    420.0,
+    297.0
+   ],
+   "views": [
+    {
+     "type": 0,
+     "n": 10,
+     "box": [
+      97.80468749999983,
+      155.28793120937857,
+      241.80468750000006,
+      237.00960976270085
+     ],
+     "kinds": {
+      "0": 2,
+      "1": 4,
+      "4": 4
+     },
+     "arcs": [
+      194.401,
+      200.0,
+      212.287,
+      272.0
+     ]
+    },
+    {
+     "type": 1,
+     "n": 10,
+     "box": [
+      271.0156250799893,
+      155.28793120933494,
+      335.01562508001075,
+      246.71206879057718
+     ],
+     "kinds": {
+      "0": 5,
+      "1": 3,
+      "4": 2
+     },
+     "arcs": [
+      212.287,
+      262.298,
+      272.0
+     ]
+    },
+    {
+     "type": 1,
+     "n": 7,
+     "box": [
+      97.8046874999998,
+      65.39617483874906,
+      241.8046875000001,
+      129.39617483876773
+     ],
+     "kinds": {
+      "0": 2,
+      "1": 3,
+      "4": 2
+     },
+     "arcs": [
+      72.0,
+      72.0,
+      72.0
+     ]
+    }
+   ],
+   "dims": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "symbols": 2,
+   "tables": [
+    [
+     [
+      "REQUIREMENTS",
+      "",
+      ""
+     ],
+     [
+      "Material",
+      "steel 1045 (C45), hardened to 600 HB",
+      "Ch 51"
+     ],
+     [
+      "15\u00b0 face",
+      "profile of a surface 0.02 to A",
+      "Ch 61"
+     ],
+     [
+      "5\u00b0 face",
+      "profile of a surface 0.02 to B",
+      "Ch 61"
+     ],
+     [
+      "Wedge faces",
+      "ground after hardening",
+      "Ch 61"
+     ],
+     [
+      "Set",
+      "the 6 ground as one set, kept as one item",
+      "Ch 61"
+     ],
+     [
+      "General",
+      "ISO 2768-mK",
+      "Ch 61"
+     ]
+    ]
+   ]
+  },
+  "seconds": 62.71354699134827
+ },
+ {
+  "key": "spacer",
+  "number": "A01-016",
+  "title": "Spacer, pinion",
+  "design": "A01-016 Spacer, pinion",
+  "box": [
+   -28.0,
+   -28.0,
+   0.0,
+   28.0,
+   28.0,
+   67.8
+  ],
+  "volume": 58680.96251718612,
+  "material": "Steel AISI 1045 225 ANLD",
+  "changes": {},
+  "drawing": "A01-016 Spacer, pinion Drawing",
+  "fits": [
+   {
+    "face": 0,
+    "value": "H7 Ra 1.6",
+    "kind": "cylinder",
+    "d": 45.1,
+    "area": 9606.3
+   }
+  ],
+  "model": {
+   "radii": {
+    "22.55": 1,
+    "28.0": 1
+   }
+  },
+  "scale": 1.9999999999999998,
+  "items": null,
+  "sheets": 1,
+  "left_open": "FusionDrawingAutoDimensionEditCommand",
+  "pdf": "A01-016.pdf",
+  "added": {
+   "dims": 1,
+   "datums": 0,
+   "frames": 0,
+   "rows": 8
+  },
+  "read": {
+   "dims": 1,
+   "symbols": 0
+  },
+  "rows": [
+   [
+    "Material",
+    "steel 1045 (C45), cold drawn",
+    "Ch 51"
+   ],
+   [
+    "Length",
+    "67.8 nominal; turned to 68.6",
+    "Ch 61"
+   ],
+   [
+    "Grinding",
+    "to each axle, 67.78 to 68.46",
+    "Ch 66"
+   ],
+   [
+    "Faces",
+    "both ground in one set-up",
+    "Ch 61"
+   ],
+   [
+    "Datum A",
+    "the face on cone A",
+    "Ch 63"
+   ],
+   [
+    "Face on cone B",
+    "parallel to A within 0.013 (IT5)",
+    "Ch 63"
+   ],
+   [
+    "\u00d845.1 bore",
+    "H7, Ra 1.6",
+    "Ch 51"
+   ],
+   [
+    "General",
+    "ISO 2768-mK",
+    "Ch 61"
+   ]
+  ],
+  "sheet": {
+   "sheet": "A01-016 Spacer  pinion",
+   "size": [
+    420.0,
+    297.0
+   ],
+   "views": [
+    {
+     "type": 0,
+     "n": 4,
+     "box": [
+      83.13750000000002,
+      97.42187499999997,
+      218.73750000000004,
+      209.421875
+     ],
+     "kinds": {
+      "0": 2,
+      "1": 2
+     },
+     "arcs": [
+      56.0,
+      56.0
+     ]
+    },
+    {
+     "type": 1,
+     "n": 2,
+     "box": [
+      292.1546875399906,
+      108.3218749999818,
+      292.1546875399907,
+      209.4218749999818
+     ],
+     "kinds": {
+      "2": 2
+     },
+     "arcs": [
+      45.1,
+      56.0
+     ]
+    }
+   ],
+   "dims": [
+    1,
+    1,
+    5
+   ],
+   "symbols": 0,
+   "tables": [
+    [
+     [
+      "REQUIREMENTS",
+      "",
+      ""
+     ],
+     [
+      "Material",
+      "steel 1045 (C45), cold drawn",
+      "Ch 51"
+     ],
+     [
+      "Length",
+      "",
+      "Ch 61"
+     ],
+     [
+      "Grinding",
+      "to each axle, 67.78 to 68.46",
+      "Ch 66"
+     ],
+     [
+      "Faces",
+      "both ground in one set-up",
+      "Ch 61"
+     ],
+     [
+      "Datum A",
+      "the face on cone A",
+      "Ch 63"
+     ],
+     [
+      "Face on cone B",
+      "parallel to A within 0.013 (IT5)",
+      "Ch 63"
+     ],
+     [
+      "\u00d845.1 bore",
+      "H7, Ra 1.6",
+      "Ch 51"
+     ],
+     [
+      "General",
+      "ISO 2768-mK",
+      "Ch 61"
+     ]
+    ]
+   ]
+  },
+  "seconds": 161.92650699615479
+ },
+ {
+  "key": "fitting",
+  "number": "F01-022",
+  "title": "Spar fitting",
+  "design": "F01-022 Spar fitting",
+  "box": [
+   -27.5,
+   -44.0,
+   0.0,
+   35.0,
+   44.0,
+   180.0
+  ],
+  "volume": 166130.2881754266,
+  "material": "Aluminum 7075",
+  "changes": {},
+  "drawing": "F01-022 Spar fitting Drawing",
+  "fits": [
+   {
+    "face": 6,
+    "value": "N7 Rz 16.0",
+    "kind": "cylinder",
+    "d": 35.0,
+    "area": 1319.47
+   },
+   {
+    "face": 12,
+    "value": "N7 Rz 16.0",
+    "kind": "cylinder",
+    "d": 35.0,
+    "area": 1319.47
+   }
+  ],
+  "model": {
+   "radii": {
+    "4.05": 4,
+    "17.5": 2,
+    "27.5": 2
+   }
+  },
+  "scale": 1.0,
+  "items": null,
+  "sheets": 1,
+  "left_open": "FusionDrawingAutoDimensionEditCommand",
+  "pdf": "F01-022.pdf",
+  "added": {
+   "dims": 2,
+   "datums": 0,
+   "frames": 0,
+   "rows": 4
+  },
+  "read": {
+   "dims": 2,
+   "symbols": 0
+  },
+  "rows": [
+   [
+    "Material",
+    "aluminium 7075-T6",
+    "Ch 51"
+   ],
+   [
+    "Bores",
+    "envelope (E), ISO 14405-1",
+    "Ch 51"
+   ],
+   [
+    "2 \u00d7 \u00d835 bore",
+    "N7, Rz 16.0",
+    "Ch 51"
+   ],
+   [
+    "General",
+    "ISO 2768-mK",
+    "Ch 61"
+   ]
+  ],
+  "sheet": {
+   "sheet": "F01-022 Spar fitting",
+   "size": [
+    420.0,
+    297.0
+   ],
+   "views": [
+    {
+     "type": 0,
+     "n": 16,
+     "box": [
+      86.36718749999999,
+      74.14843750028558,
+      266.3671875,
+      162.14843750028564
+     ],
+     "kinds": {
+      "0": 8,
+      "1": 4,
+      "2": 4
+     },
+     "arcs": [
+      4.05,
+      4.05,
+      4.05,
+      4.05,
+      27.5,
+      27.5,
+      27.5,
+      27.5
+     ]
+    },
+    {
+     "type": 1,
+     "n": 8,
+     "box": [
+      283.07812499521606,
+      74.14843750057297,
+      318.0781249952202,
+      162.14843750057298
+     ],
+     "kinds": {
+      "0": 6,
+      "1": 1,
+      "2": 1
+     },
+     "arcs": [
+      17.5,
+      27.5
+     ]
+    },
+    {
+     "type": 1,
+     "n": 14,
+     "box": [
+      86.3671875,
+      179.6953125205088,
+      266.3671875,
+      242.19531252052187
+     ],
+     "kinds": {
+      "0": 10,
+      "1": 4
+     },
+     "arcs": [
+      0.0,
+      0.0,
+      27.5,
+      27.5
+     ]
+    }
+   ],
+   "dims": [
+    1,
+    1,
+    1,
+    1,
+    5,
+    5
+   ],
+   "symbols": 0,
+   "tables": [
+    [
+     [
+      "REQUIREMENTS",
+      "",
+      ""
+     ],
+     [
+      "Material",
+      "aluminium 7075-T6",
+      "Ch 51"
+     ],
+     [
+      "Bores",
+      "envelope (E), ISO 14405-1",
+      "Ch 51"
+     ],
+     [
+      "2 \u00d7 \u00d835 bore",
+      "N7, Rz 16.0",
+      "Ch 51"
+     ],
+     [
+      "General",
+      "ISO 2768-mK",
+      "Ch 61"
+     ]
+    ]
+   ]
+  },
+  "seconds": 217.79351115226746
+ },
+ {
+  "key": "disc",
+  "number": "W01-018",
+  "title": "Stop disc",
+  "design": "W01-018 Stop disc",
+  "box": [
+   -12.0,
+   -12.0,
+   0.0,
+   35.0,
+   12.0,
+   11.0
+  ],
+  "volume": 5492.364528361693,
+  "material": "Steel AISI 1045 225 ANLD",
+  "changes": {},
+  "drawing": "W01-018 Stop disc Drawing",
+  "fits": [
+   {
+    "face": 0,
+    "value": "JS9 Ra 3.2",
+    "kind": "plane",
+    "d": null,
+    "area": 30.02
+   },
+   {
+    "face": 2,
+    "value": "JS9 Ra 3.2",
+    "kind": "plane",
+    "d": null,
+    "area": 30.02
+   },
+   {
+    "face": 7,
+    "value": "JS9 Ra 3.2",
+    "kind": "plane",
+    "d": null,
+    "area": 499.31
+   },
+   {
+    "face": 8,
+    "value": "H7 Ra 1.6",
+    "kind": "cylinder",
+    "d": 15.0,
+    "area": 462.29
+   }
+  ],
+  "model": {
+   "radii": {
+    "35.0": 1,
+    "7.5": 1,
+    "12.0": 1
+   }
+  },
+  "scale": 4.0,
+  "items": null,
+  "sheets": 1,
+  "left_open": "FusionDrawingAutoDimensionEditCommand",
+  "pdf": "W01-018.pdf",
+  "added": {
+   "dims": 1,
+   "datums": 0,
+   "frames": 0,
+   "rows": 4
+  },
+  "read": {
+   "dims": 1,
+   "symbols": 0
+  },
+  "rows": [
+   [
+    "Material",
+    "steel 1045 (C45), cold drawn",
+    "Ch 51"
+   ],
+   [
+    "\u00d815 bore",
+    "H7, Ra 1.6",
+    "Ch 51"
+   ],
+   [
+    "keyseat",
+    "JS9, Ra 3.2",
+    "Ch 51"
+   ],
+   [
+    "General",
+    "ISO 2768-mK",
+    "Ch 61"
+   ]
+  ],
+  "sheet": {
+   "sheet": "W01-018 Stop disc",
+   "size": [
+    420.0,
+    297.0
+   ],
+   "views": [
+    {
+     "type": 0,
+     "n": 8,
+     "box": [
+      147.33836678005824,
+      192.0500638966229,
+      261.88894183624507,
+      254.8577438621989
+     ],
+     "kinds": {
+      "0": 5,
+      "1": 3
+     },
+     "arcs": [
+      30.0,
+      48.0,
+      140.0
+     ]
+    },
+    {
+     "type": 1,
+     "n": 7,
+     "box": [
+      300.17187497998395,
+      147.69118721850464,
+      344.1718749800216,
+      254.85774386220254
+     ],
+     "kinds": {
+      "0": 5,
+      "1": 2
+     },
+     "arcs": [
+      48.0,
+      48.0
+     ]
+    },
+    {
+     "type": 1,
+     "n": 10,
+     "box": [
+      73.88894183623052,
+      75.30726418092009,
+      261.8889418362306,
+      119.30726418093766
+     ],
+     "kinds": {
+      "0": 6,
+      "1": 4
+     },
+     "arcs": [
+      43.503,
+      48.0,
+      126.883,
+      140.0
+     ]
+    }
+   ],
+   "dims": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    5
+   ],
+   "symbols": 0,
+   "tables": [
+    [
+     [
+      "REQUIREMENTS",
+      "",
+      ""
+     ],
+     [
+      "Material",
+      "steel 1045 (C45), cold drawn",
+      "Ch 51"
+     ],
+     [
+      "\u00d815 bore",
+      "H7, Ra 1.6",
+      "Ch 51"
+     ],
+     [
+      "keyseat",
+      "JS9, Ra 3.2",
+      "Ch 51"
+     ],
+     [
+      "General",
+      "ISO 2768-mK",
+      "Ch 61"
+     ]
+    ]
+   ]
+  },
+  "seconds": 118.32610297203064
+ },
+ {
+  "key": "stop",
+  "number": "P13-000",
+  "title": "Bag gripper, the opening stop",
+  "design": "P13-000 Bag gripper, the opening stop",
+  "box": null,
+  "volume": null,
+  "material": null,
+  "changes": {
+   "root_fillet": {
+    "edges": 4,
+    "r": 2.5
+   }
+  },
+  "drawing": "P13-000 Bag gripper, the opening stop Drawing",
+  "fits": [],
+  "model": {
+   "radii": {}
+  },
+  "scale": null,
+  "items": [
+   {
+    "number": "P13-018",
+    "title": "Stop bracket, opening",
+    "n": 1
+   },
+   {
+    "number": "S-0120",
+    "title": "Shock absorber DYSC-25-25-Y1F",
+    "n": 1
+   },
+   {
+    "number": "",
+    "title": "Lock nut",
+    "n": 1
+   },
+   {
+    "number": "S-0121",
+    "title": "Cap screw M8 x 40",
+    "n": 2
+   },
+   {
+    "number": "S-0122",
+    "title": "Washer 8",
+    "n": 2
+   },
+   {
+    "number": "S-0123",
+    "title": "Nut M8",
+    "n": 2
+   }
+  ],
+  "sheets": 2,
+  "left_open": "SelectCommand",
+  "pdf": "P13-000.pdf",
+  "added": {
+   "dims": 0,
+   "datums": 0,
+   "frames": 0,
+   "rows": 4
+  },
+  "read": {
+   "dims": 0,
+   "symbols": 0
+  },
+  "rows": [
+   [
+    "Seat",
+    "the foot on the end plate P13-005, its holes over the plate's",
+    "Ch 56"
+   ],
+   [
+    "S-0121",
+    "tighten to 25.5 N m (K 0.2, zinc-plated)",
+    "Ch 60"
+   ],
+   [
+    "Preload",
+    "15921 N, 75 % of the proof load",
+    "Ch 60"
+   ],
+   [
+    "S-0120",
+    "in the lug's thread, held by its lock nut",
+    "Ch 56"
+   ]
+  ],
+  "sheet": {
+   "sheet": "P13-000 Bag gripper  the opening stop",
+   "size": [
+    420.0,
+    297.0
+   ],
+   "views": [
+    {
+     "type": 0,
+     "n": 58,
+     "box": [
+      144.03660674088135,
+      72.04588887376283,
+      250.76810013969552,
+      251.6730747652209
+     ],
+     "kinds": {
+      "0": 35,
+      "1": 19,
+      "2": 3,
+      "3": 1
+     },
+     "arcs": [
+      3.266,
+      3.266,
+      4.0,
+      4.0,
+      4.173,
+      4.173,
+      4.932,
+      4.932,
+      6.4,
+      6.4,
+      6.974,
+      6.974,
+      8.0,
+      8.0,
+      11.349,
+      11.358,
+      13.9,
+      14.276,
+      15.0,
+      15.517,
+      18.493,
+      21.314
+     ]
+    }
+   ],
+   "dims": [],
+   "symbols": 0,
+   "tables": [
+    [
+     [
+      "ASSEMBLY",
+      "",
+      ""
+     ],
+     [
+      "Seat",
+      "the foot on the end plate P13-005, its holes over the plate's",
+      "Ch 56"
+     ],
+     [
+      "S-0121",
+      "tighten to 25.5 N m (K 0.2, zinc-plated)",
+      "Ch 60"
+     ],
+     [
+      "Preload",
+      "15921 N, 75 % of the proof load",
+      "Ch 60"
+     ],
+     [
+      "S-0120",
+      "in the lug's thread, held by its lock nut",
+      "Ch 56"
+     ]
+    ]
+   ]
+  },
+  "seconds": 94.34597420692444
+ }
+]

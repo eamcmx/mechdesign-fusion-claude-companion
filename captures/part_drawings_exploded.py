@@ -10,7 +10,7 @@ importlib.reload(fc)
 import adsk.core, adsk.fusion
 import range_sweep as rs
 
-VIEW = (0.75, 0.25, 0.60)
+VIEW = (0.70, 0.35, 0.62)           # three-quarter view from the foot's side, above the absorber
 ITEMS = ['Stop bracket open 1', 'Shock absorber DYSC-25-25-Y1F open 1', 'Lock nut DYSC-25-25-Y1F open 1',
          'Cap screw', 'Washer', 'Nut']
 
@@ -34,8 +34,8 @@ def run(_context):
     cy, cz = o_['centre']
     n = (0.0, o_['axis'][0], o_['axis'][1])
 
-    def centre(o):
-        b = o.boundingBox
+    def centre(o):                              # from the body: an occurrence's own box comes back empty for these pieces
+        b = o.bRepBodies.item(0).boundingBox
         return [(b.minPoint.x + b.maxPoint.x) * 5, (b.minPoint.y + b.maxPoint.y) * 5, (b.minPoint.z + b.maxPoint.z) * 5]
 
     def by_bracket(o):                          # a fastener of the opening bracket of jaw A: inside the foot's square
@@ -49,10 +49,12 @@ def run(_context):
         for pre in ('Cap screw ISO 4762 M8x40 stop', 'Washer ISO 7089 8 stop', 'Nut ISO 4032 M8 stop'):
             if nm.startswith(pre) and by_bracket(o):
                 pick.setdefault(pre, []).append(o)
-    moves = {'Stop bracket open 1': (90.0, 0, 0), 'Shock absorber DYSC-25-25-Y1F open 1': (90.0, 150.0 * n[1], 150.0 * n[2]),
-             'Lock nut DYSC-25-25-Y1F open 1': (90.0, 60.0 * n[1], 60.0 * n[2]),
-             'Cap screw ISO 4762 M8x40 stop': (170.0, 0, 0), 'Washer ISO 7089 8 stop': (-40.0, 0, 0),
-             'Nut ISO 4032 M8 stop': (-75.0, 0, 0)}
+    # the bracket off the plate along x, the screws out past its lug so that nothing hides them, washers and nuts back
+    # behind the plate; the absorber forward out of the lug along its axis n, its lock nut back off the lug's other face
+    moves = {'Stop bracket open 1': (50.0, 0, 0), 'Shock absorber DYSC-25-25-Y1F open 1': (50.0, 150.0 * n[1], 150.0 * n[2]),
+             'Lock nut DYSC-25-25-Y1F open 1': (50.0, -35.0 * n[1], -35.0 * n[2]),
+             'Cap screw ISO 4762 M8x40 stop': (170.0, 0, 0), 'Washer ISO 7089 8 stop': (-30.0, 0, 0),
+             'Nut ISO 4032 M8 stop': (-55.0, 0, 0)}
     shown = []
     for key, val in pick.items():
         for o in (val if isinstance(val, list) else [val]):

@@ -32,8 +32,13 @@ def run(_context):
     fc.ok(sorted(parts) == sorted(p['key'] for p in DD.PARTS), 'six drawings: %s' % ', '.join(sorted(parts)))
     for key, p in parts.items():
         sh = p['sheet']
-        fc.ok(abs(sh['size'][0] - 420) < 0.5 and abs(sh['size'][1] - 297) < 0.5 and len(sh['views']) >= 2,
-              '%s %s: A3 %g x %g, %d views' % (p['number'], p['title'], sh['size'][0], sh['size'][1], len(sh['views'])))
+        # a part: one sheet of at least two views; the assembly: its first sheet the view with Fusion's parts list,
+        # its second the projections
+        views, sheets = (1, 2) if key == 'stop' else (2, 1)
+        fc.ok(abs(sh['size'][0] - 420) < 0.5 and abs(sh['size'][1] - 297) < 0.5 and len(sh['views']) >= views
+              and p['sheets'] == sheets,
+              '%s %s: A3 %g x %g, %d sheet(s), %d views on the first' % (p['number'], p['title'], sh['size'][0],
+                                                                       sh['size'][1], p['sheets'], len(sh['views'])))
         fc.ok(p['pdf'] is not None and os.path.exists(os.path.join('__COMPANION__', 'results', 'drawings', p['pdf'])),
               '%s: the PDF %s' % (p['number'], p['pdf']))
         want = ns['WANT'][key]
@@ -48,6 +53,9 @@ def run(_context):
     fc.ok(n_root == 4, "the bracket's root in the model: %d faces of radius %g" % (n_root, bd['r_root']))
     fc.ok(n_hole == 2, "the bracket's holes in the model: %d of %g across" % (n_hole, bd['H']))
     st = parts['stop']
+    sr = st['changes'].get('root_fillet') or {}
+    fc.ok(sr.get('edges') == 4 and sr.get('r') == bd['r_root'],
+          "the opening stop's bracket as its sheet draws it: the root filleted on %s edges, r %s" % (sr.get('edges'), sr.get('r')))
     fc.ok(sorted((i['number'], i['n']) for i in st['items']) == sorted((n, q) for n, _t, _d, _nm, q in DD.STOP_ITEMS)
           and any(r[0] == 'S-0121' and 'N m' in r[1] for r in st['rows']),
           'the opening stop: %s; %s' % (', '.join('%s x%d' % (i['number'], i['n']) for i in st['items']),

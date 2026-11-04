@@ -40,7 +40,7 @@ if LIB not in sys.path:
 import drawings_detail as DD     # noqa: E402
 importlib.reload(DD)
 
-VERSION = 'PartDrawings 1.0 (2026-11-03)'
+VERSION = 'PartDrawings 1.0 (2026-11-04)'
 D = adsk.drawing
 _last = {}
 
@@ -148,6 +148,15 @@ def root_fillet(root, body, m, spec):
 CHANGES = {'root_fillet': root_fillet}
 
 
+def apply_changes(root, body, m, spec):
+    """Every change Part 10 decided for the part, carried into its body before it is drawn: on its own sheet and in
+    an assembly alike."""
+    done = {}
+    for ch in spec.get('changes', ()):
+        done[ch['kind']] = CHANGES[ch['kind']](root, body, m, ch)
+    return done
+
+
 # ---------- the cloud ----------
 def folder(path):
     app = adsk.core.Application.get()
@@ -212,8 +221,19 @@ def open_drawing(df):
     if cmd and cmd != 'SelectCommand':
         ui.terminateActiveCommand()      # the automatic drawing leaves its auto-dimension dialog open
         adsk.doEvents()
+    dd = D.DrawingDocument.cast(doc)
+    sheet = dd.drawing.activeSheet       # the dialog's preview dimensions leave the sheet a moment after it closes
+    last, same = -1, 0
+    for _ in range(120):
+        adsk.doEvents()
+        time.sleep(0.25)
+        n = sheet.drawingDimensions.count
+        same = same + 1 if n == last else 0
+        last = n
+        if same >= 8:
+            break
     _mark(doc)
-    return D.DrawingDocument.cast(doc), cmd
+    return dd, cmd
 
 
 # ---------- the sheet ----------
@@ -264,10 +284,6 @@ def box(view):
 
 def dia(sheet, c, at):
     return sheet.drawingDimensions.addDiameterDimension(c['c'], P2(*at))
-
-
-def linear(sheet, p, q, at, aligned=False):
-    return sheet.drawingDimensions.addLinearDimension(P2(*p), P2(*q), P2(*at), aligned)
 
 
 def datum(sheet, c, label, at, on=None):
@@ -419,9 +435,7 @@ def make_part(spec, RS, where):
     root = des.rootComponent
     body = root.bRepBodies.add(got['tb'])
     body.name = spec['title']
-    done = {}
-    for ch in spec.get('changes', ()):
-        done[ch['kind']] = CHANGES[ch['kind']](root, body, got['m'], ch)
+    done = apply_changes(root, body, got['m'], spec)
     body = root.bRepBodies.item(0)
     lib = app.materialLibraries.itemByName('Fusion Material Library')
     mat = lib.materials.itemByName(got['material']) if got['material'] else None
@@ -464,7 +478,8 @@ def make_assembly(spec, RS, where):
     root = d2.rootComponent
     root.partNumber, root.description = spec['number'], spec['title']
     lib = app.materialLibraries.itemByName('Fusion Material Library')
-    made = []
+    drawn = {p['number']: p for p in DD.PARTS}          # a part with a sheet of its own goes in as that sheet draws it
+    made, done = [], {}
     for item in picked:
         occ0 = None
         for k, nm in enumerate(item['names']):
@@ -478,6 +493,9 @@ def make_assembly(spec, RS, where):
                 comp.name = (item['number'] + ' ' + item['title']).strip()
                 comp.partNumber, comp.description = item['number'], item['designation']
                 b = comp.bRepBodies.add(tb)
+                if item['number'] in drawn:
+                    done.update(apply_changes(comp, b, m, drawn[item['number']]))
+                    b = comp.bRepBodies.item(0)
                 mat = lib.materials.itemByName(body.material.name) if body.material else None
                 if mat is not None:
                     b.material = mat
@@ -499,12 +517,14 @@ def make_assembly(spec, RS, where):
         mdoc.close(False)
     except Exception:
         pass
-    return dict(doc=doc, name=name, box=None, material=None, changes={}, t_save=t_save, volume=None, fits=[], R=None,
+    return dict(doc=doc, name=name, box=None, material=None, changes=done, t_save=t_save, volume=None, fits=[], R=None,
                 radii={}, items=made)
 
 
 def _centre(o):
-    b = o.boundingBox
+    """The occurrence's centre in the machine, mm, from its body (an occurrence's own box comes back empty for the
+    stops' pieces)."""
+    b = o.bRepBodies.item(0).boundingBox if o.bRepBodies.count else o.boundingBox
     return [(b.minPoint.x + b.maxPoint.x) * 5, (b.minPoint.y + b.maxPoint.y) * 5, (b.minPoint.z + b.maxPoint.z) * 5]
 
 
@@ -537,12 +557,14 @@ def draw(spec, where, outdir, RS, annotate=True):
 
 # ---------- each sheet's symbols, its curves found by their geometry ----------
 GC = D.GeometricCharacteristicTypes
-# What the API was seen to place without stopping Fusion's drawing command (Fusion 2706.1.17): a datum identifier on a
-# line whose middle no other entity passes through, and the requirement table. A profile frame stops the command (its
-# keyword refused); a datum on an end face whose middle is on the axis's centre line stops it too (two objects at the
-# point: 'Next/Accept' asked, the API's next input refused). Dimensions and the other frames wait for a test watched in
-# the window; until then their values are rows of the table.
-ENABLED = {'datum', 'table'}
+# What the API was seen to place without stopping Fusion's drawing command (Fusion 2706.1.17, tested 4 Nov 2026 one
+# call at a time): diameter and linear dimensions, a position frame with the diameter sign and (M), a parallelism frame,
+# a datum identifier on a line whose middle no other entity passes through, and the requirement table. The API picks a
+# curve at its middle. A profile frame stops the command (its keyword refused). A datum on the spacer's end face stops
+# it whatever the leader: with the axis's centre line through the face's middle Fusion asks 'Next/Accept'; on a sheet
+# made without centre lines it waits for a leader point the API does not send, or attaches early and refuses the next
+# point. So the spacer's datum and its parallelism stay rows of its table, and so do the segment's profiles.
+ENABLED = {'datum', 'table', 'dims', 'frames'}
 
 
 def _views(sheet):
@@ -558,7 +580,7 @@ def _table(sheet, spec, ctx):
     return rows
 
 
-def _near(a, b, tol):
+def _close(a, b, tol):
     return abs(a - b) < tol
 
 
@@ -567,21 +589,27 @@ def sheet_bracket(sheet, spec, ctx):
     s, b = ctx['s'], DD.bracket()
     face = side = None
     for v in _views(sheet):
-        holes = [c for c in rounds(v) if _near(c['r'], b['H'] / 2 * s, 0.05)]
+        holes = [c for c in rounds(v) if _close(c['r'], b['H'] / 2 * s, 0.05)]
         if len(holes) == 2:
             face, hs = v, sorted(holes, key=lambda c: c['k'][1])
-        elif any(_near(c['len'], 70.0 * s, 0.1) for c in lines(v)):
+        elif any(_close(c['len'], 70.0 * s, 0.1) for c in lines(v)):
             side = v
     lo, hi = hs
     x0, y0, x1, y1 = box(face)
     if 'dims' in ENABLED:
         dia(sheet, hi, (hi['k'][0] + 18 * s, y1 + 14))
-        linear(sheet, lo['k'], hi['k'], (x1 + 12, (lo['k'][1] + hi['k'][1]) / 2 - 12), aligned=True)
+        # the pitch between the centres (an aligned dimension takes points of the view's curves, not of the sheet),
+        # its line 17 mm off the centres' line on the side away from the lug: past the lug's edge, inside the foot
+        dx, dy = hi['k'][0] - lo['k'][0], hi['k'][1] - lo['k'][1]
+        n = math.hypot(dx, dy)
+        mx, my = (lo['k'][0] + hi['k'][0]) / 2, (lo['k'][1] + hi['k'][1]) / 2
+        sheet.drawingDimensions.addLinearDimension(lo['c'].centerPoint, hi['c'].centerPoint,
+                                                   P2(mx + 17 * s * dy / n, my - 17 * s * dx / n), True)
     if 'frames' in ENABLED:
-        frame_on(sheet, lo, GC.PositionGeometricCharacteristicType, '%.1f' % b['t'], ['A'], (x0 - 4, y0 - 16),
-                 on=(lo['k'][0] - lo['r'] * 0.7, lo['k'][1] - lo['r'] * 0.7), diameter=True, mmc=True)
+        frame_on(sheet, lo, GC.PositionGeometricCharacteristicType, '%.1f' % b['t'], ['A'], (x0 - 4, y0 - 24),
+                 on=lo['s'], diameter=True, mmc=True)
     sx0, sy0, sx1, sy1 = box(side)
-    cands = [c for c in lines(side) if _near(c['len'], 70.0 * s, 0.1)]
+    cands = [c for c in lines(side) if _close(c['len'], 70.0 * s, 0.1)]
     rc = rounds(side)
     cx = sum(c['k'][0] for c in rc) / len(rc) if rc else (sx0 + sx1) / 2
     bolting = max(cands, key=lambda c: abs(c['mid'][0] - cx))          # the face farthest from the lug
@@ -609,7 +637,7 @@ def sheet_segment(sheet, spec, ctx):
                 five.append(c)
     sil = max(five, key=lambda c: math.hypot(c['e'][0] - c['s'][0], c['e'][1] - c['s'][1]))
     ends = [sil['s'], sil['e']]
-    tops = [c for c in lines(v) if abs(c['ang'] - 90.0) < 1.0 and any(_near(c['s'][0], p[0], 0.05) and
+    tops = [c for c in lines(v) if abs(c['ang'] - 90.0) < 1.0 and any(_close(c['s'][0], p[0], 0.05) and
             min(abs(c['s'][1] - p[1]), abs(c['e'][1] - p[1])) < 0.05 for p in ends)]
     top = min(tops, key=lambda c: c['len'])                              # the short one: the top face, not the foot
     x0, y0, x1, y1 = box(v)
@@ -627,12 +655,12 @@ def sheet_spacer(sheet, spec, ctx):
     s, sp = ctx['s'], DD.spacer()
     for v in _views(sheet):
         rs = rounds(v)
-        bore = [c for c in rs if c['type'] == D.ViewCurveTypes.CircleViewCurveType and _near(c['r'], sp['d_in'] / 2 * s, 0.05)]
+        bore = [c for c in rs if c['type'] == D.ViewCurveTypes.CircleViewCurveType and _close(c['r'], sp['d_in'] / 2 * s, 0.05)]
         if bore:
             if 'dims' in ENABLED:
                 dia(sheet, bore[0], (bore[0]['k'][0] + 0.75 * bore[0]['r'], bore[0]['k'][1] - 0.2 * bore[0]['r']))
         elif 'end faces' in ENABLED:
-            ends = [c for c in curves(v) if c['s'] and c['e'] and _near(c['s'][0], c['e'][0], 1e-3)
+            ends = [c for c in curves(v) if c['s'] and c['e'] and _close(c['s'][0], c['e'][0], 1e-3)
                     and abs(c['s'][1] - c['e'][1]) > sp['d_out'] * s * 0.9]
             if len(ends) == 2:
                 left, right = sorted(ends, key=lambda c: c['s'][0])
@@ -653,7 +681,7 @@ def sheet_fitting(sheet, spec, ctx):
     n = 0
     for v in _views(sheet):
         for c in rounds(v):
-            if c['type'] == D.ViewCurveTypes.CircleViewCurveType and _near(c['r'], f['D'] / 2 * s, 0.05):
+            if c['type'] == D.ViewCurveTypes.CircleViewCurveType and _close(c['r'], f['D'] / 2 * s, 0.05):
                 if 'dims' in ENABLED:
                     dia(sheet, c, (c['k'][0] + 1.6 * c['r'], c['k'][1] + 1.6 * c['r']))
                     n += 1
@@ -681,7 +709,7 @@ def sheet_disc(sheet, spec, ctx):
     if bores:
         d = bores[0]['d']
         for v in _views(sheet):
-            cs = [c for c in rounds(v) if _near(c['r'], d / 2 * s, 0.05)]
+            cs = [c for c in rounds(v) if _close(c['r'], d / 2 * s, 0.05)]
             if cs:
                 c = cs[0]
                 if 'dims' in ENABLED:
