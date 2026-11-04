@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 65: the bag gripper through Boothroyd and Dewhurst's test for unnecessary parts: every piece answered and coloured in the model, the theoretical minimum and the design efficiency; then the three fixings the test found missing (tines welded to their tubes, end blocks one with the end plates, the brackets screwed), checked for interference."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "DesignForAssembly"
+}
