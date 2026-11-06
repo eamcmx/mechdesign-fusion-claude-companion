@@ -1,0 +1,32 @@
+# study_parts_check
+# Autodesk Fusion 2706.1.17, run 2026-11-06 21:44, 6 s
+
+StudyParts 1.0 (2026-11-06)
+  ok   Run opens the dialog
+Study part cantilever: 40000.0 mm3, Steel, 6 faces, 0.3140 kg; faces to pick fixed found, load found
+
+[StudyParts 1.0 (2026-11-06)]
+  OK pressed, built in 1 s
+  ok   a new design opened
+  ok   the six parts built: bracket_r25, bracket_sharp, cantilever, keyseat, lug, tine
+  ok   cantilever: 40000.0 mm3 in the model, 40000.0 by hand (0.0000 %)
+  ok   cantilever: Steel, 6 faces
+  ok   cantilever: faces to pick fixed found, load found
+  ok   keyseat: 105319.1 mm3 in the model, 105319.4 by hand (-0.0003 %)
+  ok   keyseat: Steel, 12 faces
+  ok   keyseat: faces to pick fixed found, load found, bottom found
+  ok   tine: 126250.0 mm3 in the model, 126250.0 by hand (0.0000 %)
+  ok   tine: Steel, 8 faces
+  ok   tine: faces to pick fixed found
+  ok   bracket_sharp: 86448.0 mm3 in the model, 86448.0 by hand (0.0000 %)
+  ok   bracket_sharp: Steel, 11 faces
+  ok   bracket_sharp: faces to pick fixed found, load found
+  ok   bracket_r25: 86582.8 mm3 in the model, 86581.5 by hand (0.0015 %)
+  ok   bracket_r25: Steel, 15 faces
+  ok   bracket_r25: faces to pick fixed found, load found
+  ok   lug: 68709.6 mm3 in the model, 68709.6 by hand (-0.0000 %)
+  ok   lug: Aluminum 7075, 7 faces
+  ok   lug: faces to pick fixed found, load found
+  ok   the tine weighs 0.9911 kg
+  ok   refused: No part crane: the parts are cantilever, keyseat, tine, bracket_sharp, bracket_r25, lug.
+ALL PASS

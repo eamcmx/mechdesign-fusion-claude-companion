@@ -1,0 +1,39 @@
+Write a Fusion Python script that, when run, builds one of the parts the Simulation studies of Chapters 58, 59 and 62
+are run on, each in a new design of its own as one body with its material, and prints the faces each study picks, so
+that the designer sets the study up in the Simulation window on a part whose every size the hand calculation also uses.
+
+INPUTS (a command dialog, with this default):
+- the part: one of the six (cantilever, keyseat, tine, bracket_sharp, bracket_r25, lug), cantilever
+
+DERIVED (never typed):
+- lib/fea_studies.py: each part's sizes, the hand calculations the studies are set against, and each part's volume
+  worked out by hand
+- lib/bag_gripper.py (the tine's leg and foot), lib/range_sweep.py (the opening stop bracket's arm and foot),
+  lib/fatigue_detail.py (the long stub's keyseat), lib/flap_design.py (the spar fitting's lug), through fea_studies
+
+HARD CONSTRAINTS:
+- One body in the root component, its material from Fusion's material library: Steel for the five steel parts,
+  Aluminum 7075 for the lug.
+- The cantilever 200 x 20 x 10 along x from x = 0, its 10 mm depth along z.
+- The keyseat: the 30 mm stub, 150 long along x, with a DIN 6885 form A keyseat 8 wide, 4 deep and 25 long at its
+  middle, its round ends cut by the end mill, its floor's four edges rounded to r/d = 0.02, 0.6 mm.
+- The tine as it hangs from the jaw: its leg 250 long, 25 along y and 10 along x, its top at z = -230; its foot
+  255 along y and 25 deep under the leg's lower end.
+- The bracket: the foot 12 thick and 70 square, the arm 24 square and 48 long from the foot's face to the push;
+  bracket_sharp with the root sharp, bracket_r25 with the drawing's 2.5 mm fillet all round the arm's root.
+- The lug: 12 thick, 55 wide, its eye's end round on the hole's centre with radius 27.5, the hole 35 across for the
+  GE 20 ES's outer ring, its shank 100 long to the spar.
+- Each part's faces for its study found on the body and printed: the fixed face, and the face the load goes on.
+- Save nothing; refuse a part that is not one of the six.
+
+FUSION CONVENTIONS:
+- a new design document (FusionDesignDocumentType), parametric, the body made from temporary bodies in a base feature
+  and the fillets as fillet features on its edges; no joints and no as-built joints, the part is one body; lengths
+  in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives the part, its volume, its material, its faces, its mass, the faces to pick found, and a version tag.
+- Each part's volume within 0.01 % of the hand volume in lib/fea_studies.py.
+- The keyseat's floor fillets present: the body has 12 faces; the bracket's root fillets: 15 faces.
+- Every face to pick found on the body with its outward normal.
+- Refused: a part called crane.

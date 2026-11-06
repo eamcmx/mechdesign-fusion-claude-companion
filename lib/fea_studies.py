@@ -15,8 +15,6 @@ The beam's natural frequencies: Euler-Bernoulli, f_n = (beta_n L)^2 / (2 pi L^2)
 """
 import math
 
-import numpy as np
-
 E_ST, NU_ST, RHO_ST = 210000.0, 0.3, 7850e-9          # MPa, -, kg/mm^3 (Fusion's 'Steel')
 BETA_L = (1.8751, 4.6941, 7.8548)
 
@@ -78,6 +76,7 @@ TINE = dict(leg=(250.0, 25.0, 10.0), foot=(255.0, 25.0, 10.0), offset=(-115.0, -
 def tine_modes():
     """The leg as a cantilever (its consistent mass), the foot a rigid body at its end: in the leg's plane two degrees
     of freedom (the end's sideways move and its slope); out of it three (the move, the slope, the leg's twist), Hz."""
+    import numpy as np
     L, a, b = [v * 1e-3 for v in TINE['leg']]
     Ly, Lz, Lx = [v * 1e-3 for v in TINE['foot']]
     ry, rz = [v * 1e-3 for v in TINE['offset']]
@@ -134,6 +133,47 @@ def lug():
     s0 = k['P'] / ((k['w'] - k['d']) * k['t'])
     return dict(sigma0=s0, bearing=k['P'] / (k['d'] * k['t']), d_over_w=k['d'] / k['w'], h_over_w=k['h'] / k['w'],
                 peak=k['Kt'] * s0)
+
+
+def _spandrel(r):
+    """A concave fillet's cross-section, a square r x r less a quarter disc: its area and its centroid's distance
+    from either face."""
+    A = (1 - math.pi / 4) * r * r
+    return A, r * (10 - 3 * math.pi) / (12 - 3 * math.pi)
+
+
+def keyseat_volume(n=4000):
+    """The keyseat part, mm^3: the 30 x 150 stub less the end-mill keyseat (a slot 8 x 25 with round ends, its floor
+    11 mm above the axis, open to the round surface), the floor's fillet r 0.6 added back (Pappus on its spandrel)."""
+    k = KEYSEAT
+    R, half, rr = k['d'] / 2, k['b'] / 2, k['b'] / 2
+    zf = R - k['t1']
+    straight = k['L'] - k['b']                          # 17: between the round ends' centres
+    cut = 0.0
+    dy = 2 * half / n
+    for i in range(n):                                  # across the slot: the slot's length at y, its depth to the round
+        y = -half + (i + 0.5) * dy
+        length = straight + 2 * math.sqrt(rr * rr - y * y)
+        cut += length * (math.sqrt(R * R - y * y) - zf) * dy
+    A, c = _spandrel(k['r'])
+    fil = A * (2 * straight + 2 * math.pi * (rr - c))
+    return math.pi * R * R * 150.0 - cut + fil
+
+
+def bracket_volume(r=None):
+    """The bracket part, mm^3: the foot 12 x 70 x 70 and the arm 24 x 24 x 48, with the root fillet r all round the
+    arm (four straight runs of 24 and, at the arm's four edges, the spandrel turned through a quarter round)."""
+    v = 12 * 70 * 70 + 24 * 24 * 48.0
+    if r:
+        A, c = _spandrel(r)
+        v += A * 4 * 24 + 4 * A * (math.pi / 2) * c
+    return v
+
+
+VOLUMES = dict(cantilever=200 * 20 * 10.0, tine=250 * 25 * 10 + 255 * 25 * 10.0, bracket_sharp=bracket_volume(),
+               bracket_r25=bracket_volume(BRACKET['r']),
+               lug=100 * 55 * 12 + math.pi * 27.5 ** 2 / 2 * 12 - math.pi * 17.5 ** 2 * 12)
+VOLUMES['keyseat'] = keyseat_volume()
 
 
 if __name__ == '__main__':
