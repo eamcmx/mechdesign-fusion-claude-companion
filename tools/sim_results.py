@@ -14,7 +14,8 @@ and solved in the cloud, and its results are read here from the folder Fusion ke
 
 Result ids (found on a cantilever whose answers are known, 6 November 2026): 1 von Mises (Pa); 2 displacement
 (x, y, z in m; summary ids 3, 4, 5 its parts, 2 its size); 6, 7, 8 the principal stresses 1, 2, 3; 9, 10, 11 the
-normal stresses xx, yy, zz; 12, 13, 14 the shear stresses; 57 the safety factor; 58 to 63 the strains.
+normal stresses xx, yy, zz; 12, 13, 14 the shear stresses; 57 the safety factor; 58 to 63 the strains; 123 the
+reaction force at each node (x, y, z in N), zero at every node not held.
 
     python tools/sim_results.py [results folder]       the newest solve if no folder is given: its summary
 """
@@ -129,6 +130,18 @@ def at(folder, cid, p, box, axis=0, body=0, point=0, sub=None):
         return float(w.mean()), int(s.sum())
     b, a = np.polyfit(t, w, 1)
     return float(a + b * p[axis]), int(s.sum())
+
+
+def reactions(folder, box, about=(0.0, 0.0, 0.0), body=0):
+    """The reaction force (N) and moment (N mm, about the point given in mm) the constrained nodes inside box carry:
+    result 123 holds each node's reaction, zero at every node not held."""
+    xyz = nodes(folder, body) * 1000.0
+    v = values(folder, 123, body)
+    s = np.ones(len(xyz), bool)
+    for i, (lo, hi) in enumerate(box):
+        s &= (xyz[:, i] >= lo) & (xyz[:, i] <= hi)
+    r = xyz[s] - np.array(about)
+    return v[s].sum(axis=0), np.cross(r, v[s]).sum(axis=0), int(s.sum())
 
 
 def peak(folder, cid, body=0, point=0):

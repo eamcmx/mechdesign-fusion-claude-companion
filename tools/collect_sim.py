@@ -68,6 +68,8 @@ def cantilever(f):
         v, n = S.at(f, 9, (X, 0, 10), ((X - 2.6, X + 2.6), (-10, 10), (9.99, 10.01)))
         o['sxx_top_%d' % X] = v / 1e6
     o['tip_dz'] = S.probe(f, 2, ((199.99, 200.01), (-10, 10), (0, 10)))[1][2] * 1e3
+    F, M, n = S.reactions(f, ((-0.001, 0.001), (-11, 11), (-1, 11)))
+    o['reaction_F'], o['reaction_M'] = list(F), list(M)
     v, x, y, z = S.peak(f, 1)
     o['peak_at'] = [x, y, z]
     return o
@@ -80,8 +82,9 @@ def keyseat(f):
     i = np.where(ks)[0][np.argmax(tm[ks])]
     r = np.hypot(xyz[:, 1], xyz[:, 2])
     sel = (abs(r - 15) < 0.01) & (((xyz[:, 0] > 20) & (xyz[:, 0] < 40)) | ((xyz[:, 0] > 110) & (xyz[:, 0] < 130)))
+    F, M, n = S.reactions(f, ((-0.001, 0.001), (-16, 16), (-16, 16)))
     return dict(tau_keyseat=tm[i] / 1e6, tau_keyseat_at=list(xyz[i]), tau_nominal=float(tm[sel].mean()) / 1e6,
-                Kts=float(tm[i] / tm[sel].mean()))
+                Kts=float(tm[i] / tm[sel].mean()), reaction_F=list(F), reaction_M=list(M))
 
 
 def bracket(f):
