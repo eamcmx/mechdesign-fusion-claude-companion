@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapters 58, 59 and 62: the parts the Simulation studies run on, each in its own design with its material: the calibration cantilever, the long stub's keyseat, a tine, the opening stop bracket sharp and with its 2.5 mm root, and a spar-fitting lug."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "StudyParts"
+}

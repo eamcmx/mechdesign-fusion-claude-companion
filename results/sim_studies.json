@@ -1,0 +1,353 @@
+[
+ {
+  "guid": "b6e2bab0-5775-45f2-a92b-48e298c65bbb",
+  "design": "Ch58 test cantilever",
+  "study": "Study 1 - Static Stress",
+  "mesh": "4 mm",
+  "nodes": 5555,
+  "folder": "/Sim/b2464da50d0c5ceaa43f05f67af8be85/SimResultsGuid/b6e2bab0-5775-45f2-a92b-48e298c65bbb",
+  "vm_max": 57.168148,
+  "disp_max": 0.75770317,
+  "sxx_top_20": 54.000462873271154,
+  "sxx_top_50": 45.001563382914256,
+  "sxx_top_100": 30.006156868471443,
+  "sxx_top_150": 15.001575761783831,
+  "tip_dz": -0.75715596110306,
+  "peak_at": [
+   5.789620336145163,
+   7.782963570207357,
+   0.0
+  ]
+ },
+ {
+  "guid": "714a7421-0e98-43c5-8870-fb74abdb6813",
+  "design": "Ch58 test cantilever",
+  "study": "Study 1 - Static Stress",
+  "mesh": "2 mm",
+  "nodes": 46431,
+  "folder": "/Sim/b2464da50d0c5ceaa43f05f67af8be85/SimResultsGuid/714a7421-0e98-43c5-8870-fb74abdb6813",
+  "vm_max": 61.940636,
+  "disp_max": 0.7586603599999999,
+  "sxx_top_20": 53.999835420245255,
+  "sxx_top_50": 44.99936259047617,
+  "sxx_top_100": 29.998860609523813,
+  "sxx_top_150": 14.998148552380965,
+  "tip_dz": -0.7581115026002774,
+  "peak_at": [
+   0.0,
+   9.999999776482582,
+   0.0
+  ]
+ },
+ {
+  "guid": "ae401cba-959f-4f46-8316-081ce3cc2e55",
+  "design": "Ch58 test cantilever",
+  "study": "Study 1 - Static Stress",
+  "mesh": "1 mm",
+  "nodes": 345261,
+  "folder": "/Sim/b2464da50d0c5ceaa43f05f67af8be85/SimResultsGuid/ae401cba-959f-4f46-8316-081ce3cc2e55",
+  "vm_max": 77.04668,
+  "disp_max": 0.75885765,
+  "sxx_top_20": 54.00483811060327,
+  "sxx_top_50": 44.9999296965917,
+  "sxx_top_100": 29.999907997139914,
+  "sxx_top_150": 15.000007778337054,
+  "tip_dz": -0.7583087628072347,
+  "peak_at": [
+   0.0,
+   -9.999999776482582,
+   0.0
+  ]
+ },
+ {
+  "guid": "3ae9e6d4-a1be-4440-919e-a360820fad18",
+  "design": "Ch58 test cantilever",
+  "study": "Study 2 - Modal Frequencies",
+  "mesh": "2 mm",
+  "nodes": 46431,
+  "folder": "/Sim/b2853055df8ecce591d7cae5138182dd/SimResultsGuid/3ae9e6d4-a1be-4440-919e-a360820fad18",
+  "modes": [
+   {
+    "f": 209.41521,
+    "mx": 0.0,
+    "my": 0.0,
+    "mz": 0.61183602
+   },
+   {
+    "f": 415.75641,
+    "mx": 0.0,
+    "my": 0.61235797,
+    "mz": 0.0
+   },
+   {
+    "f": 1297.205,
+    "mx": 0.0,
+    "my": 0.0,
+    "mz": 0.18925799
+   },
+   {
+    "f": 2493.533,
+    "mx": 0.0,
+    "my": 0.192562,
+    "mz": 0.0
+   },
+   {
+    "f": 2990.728,
+    "mx": 0.0,
+    "my": 0.0,
+    "mz": 0.0
+   },
+   {
+    "f": 3568.614,
+    "mx": 0.0,
+    "my": 0.0,
+    "mz": 0.065610997
+   },
+   {
+    "f": 6479.4102,
+    "mx": 0.80657703,
+    "my": 0.00017,
+    "mz": 0.0
+   },
+   {
+    "f": 6823.7642,
+    "mx": 8e-06,
+    "my": 0.00039900001,
+    "mz": 0.033799
+   }
+  ]
+ },
+ {
+  "guid": "d86bfd63-cf80-421b-b8bc-23fb413255ff",
+  "design": "Ch58 keyseat",
+  "study": "Study 1 - Static Stress",
+  "mesh": "3 mm, turn angle 30 deg, minimum 10 %",
+  "nodes": 70820,
+  "folder": "/Sim/5593e8b347659e67f8c93f99471807e8/SimResultsGuid/d86bfd63-cf80-421b-b8bc-23fb413255ff",
+  "vm_max": 78.622156,
+  "disp_max": 0.035084093,
+  "tau_keyseat": 42.515326,
+  "tau_keyseat_at": [
+   77.84940302371979,
+   -3.7233037874102592,
+   11.102382093667984
+  ],
+  "tau_nominal": 17.97990937946429,
+  "Kts": 2.3646017954105365
+ },
+ {
+  "guid": "eb65df8a-bbac-4d7a-817e-0251c42ab613",
+  "design": "Ch58 keyseat",
+  "study": "Study 1 - Static Stress",
+  "mesh": "3 mm; floor and fillets 0.3 mm",
+  "nodes": 93959,
+  "folder": "/Sim/5593e8b347659e67f8c93f99471807e8/SimResultsGuid/eb65df8a-bbac-4d7a-817e-0251c42ab613",
+  "vm_max": 78.622402,
+  "disp_max": 0.035083853000000005,
+  "tau_keyseat": 40.92303,
+  "tau_keyseat_at": [
+   80.10834455490112,
+   -3.680838504806161,
+   11.069783009588718
+  ],
+  "tau_nominal": 17.97988067825112,
+  "Kts": 2.2760456942020446
+ },
+ {
+  "guid": "54acb8ac-e64b-455a-9f47-e2bb3d04e61c",
+  "design": "Ch58 keyseat",
+  "study": "Study 1 - Static Stress",
+  "mesh": "3 mm; floor and fillets 0.2 mm",
+  "nodes": 165743,
+  "folder": "/Sim/5593e8b347659e67f8c93f99471807e8/SimResultsGuid/54acb8ac-e64b-455a-9f47-e2bb3d04e61c",
+  "vm_max": 78.622452,
+  "disp_max": 0.035084635,
+  "tau_keyseat": 40.758502,
+  "tau_keyseat_at": [
+   75.95272362232208,
+   3.6736344918608665,
+   11.066029779613018
+  ],
+  "tau_nominal": 17.979866605381165,
+  "Kts": 2.2668967959863204
+ },
+ {
+  "guid": "be10300e-ecda-431a-a5b1-0d60bfcc5935",
+  "design": "Ch59 tine",
+  "study": "Study 1 - Modal Frequencies",
+  "mesh": "2 mm",
+  "nodes": 150579,
+  "folder": "/Sim/3db349f3a25b1e930edd272c79105457/SimResultsGuid/be10300e-ecda-431a-a5b1-0d60bfcc5935",
+  "modes": [
+   {
+    "f": 45.224621,
+    "mx": 0.6487,
+    "my": 0.0,
+    "mz": 0.0
+   },
+   {
+    "f": 108.8632,
+    "mx": 0.0,
+    "my": 0.42458099,
+    "mz": 0.15223201
+   },
+   {
+    "f": 122.4139,
+    "mx": 0.120884,
+    "my": 0.0,
+    "mz": 0.0
+   },
+   {
+    "f": 305.97449,
+    "mx": 0.0,
+    "my": 0.36972699,
+    "mz": 0.176125
+   },
+   {
+    "f": 560.68549,
+    "mx": 0.098632999,
+    "my": 0.0,
+    "mz": 0.0
+   },
+   {
+    "f": 852.29633,
+    "mx": 0.017851001,
+    "my": 0.0,
+    "mz": 0.0
+   },
+   {
+    "f": 1428.384,
+    "mx": 0.0,
+    "my": 0.062029,
+    "mz": 0.033294
+   },
+   {
+    "f": 1607.996,
+    "mx": 0.027493,
+    "my": 0.0,
+    "mz": 0.0
+   }
+  ]
+ },
+ {
+  "guid": "4ef07d8c-6fb3-4192-9c2b-38ec5469d5d9",
+  "design": "Ch62 bracket sharp",
+  "study": "Study 1 - Static Stress",
+  "mesh": "2 mm, adaptive 3 passes",
+  "nodes": 118538,
+  "folder": "/Sim/1c048f41901c1052467e6cfa7c02d54f/SimResultsGuid/4ef07d8c-6fb3-4192-9c2b-38ec5469d5d9",
+  "vm_max": 366.40679,
+  "disp_max": 0.022922845,
+  "passes_vm": [
+   130.35362,
+   193.38589,
+   260.5529,
+   366.40679
+  ],
+  "peak_at": [
+   0.1250000059371814,
+   -12.000000104308128,
+   -12.000000104308128
+  ],
+  "sxx_pp_12": 47.05477212632003,
+  "sxx_mm_12": -47.03838279219,
+  "sxx_mp_12": 0.0014589814742579984,
+  "sxx_pm_12": -0.004432632716090811,
+  "sxx_p0_12": 23.92049697941391,
+  "sxx_m0_12": -22.35718868032152,
+  "sxx_pp_24": 31.965247606236307,
+  "sxx_mm_24": -31.96397760628743,
+  "sxx_mp_24": 0.0011269917207859285,
+  "sxx_pm_24": -0.003907525673032782,
+  "sxx_p0_24": 16.45712015208758,
+  "sxx_m0_24": -15.745289095599636
+ },
+ {
+  "guid": "b81c055e-fe8e-4baa-9733-e26dee04b05c",
+  "design": "Ch62 bracket r2.5",
+  "study": "Study 1 - Static Stress",
+  "mesh": "2 mm, adaptive 3 passes",
+  "nodes": 99055,
+  "folder": "/Sim/c3bfdc3bfd779f582ea91f42be180ee6/SimResultsGuid/b81c055e-fe8e-4baa-9733-e26dee04b05c",
+  "vm_max": 161.0693,
+  "disp_max": 0.021716869,
+  "passes_vm": [
+   129.20862,
+   158.87468,
+   155.1566,
+   161.0693
+  ],
+  "peak_at": [
+   1.8925495678558946,
+   -12.07492221146822,
+   -12.07492221146822
+  ],
+  "sxx_pp_12": 47.10905043097755,
+  "sxx_mm_12": -47.111311356134905,
+  "sxx_mp_12": -0.013529857651342405,
+  "sxx_pm_12": 0.013260625455354457,
+  "sxx_p0_12": 21.598305107218515,
+  "sxx_m0_12": -21.59749960124682,
+  "sxx_pp_24": 31.919319506335228,
+  "sxx_mm_24": -31.920974539717303,
+  "sxx_mp_24": -2.3941514821235613e-05,
+  "sxx_pm_24": -0.00031613497766417274,
+  "sxx_p0_24": 16.368895980288944,
+  "sxx_m0_24": -16.635152782702367
+ },
+ {
+  "guid": "c8b13c98-4d3b-40d2-9504-875dad92c19f",
+  "design": "Ch62 lug",
+  "study": "Study 1 - Static Stress",
+  "mesh": "2 mm, adaptive 3 passes",
+  "nodes": 99971,
+  "folder": "/Sim/4646c90aed8d09ae97180fd3166b1967/SimResultsGuid/c8b13c98-4d3b-40d2-9504-875dad92c19f",
+  "vm_max": 187.09889,
+  "disp_max": 0.11243793,
+  "passes_vm": [
+   184.14517,
+   186.1512,
+   187.09889
+  ],
+  "s1_max": 192.273024,
+  "s1_at": [
+   5.156264174729586,
+   16.72312617301941,
+   5.487129557877779
+  ],
+  "net_sxx_mean": 44.37748186720322,
+  "shank_sxx_mean": 15.53599407404022
+ },
+ {
+  "guid": "c9d46a96-7f49-4094-926a-053ada48f511",
+  "design": "Ch62 bracket r2.5",
+  "study": "Study 2 - Static Stress, push along -y",
+  "mesh": "2 mm, adaptive 3 passes",
+  "nodes": 102112,
+  "folder": "/Sim/e13ebdbcdf22bcd837be599b8168ebec/SimResultsGuid/c9d46a96-7f49-4094-926a-053ada48f511",
+  "vm_max": 111.5374,
+  "disp_max": 0.020895397,
+  "passes_vm": [
+   90.99033,
+   111.80748,
+   111.5374
+  ],
+  "peak_at": [
+   2.0122742280364037,
+   -12.04803679138422,
+   -12.04803679138422
+  ],
+  "sxx_pp_12": 33.30726655040579,
+  "sxx_mm_12": -33.29895936074594,
+  "sxx_mp_12": -33.31095329651113,
+  "sxx_pm_12": 33.3217194720889,
+  "sxx_p0_12": 34.072214260819486,
+  "sxx_m0_12": -34.071552704301375,
+  "sxx_pp_24": 22.573392881053127,
+  "sxx_mm_24": -22.573434683478602,
+  "sxx_mp_24": -22.59184580893075,
+  "sxx_pm_24": 22.591788160442153,
+  "sxx_p0_24": 22.72521371529958,
+  "sxx_m0_24": -22.725355460474542
+ }
+]
