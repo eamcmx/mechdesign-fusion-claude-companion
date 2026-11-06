@@ -16,10 +16,10 @@ EDITS = ()                                  # a control replaces this with its o
 def run(_context):
     ns = fc.load(PATH, EDITS)
     print(ns['VERSION'])
+    lib = DF.bag_test()                     # the lib's answers before the script runs: a control's edit stays in it
+    after = DF.redesign()
     fc.run_dialog(ns)
     r = ns['_last']
-    lib = DF.bag_test()
-    after = DF.redesign()
     b = r['before']
     fc.ok(b['N'] == lib['N'] == 114 and r['tagged'] == b['N'],
           'every piece answered in the model: %d tagged, %d read back, the lib %d' % (r['tagged'], b['N'], lib['N']))

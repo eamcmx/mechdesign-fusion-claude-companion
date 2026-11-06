@@ -20,8 +20,8 @@ EDITS = [("    tagged = tag(des, occ, lines0)\n",
 def run(_context):
     comp = CHECK.rsplit('/checks/', 1)[0]
     src = open(CHECK, encoding='utf-8').read().replace('__' + 'COMPANION' + '__', comp)
+    src = src.replace("'results', 'dfa.json'", "'results', 'dfa_control.json'")      # before the edits go in
     src = src.replace("EDITS = ()", "EDITS = %r" % (EDITS,))
-    src = src.replace("'results', 'dfa.json'", "'results', 'dfa_control.json'")
     env = {'__name__': 'design_for_assembly_check_control'}
     exec(compile(src, CHECK, 'exec'), env)
     env['run'](_context)
