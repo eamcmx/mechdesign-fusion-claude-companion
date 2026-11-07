@@ -1,0 +1,40 @@
+# controls/study_assemblies_home_pose
+# Autodesk Fusion 2706.1.17, run 2026-11-08 00:46, 314 s
+
+StudyAssemblies 1.1 (2026-11-08)
+  ok   Run opens the dialog
+Study assembly stop:
+Stop bracket open 1: 1 bodies, Steel AISI 1045 225 ANLD, 99399.2 mm3
+Shock absorber DYSC-25-25-Y1F open 1: 1 bodies, Steel, 113835.2 mm3
+Lock nut DYSC-25-25-Y1F open 1: 1 bodies, Steel, 3109.2 mm3
+End plate 1: 1 bodies, Aluminum 6061, 3375875.2 mm3
+picks: load found, bolt 1 foot found, bolt 1 plate found, bolt 2 foot found, bolt 2 plate found, frame 1 found, frame 2 found, frame 3 found, frame 4 found
+
+[StudyAssemblies 1.1 (2026-11-08)]
+  OK pressed, built in 41 s
+  ok   a new design opened
+  ok   the five assemblies built: arms, fitting, hinge, stop, stop_diagonal
+  ok   arms: 27 parts, Fork plate 1 Steel AISI 1045 225 ANLD; Fork plate 2 Steel AISI 1045 225 ANLD; Hub boss J2 side Steel AISI 1045 225 ANLD; Hub boss J3 side Steel AISI 1045 225 ANLD; Balancer cross pin Q Steel AISI 1045 225 ANLD; Lower arm box Steel AISI 1020 107 HR; Elbow hub Steel AISI 1045 225 ANLD; Elbow pin Steel AISI 1045 225 ANLD; Upper arm cheek 1 Steel AISI 1020 107 HR; Upper arm cheek 2 Steel AISI 1020 107 HR; Bearing 32213 elbow 1 Steel; Bearing 32213 elbow 2 Steel; Yoke bulkhead Steel AISI 1020 107 HR; Upper arm box Steel AISI 1020 107 HR; Front fork cheek 1 Steel AISI 1020 107 HR; Front fork cheek 2 Steel AISI 1020 107 HR; Bearing 32213 wrist 1 Steel; Bearing 32213 wrist 2 Steel; Torque tube Steel AISI 1020 107 HR; Rear lever Steel AISI 1020 107 HR; Pin D Steel AISI 1045 225 ANLD; Wrist pin Steel AISI 1045 225 ANLD; Wrist hub Steel AISI 1045 225 ANLD; Wrist housing Steel AISI 1045 225 ANLD; RV-80N case J4 Steel; RV-80N output J4 Steel; Tool flange Steel AISI 1045 225 ANLD
+  ok   arms: every part the machine's own volume
+  FAIL arms: 3 picks found on a face
+  ok   fitting: 6 parts, Spar fitting Aluminum 7075; Bearing GE 20 ES fitting R Steel; Bearing GE 20 ES fitting L Steel; Trunnion R Steel AISI 4142 380 QT; Trunnion L Steel AISI 4142 380 QT; Rear spar web Aluminum 6061
+  ok   fitting: every part the machine's own volume
+  ok   fitting: 9 picks found on a face
+  ok   hinge: 6 parts, Hinge bracket R Aluminum 7075; Hinge rib R Aluminum 7075; Bearing GE 20 ES hinge R Steel; Hinge pin R Steel AISI 4142 380 QT; Hinge fitting Ro Aluminum 7075; Hinge fitting Ri Aluminum 7075
+  ok   hinge: every part the machine's own volume
+  ok   hinge: 7 picks found on a face
+  ok   stop: 4 parts, Stop bracket open 1 Steel AISI 1045 225 ANLD; Shock absorber DYSC-25-25-Y1F open 1 Steel; Lock nut DYSC-25-25-Y1F open 1 Steel; End plate 1 Aluminum 6061
+  ok   stop: every part the machine's own volume
+  ok   stop: 9 picks found on a face
+  ok   stop_diagonal: 4 parts, Stop bracket open 1 Steel AISI 1045 225 ANLD; Shock absorber DYSC-25-25-Y1F open 1 Steel; Lock nut DYSC-25-25-Y1F open 1 Steel; End plate 1 Aluminum 6061
+  ok   stop_diagonal: every part the machine's own volume
+  ok   stop_diagonal: 9 picks found on a face
+  ok   stop: the bracket 99399.2 mm3, by hand 99399.2, its arm turned
+  ok   stop_diagonal: the bracket 99541.2 mm3, by hand 99541.2, its arm on its diagonal
+  ok   fitting: the spar web patch 2369739.8 mm3, by hand 2369739.8
+  ok   the loads: the stop 2180.0 N along the absorber and the DYSC's 4000, the fitting 20848.4 N, the hinge 13956.0 N
+  FAIL arms: at q2 12.98, q3 -34.19 deg the tool flange spans x 1825.0 to 2075.0 and z 1890.0 to 1920.0, the flange at (2000.0, 1100.0)
+  ok   arms: 1000 N across the arms' plane at the flange's outer face, which the hand model gives 0.3153 mm (0.3086 at the flange's own point)
+  ok   refused: No assembly called crane: the assemblies are stop, stop_diagonal, fitting, hinge, arms.
+2 FAILED
+CONTROL: the arms at the robot's built pose; the arms' picks and tool flange lines above MUST fail, and they alone

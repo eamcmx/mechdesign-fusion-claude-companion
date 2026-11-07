@@ -73,9 +73,10 @@ TINE = dict(leg=(250.0, 25.0, 10.0), foot=(255.0, 25.0, 10.0), offset=(-115.0, -
 #   Ly x Lz x Lx, the foot's centre of mass from the leg's lower end (y, z)
 
 
-def tine_modes():
+def tine_modes(extra=0.0):
     """The leg as a cantilever (its consistent mass), the foot a rigid body at its end: in the leg's plane two degrees
-    of freedom (the end's sideways move and its slope); out of it three (the move, the slope, the leg's twist), Hz."""
+    of freedom (the end's sideways move and its slope); out of it three (the move, the slope, the leg's twist), Hz.
+    extra: kg carried on the foot as the foot carries its own (a share of the bag held on the feet)."""
     import numpy as np
     L, a, b = [v * 1e-3 for v in TINE['leg']]
     Ly, Lz, Lx = [v * 1e-3 for v in TINE['foot']]
@@ -83,7 +84,7 @@ def tine_modes():
     E, rho = E_ST * 1e6, RHO_ST * 1e9
     G = E / (2 * (1 + NU_ST))
     A = a * b
-    ml, mf = rho * A * L, rho * Lx * Ly * Lz
+    ml, mf = rho * A * L, rho * Lx * Ly * Lz + extra
     Ixx, Iyy, Izz = mf * (Ly ** 2 + Lz ** 2) / 12, mf * (Lx ** 2 + Lz ** 2) / 12, mf * (Lx ** 2 + Ly ** 2) / 12
 
     def kb(I):
@@ -168,6 +169,45 @@ def bracket_volume(r=None):
         A, c = _spandrel(r)
         v += A * 4 * 24 + 4 * A * (math.pi / 2) * c
     return v
+
+
+# ---- Chapter 59: the palletizer's arms sideways, and J1 ---------------------------------------------------------------
+def arms(n=200, at=None):
+    """The arms' sideways give at the flange by the unit-load method, as palletizer_links.lateral() takes it, split by
+    arm and by bending across against twist (m/N); at: the force's point (x, z) in m, the flange's if None. Then J1's
+    two inertias with Chapter 57's detailed bodies and RV-700N, the stiffness about J1 that keeps 5 Hz and the give it
+    allows."""
+    import palletizer_design as PD
+    import palletizer_links as PL
+    import mass_detail as MD
+    b = PD.brief()
+    hi = PD.waypoints(b)['hi']
+    q2, q3 = hi['q2'], hi['q3']
+    pp = PL.pose_points(q2, q3)
+    fl = pp['fl'] if at is None else at
+    fr = PL.arm_frames(q2, q3)
+    parts = {}
+    for arm, root, Lm in (('lower', pp['A'], PD.LAYOUT['L2'] / 1000), ('upper', pp['B'], PD.LAYOUT['L3'] / 1000)):
+        ax, nn = fr[arm]
+        cb = ct = 0.0
+        for k in range(n):
+            s = (k + 0.5) / n * Lm
+            sec = PL.SECTIONS['fork'] if (arm == 'lower' and PL.S_HUB <= s < PL.S_FORK) else PL.SECTIONS[arm]
+            if arm == 'lower' and s < PL.S_HUB:
+                continue
+            Sx, Sz = root[0] + s * ax[0], root[1] + s * ax[2]
+            dx, dz = fl[0] - Sx, fl[1] - Sz
+            M = (-dz, 0.0, dx)
+            T, Ml = PL.dot(M, ax), PL.dot(M, nn)
+            cb += Ml * Ml / (PL.E_STEEL * sec['Ilat']) * Lm / n
+            ct += T * T / (PL.G_STEEL * sec['J']) * Lm / n
+        parts[arm] = dict(bending=cb, twist=ct)
+    c = sum(v['bending'] + v['twist'] for v in parts.values())
+    K700 = 1 / (1 / PL.rv_K('RV-700N') + 1 / 12e6)
+    lat = PL.lateral(bodies=MD.robot_bodies()[1], K_drive=K700, at=at)
+    need = PL.lateral_need(lat['K_drive'], lat['I1'], lat['I_tip'], 5.0)
+    return dict(q2=q2, q3=q3, fl=fl, parts=parts, c=c, give=c * 1e6, lateral=lat, k_need=need,
+                c_max=lat['R'] ** 2 / need, give_max=lat['R'] ** 2 / need * 1e6, margin=lat['R'] ** 2 / need / c)
 
 
 VOLUMES = dict(cantilever=200 * 20 * 10.0, tine=250 * 25 * 10 + 255 * 25 * 10.0, bracket_sharp=bracket_volume(),
