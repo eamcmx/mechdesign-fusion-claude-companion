@@ -9,13 +9,18 @@
 #             corner radius 2.5, the lug finished, the outline); the lug's M30 x 1.5, on an angle plate
 #   spacer    the rear axle's pinion spacer A01-016 (Chapter 61: ground to each axle), turned from 60 x 40 tube,
 #             0.8 mm long for the grinding
+#   tine      the bag gripper's tine P13-012, a flat L cut from 10 mm plate: its inside corner rounded, the sixteen
+#             nested on one plate by Fusion's Arrange (2D true shape), cut by the sample laser
+#   census()  every made kind of the nine machines measured in Fusion (its faces, their kinds, axes and areas, its
+#             smallest box), for lib/making.py to sort by the process that makes it
 # Checked by checks/making_check.py.
 #
 #   INPUTS        the dialog: the part
-#   DERIVED       lugs_brackets (the bracket's volume), drawings_detail (the spacer's grinding allowance), the machines
-#                 through RangeSweep.py, the change through StopBracket.py
+#   DERIVED       lugs_brackets (the bracket's volume), drawings_detail (the spacer's grinding allowance), making (the
+#                 tine's corner, the plate and the spacing), the machines through RangeSweep.py, the change through
+#                 StopBracket.py, the bills of materials through BillOfMaterials.py
 #   HARD RULES    every part copied from its machine's model; the tools from Fusion's sample libraries (one cutter
-#                 copied and given the root's corner radius); nothing saved but the NC programs
+#                 copied and given the root's corner radius); nothing saved but the NC programs and the census
 #   CONVENTIONS   a new design document per part; mm, the API's cm inside
 #   ACCEPTANCE    the message: the setups, their operations and toolpaths, the times, the NC files
 #
@@ -24,6 +29,8 @@
 import glob
 import importlib
 import importlib.util
+import io
+import json
 import math
 import os
 import sys
@@ -41,9 +48,11 @@ LIB = os.path.join(COMP, 'lib')
 if LIB not in sys.path:
     sys.path.insert(0, LIB)
 import drawings_detail as DD     # noqa: E402
+import making as MK              # noqa: E402
 
-VERSION = 'Making 1.0 (2026-11-07)'
-PARTS = ('bracket', 'spacer')
+VERSION = 'Making 1.1 (2026-11-07)'
+PARTS = ('bracket', 'spacer', 'tine')
+NUMBERS = dict(bracket=(661, 662, 663), spacer=(665,), tine=(667,))     # the NC programs' numbers, Fanuc's 1-9999
 NC = os.path.join(COMP, 'results', 'nc')
 FEED_SCALE, RAPID, TOOL_CHANGE = 100.0, 5000.0, 10.0      # % of the programmed feed, mm/min rapid, s a tool change
 _last = {}
@@ -79,7 +88,7 @@ def tool(lib, desc=None, kind=None, d=None):
         if desc is not None and p.itemByName('tool_description').value.value.strip() == desc:
             return t
         if kind is not None and p.itemByName('tool_type').value.value == kind and \
-                abs(p.itemByName('tool_diameter').value.value * 10 - d) < 1e-6:
+                (d is None or abs(p.itemByName('tool_diameter').value.value * 10 - d) < 1e-6):
             return t
     raise RuntimeError('no tool %s in the library' % (desc or '%s %g' % (kind, d)))
 
@@ -297,11 +306,200 @@ def spacer(notes):
                                                back=po.parameters.itemByName('backHeight_offset').value.value * 10.0)
 
 
+# ---------- the tine, cut from plate ----------
+def inside_corner(body):
+    """The L's inside corner: the straight edges along z whose ends lie inside the body's box in x and y (the five
+    outer corners sit on the box)."""
+    bb = body.boundingBox
+    out = []
+    for e in body.edges:
+        if e.geometry.curveType != adsk.core.Curve3DTypes.Line3DCurveType:
+            continue
+        a, b = e.startVertex.geometry, e.endVertex.geometry
+        if abs(a.x - b.x) > 1e-6 or abs(a.y - b.y) > 1e-6:
+            continue
+        if bb.minPoint.x + 1e-3 < a.x < bb.maxPoint.x - 1e-3 and bb.minPoint.y + 1e-3 < a.y < bb.maxPoint.y - 1e-3:
+            out.append(e)
+    return out
+
+
+def top_face(body):
+    return max((f for f in body.faces if f.geometry.surfaceType == adsk.core.SurfaceTypes.PlaneSurfaceType
+                and abs(f.centroid.z - body.boundingBox.maxPoint.z) < 1e-6), key=lambda f: f.area)
+
+
+def tine(notes):
+    tn = MK.TINE
+    tb, mat = take('bag', 'Tine 1 A')
+    # its own frame: the L in x-y (x along the foot, world y; y up the leg, world z), the plate's thickness on z
+    into_frame(tb, ((0, 1, 0), (0, 0, 1), (1, 0, 0)))
+    app = adsk.core.Application.get()
+    doc = app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
+    try:
+        doc.attributes.add('mdfc', 'run', 'Making')
+    except Exception:
+        pass
+    des = adsk.fusion.Design.cast(app.activeProduct)
+    des.designType = adsk.fusion.DesignTypes.ParametricDesignType
+    root = des.rootComponent
+    occ = root.occurrences.addNewComponent(adsk.core.Matrix3D.create())
+    comp = occ.component
+    comp.name = 'P13-012 Tine'
+    bf = comp.features.baseFeatures.add()
+    bf.startEdit()
+    comp.bRepBodies.add(tb, bf)
+    bf.finishEdit()
+    body = comp.bRepBodies.item(0)
+    lib = app.materialLibraries.itemByName('Fusion Material Library')
+    m = lib.materials.itemByName(mat) if mat else None
+    if m is not None:
+        body.material = m
+    sharp = dict(volume=body.volume * 1000.0, area=top_face(body).area * 100.0)
+    corner = inside_corner(body)
+    if tn['r'] > 0 and len(corner) == 1:
+        fi = comp.features.filletFeatures.createInput()
+        ec = adsk.core.ObjectCollection.create()
+        ec.add(corner[0])
+        fi.edgeSetInputs.addConstantRadiusEdgeSet(ec, adsk.core.ValueInput.createByString('%g mm' % tn['r']), True)
+        comp.features.filletFeatures.add(fi)
+    body = comp.bRepBodies.item(0)
+    top = top_face(body)
+    outline = sum(e.length for e in top.loops.item(0).edges) * 10.0 if top.loops.count == 1 else None
+    rounded = [f for f in body.faces if f.geometry.surfaceType == adsk.core.SurfaceTypes.CylinderSurfaceType]
+    # the sixteen: copies of the one component, arranged by Fusion on a plate
+    occs = [occ] + [root.occurrences.addExistingComponent(comp, adsk.core.Matrix3D.create()) for _ in range(tn['n'] - 1)]
+    ai = root.features.arrangeFeatures.createInput(adsk.fusion.ArrangeSolverTypes.Arrange2DTrueShapeSolverType)
+    for o in occs:
+        ai.arrangeComponents.add(o)
+    env = ai.setPlaneEnvelope(root.xYConstructionPlane, adsk.core.ValueInput.createByString('%g mm' % tn['plate'][0]),
+                              adsk.core.ValueInput.createByString('%g mm' % tn['plate'][1]))
+    env.objectSpacing = adsk.core.ValueInput.createByString('%g mm' % tn['spacing'])
+    env.frameWidth = adsk.core.ValueInput.createByString('%g mm' % tn['frame'])
+    arr = root.features.arrangeFeatures.add(ai)
+    stats = json.loads(arr.arrangeStatistics)['statistics']
+    copies = [o for o in root.allOccurrences if o.assemblyContext is not None and o.bRepBodies.count]
+    cut = [o.bRepBodies.item(0) for o in copies]
+    lo = [min(b.boundingBox.minPoint.x for b in cut), min(b.boundingBox.minPoint.y for b in cut)]
+    hi = [max(b.boundingBox.maxPoint.x for b in cut), max(b.boundingBox.maxPoint.y for b in cut)]
+    turns = sorted({round(math.degrees(math.atan2(o.transform2.getCell(1, 0), o.transform2.getCell(0, 0)))) % 360 for o in copies})
+    app.userInterface.workspaces.itemById('CAMEnvironment').activate()
+    cam = adsk.cam.CAM.cast(doc.products.itemByProductType('CAMProductType'))
+    si = cam.setups.createInput(adsk.cam.OperationTypes.JetOperation)
+    si.models = cut
+    s = cam.setups.add(si)
+    s.name = 'The sixteen on one plate'
+    for n, v in (('job_stockOffsetMode', "'simple'"), ('job_stockOffsetSides', '%g mm' % tn['frame']),
+                 ('job_stockOffsetTop', '0 mm'), ('job_stockOffsetBottom', '0 mm')):
+        setp(s.parameters, n, v, notes)
+    laser = tool(library('Cutting Tools (Metric)'), kind='laser cutter')
+
+    def sel_outlines(op):
+        cp = op.parameters.itemByName('contours').value
+        sels = cp.getCurveSelections()
+        fc = sels.createNewFaceContourSelection()
+        fc.inputGeometry = [top_face(b) for b in cut]
+        cp.applyCurveSelections(sels)
+    operation(s, 'jet2d', laser, select=sel_outlines, notes=notes)
+    tp = laser.parameters
+    return doc, cam, [s], 'jet', dict(
+        volume=body.volume * 1000.0, area=top.area * 100.0, outline=outline, sharp=sharp, corner_edges=len(corner),
+        rounded=[f.geometry.radius * 10.0 for f in rounded], material=body.material.name if body.material else None,
+        thickness=(body.boundingBox.maxPoint.z - body.boundingBox.minPoint.z) * 10.0, arranged=len(copies),
+        nest=[(hi[0] - lo[0]) * 10.0, (hi[1] - lo[1]) * 10.0], nest_lo=[lo[0] * 10.0, lo[1] * 10.0], turns=turns,
+        efficiency=stats['Actual Efficiency']['value'], unarranged=stats['Components Unarranged']['value'],
+        kerf=tp.itemByName('tool_kerfWidth').value.value * 10.0, feed=tp.itemByName('tool_feedCutting').value.value,   # mm/min (the NC's F)
+        pierce=tp.itemByName('tool_pierceTime').value.value)
+
+
+# ---------- the census: every made kind, measured ----------
+SURF = {adsk.core.SurfaceTypes.PlaneSurfaceType: 'plane', adsk.core.SurfaceTypes.CylinderSurfaceType: 'cylinder',
+        adsk.core.SurfaceTypes.ConeSurfaceType: 'cone', adsk.core.SurfaceTypes.SphereSurfaceType: 'sphere',
+        adsk.core.SurfaceTypes.TorusSurfaceType: 'torus', adsk.core.SurfaceTypes.EllipticalCylinderSurfaceType: 'elliptical',
+        adsk.core.SurfaceTypes.EllipticalConeSurfaceType: 'elliptical', adsk.core.SurfaceTypes.NurbsSurfaceType: 'nurbs'}
+
+
+def _v(p, k=1.0):
+    return [round(p.x * k, 5), round(p.y * k, 5), round(p.z * k, 5)]
+
+
+def body_facts(body):
+    """A body's faces (kind, area mm2; a plane's normal and a point on it; a surface of revolution's axis, a point on
+    it and its radius), its volume and its smallest box."""
+    fs = []
+    for f in body.faces:
+        g = f.geometry
+        d = dict(t=SURF.get(g.surfaceType, 'other'), a=round(f.area * 100.0, 4))
+        if d['t'] == 'plane':
+            d['n'], d['o'] = _v(g.normal), _v(g.origin, 10.0)
+        elif d['t'] in ('cylinder', 'cone', 'torus'):
+            d['ax'], d['o'] = _v(g.axis), _v(g.origin, 10.0)
+            d['r'] = round((g.radius if d['t'] == 'cylinder' else getattr(g, 'majorRadius', getattr(g, 'radius', 0.0))) * 10.0, 4)
+        elif d['t'] == 'sphere':
+            d['o'], d['r'] = _v(g.origin, 10.0), round(g.radius * 10.0, 4)
+        fs.append(d)
+    out = dict(volume=round(body.volume * 1000.0, 3), area=round(body.area * 100.0, 3), faces=fs)
+    try:
+        ob = body.orientedMinimumBoundingBox
+        out['box'] = sorted([ob.length * 10.0, ob.width * 10.0, ob.height * 10.0])
+        dirs = sorted([(ob.length, ob.lengthDirection), (ob.width, ob.widthDirection), (ob.height, ob.heightDirection)], key=lambda x: x[0])
+        out['box_dirs'] = [_v(d) for _, d in dirs]
+        out['box_centre'] = _v(ob.centerPoint, 10.0)
+    except Exception as e:
+        bb = body.boundingBox
+        out['box'] = sorted([(bb.maxPoint.x - bb.minPoint.x) * 10, (bb.maxPoint.y - bb.minPoint.y) * 10, (bb.maxPoint.z - bb.minPoint.z) * 10])
+        out['box_note'] = 'axis-aligned box: %s' % str(e)[:80]
+    return out
+
+
+def census():
+    """Each machine built as Part 10 left it; each made line of its bill (BillOfMaterials.py's census) measured on the
+    first piece Fusion holds of it; a weldment by its pieces. Written to results/making_census.json."""
+    app = adsk.core.Application.get()
+    rsm, bom = _load('RangeSweep'), _load('BillOfMaterials')
+    kinds = []
+    for key in bom.MACHINES:
+        rsm.machine(key)
+        doc = app.activeDocument
+        try:
+            doc.attributes.add('mdfc', 'run', 'Making')
+        except Exception:
+            pass
+        des = adsk.fusion.Design.cast(app.activeProduct)
+        rows, occ = bom.census(des)
+        b = bom.BD.finish(bom.BD.bom(key, rows))
+        inside = {}
+        for g in b['lines']:
+            if g['kind'].startswith('in ') and g['names']:
+                inside.setdefault(g['kind'][3:], []).append(g)
+        for g in b['lines']:
+            if g['kind'] != 'made':
+                continue
+            pieces = [g] if g['names'] else inside.get(g['number'], [])
+            bodies = []
+            for p in pieces:
+                name = sorted(n for v in p['names'].values() for n, _ in v)[0]
+                o = occ[name][0]
+                for i in range(o.bRepBodies.count):
+                    bodies.append(dict(piece=p['description'], number=p['number'], **body_facts(o.bRepBodies.item(i))))
+            kinds.append(dict(machine=key, number=g['number'], description=g['description'], qty=g['qty'],
+                              material=bom.material(key, g),
+                              weldment=not g['names'], bodies=bodies))
+        doc.close(False)
+    path = os.path.join(COMP, 'results', 'making_census.json')
+    json.dump(dict(version=VERSION, kinds=kinds), io.open(path, 'w', encoding='utf-8'), indent=0)
+    _last.clear()
+    _last.update(census=len(kinds), path=path)
+    return 'Census: %d made kinds measured, %d bodies, results/making_census.json.\n\n[%s]' % (
+        len(kinds), sum(len(k['bodies']) for k in kinds), VERSION)
+
+
 def build(which='bracket'):
+    if which == 'census':
+        return census()
     if which not in PARTS:
         raise ValueError('No part called %s: Chapter 66 makes %s.' % (which, ', '.join(PARTS)))
     notes = []
-    doc, cam, setups, post_name, info = dict(bracket=bracket, spacer=spacer)[which](notes)
+    doc, cam, setups, post_name, info = dict(bracket=bracket, spacer=spacer, tine=tine)[which](notes)
     rows = []
     os.makedirs(NC, exist_ok=True)
     cps = post(post_name)
@@ -327,7 +525,7 @@ def build(which='bracket'):
                             tool=tp.itemByName('tool_description').value.value.strip(),
                             d=tp.itemByName('tool_diameter').value.value * 10, seconds=t))
         mt = cam.getMachiningTime(s, FEED_SCALE, RAPID / 10.0, TOOL_CHANGE)
-        number = '%d%d' % (66, k + 1) if which == 'bracket' else '%d%d' % (66, 5 + k)
+        number = str(NUMBERS[which][k])
         nc = None
         try:
             pi = adsk.cam.PostProcessInput.create(number, cps, NC, adsk.cam.PostOutputUnitOptions.MillimetersOutput)
@@ -344,7 +542,8 @@ def build(which='bracket'):
                          rapid=mt.rapidDistance * 10, tool_changes=mt.toolChangeCount, nc=os.path.basename(nc) if nc else None,
                          nc_lines=lines))
         total += mt.machiningTime
-    out = dict(part=which, info=info, setups=rows, total=total, post=os.path.basename(cps), notes=notes)
+    out = dict(part=which, info=info, setups=rows, total=total, post=os.path.basename(cps), notes=notes, version=VERSION)
+    json.dump(out, io.open(os.path.join(COMP, 'results', 'making_%s.json' % which), 'w', encoding='utf-8'), indent=1, default=str)
     _last.clear()
     _last.update(out)
     lines = ['%s: %s; %.0f s; %s (%d lines)' % (r['setup'], ', '.join('%s %s' % (o['name'], 'ok' if o['toolpath'] else 'NO TOOLPATH')
@@ -376,7 +575,7 @@ class _Created(adsk.core.CommandCreatedEventHandler):
         cmd.execute.add(h)
         _handlers.append(h)
         dd = cmd.commandInputs.addDropDownCommandInput('part', 'Part', adsk.core.DropDownStyles.TextListDropDownStyle)
-        for k, p in enumerate(PARTS):
+        for k, p in enumerate(PARTS + ('census',)):
             dd.listItems.add(p, k == 0)
 
 
