@@ -1,6 +1,6 @@
 # =============================================================================
-# StudyAssemblies.py  -  Chapter 62 of "Mechanical Design in Autodesk Fusion with Claude": the real parts the
-# Simulation studies of Chapter 62 are run on, each with the neighbours that carry its load. It builds the machine as
+# StudyAssemblies.py  -  Chapters 59 and 62 of "Mechanical Design in Autodesk Fusion with Claude": the real parts the
+# Simulation studies of Chapters 59 and 62 are run on, each with the neighbours that carry its load. It builds the machine as
 # its detail chapter left it (through RangeSweep.py), takes the part and its neighbours out of it, and puts them in a
 # design of their own, one component each, with their materials, where they sit in the machine:
 #   stop            the bag gripper's opening stop of jaw A: the bracket P13-018 with Chapter 62's change (the arm
@@ -10,6 +10,8 @@
 #                   rear spar web for 200 mm either side of the fitting
 #   hinge           the flap's right hinge: the hinge bracket, its rib, the GE 20 ES in its eye, the hinge pin and the
 #                   flap's two hinge fittings on it
+#   arms            Chapter 59: the palletizer's lower arm (without J2's reducer), its upper arm and its wrist down to
+#                   the tool flange, at the cycle's high point, for the arms' sideways give at the flange
 # The bolts are left out: the study puts a bolt connector with the bolt's preload through each pair of holes. The script
 # prints each part's volume and material and the points where the study's supports, connectors and loads go.
 # Checked by checks/study_assemblies_check.py.
@@ -42,8 +44,17 @@ import mdfc_parts as mp          # noqa: E402
 import range_sweep as RS         # noqa: E402
 import flap_design as FD         # noqa: E402
 
-VERSION = 'StudyAssemblies 1.0 (2026-11-07)'
-ASSEMBLIES = ('stop', 'stop_diagonal', 'fitting', 'hinge')
+VERSION = 'StudyAssemblies 1.1 (2026-11-08)'
+ASSEMBLIES = ('stop', 'stop_diagonal', 'fitting', 'hinge', 'arms')
+# the arms' parts by their names in the detailed robot: the lower arm without J2's reducer output, the upper arm without
+# the pin D's washer and screw, the wrist from its pin to the tool flange without J4's motor and the levelling link
+ARMS = ('Fork plate 1', 'Fork plate 2', 'Hub boss J2 side', 'Hub boss J3 side', 'Balancer cross pin Q', 'Lower arm box',
+        'Elbow hub', 'Elbow pin',
+        'Upper arm cheek 1', 'Upper arm cheek 2', 'Bearing 32213 elbow 1', 'Bearing 32213 elbow 2', 'Yoke bulkhead',
+        'Upper arm box', 'Front fork cheek 1', 'Front fork cheek 2', 'Bearing 32213 wrist 1', 'Bearing 32213 wrist 2',
+        'Torque tube', 'Rear lever', 'Pin D',
+        'Wrist pin', 'Wrist hub', 'Wrist housing', 'RV-80N case J4', 'RV-80N output J4', 'Tool flange')
+LATERAL = 1000.0                 # N across the arms' plane, on the tool flange's outer face
 WEB_PATCH = 200.0                # mm either side of the fitting's base plate, along the span
 _last = {}
 
@@ -103,6 +114,20 @@ def spec(which):
         return dict(machine='flap', parts=[('Hinge bracket R', None), ('Hinge rib R', None), ('Bearing GE 20 ES hinge R', None),
                                            ('Hinge pin R', None), ('Hinge fitting Ro', None), ('Hinge fitting Ri', None)],
                     picks=picks)
+    if which == 'arms':
+        import palletizer_design as PD
+        hi = PD.waypoints(PD.brief())['hi']
+        p = PD.pts(hi['q2'], hi['q3'])
+        ax, az = p['A']
+        fx, fz = p['fl']
+        picks = {}
+        # the hub's bosses, 280 across, from y 190 to 500 either side of the arms' plane: held, as the hand model holds
+        # the hub (its bosses rigid)
+        picks['hub J2 side'] = ((ax + 140.0, -320.0, az), "the J2 side boss's outside: fixed")
+        picks['hub J3 side'] = ((ax + 140.0, 345.0, az), "the J3 side boss's outside: fixed")
+        # the tool flange, 30 thick under J4's output: the sideways force on its outer face
+        picks['flange'] = ((fx, 60.0, fz - 30.0), "the tool flange's outer face: the force across the arms' plane")
+        return dict(machine='robot', pose=(hi['q2'], hi['q3']), parts=[(n, None) for n in ARMS], picks=picks)
     raise ValueError('No assembly called %s: the assemblies are %s.' % (which, ', '.join(ASSEMBLIES)))
 
 
@@ -127,6 +152,12 @@ def loads(which):
     if which == 'hinge':
         ry, rz = d['ult']['R']
         return dict(ultimate=(0.0, -ry / 2, -rz / 2), F=d['R_hinge'])
+    if which == 'arms':
+        import palletizer_links as PL
+        fx, fz = spec('arms')['picks']['flange'][0][0::2]
+        h = PL.lateral(at=(fx / 1000.0, fz / 1000.0))
+        return dict(lateral=(0.0, LATERAL, 0.0), F=LATERAL, at=(fx, 0.0, fz), c_hand=h['c_flange'],
+                    give_hand=h['c_flange'] * LATERAL * 1000.0, c_flange=PL.lateral()['c_flange'])
     raise ValueError(which)
 
 
@@ -141,6 +172,9 @@ def take(which):
     sp = spec(which)
     rsm = _load('RangeSweep')
     msg, _setter = rsm.machine(sp['machine'])
+    if sp.get('pose'):
+        _setter((None, sp['pose']))                # the robot's joints where the study wants them, q2 and q3 in deg
+        adsk.doEvents()
     app = adsk.core.Application.get()
     mdoc = app.activeDocument
     try:
@@ -196,13 +230,17 @@ def build(which='stop'):
     for name, bodies, mat, vol in parts:
         occ = mp.new_occ(root, name)
         v = 0.0
+        lo, hi = [1e9] * 3, [-1e9] * 3
         for k, tb in enumerate(bodies):
             b = mp.add_body(occ, tb, name if len(bodies) == 1 else '%s %d' % (name, k + 1))
             m = _material(mat)
             if m is not None:
                 b.material = m
             v += b.volume * 1000.0
-        rows.append(dict(part=name, bodies=len(bodies), material=mat, volume=v, machine_volume=vol))
+            bb = b.boundingBox
+            lo = [min(lo[i], c * 10.0) for i, c in enumerate((bb.minPoint.x, bb.minPoint.y, bb.minPoint.z))]
+            hi = [max(hi[i], c * 10.0) for i, c in enumerate((bb.maxPoint.x, bb.maxPoint.y, bb.maxPoint.z))]
+        rows.append(dict(part=name, bodies=len(bodies), material=mat, volume=v, machine_volume=vol, box=(lo, hi)))
     sp = spec(which)
     found = {}
     for key, (p, _what) in sp['picks'].items():

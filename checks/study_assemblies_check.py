@@ -1,7 +1,8 @@
-# StudyAssemblies (Chapter 62) against the acceptance criteria of its prompt: run by the dialog, as a user runs it, for
-# its default assembly, then built for the other three; each assembly's parts present with the machine's materials,
-# each part's volume the machine's own (the opening bracket's against lib/lugs_brackets.py, turned or on its diagonal;
-# the spar web's patch against its hand volume), every pick found on a face; the loads; the refusal.
+# StudyAssemblies (Chapters 59 and 62) against the acceptance criteria of its prompt: run by the dialog, as a user runs
+# it, for its default assembly, then built for the other four; each assembly's parts present with the machine's
+# materials, each part's volume the machine's own (the opening bracket's against lib/lugs_brackets.py, turned or on its
+# diagonal; the spar web's patch against its hand volume), every pick found on a face; the loads; the arms at the
+# cycle's high point and their give by hand; the refusal.
 import sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 sys.path.insert(0, '__COMPANION__/lib')
@@ -12,10 +13,12 @@ importlib.reload(LB)
 
 PATH = '__COMPANION__/scripts/StudyAssemblies/StudyAssemblies.py'
 EDITS = ()                                  # a control replaces this with its one broken line
-PARTS = dict(stop=4, stop_diagonal=4, fitting=6, hinge=6)
+PARTS = dict(stop=4, stop_diagonal=4, fitting=6, hinge=6, arms=27)
 MATERIALS = {'Stop bracket open 1': 'Steel AISI 1045 225 ANLD', 'End plate 1': 'Aluminum 6061', 'Spar fitting': 'Aluminum 7075',
              'Rear spar web': 'Aluminum 6061', 'Trunnion R': 'Steel AISI 4142 380 QT', 'Hinge bracket R': 'Aluminum 7075',
-             'Hinge rib R': 'Aluminum 7075', 'Hinge pin R': 'Steel AISI 4142 380 QT'}
+             'Hinge rib R': 'Aluminum 7075', 'Hinge pin R': 'Steel AISI 4142 380 QT',
+             'Lower arm box': 'Steel AISI 1020 107 HR', 'Upper arm box': 'Steel AISI 1020 107 HR',
+             'Fork plate 1': 'Steel AISI 1045 225 ANLD', 'Tool flange': 'Steel AISI 1045 225 ANLD'}
 
 
 def run(_context):
@@ -33,7 +36,7 @@ def run(_context):
         ns['build'](a)
         fc.mark()
         done[a] = dict(ns['_last'])
-    fc.ok(sorted(done) == sorted(PARTS), 'the four assemblies built: %s' % ', '.join(sorted(done)))
+    fc.ok(sorted(done) == sorted(PARTS), 'the five assemblies built: %s' % ', '.join(sorted(done)))
     for a, r in sorted(done.items()):
         names = [p['part'] for p in r['parts']]
         fc.ok(len(names) == PARTS[a] and all(p['material'] == MATERIALS[p['part']] for p in r['parts'] if p['part'] in MATERIALS),
@@ -55,6 +58,26 @@ def run(_context):
           and st['F_max'] == 4000.0
           and abs(fi['F'] - 20848.42) < 0.01 and abs(hi['F'] - 13955.97) < 0.01,
           'the loads: the stop %.1f N along the absorber and the DYSC%ss %.0f, the fitting %.1f N, the hinge %.1f N' % (st['F'], "'", st['F_max'], fi['F'], hi['F']))
+    # the arms: the robot at the cycle's high point, so the tool flange (250 across, 30 thick) where the high point's
+    # flange is; the hand's give at the flange's outer face from palletizer_links.lateral()
+    import palletizer_design as PD
+    import palletizer_links as PL
+    importlib.reload(PD)
+    importlib.reload(PL)
+    q = PD.waypoints(PD.brief())['hi']
+    fx, fz = PD.pts(q['q2'], q['q3'])['fl']
+    tf = [p for p in done['arms']['parts'] if p['part'] == 'Tool flange'][0]
+    (x0, y0, z0), (x1, y1, z1) = tf['box']
+    fc.ok(max(abs(x0 - (fx - 125.0)), abs(x1 - (fx + 125.0)), abs(y0 + 125.0), abs(y1 - 125.0), abs(z0 - (fz - 30.0)),
+              abs(z1 - fz)) < 1e-3,
+          'arms: at q2 %.2f, q3 %.2f deg the tool flange spans x %.1f to %.1f and z %.1f to %.1f, the flange at (%.1f, %.1f)'
+          % (q['q2'], q['q3'], x0, x1, z0, z1, fx, fz))
+    ar = done['arms']['loads']
+    h = PL.lateral(at=(fx / 1000.0, (fz - 30.0) / 1000.0))
+    fc.ok(ar['F'] == 1000.0 and ar['lateral'] == (0.0, 1000.0, 0.0) and abs(ar['c_hand'] - h['c_flange']) < 1e-15
+          and abs(ar['give_hand'] - 1e6 * h['c_flange']) < 1e-9,
+          'arms: %.0f N across the arms\' plane at the flange\'s outer face, which the hand model gives %.4f mm (%.4f at the '
+          'flange\'s own point)' % (ar['F'], ar['give_hand'], ar['c_flange'] * 1e6))
     try:
         ns['build']('crane')
         fc.mark()

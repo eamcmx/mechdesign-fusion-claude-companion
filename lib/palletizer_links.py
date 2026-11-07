@@ -900,17 +900,18 @@ def stiffness(q2=None, q3=None, b=None, bodies=None):
                 K3_need=(2 * pi * b['f_min']) ** 2 * pm['M33'])
 
 
-def lateral(q2=None, q3=None, b=None, n=200, bodies=None, K_drive=None):
+def lateral(q2=None, q3=None, b=None, n=200, bodies=None, K_drive=None, at=None):
     """J1 with the arms' lateral give: a unit force across the plane at the flange, the arms bending across and
     twisting (unit load: the integral of M^2/EI + T^2/GJ), the wrist rigid; its compliance as a turn about J1 at the
     flange's radius. Two inertias on two springs: the turret with everything rigidly on it, and the wrist group at
-    the flange's radius beyond the arms; the lower of the two frequencies."""
+    the flange's radius beyond the arms; the lower of the two frequencies. at: the point (x, z) in m the force acts at
+    instead of the flange's (Chapter 59's study pushes on the flange's outer face)."""
     b = b or P.brief()
     hi = P.waypoints(b)['hi']
     q2 = hi['q2'] if q2 is None else q2
     q3 = hi['q3'] if q3 is None else q3
     pp = pose_points(q2, q3)
-    fl = pp['fl']
+    fl = pp['fl'] if at is None else at
     fr = arm_frames(q2, q3)
     c = 0.0
     for arm, root, Lm in (('lower', pp['A'], P.LAYOUT['L2'] / 1000), ('upper', pp['B'], P.LAYOUT['L3'] / 1000)):
