@@ -189,6 +189,18 @@ def lug():
                 net_err=FEA['lug']['net'] / h['sigma0'] - 1, shank_err=FEA['lug']['shank'] / (k['P'] / (k['w'] * k['t'])) - 1)
 
 
+def web_patch(margin=200.0):
+    """The rear spar web the spar fitting's study takes, mm^3: the web's full depth at the spar, between the lower skin
+    and 2 mm above the upper, 15 thick, for the base plate's 180 and margin either side, less the four M8 holes."""
+    import flap_design as FL
+    S = FL.SYS
+    sp = S['spar']
+    x = S['base_x'] + margin
+    H = FL.skin_up(sp[0]) + 2.0 - FL.skin_low(sp[0])
+    t = sp[1] - sp[0]
+    return 2 * x * t * H - len(S['bolts']) * math.pi * 4.05 ** 2 * t
+
+
 def closing():
     """The closing bracket's lug root, which no study took: Chapter 60's factor with Table 7-1's 1.7, and with the
     opening arm's 2.51 as a bound."""

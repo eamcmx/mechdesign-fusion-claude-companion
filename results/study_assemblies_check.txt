@@ -1,0 +1,34 @@
+# study_assemblies_check
+# Autodesk Fusion 2706.1.17, run 2026-11-07 17:15, 318 s
+
+StudyAssemblies 1.0 (2026-11-07)
+  ok   Run opens the dialog
+Study assembly stop:
+Stop bracket open 1: 1 bodies, Steel AISI 1045 225 ANLD, 99399.2 mm3
+Shock absorber DYSC-25-25-Y1F open 1: 1 bodies, Steel, 113835.2 mm3
+Lock nut DYSC-25-25-Y1F open 1: 1 bodies, Steel, 3109.2 mm3
+End plate 1: 1 bodies, Aluminum 6061, 3375875.2 mm3
+picks: load found, bolt 1 foot found, bolt 1 plate found, bolt 2 foot found, bolt 2 plate found, frame 1 found, frame 2 found, frame 3 found, frame 4 found
+
+[StudyAssemblies 1.0 (2026-11-07)]
+  OK pressed, built in 33 s
+  ok   a new design opened
+  ok   the four assemblies built: fitting, hinge, stop, stop_diagonal
+  ok   fitting: 6 parts, Spar fitting Aluminum 7075; Bearing GE 20 ES fitting R Steel; Bearing GE 20 ES fitting L Steel; Trunnion R Steel AISI 4142 380 QT; Trunnion L Steel AISI 4142 380 QT; Rear spar web Aluminum 6061
+  ok   fitting: every part the machine's own volume
+  ok   fitting: 9 picks found on a face
+  ok   hinge: 6 parts, Hinge bracket R Aluminum 7075; Hinge rib R Aluminum 7075; Bearing GE 20 ES hinge R Steel; Hinge pin R Steel AISI 4142 380 QT; Hinge fitting Ro Aluminum 7075; Hinge fitting Ri Aluminum 7075
+  ok   hinge: every part the machine's own volume
+  ok   hinge: 7 picks found on a face
+  ok   stop: 4 parts, Stop bracket open 1 Steel AISI 1045 225 ANLD; Shock absorber DYSC-25-25-Y1F open 1 Steel; Lock nut DYSC-25-25-Y1F open 1 Steel; End plate 1 Aluminum 6061
+  ok   stop: every part the machine's own volume
+  ok   stop: 9 picks found on a face
+  ok   stop_diagonal: 4 parts, Stop bracket open 1 Steel AISI 1045 225 ANLD; Shock absorber DYSC-25-25-Y1F open 1 Steel; Lock nut DYSC-25-25-Y1F open 1 Steel; End plate 1 Aluminum 6061
+  ok   stop_diagonal: every part the machine's own volume
+  ok   stop_diagonal: 9 picks found on a face
+  ok   stop: the bracket 99399.2 mm3, by hand 99399.2, its arm turned
+  ok   stop_diagonal: the bracket 99541.2 mm3, by hand 99541.2, its arm on its diagonal
+  ok   fitting: the spar web patch 2369739.8 mm3, by hand 2369739.8
+  ok   the loads: the stop 2180.0 N along the absorber and the DYSC's 4000, the fitting 20848.4 N, the hinge 13956.0 N
+  ok   refused: No assembly called crane: the assemblies are stop, stop_diagonal, fitting, hinge.
+ALL PASS

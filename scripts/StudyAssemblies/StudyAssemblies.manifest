@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 62: the real assemblies the Simulation studies run on, copied out of the detailed machines with their neighbours: the opening stop (arm turned or on its diagonal) on its end plate, the spar fitting on the spar web, the flap's hinge bracket on its rib."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "StudyAssemblies"
+}

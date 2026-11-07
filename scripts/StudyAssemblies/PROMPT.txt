@@ -1,0 +1,40 @@
+Write a Fusion Python script that, when run, builds one of the real assemblies Chapter 62's Simulation studies are
+run on: the part under study and the neighbours that carry its load, copied out of the machine's own detailed model
+into a design of their own, one component each with its material, where they sit in the machine, so that the study
+supports and loads the part the way the machine does.
+
+INPUTS (a command dialog, with this default):
+- the assembly: one of stop, stop_diagonal, fitting or hinge, stop
+
+DERIVED (never typed):
+- scripts/RangeSweep/RangeSweep.py: the bag gripper with its stops and the flap system as their detail chapters left
+  them, loaded and called, not copied
+- scripts/StopBracket/StopBracket.py: Chapter 62's change to the opening bracket, called on the machine's own bracket
+- lib/range_sweep.py: the opening stop's layout, the absorber's axis, the design's push and the DYSC's rating
+- lib/flap_design.py: the spar fitting's and the hinges' layout, the actuator's ultimate push, the hinges' ultimate
+  load
+- lib/lugs_brackets.py: the opening bracket's hand volume, turned and on its diagonal; the spar web patch's
+
+HARD CONSTRAINTS:
+- stop: jaw A's opening bracket with its arm turned 45 deg and its root rounded 2.5 mm, its DYSC-25-25-Y1F, the lock
+  nut and the end plate; stop_diagonal: the same with the arm on its diagonal and the same root.
+- fitting: the spar fitting, both GE 20 ES and both trunnions, and the rear spar web cut to 200 mm either side of the
+  base plate.
+- hinge: the right hinge bracket, its rib, the GE 20 ES in its eye, the hinge pin and the flap's two hinge fittings.
+- Every body copied from the machine's model, none rebuilt; the bolts left out, for the study's bolt connectors.
+- The faces each study picks found on the bodies: the bolt holes, the fixed faces, the face the load goes on.
+- Save nothing; refuse an assembly that is not one of the four.
+
+FUSION CONVENTIONS:
+- a new design document (FusionDesignDocumentType) for the assembly, parametric, each part a component of the root
+  with its bodies in a base feature, no joints and no as-built joints (the study's contacts and connectors join
+  them); the machine's document closed unsaved; lengths in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives the assembly, each part's bodies, material and volume, the picks found, and a version tag.
+- Every part the machine's own volume and material; the opening bracket's within 0.01 % of lib/lugs_brackets.py's,
+  turned for stop and on its diagonal for stop_diagonal; the web patch's within 0.01 % of its hand volume.
+- Every pick found on a face.
+- The loads: the stop's push of 2180.0 N along the absorber's axis and the DYSC's 4000 N; the fitting's 20 848.4 N
+  both ways; the hinge's 13 956.0 N.
+- Refused: an assembly called crane.
