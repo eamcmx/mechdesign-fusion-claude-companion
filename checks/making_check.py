@@ -96,6 +96,27 @@ def run(_context):
           'cut: %d pierces, F%s, %.0f mm cut (the outlines %.0f by hand, the rest lead-ins), %.0f s in Fusion against %.0f s for '
           "the outlines alone at the sample laser's %g mm/min; the pierces' %g s each come on top" % (
               pierces, '/'.join(feeds), st['feed'], ct['L'], t['total'], ct['cutting'], ti['feed'], ti['pierce']))
+    # the census: every made line of the bill measured in Fusion, then sorted by lib/making.py
+    ns['build']('census')
+    fc.mark()
+    import json, io
+    bom = json.load(io.open(os.path.join('__COMPANION__', 'results', 'bom.json'), encoding='utf-8'))
+    want = sorted((m['key'], l['number']) for m in bom['machines'] for l in m['lines'] if l['kind'] == 'made')
+    cs = MK.census()
+    got = sorted((r['machine'], r['number']) for r in cs['rows'])
+    fc.ok(got == want and all(r['bodies'] >= 1 for r in cs['rows']) and cs['pieces'] == sum(l['qty'] for m in bom['machines']
+                                                                                          for l in m['lines'] if l['kind'] == 'made'),
+          'the census: %d made kinds measured, as the bill has them, %d pieces, %.1f kg' % (cs['kinds'], cs['pieces'], cs['kg']))
+    fc.ok(sum(g['kinds'] for g in cs['by']['route'].values()) == cs['kinds'] == sum(g['kinds'] for g in cs['by']['shape'].values()),
+          'by route: %s; by shape: %s' % ('; '.join('%s %d' % (k, g['kinds']) for k, g in sorted(cs['by']['route'].items())),
+                                           '; '.join('%s %d' % (k, g['kinds']) for k, g in sorted(cs['by']['shape'].items()))))
+    row = {r['number']: r for r in cs['rows']}
+    known = [('A01-016', 'machined', 'turned'), ('P13-012', 'welded', 'plate profile'), ('P13-018', 'machined', '3D'),
+             ('P13-016', 'welded', 'weldment'), ('A01-004', 'cast', '3D'), ('A01-007', 'gear', '3D')]
+    fc.ok(all((row[n]['route'], row[n]['shape']) == (rt, sh) for n, rt, sh in known) and row['P13-016']['bodies'] == 4
+          and abs(row['P13-012']['shapes'][0][2]['t'] - 10.0) < 1e-3,
+          'known answers: the spacer turned, the tine a plate profile 10 thick, the turned bracket 3D, the jaw a weldment '
+          'measured on %d (its tube, two stubs and welds), the carrier cast, the crown wheel a gear' % row['P13-016']['bodies'])
     try:
         ns['build']('crane')
         fc.mark()

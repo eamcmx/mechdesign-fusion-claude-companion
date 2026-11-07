@@ -97,12 +97,20 @@ def cut_time(feed, pierce, n=None, r=None):
 # Shapes, from the faces Fusion measured (tolerances 1e-4 on directions, 0.01 mm on lengths):
 #   turned           every face a cylinder, cone, torus or sphere on one axis, or a plane square to it, and the
 #                    smallest box no wider across that axis than the largest such cylinder
-#   turned, milled   the box no wider than that cylinder, but some faces off the axis (flats, keyseats, cross holes)
+#   turned, milled   the box no wider than that cylinder and at least half the area on the axis, but some faces off
+#                    it (flats, keyseats, cross holes)
 #   plate profile    every plane square to or along the smallest box's thinnest side, every cylinder along it, and the
 #                    planes along it only at its two faces: an outline through the plate's thickness
 #   milled 2.5D      every plane and cylinder square to or along one of the box's three sides, at any depth
 #   3D               anything else (cones, tori or curved faces off those sides, faces at an angle)
 AIRFRAME = ('F01-005', 'F01-016', 'F01-019', 'F01-024')
+# the lower arm's pieces Volume 2 welds (Chapter 43: the fork plates to the shoulder's hub bosses and to the box, the box
+# to the elbow's hub) that Chapter 51 gave 1045 by default; this chapter makes them 1020 by Chapter 55's rule
+ARM_WELDED = ('P01-020', 'P01-024', 'P01-025', 'P01-017')
+# the robot's rod bodies are 1020 too, but nothing in Volumes 2 and 3 names how their eyes are held to them: not taken
+# as welded (an open question, Chapter 66)
+ROD_BODIES = ('P01-033', 'P01-036', 'P01-040')
+TURNED_SHARE = 0.5          # at least half the area on the axis for 'turned, milled'
 GEAR = r'\bz\d+\b|bevel gear|crown wheel|side gear$|^spider$'
 TOL_DIR, TOL_LEN = 1e-4, 0.01
 
@@ -191,7 +199,7 @@ def shape(body):
     tu = turned(body)
     if tu['fits'] and tu['share'] > 1 - 1e-6:
         return 'turned', dict(D=2 * tu['R'])
-    if tu['fits']:
+    if tu['fits'] and tu['share'] >= TURNED_SHARE:
         return 'turned, milled', dict(D=2 * tu['R'], share=tu['share'])
     pr = prismatic(body)
     if pr['plate']:
@@ -210,7 +218,8 @@ def route(kind, named=None):
         return 'moulded'
     if re.search(r'cast iron', mat, re.I):
         return 'cast'
-    if kind['weldment'] or re.search(r'1020', mat) or (named and re.search(r'weld', named, re.I)):
+    welded_1020 = re.search(r'1020', mat) and kind['number'] not in ROD_BODIES
+    if kind['weldment'] or welded_1020 or kind['number'] in ARM_WELDED or (named and re.search(r'weld', named, re.I)):
         return 'welded'
     if re.search(GEAR, d, re.I):
         return 'gear'
@@ -241,7 +250,7 @@ def census(path=None):
         r = route(k, nm)
         shapes = [(b.get('piece'), ) + shape(b) for b in k['bodies']]
         rows.append(dict(machine=k['machine'], number=k['number'], description=k['description'], qty=k['qty'],
-                         material=k['material'], named=nm, route=r, shapes=shapes, shape=shapes[0][1] if len(shapes) == 1 else 'pieces',
+                         material=k['material'], named=nm, route=r, shapes=shapes, shape=shapes[0][1] if len(shapes) == 1 else 'weldment',
                          kg=mass.get((k['machine'], k['number']), 0.0), bodies=len(k['bodies'])))
     tot = {}
     for key in ('route', 'shape'):
@@ -272,14 +281,39 @@ def rma(largest, grade=RMA_GRADE):
     raise ValueError('no RMA row for %g mm' % largest)
 
 
+def rma_raw(finished):
+    """The RMA by the raw casting's largest dimension, which is the finished part's plus the allowance at each end:
+    taken until it no longer changes the row."""
+    a = rma(finished)
+    while rma(finished + 2 * a) != a:
+        a = rma(finished + 2 * a)
+    return a
+
+
 def casting(largest, face=82.0, grade=10):
-    """A machined face of the carrier: the raw casting's dimension carries the RMA on each machined face and the CT
+    """A machined face of a casting: the raw casting's dimension carries the RMA on each machined face and the CT
     tolerance about it (Chapter 61's CT10 for machine-moulded sand at the legs' 82 mm, lib/stackups.py); the metal the
     cutter meets runs from RMA - CT/2 to RMA + CT/2."""
     import stackups as S
-    a = rma(largest)
+    a = rma_raw(largest)
     ct = S.ct(face, grade)
-    return dict(largest=largest, grade=RMA_GRADE, rma=a, ct=ct, face=face, ct_grade=grade, least=a - ct / 2, most=a + ct / 2)
+    return dict(largest=largest, raw=largest + 2 * a, grade=RMA_GRADE, rma=a, rma_finished=rma(largest), ct=ct, face=face,
+                ct_grade=grade, least=a - ct / 2, most=a + ct / 2)
+
+
+def castings(path=None):
+    """The three castings' largest finished dimensions from the census, and each one's allowance."""
+    c = census(path)
+    out = {}
+    for r in c['rows']:
+        if r['route'] == 'cast':
+            import io
+            import json
+            res = os.path.join(os.path.dirname(HERE), 'results')
+            k = [k for k in json.load(io.open(path or os.path.join(res, 'making_census.json'), encoding='utf-8'))['kinds']
+                 if k['number'] == r['number']][0]
+            out[r['number']] = dict(description=r['description'], **casting(max(k['bodies'][0]['box'])))
+    return out
 
 
 # ---- what earlier chapters handed to this one -----------------------------------------------------------------------

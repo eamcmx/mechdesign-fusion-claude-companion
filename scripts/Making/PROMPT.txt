@@ -60,5 +60,7 @@ ACCEPTANCE CRITERIA:
   that is tine equal to 16 x 12 646.46 / (2000 x 1000) = 10.12 %; one pierce a tine, the cut's length between the
   sixteen outlines' 16 891.3 mm and 2 % more, its time between the outlines' own at the laser's feed (1013.5 s at
   1000 mm/min) and 5 % more, the pierces on top.
-- The census: the 168 made kinds of results/bom.json, each with at least one body.
+- The census: the 168 made kinds of results/bom.json in 330 pieces, each with at least one body; sorted by
+  lib/making.py, the routes and the shapes each adding up to 168; the pinion spacer turned, the tine a plate profile
+  10 mm thick, the turned opening bracket 3D, the jaw a weldment measured on its 4 (the tube, the two stubs and the welds), the carrier cast, the crown wheel a gear.
 - Refused: a part called crane.

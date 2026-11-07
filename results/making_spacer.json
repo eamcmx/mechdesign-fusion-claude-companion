@@ -1,0 +1,79 @@
+{
+ "part": "spacer",
+ "info": {
+  "volume": 58680.96251718612,
+  "length": 67.80000000000001,
+  "material": "Steel AISI 1045 225 ANLD",
+  "stock": 68.6,
+  "leave": 0.4000000000000057,
+  "front": 0.4000000000000001,
+  "back": -0.4000000000000001
+ },
+ "setups": [
+  {
+   "setup": "Turned from 60 x 40 tube",
+   "ops": [
+    {
+     "name": "Face1",
+     "strategy": "turning_face",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "CNMT Right Hand",
+     "d": 9.525001610160691,
+     "seconds": 1.019169
+    },
+    {
+     "name": "Profile Roughing1",
+     "strategy": "turning_profile_roughing",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "CNMT Right Hand",
+     "d": 9.525001610160691,
+     "seconds": 8.078301
+    },
+    {
+     "name": "Profile Finishing1",
+     "strategy": "turning_profile_finishing",
+     "toolpath": true,
+     "warning": true,
+     "message": "Lead-Out has been modified due to a gouge with the remaining stock\n",
+     "tool": "VNMT Right Hand",
+     "d": 5.556252132270401,
+     "seconds": 4.016092
+    },
+    {
+     "name": "Profile Roughing2",
+     "strategy": "turning_profile_roughing",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "ID Boring",
+     "d": 9.525001610160691,
+     "seconds": 9.305117
+    },
+    {
+     "name": "Part1",
+     "strategy": "turning_part",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "OD Grooving",
+     "d": 10.0,
+     "seconds": 2.438661
+    }
+   ],
+   "seconds": 69.857341,
+   "feed": 492.67782394843255,
+   "rapid": 590.7579169273376,
+   "tool_changes": 3,
+   "nc": "665.NC",
+   "nc_lines": 122
+  }
+ ],
+ "total": 69.857341,
+ "post": "fanuc turning.cps",
+ "notes": [],
+ "version": "Making 1.1 (2026-11-07)"
+}

@@ -1,0 +1,141 @@
+{
+ "part": "bracket",
+ "info": {
+  "holes": 2,
+  "bore": 1,
+  "root_edges": 4,
+  "volume": 99399.2174389804,
+  "material": "Steel AISI 1045 225 ANLD"
+ },
+ "setups": [
+  {
+   "setup": "1 Bolting face and holes",
+   "ops": [
+    {
+     "name": "Face1",
+     "strategy": "face",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "50mm Face Mill",
+     "d": 50.0,
+     "seconds": 28.928423
+    },
+    {
+     "name": "Drill1",
+     "strategy": "drill",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "",
+     "d": 9.0,
+     "seconds": 2.847999
+    }
+   ],
+   "seconds": 46.776423,
+   "feed": 509.3737332515648,
+   "rapid": 426.9999999872234,
+   "tool_changes": 1,
+   "nc": "661.NC",
+   "nc_lines": 61
+  },
+  {
+   "setup": "2 Top, bolted to a fixture plate",
+   "ops": [
+    {
+     "name": "Face2",
+     "strategy": "face",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "50mm Face Mill",
+     "d": 50.0,
+     "seconds": 28.928423
+    },
+    {
+     "name": "3D Adaptive Roughing1",
+     "strategy": "adaptive",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "12mm Flat Endmill",
+     "d": 12.000000000000002,
+     "seconds": 459.970909
+    },
+    {
+     "name": "3D Contour1",
+     "strategy": "contour3d",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "12mm Flat Endmill",
+     "d": 12.000000000000002,
+     "seconds": 600.495217
+    },
+    {
+     "name": "2D Contour1",
+     "strategy": "contour2d",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "10mm Bullnose R2.5",
+     "d": 10.0,
+     "seconds": 22.559959
+    }
+   ],
+   "seconds": 1141.95451,
+   "feed": 14066.936143162004,
+   "rapid": 6889.6176273408655,
+   "tool_changes": 2,
+   "nc": "662.NC",
+   "nc_lines": 10429
+  },
+  {
+   "setup": "3 The lug, M30 x 1.5",
+   "ops": [
+    {
+     "name": "Bore1",
+     "strategy": "bore",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "10mm Flat Endmill",
+     "d": 10.0,
+     "seconds": 94.506839
+    },
+    {
+     "name": "Thread1",
+     "strategy": "thread",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "M10-1.5 Thread Mill",
+     "d": 7.62,
+     "seconds": 72.109195
+    },
+    {
+     "name": "3D Contour2",
+     "strategy": "contour3d",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "12mm Flat Endmill",
+     "d": 12.000000000000002,
+     "seconds": 255.896996
+    }
+   ],
+   "seconds": 452.513031,
+   "feed": 4834.753765881325,
+   "rapid": 748.3538076008772,
+   "tool_changes": 2,
+   "nc": "663.NC",
+   "nc_lines": 711
+  }
+ ],
+ "total": 1641.243964,
+ "post": "fanuc.cps",
+ "notes": [
+  "the lug contour: bottom height 'from surface top' (default 'from surface bottom'), -25.5 mm"
+ ],
+ "version": "Making 1.1 (2026-11-07)"
+}

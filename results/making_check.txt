@@ -1,7 +1,7 @@
 # making_check
-# Autodesk Fusion 2706.1.17, run 2026-11-07 18:16, 172 s
+# Autodesk Fusion 2706.1.17, run 2026-11-07 21:26, 1155 s
 
-Making 1.0 (2026-11-07)
+Making 1.1 (2026-11-07)
   ok   Run opens the dialog
 Making bracket: 3 setups, 27.4 min of cutting.
 1 Bolting face and holes: Face1 ok, Drill1 ok; 47 s; 661.NC (61 lines)
@@ -9,10 +9,10 @@ Making bracket: 3 setups, 27.4 min of cutting.
 3 The lug, M30 x 1.5: Bore1 ok, Thread1 ok, 3D Contour2 ok; 453 s; 663.NC (711 lines)
 notes: the lug contour: bottom height 'from surface top' (default 'from surface bottom'), -25.5 mm
 
-[Making 1.0 (2026-11-07)]
-  OK pressed, built in 55 s
+[Making 1.1 (2026-11-07)]
+  OK pressed, built in 49 s
   ok   a new design opened
-  ok   the parts made: bracket, spacer
+  ok   the parts made: bracket, spacer, tine
   ok   the bracket: 99399.2 mm3 against 99399.2 by hand (the arm turned); 2 holes, the bore, 4 root edges found
   ok   the spacer: 67.80 mm long as drawn
   ok   bracket / 1 Bolting face and holes: Face1 (50mm Face Mill), Drill1 ()
@@ -24,8 +24,17 @@ notes: the lug contour: bottom height 'from surface top' (default 'from surface 
   note spacer / Profile Finishing1: Lead-Out has been modified due to a gouge with the remaining stock
   ok   spacer / Turned from 60 x 40 tube: Face1 (CNMT Right Hand), Profile Roughing1 (CNMT Right Hand), Profile Finishing1 (VNMT Right Hand) WARNING, Profile Roughing2 (ID Boring), Part1 (OD Grooving)
   ok   spacer / Turned from 60 x 40 tube: 70 s, 665.NC, 122 lines, tools T0101; T0202; T0303; T0404
+  ok   tine / The sixteen on one plate: 2D Profile1 ()
+  ok   tine / The sixteen on one plate: 1021 s, 667.NC, 323 lines, tools Laser cutting
   ok   the arm's root: a 2D contour with 10mm Bullnose R2.5, CR=2.5 in the program
   ok   the spacer faced 0.40 long and parted 0.40 long: turned to 68.6 for grinding to 67.78-68.46
   ok   the bracket: 27.4 min of cutting in 3 setups; the spacer 1.2 min
-  ok   refused: No part called crane: Chapter 66 makes bracket, spacer.
-ALL PASS
+  ok   the tine from the gripper: 126250.0 mm3 sharp (by hand 126250.0), 126464.6 with the corner R10 (by hand 126464.6), 10 thick, Steel AISI 1020 107 HR
+  ok   its inside corner: one edge found, rounded R10.0; outline 1055.708 mm (by hand 1055.708); the round starts 260 from the jaw's middle, 10 clear of the bag's side
+  ok   nested: 16 of 16 on the 2000 x 1000 plate, in 472.6 x 953.3 (turned 0, 90, 180, 270 deg); 44.9 % of that rectangle is tine, 10.1 % of the plate (Fusion 10.1 %)
+  ok   cut: 16 pierces, F1000, 16975 mm cut (the outlines 16891 by hand, the rest lead-ins), 1021 s in Fusion against 1013 s for the outlines alone at the sample laser's 1000 mm/min; the pierces' 1 s each come on top
+  ok   the census: 168 made kinds measured, as the bill has them, 330 pieces, 3934.4 kg
+  ok   by route: cast 3; gear 10; machined 135; moulded 2; the aircraft's 4; welded 14; by shape: 3D 30; milled 2.5D 21; plate profile 29; turned 65; turned, milled 22; weldment 1
+  FAIL known answers: the spacer turned, the tine a plate profile 10 thick, the turned bracket 3D, the jaw a weldment of 4 pieces, the carrier cast, the crown wheel a gear
+  ok   refused: No part called crane: Chapter 66 makes bracket, spacer, tine.
+1 FAILED

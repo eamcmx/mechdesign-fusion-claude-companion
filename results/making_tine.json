@@ -1,0 +1,65 @@
+{
+ "part": "tine",
+ "info": {
+  "volume": 126464.60183660252,
+  "area": 12646.460183660252,
+  "outline": 1055.7079632679488,
+  "sharp": {
+   "volume": 126250.0,
+   "area": 12625.0
+  },
+  "corner_edges": 1,
+  "rounded": [
+   9.999999999999998
+  ],
+  "material": "Steel AISI 1020 107 HR",
+  "thickness": 10.0,
+  "arranged": 16,
+  "nest": [
+   472.6217193603517,
+   953.3005981445314
+  ],
+  "nest_lo": [
+   9.99998474121087,
+   9.999999999999982
+  ],
+  "turns": [
+   0,
+   90,
+   180,
+   270
+  ],
+  "efficiency": 0.10117165565000001,
+  "unarranged": 0,
+  "kerf": 0.4000000000000001,
+  "feed": 1000.0,
+  "pierce": 1.0
+ },
+ "setups": [
+  {
+   "setup": "The sixteen on one plate",
+   "ops": [
+    {
+     "name": "2D Profile1",
+     "strategy": "profile2d",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "",
+     "d": 0.0,
+     "seconds": 1020.99554
+    }
+   ],
+   "seconds": 1020.99554,
+   "feed": 16975.43085046806,
+   "rapid": 1234.8448027167296,
+   "tool_changes": 0,
+   "nc": "667.NC",
+   "nc_lines": 323
+  }
+ ],
+ "total": 1020.99554,
+ "post": "jet.cps",
+ "notes": [],
+ "version": "Making 1.1 (2026-11-07)"
+}
