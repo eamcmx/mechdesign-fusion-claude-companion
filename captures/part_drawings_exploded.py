@@ -1,4 +1,5 @@
-# Pictures for Chapter 63: the opening stop of jaw A taken apart, built by RangeSweep.py: the bracket P13-018 off the
+# Pictures for Chapter 63: the opening stop of jaw A taken apart, built by RangeSweep.py with Chapter 62's change
+# (StopBracket.py: the arm turned 45 deg, the root rounded 2.5 mm): the bracket P13-018 off the
 # end plate (hidden) along the bolts' line, the DYSC-25 and its lock nut out of the lug along the absorber's axis, the
 # two M8 out past the bracket, their washers and nuts the other way. The joints deleted and the design turned to direct
 # modelling. The camera and the anchors for the balloons come from Chapter 60's capture, loaded, not copied.
@@ -21,6 +22,10 @@ def run(_context):
     ns = fc.load('__COMPANION__/scripts/RangeSweep/RangeSweep.py')
     msg, _setter = ns['machine']('bag')
     print(msg.splitlines()[0])
+    sb = fc.load('__COMPANION__/scripts/StopBracket/StopBracket.py')
+    first = [o for o in fc.design().rootComponent.allOccurrences if o.component.bRepBodies.count]
+    for side, nm in enumerate(sb['NAMES'], 1):
+        sb['change']([o for o in first if o.component.name == nm][0], side, 2.5)
     fc.mark()
     des = fc.design()
     root = des.rootComponent

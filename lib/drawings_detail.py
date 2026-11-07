@@ -1,7 +1,8 @@
 """Chapter 63: the drawings. One part of each machine, the one whose drawing Part 10 changed most, and every value its
 sheet carries, worked out here so that the script, the check and the book read the same numbers:
 
-- the opening stop bracket P13-018 (the bag gripper): Chapter 60's root radius, its two bolt holes and their position;
+- the opening stop bracket P13-018 (the bag gripper): Chapter 62's arm turned 45 deg, Chapter 60's root radius, its two
+  bolt holes and their position;
 - the tool changer's segment P10-006: Chapter 61's two ground faces as a profile tolerance, the six ground as a set;
 - the rear axle's pinion spacer A01-016: Chapter 61's length ground to each axle, its faces' parallelism;
 - the flap's spar fitting F01-022: Chapter 51's N7 bores for the GE 20 ES, with the envelope requirement and Rz 16;
@@ -21,6 +22,7 @@ if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
 import range_sweep as RS        # noqa: E402
+import lugs_brackets as LB      # noqa: E402
 
 FOLDER = ('MechDesignFusionClaude Vol3', 'Chapter 63 drawings')
 
@@ -61,7 +63,7 @@ def bracket():
     cy, cz = o['centre']
     face = o['foot']['x'][1]                        # the foot's face that the arm leaves, 437 mm out
     arm = o['arm']
-    corners = [(face, y, z) for y in arm['y'] for z in arm['z']]
+    corners = LB.arm(True)['corners']                # the arm as Chapter 62 turned it
     H = 9.0                                         # the hole drawn, as the end plate's (Chapter 56)
     F = B['bolt']                                   # the M8's largest shank
     t = H - F
@@ -70,7 +72,7 @@ def bracket():
     square = 2 * 0.1
     return dict(H=H, H_max=H + it(13, H), F=F, t=t, bonus=it(13, H), t_lmc=t + it(13, H), pitch=pitch,
                 square=square, diagonal=square * math.sqrt(2.0), area_gain=(math.pi / 4 * (square * math.sqrt(2)) ** 2) / square ** 2 - 1,
-                r_root=2.5, corners=corners, foot=B['foot'], arm_side=arm['y'][1] - arm['y'][0], arm_len=arm['x'][1] - arm['x'][0],
+                r_root=2.5, corners=corners, turn=LB.TURN, foot=B['foot'], arm_side=arm['y'][1] - arm['y'][0], arm_len=arm['x'][1] - arm['x'][0],
                 thread='M%d x %g' % (RS.DYSC[25]['D1'], RS.DYSC[25]['P']), lug_d=2 * o['lug']['r'],
                 lug_len=o['lug']['t'][1] - o['lug']['t'][0], axis_out=o['x'] - o['foot']['x'][0])
 
@@ -118,7 +120,7 @@ def disc():
 
 PARTS = [
     dict(key='bracket', machine='bag', part='Stop bracket open 1', kind='Stop bracket', number='P13-018',
-         title='Stop bracket, opening', changes=[dict(kind='root_fillet', r=2.5, corners=None)]),
+         title='Stop bracket, opening', changes=[dict(kind='turn_arm', side=1), dict(kind='root_fillet', r=2.5, corners=None)]),
     dict(key='segment', machine='changer', part='Segment 1 (1)', kind='Segment', number='P10-006', title='Segment',
          apply51=True),
     dict(key='spacer', machine='axle', part='Spacer', kind='Spacer', number='A01-016', title='Spacer, pinion'),
@@ -127,7 +129,7 @@ PARTS = [
     dict(key='stop', machine='bag', part='Stop bracket open 1', kind='Stop bracket', number='P13-000',
          title='Bag gripper, the opening stop', assembly=True),     # a sheet of the bag gripper's own drawing
 ]
-PARTS[0]['changes'][0]['corners'] = bracket()['corners']
+PARTS[0]['changes'][1]['corners'] = bracket()['corners']
 
 
 # the bar each steel part is cut from, mm across: the bracket's 70 mm square foot needs a bar of its diagonal, 99 (as
@@ -163,7 +165,8 @@ def rows(key, fits, material):
     out = [('Material', alloy + (', ' + cond if cond else ''), 'Ch 51')]
     if key == 'bracket':
         b = bracket()
-        out += [('Root of the arm', 'R%g min, all round' % b['r_root'], 'Ch 60'),
+        out += [('Arm', "%g square, at %g° to the foot, its sides square to the lug's axis" % (b['arm_side'], b['turn']), 'Ch 62'),
+                ('Root of the arm', 'R%g min, all round' % b['r_root'], 'Ch 60'),
                 ('Holes', "2 × Ø%g H13 through, %g apart on the foot's diagonal" % (b['H'], b['pitch']), 'Ch 56'),
                 ('Their position', 'Ø%.1f (M) to A, the face on the end plate' % b['t'], 'Ch 63'),
                 ('Lug', 'Ø%g × %g, %s-6H through' % (b['lug_d'], b['lug_len'], b['thread'].replace(' x ', ' × ')), 'Ch 56')]

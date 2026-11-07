@@ -9,6 +9,8 @@ import fusion_check as fc
 importlib.reload(fc)
 import drawings_detail as DD
 importlib.reload(DD)
+import lugs_brackets as LB
+importlib.reload(LB)
 
 PATH = '__COMPANION__/scripts/PartDrawings/PartDrawings.py'
 WHERE = ('MechDesignFusionClaude Vol3', 'Chapter 63 check %s' % time.strftime('%Y-%m-%d %H%M'))
@@ -52,10 +54,14 @@ def run(_context):
     n_root, n_hole = rr.get(bd['r_root'], 0), rr.get(bd['H'] / 2, 0)
     fc.ok(n_root == 4, "the bracket's root in the model: %d faces of radius %g" % (n_root, bd['r_root']))
     fc.ok(n_hole == 2, "the bracket's holes in the model: %d of %g across" % (n_hole, bd['H']))
+    hv = LB.volume(True, (b['changes'].get('root_fillet') or {}).get('r'))
+    fc.ok('turn_arm' in b['changes'] and abs(b['volume'] - hv) <= 1e-4 * hv,
+          "the bracket's model: its arm turned %s deg (Ch 62), %.1f mm3 against %.1f by hand" % (
+              (b['changes'].get('turn_arm') or {}).get('turn'), b['volume'], hv))
     st = parts['stop']
     sr = st['changes'].get('root_fillet') or {}
-    fc.ok(sr.get('edges') == 4 and sr.get('r') == bd['r_root'],
-          "the opening stop's bracket as its sheet draws it: the root filleted on %s edges, r %s" % (sr.get('edges'), sr.get('r')))
+    fc.ok(sr.get('edges') == 4 and sr.get('r') == bd['r_root'] and 'turn_arm' in st['changes'],
+          "the opening stop's bracket as its sheet draws it: the arm turned, the root filleted on %s edges, r %s" % (sr.get('edges'), sr.get('r')))
     fc.ok(sorted((i['number'], i['n']) for i in st['items']) == sorted((n, q) for n, _t, _d, _nm, q in DD.STOP_ITEMS)
           and any(r[0] == 'S-0121' and 'N m' in r[1] for r in st['rows']),
           'the opening stop: %s; %s' % (', '.join('%s x%d' % (i['number'], i['n']) for i in st['items']),

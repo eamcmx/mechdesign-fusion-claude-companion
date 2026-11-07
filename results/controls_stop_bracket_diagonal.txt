@@ -1,0 +1,26 @@
+# controls/stop_bracket_diagonal
+# Autodesk Fusion 2706.1.17, run 2026-11-07 14:24, 39 s
+
+StopBracket 1.0 (2026-11-07)
+  ok   Run opens the dialog
+Opening stop brackets: the arm as Chapter 56 made it, its 4 sides within 45.000 deg of square to the push; the root r 2.5, 4 fillet faces; 99541.2 mm3, 0.7814 kg each (by hand 99541.2 mm3); the M8 heads 0.00 and 0.00 mm from the arm.
+Sweep of the bag gripper: 16 states, interference at 16 states, 4 contacts made in motion.
+
+[StopBracket 1.0 (2026-11-07)]
+  OK pressed, built in 39 s
+  ok   a new design opened
+  ok   the dialog's root radius: 2.5 mm
+  FAIL Stop bracket open 1: 4 sides of the arm, the worst 45.0000 deg off square to the push
+  ok   Stop bracket open 1: the root, 4 faces of radius 2.5
+  FAIL Stop bracket open 1: 99541.2 mm3 in the model, 99399.2 by hand (0.1429 %), 0.7814 kg, Steel AISI 1045 225 ANLD
+  FAIL Stop bracket open 1: the M8 heads 0.00 and 0.00 mm from the arm (by hand 4.50, the heads drawn 12 across)
+  FAIL Stop bracket open 2: 4 sides of the arm, the worst 45.0000 deg off square to the push
+  ok   Stop bracket open 2: the root, 4 faces of radius 2.5
+  FAIL Stop bracket open 2: 99541.2 mm3 in the model, 99399.2 by hand (0.1429 %), 0.7814 kg, Steel AISI 1045 225 ANLD
+  FAIL Stop bracket open 2: the M8 heads 0.00 and 0.00 mm from the arm (by hand 4.50, the heads drawn 12 across)
+  FAIL the sweep: 16 states, 128 parts, interference: [(('jaws', 0.0), [('Stop bracket open 1', 'Cap screw ISO 4762 M8x40 stop 3', 0.083), ('Stop bracket open 1', 'Cap screw ISO 4762 M8x40 stop 4', 0.083), ('Stop bracket open 2', 'Cap screw ISO 4762 M8x40 stop 7', 0.083), ('Stop bracket open 2', 'Cap screw ISO 4762 M8x40 stop 8', 0.083)]), (('jaws', 3.0), [('Stop bracket open 1', 'Cap screw ISO 4762 M8x40 stop 3', 0.083), ('Stop bracket open 1', 'Cap screw ISO 4762 M8x40 stop 4', 0.083), ('Stop bracket open 2', 'Cap screw ISO 4762 M8x40 stop 7', 0.083), ('Stop bracket open 2', 'Cap screw ISO 4762 M8x40 stop 8', 0.083)])]
+  ok   contacts made in motion: Shock absorber DYSC-25-25-Y1F closed 1 / Lever A; Shock absorber DYSC-25-25-Y1F closed 2 / Lever B; Shock absorber DYSC-25-25-Y1F open 1 / Lever A; Shock absorber DYSC-25-25-Y1F open 2 / Lever B
+closest to the opening brackets: 
+  ok   refused: A root radius of 7 mm is refused: it must be at least 0 and under 6.5 mm, where the fillet's toe would reach the M8 heads' seats.
+7 FAILED
+CONTROL: the arm left on its diagonal; the sides, volume, heads and sweep lines above MUST fail, and they alone

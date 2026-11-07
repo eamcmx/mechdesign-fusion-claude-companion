@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 62: the bag gripper's opening stop brackets as Part 10 leaves them, the arm turned 45 degrees about its own axis so the shock absorber's push lies square to a face, its root rounded; the faces, fillets, screw-head clearance, volume and the range sweep measured."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "StopBracket"
+}

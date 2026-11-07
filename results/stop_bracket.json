@@ -1,0 +1,62 @@
+{
+ "r": 2.5,
+ "turned": true,
+ "brackets": [
+  {
+   "sides": 4,
+   "worst": 0.0,
+   "fillets": 4,
+   "gaps": [
+    4.5000000000000036,
+    4.500000000000029
+   ],
+   "name": "Stop bracket open 1",
+   "volume": 99399.21743898057,
+   "mass": 0.7802838568959974,
+   "material": "Steel AISI 1045 225 ANLD",
+   "faces": 20
+  },
+  {
+   "sides": 4,
+   "worst": 0.0,
+   "fillets": 4,
+   "gaps": [
+    4.5000000000000036,
+    4.500000000000029
+   ],
+   "name": "Stop bracket open 2",
+   "volume": 99399.21743898066,
+   "mass": 0.7802838568959981,
+   "material": "Steel AISI 1045 225 ANLD",
+   "faces": 20
+  }
+ ],
+ "hand_volume": 99399.21743731761,
+ "sweep": {
+  "states": 16,
+  "parts": 128,
+  "hits": [],
+  "contacts": [
+   [
+    "Shock absorber DYSC-25-25-Y1F closed 1",
+    "Lever A"
+   ],
+   [
+    "Shock absorber DYSC-25-25-Y1F closed 2",
+    "Lever B"
+   ],
+   [
+    "Shock absorber DYSC-25-25-Y1F open 1",
+    "Lever A"
+   ],
+   [
+    "Shock absorber DYSC-25-25-Y1F open 2",
+    "Lever B"
+   ]
+  ],
+  "near": [],
+  "seconds": 6.094025373458862
+ },
+ "t_change": 36.3991641998291,
+ "seconds": 42.91980814933777
+}

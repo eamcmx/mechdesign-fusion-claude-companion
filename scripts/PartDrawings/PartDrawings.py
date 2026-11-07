@@ -40,7 +40,7 @@ if LIB not in sys.path:
 import drawings_detail as DD     # noqa: E402
 importlib.reload(DD)
 
-VERSION = 'PartDrawings 1.0 (2026-11-04)'
+VERSION = 'PartDrawings 1.1 (2026-11-07)'
 D = adsk.drawing
 _last = {}
 
@@ -148,11 +148,27 @@ def root_fillet(root, body, m, spec):
 CHANGES = {'root_fillet': root_fillet}
 
 
+def turn_arm(tb, spec):
+    """Chapter 62's change, made on the part's copy while it is still in the machine's world: the opening bracket's arm
+    turned 45 deg about its own axis, by StopBracket's own function."""
+    _load('StopBracket').turn_arm(tb, spec.get('side', 1))
+    return dict(turn=DD.bracket()['turn'])
+
+
+BEFORE = {'turn_arm': turn_arm}        # changes made on the copy in world coordinates, before it is moved into its frame
+
+
+def before(tb, spec):
+    return {ch['kind']: BEFORE[ch['kind']](tb, ch) for ch in spec.get('changes', ()) if ch['kind'] in BEFORE}
+
+
 def apply_changes(root, body, m, spec):
     """Every change Part 10 decided for the part, carried into its body before it is drawn: on its own sheet and in
     an assembly alike."""
     done = {}
     for ch in spec.get('changes', ()):
+        if ch['kind'] in BEFORE:
+            continue
         done[ch['kind']] = CHANGES[ch['kind']](root, body, m, ch)
     return done
 
@@ -419,10 +435,11 @@ def take_part(spec, RS):
     m = to_local(*fr)
     tbm = adsk.fusion.TemporaryBRepManager.get()
     tb = tbm.copy(body)
+    pre = before(tb, spec)
     tbm.transform(tb, m)
     mat = body.material.name if body.material else None
     big = max(f.geometry.radius for f in body.faces if f.geometry.surfaceType == adsk.core.SurfaceTypes.CylinderSurfaceType)
-    return dict(tb=tb, m=m, frame=fr, material=mat, machine_doc=mdoc, fits=fits(body), R=big * 10.0)
+    return dict(tb=tb, m=m, frame=fr, material=mat, machine_doc=mdoc, fits=fits(body), R=big * 10.0, pre=pre)
 
 
 def make_part(spec, RS, where):
@@ -435,7 +452,8 @@ def make_part(spec, RS, where):
     root = des.rootComponent
     body = root.bRepBodies.add(got['tb'])
     body.name = spec['title']
-    done = apply_changes(root, body, got['m'], spec)
+    done = dict(got['pre'])
+    done.update(apply_changes(root, body, got['m'], spec))
     body = root.bRepBodies.item(0)
     lib = app.materialLibraries.itemByName('Fusion Material Library')
     mat = lib.materials.itemByName(got['material']) if got['material'] else None
@@ -486,6 +504,8 @@ def make_assembly(spec, RS, where):
             src = [o for o in leaves if o.component.name == nm][0]
             body = src.bRepBodies.item(0)
             tb = tbm.copy(body)
+            if item['number'] in drawn:
+                done.update(before(tb, drawn[item['number']]))
             tbm.transform(tb, m)
             if occ0 is None:
                 occ0 = root.occurrences.addNewComponent(adsk.core.Matrix3D.create())

@@ -1,0 +1,511 @@
+{
+ "r": 2.5,
+ "turned": false,
+ "brackets": [
+  {
+   "sides": 4,
+   "worst": 45.0,
+   "fillets": 4,
+   "gaps": [
+    0.0,
+    0.0
+   ],
+   "name": "Stop bracket open 1",
+   "volume": 99541.24587716434,
+   "mass": 0.78139878013574,
+   "material": "Steel AISI 1045 225 ANLD",
+   "faces": 24
+  },
+  {
+   "sides": 4,
+   "worst": 45.0,
+   "fillets": 4,
+   "gaps": [
+    0.0,
+    0.0
+   ],
+   "name": "Stop bracket open 2",
+   "volume": 99541.24587716447,
+   "mass": 0.781398780135741,
+   "material": "Steel AISI 1045 225 ANLD",
+   "faces": 24
+  }
+ ],
+ "hand_volume": 99541.24587705519,
+ "sweep": {
+  "states": 16,
+  "parts": 128,
+  "hits": [
+   [
+    [
+     "jaws",
+     0.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     3.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     6.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     9.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     12.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     15.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     18.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     21.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     24.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     27.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     30.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     33.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     36.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     39.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     42.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ],
+   [
+    [
+     "jaws",
+     45.0
+    ],
+    [
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 3",
+      0.083
+     ],
+     [
+      "Stop bracket open 1",
+      "Cap screw ISO 4762 M8x40 stop 4",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 7",
+      0.083
+     ],
+     [
+      "Stop bracket open 2",
+      "Cap screw ISO 4762 M8x40 stop 8",
+      0.083
+     ]
+    ]
+   ]
+  ],
+  "contacts": [
+   [
+    "Shock absorber DYSC-25-25-Y1F closed 1",
+    "Lever A"
+   ],
+   [
+    "Shock absorber DYSC-25-25-Y1F closed 2",
+    "Lever B"
+   ],
+   [
+    "Shock absorber DYSC-25-25-Y1F open 1",
+    "Lever A"
+   ],
+   [
+    "Shock absorber DYSC-25-25-Y1F open 2",
+    "Lever B"
+   ]
+  ],
+  "near": [],
+  "seconds": 7.824671745300293
+ },
+ "t_change": 30.247798442840576,
+ "seconds": 38.48750400543213
+}
