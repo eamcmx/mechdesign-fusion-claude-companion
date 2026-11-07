@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 66: a made part programmed in the Manufacture workspace: the opening stop bracket milled in three setups, its R2.5 root cut by a cutter with that corner radius, and the axle's pinion spacer turned long for grinding; toolpaths, machining times and Fanuc NC programs."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "Making"
+}

@@ -1,0 +1,31 @@
+# making_check
+# Autodesk Fusion 2706.1.17, run 2026-11-07 18:16, 172 s
+
+Making 1.0 (2026-11-07)
+  ok   Run opens the dialog
+Making bracket: 3 setups, 27.4 min of cutting.
+1 Bolting face and holes: Face1 ok, Drill1 ok; 47 s; 661.NC (61 lines)
+2 Top, bolted to a fixture plate: Face2 ok, 3D Adaptive Roughing1 ok, 3D Contour1 ok, 2D Contour1 ok; 1142 s; 662.NC (10429 lines)
+3 The lug, M30 x 1.5: Bore1 ok, Thread1 ok, 3D Contour2 ok; 453 s; 663.NC (711 lines)
+notes: the lug contour: bottom height 'from surface top' (default 'from surface bottom'), -25.5 mm
+
+[Making 1.0 (2026-11-07)]
+  OK pressed, built in 55 s
+  ok   a new design opened
+  ok   the parts made: bracket, spacer
+  ok   the bracket: 99399.2 mm3 against 99399.2 by hand (the arm turned); 2 holes, the bore, 4 root edges found
+  ok   the spacer: 67.80 mm long as drawn
+  ok   bracket / 1 Bolting face and holes: Face1 (50mm Face Mill), Drill1 ()
+  ok   bracket / 1 Bolting face and holes: 47 s, 661.NC, 61 lines, tools T1 D=50. CR=0. - ZMIN=87. - FACE MILL; T2 D=9. CR=0. TAPER=118DEG - ZMIN=3. - DRILL
+  ok   bracket / 2 Top, bolted to a fixture plate: Face2 (50mm Face Mill), 3D Adaptive Roughing1 (12mm Flat Endmill), 3D Contour1 (12mm Flat Endmill), 2D Contour1 (10mm Bullnose R2.5)
+  ok   bracket / 2 Top, bolted to a fixture plate: 1142 s, 662.NC, 10429 lines, tools T1 D=50. CR=0. - ZMIN=-3. - FACE MILL; T3 D=12. CR=0. - ZMIN=-86.7 - FLAT END MILL; T4 D=10. CR=2.5 - ZMIN=-75. - BULLNOSE END MILL
+  ok   bracket / 3 The lug, M30 x 1.5: Bore1 (10mm Flat Endmill), Thread1 (M10-1.5 Thread Mill), 3D Contour2 (12mm Flat Endmill)
+  ok   bracket / 3 The lug, M30 x 1.5: 453 s, 663.NC, 711 lines, tools T3 D=12. CR=0. - ZMIN=-28.5 - FLAT END MILL; T5 D=10. CR=0. - ZMIN=-64.997 - FLAT END MILL; T6 D=7.62 CR=0. - ZMIN=-65.023 - THREAD MILL
+  note spacer / Profile Finishing1: Lead-Out has been modified due to a gouge with the remaining stock
+  ok   spacer / Turned from 60 x 40 tube: Face1 (CNMT Right Hand), Profile Roughing1 (CNMT Right Hand), Profile Finishing1 (VNMT Right Hand) WARNING, Profile Roughing2 (ID Boring), Part1 (OD Grooving)
+  ok   spacer / Turned from 60 x 40 tube: 70 s, 665.NC, 122 lines, tools T0101; T0202; T0303; T0404
+  ok   the arm's root: a 2D contour with 10mm Bullnose R2.5, CR=2.5 in the program
+  ok   the spacer faced 0.40 long and parted 0.40 long: turned to 68.6 for grinding to 67.78-68.46
+  ok   the bracket: 27.4 min of cutting in 3 setups; the spacer 1.2 min
+  ok   refused: No part called crane: Chapter 66 makes bracket, spacer.
+ALL PASS

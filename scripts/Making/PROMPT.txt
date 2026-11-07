@@ -1,0 +1,45 @@
+Write a Fusion Python script that, when run, takes one made part out of its machine as Part 10 left it and programs
+it in Fusion's Manufacture workspace: the setups and their stock, the operations with tools from Fusion's sample
+libraries, the toolpaths generated, each setup's machining time, and the NC program from Fusion's generic Fanuc
+posts, so that the designer sees what the shop will run and how long it takes.
+
+INPUTS (a command dialog, with this default):
+- the part: one of bracket or spacer, bracket
+
+DERIVED (never typed):
+- scripts/RangeSweep/RangeSweep.py: the bag gripper and the rear axle as their detail chapters left them, loaded and
+  called, not copied; scripts/StopBracket/StopBracket.py: Chapter 62's change to the opening bracket
+- lib/lugs_brackets.py: the opening bracket's hand volume; lib/drawings_detail.py: the spacer's length, its grinding
+  range and the length it is turned to
+- the tools from Fusion's sample libraries 'Milling Tools (Metric)', 'Hole Making Tools (Metric)' and 'Turning Tools
+  (Metric)'; the posts fanuc.cps and fanuc turning.cps from Fusion's own install
+
+HARD CONSTRAINTS:
+- bracket: the opening stop bracket P13-018 with its arm turned and its root R2.5, in its own frame (the bolting face
+  on z = 0, the arm up z), milled from a block 2.5 mm over each side and 3 mm over top and bottom, in three setups:
+  (1) the bolting face faced and the two 9 mm holes drilled; (2) the part bolted to a fixture plate through its own
+  holes: the top faced, adaptive roughing leaving 0.3 mm, the walls finished by a 3D contour, the arm's root cut by a
+  2D contour of the arm's walls with a 10 mm cutter whose corner radius is the drawing's 2.5 mm, its floor at the
+  foot's face; (3) down the lug's axis: the bore to the M30 x 1.5's minor diameter, the thread milled at 1.5 mm
+  pitch, the lug's round finished over its 25 mm length.
+- spacer: the rear axle's pinion spacer A01-016, its axis along z, turned from 60 x 40 tube: faced, the outside
+  roughed and finished, the bore roughed, parted off; faced and parted each half the grinding allowance long, so the
+  part comes off at the length it is turned to, for grinding to each axle.
+- Every operation generated; each setup's machining time read from Fusion and its NC program written; nothing else
+  saved.
+- Refuse a part that is not one of the two.
+
+FUSION CONVENTIONS:
+- a new design document (FusionDesignDocumentType) for the part, parametric, the body in a base feature, no joints
+  and no as-built joints; the Manufacture workspace's CAM product, milling and turning setups; lengths in mm, the
+  API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives each setup's operations, its machining time and its NC file with its length in lines, and a
+  version tag.
+- The bracket's volume within 0.01 % of lib/lugs_brackets.py's; its two holes, its bore and its four root edges
+  found.
+- Every operation with a toolpath and no warning; every setup timed and posted, its NC file listing its tools.
+- The root's cutter with a corner radius of 2.5 mm in the program.
+- The spacer as drawn, faced and parted 0.40 mm long each, turned to 68.6 mm.
+- Refused: a part called crane.
