@@ -11,6 +11,8 @@ DERIVED (from lib/wrist_detail.py, lib/wrist_design.py and Chapter 51's Material
 - numbers(): the motors' duty, the stop, the play at the tool, the wrist's mass, each motor's end
 - abutments(): the shoulders against SKF's da and Da; DETAIL_ABUT, the diameter the detail gives those outside
 - load_classes(): each bearing position's load against SKF's C and its class
+- housing_classes(): SKF's table 4 on those classes, the front side gears' housings and the floating roll bearing's
+  bore
 - detail_numbers(): the detail's new names and their part numbers
 - MaterialsFits.apply(): the materials and the fits on the open design
 
@@ -30,9 +32,12 @@ HARD CONSTRAINTS:
   to 82 and renamed so, the trunnion's end at 82.
 - The front side-gear bearings' housings M7, their load being light; the carrier's bore for the roll shaft's lower,
   floating 6002 J7, so that its outer ring can slide; every other class Chapter 51's.
+- Refuse a contact angle the AM8111's brakes (8 ms delay) would not stop the carrier short of, or one leaving the
+  block under 10 deg a side: WristIntegration.py's build() refuses, run with the products' figures.
 
 FUSION CONVENTIONS:
-- WristIntegration's own new design document and groups; nothing moved; lengths in mm, the API's cm inside.
+- WristIntegration's build() makes the design document (FusionDesignDocumentType), its groups and Chapter 39's
+  As-built joints and motion links; nothing moved; lengths in mm, the API's cm inside.
 
 ACCEPTANCE CRITERIA:
 - A message gives each motor's end, the slip ring, the abutments, the key, the motors' duty, the stop, the play, the

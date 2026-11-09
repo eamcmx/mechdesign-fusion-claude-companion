@@ -185,7 +185,7 @@ def end_spigot():
     F_pull = B.BAG['m'] * acc['stop']['a_h']                   # the bag on one end wall, a stop along the beam
     n, d = 2, 8.0
     L_need = L['beam_t'] + 1.5 * d
-    At, Sp = 36.6, 600.0                                       # M8 8.8, as Volume 1
+    At, Sp = 36.6, 580.0                                       # M8 8.8: below M16, 580 MPa (ISO 898-1)
     Fi = 0.75 * At * Sp
     shear = F_pull / n / (math.pi * d * d / 4)
     return dict(w_in=w_in, h_in=h_in, depth=L['block'], T=T, F_couple=F_couple, p_couple=p_couple, F_pull=F_pull,
@@ -210,7 +210,7 @@ def bracket_screws():
     M = F * arm
     n, d = 2, 8.0
     P = M / e / n                                              # each screw's share of the tipping
-    At, Sp = 36.6, 600.0
+    At, Sp = 36.6, 580.0                                       # M8 8.8, as above
     Fi = 0.75 * At * Sp
     C = 0.25
     n0 = Fi / (P * (1 - C))

@@ -1,4 +1,4 @@
-# GearPairOnPlate against the acceptance criteria of its prompt (Topic 5), measured on what Fusion built:
+# GearPairOnPlate against the acceptance criteria of its prompt (Chapter 12), measured on what Fusion built:
 #   1. the student path: Run, the dialog, OK with the defaults (Command.doExecute; message boxes printed)
 #   2. five components, one body each, gear 2 and shaft 2 at x = a; two rigid and two revolute As-built Joints,
 #      no plain Joints, one Motion Link, no interference at rest

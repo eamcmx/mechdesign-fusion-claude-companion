@@ -2,15 +2,15 @@
 # FlapSystem.py  -  Chapter 34 of "Mechanical Design in Autodesk Fusion with Claude": the flap actuation system put
 # together. The actuator of Chapter 33 (FlapActuator.py, loaded, not copied) hangs on its trunnions in a fitting on
 # the rear spar; its rod end is pinned in the fork of the horn on the flap's middle; the flap turns on two hinge
-# brackets under the wing. The wing's spar and skins are drawn as the brief's section, not designed. The sizing is
+# brackets bolted to ribs inside the wing and out through the cove. The wing's spar and skins are drawn as the brief's section, not designed. The sizing is
 # lib/flap_design.system_design(); the parts lib/mdfc_parts.py. Written from PROMPT.txt beside it; checked by
 # checks/flap_system_check.py.
 #
 #   INPUTS        the dialog: the screw's operating factor f_p (passed to the actuator)
 #   DERIVED       flap_design.system_design(): the flap's forces, the hinges, the horn, the fitting; SYS positions;
 #                 linkage(): the actuator's swing and length for each flap angle
-#   HARD RULES    build() refuses what the actuator refuses, and any lug, pin or bearing of the system under 2 on
-#                 the ultimate load
+#   HARD RULES    build() refuses what the actuator refuses, and the horn's root or cheeks, a pin, a bracket or its
+#                 eye, or a lug of the fitting under 2 against yield at the ultimate load
 #   CONVENTIONS   the hinge line on X (along the span, the flap's middle at x = 0), Y aft, Z up; three subassemblies
 #                 (Wing, grounded; Actuator, with its own six; Flap); the flap turns about X, the actuator swings
 #                 about its gimbal's axis; pose(delta) sets the flap, the swing and the rod from the linkage

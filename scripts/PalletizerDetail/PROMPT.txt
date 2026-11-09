@@ -4,7 +4,7 @@ gives every made part its material and every fitting face its class and roughnes
 chapter's decisions by hand where they differ from the rules.
 
 INPUTS (a command dialog, with these defaults):
-- the assembly, bag
+- the assembly: one of bag, robot, unit or vacuum, bag
 - the plugs' fillet weld leg (mm), 4
 
 DERIVED (from lib/palletizer_detail.py and Chapter 51's MaterialsFits.py, never typed):
@@ -15,6 +15,7 @@ DERIVED (from lib/palletizer_detail.py and Chapter 51's MaterialsFits.py, never 
 - plug_weld(): the fillet weld's stresses and its size against Shigley's Table 9-6
 - gland(), gallery_plug(): the O-ring's groove to ERIKS's dynamic table, the DIN 908 plugs
 - vacuum_joint(): the plate's through bolts, their length and preload
+- sleeve_fixing(): the cups' sleeves' foot flange and its screws
 - HIWIN: the guideways' order codes
 - MaterialsFits.apply(): the materials and the fits on the open design
 
@@ -38,10 +39,14 @@ HARD CONSTRAINTS:
 - By hand after the census: H7 in the rods' eyes, H7 in the floating bosses, the jaws' tubes, stubs and welds in 1020,
   the tube's zones s6 Ra 0.8 in the boss and g6 Ra 0.4 below, the stubs' seats marked ground after welding, and the
   clearance classes and the HIWIN codes in the descriptions.
-- Refuse a weld leg under Table 9-6's minimum for the 4 mm wall, or over the wall.
+- Refuse a weld leg under Table 9-6's minimum for the 4 mm wall, or over the wall, and an assembly that is not one of
+  the four.
 
 FUSION CONVENTIONS:
-- Each assembly's own new design document and groups; lengths in mm, the API's cm inside.
+- Each assembly's own script makes its new design document (FusionDesignDocumentType) and its groups.
+- No joints, as-built or otherwise: the robot, the bag gripper, the compliance unit and the vacuum gripper each place
+  their groups by transforms, as their own scripts do.
+- Lengths in mm, the API's cm inside.
 
 ACCEPTANCE CRITERIA:
 - A message names the assembly, the faces given by hand and the descriptions, and a version tag.

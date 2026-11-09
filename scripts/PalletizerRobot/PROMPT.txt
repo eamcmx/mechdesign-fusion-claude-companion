@@ -4,8 +4,10 @@ box up to the elbow, the upper arm with its yoke, its front fork and its rear le
 rod, the levelling loop's two rods and the elbow's triangle, and the wrist housing with J4's RV-80N, its motor and
 the tool flange. Every pin turns on its bearing.
 
-INPUTS (a command dialog, with these defaults):
-- the pose to show, q1, q2 and q3 in degrees: 0, 25.988 and -51.036, the standard cycle's low point
+INPUTS (a command dialog; the pose, by default the cycle's low point):
+- J1, q1 (deg), 0
+- J2, q2 (deg), 25.988
+- J3, q3 (deg), -51.036
 
 DERIVED (from lib/palletizer_design.py, lib/palletizer_drives.py and lib/palletizer_links.py, never typed):
 - the layout: the shoulder A at (300, 1000) mm, the lower arm 1300, the upper arm 1400, the crank and the rear lever
@@ -38,8 +40,9 @@ HARD CONSTRAINTS:
   corners and at full reach.
 
 FUSION CONVENTIONS:
-- A new design document; millimetres in the world, J1's axis along Z through the origin, the arm in the XZ plane
-  facing +X, J2 and J3 about the line through A along Y.
+- A new design document (FusionDesignDocumentType) in mm; J1's axis along Z through the origin, the arm in
+  the XZ plane facing +X, J2 and J3 about A's line along Y.
+- No joints, as-built or otherwise; set_pose() closes the loops.
 - Top-level groups: Base (grounded), Turret, Lower arm, Crank, Upper arm, Parallel rod, Levelling rod 1 and 2,
   Triangle, Wrist, and one each for the balancer's barrels and rods; each group's parts grounded inside it.
 - The API works in cm and radians.

@@ -1,5 +1,6 @@
 # =============================================================================
-# BevelWristPrompt.py  -  the script that the bevel-wrist prompt of Topic 5 asks for (PROMPT.txt beside it),
+# BevelWristPrompt.py  -  Chapter 26 of "Mechanical Design in Autodesk Fusion with Claude": the bevel differential
+# of the robot wrist that its prompt asks for (PROMPT.txt beside it),
 # written from that prompt alone: every size, rule, joint and link below is a line of the prompt.
 #
 #   INPUTS        FIELDS (the dialog)
@@ -11,7 +12,7 @@
 #   ACCEPTANCE    the message; pitch, roll and the combined pose; no interference at rest, in two poses and through
 #                 one tooth pitch of roll; z = 30 and z = 41 refused
 #
-# Tested in Fusion: workshop/fusion_toolkit/_dev/cases/bevelwrist_prompt_check.py
+# Checked by checks/bevelwrist_check.py.
 #
 #   Emmanuel Merchan, TSI Engineering Faculty - AI Augmented Education
 # =============================================================================

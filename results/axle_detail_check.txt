@@ -1,5 +1,5 @@
 # axle_detail_check
-# Autodesk Fusion 2706.1.17, run 2026-11-03 13:01, 154 s
+# Autodesk Fusion 2706.1.17, run 2026-11-09 20:44, 142 s
 
 AxleDetail 1.0 (2026-11-03)
   ok   Run opens the dialog
@@ -9,7 +9,7 @@ By hand: 198 faces, 192 of them new.
 axle: 30 made parts given their materials (none not in Fusion's library); the made parts weigh 153.19 kg, 153.19 kg with Fusion's generic materials; faces given a class and a roughness: 18 bearing seat, 4 located, 16 sliding.
 
 [AxleDetail 1.0 (2026-11-03)]
-  OK pressed, built in 90 s
+  OK pressed, built in 87 s
   ok   a new design opened
   ok   the cups' bores 100, 90 and 120 across, none 0.1 over: the casting's radii [40.0, 42.6, 44.0, 45.0, 50.0, 60.0]
   ok   the caps' bores 120

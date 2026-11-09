@@ -73,7 +73,8 @@ def pts(p0, p1):
 
 def cyl_detail(p0, p1, r):
     """The cylinders Chapter 29's carrier cuts and joins that the detail changes, each recognised by its radius and its
-    ends: the cups' bores to the cups, the nose's middle bore stepped, the case's shoulders lowered."""
+    ends: the cups' bores to the cups, the nose's middle bore stepped. The case's shoulders are not changed here: their
+    cylinder lies inside the case's sphere, so relieve_case() cuts a ring from each end after the build."""
     L = XD.carrier_layout()
     on_x = p0[1] == p0[2] == p1[1] == p1[2] == 0
     on_y = p0[0] == p0[2] == p1[0] == p1[2] == 0

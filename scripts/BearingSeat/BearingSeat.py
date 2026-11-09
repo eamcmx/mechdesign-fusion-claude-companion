@@ -6,7 +6,7 @@
 #   INPUTS        the dialog: bearing, n, Fr, L10h_req
 #   DERIVED       rating(): L10, L10h, s0; geometry(): dm, Dw, Z, the ring diameters, the cage speed ratio
 #   HARD RULES    build() refuses a life below the required one and balls that would touch each other
-#   CONVENTIONS   a new design; six components created where they belong; cm inside the API; As-built Joints;
+#   CONVENTIONS   a new design; five components created where they belong; cm inside the API; As-built Joints;
 #                 a Motion Link from the shaft to the balls at n_cage / n
 #   ACCEPTANCE    the message; 6002 and 61902 at 500 N; inner ring 90, balls 35.234 degrees; no interference; refusal
 #

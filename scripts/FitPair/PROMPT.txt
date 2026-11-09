@@ -1,9 +1,10 @@
 Write a Fusion Python script that, when run, builds a pin in a hole through a block, each made at a chosen limit of its
-ISO 286 tolerance, assembled so that the fit can be seen and measured: a clearance fit turns, the others are fixed.
+ISO 286 tolerance, assembled so that the fit can be seen and measured: a pair with clearance turns, a pair with
+interference is fixed.
 
 INPUTS (a command dialog, with these defaults):
 - nominal size D (mm), 20
-- hole tolerance class, H7
+- hole tolerance class (fixed and shown read-only: the fits are hole-basis), H7
 - shaft tolerance class (one of f7, g6, h6, k6, n6, p6), g6
 - condition (maximum material = smallest hole and largest pin; minimum material = largest hole and smallest
   pin), maximum material
@@ -31,8 +32,8 @@ HARD CONSTRAINTS:
 
 FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
-- Two components, one body each: Block (grounded), a cube of side 2 * D with the hole along z through it, from
-  z = -L/2 to L/2; Pin, a cylinder along z from z = -L/2 - 5 to L/2 + 5. Create both where they belong.
+- Two components, one body each: Block (grounded), a square plate 2 * D a side and L thick, from z = -L/2 to L/2,
+  with the hole along z through it; Pin, a cylinder along z from z = -L/2 - 5 to L/2 + 5. Create both where they belong.
 - The API works in cm: convert every mm input, and micrometres to mm (1 um = 0.001 mm).
 - Join with an As-built Joint: revolute about z if the pair is a clearance fit at the chosen condition, rigid otherwise.
 

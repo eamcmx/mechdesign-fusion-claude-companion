@@ -1,5 +1,6 @@
 # =============================================================================
-# PlanetaryPrompt.py  -  the script that the planetary-gearbox prompt of Topic 5 asks for (PROMPT.txt beside it),
+# PlanetaryPrompt.py  -  Chapter 15 of "Mechanical Design in Autodesk Fusion with Claude": the planetary gearbox
+# that its prompt asks for (PROMPT.txt beside it),
 # written from that prompt alone: every size, rule, joint and link below is a line of the prompt.
 #
 #   INPUTS        FIELDS (the dialog)
@@ -11,7 +12,7 @@
 #   ACCEPTANCE    the message; sun 360 deg -> carrier 80 deg, planets -224 deg on the carrier; no interference;
 #                 Zs 24 / Zp 30 / N 4 builds, Zs 20 / Zp 25 / N 4 refused
 #
-# Tested in Fusion: workshop/fusion_toolkit/_dev/cases/planetary_prompt_check.py
+# Checked by checks/planetary_check.py.
 #
 #   Emmanuel Merchan, TSI Engineering Faculty - AI Augmented Education
 # =============================================================================

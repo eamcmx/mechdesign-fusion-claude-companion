@@ -4,7 +4,7 @@ Drive CSG-2UH housed unit, ratio 50, whose output flange carries the next arm. J
 CSG-20-50-2UH. The output turns one fiftieth of the motor's shaft, the other way.
 
 INPUTS (a command dialog, with this default):
-- the J1 unit's size, 40 (the J2 unit's is 20)
+- the J1 unit's size, one of CSG 20, 32 or 40 (the J2 unit's is 20), 40
 
 DERIVED (from lib/scara_design.py, never typed):
 - modules(): each joint's load pattern over the standard cycle (J1 the horizontal leg, J2 the radial move), the
@@ -27,8 +27,8 @@ HARD CONSTRAINTS:
 - Nothing touches anything else at rest or with an output turned.
 
 FUSION CONVENTIONS:
-- A new design document. Two modules, J1 at the origin and J2 400 mm along X, each along +Z from its housing's input
-  face. In each, three subassemblies: stator (the housing, the rollers, the plate, the motor and the bolts),
+- A new design document (FusionDesignDocumentType). Two modules, J1 at the origin and J2 400 mm along X, each along
+  +Z from its housing's input face. In each, three subassemblies: stator (the housing, the rollers, the plate, the motor and the bolts),
   output (the flange and the flexspline) and input (the wave generator and the motor's shaft).
 - As-built revolute joints about each module's axis for its output and its input; a Motion Link of 50 turns in to
   one out, the output turning the other way (the circular spline is fixed).

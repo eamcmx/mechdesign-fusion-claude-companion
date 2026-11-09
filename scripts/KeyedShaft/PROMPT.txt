@@ -22,9 +22,9 @@ DERIVED (computed from the inputs, never typed):
     D above 44 up to 50: b 14, h 9, t1 5.5, t2 3.8
     D above 50 up to 58: b 16, h 10, t1 6.0, t2 4.3
 - hub bore D + 0.1 (0.05 mm clearance on the radius); hub outside diameter D + 2 * t_wall
-- force on the key at the shaft's surface F = 2 * T / D
+- force on the key at the shaft's surface F = 2 * T / D, with T in N.mm (1000 x T in N.m) and D in mm
 - key shear stress tau = F / (b * L_key); crushing stress on the hub side sigma = F / ((h - t1) * L_key)
-- shaft torsion stress tau_shaft = 16 * T / (pi * D^3)
+- shaft torsion stress tau_shaft = 16 * T / (pi * D^3), with T in N.mm
 
 HARD CONSTRAINTS:
 - D outside the table (10 mm or less, more than 58 mm): refuse.

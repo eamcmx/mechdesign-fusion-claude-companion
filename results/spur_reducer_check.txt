@@ -1,20 +1,20 @@
 # spur_reducer_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 11:00, 14 s
+# Autodesk Fusion 2706.1.17, run 2026-11-09 20:56, 14 s
 
-SpurReducer 1.0 (2026-11-01)
+SpurReducer 1.1 (2026-11-09)
   ok   the sizing recomputed independently 
   T1 26.526, T2 129.977 N m; Ft 1163.4 N, Kv 1.7045; Lewis 70.2 / 49.6 MPa, contact 562.1 MPa; DE-Goodman 2.94, 4.32, 2.29; L10 99941 h, 1808862 h; keys 90.1, 96.7, 98.5 MPa; the pinion's bending factor 2.995, contact factor 1.1546
   ok   Run opens the dialog
 Spur reducer built: 4.0 kW at 1440 rpm, 19:95 = 5.00:1, 130.0 N m out at 288 rpm.
 Gears m 3, face 30 mm, a = 171.0 mm; Lewis 70.2 and 49.6 MPa, contact 562 MPa (Kv 1.705); 300 HB steel: bending factors 2.99 and 4.47, contact factors 1.155 and 1.263.
-Shafts: 16 / 20 mm in, 25 / 30 / 35 mm out; DE-Goodman factors 2.94, 4.32, 2.29; slopes 4.57e-04 and 9.40e-05 rad; gear deflection 0.0149 mm.
+Shafts: 16 / 20 mm in, 25 / 30 / 35 mm out; DE-Goodman factors 2.94, 4.32, 2.29; slopes 4.57e-04 and 9.40e-05 rad; the input shaft's deflection under the pinion 0.0149 mm.
 Bearings 6204 (L10 99941 h) and 6206 (L10 1808862 h) for 20000 h.
 Keys 5x5x28, 10x8x42, 8x7x52: crushing 90.1, 96.7, 98.5 MPa.
 
 Parts: 63 components; 2 Bearing 6204 balls, 2 Bearing 6204 inner ring, 2 Bearing 6204 outer ring, 2 Bearing 6206 balls, 2 Bearing 6206 inner ring, 2 Bearing 6206 outer ring, 1 Cap input blind, 1 Cap input through, 1 Cap output blind, 1 Cap output through, 16 Cap screw M6x16, 2 Dowel 8x24, 1 Drain plug M16, 1 Filler plug M16, 1 Gear z95, 1 Housing base, 1 Housing cover, 1 Key 10x8x42 gear, 1 Key 5x5x28 input, 1 Key 8x7x52 output, 1 Lip seal 20x35x7, 1 Lip seal 30x47x7, 8 Nut M10, 1 Output shaft, 1 Pinion shaft, 8 Screw M10x45, 1 Spacer.
 
-[SpurReducer 1.0 (2026-11-01)] SpurReducer 1.0 (2026-11-01)
-  OK pressed, built in 11 s
+[SpurReducer 1.1 (2026-11-09)] SpurReducer 1.1 (2026-11-09)
+  OK pressed, built in 12 s
   ok   a new design opened
   ok   three subassemblies: ['Housing', 'Input shaft assembly', 'Output shaft assembly']
   ok   the parts, counted from Fusion: 63 components, 27 kinds 

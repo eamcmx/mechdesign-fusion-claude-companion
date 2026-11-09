@@ -17,7 +17,10 @@ HARD CONSTRAINTS:
 - Build with FlapSystem.py's own build() and apply MaterialsFits.py's apply(); copy neither, nor FlapActuator.py.
   Change the parts by replacing, before the build, the functions that draw them, each replacement recognising only
   the calls it means and passing every other through: the body adder for the motor unit's gearhead, motor and brake,
-  the gear for the pinion, the part for the gearhead's shaft. Restore every replaced function after the build.
+  the gear for the pinion, the part for the gearhead's shaft, the cylinder that cuts the shaft's hole through the
+  housing's back wall. Restore every replaced function after the build.
+- The hole through the housing's back wall for the gearhead's shaft opened from 14 to 17 across, so that the key's
+  corner, 7.76 from the axis, passes it.
 - The motor unit behind its flange (6 thick from the housing's back face): the GP 52 C 52 across and 65 long, the
   EC-i 52 to maxon's overall 145.1 with it, the brake 52 across in what is left of the specification's 176.
 - The gearhead's shaft 12 across from the flange's face 29.5 forward, its keyseat 2.5 deep with maxon's 4 x 4 x 20
@@ -31,7 +34,9 @@ HARD CONSTRAINTS:
   reaches at 28 V.
 
 FUSION CONVENTIONS:
-- FlapSystem's own new design document and groups; nothing moved; lengths in mm, the API's cm inside.
+- FlapSystem's own build() makes the new design document (FusionDesignDocumentType) and its groups, with the flap's
+  As-built revolute joint and the actuator's own joints and motion links; nothing moved; lengths in mm, the API's cm
+  inside.
 
 ACCEPTANCE CRITERIA:
 - A message gives the unit's length and the brake's, the key in the hub, the motor's point and current, the brake,
@@ -42,4 +47,5 @@ ACCEPTANCE CRITERIA:
   the end washer against the hub at 10.5, the M4 x 10 through it, 8 mm of it in the shaft.
 - Three zones hardened, each 16 long and centred on its ring; the faces' classes as above.
 - No interference among the system's parts and the actuator's outside at 0, 10, 20, 30 and 40 deg.
+- No interference inside the actuator, the flap up: the key clear of the housing's back wall.
 - Refused: the 21:1 gearhead, at which the motor would give 478 mN m over its 438 continuous.

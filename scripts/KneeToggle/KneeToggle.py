@@ -158,7 +158,7 @@ def build(l=40.0, alpha0=30.0, over=3.0, P=100.0):
 
     ju = revolute(root, upper, frame, 0.0, 0.0, 'Upper link turns')
     lim = ju.jointMotion.rotationLimits
-    lim.isMinimumValueEnabled, lim.minimumValue = True, -math.radians(alpha0 + over)    # just past straight
+    lim.isMinimumValueEnabled, lim.minimumValue = True, -math.radians(alpha0 + over)  # just past straight
     lim.isMaximumValueEnabled, lim.maximumValue = True, math.radians(15.0)
     revolute(root, lower, upper, K[0], K[1], 'Knee')
     revolute(root, lower, ram, R[0], R[1], 'Ram pin')

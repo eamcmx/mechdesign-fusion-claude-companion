@@ -9,8 +9,9 @@ INPUTS (a command dialog, with this default):
 
 DERIVED (never typed):
 - scripts/RangeSweep/RangeSweep.py: the machines as their detail chapters left them, loaded and called, not copied;
-  scripts/StopBracket/StopBracket.py: Chapter 62's change to the opening bracket; scripts/BillOfMaterials/
-  BillOfMaterials.py: each machine's bill, its made lines and the components that are each line's pieces
+  scripts/StopBracket/StopBracket.py: Chapter 62's change to the opening bracket;
+  scripts/BillOfMaterials/BillOfMaterials.py: each machine's bill, its made lines and the components that are each
+  line's pieces
 - lib/lugs_brackets.py: the opening bracket's hand volume; lib/drawings_detail.py: the spacer's length, its grinding
   range and the length it is turned to; lib/making.py: the tine's inside corner radius (10 mm), the plate it is
   nested on (2000 x 1000 mm), the spacing between parts and at the plate's edge (10 mm), the number of tines (16)
@@ -37,8 +38,9 @@ HARD CONSTRAINTS:
   of its pieces (a weldment on each of its pieces): every face's kind and area, a plane's normal and a point on it, a
   cylinder's, cone's or torus's axis, a point on it and its radius, the body's volume and smallest box; written to
   results/making_census.json; each machine closed unsaved.
-- Every operation generated; each setup's machining time read from Fusion and its NC program written; nothing else
-  saved but the census.
+- Every operation generated; each setup's machining time read from Fusion at the programmed feeds, with rapid moves
+  taken at 5000 mm/min and 10 s for each tool change, and its NC program written; nothing else saved but the census
+  and each part's results.
 - Refuse a part that is not one of the four.
 
 FUSION CONVENTIONS:
@@ -51,8 +53,8 @@ ACCEPTANCE CRITERIA:
   version tag.
 - The bracket's volume within 0.01 % of lib/lugs_brackets.py's; its two holes, its bore and its four root edges
   found.
-- Every operation with a toolpath and no warning; every setup timed and posted, its NC file listing its tools or its
-  cutting head.
+- Every operation with a toolpath and no warning but Fusion's own note that it moved a lead-in or a lead-out off the
+  stock left; every setup timed and posted, its NC file listing its tools or its cutting head.
 - The root's cutter with a corner radius of 2.5 mm in the program.
 - The spacer as drawn, faced and parted 0.40 mm long each, turned to 68.6 mm.
 - The tine: 126 250.0 mm3 sharp and 126 464.6 mm3 with its corner R10 (by hand), outline 1055.708 mm, 10 mm thick,

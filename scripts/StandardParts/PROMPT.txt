@@ -33,8 +33,10 @@ HARD CONSTRAINTS:
   the next free serial. Descriptions: a bought part's full designation from decide().
 
 FUSION CONVENTIONS:
-- The gripper's script makes its own new design document; the numbers and descriptions go into Component.partNumber
-  and Component.description; no joint is added and nothing is moved; lengths in mm, the API's cm inside mdfc_parts.
+- The gripper's script makes its own new design document (FusionDesignDocumentType); the numbers and descriptions go
+  into Component.partNumber and Component.description; components keep Volume 2's names (the dowel, drawn 22 long,
+  keeps the name 'Dowel pin 10x17'); lengths in mm, the API's cm inside mdfc_parts.
+- No joints, as-built or otherwise: BagGripper.py places its groups by transforms, and nothing is moved.
 
 ACCEPTANCE CRITERIA:
 - A message gives the shoulder and SKF's band, the bearing, the spacer, the hub and the key, the end washer and the

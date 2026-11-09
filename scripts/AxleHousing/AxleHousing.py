@@ -11,8 +11,8 @@
 #   DERIVED       axle_design.wheel_end() and housing_tube(); the positions below
 #   HARD RULES    build() refuses a shaft whose factor against yield in the hardest turn or in fatigue falls under
 #                 1.5, a bearing that does not last the truck's life, a tube under 1.5 in the pothole
-#   CONVENTIONS   the axle along Y, forward +X, up +Z, the axle's middle at the origin; two subassemblies of real
-#                 parts (housing; wheel end L and R), every part a component; bearings from Table 11-2
+#   CONVENTIONS   the axle along Y, forward +X, up +Z, the axle's middle at the origin; three subassemblies of real
+#                 parts (housing, wheel end L, wheel end R), every part a component; bearings from Table 11-2
 #   ACCEPTANCE    the message; no interference; each half shaft turning on its bearing; the parts list
 #
 #   Emmanuel Merchan, TSI Engineering Faculty - AI Augmented Education
@@ -179,7 +179,7 @@ def housing(root, Dz):
 # ---------- a wheel end ----------
 def wheel_end_asm(root, Dz, side):
     """The parts that turn: the half shaft, the bearing's inner ring and balls, the retaining ring, the studs.
-    side = +1 (right) or -1 (left)."""
+    side = +1 (left, L, at +Y) or -1 (right, R), as ISO 8855 and Chapters 30 and 31 name them."""
     w = Dz['w']
     s = side
     tag = 'L' if s > 0 else 'R'

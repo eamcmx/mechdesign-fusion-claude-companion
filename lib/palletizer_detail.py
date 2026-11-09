@@ -404,7 +404,8 @@ def gallery_plug():
 
 # ---- the vacuum gripper's plate joint -------------------------------------------------------------------------------
 VAC = dict(wall=5.0, plate=10.0, washer=(6.4, 12.0, 1.6), nut_m=5.0, d=6.0, At=20.1, Sp=580.0, K=0.20,
-           head=10.0)                                            # ISO 7089, ISO 4032, ISO 4762's head; Shigley K
+           head=10.0, hole=6.6)                                  # ISO 7089, ISO 4032, ISO 4762's head; Shigley K;
+#                                                                  the clearance hole in the wall and the plate
 
 
 def vacuum_joint():
@@ -420,7 +421,7 @@ def vacuum_joint():
     L = S.shortest(S.commercial('DIN_EN_ISO_4762')['6'], need)
     Fi = 0.75 * v['At'] * v['Sp']
     T = v['K'] * Fi * v['d'] / 1000.0
-    Aw = pi / 4.0 * (v['washer'][1] ** 2 - v['washer'][0] ** 2)
+    Aw = pi / 4.0 * (v['washer'][1] ** 2 - v['hole'] ** 2)    # the washer bears on the aluminium outside its hole
     Ah = pi / 4.0 * (v['head'] ** 2 - v['washer'][0] ** 2)
     fr = V.design()['frame']['screws']
     return dict(grip=grip, need=need, L=L, Fi=Fi, T=T, Aw=Aw, p_washer=Fi / Aw, p_head=Fi / Ah, Rp_beam=250.0,

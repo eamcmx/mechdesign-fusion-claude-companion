@@ -28,7 +28,8 @@ HARD CONSTRAINTS:
 - Nothing touches anything else, retracted, part way or extended.
 
 FUSION CONVENTIONS:
-- A new design document. The actuator along +Y from the gimbal's axis (y = 0) to the rod end, Z up, X along the span.
+- A new design document (FusionDesignDocumentType). The actuator along +Y from the gimbal's axis (y = 0) to the
+  rod end, Z up, X along the span.
 - Six subassemblies: Housing (grounded), Screw, Rod, Idler, Pinion, Encoder pinion; every part a component.
 - As-built Joints: the screw, the idler, the pinion and the encoder's pinion revolute about their axes; the rod a
   slider along Y, limited to the stroke. Motion Links: 54:30 to the idler and 54:26 to the encoder's pinion, each

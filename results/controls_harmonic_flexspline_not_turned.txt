@@ -1,0 +1,7 @@
+# controls/harmonic_flexspline_not_turned
+# Autodesk Fusion 2706.1.17, run 2026-11-09 20:16, 76 s
+
+  ok   no interference at phi = 0
+  angles with the flexspline in collision (wave generator deg, mm^3): [(45, 44.199), (90, 80.011)]
+  FAIL no interference at 45 and 90 deg
+CONTROL: the flexspline is bent but not turned; the clash check MUST fail

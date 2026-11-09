@@ -178,7 +178,7 @@ def rows(key, fits, material):
                 ('Set', 'the %d ground as one set, kept as one item' % g['set'], 'Ch 61')]
     elif key == 'spacer':
         sp = spacer()
-        out += [('Length', '%.1f nominal; turned to %.1f' % (sp['L'], sp['stock']), 'Ch 61'),
+        out += [('Length', '%.1f nominal, turned to %.1f' % (sp['L'], sp['stock']), 'Ch 61'),   # no ';': Fusion drops a cell with one
                 ('Grinding', 'to each axle, %.2f to %.2f' % sp['range'], 'Ch 66'),
                 ('Faces', 'both ground in one set-up', 'Ch 61'),
                 ('Datum A', 'the face on cone A', 'Ch 63'),
@@ -187,7 +187,7 @@ def rows(key, fits, material):
         f = fitting()
         out += [('Bores', 'envelope (E), ISO 14405-1', 'Ch 51')]
     out += fit_rows(fits)
-    out.append(('General', 'ISO 2768-mK', 'Ch 61'))
+    out.append(('General', 'ISO 2768-mK', 'Ch 63'))
     return out
 
 

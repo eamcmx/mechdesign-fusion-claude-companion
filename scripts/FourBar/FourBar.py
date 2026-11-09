@@ -148,7 +148,7 @@ def build(a=15.0, b=55.0, c=50.0, d=55.0):
     revolute(root, crank, ground, 0.0, 0.0, 'Crank turns')
     revolute(root, rocker, ground, d, 0.0, 'Rocker on ground')
     revolute(root, coupler, crank, B[0], B[1], 'Coupler on crank')
-    revolute(root, coupler, rocker, C[0], C[1], 'Coupler on rocker')        # closes the loop
+    revolute(root, coupler, rocker, C[0], C[1], 'Coupler on rocker')  # closes the loop
     colour(design, ground, 'Paint - Enamel Glossy (Grey)')
     colour(design, crank, 'Paint - Enamel Glossy (Red)')
     colour(design, coupler, 'Paint - Enamel Glossy (Yellow)')

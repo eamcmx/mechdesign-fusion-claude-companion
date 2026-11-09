@@ -1,11 +1,11 @@
 # =============================================================================
-# GearPairOnPlate.py  -  what the five-part prompt of Topic 5 asks for: a parametric spur gear pair on a base
-# plate, assembled and ready to turn with Drive Joints.
+# GearPairOnPlate.py  -  Chapter 12 of "Mechanical Design in Autodesk Fusion with Claude": a parametric spur gear
+# pair on a base plate, assembled and ready to turn with Drive Joints.
 #
 # The prompt, part by part, and where this script answers it:
 #   1. Goal            a new design with a plate, two shafts and two gears, jointed and linked      build()
 #   2. Inputs          m, z1, z2, pressure angle, face width, backlash, shaft diameter, plate        FIELDS
-#   3. Hard rules      involute flanks from the base circle (radial line below it), z >= 18,
+#   3. Hard rules      involute flanks from the base circle (radial line below it), z >= 2/sin^2(alpha), 18 at 20 deg,
 #                      the driven gear turned so a tooth meets a gap, ratio z2 / z1             tooth_outline, mesh_phase
 #   4. Conventions     FusionDesignDocumentType; one body per component; each tooth outline one closed polyline
 #                      with shared sketch points; cm inside the API; parts placed where they belong WHEN they are
@@ -13,7 +13,7 @@
 #   5. Acceptance      message with the centre distance, the ratio and the version; gear 1 driven 90 degrees turns
 #                      gear 2 by 45 degrees the other way; no interference at rest; z2 = 50 gives a = 70 mm
 #
-# Tested in Fusion: workshop/fusion_toolkit/_dev/cases/gearpair_check.py
+# Written from PROMPT.txt beside it; checked by checks/gearpair_check.py.
 #
 #   Emmanuel Merchan, TSI Engineering Faculty - AI Augmented Education
 # =============================================================================
@@ -23,11 +23,14 @@ import traceback
 import adsk.core
 import adsk.fusion
 
-VERSION = 'GearPairOnPlate 1.1 (2026-11-01)'
+VERSION = 'GearPairOnPlate 1.2 (2026-11-09)'
 CM = 0.1                                   # Fusion works in centimetres: millimetres x 0.1
 GAP = 1.0                                  # mm, the collar that lifts each gear off the plate
 BORE_CLEAR = 0.2                           # mm, the gear's bore is this much larger than the shaft
-Z_MIN = 18                                 # fewer teeth undercut at 20 degrees (Topic 4.1)
+def z_min(alpha):
+    """The fewest teeth a rack-cut gear has before its involute is undercut, 2 / sin^2(alpha) rounded up (Chapter 12):
+    18 at 20 degrees."""
+    return int(math.ceil(2.0 / math.sin(math.radians(alpha)) ** 2 - 1e-9))
 P3 = adsk.core.Point3D.create
 V3 = adsk.core.Vector3D.create
 VI = adsk.core.ValueInput.createByReal
@@ -167,7 +170,7 @@ def shaft_body(comp, ds, height):
 
 
 def colour(design, occ, name):
-    """An appearance from Fusion's library, as in the RDM toolkit; the build does not depend on it."""
+    """An appearance from Fusion's library; the build does not depend on it."""
     try:
         ap = design.appearances.itemByName(name)
         if not ap:
@@ -199,9 +202,10 @@ def as_built(root, moving, fixed, motion, name):
 # ---------- the assembly ----------
 def build(m=2.0, z1=20, z2=40, alpha=20.0, b=10.0, backlash=0.2, ds=8.0, plate=6.0):
     z1, z2 = int(round(z1)), int(round(z2))
-    if min(z1, z2) < Z_MIN:
-        raise ValueError('%d teeth: below %d teeth at 20 degrees the involute is undercut. Choose %d or more.'
-                         % (min(z1, z2), Z_MIN, Z_MIN))
+    zm = z_min(alpha)
+    if min(z1, z2) < zm:
+        raise ValueError('%d teeth: below %d teeth at %g degrees the involute is undercut. Choose %d or more.'
+                         % (min(z1, z2), zm, alpha, zm))
     a = m * (z1 + z2) / 2.0                                       # centre distance, mm
     bore = ds + BORE_CLEAR
     if bore >= 2 * (m * min(z1, z2) / 2.0 - 1.25 * m) - 2 * m:

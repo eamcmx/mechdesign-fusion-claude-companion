@@ -49,7 +49,7 @@ ACCEPTANCE CRITERIA:
   phi_n = 19.909 deg, efficiency 0.649 (f = 0.05) and 0.479 (f = 0.10), back-driving -0.063 at f = 0.10 (self-locking),
   self-locking above f = 0.0940.
 - One worm turn about +X turns the wheel -12 deg about +Z.
-- No interference at rest, and none at 13 positions through one turn of the worm.
+- No interference at rest, nor at the 12 steps of 30 deg through one turn of the worm.
 - Refused: z2 = 16; q = 2 (lambda = 26.6 deg).
 
 Give me one Python file and its .manifest.

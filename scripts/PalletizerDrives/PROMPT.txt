@@ -5,21 +5,22 @@ the crank with its counterweight turned by J3's RV-500N on an outboard bracket; 
 with the gas balancer's two cylinders in the fork's gap. The arms themselves are Chapter 43's.
 
 INPUTS (a command dialog, with these defaults):
-- the counterweight added to the crank, 100 kg
-- its centre's distance behind the shoulder, 600 mm
+- the counterweight added to the crank (kg), 100
+- its centre's distance behind the shoulder (mm), 600
 
 DERIVED (from lib/palletizer_drives.py and lib/palletizer_design.py, never typed):
-- the shoulder A at (300, 1000) mm; the ring's plane at 520 mm; the ring's sizes from SKF's table (pp. 66-67)
+- the shoulder A at (300, 1000) mm; the ring's plane at 520 mm
 - GAS: the balancer's pin a = 350 mm below the shoulder, the arm's lug b = 550 mm up the arm, the cylinders' bore
   63 mm; the pins' distance L = sqrt(a^2 + b^2 + 2 a b cos q2)
 - CW_BLOCK: the counterweight a steel block 460 x 460 mm, as thick as its mass needs, on the crank's outer face
-- the reducers as drawn: 325 mm across (the product page), 170 mm long (assumed)
 
 HARD CONSTRAINTS:
 - Refuse a counterweight over 200 kg (J1's reducer then falls short of its life, Table 42.4) or one whose block, with
   the crank turned down to q3 = 60 deg, would come within 20 mm of the floor.
-- The ring: the outer ring on the base's flange, the inner ring under the turret, one row of 20 mm balls on
-  dm = 841 mm between them in grooves, 0.4 mm clear of each.
+- The ring, its sizes typed here from SKF's table (pp. 66-67): the outer ring on the base's flange, bored 842.5 mm,
+  its top 46 mm above the ring's plane; the inner ring under the turret, 839.5 mm outside and 734 mm at its lip,
+  its top at 56 mm; one row of 20 mm balls on dm = 841 mm between them in grooves, 0.4 mm clear of each.
+- The reducers drawn 325 mm across (the product page) and 170 mm long (assumed), typed here.
 - J1's reducer under the turret's middle: its case on a plate inside the base's column, its output through a disc
   coupling to the turret's plate; its motor under it. The reducer carries no load but the torque.
 - The crank and its block outboard of the J3 cheek and of the base's flange: the crank's plane at y = 640 mm.
@@ -30,8 +31,8 @@ HARD CONSTRAINTS:
   its range (the balancer's parts set to each pose) or with J3 anywhere in its range.
 
 FUSION CONVENTIONS:
-- A new design document; millimetres in the world, J1's axis along Z through the origin, the arm in the XZ plane
-  facing +X, J2 and J3 about the line through A along Y.
+- A new design document (FusionDesignDocumentType); millimetres in the world, J1's axis along Z through the
+  origin, the arm in the XZ plane facing +X, J2 and J3 about the line through A along Y.
 - Subassemblies: Base (grounded), Turret (on J1), Lower arm and Crank (each on its own joint in the turret), and one
   occurrence each for the balancer's barrels and rods, set by the script to each pose.
 - As-built revolute joints: J1 about Z, J2 and J3 about the line through A along Y.

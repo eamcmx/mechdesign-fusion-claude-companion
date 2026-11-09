@@ -5,7 +5,7 @@ each nut; two Gates GT3 3 mm belts to the J3 and J4 servo motors inside the arm'
 turning (J4) with a tool flange at its lower end.
 
 INPUTS (a command dialog, with this default):
-- the ball screw spline's size, SP 20
+- the ball screw spline's size, one of SP 16, 20, 25 or 32, 20
 
 DERIVED (from lib/scara_design.py, never typed):
 - tool_joints(): the shaft at the full stroke as a cantilever (its swing and its bending against the endurance
@@ -26,8 +26,8 @@ HARD CONSTRAINTS:
 - Nothing touches anything else at J3 0, 100 and 200 mm with J4 at 0, 90 and 180 deg.
 
 FUSION CONVENTIONS:
-- A new design document. Seven groups: the arm's end (grounded), the screw side, the spline side, each motor's side,
-  a body-less carriage and the tool's shaft.
+- A new design document (FusionDesignDocumentType). Seven groups: the arm's end (grounded), the screw side, the
+  spline side, each motor's side, a body-less carriage and the tool's shaft.
 - The carriage slides along z on an As-built slider joint; the shaft turns on it on an As-built revolute joint, so
   that J3 and J4 are two joints. The spline nut turns with the shaft (a Motion Link, one to one); each motor turns
   with its nut through its belt's ratio, the same way (Motion Links).

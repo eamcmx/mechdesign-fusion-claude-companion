@@ -137,7 +137,7 @@ def build(n=4, a=30.0, dp=8.0):
     extrude(k, sk.profiles.item(0), 10.0, JOIN, body)                              # the pin, pointing away (theta = pi)
     sk = k.sketches.add(plane_at(k, 3.5))
     circle(sk, 0, 0, g['r_lock'])
-    circle(sk, -C, 0, b + GAP)                                                     # the relief, towards the pin
+    circle(sk, -C, 0, b + GAP)  # the relief, towards the pin
     crescent = [p for p in sk.profiles if p.areaProperties().centroid.x > 0][0]
     extrude(k, crescent, 6.5, JOIN, body)                                          # the locking disc
 

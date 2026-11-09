@@ -245,7 +245,7 @@ CHANGER = dict(iso=160, h_flange=20.0, cls='10.9', p_min=0.55e6, D_piston=0.100,
 GEOM = dict(R_spigot=65.0, R_bore=65.25, R_seg_out=68.0, R_seg_in=50.0, z_seg=(-92.0, -76.0), z_chamfer=-80.0,
             R_groove=70.0, z_face=-70.0, z_spigot=-95.0, z_tool=-112.0, z_web=(-102.0, -95.0), R_piston=50.0,
             z_bore=(-51.0, -7.0), z_gland=(-55.0, -51.0), z_piston=-47.0, z_cover=(-7.0, 0.0), piston_h=15.0,
-            R_rod=20.0, stroke=10.0, ring_w=0.015, port_d=3.0, z_ports=(-49.0, -10.0), a_ports=(15.0, 195.0))
+            R_rod=20.0, stroke=20.0, ring_w=0.015, port_d=3.0, z_ports=(-49.0, -10.0), a_ports=(15.0, 195.0))
 GEOM['contact_w'] = (GEOM['R_seg_out'] - GEOM['R_bore']) / math.cos(math.radians(15.0))
 GEOM['R_contact'] = (GEOM['R_seg_out'] + GEOM['R_bore']) / 2
 
@@ -306,7 +306,7 @@ def design(c=CHANGER, b=None):
     out['release'] = dict(A=A_rel, F=F_rel, pull=pull, n={m: F_rel / v for m, v in pull.items()})
     # the air one change uses: the lock chamber full (piston down, from its top to the cover) and the release chamber
     # full (piston up, from the gland to its face), each at the supply's pressure, as free air at 1 atm
-    st = 2 * gm['stroke']
+    st = gm['stroke']                                         # the piston's 20 mm, locked to free
     V_lock = pi * gm['R_piston'] ** 2 * (gm['z_cover'][0] - (gm['z_piston'] + gm['piston_h'])) * 1e-9
     V_rel = pi * (gm['R_piston'] ** 2 - gm['R_rod'] ** 2) * (gm['z_piston'] + st - gm['z_gland'][1]) * 1e-9
     ratio = (c['p_min'] + 101325.0) / 101325.0

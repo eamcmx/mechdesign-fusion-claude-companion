@@ -8,7 +8,8 @@
 #
 #   INPUTS        the dialog: the counterweight's mass and its distance behind the shoulder
 #   DERIVED       palletizer_drives: the ring, the reducers, the balancer (GAS), the block (CW_BLOCK)
-#   HARD RULES    build() refuses a counterweight over 400 kg or one whose block would near the floor at q3 = 60 deg
+#   HARD RULES    build() refuses a counterweight over 200 kg (CW_MAX) or one whose block would near the floor at
+#                 q3 = 60 deg
 #   CONVENTIONS   J1 along Z, the arm in XZ facing +X, J2 and J3 about the line through A along Y; subassemblies
 #                 Base (grounded), Turret, Lower arm, Crank, and the balancer's barrels and rods
 #   ACCEPTANCE    the message; no interference at the poses; the balancer's length against its formula

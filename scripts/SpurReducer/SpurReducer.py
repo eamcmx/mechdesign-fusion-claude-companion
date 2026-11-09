@@ -35,7 +35,7 @@ import mdfc_parts as mp         # noqa: E402
 importlib.reload(rd)
 importlib.reload(mp)
 
-VERSION = 'SpurReducer 1.0 (2026-11-01)'
+VERSION = 'SpurReducer 1.1 (2026-11-09)'
 CM = 0.1
 VI = adsk.core.ValueInput.createByReal
 VS = adsk.core.ValueInput.createByString
@@ -336,7 +336,7 @@ def build(P=4.0, n1=1440.0, KA=1.25, life=20000.0, nd=2.0):
             'Gears m %.0f, face %.0f mm, a = %.1f mm; Lewis %.1f and %.1f MPa, contact %.0f MPa (Kv %.3f); %.0f HB '
             'steel: bending factors %.2f and %.2f, contact factors %.3f and %.3f.\n'
             'Shafts: %.0f / %.0f mm in, %.0f / %.0f / %.0f mm out; DE-Goodman factors %.2f, %.2f, %.2f; slopes %.2e '
-            'and %.2e rad; gear deflection %.4f mm.\n'
+            'and %.2e rad; the input shaft\'s deflection under the pinion %.4f mm.\n'
             'Bearings %s (L10 %.0f h) and %s (L10 %.0f h) for %.0f h.\n'
             'Keys %dx%dx%d, %dx%dx%d, %dx%dx%d: crushing %.1f, %.1f, %.1f MPa.\n\n'
             'Parts: %d components; %s.\n\n[%s]'

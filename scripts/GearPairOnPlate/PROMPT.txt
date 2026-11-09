@@ -14,11 +14,12 @@ DERIVED (computed from the inputs, never typed):
 - pitch radius r = m·z/2, base radius r_b = r·cos α, tip radius r + m, root radius r − 1.25·m
 - centre distance a = m·(z1 + z2)/2
 - tooth thickness on the pitch circle = π·m/2 − backlash/2 for each gear
+- the fewest teeth without undercut z_min = 2/sin²α, rounded up
 
 HARD CONSTRAINTS:
 - True involute flanks starting at the base circle. Where the base circle is above the root circle, continue
   each flank with a radial line down to the root circle.
-- z1 and z2 at least 18 (fewer teeth undercut): refuse with a message.
+- z1 and z2 at least z_min, 18 at 20° (fewer teeth undercut): refuse with a message.
 - The driven gear is turned so that a tooth of the driver sits in a gap of the driven gear on the line of centres.
 - Ratio z2/z1; the driven gear turns the opposite way to the driver.
 

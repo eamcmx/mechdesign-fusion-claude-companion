@@ -22,9 +22,9 @@ HARD CONSTRAINTS:
 - Refuse a shaft that keeps under 1.5 against yield in the hardest turn or in fatigue, a bearing that does not last
   127.32 million turns, a tube under 1.5 in the pothole, saying which.
 - The axle along Y, forward +X, up +Z, the axle's middle at the origin.
-- The housing: a drum round the axle whose outside is 168.07 mm from the axis (195 mm of ground clearance with the
-  365 mm static radius); a front neck whose flange takes the carrier's plate at x = 165, both cut flat 166 mm below
-  the axle, with eight studs and nuts M12 on 370 mm (lib/axle_design.joint_bolts); a rear neck past the drum's back
+- The housing: a drum round the axle whose outside is 168.07 mm from the axis (196.93 mm of ground clearance with
+  the 365 mm static radius, at least the 195 of Change 1); a front neck whose flange takes the carrier's plate at
+  x = 165, both cut flat 166 mm below the axle, with eight studs and nuts M12 on 370 mm (lib/axle_design.joint_bolts); a rear neck past the drum's back
   with a cover, ten M8 screws, filler and drain plugs; a breather; tubes to each wheel; at each tube's end the
   bearing's housing with the seal's bore and the bearing's shoulder, and the brake's flange; a spring seat on each
   tube 575 mm from the middle.
@@ -36,8 +36,8 @@ HARD CONSTRAINTS:
 - Nothing touches anything else, at rest or turning.
 
 FUSION CONVENTIONS:
-- A new design document. Three subassemblies: Housing (grounded), Wheel end L, Wheel end R; each part a component,
-  grounded to its parent, one body each; deep-groove bearings drawn as in Chapter 27 (inner ring, outer ring, balls).
+- A new design document (FusionDesignDocumentType). Three subassemblies: Housing (grounded), Wheel end L, Wheel
+  end R; each part a component, grounded to its parent, one body each; deep-groove bearings drawn as in Chapter 27 (inner ring, outer ring, balls).
 - Each wheel end turns on an As-built revolute joint about Y on the housing.
 - The API works in cm and radians. Materials: Steel; the breather Brass; the seals Rubber, Silicone.
 

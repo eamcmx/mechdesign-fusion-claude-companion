@@ -159,6 +159,15 @@ def load_classes():
     return out
 
 
+def housing_classes():
+    """SKF's table 4 on load_classes(): the front side gears' 61902s carry a rotating outer ring load, M7 when it is
+    light and N7 when it is heavier; the roll shaft's lower 6002, the floating one, a load of indeterminate direction
+    with its outer ring free to slide, J7 when light or normal and K7 above."""
+    lc = {r['position']: r['cls'] for r in load_classes()}
+    return dict(front='M7' if lc['side gear, front'] == 'light' else 'N7',
+                floating='J7' if lc['roll shaft, lower (floating)'] in ('light', 'normal') else 'K7')
+
+
 if __name__ == '__main__':
     b, a = numbers()
     for k in ('peak', 'rms', 'nmax', 'brake_need'):

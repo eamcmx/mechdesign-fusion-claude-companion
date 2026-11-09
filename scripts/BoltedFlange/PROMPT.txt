@@ -1,5 +1,5 @@
 Write a Fusion Python script that, when run, builds two round flange plates clamped together by hexagon bolts and nuts
-on a bolt circle, assembled as one rigid joint, and that reports the preload, the tightening torque and the safety
+on a bolt circle, assembled with rigid joints, and that reports the preload, the tightening torque and the safety
 factors of the joint under an external tensile load.
 
 INPUTS (a command dialog, with these defaults):

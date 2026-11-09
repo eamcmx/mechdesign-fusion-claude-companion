@@ -1,4 +1,4 @@
-# PlanetaryPrompt against the acceptance criteria of its prompt (Topic 5), measured on what Fusion built:
+# PlanetaryPrompt against the acceptance criteria of its prompt (Chapter 15), measured on what Fusion built:
 #   1. the student path: Run, the dialog, OK with the defaults (Command.doExecute; message boxes printed)
 #   2. Ring, Sun, Planet 1..N, Carrier, Sun bearing: one body each; the ring grounded; As-built Joints only
 #      (N + 2 revolute, 1 rigid); N + 1 Motion Links; no interference at rest

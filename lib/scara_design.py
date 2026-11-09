@@ -402,7 +402,9 @@ def brake_stop(joint, Tb, b=None, angle=15.0):
                 hi_mom=hi_mom, N=N, Trep=u['Trep'], Tmom=u['Tmom'])
 
 
-BRAKE = {1: 8.0, 2: 3.5}        # the brakes' static torque at the motor (N m), chosen in Chapter 36
+BRAKE = {1: 8.0, 2: 3.5}        # the brakes' static torque at the motor (N m), chosen in Chapter 36; Chapter 38's
+#                                 integration() lowers J2's to 3.4, since 3.5 would load the gear to 125.6 N m, within
+#                                 1.1 % of its momentary 127 (the 3.4 below, in integration())
 
 
 def modules(b=None):

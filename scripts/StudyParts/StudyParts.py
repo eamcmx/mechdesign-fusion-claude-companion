@@ -13,8 +13,8 @@
 # Checked by the chapters' own checks against the results Fusion writes (tools/sim_results.py).
 #
 #   INPUTS        the dialog: the part
-#   DERIVED       lib/bag_gripper.py (the tine), lib/range_sweep.py (the bracket), lib/fatigue_detail.py (the
-#                 keyseat), lib/flap_design.py (the lug)
+#   DERIVED       none: the sizes are typed in geometry() as PROMPT.txt gives them, and the check holds each part
+#                 to lib/fea_studies.py's hand volume
 #   HARD RULES    one body in the root component; nothing saved by the script
 #   CONVENTIONS   a new design document; mm, the API's cm inside
 #   ACCEPTANCE    the message: the part's volume and the faces to pick

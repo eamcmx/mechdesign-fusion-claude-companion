@@ -1,15 +1,15 @@
 # controls/wrist_detail_spacers
-# Autodesk Fusion 2706.1.17, run 2026-11-03 11:29, 93 s
+# Autodesk Fusion 2706.1.17, run 2026-11-09 20:41, 80 s
 
-WristDetail 1.0 (2026-11-03)
+WristDetail 1.1 (2026-11-09)
   ok   Run opens the dialog
 Wrist in detail: the AM8111 with its brake and the PLE040 at 15:1 drawn to their makers' figures, each motor's end -187.5 mm off the middle; the SNM022A-06 with its 44.5 mm flange; the collar and spacers S4 and S5 at 18 mm; the key 5 x 5 x 10.
 Motor 0.119 N m rms of 0.19 rated, 0.139 peak of 0.68; the stop by 123.14 deg; play at the tool 0.940 mm; the wrist 5.865 kg.
 Front side-gear housings M7: 2 faces; the floating roll bearing's bore J7: 1 face.
 wrist: 29 made parts given their materials (polyurethane not in Fusion's library); the made parts weigh 3.05 kg, 3.04 kg with Fusion's generic materials; faces given a class and a roughness: 12 bearing seat, 8 dowel hole, 20 key seat, 3 keyed, 17 located.
 
-[WristDetail 1.0 (2026-11-03)] WristDetail 1.0 (2026-11-03)
-  OK pressed, built in 57 s
+[WristDetail 1.1 (2026-11-09)] WristDetail 1.1 (2026-11-09)
+  OK pressed, built in 47 s
   ok   a new design opened
   ok   the two gear motors [211.5, 211.5] mm along y with the spigot's 2 mm, the unit and the motor 209.5; ends at [-187.5, 187.5]
   ok   their section [(40.0, 46.0), (40.0, 46.0)] mm, 40 square with the connector's 6

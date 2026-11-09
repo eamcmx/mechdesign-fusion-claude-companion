@@ -17,21 +17,25 @@ DERIVED (from lib/axle_detail.py, lib/axle_design.py and Chapter 51's MaterialsF
 HARD CONSTRAINTS:
 - Build with RearAxle.py's own build() and apply MaterialsFits.py's apply(); copy neither, nor RearAxleCarrier.py or
   AxleHousing.py. Change the parts by replacing, before the build, the functions that draw them, each replacement
-  recognising only the calls it means and passing every other through: the cylinder for the cups' bores, the nose's
-  middle bore and the case's shoulders; the tube for the spacer, the companion flange's hub and the adjusters; the
-  splines' constants and their engagement's defaults. Restore every replaced function and constant after the build.
+  recognising only the calls it means and passing every other through: the cylinder for the cups' bores and the
+  nose's middle bore; the tube for the spacer, the companion flange's hub and the adjusters; the splines' constants
+  and their engagement's defaults. Restore every replaced function and constant after the build. The case's
+  shoulders are not a call to replace: their cylinder lies inside the case's sphere, so a smaller one changes nothing.
 - The cups' bores 100, 90 and 120, the cups' own diameters; the nose's middle bore 88 from cup A to its middle and 80
   from there to cup B; the spacer from cone A's front face to cone B's, 67.8 long; the companion flange's hub 50 across
   for 3 mm at cone B; the case's shoulders 75 across; the adjusters 106 across for 6 mm at the cups, 72 beyond.
 - The half shafts' and the side gears' splines 8 x 36 x 40 x 7.
-- After the build, split the carrier's and the caps' bores where the adjusters begin, and give by hand: M120 x 2 6g on
+- After the build, cut a ring 2 mm deep from 75 to 82 across at each end of the differential case, where the cones
+  sit, so that each cone sits on 75; split the carrier's and the caps' bores where the adjusters begin; and give by
+  hand: M120 x 2 6g on
   the adjusters and 6H in the bores beyond the cups; ISO 14's sliding fit on the half shafts and the side gears (shaft
   f7 a11 d10, hub H7 H10 H9), its fixed fit on the pinion (h7 a11 h10) in the companion flange (H7 H10 H9).
 - Refuse a pitch at which one thread would not carry the case bearing's axial load at the peak with a factor of 2 in
   shear on the adjusters' 1045.
 
 FUSION CONVENTIONS:
-- RearAxle's own new design document and groups; nothing moved; lengths in mm, the API's cm inside.
+- RearAxle's own build() makes the new design document (FusionDesignDocumentType) and its six subassemblies, with
+  its As-built joints and motion links; nothing moved; lengths in mm, the API's cm inside.
 
 ACCEPTANCE CRITERIA:
 - A message gives the abutments' diameters, the spacer, the cups' bores, the splines and their torsion factor, the

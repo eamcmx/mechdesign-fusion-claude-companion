@@ -1,7 +1,7 @@
 # controls/gearpair_half_tooth
-# Autodesk Fusion 2706.1.17, run 2026-11-01 02:56, 5 s
+# Autodesk Fusion 2706.1.17, run 2026-11-09 20:19, 5 s
 
-GearPairOnPlate 1.1 (2026-11-01)
+GearPairOnPlate 1.2 (2026-11-09)
   ok   Run opens the dialog
   dialog defaults (API units): {'m': 0.2, 'z1': 20, 'z2': 40, 'alpha': 0.3490658503988659, 'b': 1.0, 'backlash': 0.020000000000000004, 'ds': 0.8, 'plate': 0.6000000000000001}
 Gear pair built.
@@ -11,9 +11,9 @@ Ratio z2 / z1 = 40 / 20 = 2.000, gear 2 turning the other way
 
 Drive Joints on "Gear 1 turns": 90 deg turns gear 2 by 45.0 deg the other way.
 
-[GearPairOnPlate 1.1 (2026-11-01)] GearPairOnPlate 1.1 (2026-11-01)
+[GearPairOnPlate 1.2 (2026-11-09)] GearPairOnPlate 1.2 (2026-11-09)
   OK pressed, built in 3 s
-  ok   a new design opened (documents 1 -> 2)
+  ok   a new design opened (documents 7 -> 8)
   ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
   ok   one body each: [1, 1, 1, 1, 1]
   ok   gear 2 and shaft 2 at x = a = 60.00 mm (measured 60.000, 60.000)

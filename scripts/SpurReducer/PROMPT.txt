@@ -9,7 +9,8 @@ INPUTS (a command dialog, with these defaults):
 - bearing life L10 (h), 20000
 - design factor nd (a count), 2
 
-DERIVED (computed from the inputs, never typed; data from Budynas and Nisbett, 2015):
+DERIVED (the sizes chosen here, and what is computed from them and the inputs, never typed; data from Budynas
+and Nisbett, 2015):
 - gears m = 3 mm, z1 = 19, z2 = 95, face 30 mm, 20 deg: T1 = P / w1, T2 = T1 x 5 x 0.98; Ft = KA 2 T1 / d1,
   Fr = Ft tan 20 deg, W = Ft / cos 20 deg; Kv = (6.1 + V) / 6.1 (Eq. 14-6b); Lewis Kv Ft / (F m Y) with Y of
   Table 14-2; contact Cp sqrt(Kv Ft / (F cos 20 deg) (1/r1 + 1/r2)), Cp = 191 (Eq. 14-14); steel of 300 HB,
@@ -17,8 +18,8 @@ DERIVED (computed from the inputs, never typed; data from Budynas and Nisbett, 2
   and ZN = 2.466 N^-0.056 (Figs. 14-14, 14-15); bending factor St YN / stress, contact factor Sc ZN / stress
 - shafts of 1045 CD (Sut 630, Sy 530 MPa): bearings 98 and 100 mm apart, W at mid-span; DE-Goodman (Eq. 7-8) with
   ka = 4.51 Sut^-0.265, kb = 1.24 d^-0.107, Se = ka kb 0.5 Sut, keyseats Kt 2.14 and Kts 3.0 (Table 7-1), at the
-  input end (16 mm), the gear seat (35 mm) and the output end (25 mm); slopes W L^2 / (16 E I) and deflection
-  W L^3 / (48 E I) at the bearing seats, against Table 7-2
+  input end (16 mm), the gear seat (35 mm) and the output end (25 mm); slopes W L^2 / (16 E I) at the bearings
+  and deflection W L^3 / (48 E I) under the gears, the seat's diameter all along, against Table 7-2
 - bearings of Table 11-2 chosen by their seats, 6204 and 6206: C needed = R (60 n L10 / 10^6)^(1/3), L10 in hours
 - DIN 6885 keys 5x5x28, 10x8x42, 8x7x52 (form A): shear F / (b (L - b)), crushing F / ((h - t1)(L - b)), with
   F = 2 KA T / d; 60 and 100 MPa allowed
@@ -34,7 +35,7 @@ HARD CONSTRAINTS:
   bearing, a 25 mm end with its key. The gear with a web, six holes and a rim.
 - Lip seals 20x35x7 and 30x47x7 in the through caps; 4 M6 screws per cap; 8 M10 screws and nuts in the split
   flange, which stops short of the caps; two dowels; drain and filler plugs; feet with four holes.
-- Nothing touches anything else, at rest or turning.
+- Nothing touches anything else at rest, and the teeth do not collide while turning.
 
 FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
@@ -49,8 +50,8 @@ FUSION CONVENTIONS:
   housing and the caps.
 
 ACCEPTANCE CRITERIA:
-- A message gives the gears' stresses, the shafts' factors, slopes and deflection, the bearings' lives, the keys'
-  stresses, the parts list and a version tag.
+- A message gives the gears' stresses, the shafts' factors, both slopes and the input shaft's deflection under
+  the pinion, the bearings' lives, the keys' stresses, the parts list and a version tag.
 - Defaults: T1 26.526, T2 129.977 N m; Ft 1163.4 N, Kv 1.7045; Lewis 70.2 and 49.6 MPa, contact 562.1 MPa; the
   pinion's bending factor 2.995 and contact factor 1.155; shaft factors 2.94, 4.32, 2.29; L10 99941 and 1808862 h;
   keys 90.1, 96.7, 98.5 MPa.

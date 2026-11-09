@@ -1,12 +1,12 @@
 # controls/standard_parts_shoulder
-# Autodesk Fusion 2706.1.17, run 2026-11-03 10:50, 13 s
+# Autodesk Fusion 2706.1.17, run 2026-11-09 20:14, 15 s
 
-StandardParts 1.0 (2026-11-03)
+StandardParts 1.1 (2026-11-09)
   ok   Run opens the dialog
-Bag gripper detailed: the driven stub shafts with a 36.0 mm shoulder (SKF: 35.6 to 40.3), SKF 6206-2RS1, a spacer of 27, the lever's hub 30 long with DIN 6885-1 A 8 x 7 x 25, an end washer 40 x 5 and ISO 4762 M8 x 20; the dowel ISO 8734 10 x 22, 13 mm in the adapter. 37 bought components described by their full designations; new parts P13-014, P13-015, S-0107.
+Bag gripper detailed: the driven stub shafts with a 36.0 mm shoulder (SKF: 35.6 to 40.3), SKF 6206-2RS1, a spacer of 27, the lever's hub 30 long with DIN 6885-1 A 8 x 7 x 25, an end washer 40 x 5 and ISO 4762 M8 x 20; the dowel ISO 8734 10 x 22, 13 mm in the adapter. 39 bought components described by their full designations; new parts P13-014, P13-015, S-0107.
 
-[StandardParts 1.0 (2026-11-03)] StandardParts 1.0 (2026-11-03)
-  OK pressed, built in 12 s
+[StandardParts 1.1 (2026-11-09)] StandardParts 1.1 (2026-11-09)
+  OK pressed, built in 13 s
   ok   a new design opened
   parts: 82, the bag and the station's 9 rollers apart
   ok   the parts: 82, the gripper's 74 and four more on each jaw's driven end

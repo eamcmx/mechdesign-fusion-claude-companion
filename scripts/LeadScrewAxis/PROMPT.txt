@@ -35,8 +35,9 @@ FUSION CONVENTIONS:
   Frame (grounded): a plate from z = -6 to 0 and two end blocks; Guide rod: 8 mm, at y = 20, z = 20, between the
   end blocks; Screw: a threaded length of 20 leads centred on x = 0, journals of 8 mm into the end blocks' bores;
   Carriage: a block 20 mm long round the screw and the rod, its nut threaded in it.
-- Each thread is its section, ONE closed polyline, swept along the axis with a twist of a whole number of turns
-  (Fusion keeps a twist in tenths of a degree: Chapter 14).
+- Each thread is its section, ONE closed polyline, swept along the axis turning once per lead. The screw's 20 leads
+  are a whole number of turns, which Fusion keeps exactly (it keeps a twist in tenths of a degree: Chapter 14); the
+  nut, 20 mm long, turns 20 / L times (2400 deg for the defaults).
 - The API works in cm and radians.
 - AsBuiltJoints: rigid for the guide rod to the frame; revolute about the screw's axis between the screw and the
   frame, the direction tried and its sign measured (Chapter 17); a slider along x between the carriage and the

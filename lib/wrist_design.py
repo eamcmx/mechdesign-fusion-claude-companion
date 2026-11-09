@@ -627,7 +627,7 @@ def arm_loads40(b=None):
     r_out = math.hypot(o['r_p'], zb / 1000)
     M_out = b['m_p'] * ga * r_out + w['m'] * ga * h_w
     return dict(F=F, h_p=h_p, h_w=h_w, M=M, M_out=M_out, r_out=r_out, T_screw_wide=M / 0.090 / 2, T_screw_narrow=M / 0.020 / 2,
-                Fi_M6=0.75 * 20.1 * 600)
+                Fi_M6=0.75 * 20.1 * 580)     # class 8.8 below M16: 580 MPa (ISO 898-1)
 
 
 def loads40():

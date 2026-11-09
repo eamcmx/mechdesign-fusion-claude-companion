@@ -28,8 +28,8 @@ HARD CONSTRAINTS:
 - Neighbouring planets must not touch: 2·a·sin(π/N) > m·(Zp + 2), or refuse with a message.
 - True involute flanks from the base circle. Where the base circle is above the root circle, continue the flank
   with a radial line down to the root circle.
-- Each outside gear (sun, planets): a root disc with a bore, ONE tooth joined to it, then a circular pattern of
-  that tooth z times. The sun's tooth 0 points along +x; planet i's tooth 0 along ψ_i.
+- Each outside gear: a root disc (the planets' with their bores, the sun's solid, its shaft joined to it), ONE tooth
+  joined to it, then a circular pattern of that tooth z times. The sun's tooth 0 points along +x; planet i's tooth 0 along ψ_i.
 - The ring: an annulus from radius Rr − m (the tips of its inner teeth) to Rr + 1.25·m + wall (Rr its pitch
   radius); cut ONE tooth space and circular-pattern the cut Zr times. The tooth space has the outline of an
   outside tooth of a Zr-tooth gear with tip radius Rr + 1.25·m, root radius Rr − m and thickness π·m/2 + backlash/2

@@ -16,6 +16,8 @@ DERIVED (from lib/compliance_unit.py, never typed):
 HARD CONSTRAINTS:
 - Refuse the clamp gripper (Chapter 44's ring would open in the worst stop with the unit in the stack), a stroke
   over the rails' 30 mm, and a preload under what keeps the carriage down in the stops that throw the load up.
+- The stroke and the preload asked for are checked and printed only: the unit is always built with the layout's
+  30 mm stroke and the design's four springs of 213.3 N each.
 - The body is turned 90 deg to the changer: the ISO pattern's +X, with its pin and the changer's docking frame, lies
   along the body's +y. In the body's angles the six M10 are at 0, 60, ... 300 deg on the 160 circle, the pin at 90,
   and the tool plate's four passages at 30, 150, 210 and 330.

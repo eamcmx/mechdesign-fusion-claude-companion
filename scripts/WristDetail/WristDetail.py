@@ -46,7 +46,7 @@ import wrist_detail as WDET             # noqa: E402
 importlib.reload(WDET)
 WD = WI.WD
 
-VERSION = 'WristDetail 1.0 (2026-11-03)'
+VERSION = 'WristDetail 1.1 (2026-11-09)'
 _last = {}
 pose = WI.pose           # the joints as Chapter 40 drives them
 
@@ -238,9 +238,11 @@ def build(contact=128.0):
                FLOAT_CLS, len(floating), msg51.split('\n')[0], VERSION))
 
 
-FRONT_CLS = 'M7'      # SKF table 4: rotating outer ring load, light (P <= 0.05 C), the front 61902s (lib/wrist_detail)
-FLOAT_CLS = 'J7'      # SKF table 4: load direction indeterminate, P <= 0.1 C, axial displacement desirable: the roll
-                      # shaft's lower 6002, the floating one, whose outer ring must slide in the carrier's bore
+# SKF's table 4 on the bearings' load classes (lib/wrist_detail.housing_classes()): the front 61902s carry a rotating
+# outer ring load, light, so M7; the roll shaft's lower 6002, the floating one, whose outer ring must slide in the
+# carrier's bore, a load of indeterminate direction, so J7
+_HC = WDET.housing_classes()
+FRONT_CLS, FLOAT_CLS = _HC['front'], _HC['floating']
 
 
 def floating_bearing(root, L):

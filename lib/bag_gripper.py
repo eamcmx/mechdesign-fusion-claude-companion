@@ -395,7 +395,11 @@ def dress_pack():
     import palletizer_design as P
     b = P.brief()
     lay = P.LAYOUT
-    rng = {'J1': 2 * b['q1max'], 'J2': 127.0, 'J3': 135.0, 'J4 robot': 2 * b['q4max'], 'J4 cell': 2 * J4_CELL}
+    span = lambda k: P.LIMITS[k][1] - P.LIMITS[k][0]
+    # the bundle crosses J1, the shoulder A (the lower arm turns by q2), the elbow B (the upper arm against the lower by
+    # psi), the wrist pin W (the level wrist against the pitching upper arm by q3) and J4; not J3, the crank at A
+    rng = {'J1': 2 * b['q1max'], 'A (q2)': span('q2'), 'B (psi)': span('psi'), 'W (q3)': span('q3'),
+           'J4 robot': 2 * b['q4max'], 'J4 cell': 2 * J4_CELL}
     need = {k: v / 2 / TWIST for k, v in rng.items()}
     run = lay['A'][1] / 1000.0 + lay['L2'] / 1000.0 + lay['L3'] / 1000.0 + lay['h4'] / 1000.0 + need['J4 cell']
     return dict(range=rng, need=need, run=run, l=run + FITTINGS, fittings=FITTINGS)

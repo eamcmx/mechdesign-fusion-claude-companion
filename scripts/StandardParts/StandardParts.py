@@ -34,7 +34,7 @@ importlib.reload(D)
 importlib.reload(S)
 importlib.reload(mp)
 
-VERSION = 'StandardParts 1.0 (2026-11-03)'
+VERSION = 'StandardParts 1.1 (2026-11-09)'
 DT = S.stub_detail()
 DW = S.dowel_adapter()
 
@@ -167,6 +167,7 @@ def build(shoulder=None, key_len=None):
         if kind is not None:
             c.partNumber, c.description = new[kind]
             added.append(c.name)
+            described += c.partNumber.startswith('S-')     # a new bought part (the keys) is described too
             continue
         kind = D.kind_of(c.name, known)
         if kind is not None and c.partNumber.startswith('S-'):

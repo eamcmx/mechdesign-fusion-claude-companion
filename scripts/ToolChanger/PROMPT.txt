@@ -25,8 +25,10 @@ HARD CONSTRAINTS:
 - The cover from 0 to -7 mm with the spigot into the robot's recess; the master's body from -7 to -70 with the lock's
   spigot (R 65) down to -95; the piston's bore (R 50) from -51 up to the cover over a gland from -55 to -51 that the
   rod (R 20) passes; the cam's bore under the gland.
-- The piston's face at -47 when locked, 20 mm higher when free; its rod reaches the cam at -76 in both states, so
-  the gland always seals on the rod.
+- The piston's face at -47 when locked, 20 mm higher when free; its rod's end, with the cam on it, at -76 locked
+  and -56 free, so in both states the rod spans the gland (-55 to -51) and the gland always seals on it.
+- Four 10 mm service passages at 60, 120, 240 and 300 deg on the 160 mm circle, through the cover, the master and
+  the tool plate; two 12 mm pins at 0 and 180 deg, standing 12 mm out of the master's face into the tool plate.
 - The release port (3 mm, at 15 deg, z -49) opens between the gland and the piston, and the lock port (195 deg,
   z -10) over the piston, locked and free.
 - The cam is a separate part on the rod's end, so the piston goes in from above and the cam from below.

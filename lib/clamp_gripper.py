@@ -49,7 +49,7 @@ GUIDE30 = dict(name='HGH30CA', C=38740.0, C0=52190.0, M0X=660.0, M0Y=530.0, M0Z=
 GUIDE20 = dict(name='HGH20CA', C=17750.0, C0=27760.0, rail_kgm=2.21)
 
 # the layout (mm; z = 0 the gripper's mounting face under the tool plate, z up; x the squeeze, y across)
-LAY = dict(adapter=(0.0, -16.0), frame=(-16.0, -116.0), frame_len=1800.0, frame_w=200.0, walls=(10.0, 12.0, 6.0),
+LAY = dict(adapter=(0.0, -16.0), frame=(-16.0, -116.0), frame_len=1900.0, frame_w=200.0, walls=(10.0, 12.0, 6.0),
            rail_y=70.0, rail_len=1720.0, block_face=-156.0, carriage=(-156.0, -176.0), carriage_len=194.0,
            carriage_w=200.0, d_blocks=110.0, z_screw=-225.0, pad_t=10.0, arm_t=12.0, rib=(20.0, 60.0),
            rib_y=250.0, jaw_w=800.0, pack_top=-265.0, pad=(-275.0, -555.0), arm_bottom=-565.0, j_min=200.0,

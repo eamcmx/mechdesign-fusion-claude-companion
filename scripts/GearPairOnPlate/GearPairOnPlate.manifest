@@ -3,7 +3,7 @@
     "type": "script",
     "author": "Emmanuel Merchan, TSI Engineering Faculty",
     "description": {
-        "": "What the five-part prompt of Topic 5 asks for: a parametric spur gear pair on a base plate, two shafts, As-built Joints and a Motion Link, ready to drive."
+        "": "Chapter 12 of Mechanical Design in Autodesk Fusion with Claude: a parametric spur gear pair on a base plate, two shafts, As-built Joints and a Motion Link, ready to drive."
     },
     "supportedOS": "windows|mac",
     "editEnabled": true,

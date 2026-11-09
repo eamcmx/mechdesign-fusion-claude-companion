@@ -1,9 +1,10 @@
-Write a Fusion Python script that, when run, measures in the model the geometry Chapter 60's fatigue calculations take
-for the bag gripper's ends, so that the hand calculations rest on the parts as drawn: the stop brackets' bolts, the
-brackets' roots, the long stub shaft's keyseat with its key, and the short stub shaft's circlip groove.
+Write a Fusion Python script that, when run, builds the bag gripper with Chapter 56's stops and measures in the model
+the geometry Chapter 60's fatigue calculations take for the gripper's ends, so that the hand calculations rest on the
+parts as drawn: the stop brackets' bolts, the brackets' roots, the long stub shaft's keyseat with its key, and the
+short stub shaft's circlip groove.
 
 INPUTS (a command dialog, with this default):
-- the spot: all, bolts, roots, keyseat or groove; all
+- the spot: one of all, bolts, roots, keyseat or groove, all
 
 DERIVED (never typed):
 - RangeSweep.py's machine('bag'): the bag gripper with Chapter 56's stops, through PalletizerDetail.py
@@ -27,7 +28,9 @@ HARD CONSTRAINTS:
 - Refuse a spot that is not one of the four.
 
 FUSION CONVENTIONS:
-- A new design document; lengths in mm, the API's cm inside.
+- A new design document (FusionDesignDocumentType), made by the gripper's own script; lengths in mm, the API's cm
+  inside.
+- No joints, as-built or otherwise: the bag gripper's script places its groups by transforms, and nothing is moved.
 
 ACCEPTANCE CRITERIA:
 - A message gives each spot's measures, the gripper's own first line, and a version tag.

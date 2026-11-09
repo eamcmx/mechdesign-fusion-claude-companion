@@ -1,10 +1,12 @@
-Write a Fusion Python script that, when run, puts the rear axle of a light truck together from its two subsystems:
+Write a Fusion Python script that, when run, builds the rear axle of a light truck from its two subsystems:
 the carrier of Chapter 29 (RearAxleCarrier.py) bolted into the housing of Chapter 30 (AxleHousing.py), each half
 shaft splined into its side gear, so that the axle turns as one machine: the pinion drives the differential's case
 through the spiral bevel pair, the case drives both wheels, and in a turn the side gears let the outer wheel run
 faster than the inner one.
 
-INPUTS: none. Each subsystem keeps its own defaults and its own refusals.
+INPUTS (no dialog: each subsystem keeps its own defaults and its own refusals; the one value read here, which the
+check changes to test the refusal, with its default):
+- where each half shaft's splines start from the axle's middle, Y_TIP of AxleHousing.py (mm), 35
 
 DERIVED (from the two scripts and lib/axle_design.py, never typed):
 - the carrier: RearAxleCarrier.design() and layout(); the housing and wheel ends: AxleHousing.design()
@@ -23,8 +25,8 @@ HARD CONSTRAINTS:
 - Nothing touches anything else, at rest, driving straight or in a turn.
 
 FUSION CONVENTIONS:
-- A new design document. Six subassemblies: Housing (grounded), Carrier, Pinion assembly, Differential assembly, Wheel
-  end L, Wheel end R.
+- A new design document (FusionDesignDocumentType). Six subassemblies: Housing (grounded), Carrier, Pinion
+  assembly, Differential assembly, Wheel end L, Wheel end R.
 - AsBuiltJoints: the carrier rigid on the housing; the pinion revolute about X and the case about Y on the carrier,
   with the Motion Link of the final drive (47 turns of the pinion to 12 of the case, the case turning about +Y when the
   pinion turns about +X); the spiders and side gears revolute in the case, made in the root between proxies; each half

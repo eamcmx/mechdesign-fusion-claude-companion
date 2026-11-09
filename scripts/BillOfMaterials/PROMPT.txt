@@ -1,9 +1,10 @@
-Write a Fusion Python script that, when run, makes the bill of materials of each of the nine assemblies as Parts 9
-and 10 left them: every part counted from the model, numbered by Chapter 49's scheme and the numbers Chapters 50 to 56
-added, described as a shop or a buyer orders it, with its mass, so that purchasing and the shop work from one list.
+Write a Fusion Python script that, when run, builds each of the nine assemblies as Parts 9 and 10 left them and makes
+its bill of materials: every part counted from the model, numbered by Chapter 49's scheme and the numbers Chapters 50
+to 56 added, described as a shop or a buyer orders it, with its mass, so that purchasing and the shop work from one
+list.
 
 INPUTS (a command dialog, with this default):
-- the machine: all, wrist, flap, axle, robot, changer, clamp, vacuum, bag or unit; all
+- the machine: one of all, wrist, flap, axle, robot, changer, clamp, vacuum, bag or unit, all
 
 DERIVED (never typed):
 - RangeSweep.py's machine(): each machine as its detail chapter built it (the bag gripper with its stops)
@@ -30,7 +31,11 @@ HARD CONSTRAINTS:
 - Refuse a machine that is not one of the nine.
 
 FUSION CONVENTIONS:
-- a new design document for each machine; masses in kg, lengths in mm, the API's cm inside.
+- a new design document (FusionDesignDocumentType) for each machine, made by its own script; masses in kg, lengths in
+  mm, the API's cm inside.
+- The joints are each machine's own: the wrist, the flap and the rear axle keep their scripts' As-built joints; the
+  robot, the tool changer, the three grippers and the compliance unit have no joints, as-built or otherwise, and
+  place their groups by transforms. The bill adds none and moves nothing.
 
 ACCEPTANCE CRITERIA:
 - A message gives each machine's kinds and pieces made and bought, its mass as drawn and with the makers' masses, and
@@ -38,7 +43,7 @@ ACCEPTANCE CRITERIA:
 - Every occurrence is a line, a body of a line, or a load: the lines and the loads add up to Fusion's mass of the
   machine.
 - Every line has a number except the welds and the bodies that come with a bought part; no superseded number is left.
-- The tool changer: seven made kinds in twelve pieces, three bought kinds in nine.
-- The bag gripper: the weldment twice, with its tube, its two stubs and four welds.
+- The tool changer: 7 made kinds in 12 pieces, 3 bought kinds in 9.
+- The bag gripper: the weldment P13-016 twice, with its tube, its 2 stubs and 4 welds under it; 10 loads left out.
 - Every component carries its line's part number when read back.
 - Refused: a machine called crane.

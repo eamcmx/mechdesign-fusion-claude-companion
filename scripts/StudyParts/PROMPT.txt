@@ -6,10 +6,9 @@ INPUTS (a command dialog, with this default):
 - the part: one of the six (cantilever, keyseat, tine, bracket_sharp, bracket_r25, lug), cantilever
 
 DERIVED (never typed):
-- lib/fea_studies.py: each part's sizes, the hand calculations the studies are set against, and each part's volume
-  worked out by hand
-- lib/bag_gripper.py (the tine's leg and foot), lib/range_sweep.py (the opening stop bracket's arm and foot),
-  lib/fatigue_detail.py (the long stub's keyseat), lib/flap_design.py (the spar fitting's lug), through fea_studies
+- lib/fea_studies.py: the hand calculations the studies are set against, and each part's volume worked out by hand
+- The parts' sizes are not derived: the script types them as the hard constraints below give them, and the check
+  holds each part to fea_studies' hand volume within 0.01 %.
 
 HARD CONSTRAINTS:
 - One body in the root component, its material from Fusion's material library: Steel for the five steel parts,
@@ -18,7 +17,7 @@ HARD CONSTRAINTS:
 - The keyseat: the 30 mm stub, 150 long along x, with a DIN 6885 form A keyseat 8 wide, 4 deep and 25 long at its
   middle, its round ends cut by the end mill, its floor's four edges rounded to r/d = 0.02, 0.6 mm.
 - The tine as it hangs from the jaw: its leg 250 long, 25 along y and 10 along x, its top at z = -230; its foot
-  255 along y and 25 deep under the leg's lower end.
+  255 along y from the leg's outer face inward, 25 deep and 10 along x, under the leg's lower end.
 - The bracket: the foot 12 thick and 70 square, the arm 24 square and 48 long from the foot's face to the push;
   bracket_sharp with the root sharp, bracket_r25 with the drawing's 2.5 mm fillet all round the arm's root.
 - The lug: 12 thick, 55 wide, its eye's end round on the hole's centre with radius 27.5, the hole 35 across for the

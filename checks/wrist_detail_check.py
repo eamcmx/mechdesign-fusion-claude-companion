@@ -85,12 +85,12 @@ def run(_context):
           'the key from %.1f to %.1f mm, in the stop disc from %.1f to %.1f' % (kb[2], kb[3], db[2], db[3]))
     # the front side gears' bores and the other decided faces
     fr = last['front']
-    fc.ok(len(fr) == 2 and all(attr(f) == ns['FRONT_CLS'] + ' Ra 3.2' for f in fr),
+    fc.ok(len(fr) == 2 and all(attr(f) == WDET.housing_classes()['front'] + ' Ra 3.2' for f in fr),
           'the front side gears\' bores %s' % [attr(f) for f in fr])
     fl = last['floating']
     up = [attr(f) for o in named('Carrier block') for b in o.bRepBodies for f in b.faces
           if attr(f) and f not in fl and abs(f.geometry.radius - 1.6) < 1e-4]
-    fc.ok(len(fl) == 1 and attr(fl[0]) == ns['FLOAT_CLS'] + ' Ra 3.2' and up == ['K7 Ra 3.2'],
+    fc.ok(len(fl) == 1 and attr(fl[0]) == WDET.housing_classes()['floating'] + ' Ra 3.2' and up == ['K7 Ra 3.2'],
           'the floating roll bearing\'s bore %s, the fixed one\'s %s' % ([attr(f) for f in fl], up))
     others = [attr(f) for o in named('Side bevel gear with 36-groove pulley') for b in o.bRepBodies for f in b.faces
               if attr(f) and f not in fr and attr(f).startswith('M7')]

@@ -17,8 +17,9 @@ DERIVED (from lib/wrist_design.py, never typed):
 HARD CONSTRAINTS:
 - Refuse a set whose face is above 0.3 R or 10 m, or under R / 4, or whose front face is nearer the apex than the
   carrier needs (the roll bearing's radius, its seat's wall, the trunnion's flange and a shim space: 22.5 mm), or
-  whose teeth fail the duty or the drives' torque limit; refuse any set but the 40-tooth, 60 mm one, for which the
-  layout is drawn and the geometry factors were read.
+  whose teeth fail the duty or the drives' torque limit (S_F at least 1.5 and S_H at least 1.2 on the duty, S_F at
+  least 1.5 at the drives' torque limit); refuse any set but the 40-tooth, 60 mm one, for which the layout is drawn
+  and the geometry factors were read.
 - A gap of the output gear faces each side gear's tooth at rest.
 - Each side gear runs on two 61902s on its trunnion, the one at its front in the gear, the other inside the
   pulley's hub; the inner rings, the spacers and the frame's 6002 clamped by an end washer and an M5 screw.

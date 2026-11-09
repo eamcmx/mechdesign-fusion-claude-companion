@@ -1,4 +1,4 @@
-# BevelWristPrompt against the acceptance criteria of its prompt (Topic 5), measured on what Fusion built:
+# BevelWristPrompt against the acceptance criteria of its prompt (Chapter 26), measured on what Fusion built:
 #   1. the student path: Run, the dialog, OK with the defaults (Command.doExecute; message boxes printed)
 #   2. Frame, Yoke, Output, Idler, Side L, Side R: one body each; frame grounded; 5 revolute As-built Joints, no plain
 #      Joints; 3 Motion Links; no interference at rest

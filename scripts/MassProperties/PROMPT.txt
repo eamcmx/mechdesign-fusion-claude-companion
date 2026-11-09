@@ -4,7 +4,7 @@ robot each of its eleven moving bodies in the form Chapter 43's cycle reads, so 
 detailed robot.
 
 INPUTS (a command dialog, with this default):
-- the machine: robot, wrist, flap, axle, bag, clamp, vacuum, changer or unit; robot
+- the machine: one of robot, wrist, flap, axle, bag, clamp, vacuum, changer or unit, robot
 
 DERIVED (never typed):
 - RangeSweep.py's machine(): the build, through each detail script, the bag gripper with its stops
@@ -24,12 +24,17 @@ HARD CONSTRAINTS:
 - Refuse a machine that is not one of the nine.
 
 FUSION CONVENTIONS:
-- Each machine's own new design document; masses in kg, lengths in mm, moments of inertia in kg m2.
+- Each machine's own new design document (FusionDesignDocumentType), made by its own script; masses in kg, lengths in
+  mm, moments of inertia in kg m2; the API's cm and kg cm2 inside.
+- The joints are each machine's own: the wrist, the flap and the rear axle keep their scripts' As-built joints; the
+  robot, the tool changer, the three grippers and the compliance unit have no joints, as-built or otherwise, and
+  place their groups by transforms. The weighing adds no joint and moves nothing but the robot, set to q = 0 by its
+  own set_pose() for its moving bodies.
 
 ACCEPTANCE CRITERIA:
 - A message gives the machine, its parts, its mass and centre, its groups, the machine's own first line, and a
   version tag.
-- Each of the nine weighed, its groups' masses summing to its total, its file written.
-- The robot's eleven moving bodies written, each with a mass, each within 10 % of the concept's mass and moments of
+- Each of the 9 weighed, its groups' masses summing to its total within 0.1 %, its file written.
+- The robot's 11 moving bodies written, each with a mass, each within 10 % of the concept's mass and moments of
   inertia.
 - Refused: a machine called crane.

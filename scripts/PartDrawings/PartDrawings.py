@@ -40,7 +40,7 @@ if LIB not in sys.path:
 import drawings_detail as DD     # noqa: E402
 importlib.reload(DD)
 
-VERSION = 'PartDrawings 1.1 (2026-11-07)'
+VERSION = 'PartDrawings 1.2 (2026-11-09)'
 D = adsk.drawing
 _last = {}
 
@@ -561,6 +561,9 @@ def draw(spec, where, outdir, RS, annotate=True):
     ctx = dict(s=scale, fits=part['fits'], radii=part['radii'], material=part['material'], rows=[])
     if annotate and spec['key'] in ANNOTATE:
         added = ANNOTATE[spec['key']](sheet, spec, ctx)
+    if spec['key'] in TIDY:
+        tidied = sheet.tidyUp                 # Fusion's own rearranging (a property: reading it tidies), so the table
+        #                                       leaves the views clear
     for _ in range(20):
         adsk.doEvents()
     read = dict(dims=sheet.drawingDimensions.count - n0, symbols=sheet.drawingSymbols.count - m0)
@@ -748,6 +751,8 @@ def sheet_stop(sheet, spec, ctx):
     return dict(dims=0, datums=0, frames=0, rows=len(rows))
 
 
+# the sheets on which Fusion puts the requirement table over a view (the API has no place for a table): tidied
+TIDY = ('segment', 'spacer', 'disc')
 ANNOTATE = dict(stop=sheet_stop, bracket=sheet_bracket, segment=sheet_segment, spacer=sheet_spacer, fitting=sheet_fitting, disc=sheet_disc)
 _D = 'dims' in ENABLED
 WANT = dict(bracket=dict(dims=2 if _D else 0, datums=1, frames=1 if 'frames' in ENABLED else 0), segment=dict(datums=2),

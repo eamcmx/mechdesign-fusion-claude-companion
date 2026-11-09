@@ -31,9 +31,9 @@ HARD CONSTRAINTS:
 - Tapered roller bearings drawn from their catalogue sizes: the cone with its rollers as one body, the cup apart.
 - The pinion's shaft: a collar, a depth shim, bearing A's seat (45), a spacer, bearing B's seat (40), splines
   8 x 32 x 38 for the companion flange, an M30 thread, washer and nut.
-- The case: one casting, a spherical cavity of 76 mm, two windows, a flange for ten M12 bolts on 186 mm, a spigot;
-  the crown wheel's bore 170.4 mm passes over the case. The gears' backs spherical (74 mm) on spherical washers; the
-  side gears' hubs splined 8 x 35 x 40 for the half shafts.
+- The case: one casting, a spherical cavity of radius 76 mm, two windows, a flange for ten M12 bolts on 186 mm, a
+  spigot; the crown wheel's bore 170.4 mm passes over the case. The gears' backs spherical, of radius 74 mm, on
+  spherical washers; the side gears' hubs splined 8 x 35 x 40 for the half shafts.
 - The carrier: a mounting plate 400 mm across, cut flat 166 mm below the axle so that it stays above the housing's
   bowl, with eight holes on 370 mm over its upper three quarters (lib/axle_design.joint_bolts); the nose with the
   cups' bores and the seal's, two legs with the saddles, bearing caps with two M12 bolts each, threaded adjusters
@@ -41,8 +41,9 @@ HARD CONSTRAINTS:
 - Nothing touches anything else, at rest or turning.
 
 FUSION CONVENTIONS:
-- A new design document. Three subassemblies, Carrier (grounded), Pinion assembly, Differential assembly; each part
-  a component, grounded to its parent, one body each.
+- A new design document (FusionDesignDocumentType). Three subassemblies, Carrier (grounded), Pinion assembly,
+  Differential assembly; each part a component, one body each, grounded to its parent except the spiders and the
+  side gears, which turn on their own joints.
 - AsBuiltJoints in the root: the pinion assembly revolute about X, the differential revolute about Y; a Motion Link of
   47 turns of the pinion to 12 of the case, the case turning about +Y when the pinion turns about +X. The spiders and
   the side gears revolute on the case, each joint made in the root between the parts' proxies.
@@ -57,4 +58,5 @@ ACCEPTANCE CRITERIA:
   plate no lower than 166 mm below the axle.
 - The pinion turned 30 deg about +X: the case 7.6596 deg about +Y. No tooth collision while the pinion turns one
   pitch, nor with the side gears turned 4, 8.18 and 12 deg in the case.
-- Refused: module 5.9 (bending), 6.75 (clearance), face 56 mm, three spiders.
+- Refused: module 5.9 with a face of 47 mm (bending), module 6.75 with a face of 54 mm (clearance), a face of 56 mm,
+  three spiders.

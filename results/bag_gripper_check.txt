@@ -1,10 +1,10 @@
 # bag_gripper_check
-# Autodesk Fusion 2706.1.17, run 2026-11-03 01:31, 12 s
+# Autodesk Fusion 2706.1.17, run 2026-11-09 20:57, 11 s
 
 BagGripper 1.0 (2026-11-03)
   ok   Run opens the dialog
 Bag gripper built on a bag of 50 kg, 500 mm wide.
-Two jaws of eight tines, each turned by a DSBC-80-125 with a clamping unit on a 150 mm lever; the worst stop opens a jaw with 262.0 N m, held 1.73 times by the cylinder and 2.86 times by its clamping unit.
+Two jaws of eight tines, each turned by a DSBC-80-125 with a clamping unit on a 150 mm lever; the worst stop opens a jaw with 263.1 N m, held 1.72 times by the cylinder and 2.85 times by its clamping unit.
 
 Parts: 74 components; 1 Adapter plate, 1 Beam, 4 Bearing 6206, 2 Bracket, 6 Cap screw M10x25, 8 Cap screw M6x16, 4 Cap screw M8x20, 8 Cap screw M8x30, 2 Cylinder DSBC-32-50, 2 Cylinder DSBC-80-125-C, 1 Dowel pin 10x17, 2 End block, 2 End plate, 2 Lever, 2 Piston rod, 1 Press plate, 2 Press rod, 2 Rod end, 2 Stub shaft long, 2 Stub shaft short, 16 Tine, 2 Tube.
 

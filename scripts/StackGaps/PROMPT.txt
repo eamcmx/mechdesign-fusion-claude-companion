@@ -1,16 +1,19 @@
-Write a Fusion Python script that, when run, measures the small gaps Chapter 56's range sweep found, each with its
-direction, so that the tolerance stack-ups know which dimensions close it: for each gap, build its machine, put it in
-the state of the closest approach, and measure the least distance between the two parts, its two points and the
-direction from one to the other; then in the states either side, to see how fast the gap closes with the motion.
+Write a Fusion Python script that, when run, builds each machine in which Chapter 56's range sweep found a small gap
+and measures the gap with its direction, so that the tolerance stack-ups know which dimensions close it: for each
+gap, put its machine in the state of the closest approach, and measure the least distance between the two parts, its
+two points and the direction from one to the other; then in the states either side, to see how fast the gap closes
+with the motion.
 
 INPUTS (a command dialog, with this default):
-- the gap: all, unit, flap, wrist, changer, axle_casting or axle_cap; all
+- the gap: one of all, unit, flap, wrist, changer, axle_casting or axle_cap, all
 
 DERIVED (from lib/stackups.py, never typed):
 - GAPS: each gap's name, its machine, its state, its two parts (by the start of their names) and the states either
   side: the compliance unit's M10 x 25 and its carriage risen 30 mm; the flap's rod end and its horn at 40 deg; the
   wrist's stop disc and the left stop cap's ISO 10642 M4 x 12 at pitch 24 deg; the tool changer's cam and the tool plate
   locked; the axle's crown wheel bolts and the carrier casting driving straight, and cap C1 in a turn
+- FLAP_STOP: the flap's angle with the ball screw's nut on its end stop, flap_end_stop(), one of the flap's states
+  either side
 
 HARD CONSTRAINTS:
 - Build each machine through RangeSweep.py's machine(), the bag gripper with its stops, loaded, not copied; build a
@@ -24,7 +27,11 @@ HARD CONSTRAINTS:
 - Refuse a gap that is not one of the six.
 
 FUSION CONVENTIONS:
-- Each machine's own new design document; lengths in mm, the API's cm inside.
+- Each machine's own new design document (FusionDesignDocumentType), made by its own script; lengths in mm, the
+  API's cm inside.
+- The joints are each machine's own: the wrist, the flap and the rear axle keep their scripts' As-built joints; the
+  compliance unit and the tool changer have no joints, as-built or otherwise, and place their groups by transforms.
+  Each machine is put in its states as RangeSweep.py's machine() does it.
 
 ACCEPTANCE CRITERIA:
 - A message gives each gap's parts, its least distance and its direction, and a version tag.

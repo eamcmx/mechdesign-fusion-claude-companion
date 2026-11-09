@@ -1,4 +1,4 @@
-Write a Fusion Python script that, when run, puts one flap's actuation system together as one machine: the actuator
+Write a Fusion Python script that, when run, builds one flap's actuation system as one machine: the actuator
 of Chapter 33 (FlapActuator.py) hung on its trunnions in a fitting on the rear spar, its rod end pinned in the fork
 of a horn on the flap's middle, and the flap on two hinge brackets, with the wing's spar and skins drawn from the
 brief's section, so that the flap can be posed anywhere from 0 to 40 deg with the actuator following it.
@@ -13,7 +13,8 @@ DERIVED (from lib/flap_design.py, never typed):
 
 HARD CONSTRAINTS:
 - Build the actuator with FlapActuator.py's own functions, loaded, not copied; draw nothing of it twice. Refuse what
-  it refuses, and any part of the system under 2 against yield at the ultimate load, saying which and by how much.
+  it refuses, and the horn's root or cheeks, a pin, a bracket or its eye, or a lug of the fitting under 2 against
+  yield at the ultimate load, saying which and by how much.
 - The hinge line on X, along the span, the flap's middle at x = 0; Y aft, Z up; the gimbal at (y, z) = (-420, 114).
 - Two hinges, 1100 mm either side of the middle, each a bracket bolted to a trailing-edge rib inside the wing and out
   through the cove to an SKF GE 20 ES on the hinge line; the rib 6 mm thick at the bolts.
@@ -24,7 +25,8 @@ HARD CONSTRAINTS:
 - The pins a clearance fit in their 20 mm bores. Nothing touches anything else at 0, 10, 20, 30 or 40 deg.
 
 FUSION CONVENTIONS:
-- A new design document. Three subassemblies: Wing (grounded), Actuator (with its own six), Flap.
+- A new design document (FusionDesignDocumentType). Three subassemblies: Wing (grounded), Actuator (with its own
+  six), Flap.
 - The flap turns on an As-built revolute joint about X. The actuator is placed by its occurrence's transform, turned
   about the gimbal's axis by the exact angle: Fusion holds a joint's angle to 0.1 deg and the actuator swings less
   than 1 deg. Its rod slides on its own joint, and its Motion Links turn the screw and the gears.
