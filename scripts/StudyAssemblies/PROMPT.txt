@@ -4,7 +4,7 @@ into a design of their own, one component each with its material, where they sit
 supports and loads the part the way the machine does.
 
 INPUTS (a command dialog, with this default):
-- the assembly: one of stop, stop_diagonal, fitting, hinge or arms, stop
+- the assembly: one of stop, stop_diagonal, fitting, hinge, arms or arms_closed, stop
 
 DERIVED (never typed):
 - scripts/RangeSweep/RangeSweep.py: the bag gripper with its stops, the flap system and the palletizer robot as their
@@ -25,11 +25,18 @@ HARD CONSTRAINTS:
 - hinge: the right hinge bracket, its rib, the GE 20 ES in its eye, the hinge pin and the flap's two hinge fittings.
 - arms: the robot at the cycle's high point; its lower arm without J2's reducer output, its upper arm with its rear
   lever and torque tube but without the pin D's washer and screw, and its wrist from the wrist pin to the tool flange
-  without J4's motor and the levelling link: 27 parts.
-- Every body copied from the machine's model, none rebuilt; the bolts left out, for the study's bolt connectors.
+  without J4's motor and the levelling link: 27 parts. The robot's model ends the upper arm's box open, 120 mm short of
+  the wrist pin, beside the front fork's cheeks, which then touch it only along an edge; for the study only, cut the
+  box's last 10 mm and put in their place an end plate 10 thick, 340 wide (the cheeks' outer faces) and 200 deep (the
+  box's), of the box's steel, which the box's walls and the cheeks' ends both butt on: 28 parts.
+- arms_closed: the same 28 parts and the two diaphragms the lower arm's box lacks, for the study only: the box is a
+  tube open at both ends, so put a 12 mm plate filling its inside (276 by 196) at its fork end, 650 to 662 mm from
+  the shoulder, and another 122 to 110 mm short of the elbow's axis, against the hub, of the box's steel: 30 parts.
+- Every body copied from the machine's model, none rebuilt, but those plates; the bolts left out, for the study's
+  bolt connectors.
 - The faces each study picks found on the bodies: the bolt holes, the fixed faces, the face the load goes on; for
   arms the hub's two bosses (held) and the tool flange's outer face (1000 N across the arms' plane).
-- Save nothing; refuse an assembly that is not one of the five.
+- Save nothing; refuse an assembly that is not one of the six.
 
 FUSION CONVENTIONS:
 - a new design document (FusionDesignDocumentType) for the assembly, parametric, each part a component of the root
@@ -38,8 +45,10 @@ FUSION CONVENTIONS:
 
 ACCEPTANCE CRITERIA:
 - A message gives the assembly, each part's bodies, material and volume, the picks found, and a version tag.
-- Every part the machine's own volume and material; the opening bracket's within 0.01 % of lib/lugs_brackets.py's,
-  turned for stop and on its diagonal for stop_diagonal; the web patch's within 0.01 % of its hand volume.
+- Every part the machine's own volume and material, but the upper arm's box, 10 mm of its 8800 mm2 section shorter,
+  and the end plate, 680 000 mm3, and arms_closed's two diaphragms, 649 152 mm3 each; the opening bracket's within
+  0.01 % of lib/lugs_brackets.py's, turned for stop and on its diagonal for stop_diagonal; the web patch's within
+  0.01 % of its hand volume.
 - Every pick found on a face.
 - The loads: the stop's push of 2180.0 N along the absorber's axis and the DYSC's 4000 N; the fitting's 20 848.4 N
   both ways; the hinge's 13 956.0 N; the arms' 1000 N across, and the give it causes by hand at its point.

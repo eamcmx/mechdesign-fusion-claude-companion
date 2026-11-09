@@ -92,6 +92,10 @@ def bracket(f):
     vm, sxx = S.values(f, 1), S.values(f, 9)
     i = int(np.argmax(vm))
     o = dict(peak_at=list(xyz[i]))
+    # up a tension corner (the push along -y, or along the diagonal): the largest s1 in each half millimetre
+    s1 = S.values(f, 6) / 1e6
+    cor = (xyz[:, 1] > 11.0) & (abs(xyz[:, 2]) > 11.0) & (np.maximum(abs(xyz[:, 1]), abs(xyz[:, 2])) < 15.5)
+    o['corner_line'] = corner_line(xyz[:, 0], s1, cor)
     for X in (12.0, 24.0):
         for tag, sy, sz in (('pp', 1, 1), ('mm', -1, -1), ('mp', -1, 1), ('pm', 1, -1), ('p0', 1, 0), ('m0', -1, 0)):
             sel = (abs(xyz[:, 0] - X) < 1.2) & (abs(xyz[:, 1] - 12 * sy) < 0.01) & (abs(xyz[:, 2] - 12 * sz) < (0.01 if sz else 12))
@@ -111,8 +115,122 @@ def lug(f):
                 shank_sxx_mean=float(sxx[shank].mean()) / 1e6)
 
 
+def corner_line(h, s1, sel, top=40.0, step=0.5):
+    out = []
+    for k in range(int(top / step)):
+        m = sel & (h >= k * step) & (h < (k + 1) * step)
+        if m.any():
+            out.append([round((k + 0.5) * step, 3), round(float(s1[m].max()), 3)])
+    return out
+
+
+def stop_real(f):
+    """The opening stop on its end plate (StudyAssemblies 'stop'): for each load case the bracket's root, its largest
+    first principal stress at the two tension corners and the axial stress on the tension face 12 mm up the arm, in
+    the arm's own frame: its axis the foot's middle, its faces square and along the absorber's push."""
+    sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'lib'))
+    import range_sweep as RS
+    o = RS.stop_layout()['open']
+    foot = o['foot']
+    c = np.array([0.0, 0.5 * sum(foot['y']), 0.5 * sum(foot['z'])])
+    x0 = foot['x'][1]
+    n1 = -np.array([0.0, o['axis'][0], o['axis'][1]])            # the tension face's outward normal, against the push
+    n2 = np.array([0.0, n1[2], -n1[1]])
+    xyz = S.nodes(f, 0) * 1000
+    a, b = (xyz - c) @ n1, (xyz - c) @ n2
+    root = (xyz[:, 0] > x0) & (xyz[:, 0] < x0 + 5) & (np.maximum(abs(a), abs(b)) < 15.5) & (a > 10)
+    out = dict(cases=[])
+    for p, _v in S.domain(f):
+        s1, sxx = S.values(f, 6, 0, p) / 1e6, S.values(f, 9, 0, p) / 1e6
+        row = {}
+        for tag, side in (('corner_minus', b < 0), ('corner_plus', b > 0)):
+            sel = root & side
+            i = np.where(sel)[0][np.argmax(s1[sel])]
+            row[tag] = float(s1[i])
+            row[tag + '_at'] = [float(xyz[i, 0] - x0), float(a[i]), float(b[i])]
+        X = x0 + 12.0
+        sel = (abs(xyz[:, 0] - X) < 2.6) & (a > 11.95) & (abs(b) < 6)
+        k = np.polyfit(xyz[sel, 0], sxx[sel], 1)
+        row['face_12'] = float(np.polyval(k, X))
+        # up the worst tension corner: the largest s1 in each half millimetre of height above the foot's face
+        cor = (a > 11.0) & (b < -11.0) & (np.maximum(abs(a), abs(b)) < 15.5)
+        row['corner_line'] = corner_line(xyz[:, 0] - x0, s1, cor)
+        out['cases'].append(row)
+    return out
+
+
+def hinge_real(f):
+    """The flap's right hinge bracket on its rib (StudyAssemblies 'hinge'; the bracket is body 0, x 1094 to 1106, the
+    rib body 1 on its face x = 1106): where the rib's two held edges pass the load on, the bracket's body between the
+    eye and the lap across its thickness and its depth, and the eye's bore at mid-thickness and on its two faces."""
+    sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'lib'))
+    import flap_design as FD
+    d = FD.system_design()
+    sy = FD.SYS
+    out = dict(hand=dict(R=d['R_hinge'], axial=d['bracket_axial'], perp=d['bracket_perp'], M=d['bracket_M'],
+                         sigma=d['bracket_sigma'], n=d['bracket_n'], net=d['bracket_lug']['net']))
+    xr = S.nodes(f, 1) * 1000
+    r = S.values(f, 123, 1, 0)
+    held = np.abs(r).sum(1) > 1e-9
+    out['R_upper_edge'] = r[held & (xr[:, 2] > 50)].sum(0).tolist()
+    out['R_lower_edge'] = r[held & (xr[:, 2] < 0)].sum(0).tolist()
+    x = S.nodes(f, 0) * 1000
+    s1 = S.values(f, 6, 0, 0) / 1e6
+    ya = 0.5 * (sy['bracket_bolts'][0][0] + sy['bracket_bolts'][1][0])
+    za = 0.5 * (sy['bracket_bolts'][0][1] + sy['bracket_bolts'][1][1])
+    e = np.array([ya, za]) / np.hypot(ya, za)                   # from the eye's centre to the bolts' middle
+    n = np.array([-e[1], e[0]])
+    s, t = x[:, 1:3] @ e, x[:, 1:3] @ n
+    holes = np.zeros(len(x), bool)
+    for by, bz in sy['bracket_bolts']:
+        holes |= np.hypot(x[:, 1] - by, x[:, 2] - bz) < 14.0
+    outer, rib, mid = abs(x[:, 0] - 1094.0) < 0.05, abs(x[:, 0] - 1106.0) < 0.05, abs(x[:, 0] - 1100.0) < 1.0
+    out['sections'] = []
+    for sv in (45.0, 60.0, 75.0, 90.0):
+        sel = (abs(s - sv) < 0.75) & ~holes
+        out['sections'].append(dict(s=sv, depth=float(t[sel].max() - t[sel].min()), outer=float(s1[sel & outer].mean()),
+                                    rib=float(s1[sel & rib].mean()), mid=float(s1[sel & mid].mean()),
+                                    max=float(s1[sel].max())))
+    span = (s >= 45.0) & (s <= 90.0) & ~holes                    # the free span, 45 to 90 mm out of the eye
+    k = np.where(span)[0][np.argmax(s1[span])]
+    out['span_max'] = dict(s1=float(s1[k]), s=float(s[k]), t=float(t[k]), x=float(x[k, 0]))
+    P = -0.5 * np.array(d['ult']['R'])                          # the flap's pull on this bracket, in (y, z)
+    u = P / np.linalg.norm(P)
+    w = np.array([-u[1], u[0]])
+    rr = np.hypot(x[:, 1], x[:, 2])
+    ang = np.degrees(np.arctan2(x[:, 1:3] @ w, x[:, 1:3] @ u))
+    bore = abs(rr - 17.5) < 0.05
+    for tag, sel in (('eye_mid', bore & mid), ('eye_outer', bore & outer), ('eye_rib', bore & rib)):
+        k = np.where(sel)[0][np.argmax(s1[sel])]
+        out[tag] = dict(s1=float(s1[k]), angle=float(abs(ang[k])))
+    net = (abs(x[:, 1:3] @ u) < 0.6) & (rr >= 17.5) & (rr <= 27.6) & mid
+    out['net_mid_mean'] = float(np.mean([s1[net & (rr >= a0) & (rr < a0 + 1.0)].mean() for a0 in np.arange(17.5, 27.5, 1.0)]))
+    return out
+
+
+READERS = dict(stop=stop_real, hinge=hinge_real)
+HINGE_MESH = '2 mm'
+REAL = {          # the real parts with their neighbours (StudyAssemblies), cloud folder Chapter 62 dev
+    '0f326502-9158-4ced-90f4-153ee534727e': ('Ch62 stop real parts', 'Study 1 - Static Stress, 2180 N',
+                                             '6 mm, local 1.0 mm on the root', 'stop'),
+    '6f00fa22-9ee5-4272-9259-bdc8fd4bd4ee': ('Ch62 stop real parts', 'Study 2 - Static Stress, 2180 N and 4000 N',
+                                             '4 mm, local 1.0 mm on the root', 'stop'),
+    'b9819aa8-3d21-4e08-bcd8-40e1e1af66e7': ('Ch62 hinge real parts', 'Study 1 - Static Stress, first solve: the ring bonded in the eye',
+                                             HINGE_MESH, 'hinge'),
+    '95a19e6d-b465-4c95-b6cb-2fce153981c0': ('Ch62 hinge real parts', 'Study 1 - Static Stress, second solve: the ring in Rough contact',
+                                             HINGE_MESH, 'hinge'),
+}
+
+
 def collect():
     out = []
+    for guid, (design, study, mesh, kind) in REAL.items():
+        f = folder_of(guid)
+        if not f:
+            out.append(dict(guid=guid, design=design, study=study, mesh=mesh, missing=True))
+            continue
+        out.append(dict(guid=guid, design=design, study=study, mesh=mesh, nodes=len(S.nodes(f)),
+                        folder=f.split('W.login')[-1].replace('\\', '/'), **{kind: READERS[kind](f)}))
     for guid, (design, study, mesh) in list(SOLVES.items()) + list(EXTRA.items()):
         f = folder_of(guid)
         if not f:

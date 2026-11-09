@@ -35,16 +35,23 @@ import range_sweep as RS          # noqa: E402
 
 TURN = 45.0                       # deg: the arm turned about its own axis, from Chapter 56's square to the plate
 
-# Fusion's results (results/sim_studies.json): the largest von Mises in each adaptive pass, MPa, and the axial stress at
-# the arm's corners and faces 12 and 24 mm up from the root
+# Fusion's results (results/sim_studies.json): the largest von Mises in each adaptive pass, the largest first principal
+# stress at the root (s1), MPa, and the axial stress at the arm's corners and faces 12 and 24 mm up from the root
 FEA = dict(
     sharp=dict(guid='4ef07d8c', passes=(130.35362, 193.38589, 260.5529, 366.40679)),
-    diagonal=dict(guid='b81c055e', passes=(129.20862, 158.87468, 155.1566, 161.0693), corner_12=47.109,
+    diagonal=dict(guid='b81c055e', passes=(129.20862, 158.87468, 155.1566, 161.0693), s1=168.013, corner_12=47.109,
                   corner_24=31.919, face_24=16.369),
-    square=dict(guid='c9d46a96', passes=(90.99033, 111.80748, 111.5374), face_12=34.072, face_24=22.725,
+    square=dict(guid='c9d46a96', passes=(90.99033, 111.80748, 111.5374), s1=114.083, face_12=34.072, face_24=22.725,
                 corner_24=22.592),
     lug=dict(guid='c8b13c98', passes=(184.14517, 186.1512, 187.09889), s1=192.273, net=44.377, shank=15.536),
 )
+# the opening stop on its end plate (StudyAssemblies 'stop': the bracket with its arm turned, the DYSC in its thread,
+# the lock nut, the end plate on its four frame holes, two M8 bolt connectors at 15 921 N): the largest first principal
+# stress at the root's two tension corners and the face's axial stress 12 mm up, at the design's push and at the DYSC's
+# rating (Study 2, 4 mm, 1.0 mm on the root's fillets) and at the design's push alone (Study 1, 6 mm)
+REAL = dict(stop=dict(guid=('0f326502', '6f00fa22'), F=(2180.0, 4000.0), peak=(148.614304, 271.30016),
+                      other=(112.189736, 212.518912), face_12=(33.52959203693101, 62.30554151500411), peak_study1=149.095856,
+                      up=1.92))
 
 
 def _v(a, b, s=1.0):
@@ -104,7 +111,9 @@ def bracket():
     M = F * h
     W = dict(diagonal=a ** 3 / (6 * math.sqrt(2)), square=a ** 3 / 6)
     s = {n: M / w for n, w in W.items()}
-    peak = dict(diagonal=FEA['diagonal']['passes'][-1], square=FEA['square']['passes'][-1])
+    # the concentration is on the largest first principal stress at the root, as a factor on a nominal stress is; the
+    # passes' von Mises only shows whether the mesh has settled
+    peak = dict(diagonal=FEA['diagonal']['s1'], square=FEA['square']['s1'])
     q = fr['drawn']['q']
     rows = {}
     for tag, Kt, sig in (('ch60', 1.7, s['diagonal']), ('diagonal', peak['diagonal'] / s['diagonal'], s['diagonal']),
@@ -113,6 +122,16 @@ def bracket():
         sa = Kf * sig / 2.0
         n = 1.0 / (sa / fr['Se'] + sa / Sut)
         rows[tag] = dict(Kt=Kt, Kf=Kf, sigma=sig, peak=Kt * sig, sa=sa, n=n, n_4000=n * F / RS.DYSC[25]['F_stop'])
+    # on its end plate: the same chain on the real assembly's peak at the design's push; its rating case solved too
+    rs = REAL['stop']
+    Kt = rs['peak'][0] / s['square']
+    Kf = 1 + q * (Kt - 1)
+    sa = Kf * s['square'] / 2.0
+    n = 1.0 / (sa / fr['Se'] + sa / Sut)
+    k = (rs['peak'][1] - rs['peak'][0]) / (rs['F'][1] - rs['F'][0])
+    rows['real'] = dict(Kt=Kt, Kf=Kf, sigma=s['square'], peak=rs['peak'][0], sa=sa, n=n,
+                        n_4000=n * F / RS.DYSC[25]['F_stop'], k=k, preload=rs['peak'][0] - k * rs['F'][0],
+                        linear=rs['peak'][1] / rs['peak'][0], over_rigid=rs['peak'][0] / peak['square'])
     # the beam's own stress up the arm: at a corner for the diagonal, on a face for the square push
     up = dict(diagonal={x: F * (h - x) / W['diagonal'] for x in (12.0, 24.0)},
               square={x: F * (h - x) / W['square'] for x in (12.0, 24.0)})
@@ -203,10 +222,10 @@ def web_patch(margin=200.0):
 
 def closing():
     """The closing bracket's lug root, which no study took: Chapter 60's factor with Table 7-1's 1.7, and with the
-    opening arm's 2.51 as a bound."""
+    opening arm's factor on its end plate, the largest any study found, as a bound."""
     fr = FD.bracket_roots()['closed']
     Sut = FD.STEEL_1045_HR['Sut']
-    Kt = FEA['diagonal']['passes'][-1] / (FS.BRACKET['F'] * FS.BRACKET['h'] / (FS.BRACKET['a'] ** 3 / (6 * math.sqrt(2))))
+    Kt = REAL['stop']['peak'][0] / (FS.BRACKET['F'] * FS.BRACKET['h'] / (FS.BRACKET['a'] ** 3 / 6))
     Kf = 1 + fr['drawn']['q'] * (Kt - 1)
     sa = Kf * fr['sigma'] / 2
     n = 1.0 / (sa / fr['Se'] + sa / Sut)

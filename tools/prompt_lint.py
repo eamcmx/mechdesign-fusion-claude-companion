@@ -49,7 +49,7 @@ def lint(path):
         elif items and l.startswith('  ') and l.strip():
             items[-1] += ' ' + l.strip()
     unit = r'\((mm|deg|rpm|N|N\.m|N·m|kg|s|%|MPa|GPa|bar|h|um|kW|W)\)|teeth|count|number of|\b[zZN]\w*,'
-    choice = r'class|one of|condition|\bor\b'   # a choice needs no unit
+    choice = r'class|one of|condition|\bor\b|\bratio\b|\bfactor\b'   # a choice, a ratio or a factor needs no unit
     unitless = [l for l in items if not re.search(unit, l) and not re.search(choice, l)]
     nodefault = [l for l in items if not re.search(r',\s*[-+\w.]+(\s+\w+)*\s*$', l)]
     res.append(('every input has a unit or is a count (%d inputs)' % len(items), bool(items) and not unitless))

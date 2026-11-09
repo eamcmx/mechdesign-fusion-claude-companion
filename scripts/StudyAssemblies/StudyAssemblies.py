@@ -11,7 +11,12 @@
 #   hinge           the flap's right hinge: the hinge bracket, its rib, the GE 20 ES in its eye, the hinge pin and the
 #                   flap's two hinge fittings on it
 #   arms            Chapter 59: the palletizer's lower arm (without J2's reducer), its upper arm and its wrist down to
-#                   the tool flange, at the cycle's high point, for the arms' sideways give at the flange
+#                   the tool flange, at the cycle's high point, for the arms' sideways give at the flange. The robot's
+#                   model ends the upper arm's box open beside the front fork's cheeks, which then touch it only along
+#                   an edge; for the study only, the box's last 10 mm become an end plate across the box and the
+#                   cheeks, the welded closure that joins them
+#   arms_closed     the same with the two diaphragms the lower arm's box lacks, one at each end of the box, for the
+#                   study only: Chapter 59's second study of the arms
 # The bolts are left out: the study puts a bolt connector with the bolt's preload through each pair of holes. The script
 # prints each part's volume and material and the points where the study's supports, connectors and loads go.
 # Checked by checks/study_assemblies_check.py.
@@ -19,7 +24,8 @@
 #   INPUTS        the dialog: the assembly
 #   DERIVED       lugs_brackets (the stop's layout and change), flap_design (the fitting's and hinge's loads),
 #                 range_sweep (the opening stop's layout), StopBracket.change (the arm turned)
-#   HARD RULES    every body copied from the machine's own model, none rebuilt; nothing saved
+#   HARD RULES    every body copied from the machine's own model, none rebuilt, but the arms' study-only plates;
+#                 nothing saved
 #   CONVENTIONS   a new design document per assembly; mm, the API's cm inside
 #   ACCEPTANCE    the message: the parts, their volumes and materials, the picks
 #
@@ -44,8 +50,8 @@ import mdfc_parts as mp          # noqa: E402
 import range_sweep as RS         # noqa: E402
 import flap_design as FD         # noqa: E402
 
-VERSION = 'StudyAssemblies 1.1 (2026-11-08)'
-ASSEMBLIES = ('stop', 'stop_diagonal', 'fitting', 'hinge', 'arms')
+VERSION = 'StudyAssemblies 1.3 (2026-11-09)'
+ASSEMBLIES = ('stop', 'stop_diagonal', 'fitting', 'hinge', 'arms', 'arms_closed')
 # the arms' parts by their names in the detailed robot: the lower arm without J2's reducer output, the upper arm without
 # the pin D's washer and screw, the wrist from its pin to the tool flange without J4's motor and the levelling link
 ARMS = ('Fork plate 1', 'Fork plate 2', 'Hub boss J2 side', 'Hub boss J3 side', 'Balancer cross pin Q', 'Lower arm box',
@@ -55,6 +61,9 @@ ARMS = ('Fork plate 1', 'Fork plate 2', 'Hub boss J2 side', 'Hub boss J3 side', 
         'Torque tube', 'Rear lever', 'Pin D',
         'Wrist pin', 'Wrist hub', 'Wrist housing', 'RV-80N case J4', 'RV-80N output J4', 'Tool flange')
 LATERAL = 1000.0                 # N across the arms' plane, on the tool flange's outer face
+END_PLATE = (10.0, 340.0, 200.0, 120.0)   # mm, arms only: the end plate's thickness, its width across the arms' plane
+#                                           (the front fork cheeks' outer faces), its depth (the box's), and how far
+#                                           short of the wrist pin the upper arm's box ends
 WEB_PATCH = 200.0                # mm either side of the fitting's base plate, along the span
 _last = {}
 
@@ -114,7 +123,7 @@ def spec(which):
         return dict(machine='flap', parts=[('Hinge bracket R', None), ('Hinge rib R', None), ('Bearing GE 20 ES hinge R', None),
                                            ('Hinge pin R', None), ('Hinge fitting Ro', None), ('Hinge fitting Ri', None)],
                     picks=picks)
-    if which == 'arms':
+    if which in ('arms', 'arms_closed'):
         import palletizer_design as PD
         hi = PD.waypoints(PD.brief())['hi']
         p = PD.pts(hi['q2'], hi['q3'])
@@ -152,7 +161,7 @@ def loads(which):
     if which == 'hinge':
         ry, rz = d['ult']['R']
         return dict(ultimate=(0.0, -ry / 2, -rz / 2), F=d['R_hinge'])
-    if which == 'arms':
+    if which in ('arms', 'arms_closed'):
         import palletizer_links as PL
         fx, fz = spec('arms')['picks']['flange'][0][0::2]
         h = PL.lateral(at=(fx / 1000.0, fz / 1000.0))
@@ -208,11 +217,72 @@ def take(which):
     return out, mdoc
 
 
+PLATE = 'Box end plate (study only)'
+DIAPHRAGMS = ('Lower box diaphragm, fork end (study only)', 'Lower box diaphragm, hub end (study only)')
+
+
+def end_plate(parts):
+    """arms only: the upper arm's box shortened by the plate's thickness where it ends, and the end plate in its place,
+    across the box and the front fork's cheeks, of the box's own steel. The parts as take() gives them; the plate's
+    machine volume is None, for the robot's model has no plate."""
+    import palletizer_design as PD
+    t, w, d, short = END_PLATE
+    q = spec('arms')['pose'] or (0.0, 0.0)          # where take() put the robot: the study's pose, or as built
+    p = PD.pts(*q)
+    B, W = p['B'], p['W']                            # the elbow's and the wrist's axes, (x, z) in mm
+    L = math.hypot(W[0] - B[0], W[1] - B[1])
+    u = ((W[0] - B[0]) / L, 0.0, (W[1] - B[1]) / L)
+    s_end = L - short                                # where the box ends, from B along the upper arm
+
+    def slab(s0, s1, half_w, half_d):
+        c = (B[0] + 0.5 * (s0 + s1) * u[0], 0.0, B[1] + 0.5 * (s0 + s1) * u[2])
+        return mp.tbm().createBox(adsk.core.OrientedBoundingBox3D.create(
+            mp.P3(c[0] * mp.CM, c[1] * mp.CM, c[2] * mp.CM), mp.V3(*u), mp.V3(0.0, 1.0, 0.0),
+            (s1 - s0) * mp.CM, 2.0 * half_w * mp.CM, 2.0 * half_d * mp.CM))
+    out, steel = [], None
+    for name, bodies, mat, vol in parts:
+        if name == 'Upper arm box':
+            for tb in bodies:
+                mp.cut(tb, slab(s_end - t, s_end + 1.0, w / 2.0 + 30.0, d / 2.0 + 50.0))
+            steel = mat
+        out.append((name, bodies, mat, vol))
+    out.append((PLATE, [slab(s_end - t, s_end, w / 2.0, d / 2.0)], steel, None))
+    return out
+
+
+def diaphragms(parts):
+    """arms_closed only: the two plates the lower arm's box lacks. The robot's box (220 deep, 300 wide, 12 wall) is a
+    tube open at both ends, from 650 mm above the shoulder to 80 mm short of the elbow's axis; the fork's plates lap
+    its side walls at one end and the elbow's hub sits in a saddle at the other. Each diaphragm fills the box's inside,
+    12 thick: one at its fork end, from 650 to 662 mm, the other from 122 to 110 mm short of the elbow's axis, against
+    the hub; of the box's own steel."""
+    import palletizer_design as PD
+    t, d, w, wall = 12.0, 220.0, 300.0, 12.0
+    q = spec('arms')['pose'] or (0.0, 0.0)          # where take() put the robot: the study's pose, or as built
+    p = PD.pts(*q)
+    A, B = p['A'], p['B']
+    L = math.hypot(B[0] - A[0], B[1] - A[1])
+    u = ((B[0] - A[0]) / L, 0.0, (B[1] - A[1]) / L)
+
+    def slab(s0, s1):
+        c = (A[0] + 0.5 * (s0 + s1) * u[0], 0.0, A[1] + 0.5 * (s0 + s1) * u[2])
+        return mp.tbm().createBox(adsk.core.OrientedBoundingBox3D.create(
+            mp.P3(c[0] * mp.CM, c[1] * mp.CM, c[2] * mp.CM), mp.V3(*u), mp.V3(0.0, 1.0, 0.0),
+            (s1 - s0) * mp.CM, (w - 2 * wall) * mp.CM, (d - 2 * wall) * mp.CM))
+    steel = [m for n, _b, m, _v in parts if n == 'Lower arm box'][0]
+    return parts + [(DIAPHRAGMS[0], [slab(650.0, 650.0 + t)], steel, None),
+                    (DIAPHRAGMS[1], [slab(L - 110.0 - t, L - 110.0)], steel, None)]
+
+
 def build(which='stop'):
     if which not in ASSEMBLIES:
         raise ValueError('No assembly called %s: the assemblies are %s.' % (which, ', '.join(ASSEMBLIES)))
     app = adsk.core.Application.get()
     parts, mdoc = take(which)
+    if which in ('arms', 'arms_closed'):
+        parts = end_plate(parts)
+    if which == 'arms_closed':
+        parts = diaphragms(parts)
     doc = app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
     try:
         doc.attributes.add('mdfc', 'run', 'StudyAssemblies')
@@ -252,8 +322,8 @@ def build(which='stop'):
     _last.clear()
     _last.update(out)
     lines = ['%s: %d bodies, %s, %.1f mm3%s' % (r['part'], r['bodies'], r['material'], r['volume'],
-                                              '' if abs(r['volume'] - r['machine_volume']) < 1e-3 else
-                                              ' (cut from %.1f)' % r['machine_volume']) for r in rows]
+                                              '' if r['machine_volume'] is None or abs(r['volume'] - r['machine_volume']) < 1e-3
+                                              else ' (cut from %.1f)' % r['machine_volume']) for r in rows]
     return ('Study assembly %s:\n%s\npicks: %s\n\n[%s]' % (which, '\n'.join(lines), ', '.join(
         '%s %s' % (k, 'found' if v else 'MISSING') for k, v in found.items()), VERSION))
 

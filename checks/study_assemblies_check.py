@@ -13,12 +13,15 @@ importlib.reload(LB)
 
 PATH = '__COMPANION__/scripts/StudyAssemblies/StudyAssemblies.py'
 EDITS = ()                                  # a control replaces this with its one broken line
-PARTS = dict(stop=4, stop_diagonal=4, fitting=6, hinge=6, arms=27)
+PARTS = dict(stop=4, stop_diagonal=4, fitting=6, hinge=6, arms=28, arms_closed=30)
+PLATE = 'Box end plate (study only)'
+DIAPHRAGMS = ('Lower box diaphragm, fork end (study only)', 'Lower box diaphragm, hub end (study only)')
 MATERIALS = {'Stop bracket open 1': 'Steel AISI 1045 225 ANLD', 'End plate 1': 'Aluminum 6061', 'Spar fitting': 'Aluminum 7075',
              'Rear spar web': 'Aluminum 6061', 'Trunnion R': 'Steel AISI 4142 380 QT', 'Hinge bracket R': 'Aluminum 7075',
              'Hinge rib R': 'Aluminum 7075', 'Hinge pin R': 'Steel AISI 4142 380 QT',
              'Lower arm box': 'Steel AISI 1020 107 HR', 'Upper arm box': 'Steel AISI 1020 107 HR',
-             'Fork plate 1': 'Steel AISI 1045 225 ANLD', 'Tool flange': 'Steel AISI 1045 225 ANLD'}
+             'Fork plate 1': 'Steel AISI 1045 225 ANLD', 'Tool flange': 'Steel AISI 1045 225 ANLD',
+             PLATE: 'Steel AISI 1020 107 HR', DIAPHRAGMS[0]: 'Steel AISI 1020 107 HR', DIAPHRAGMS[1]: 'Steel AISI 1020 107 HR'}
 
 
 def run(_context):
@@ -36,12 +39,12 @@ def run(_context):
         ns['build'](a)
         fc.mark()
         done[a] = dict(ns['_last'])
-    fc.ok(sorted(done) == sorted(PARTS), 'the five assemblies built: %s' % ', '.join(sorted(done)))
+    fc.ok(sorted(done) == sorted(PARTS), 'the six assemblies built: %s' % ', '.join(sorted(done)))
     for a, r in sorted(done.items()):
         names = [p['part'] for p in r['parts']]
         fc.ok(len(names) == PARTS[a] and all(p['material'] == MATERIALS[p['part']] for p in r['parts'] if p['part'] in MATERIALS),
               '%s: %d parts, %s' % (a, len(names), '; '.join('%s %s' % (p['part'], p['material']) for p in r['parts'])))
-        same = [p for p in r['parts'] if p['part'] != 'Rear spar web']
+        same = [p for p in r['parts'] if p['part'] not in ('Rear spar web', 'Upper arm box', PLATE) + DIAPHRAGMS]
         fc.ok(all(abs(p['volume'] - p['machine_volume']) <= 1e-6 * p['machine_volume'] for p in same),
               "%s: every part the machine's own volume" % a)
         fc.ok(all(r['found'].values()), '%s: %d picks found on a face' % (a, len(r['found'])))
@@ -72,6 +75,21 @@ def run(_context):
               abs(z1 - fz)) < 1e-3,
           'arms: at q2 %.2f, q3 %.2f deg the tool flange spans x %.1f to %.1f and z %.1f to %.1f, the flange at (%.1f, %.1f)'
           % (q['q2'], q['q3'], x0, x1, z0, z1, fx, fz))
+    # the study's end plate: the upper arm's box (200 deep, 260 wide, 10 wall: 8800 mm2) shortened by the plate's 10 mm,
+    # and the plate 10 x 340 x 200
+    bx = [p for p in done['arms']['parts'] if p['part'] == 'Upper arm box'][0]
+    pl = [p for p in done['arms']['parts'] if p['part'] == PLATE][0]
+    t, w, d = ns['END_PLATE'][:3]
+    cut = bx['machine_volume'] - bx['volume']
+    fc.ok(abs(cut - 10.0 * (200.0 * 260.0 - 180.0 * 240.0)) <= 1e-4 * cut and abs(pl['volume'] - t * w * d) <= 1e-4 * t * w * d
+          and pl['machine_volume'] is None,
+          'arms: the box %.1f mm3 shorter (its 8800 mm2 section over 10 mm), the end plate %.1f mm3 (10 x 340 x 200), '
+          'the study\'s own' % (cut, pl['volume']))
+    # arms_closed: the arms' 28 parts with the lower box's two diaphragms, each filling the box's inside, 276 x 196, 12 thick
+    dg = [p for p in done['arms_closed']['parts'] if p['part'] in DIAPHRAGMS]
+    fc.ok(len(dg) == 2 and all(abs(p['volume'] - 12.0 * 276.0 * 196.0) <= 1e-4 * 649152.0 and p['machine_volume'] is None for p in dg)
+          and sorted(p['part'] for p in done['arms_closed']['parts'] if p['part'] not in DIAPHRAGMS) == sorted(p['part'] for p in done['arms']['parts']),
+          "arms_closed: the arms' 28 parts and the two diaphragms, %s mm3 (12 x 276 x 196), the study's own" % ' and '.join('%.1f' % p['volume'] for p in dg))
     ar = done['arms']['loads']
     h = PL.lateral(at=(fx / 1000.0, (fz - 30.0) / 1000.0))
     fc.ok(ar['F'] == 1000.0 and ar['lateral'] == (0.0, 1000.0, 0.0) and abs(ar['c_hand'] - h['c_flange']) < 1e-15
