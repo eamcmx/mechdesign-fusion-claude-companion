@@ -9,7 +9,7 @@ and solved in the cloud, and its results are read here from the folder Fusion ke
         resultsAttribs.xml               the setup the solver ran: material, mesh, loads
         volume/resultManifest.xml        the results' files, body by body, and the load cases or modes
         volume/bodymesh<b>.msh_light     uint32 0, uint32 n, then n nodes as float32 x, y, z in metres, then elements
-        volume/bodyresults<b>_<p>_<c>.res_light
+        volume/bodyresults<p>_<b>_<c>.res_light
                                          15 bytes (byte 7 the values per node, bytes 11-14 n), then n rows of float32
 
 Result ids (found on a cantilever whose answers are known, 6 November 2026): 1 von Mises (Pa); 2 displacement
@@ -89,7 +89,9 @@ def nodes(folder, body=0):
 
 def values(folder, cid, body=0, point=0):
     """One result at every node: an (n,) or (n, k) array, SI units."""
-    path = os.path.join(folder, 'volume', 'bodyresults%d_%d_%d.res_light' % (body, point, cid))
+    # the load case (or mode) first, then the body: resultManifest.xml lists bodyresults<p>_<b>_<c> under each
+    # sample point (checked 9 November 2026 on a study with two load cases and four bodies)
+    path = os.path.join(folder, 'volume', 'bodyresults%d_%d_%d.res_light' % (point, body, cid))
     raw = open(path, 'rb').read()
     k, n = raw[7], struct.unpack('<I', raw[11:15])[0]
     a = np.frombuffer(raw[15:15 + 4 * k * n], dtype='<f4').astype(float)
