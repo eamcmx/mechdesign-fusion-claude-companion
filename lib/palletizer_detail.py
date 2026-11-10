@@ -173,6 +173,12 @@ def least_class(c, need=0.0):
     return None
 
 
+def nearest_zero_class(least, most, classes=('Normal', 'C3', 'C4', 'C5')):
+    """The clearance class whose operating clearance stays nearest SKF's virtual zero over the hall's range: the
+    least of each class's worst departure from zero, its deepest preload or its largest clearance, um."""
+    return min((max(-least[c], most[c], 0.0), c) for c in classes if c in least)[1]
+
+
 def load_class(P, C):
     return 'light' if P <= 0.05 * C else ('normal' if P <= 0.1 * C else 'heavy')
 
@@ -272,14 +278,15 @@ def bag_6206():
     """The 6206-2RS1 on the stub shafts: the load's class in the cycle and the brake stop, SKF's least interference
     for the rotating inner ring (Delta = 2.5 Fr d / B, Chapter 51) against j6's, k5's and m5's probable least, and the
     operating clearance at the hall's coldest and warmest for the locating end (J7, Chapter 51's class for the
-    aluminium end plate) and the floating end (H7), each with SKF's f2 reduced for aluminium."""
+    aluminium end plate) and the floating end (H7), each with SKF's f2 reduced for aluminium, the inner ring 5 K
+    over the outer in the cold as in the warm."""
     w = MF.worked_6206()
     fa = f2_aluminium()
     cold = (ALPHA_AL - ALPHA_ST) * (T_PRESS - T_HALL[0]) * DGBB['6206']['D'] * 1000.0     # um gained, cold
     warm = (ALPHA_AL - ALPHA_ST) * (T_HALL[1] - T_PRESS) * DGBB['6206']['D'] * 1000.0     # um lost, warm
     cases = {}
     for end, h in (('locating', 'J7'), ('floating', 'H7')):
-        cases[end] = dict(cold=clearance('6206', DGBB, 'k5', h, dT=0.0, f2=fa['aluminium'], d2_extra=cold),
+        cases[end] = dict(cold=clearance('6206', DGBB, 'k5', h, f2=fa['aluminium'], d2_extra=cold),
                           room=clearance('6206', DGBB, 'k5', h, f2=fa['aluminium']),
                           warm=clearance('6206', DGBB, 'k5', h, f2=fa['aluminium'], d2_extra=-warm))
     least = {c: min(cases[e][t]['left'][c] for e in cases for t in ('cold', 'room', 'warm')) for c in DGBB['6206']['clear']}

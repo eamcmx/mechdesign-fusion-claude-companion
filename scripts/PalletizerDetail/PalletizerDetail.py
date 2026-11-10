@@ -429,7 +429,8 @@ def by_hand(key, des, mod):
                         g = f.geometry
                         if isinstance(g, adsk.core.Cylinder) and near(g.radius * 10, 15.0, 1e-3):
                             f.attributes.add('mdfc', 'process', 'ground after welding, both stubs of a jaw in one setting')
-        c = XP.least_class({'left': XP.bag_6206()['least']}, -5.0)
+        bg = XP.bag_6206()
+        c = XP.nearest_zero_class(bg['least'], bg['most'])
         describe(root, 'Bearing 6206', 'SKF 6206-2RS1/%s' % c, desc)
     elif key == 'unit':
         z = mod.Z_TOP - mod.AIR['boss'][1]
