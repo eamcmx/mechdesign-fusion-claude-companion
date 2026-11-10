@@ -1,13 +1,14 @@
-Write a Fusion Python script that, when run, builds Chapter 40's robotic wrist in detail: its bought products drawn to
-their makers' figures, its bearings' abutments inside SKF's bands, the stop disc's key the length that is made, and
-every made part's material and every fitting face's class and roughness as Chapter 51 decided them.
+Write a Fusion Python script that, when run, builds the robotic wrist of
+projects/robotic_wrist/WristIntegration/WristIntegration.py in detail: its bought products drawn to their makers'
+figures, its bearings' abutments inside SKF's bands, the stop disc's key the length that is made, and every made
+part's material and every fitting face's class and roughness as design_office/lib/materials_fits.py decides them.
 
 INPUTS (a command dialog, with this default):
 - the hard stop's contact angle (deg), 128
 
-DERIVED (from lib/wrist_detail.py, lib/wrist_design.py and Chapter 51's MaterialsFits.py, never typed):
-- products(): the motor's, the gear unit's and the slip ring's figures in place of Chapter 39's and 40's assumptions,
-  for the build and for the numbers
+DERIVED (from projects/robotic_wrist/lib/wrist_detail.py, projects/robotic_wrist/lib/wrist_design.py and design_office/MaterialsFits/MaterialsFits.py, never typed):
+- products(): the motor's, the gear unit's and the slip ring's figures in place of the assumptions of
+  projects/robotic_wrist/lib/wrist_design.py, for the build and for the numbers
 - numbers(): the motors' duty, the stop, the play at the tool, the wrist's mass, each motor's end
 - abutments(): the shoulders against SKF's da and Da; DETAIL_ABUT, the diameter the detail gives those outside
 - load_classes(): each bearing position's load against SKF's C and its class
@@ -31,13 +32,15 @@ HARD CONSTRAINTS:
 - The roll shaft's collar and spacers S4 and S5 18 mm across; the stop disc 71 to 82 mm, its key 5 x 5 x 10 from 72
   to 82 and renamed so, the trunnion's end at 82.
 - The front side-gear bearings' housings M7, their load being light; the carrier's bore for the roll shaft's lower,
-  floating 6002 J7, so that its outer ring can slide; every other class Chapter 51's.
+  floating 6002 J7, so that its outer ring can slide; every other class as design_office/lib/materials_fits.py decides
+  it.
 - Refuse a contact angle the AM8111's brakes (8 ms delay) would not stop the carrier short of, or one leaving the
   block under 10 deg a side: WristIntegration.py's build() refuses, run with the products' figures.
 
 FUSION CONVENTIONS:
-- WristIntegration's build() makes the design document (FusionDesignDocumentType), its groups and Chapter 39's
-  As-built joints and motion links; nothing moved; lengths in mm, the API's cm inside.
+- WristIntegration's build() makes the design document (FusionDesignDocumentType), its groups and
+  projects/robotic_wrist/WristDifferential/WristDifferential.py's As-built joints and motion links; nothing moved;
+  lengths in mm, the API's cm inside.
 
 ACCEPTANCE CRITERIA:
 - A message gives each motor's end, the slip ring, the abutments, the key, the motors' duty, the stop, the play, the

@@ -16,7 +16,8 @@ DERIVED (computed from the inputs, never typed):
 - centre distance a = m_t (z1 + z2) / 2
 - turn of a tooth over the face width, at the pitch circle: theta = b tan(beta) / r (gear 1 one way, gear 2 the other)
 - smallest number of teeth without undercut: z_min = 2 cos(beta) / sin^2(alpha_t)
-- transverse contact ratio (Chapter 12, with m_t and alpha_t) and overlap ratio b sin(beta) / (pi m_n)
+- transverse contact ratio (the length of action over the base pitch, with m_t and alpha_t) and overlap ratio b
+  sin(beta) / (pi m_n)
 - tooth thickness on the pitch circle, transverse: pi m_t / 2 - 0.1 mm (backlash 0.2 mm)
 - Fusion keeps a sweep's twist in tenths of a degree. So the face width is adjusted to b', the nearest width that
   makes gear 1's twist a whole number of tenths (two tenths for a herringbone, each half then a whole number):
@@ -35,8 +36,8 @@ HARD CONSTRAINTS:
 
 FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
-- Components: Base plate (grounded), Shaft 1, Shaft 2, Gear 1, Gear 2, one body each, as in Chapter 12; gear 1 at
-  the origin, gear 2 at (a, 0).
+- Components: Base plate (grounded), Shaft 1, Shaft 2, Gear 1, Gear 2, one body each; gear 1 at the origin, gear 2 at
+  (a, 0).
 - Each tooth: the transverse outline as ONE closed polyline of sketch lines sharing their points, swept along the
   gear's axis with a twist angle (right hand: the teeth turn anticlockwise, seen from above, as z rises); then a
   circular pattern of the swept tooth.

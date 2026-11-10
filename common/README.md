@@ -11,3 +11,7 @@ Each folder holds the script, its manifest and `PROMPT.txt`, the prompt it was w
 ## lib/
 
 - `mdfc_parts.py`: the parts library of Volume 2 of "Mechanical Design in Autodesk Fusion with Claude": the machine elements of Volume 1 as functions that build a part inside a given component, so that a subsystem script can put real parts together.
+
+## references/ (1 sources)
+
+The catalogues, data sheets, standards and books the project was sized from, listed in `references/README.md` with their links; the copies stay with their publishers.

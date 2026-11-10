@@ -1,17 +1,18 @@
-Write a Fusion Python script that, when run, builds each of the nine assemblies as Parts 9 and 10 left them and makes
-its bill of materials: every part counted from the model, numbered by Chapter 49's scheme and the numbers Chapters 50
-to 56 added, described as a shop or a buyer orders it, with its mass, so that purchasing and the shop work from one
-list.
+Write a Fusion Python script that, when run, builds each of the nine detailed assemblies and makes its bill of
+materials: every part counted from the model, numbered by the scheme of design_office/lib/detail_inventory.py and the
+numbers the detail added, described as a shop or a buyer orders it, with its mass, so that purchasing and the shop
+work from one list.
 
 INPUTS (a command dialog, with this default):
 - the machine: one of all, wrist, flap, axle, robot, changer, clamp, vacuum, bag or unit, all
 
 DERIVED (never typed):
-- RangeSweep.py's machine(): each machine as its detail chapter built it (the bag gripper with its stops)
-- lib/bom_detail.py: each component's line from its name (Chapter 49's names, then the kinds Volume 3 added), the
-  descriptions as they now stand, the weldment, the numbers that supersede others, and the makers' masses with the
-  saved page of each
-- lib/materials_fits.py: each made kind's material (Chapter 51)
+- design_office/RangeSweep/RangeSweep.py's machine(): each machine as its detail script builds it (the bag gripper
+  with its stops)
+- design_office/lib/bom_detail.py: each component's line from its name (the names of
+  design_office/lib/detail_inventory.py, then the kinds the detail added), the descriptions as they now stand, the
+  weldment, the numbers that supersede others, and the makers' masses with the saved page of each
+- design_office/lib/materials_fits.py: each made kind's material
 
 HARD CONSTRAINTS:
 - Build each machine through RangeSweep.py's machine(), loaded, not copied.
@@ -26,8 +27,9 @@ HARD CONSTRAINTS:
   the line says which.
 - Write the part number and the description into each component of the design, so that Fusion's own parts lists carry
   them, and read them back.
-- Write each machine's list to results/bom/<machine>.csv and all of them to results/bom.json; close each design
-  without saving but the last, which stays open with its numbered components for a look.
+- Write each machine's list to design_office/results/bom/<machine>.csv and all of them to
+  design_office/results/bom.json; close each design without saving but the last, which stays open with its numbered
+  components for a look.
 - Refuse a machine that is not one of the nine.
 
 FUSION CONVENTIONS:

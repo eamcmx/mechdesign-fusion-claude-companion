@@ -1,21 +1,22 @@
-Write a Fusion Python script that, when run, builds the palletizer's compliance unit of Chapter 48: a vertical float
-between the tool changer's ISO face and the vacuum or bag gripper. The gripper hangs on a carriage that slides up on
-two rails when its load touches the stack, held down onto stops by springs, and a sensor sees it rise. The gripper's
-air crosses the float through a tube that slides in a sealed receiver.
+Write a Fusion Python script that, when run, builds the palletizer's compliance unit: a vertical float between the
+tool changer's ISO face and the vacuum or bag gripper. The gripper hangs on a carriage that slides up on two rails
+when its load touches the stack, held down onto stops by springs, and a sensor sees it rise. The gripper's air crosses
+the float through a tube that slides in a sealed receiver.
 
 INPUTS (a command dialog, with these defaults):
 - the gripper (bag, vacuum or clamp), bag
 - the stroke (mm), 30
 - the springs' preload (N), 853.3
 
-DERIVED (from lib/compliance_unit.py, never typed):
+DERIVED (from projects/palletizer/lib/compliance_unit.py, never typed):
 - LAY: the layout below; GUIDE: HIWIN HGR25 rails and HGH25CA blocks (C0 36 490 N, 84 long, 40 high, 48 wide)
 - AIR: the passages, galleries, tube and receiver; ISO_B and PIN_B: the ISO pattern in the body's angles
 - the springs chosen to Shigley's chapter 10 (music wire 4 x 40, 100 installed), the ring factor with each gripper
 
 HARD CONSTRAINTS:
-- Refuse the clamp gripper (Chapter 44's ring would open in the worst stop with the unit in the stack), a stroke
-  over the rails' 30 mm, and a preload under what keeps the carriage down in the stops that throw the load up.
+- Refuse the clamp gripper (the tool changer's locking ring, projects/palletizer/lib/tool_changer.py, would open in
+  the worst stop with the unit in the stack), a stroke over the rails' 30 mm, and a preload under what keeps the
+  carriage down in the stops that throw the load up.
 - The stroke and the preload asked for are checked and printed only: the unit is always built with the layout's
   30 mm stroke and the design's four springs of 213.3 N each.
 - The body is turned 90 deg to the changer: the ISO pattern's +X, with its pin and the changer's docking frame, lies

@@ -25,11 +25,10 @@ HARD CONSTRAINTS:
 
 FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
-- Components, one body each, created where they belong: Base plate (grounded), top at z = 0; Shaft 1 at the origin
-  and Shaft 2 at (C, 0), 5 mm, each with a collar under its pulley (Chapter 12); Pulley 1 and Pulley 2 from z = 1
-  to z = 1 + width + 2, each its outside diameter with z grooves cut as circles of radius 0.6 mm on it, bore
-  5.2 mm; Belt from z = 2 to z = 2 + width, its outline two arcs and two tangent lines inside and out, sharing their
-  sketch points.
+- Components, one body each, created where they belong: Base plate (grounded), top at z = 0; Shaft 1 at the origin and
+  Shaft 2 at (C, 0), 5 mm, each with a collar under its pulley; Pulley 1 and Pulley 2 from z = 1 to z = 1 + width + 2,
+  each its outside diameter with z grooves cut as circles of radius 0.6 mm on it, bore 5.2 mm; Belt from z = 2 to z =
+  2 + width, its outline two arcs and two tangent lines inside and out, sharing their sketch points.
 - The API works in cm and radians.
 - AsBuiltJoints: rigid for the shafts and the belt to the plate, revolute about z for each pulley on its shaft. A
   Motion Link: z2 x 360 deg of pulley 1 for z1 x 360 deg of pulley 2, NOT reversed (a belt keeps the direction).

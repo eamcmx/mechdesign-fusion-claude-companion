@@ -18,6 +18,7 @@ file of that job inside it. Each folder has a `README.md` listing what it holds.
 | `projects/<project>/controls/` | One line of a prompt broken on purpose; the matching check must then fail |
 | `projects/<project>/captures/` | The scripts that build the views printed in the book |
 | `projects/<project>/results/` | The last result of every check and control, with the Fusion version and the date of the run |
+| `projects/<project>/references/` | The catalogues, data sheets, standards and books the project was sized from, with their links (the copies stay with their publishers) |
 | `design_office/` | The work of Volume 3 on every machine, kept the same way: part numbers, standard parts, materials and fits, the range sweep, masses, studies, fatigue, stack-ups, drawings, bills of materials, assembly, making |
 | `common/` | `companion_paths.py`, which knows where everything is kept; the parts library `lib/mdfc_parts.py`; `BallScrewAxis` |
 | `extras/` | Scripts kept for reference that no chapter prints, with their checks; left out of `--all` |

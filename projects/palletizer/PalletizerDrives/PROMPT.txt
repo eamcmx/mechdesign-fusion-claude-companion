@@ -1,22 +1,24 @@
 Write a Fusion Python script that, when run, builds the palletizer's drives of Chapter 42: the base with an SKF
-slewing ring RKS.23 0841 on its flange; the turret on the ring's inner ring, turned by a Nabtesco RV-500N on the
-axis through a disc coupling; the shoulder's two cheeks with J2's RV-500N and motor on one side and, on the other,
-the crank with its counterweight turned by J3's RV-500N on an outboard bracket; the root of the lower arm, a fork,
-with the gas balancer's two cylinders in the fork's gap. The arms themselves are Chapter 43's.
+slewing ring RKS.23 0841 on its flange; the turret on the ring's inner ring, turned by a Nabtesco RV-500N on the axis
+through a disc coupling; the shoulder's two cheeks with J2's RV-500N and motor on one side and, on the other, the
+crank with its counterweight turned by J3's RV-500N on an outboard bracket; the root of the lower arm, a fork, with
+the gas balancer's two cylinders in the fork's gap. The arms themselves are
+projects/palletizer/PalletizerRobot/PalletizerRobot.py's.
 
 INPUTS (a command dialog, with these defaults):
 - the counterweight added to the crank (kg), 100
 - its centre's distance behind the shoulder (mm), 600
 
-DERIVED (from lib/palletizer_drives.py and lib/palletizer_design.py, never typed):
+DERIVED (from projects/palletizer/lib/palletizer_drives.py and projects/palletizer/lib/palletizer_design.py, never typed):
 - the shoulder A at (300, 1000) mm; the ring's plane at 520 mm
 - GAS: the balancer's pin a = 350 mm below the shoulder, the arm's lug b = 550 mm up the arm, the cylinders' bore
   63 mm; the pins' distance L = sqrt(a^2 + b^2 + 2 a b cos q2)
 - CW_BLOCK: the counterweight a steel block 460 x 460 mm, as thick as its mass needs, on the crank's outer face
 
 HARD CONSTRAINTS:
-- Refuse a counterweight over 200 kg (J1's reducer then falls short of its life, Table 42.4) or one whose block, with
-  the crank turned down to q3 = 60 deg, would come within 20 mm of the floor.
+- Refuse a counterweight over 200 kg (J1's reducer then falls short of its rated life,
+  projects/palletizer/lib/palletizer_drives.py's rv_life()) or one whose block, with the crank turned down to q3 = 60
+  deg, would come within 20 mm of the floor.
 - The ring, its sizes typed here from SKF's table (pp. 66-67): the outer ring on the base's flange, bored 842.5 mm,
   its top 46 mm above the ring's plane; the inner ring under the turret, 839.5 mm outside and 734 mm at its lip,
   its top at 56 mm; one row of 20 mm balls on dm = 841 mm between them in grooves, 0.4 mm clear of each.

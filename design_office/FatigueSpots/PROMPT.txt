@@ -1,13 +1,14 @@
-Write a Fusion Python script that, when run, builds the bag gripper with Chapter 56's stops and measures in the model
-the geometry Chapter 60's fatigue calculations take for the gripper's ends, so that the hand calculations rest on the
-parts as drawn: the stop brackets' bolts, the brackets' roots, the long stub shaft's keyseat with its key, and the
-short stub shaft's circlip groove.
+Write a Fusion Python script that, when run, builds the bag gripper with its stops and measures in the model the
+geometry the fatigue calculations of design_office/lib/fatigue_detail.py take for the gripper's ends, so that the hand
+calculations rest on the parts as drawn: the stop brackets' bolts, the brackets' roots, the long stub shaft's keyseat
+with its key, and the short stub shaft's circlip groove.
 
 INPUTS (a command dialog, with this default):
 - the spot: one of all, bolts, roots, keyseat or groove, all
 
 DERIVED (never typed):
-- RangeSweep.py's machine('bag'): the bag gripper with Chapter 56's stops, through PalletizerDetail.py
+- design_office/RangeSweep/RangeSweep.py's machine('bag'): the bag gripper with its stops, through
+  projects/palletizer/PalletizerDetail/PalletizerDetail.py
 - the parts by their names: Cap screw ISO 4762 M8x40 stop 1, Nut ISO 4032 M8 stop 1, Stop bracket closed 1, Stop
   bracket open 1, Stub shaft long A, Key 8x7x25 A, Stub shaft short A, the Bearing 6206 round the short stub
 
@@ -22,9 +23,9 @@ HARD CONSTRAINTS:
   and its width, from its mesh (its round ends have no vertices); the keyseat's depth as the stub's radius less the
   key's nearest distance from the axis.
 - The groove: its diameter and its place, and the bearing's, as distances from the gripper's middle.
-- Colour the brackets and the key red, the bolts and the nuts yellow; the stubs keep the colours Chapter 51 gave
-  their fits.
-- Write the measures to results/fatigue_spots.json.
+- Colour the brackets and the key red, the bolts and the nuts yellow; the stubs keep the colours
+  design_office/MaterialsFits/MaterialsFits.py gave their fits.
+- Write the measures to design_office/results/fatigue_spots.json.
 - Refuse a spot that is not one of the four.
 
 FUSION CONVENTIONS:

@@ -1,12 +1,12 @@
-Write a Fusion Python script that, when run, builds the pitch-roll wrist of Chapter 39: a miter bevel differential
-whose two side gears turn on the pitch axis and whose output gear turns the tool flange about the roll axis, each
-side gear driven by a toothed belt from a servo motor with a planetary gearhead, the two motors on the frame, so
-that the wrist can be posed at any pitch and roll and its parts checked for interference and weighed.
+Write a Fusion Python script that, when run, builds a pitch-roll wrist: a miter bevel differential whose two side
+gears turn on the pitch axis and whose output gear turns the tool flange about the roll axis, each side gear driven by
+a toothed belt from a servo motor with a planetary gearhead, the two motors on the frame, so that the wrist can be
+posed at any pitch and roll and its parts checked for interference and weighed.
 
 INPUTS (a command dialog, with these defaults):
 - the bevel set: module 1.5 mm, 40 teeth, face width 11 mm
 
-DERIVED (from lib/wrist_design.py, never typed):
+DERIVED (from projects/robotic_wrist/lib/wrist_design.py, never typed):
 - bevel(): the set in Shigley's proportions (Table 13-3): addendum m, clearance 0.188 m + 0.05 mm, the toe's
   section the heel's scaled about the apex; the front face through the toe's root
 - layout(): every axial position from the gear set and the bearings: the carrier's faces, the trunnions' flanges,
@@ -32,7 +32,7 @@ HARD CONSTRAINTS:
 
 FUSION CONVENTIONS:
 - A new design document (FusionDesignDocumentType). Origin at the gears' apex, y along the pitch axis, z along the
-  roll axis at rest, x forward; L is +y, as in Chapter 31.
+  roll axis at rest, x forward; L is +y.
 - Groups: the frame (grounded); the carrier, on an As-built revolute joint about y; the roll output on the
   carrier, about z; the two inputs on the carrier, about y; on each motor's axis a body-less belt helper on the
   frame and the motor's output on it.

@@ -31,6 +31,10 @@ Each folder holds the script, its manifest and `PROMPT.txt`, the prompt it was w
 
 `wrist`, `wrist_detail`, `wrist_detail_exploded`, `wrist_exploded`, `wrist_integrated`, `wrist_integration_exploded`, `wrist_open`, `wrist_stop`
 
+## references/ (8 sources)
+
+The catalogues, data sheets, standards and books the project was sized from, listed in `references/README.md` with their links; the copies stay with their publishers.
+
 ## results/ (6 files)
 
 The last run of every check and control above, each headed by the Fusion version and the date, and the files the scripts write.

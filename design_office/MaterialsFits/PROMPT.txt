@@ -1,18 +1,20 @@
 Write a Fusion Python script that, when run, builds one of the nine assemblies and gives every made part the material
-Chapter 51 decided, and every fitting face its tolerance class and its roughness, found on the model and decided by
-rule.
+design_office/lib/materials_fits.py decides for it, and every fitting face its tolerance class and its roughness,
+found on the model and decided by rule.
 
 INPUTS (a command dialog, with this default):
-- the assembly, one of the nine of lib/detail_inventory.py's MACHINES, the bag gripper
+- the assembly, one of the nine of design_office/lib/detail_inventory.py's MACHINES, the bag gripper
 
-DERIVED (from lib/materials_fits.py, lib/fusion_joints.py and lib/detail_inventory.py, never typed):
-- build(): the assembly built by its own script, the bag gripper by StandardParts.py as Chapter 50 detailed it
-- parts(): each component's kind, number, status, designation and group, read as Chapter 49 reads them
+DERIVED (from design_office/lib/materials_fits.py, design_office/lib/fusion_joints.py and design_office/lib/detail_inventory.py, never typed):
+- build(): the assembly built by its own script, the bag gripper by design_office/StandardParts/StandardParts.py, its
+  standard parts detailed
+- parts(): each component's kind, number, status, designation and group, read as design_office/lib/detail_inventory.py
+  reads them
 - records(): the seats of the bought parts on the made ones (a bearing's bore or outside diameter, a dowel's or pin's
   cylinder, on one axis and of one diameter, touching or within 0.2 mm) and the made parts each key touches; the
   cylindrical fits of made parts in made parts
-- material(): each made kind's material from Volume 2's parts lists, the default grade where a list names none;
-  FUSION: the entry of Fusion's library that stands for it
+- material(): each made kind's material as the machine's parts list names it (design_office/lib/named_materials.json),
+  the default grade where a list names none; FUSION: the entry of Fusion's library that stands for it
 - decide(): each seat's and fit's class, roughness and kind of joint
 
 HARD CONSTRAINTS:

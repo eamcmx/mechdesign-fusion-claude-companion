@@ -1,12 +1,13 @@
-Write a Fusion Python script that, when run, builds one of the parts the Simulation studies of Chapters 58, 59 and 62
-are run on, each in a new design of its own as one body with its material, and prints the faces each study picks, so
-that the designer sets the study up in the Simulation window on a part whose every size the hand calculation also uses.
+Write a Fusion Python script that, when run, builds one of the parts Fusion's static and modal Simulation studies are
+run on, each in a new design of its own as one body with its material, and prints the faces each study picks, so that
+the designer sets the study up in the Simulation window on a part whose every size the hand calculation also uses.
 
 INPUTS (a command dialog, with this default):
 - the part: one of the six (cantilever, keyseat, tine, bracket_sharp, bracket_r25, lug), cantilever
 
 DERIVED (never typed):
-- lib/fea_studies.py: the hand calculations the studies are set against, and each part's volume worked out by hand
+- design_office/lib/fea_studies.py: the hand calculations the studies are set against, and each part's volume worked
+  out by hand
 - The parts' sizes are not derived: the script types them as the hard constraints below give them, and the check
   holds each part to fea_studies' hand volume within 0.01 %.
 
@@ -32,7 +33,7 @@ FUSION CONVENTIONS:
 
 ACCEPTANCE CRITERIA:
 - A message gives the part, its volume, its material, its faces, its mass, the faces to pick found, and a version tag.
-- Each part's volume within 0.01 % of the hand volume in lib/fea_studies.py.
+- Each part's volume within 0.01 % of the hand volume in design_office/lib/fea_studies.py.
 - The keyseat's floor fillets present: the body has 12 faces; the bracket's root fillets: 15 faces.
 - Every face to pick found on the body with its outward normal.
 - Refused: a part called crane.

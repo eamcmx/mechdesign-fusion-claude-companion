@@ -20,6 +20,10 @@ Each folder holds the script, its manifest and `PROMPT.txt`, the prompt it was w
 
 `lead_screw`
 
+## references/ (1 sources)
+
+The catalogues, data sheets, standards and books the project was sized from, listed in `references/README.md` with their links; the copies stay with their publishers.
+
 ## results/ (2 files)
 
 The last run of every check and control above, each headed by the Fusion version and the date, and the files the scripts write.

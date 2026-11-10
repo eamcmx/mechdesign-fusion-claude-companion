@@ -1,13 +1,13 @@
-Write a Fusion Python script that, when run, builds one of Part 9's nine detailed assemblies with its own script,
-steps it through its whole range of motion, and at every state looks for interference among all its parts and
-measures how close the parts that move against each other come. For the bag gripper it also adds this chapter's
-stops: a shock absorber at each end of each jaw's travel.
+Write a Fusion Python script that, when run, builds one of the nine detailed assemblies with its own script, steps it
+through its whole range of motion, and at every state looks for interference among all its parts and measures how
+close the parts that move against each other come. For the bag gripper it also adds its stops: a shock absorber at
+each end of each jaw's travel.
 
 INPUTS (a command dialog, with this default):
-- the machine: one of wrist, flap, axle, robot, bag0 (the bag gripper as Part 9 left it), bag (with its stops),
-  clamp, vacuum, changer or unit, wrist
+- the machine: one of wrist, flap, axle, robot, bag0 (the detailed bag gripper without its stops), bag (with its
+  stops), clamp, vacuum, changer or unit, wrist
 
-DERIVED (from lib/range_sweep.py, never typed):
+DERIVED (from design_office/lib/range_sweep.py, never typed):
 - STATES: each machine's states from its own limits: the wrist's pitch from the hard stop's contact at -128 deg to
   +128 every 8 deg with the software limit and the switch, and its roll round a turn every 30 deg at the pitch's two
   limits and level; the flap from 0 to 40 deg every 2; the axle's pinion round a turn every 15 deg straight and every
@@ -60,5 +60,6 @@ ACCEPTANCE CRITERIA:
 - Each of the 10 sweeps, the bag gripper both ways: no interference at any state.
 - The stops: the 2 closing absorbers touching their strikers closed, at 0 deg, the 2 opening ones the levers' bars at
   45 deg, and touching nothing else.
-- Each machine's contacts made in motion, closest approaches and pair counts kept in results/range_sweep.json.
+- Each machine's contacts made in motion, closest approaches and pair counts kept in
+  design_office/results/range_sweep.json.
 - Refused: a machine called crane.

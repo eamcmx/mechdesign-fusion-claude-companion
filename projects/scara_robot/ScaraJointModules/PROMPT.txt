@@ -1,12 +1,12 @@
-Write a Fusion Python script that, when run, builds the SCARA's two arm joints of Chapter 36 as two modules side
-by side: each a servo motor with its holding brake on a module plate, its shaft in the wave generator of a Harmonic
-Drive CSG-2UH housed unit, ratio 50, whose output flange carries the next arm. J1 is a CSG-40-50-2UH, J2 a
-CSG-20-50-2UH. The output turns one fiftieth of the motor's shaft, the other way.
+Write a Fusion Python script that, when run, builds the SCARA's two arm joints as two modules side by side: each a
+servo motor with its holding brake on a module plate, its shaft in the wave generator of a Harmonic Drive CSG-2UH
+housed unit, ratio 50, whose output flange carries the next arm. J1 is a CSG-40-50-2UH, J2 a CSG-20-50-2UH. The output
+turns one fiftieth of the motor's shaft, the other way.
 
 INPUTS (a command dialog, with this default):
 - the J1 unit's size, one of CSG 20, 32 or 40 (the J2 unit's is 20), 40
 
-DERIVED (from lib/scara_design.py, never typed):
+DERIVED (from projects/scara_robot/lib/scara_design.py, never typed):
 - modules(): each joint's load pattern over the standard cycle (J1 the horizontal leg, J2 the radial move), the
   catalogue's average torque, average and largest input speeds and life (pp. 14-15); the motors' peak and RMS
   torques through the ratio, the efficiency and the inertia; the output bearings' static safety and life

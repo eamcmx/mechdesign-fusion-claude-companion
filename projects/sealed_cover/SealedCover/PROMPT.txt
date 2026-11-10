@@ -19,8 +19,8 @@ DERIVED (computed from the inputs, never typed):
 - squeeze volume, the part of the free O-ring above the groove: V = A * 2 * pi * R_c, where A is the circular
   segment of radius r = W / 2 and height c: A = r^2 * acos((r - c) / r) - (r - c) * sqrt(2 r c - c^2)
 - pressure force on the cover, up to the O-ring's outside diameter: F_p = p * pi * D_o^2 / 4
-- cover bolts M5, property class 8.8 (Chapter 9): preload F_i = 0.75 * 14.2 * 580 = 6177 N each; clamp margin
-  n_c = N * F_i / F_p
+- cover bolts M5, property class 8.8 (ISO 898-1: proof strength 580 MPa): preload F_i = 0.75 * 14.2 * 580 = 6177 N
+  each; clamp margin n_c = N * F_i / F_p
 - bolt circle diameter = D_o + 12 rounded up to a whole mm; housing and cover diameter = bolt circle + 16
 
 HARD CONSTRAINTS:

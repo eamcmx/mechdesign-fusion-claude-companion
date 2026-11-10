@@ -1,4 +1,4 @@
-# CONTROL for the prompt's hard constraint "the tine's inside corner rounded to lib/making.py's radius": the script
+# CONTROL for the prompt's hard constraint "the tine's inside corner rounded to design_office/lib/making.py's radius": the script
 # leaves the corner as the gripper's model has it, sharp. The whole check runs on it. Expected: the tine's three lines
 # fail (its volume against the rounded hand figure, its corner, and the nest, whose share of the plate is the sharp
 # outline's 10.100 % against the rounded tine's 10.117 %), and they alone.

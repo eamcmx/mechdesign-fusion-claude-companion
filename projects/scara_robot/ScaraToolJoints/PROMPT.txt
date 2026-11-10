@@ -1,13 +1,13 @@
-Write a Fusion Python script that, when run, builds the SCARA's third and fourth joints of Chapter 37 at the end of
-its second arm: a HIWIN FB ball screw spline, whose one shaft carries a screw and a spline, with the screw nut on the
-arm's top plate and the spline nut under its base plate, each turning in its own support bearing; a toothed pulley on
-each nut; two Gates GT3 3 mm belts to the J3 and J4 servo motors inside the arm's end; the shaft sliding (J3) and
-turning (J4) with a tool flange at its lower end.
+Write a Fusion Python script that, when run, builds the SCARA's third and fourth joints at the end of its second arm:
+a HIWIN FB ball screw spline, whose one shaft carries a screw and a spline, with the screw nut on the arm's top plate
+and the spline nut under its base plate, each turning in its own support bearing; a toothed pulley on each nut; two
+Gates GT3 3 mm belts to the J3 and J4 servo motors inside the arm's end; the shaft sliding (J3) and turning (J4) with
+a tool flange at its lower end.
 
 INPUTS (a command dialog, with this default):
 - the ball screw spline's size, one of SP 16, 20, 25 or 32, 20
 
-DERIVED (from lib/scara_design.py, never typed):
+DERIVED (from projects/scara_robot/lib/scara_design.py, never typed):
 - tool_joints(): the shaft at the full stroke as a cantilever (its swing and its bending against the endurance
   limit), the depth rule, the screw's cube-mean force and life with the short-stroke operating factor, the spline's
   torque, the motors' peak and RMS torques, the belts by Gates' procedure, the brakes

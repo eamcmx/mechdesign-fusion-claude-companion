@@ -61,22 +61,26 @@ Each folder holds the script, its manifest and `PROMPT.txt`, the prompt it was w
 - `bill_of_materials_bodies`: breaks "count a bought part once per set: a bearing's rings and balls, a tapered bearing's cone and cup, a reducer's case and output are one piece"
 - `design_for_assembly_material`: breaks "answer each question for a future redesign, not for the parts as they are (Dewhurst & Meeker, 2014, p. 5)"
 - `fatigue_spots_farface`: breaks "the bolts' grip: along the bolt's axis, from the head's underside ... to the nut's face nearer the head"
-- `making_sharp_tine`: breaks "the tine's inside corner rounded to lib/making.py's radius"
+- `making_sharp_tine`: breaks "the tine's inside corner rounded to design_office/lib/making.py's radius"
 - `making_square_cutter`: breaks "the arm's root cut by a cutter whose corner radius is the drawing's 2.5 mm"
 - `mass_properties_axis`: breaks "the moments of inertia about the world's axes moved to the centre by the parallel-axis rule"
 - `materials_fits_aluminium`: CONTROL for the rule in lib/materials_fits.py's decide() that an aluminium housing takes J7 where SKF's table gives H7:
-- `part_drawings_no_root`: breaks "carry into the model what Part 10 decided for its shape before drawing it: the opening bracket's arm root filleted 2.5 mm"
+- `part_drawings_no_root`: breaks "carry into the model what the checks decided for its shape before drawing it: the opening bracket's arm root filleted 2.5 mm"
 - `part_numbers_names`: breaks "kind_of(): the name on the parts list that a component's name stands for"
 - `range_sweep_springs`: breaks "leave out the parts that are not the machine: ... the compliance unit's springs, which are drawn rigid at their free length"
 - `stack_gaps_pin`: breaks "leaving out the names a gap excludes (the horn's pin from the horn)"
 - `standard_parts_shoulder`: breaks "the shoulder from bearing_6206(): the first whole millimetre over SKF's da min"
 - `study_assemblies_home_pose`: breaks "arms: the robot at the cycle's high point"
-- `study_assemblies_unturned`: breaks "the opening bracket with Chapter 62's change: its arm turned"
+- `study_assemblies_unturned`: breaks "the change to the opening bracket, its arm turned 45 deg about its own axis"
 - `study_parts_sharp_keyseat`: breaks "its floor's four edges rounded to r/d = 0.02, 0.6 mm"
 
 ## captures/ (27): the pictures in the book
 
 `bill_of_materials_exploded`, `bill_of_materials_robot`, `design_for_assembly_colours`, `design_for_assembly_exploded`, `fatigue_spots_end`, `fatigue_spots_exploded`, `lug_fitting_exploded`, `making_tine_nest`, `making_weldment_exploded`, `mass_properties_centres`, `mass_properties_robot_exploded`, `materials_fits_exploded`, `materials_fits_wrist`, `part_drawings_exploded`, `part_numbers_bag`, `part_numbers_exploded`, `part_numbers_robot`, `range_sweep_flap`, `range_sweep_stops`, `range_sweep_stops_closed`, `range_sweep_stops_exploded`, `stack_gaps_axle_exploded`, `stack_gaps_changer_cut`, `standard_parts_end`, `standard_parts_exploded`, `stub_torque_exploded`, `tine_on_jaw_exploded`
+
+## references/ (23 sources)
+
+The catalogues, data sheets, standards and books the project was sized from, listed in `references/README.md` with their links; the copies stay with their publishers.
 
 ## results/ (134 files)
 

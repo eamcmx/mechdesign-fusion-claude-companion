@@ -1,8 +1,8 @@
-Write a Fusion Python script that, when run, builds the palletizer's parallel-jaw gripper for cartons of Chapter 45:
-an adapter to ISO 9409-1-160-6-M10 under the tool changer's tool plate, an aluminium beam with two linear rails, two
-jaws that run on the rails and squeeze a pack of cartons between rubber pads, one ballscrew with a right-hand thread
-on one half and a left-hand thread on the other that moves the two jaws together, its bearing units, and a motor with
-a gearhead and a brake. The script also builds the pack it grips.
+Write a Fusion Python script that, when run, builds the palletizer's parallel-jaw gripper for cartons: an adapter to
+ISO 9409-1-160-6-M10 under the tool changer's tool plate, an aluminium beam with two linear rails, two jaws that run
+on the rails and squeeze a pack of cartons between rubber pads, one ballscrew with a right-hand thread on one half and
+a left-hand thread on the other that moves the two jaws together, its bearing units, and a motor with a gearhead and a
+brake. The script also builds the pack it grips.
 
 INPUTS (a command dialog, with these defaults):
 - the cartons along the squeeze (count), 2
@@ -10,7 +10,7 @@ INPUTS (a command dialog, with these defaults):
 - the squeeze, the jaws' normal force (N), 4700
 - the state, gripping or open, gripping
 
-DERIVED (from lib/clamp_gripper.py, never typed):
+DERIVED (from projects/palletizer/lib/clamp_gripper.py, never typed):
 - CARTON: 400 x 400 x 300 mm, 40 kg; MU_PAD 0.5, P_SIDE 40 kPa, the holding factors 2.0 on the cycle and 1.25 in
   a brake stop
 - LAY: the heights and sizes below; the lengths along x are given here
@@ -42,8 +42,8 @@ FUSION CONVENTIONS:
   set_state(j), places the two jaws at +-j by their transforms: the screw's two hands keep them symmetric. No
   joints, as-built or otherwise.
 - The API works in cm and radians.
-- Each ball groove: groove_section() of BallScrewAxis.py (Chapter 21), right-hand with a positive twist about +x,
-  left-hand mirrored.
+- Each ball groove: groove_section() of common/BallScrewAxis/BallScrewAxis.py, right-hand with a positive twist about
+  +x, left-hand mirrored.
 
 ACCEPTANCE CRITERIA:
 - A message gives the pack, the squeeze against its need and the sides' limit, the screw, nuts, bearings and guides,

@@ -42,8 +42,9 @@ FUSION CONVENTIONS:
 - Three subassemblies: Housing (grounded), Input shaft assembly, Output shaft assembly; each part a component of
   its subassembly, one body each; the bearings' inner rings with the shafts, outer rings and balls with the housing.
 - Inside a subassembly only the first component is grounded to its parent: set isGroundToParent on every part.
-- Bodies from TemporaryBRepManager given in world coordinates and moved into the component; the teeth of Chapter 12,
-  extruded along the sketch's normal and patterned about the component's own axis.
+- Bodies from TemporaryBRepManager given in world coordinates and moved into the component; involute teeth (each
+  outline one closed polyline of sketch lines), extruded along the sketch's normal and patterned about the component's
+  own axis.
 - The API works in cm and radians.
 - AsBuiltJoints: each shaft assembly revolute about y on the housing; a Motion Link of 1800 deg to 360 deg,
   the output turning the other way. Materials: Steel for the shafts, gear and small parts; Iron, Cast for the

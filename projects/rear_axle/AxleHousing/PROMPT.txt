@@ -1,7 +1,8 @@
 Write a Fusion Python script that, when run, builds the housing of a light truck's live rear axle and its two
-semi-floating wheel ends, as real parts: a banjo housing that holds the carrier of Chapter 29 and carries the truck's
-rear from its spring seats to its wheel bearings, and in each tube's end a half shaft on a deep-groove bearing, the
-shaft's flange carrying the wheel's studs; the half shafts turning in their bearings.
+semi-floating wheel ends, as real parts: a banjo housing that holds the carrier of
+projects/rear_axle/RearAxleCarrier/RearAxleCarrier.py and carries the truck's rear from its spring seats to its wheel
+bearings, and in each tube's end a half shaft on a deep-groove bearing, the shaft's flange carrying the wheel's studs;
+the half shafts turning in their bearings.
 
 INPUTS (a command dialog, with these defaults):
 - the half shaft's body d_body (mm), 48
@@ -9,9 +10,9 @@ INPUTS (a command dialog, with these defaults):
 - the tube's wall t (mm), 8
 - the wheel bearing's bore (mm), 65
 
-DERIVED (computed from the inputs by lib/axle_design.py, never typed; Budynas and Nisbett 2015):
-- the six load cases at one wheel (Chapter 28): the moment about the bearing b V -/+ r S with b = 65 mm and
-  r = 365 mm, b X; the shaft on two supports 615 mm apart; the bearing's load
+DERIVED (computed from the inputs by projects/rear_axle/lib/axle_design.py, never typed; Budynas and Nisbett 2015):
+- the six load cases at one wheel (projects/rear_axle/lib/axle_design.py): the moment about the bearing b V -/+ r S
+  with b = 65 mm and r = 365 mm, b X; the shaft on two supports 615 mm apart; the bearing's load
 - the shaft, 4140 Q&T 425 C (Table A-21): yield in the hardest turn with the design torque; DE-Goodman fatigue under
   the static wheel load and the running torque (Eqs. 6-8, 6-19, 6-20, Table 7-1); torsion at the splines' minor
   diameter
@@ -22,12 +23,12 @@ HARD CONSTRAINTS:
 - Refuse a shaft that keeps under 1.5 against yield in the hardest turn or in fatigue, a bearing that does not last
   127.32 million turns, a tube under 1.5 in the pothole, saying which.
 - The axle along Y, forward +X, up +Z, the axle's middle at the origin.
-- The housing: a drum round the axle whose outside is 168.07 mm from the axis (196.93 mm of ground clearance with
-  the 365 mm static radius, at least the 195 of Change 1); a front neck whose flange takes the carrier's plate at
-  x = 165, both cut flat 166 mm below the axle, with eight studs and nuts M12 on 370 mm (lib/axle_design.joint_bolts); a rear neck past the drum's back
-  with a cover, ten M8 screws, filler and drain plugs; a breather; tubes to each wheel; at each tube's end the
-  bearing's housing with the seal's bore and the bearing's shoulder, and the brake's flange; a spring seat on each
-  tube 575 mm from the middle.
+- The housing: a drum round the axle whose outside is 168.07 mm from the axis (196.93 mm of ground clearance with the
+  365 mm static radius, at least the 195 of Change 1); a front neck whose flange takes the carrier's plate at x = 165,
+  both cut flat 166 mm below the axle, with eight studs and nuts M12 on 370 mm
+  (projects/rear_axle/lib/axle_design.joint_bolts); a rear neck past the drum's back with a cover, ten M8 screws,
+  filler and drain plugs; a breather; tubes to each wheel; at each tube's end the bearing's housing with the seal's
+  bore and the bearing's shoulder, and the brake's flange; a spring seat on each tube 575 mm from the middle.
 - Each wheel end: a half shaft with eight straight-sided splines 35 x 40 at its inner end, held by the side gear at
   100 mm from the middle, a body of d_body, the bearing's seat, a shoulder of d_S against which the bearing is
   pressed, and a flange of 190 mm with six M14 studs on 139.7 mm, the flange part of the shaft; a retaining ring
@@ -36,8 +37,9 @@ HARD CONSTRAINTS:
 - Nothing touches anything else, at rest or turning.
 
 FUSION CONVENTIONS:
-- A new design document (FusionDesignDocumentType). Three subassemblies: Housing (grounded), Wheel end L, Wheel
-  end R; each part a component, grounded to its parent, one body each; deep-groove bearings drawn as in Chapter 27 (inner ring, outer ring, balls).
+- A new design document (FusionDesignDocumentType). Three subassemblies: Housing (grounded), Wheel end L, Wheel end R;
+  each part a component, grounded to its parent, one body each; deep-groove bearings drawn by
+  common/lib/mdfc_parts.py's bearing_bodies() (inner ring, outer ring, balls).
 - Each wheel end turns on an As-built revolute joint about Y on the housing.
 - The API works in cm and radians. Materials: Steel; the breather Brass; the seals Rubber, Silicone.
 

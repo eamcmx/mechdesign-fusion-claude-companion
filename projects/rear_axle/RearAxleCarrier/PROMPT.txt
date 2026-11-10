@@ -9,7 +9,7 @@ INPUTS (a command dialog, with these defaults):
 - differential module m_d (mm), 5.5
 - spiders N (a count), 4
 
-DERIVED (computed from the inputs by lib/axle_design.py, never typed; Childs 2014 and Budynas and Nisbett 2015):
+DERIVED (computed from the inputs by projects/rear_axle/lib/axle_design.py, never typed; Childs 2014 and Budynas and Nisbett 2015):
 - the duty: 2009.25 N m on the pinion for 9528 turns (5000 hard starts), 283.49 N m at 4800 rpm for 498.69 million
 - the spiral bevel pair 12:47, 20 deg normal, 35 deg spiral: cones, A_e = m/2 sqrt(12^2 + 47^2), mean point at
   A_e - F/2; rated by ANSI/AGMA 2003-B97 in SI (Childs Eqs. 10.9, 10.12, 10.16-10.23; Z_I 0.1275, Y_J 0.23;
@@ -35,9 +35,9 @@ HARD CONSTRAINTS:
   spigot; the crown wheel's bore 170.4 mm passes over the case. The gears' backs spherical, of radius 74 mm, on
   spherical washers; the side gears' hubs splined 8 x 35 x 40 for the half shafts.
 - The carrier: a mounting plate 400 mm across, cut flat 166 mm below the axle so that it stays above the housing's
-  bowl, with eight holes on 370 mm over its upper three quarters (lib/axle_design.joint_bolts); the nose with the
-  cups' bores and the seal's, two legs with the saddles, bearing caps with two M12 bolts each, threaded adjusters
-  behind the case's cups.
+  bowl, with eight holes on 370 mm over its upper three quarters (projects/rear_axle/lib/axle_design.joint_bolts); the
+  nose with the cups' bores and the seal's, two legs with the saddles, bearing caps with two M12 bolts each, threaded
+  adjusters behind the case's cups.
 - Nothing touches anything else, at rest or turning.
 
 FUSION CONVENTIONS:

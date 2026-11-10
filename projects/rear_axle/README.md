@@ -39,6 +39,10 @@ Each folder holds the script, its manifest and `PROMPT.txt`, the prompt it was w
 
 `axle_detail`, `axle_detail_exploded`, `axle_housing`, `axle_housing_ends`, `axle_housing_exploded`, `rear_axle`, `rear_axle_carrier`, `rear_axle_carrier_exploded`, `rear_axle_carrier_gears`, `rear_axle_carrier_open`, `rear_axle_exploded`, `rear_axle_inside`
 
+## references/ (11 sources)
+
+The catalogues, data sheets, standards and books the project was sized from, listed in `references/README.md` with their links; the copies stay with their publishers.
+
 ## results/ (12 files)
 
 The last run of every check and control above, each headed by the Fusion version and the date, and the files the scripts write.

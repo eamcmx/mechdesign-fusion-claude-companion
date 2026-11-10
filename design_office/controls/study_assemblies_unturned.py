@@ -1,4 +1,4 @@
-# CONTROL for the prompt's hard constraint "the opening bracket with Chapter 62's change: its arm turned": the script
+# CONTROL for the prompt's hard constraint "the change to the opening bracket, its arm turned 45 deg about its own axis": the script
 # builds the stop study on the bracket as Chapter 56 left it, the arm on its diagonal, with the 2.5 mm root. The whole
 # check runs on it. Expected: the stop's bracket volume line fails (99 541.2 against the turned arm's 99 399.2), and it
 # alone.

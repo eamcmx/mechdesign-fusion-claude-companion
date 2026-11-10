@@ -1,15 +1,15 @@
-Write a Fusion Python script that, when run, builds the palletizer's mechanical interface of Chapter 44: the robot's
-plate under J4's RV-80N to ISO 9409-1-160-6-M10, and on it a tool changer: a master with its cover held by six M10
-cap screws, a double-acting piston whose rod passes a gland down to a cam, six segments the cam drives out into a
-ring of the tool plate, and the tool plate with the same ISO pattern underneath for the gripper. The script shows the
-changer locked or free.
+Write a Fusion Python script that, when run, builds the palletizer's mechanical interface: the robot's plate under
+J4's RV-80N to ISO 9409-1-160-6-M10, and on it a tool changer: a master with its cover held by six M10 cap screws, a
+double-acting piston whose rod passes a gland down to a cam, six segments the cam drives out into a ring of the tool
+plate, and the tool plate with the same ISO pattern underneath for the gripper. The script shows the changer locked or
+free.
 
 INPUTS (a command dialog, with these defaults):
 - the cam's locking angle (deg), 5
 - the supply's least pressure (bar), 5.5
 - the state, locked or free, locked
 
-DERIVED (from lib/tool_changer.py, never typed):
+DERIVED (from projects/palletizer/lib/tool_changer.py, never typed):
 - ISO9409: Table 1 of ISO 9409-1 for the pitch circle 160: d2 200 h8, d3 100 H7, six M10 at 30 + 60 k deg, the pin
   hole d5 10 H7 on +Xm, t1 8 and t2 10
 - CHANGER: the piston 100 mm, the cam's 5 deg locking zone and 30 deg lead, the ring's 15 deg face, six segments 36 mm

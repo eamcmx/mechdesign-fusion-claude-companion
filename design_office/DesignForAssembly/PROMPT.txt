@@ -1,17 +1,17 @@
-Write a Fusion Python script that, when run, builds the bag gripper as Parts 9 and 10 left it, puts it through
-Boothroyd and Dewhurst's test for unnecessary parts in the model, and then makes the three fixings the test found
-missing, so that the designer sees which pieces must be separate, which could go, and the gripper with every part held.
+Write a Fusion Python script that, when run, builds the detailed bag gripper with its stops, puts it through Boothroyd
+and Dewhurst's test for unnecessary parts in the model, and then makes the three fixings the test found missing, so
+that the designer sees which pieces must be separate, which could go, and the gripper with every part held.
 
 INPUTS (a command dialog, with this default):
 - the machine: one of those the test is answered for, which is only the bag gripper, bag
 
 DERIVED (never typed):
-- RangeSweep.py's machine('bag'): the gripper as its detail chapter built it, with its stops
-- lib/bom_detail.py: each component's line of the bill (Chapter 64)
-- lib/dfma.py: each line's answer to the test (which question keeps how many of its pieces, or none), each piece's
-  operation and time (Matuszek et al., 2021, Table 2), the theoretical minimum, the assembly time and the design
-  efficiency E = 3 Nmin / t (Range, 2013); the three kinds with no fixing and the fixing each takes; the layout from
-  projects/palletizer/lib/bag_gripper.py
+- design_office/RangeSweep/RangeSweep.py's machine('bag'): the gripper as its detail script builds it, with its stops
+- design_office/lib/bom_detail.py: each component's line of the bill
+- design_office/lib/dfma.py: each line's answer to the test (which question keeps how many of its pieces, or none),
+  each piece's operation and time (Matuszek et al., 2021, Table 2), the theoretical minimum, the assembly time and the
+  design efficiency E = 3 Nmin / t (Range, 2013); the three kinds with no fixing and the fixing each takes; the layout
+  from projects/palletizer/lib/bag_gripper.py
 
 HARD CONSTRAINTS:
 - Build the gripper through RangeSweep.py's machine(), loaded, not copied.
@@ -27,7 +27,8 @@ HARD CONSTRAINTS:
   from the cylinder's pin along y and 30 apart up the arm, clearance holes in the plate, holes tapped 16 mm deep in
   the bracket. These places and depths are typed in the script from the gripper's layout.
 - Check the new screws for interference against every other piece of the gripper (the bag and the station left out).
-- Count the bill again after the fixings, write everything to results/dfa.json, leave the design open, save nothing.
+- Count the bill again after the fixings, write everything to design_office/results/dfa.json, leave the design open,
+  save nothing.
 - Refuse a machine the test is not answered for.
 
 FUSION CONVENTIONS:

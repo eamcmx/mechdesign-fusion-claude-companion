@@ -7,7 +7,8 @@ file of the job inside it.
     projects/<machine>/        one machine or one exercise: a folder for each of its scripts (the script, its
                                manifest and the prompt it was written from), lib/ (its design calculations and the
                                weights Fusion measured), checks/, controls/, captures/ (the pictures), results/,
-                               references/ (the catalogues and standards it was sized from) and a README listing them
+                               references/ (the catalogues and standards it was sized from, listed with their links)
+                               and a README listing them
     design_office/             the work done on every machine: part numbers, materials and fits, the range sweep,
                                masses, studies, stack-ups, drawings, bills of materials, assembly, making
     common/                    what every project uses: this file, the parts library (lib/) and BallScrewAxis

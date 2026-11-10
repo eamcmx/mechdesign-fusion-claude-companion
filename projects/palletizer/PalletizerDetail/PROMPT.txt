@@ -1,13 +1,13 @@
-Write a Fusion Python script that, when run, builds one of the palletizer's assemblies of Chapters 41 to 48 in detail
-(the bag gripper by default, the robot, the compliance unit or the vacuum gripper), each with its own script, and then
-gives every made part its material and every fitting face its class and roughness as Chapter 51 decided them, with this
-chapter's decisions by hand where they differ from the rules.
+Write a Fusion Python script that, when run, builds one of the palletizer's assemblies in detail (the bag gripper by
+default, the robot, the compliance unit or the vacuum gripper), each with its own script, and then gives every made
+part its material and every fitting face its class and roughness as design_office/lib/materials_fits.py decides them,
+with the decisions of projects/palletizer/lib/palletizer_detail.py where they differ from the rules.
 
 INPUTS (a command dialog, with these defaults):
 - the assembly: one of bag, robot, unit or vacuum, bag
 - the plugs' fillet weld leg (mm), 4
 
-DERIVED (from lib/palletizer_detail.py and Chapter 51's MaterialsFits.py, never typed):
+DERIVED (from projects/palletizer/lib/palletizer_detail.py and design_office/MaterialsFits/MaterialsFits.py, never typed):
 - eyes(), SRB: each rod eye's shoulder, seat and DIN 472 groove, its pin's collar, seat and end washer, from SKF's
   abutment dimensions for the 22207 E and the 22213 E
 - robot_bearings(): each robot bearing held on both rings, its shaft's class and the clearance class it needs
@@ -20,10 +20,11 @@ DERIVED (from lib/palletizer_detail.py and Chapter 51's MaterialsFits.py, never 
 - MaterialsFits.apply(): the materials and the fits on the open design
 
 HARD CONSTRAINTS:
-- Build with each assembly's own script (PalletizerRobot.py; StandardParts.py, the bag gripper as Chapter 50 detailed
-  it; ComplianceUnit.py; VacuumGripper.py) and apply MaterialsFits.py's apply(); copy none of them. Change the parts by
-  replacing, before the build, the functions that draw them, each replacement recognising only the calls it means and
-  passing every other through.
+- Build with each assembly's own script (projects/palletizer/PalletizerRobot/PalletizerRobot.py;
+  design_office/StandardParts/StandardParts.py, the bag gripper with its standard parts detailed;
+  projects/palletizer/ComplianceUnit/ComplianceUnit.py; projects/palletizer/VacuumGripper/VacuumGripper.py) and apply
+  MaterialsFits.py's apply(); copy none of them. Change the parts by replacing, before the build, the functions that
+  draw them, each replacement recognising only the calls it means and passing every other through.
 - The robot: each rod eye bored to its bearing's outside with a shoulder of 64 (22207 E) or 110 (22213 E) on its pin's
   root side and a DIN 472 groove and circlip on the free side; each pin with a collar of 43 or 76 from its link to
   the inner ring, the seat through the ring, its end 0.5 mm short, an end washer and an ISO 4762 screw.

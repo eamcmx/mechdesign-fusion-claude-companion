@@ -1,14 +1,16 @@
-Write a Fusion Python script that, when run, builds one of Part 9's nine detailed assemblies, the bag gripper with
-Chapter 56's stops, and weighs it: every group's mass, centre and moments of inertia about its centre, and for the
-robot each of its eleven moving bodies in the form Chapter 43's cycle reads, so that the cycle can be run again on the
-detailed robot.
+Write a Fusion Python script that, when run, builds one of the nine detailed assemblies, the bag gripper with its
+stops, and weighs it: every group's mass, centre and moments of inertia about its centre, and for the robot each of
+its eleven moving bodies in the form of projects/palletizer/lib/palletizer_weighed.json, which the robot's cycle in
+projects/palletizer/lib/palletizer_links.py reads, so that the cycle can be run again on the detailed robot.
 
 INPUTS (a command dialog, with this default):
 - the machine: one of robot, wrist, flap, axle, bag, clamp, vacuum, changer or unit, robot
 
 DERIVED (never typed):
-- RangeSweep.py's machine(): the build, through each detail script, the bag gripper with its stops
-- the parts' materials: Chapter 51's library materials, as the detail scripts give them
+- design_office/RangeSweep/RangeSweep.py's machine(): the build, through each detail script, the bag gripper with its
+  stops
+- the parts' materials: the library materials design_office/lib/materials_fits.py decides, as the detail scripts give
+  them
 
 HARD CONSTRAINTS:
 - Build each machine through RangeSweep.py's machine(), loaded, not copied; copy none of the detail scripts.
@@ -17,10 +19,10 @@ HARD CONSTRAINTS:
 - A group is a top-level occurrence and all the parts under it; a group's name that comes twice is numbered, so that
   no group is lost from the sum.
 - For the robot at q = 0: the turret, the lower arm, the crank and counterweight, the parallel rod, levelling rod 1,
-  the triangle, the upper arm, levelling rod 2, the wrist housing, the tool flange and the balancer, each with its mass,
-  its layer y, its centre against its own pivot and the moments of inertia its motion needs, in
+  the triangle, the upper arm, levelling rod 2, the wrist housing, the tool flange and the balancer, each with its
+  mass, its layer y, its centre against its own pivot and the moments of inertia its motion needs, in
   projects/palletizer/lib/palletizer_weighed.json's form; the base apart.
-- Write each machine's result to results/mass_<machine>.json.
+- Write each machine's result to design_office/results/mass_<machine>.json.
 - Refuse a machine that is not one of the nine.
 
 FUSION CONVENTIONS:

@@ -1,13 +1,13 @@
-Write a Fusion Python script that, when run, builds each machine in which Chapter 56's range sweep found a small gap
-and measures the gap with its direction, so that the tolerance stack-ups know which dimensions close it: for each
-gap, put its machine in the state of the closest approach, and measure the least distance between the two parts, its
-two points and the direction from one to the other; then in the states either side, to see how fast the gap closes
-with the motion.
+Write a Fusion Python script that, when run, builds each machine in which design_office/RangeSweep/RangeSweep.py's
+range sweep found a small gap and measures the gap with its direction, so that the tolerance stack-ups know which
+dimensions close it: for each gap, put its machine in the state of the closest approach, and measure the least
+distance between the two parts, its two points and the direction from one to the other; then in the states either
+side, to see how fast the gap closes with the motion.
 
 INPUTS (a command dialog, with this default):
 - the gap: one of all, unit, flap, wrist, changer, axle_casting or axle_cap, all
 
-DERIVED (from lib/stackups.py, never typed):
+DERIVED (from design_office/lib/stackups.py, never typed):
 - GAPS: each gap's name, its machine, its state, its two parts (by the start of their names) and the states either
   side: the compliance unit's M10 x 25 and its carriage risen 30 mm; the flap's rod end and its horn at 40 deg; the
   wrist's stop disc and the left stop cap's ISO 10642 M4 x 12 at pitch 24 deg; the tool changer's cam and the tool plate
@@ -23,7 +23,7 @@ HARD CONSTRAINTS:
   from the horn); keep the least, its two points and the unit vector
   from the first point to the second.
 - Return the machine to the gap's own state at the end of each gap.
-- Write every gap's rows to results/stack_gaps.json.
+- Write every gap's rows to design_office/results/stack_gaps.json.
 - Refuse a gap that is not one of the six.
 
 FUSION CONVENTIONS:
@@ -35,6 +35,7 @@ FUSION CONVENTIONS:
 
 ACCEPTANCE CRITERIA:
 - A message gives each gap's parts, its least distance and its direction, and a version tag.
-- Each gap as Chapter 56's sweep found it: 0.707, 0.859, 1.000, 1.500, 1.000 and 1.000 mm, within 0.002.
+- Each gap as the range sweep found it (design_office/results/range_sweep.json): 0.707, 0.859, 1.000, 1.500, 1.000 and
+  1.000 mm, within 0.002.
 - The states either side measured and printed.
 - Refused: a gap called crane.

@@ -16,7 +16,7 @@ DERIVED (computed from the inputs, never typed):
   z_v = z / cos(delta) teeth, drawn at the heel on the back cone; tip r_v + m, root r_v - 1.25 m, base
   r_v cos(alpha), thickness pi m / 2 - 0.1 mm (backlash 0.2 mm) on the virtual pitch circle; below the base circle
   the flank is a radial line
-- contact ratio of the virtual spur gears (Chapter 12); ratio z2 / z1
+- contact ratio of the virtual spur gears (the length of action over the base pitch); ratio z2 / z1
 - the blank: root cone from toe to heel, back cone, back face 2 mm behind the heel
   root, a hub of radius d / 2 + 6.2 mm, 8 mm long, and a bore of d + 0.4 mm
 

@@ -1,25 +1,27 @@
 Write a Fusion Python script that, when run, builds the bag gripper with its bought parts described by their full
-designations and its driven stub shafts detailed with their standard parts, as Chapter 50 decided them.
+designations and its driven stub shafts detailed with their standard parts, as design_office/lib/standard_parts.py
+decides them.
 
 INPUTS (a command dialog, with these defaults):
 - the shaft's shoulder (mm), 36
 - the key's length (mm), 25
 
-DERIVED (from lib/standard_parts.py and lib/detail_inventory.py, never typed):
+DERIVED (from design_office/lib/standard_parts.py and design_office/lib/detail_inventory.py, never typed):
 - stub_detail(): the shoulder from bearing_6206() (the first whole millimetre over SKF's da min), SKF's band, the
   bearing's d, D, B, d1 and D2, the key's row of DIN 6885-1 (b, h, t1, t2) and its length from lever_key(), the hub,
   the spacer, the end washer and the end screw, the shaft's end 1 mm inside the hub's face
 - dowel_adapter(): the ISO 8734 dowel's made length and its depth in the adapter
 - decide(): every bought designation's full designation; detail_numbers(): the new kinds' numbers
-- number_map(), kind_of() and Chapter 49's PartNumbers.py for the numbers
+- number_map(), kind_of() and design_office/PartNumbers/PartNumbers.py for the numbers
 
 HARD CONSTRAINTS:
 - Refuse a shoulder outside SKF's band (35.6 to 40.3 mm), a key shorter than crushing in the brake stop allows
   (23.70 mm) and a key length DIN 6885-1 does not make at 8 mm wide.
-- Build the gripper with BagGripper.py's own build() and number it with PartNumbers.py's number(); copy neither. Change
-  the gripper's parts by replacing, before the build, three of BagGripper's functions: the jaw's bodies (the driven
-  stub shaft, the lever, and the parts the detail adds), the tube that draws the bearings, and the cylinder that
-  draws the dowel and its hole; each replacement recognises only the calls it means and passes every other through.
+- Build the gripper with projects/palletizer/BagGripper/BagGripper.py's own build() and number it with
+  PartNumbers.py's number(); copy neither. Change the gripper's parts by replacing, before the build, three of
+  BagGripper's functions: the jaw's bodies (the driven stub shaft, the lever, and the parts the detail adds), the tube
+  that draws the bearings, and the cylinder that draws the dowel and its hole; each replacement recognises only the
+  calls it means and passes every other through.
 - The driven stub shaft: the end cap in the tube, the shoulder from the tube's end to the bearing, the 30 mm seat to
   1 mm inside the hub's face, a form-A keyseat t1 deep on top, a tapped hole for the end screw at its nominal
   diameter.
@@ -29,13 +31,13 @@ HARD CONSTRAINTS:
   washer 40 x 5 with a 9 mm hole, and an ISO 4762 M8 x 20 through it into the shaft's end.
 - The adapter's dowel ISO 8734 10 x 22, 13 mm in the adapter and 9 in the tool plate.
 - Both jaws alike: the -y jaw's parts are the +y jaw's turned, as the gripper's own script makes them.
-- Numbers: Chapter 49's; the detail's new made kinds the next free items of P13 in the order of their names, the key
-  the next free serial. Descriptions: a bought part's full designation from decide().
+- Numbers: those of PartNumbers.py; the detail's new made kinds the next free items of P13 in the order of their
+  names, the key the next free serial. Descriptions: a bought part's full designation from decide().
 
 FUSION CONVENTIONS:
 - The gripper's script makes its own new design document (FusionDesignDocumentType); the numbers and descriptions go
-  into Component.partNumber and Component.description; components keep Volume 2's names (the dowel, drawn 22 long,
-  keeps the name 'Dowel pin 10x17'); lengths in mm, the API's cm inside mdfc_parts.
+  into Component.partNumber and Component.description; components keep the names the gripper's script gives them (the
+  dowel, drawn 22 long, keeps the name 'Dowel pin 10x17'); lengths in mm, the API's cm inside mdfc_parts.
 - No joints, as-built or otherwise: BagGripper.py places its groups by transforms, and nothing is moved.
 
 ACCEPTANCE CRITERIA:

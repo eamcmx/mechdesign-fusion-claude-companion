@@ -1,14 +1,14 @@
-Write a Fusion Python script that, when run, builds the palletizer's bag gripper of Chapter 47: the adapter to
-ISO 9409-1-160-6-M10 of Chapter 45 on an aluminium box beam, two end plates carrying two jaws of tines that close
-under a bag from its long sides, each jaw turned by a pneumatic cylinder with a clamping unit, and a press plate on
-two cylinders over the bag. The script also builds the bag and the rollers of the pick-up station it lies on.
+Write a Fusion Python script that, when run, builds the palletizer's bag gripper: the adapter to ISO 9409-1-160-6-M10
+of the parallel-jaw gripper (projects/palletizer/ClampGripper/ClampGripper.py) on an aluminium box beam, two end plates carrying two jaws of tines that close under a bag from its long
+sides, each jaw turned by a pneumatic cylinder with a clamping unit, and a press plate on two cylinders over the bag.
+The script also builds the bag and the rollers of the pick-up station it lies on.
 
 INPUTS (a command dialog, with these defaults):
 - the bag's mass (kg), 50
 - the bag's width (mm), 500
 - the supply pressure (bar), 6
 
-DERIVED (from lib/bag_gripper.py, never typed):
+DERIVED (from projects/palletizer/lib/bag_gripper.py, never typed):
 - LAY: the layout below; DSBC: Festo DSBC-32 to -80 at 6 bar (forces, clamping units, sizes); BRG: 02-series bearings
 - CYL: DSBC-80-125 with a clamping unit, on an SNCB swivel flange, closed at full stroke
 - jaw_moment(): the moment that opens a jaw, the bag's weight on the tines and its sideways push on the legs, in

@@ -24,10 +24,9 @@ HARD CONSTRAINTS:
 
 FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
-- Components, one body each, created at the origin, drawn in place at alpha0: Frame (grounded), a plate from
-  z = -6 to 0; Upper link from T to K, z 0 to 4; Lower link from K to R, z 4 to 8; Ram, a block 16 mm along x and 12 mm
-  along y round R, z 8 to 12. Links 8 mm wide with round ends and 3 mm holes (Chapter 22). The pins and the ram's guide are not
-  drawn.
+- Components, one body each, created at the origin, drawn in place at alpha0: Frame (grounded), a plate from z = -6 to
+  0; Upper link from T to K, z 0 to 4; Lower link from K to R, z 4 to 8; Ram, a block 16 mm along x and 12 mm along y
+  round R, z 8 to 12. Links 8 mm wide with round ends and 3 mm holes. The pins and the ram's guide are not drawn.
 - The API works in cm and radians.
 - AsBuiltJoints: Upper link revolute about z on Frame at T, limited as above; Lower link revolute on Upper link at
   K; Lower link revolute on Ram at R; Ram slider along y on Frame (the last closes the loop).

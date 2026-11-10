@@ -1,12 +1,13 @@
-Write a Fusion Python script that, when run, builds Chapter 34's flap actuation system in detail: the motor unit drawn
-to the catalogue products its specification is now written against, the pinion keyed on the gearhead's shaft as that
-shaft is made, the bearing seats on the hinge pins and the horn pin split out as the zones that are hardened, and every
-made part's material and every fitting face's class and roughness as Chapter 51 decided them.
+Write a Fusion Python script that, when run, builds the flap actuation system of
+projects/flap_actuation/FlapSystem/FlapSystem.py in detail: the motor unit drawn to the catalogue products its
+specification is now written against, the pinion keyed on the gearhead's shaft as that shaft is made, the bearing
+seats on the hinge pins and the horn pin split out as the zones that are hardened, and every made part's material and
+every fitting face's class and roughness as design_office/lib/materials_fits.py decides them.
 
 INPUTS (a command dialog, with this default):
 - the gearhead's ratio, one of the two-stage GP 52 C's ratios, 26
 
-DERIVED (from lib/flap_detail.py, lib/flap_design.py and Chapter 51's MaterialsFits.py, never typed):
+DERIVED (from projects/flap_actuation/lib/flap_detail.py, projects/flap_actuation/lib/flap_design.py and design_office/MaterialsFits/MaterialsFits.py, never typed):
 - numbers(i): the motor's point at that ratio, its speed at 28 V, its current, the brake it needs, the bus current
 - MOTOR, GEARHEAD, OVERALL, SPEC, PIN: maxon's figures, the catalogue's overall length, Table ch33motor's envelope,
   the pinion's layout along the actuator's axis
@@ -14,11 +15,12 @@ DERIVED (from lib/flap_detail.py, lib/flap_design.py and Chapter 51's MaterialsF
 - MaterialsFits.apply(): the materials and the fits on the open design
 
 HARD CONSTRAINTS:
-- Build with FlapSystem.py's own build() and apply MaterialsFits.py's apply(); copy neither, nor FlapActuator.py.
-  Change the parts by replacing, before the build, the functions that draw them, each replacement recognising only
-  the calls it means and passing every other through: the body adder for the motor unit's gearhead, motor and brake,
-  the gear for the pinion, the part for the gearhead's shaft, the cylinder that cuts the shaft's hole through the
-  housing's back wall. Restore every replaced function after the build.
+- Build with FlapSystem.py's own build() and apply MaterialsFits.py's apply(); copy neither, nor
+  projects/flap_actuation/FlapActuator/FlapActuator.py. Change the parts by replacing, before the build, the functions
+  that draw them, each replacement recognising only the calls it means and passing every other through: the body adder
+  for the motor unit's gearhead, motor and brake, the gear for the pinion, the part for the gearhead's shaft, the
+  cylinder that cuts the shaft's hole through the housing's back wall. Restore every replaced function after the
+  build.
 - The hole through the housing's back wall for the gearhead's shaft opened from 14 to 17 across, so that the key's
   corner, 7.76 from the axis, passes it.
 - The motor unit behind its flange (6 thick from the housing's back face): the GP 52 C 52 across and 65 long, the
@@ -29,7 +31,7 @@ HARD CONSTRAINTS:
   it bears on the hub and not on the shaft's end, and an M4 x 10 cap screw through it into the shaft's centre hole.
 - The hinge pins' and the horn pin's cylinders split across at the edges of the ring that sits on them (16 wide) and
   the faces between marked as hardened. The horn pin's seat h6 Rz 10, the pinion's bore K7 and its keyway JS9, by
-  hand, the census not reaching them; every other class Chapter 51's.
+  hand, the census not reaching them; every other class as design_office/lib/materials_fits.py decides it.
 - Refuse a ratio maxon does not make, and one at which the motor would exceed its continuous torque or the speed it
   reaches at 28 V.
 

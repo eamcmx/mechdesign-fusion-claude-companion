@@ -9,7 +9,7 @@ INPUTS (a command dialog, with these defaults):
 - face width b (mm), 10
 
 DERIVED (computed from the inputs, never typed):
-- pinion: pitch radius r = m z / 2, base radius r cos(alpha), tip r + m, root r - 1.25 m (Chapter 12)
+- pinion: pitch radius r = m z / 2, base radius r cos(alpha), tip r + m, root r - 1.25 m
 - rack: pitch p = pi m; teeth with straight flanks at alpha to the vertical, addendum m above the pitch line,
   dedendum 1.25 m below it, thickness on the pitch line p / 2 - 0.1 mm (backlash 0.2 mm); a body 8 mm deep below
   the roots
@@ -25,12 +25,11 @@ HARD CONSTRAINTS:
 
 FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
-- Components, one body each, created where they belong: Base plate (grounded), top face at z = 0; Shaft at
-  (0, r), 8 mm, with a collar under the pinion as in Chapter 12; Pinion on it from z = 1 to 1 + b, centre (0, r);
-  Rack from z = 1 to 1 + b, its pitch line on y = 0, teeth pointing up (+y), centred on x = 0. The rack's guide is
-  not drawn.
-- The pinion tooth outline is one closed polyline as in Chapter 12; the rack's whole outline, teeth and body, is
-  one closed polyline of sketch lines sharing their points.
+- Components, one body each, created where they belong: Base plate (grounded), top face at z = 0; Shaft at (0, r), 8
+  mm, with a collar under the pinion; Pinion on it from z = 1 to 1 + b, centre (0, r); Rack from z = 1 to 1 + b, its
+  pitch line on y = 0, teeth pointing up (+y), centred on x = 0. The rack's guide is not drawn.
+- The pinion tooth outline is one closed polyline of sketch lines that share their SketchPoints (no splines); the
+  rack's whole outline, teeth and body, is one closed polyline of sketch lines sharing their points.
 - The API works in cm and radians.
 - AsBuiltJoints: rigid between the plate and the shaft; revolute about z between the pinion and the shaft; a slider
   along x between the rack and the plate, limited to the travel. A Motion Link: 360 deg of the pinion for pi m z of

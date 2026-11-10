@@ -1,12 +1,13 @@
-Write a Fusion Python script that, when run, builds one flap's actuation system as one machine: the actuator
-of Chapter 33 (FlapActuator.py) hung on its trunnions in a fitting on the rear spar, its rod end pinned in the fork
-of a horn on the flap's middle, and the flap on two hinge brackets, with the wing's spar and skins drawn from the
-brief's section, so that the flap can be posed anywhere from 0 to 40 deg with the actuator following it.
+Write a Fusion Python script that, when run, builds one flap's actuation system as one machine: the actuator of
+projects/flap_actuation/FlapActuator/FlapActuator.py hung on its trunnions in a fitting on the rear spar, its rod end
+pinned in the fork of a horn on the flap's middle, and the flap on two hinge brackets, with the wing's spar and skins
+drawn from the brief's section, so that the flap can be posed anywhere from 0 to 40 deg with the actuator following
+it.
 
 INPUTS (a command dialog, with this default):
 - the screw's operating factor f_p, 3.0, passed to the actuator
 
-DERIVED (from lib/flap_design.py, never typed):
+DERIVED (from projects/flap_actuation/lib/flap_design.py, never typed):
 - system_design(): the flap's forces at each angle, the hinges' reaction, the horn's root, the pins as beams, the
   cheeks, eyes and lugs (Shigley Section 8-12), the brackets, their bolts and the ribs, the fitting and its bolts
 - linkage(): the actuator's angle about its gimbal and its rod's travel for each flap angle; SYS: the positions

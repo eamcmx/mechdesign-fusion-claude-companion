@@ -1,14 +1,14 @@
-Write a Fusion Python script that, when run, builds the palletizer's vacuum gripper of Chapter 46: the adapter to
-ISO 9409-1-160-6-M10 of Chapter 45, two aluminium beams and a plate under them, and over each of the six cartons of
-a layer a zone of six bellows suction cups on spring level compensators, with a manifold and two compact ejectors.
-The script also builds the layer of cartons it holds.
+Write a Fusion Python script that, when run, builds the palletizer's vacuum gripper: the adapter to ISO
+9409-1-160-6-M10 of the parallel-jaw gripper (projects/palletizer/ClampGripper/ClampGripper.py), two aluminium beams and a plate under them, and over each of the six cartons of a
+layer a zone of six bellows suction cups on spring level compensators, with a manifold and two compact ejectors. The
+script also builds the layer of cartons it holds.
 
 INPUTS (a command dialog, with these defaults):
 - the cartons under the gripper (count), 6
 - a carton's mass (kg), 6.5
 - the vacuum the system holds, one of 0.6 bar or more, 0.6
 
-DERIVED (from lib/vacuum_gripper.py, never typed):
+DERIVED (from projects/palletizer/lib/vacuum_gripper.py, never typed):
 - CUP: Schmalz SPB1 80 ED-65 (166 N at -0.6 bar, 59 N lateral, 98.358 cm3, 45.9 mm high, lip 82.7, 88 pressed)
 - EJECTOR: Schmalz SCPSi 2-14 (82 l/min of air, 0.65 s per litre to 600 mbar), lying 93 x 99 x 18 on its manifold
 - LAY: the layout below; SPRING: music wire 1.5 x 20, 10 N hanging, 25 N at the end of a 25 mm stroke

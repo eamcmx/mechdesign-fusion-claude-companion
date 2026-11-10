@@ -1,14 +1,14 @@
 Write a Fusion Python script that, when run, builds the electromechanical actuator of one trailing-edge flap of a
-light twin (Chapter 32): a ball screw turned through a spur gear, an idler and a pinion by a bought motor unit
-(brushless motor, planetary gearhead, spring-applied brake) pushes a rod out of an aluminium housing that hangs from
-the rear spar on two trunnions, and the rod ends in a rod end on the flap's horn. Assembled from real parts, ready to
-move with its joints.
+light twin: a ball screw turned through a spur gear, an idler and a pinion by a bought motor unit (brushless motor,
+planetary gearhead, spring-applied brake) pushes a rod out of an aluminium housing that hangs from the rear spar on
+two trunnions, and the rod ends in a rod end on the flap's horn. Assembled from real parts, ready to move with its
+joints.
 
 INPUTS (a command dialog, with these defaults):
 - the screw's operating factor f_p (HIWIN F 3.8), 3.0
 - the gearhead's ratio, 24
 
-DERIVED (from lib/flap_design.py, never typed):
+DERIVED (from projects/flap_actuation/lib/flap_design.py, never typed):
 - actuator_design(): the force over the stroke and its cube mean; the nut's life, static rating and the largest f_p
   it passes; the screw's torque and its back-driving torque; buckling and critical speed; the thrust bearings'
   life; the gears' stresses; the motor unit's speed, torque, power and brake; the rod as a column; the trunnions
@@ -34,7 +34,8 @@ FUSION CONVENTIONS:
 - As-built Joints: the screw, the idler, the pinion and the encoder's pinion revolute about their axes; the rod a
   slider along Y, limited to the stroke. Motion Links: 54:30 to the idler and 54:26 to the encoder's pinion, each
   turning the other way; 54:18 to the pinion, the same way; one turn of the screw moves the rod 10 mm aft.
-- The ball groove is Chapter 21's: the section swept along the screw with one turn of twist per lead.
+- The ball groove is the one common/BallScrewAxis/BallScrewAxis.py cuts: the section swept along the screw with one
+  turn of twist per lead.
 - The API works in cm and radians.
 
 ACCEPTANCE CRITERIA:

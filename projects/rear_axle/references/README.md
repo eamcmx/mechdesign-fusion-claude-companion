@@ -1,0 +1,19 @@
+# projects/rear_axle: references
+
+The published sources this project was sized from: makers' catalogues and data sheets, standards and design manuals. Its prompts name each source they rely on (the maker, the document, the table or the page); a model given the page itself works from its numbers.
+
+The copies belong to their publishers and are not in this repository. Each entry gives the link the author used and the name of the copy he keeps (in his folder *Mechanical Design References*, its web pages in `Web pages/`); a saved page carries the date it was read.
+
+| Reference | Link | The author's copy |
+|---|---|---|
+| Budynas, R. G., & Nisbett, J. K. (2015). *Shigley's mechanical engineering design* (10th ed.). McGraw-Hill Education. | ISBN 978-0-07-339820-4 | `Shigley's Mechanical Engineering Design 10th Edition.pdf` |
+| Childs, P. R. N. (2014). *Mechanical design engineering handbook*. Butterworth-Heinemann. | ISBN 978-0-08-097759-1 | folder `Mechanical Design by Peter R N Childs- 3ed` (one PDF per chapter; the files are this 2014 handbook, not a 3rd edition) |
+| SKF. (n.d.-a). *32307: Single row tapered roller bearing* [Product data]. | https://www.skf.com/group/products/rolling-bearings/roller-bearings/tapered-roller-bearings/single-row-tapered-roller-bearings/productid-32307 | `Web pages/SKF_32307_2026-11-01.md` (the page's technical specification, copied) |
+| SKF. (n.d.-b). *32308: Single row tapered roller bearing* [Product data]. | https://www.skf.com/group/products/rolling-bearings/roller-bearings/tapered-roller-bearings/single-row-tapered-roller-bearings/productid-32307 (productid-32308) | `Web pages/SKF_32308_2026-11-01.md` |
+| SKF. (n.d.-c). *32309: Single row tapered roller bearing* [Product data]. | https://www.skf.com/group/products/rolling-bearings/roller-bearings/tapered-roller-bearings/single-row-tapered-roller-bearings/productid-32307 (productid-32308) (productid-32309) | `Web pages/SKF_32309_2026-11-01.md` |
+| SKF. (n.d.-k). *Weights of the bearings 32213, 32308, 32309, 61902-2RS1, 6213, 6201 and GE 20 ES-2LS* [Product pages: product net weight]. | https://www.skf.com/group/products (each page's productid in the note) | `Web pages/SKF_product_net_weights_2026-11-04.md` (Volume 3, Chapter 64) |
+| SKF. (n.d.-d). *32213: Single row tapered roller bearing* [Product data]. | https://www.skf.com/group/products (each page's productid in the note) (productid-32213) | `Web pages/SKF_32213_2026-11-01.md` |
+| SKF. (n.d.-g). *Single row tapered roller bearings 32213, 32308 and 32309* [Product data: dimensions, abutment dimensions, calculation data]. | https://www.skf.com/group/products/rolling-bearings/roller-bearings/tapered-roller-bearings/single-row-tapered-roller-bearings/productid-32213 (.../productid-32309, .../productid-32308) | `Web pages/SKF_32213_32309_32308_abutments_2026-11-03.md` (da, db, Da, Db, Ca, Cb, B, C, T for the ten abutments) |
+| RoyMech. (n.d.). *ISO straight sided spline* [Useful tables; BS 5686:1986, ISO 14:1982]. | https://roymech.org/Useful_Tables/Keyways/Spline.html | `Web pages/RoyMech_ISO14_splines_2026-11-03.md` (light and medium series, hub and shaft tolerances) |
+| SKF. (n.d.-d). *Seat tolerances for standard conditions*, table 2 (roller bearings on solid steel shafts); *Tolerances and resultant fits*, table 4 [Rolling bearings: principles]. | https://www.skf.com/group/products/rolling-bearings/principles-of-rolling-bearing-selection/bearing-selection-process/bearing-interfaces | `Web pages/SKF_bearing_seats_2026-11-03.md`, section 6 added for Chapter 54 (the heavy row over 50 mm; m5 at 30-50 and n5 at 50-80) |
+| Budynas & Nisbett (2015), read again for Chapter 54 | ISBN 978-0-07-339820-4 | Table 3-3 p. 131; Table 8-1 footnote p. 404; Eqs. 8-10 to 8-12 p. 410; Eq. 8-27 p. 430 and Table 8-15 p. 431 (K = 0.2); Eqs. 11-18 to 11-20; Tables A-11 and A-12 pp. 1030-1031; Table A-24 p. 1054 (ASTM No. 20 cast iron) |

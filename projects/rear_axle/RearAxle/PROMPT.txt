@@ -1,18 +1,18 @@
-Write a Fusion Python script that, when run, builds the rear axle of a light truck from its two subsystems:
-the carrier of Chapter 29 (RearAxleCarrier.py) bolted into the housing of Chapter 30 (AxleHousing.py), each half
-shaft splined into its side gear, so that the axle turns as one machine: the pinion drives the differential's case
-through the spiral bevel pair, the case drives both wheels, and in a turn the side gears let the outer wheel run
-faster than the inner one.
+Write a Fusion Python script that, when run, builds the rear axle of a light truck from its two subsystems: the
+carrier of projects/rear_axle/RearAxleCarrier/RearAxleCarrier.py bolted into the housing of
+projects/rear_axle/AxleHousing/AxleHousing.py, each half shaft splined into its side gear, so that the axle turns as
+one machine: the pinion drives the differential's case through the spiral bevel pair, the case drives both wheels, and
+in a turn the side gears let the outer wheel run faster than the inner one.
 
 INPUTS (no dialog: each subsystem keeps its own defaults and its own refusals; the one value read here, which the
 check changes to test the refusal, with its default):
 - where each half shaft's splines start from the axle's middle, Y_TIP of AxleHousing.py (mm), 35
 
-DERIVED (from the two scripts and lib/axle_design.py, never typed):
+DERIVED (from the two scripts and projects/rear_axle/lib/axle_design.py, never typed):
 - the carrier: RearAxleCarrier.design() and layout(); the housing and wheel ends: AxleHousing.design()
-- the splines in the side gears (lib/axle_design.spline_engagement): engaged from the shaft's tip to the end of the
-  side gear's hub (74 + 32.75 mm); the flanks carrying the design torque, 3777.4 N m, at their mean radius on their
-  height with half the teeth taken to carry it; at least 2 against the shaft's yield (1140 MPa)
+- the splines in the side gears (projects/rear_axle/lib/axle_design.spline_engagement): engaged from the shaft's tip
+  to the end of the side gear's hub (74 + 32.75 mm); the flanks carrying the design torque, 3777.4 N m, at their mean
+  radius on their height with half the teeth taken to carry it; at least 2 against the shaft's yield (1140 MPa)
 
 HARD CONSTRAINTS:
 - Use the two subsystems' own builders; draw nothing twice. Refuse what either refuses, and refuse splines that reach

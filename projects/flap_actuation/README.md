@@ -31,6 +31,10 @@ Each folder holds the script, its manifest and `PROMPT.txt`, the prompt it was w
 
 `flap_actuator`, `flap_actuator_exploded`, `flap_actuator_open`, `flap_detail_exploded`, `flap_detail_hinge`, `flap_system`, `flap_system_down`, `flap_system_exploded`, `flap_system_station`
 
+## references/ (13 sources)
+
+The catalogues, data sheets, standards and books the project was sized from, listed in `references/README.md` with their links; the copies stay with their publishers.
+
 ## results/ (6 files)
 
 The last run of every check and control above, each headed by the Fusion version and the date, and the files the scripts write.

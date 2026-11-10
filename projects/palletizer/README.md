@@ -63,6 +63,10 @@ Each folder holds the script, its manifest and `PROMPT.txt`, the prompt it was w
 
 `bag_gripper`, `bag_gripper_exploded`, `bag_gripper_open`, `clamp_gripper`, `clamp_gripper_below`, `clamp_gripper_exploded`, `compliance_unit`, `compliance_unit_exploded`, `compliance_unit_raised`, `palletizer_detail_exploded`, `palletizer_detail_eye`, `palletizer_drives`, `palletizer_drives_exploded`, `palletizer_drives_q3`, `palletizer_robot`, `palletizer_robot_exploded`, `palletizer_robot_reach`, `stop_bracket_turned`, `stop_bracket_turned_top`, `tool_changer`, `tool_changer_cut`, `tool_changer_exploded`, `vacuum_gripper`, `vacuum_gripper_exploded`, `vacuum_gripper_top`
 
+## references/ (37 sources)
+
+The catalogues, data sheets, standards and books the project was sized from, listed in `references/README.md` with their links; the copies stay with their publishers.
+
 ## results/ (20 files)
 
 The last run of every check and control above, each headed by the Fusion version and the date, and the files the scripts write.

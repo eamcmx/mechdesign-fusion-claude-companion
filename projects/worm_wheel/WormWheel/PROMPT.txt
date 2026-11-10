@@ -13,16 +13,16 @@ DERIVED (computed from the inputs, never typed):
 - worm: pitch diameter d1 = q m; lead L = starts * pi * m; lead angle lambda = atan(starts / q); an Archimedean
   thread, straight-sided in the axial section, addendum m, dedendum 1.25 m, thickness pi m / 2 - 0.1 mm on the pitch
   line; 5 leads long
-- wheel: pitch diameter d2 = m z2 (the worm's axial module is the wheel's transverse module); its teeth are
-  Chapter 12's in the transverse plane, at the pressure angle alpha_x, turning by theta = b tan(lambda) / r2 over
-  the face width (a helical gear of the worm's lead angle)
+- wheel: pitch diameter d2 = m z2 (the worm's axial module is the wheel's transverse module); its teeth are involute
+  spur teeth in the transverse plane, at the pressure angle alpha_x, turning by theta = b tan(lambda) / r2 over the
+  face width (a helical gear of the worm's lead angle)
 - centre distance a = (d1 + d2) / 2; ratio z2 / starts
 - normal pressure angle phi_n = atan(tan(alpha_x) cos(lambda)); efficiency driving from the worm
   (cos phi_n - f tan lambda) / (cos phi_n + f / tan lambda) and back-driving from the wheel
   (cos phi_n - f / tan lambda) / (cos phi_n + f tan lambda), at f = 0.05 and 0.10; self-locking above
   f = cos(phi_n) tan(lambda)
-- Fusion keeps a sweep's twist in tenths of a degree (Chapter 14): adjust the wheel's face width to b', the nearest
-  width that makes theta a whole number of tenths
+- Fusion keeps a sweep's twist in tenths of a degree: adjust the wheel's face width to b', the nearest width that
+  makes theta a whole number of tenths
 
 HARD CONSTRAINTS:
 - z2 at least 18, or refuse; lambda at most 25 degrees, or refuse.
@@ -41,7 +41,7 @@ FUSION CONVENTIONS:
   patterned z2 times.
 - The API works in cm and radians.
 - AsBuiltJoints: revolute between the worm and its shaft and between the wheel and its shaft, the joint direction
-  tried and its sign measured (Chapter 17); a Motion Link at the ratio, its direction set from the signs.
+  tried and its sign measured; a Motion Link at the ratio, its direction set from the signs.
 
 ACCEPTANCE CRITERIA:
 - A message gives d1, L, lambda, d2, a, the ratio, b', phi_n, the efficiencies and a version tag.

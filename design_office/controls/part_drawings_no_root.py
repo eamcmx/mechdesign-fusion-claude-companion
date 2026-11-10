@@ -1,4 +1,4 @@
-# CONTROL for the prompt's hard constraint "carry into the model what Part 10 decided for its shape before drawing it:
+# CONTROL for the prompt's hard constraint "carry into the model what the checks decided for its shape before drawing it:
 # the opening bracket's arm root filleted 2.5 mm": the script draws the bracket as the machine's model leaves it,
 # without the fillet, on its own sheet and in the opening stop's assembly. The whole check runs on it, into a folder of
 # its own, its results kept apart in results/part_drawings_control.json and results/drawings_control/. Expected: the

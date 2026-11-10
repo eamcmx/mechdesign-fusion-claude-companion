@@ -1,13 +1,14 @@
-Write a Fusion Python script that, when run, builds Chapter 31's rear axle in detail: its tapered bearings' shoulders
-and spacer brought inside SKF's abutment dimensions, the cups' bores closed to the cups, the half shafts' splines to
-ISO 14, the case bearings' adjusters threaded, and every made part's material and every fitting face's class and
-roughness as Chapter 51 decided them.
+Write a Fusion Python script that, when run, builds the rear axle of projects/rear_axle/RearAxle/RearAxle.py in
+detail: its tapered bearings' shoulders and spacer brought inside SKF's abutment dimensions, the cups' bores closed to
+the cups, the half shafts' splines to ISO 14, the case bearings' adjusters threaded, and every made part's material
+and every fitting face's class and roughness as design_office/lib/materials_fits.py decides them.
 
 INPUTS (a command dialog, with this default):
 - the adjusters' thread pitch (mm), 2
 
-DERIVED (from lib/axle_detail.py, lib/axle_design.py and Chapter 51's MaterialsFits.py, never typed):
-- SKF_ABUT, ABUTMENTS, abutments(): SKF's abutment dimensions, each shoulder's diameter in Volume 2 and the detail's
+DERIVED (from projects/rear_axle/lib/axle_detail.py, projects/rear_axle/lib/axle_design.py and design_office/MaterialsFits/MaterialsFits.py, never typed):
+- SKF_ABUT, ABUTMENTS, abutments(): SKF's abutment dimensions, each shoulder's diameter in the concept
+  (projects/rear_axle/lib/axle_design.py) and the detail's
 - carrier_layout(), spacer(): the pinion's bearings along its axis, the spacer from cone face to cone face
 - load_classes(): each tapered bearing's load at cruise and at its peaks against C, and SKF's class for its seat
 - splines(), SHAFT, PINION: ISO 14's 8 x 36 x 40 x 7 for the half shafts, the pinion's 8 x 32 x 38 x 6
@@ -15,12 +16,13 @@ DERIVED (from lib/axle_detail.py, lib/axle_design.py and Chapter 51's MaterialsF
 - MaterialsFits.apply(): the materials and the fits on the open design
 
 HARD CONSTRAINTS:
-- Build with RearAxle.py's own build() and apply MaterialsFits.py's apply(); copy neither, nor RearAxleCarrier.py or
-  AxleHousing.py. Change the parts by replacing, before the build, the functions that draw them, each replacement
-  recognising only the calls it means and passing every other through: the cylinder for the cups' bores and the
-  nose's middle bore; the tube for the spacer, the companion flange's hub and the adjusters; the splines' constants
-  and their engagement's defaults. Restore every replaced function and constant after the build. The case's
-  shoulders are not a call to replace: their cylinder lies inside the case's sphere, so a smaller one changes nothing.
+- Build with RearAxle.py's own build() and apply MaterialsFits.py's apply(); copy neither, nor
+  projects/rear_axle/RearAxleCarrier/RearAxleCarrier.py or projects/rear_axle/AxleHousing/AxleHousing.py. Change the
+  parts by replacing, before the build, the functions that draw them, each replacement recognising only the calls it
+  means and passing every other through: the cylinder for the cups' bores and the nose's middle bore; the tube for the
+  spacer, the companion flange's hub and the adjusters; the splines' constants and their engagement's defaults.
+  Restore every replaced function and constant after the build. The case's shoulders are not a call to replace: their
+  cylinder lies inside the case's sphere, so a smaller one changes nothing.
 - The cups' bores 100, 90 and 120, the cups' own diameters; the nose's middle bore 88 from cup A to its middle and 80
   from there to cup B; the spacer from cone A's front face to cone B's, 67.8 long; the companion flange's hub 50 across
   for 3 mm at cone B; the case's shoulders 75 across; the adjusters 106 across for 6 mm at the cups, 72 beyond.

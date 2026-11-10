@@ -11,6 +11,9 @@ What it checks (it cannot tell whether the design is right, only whether the pro
   4. a HARD CONSTRAINTS block, with at least one refusal ("refuse")
   5. a FUSION CONVENTIONS block naming the document type, the units and the joint kind
   6. an ACCEPTANCE CRITERIA block with numbers worked out in advance
+  7. the prompt stands on its own: it cites no chapter, part, section, table or figure of a book (a named source's
+     table, such as Shigley's Table 7-1, is fine)
+  8. every file it names is named by its place: projects/<project>/<Name>/<Name>.py, design_office/lib/x.py
 """
 import glob
 import io
@@ -62,7 +65,44 @@ def lint(path):
     acc = b.get('ACCEPTANCE CRITERIA', '')
     res.append(('acceptance criteria give numbers', len(re.findall(r'\d+(?:\.\d+)?', acc)) >= 3))
     res.append(('acceptance criteria include a refusal', 'refused' in acc.lower()))
-    return res, unitless + ['(no default) ' + l for l in nodefault]
+    refs = book_refs(text)
+    res.append(('stands on its own: no chapter, part or table of a book the model does not have', not refs))
+    loose = unplaced(text, os.path.basename(os.path.dirname(os.path.abspath(path))))
+    res.append(('every file named by its place (project/folder/file)', not loose))
+    return res, unitless + ['(no default) ' + l for l in nodefault] + ['(cites the book) ' + r for r in refs] + \
+        ['(no place given) ' + f for f in loose]
+
+
+# A prompt is read by a model that has never seen the book it was printed in: "as in Chapter 12" tells it nothing.
+# A book's own chapter, part, section, table or figure is refused; one of a named source (Shigley's Table 7-1,
+# SKF's table 1, ISO 286-2) is kept, the source named within the same line.
+BOOK_REF = re.compile(r"\b([Cc]hapters?\b|Volumes?\b|Vol\.|Appendix|Parts? \d+|Sections? \d+|Table \d+\.\d+|Figure \d+|"
+                      r"Fig\. \d+|Eqs?\. \d+\.\d+|this book|the book)")
+SOURCE = re.compile(r"Shigley|Budynas|Nisbett|Childs|SKF|ISO \d|DIN \d|AGMA|Norton|Juvinall|Roark|Peterson|Boothroyd|"
+                    r"igus|HIWIN|maxon|Festo|Nabtesco|Beckhoff|Harmonic Drive|\(\d{4}\)|, \d{4}\b|\d{4}, ")
+
+
+def book_refs(text):
+    out = []
+    for line in text.split('\n'):
+        for m in BOOK_REF.finditer(line):
+            near = line[max(0, m.start() - 30):m.start()] + line[m.end():m.end() + 25]   # the source named next to it
+            if not SOURCE.search(near):
+                out.append(line.strip()[:90])
+    return out
+
+
+# Every file a prompt names is named by its place in the project tree, at least once: a script as
+# <project>/<Name>/<Name>.py, a library or a result as <project>/lib/x.py, <project>/results/x. The prompt's own
+# script needs no place: it is the folder the prompt is kept in.
+def unplaced(text, own):
+    out = []
+    for m in re.finditer(r"(?<![\w/.])(lib|results|checks|controls|captures)/[\w*<>%.\-]+", text):
+        out.append(m.group(0))
+    for n in sorted(set(re.findall(r"(?<![/\w])([A-Z][A-Za-z0-9]+)\.py\b", text))):
+        if n != own and not re.search(r"[\w.]/%s/%s\.py\b" % (n, n), text):
+            out.append(n + '.py')
+    return out
 
 
 if __name__ == '__main__':

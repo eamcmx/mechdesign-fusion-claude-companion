@@ -30,6 +30,10 @@ Each folder holds the script, its manifest and `PROMPT.txt`, the prompt it was w
 
 `scara_modules`, `scara_modules_exploded`, `scara_modules_open`, `scara_robot`, `scara_robot_cycle`, `scara_robot_exploded`, `scara_robot_folded`, `scara_tool`, `scara_tool_exploded`, `scara_tool_open`
 
+## references/ (7 sources)
+
+The catalogues, data sheets, standards and books the project was sized from, listed in `references/README.md` with their links; the copies stay with their publishers.
+
 ## results/ (8 files)
 
 The last run of every check and control above, each headed by the Fusion version and the date, and the files the scripts write.

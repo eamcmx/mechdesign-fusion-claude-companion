@@ -1,12 +1,13 @@
-Write a Fusion Python script that, when run, builds the SCARA of Chapters 35 to 37 as one robot: a base column
-with the J1 module of Chapter 36 on its top, a first arm on J1's output flange carrying the J2 module of Chapter 36
-at its end, and a second arm on J2's output flange whose end is Chapter 37's ball screw spline with its belts and
-motors, so that the robot can be posed anywhere in its workspace and its mass properties measured.
+Write a Fusion Python script that, when run, builds the SCARA as one robot: a base column with
+projects/scara_robot/ScaraJointModules/ScaraJointModules.py's J1 module on its top, a first arm on J1's output flange
+carrying its J2 module at its end, and a second arm on J2's output flange whose end is
+projects/scara_robot/ScaraToolJoints/ScaraToolJoints.py's ball screw spline with its belts and motors, so that the
+robot can be posed anywhere in its workspace and its mass properties measured.
 
 INPUTS (a command dialog, with this default):
 - the J1 unit's size, CSG 40 or 45 (the 40 only for comparison), 45
 
-DERIVED (from lib/scara_design.py, never typed):
+DERIVED (from projects/scara_robot/lib/scara_design.py, never typed):
 - LAY38 and heights(): the column's top at 200 mm, the first arm's box section, every height from the units' B
 - the J1 and J2 modules from ScaraJointModules.py's module(), the arm's end from ScaraToolJoints.py's design() and
   build_parts(), loaded, not copied
@@ -19,8 +20,8 @@ HARD CONSTRAINTS:
   top flange clear of the J1 motor's flange; the J1 module plate on the flange.
 - The first arm: an aluminium box 110 wide, 70 high, 4 mm walls, from 75 mm behind J1 to 50 mm beyond J2, on J1's
   output flange; a window through it at J2 for the J2 motor, which hangs from the J2 module's plate on the arm's top.
-- The second arm: in place of Chapter 37's plates and walls, 4 mm skins over the whole arm from 45 mm behind J2,
-  the full 12 and 10 mm only in bosses round the nuts, the motors' mounts and J2's output flange; 3 mm walls and a
+- The second arm: in place of ScaraToolJoints.py's plates and walls, 4 mm skins over the whole arm from 45 mm behind
+  J2, the full 12 and 10 mm only in bosses round the nuts, the motors' mounts and J2's output flange; 3 mm walls and a
   back wall; the arm's end's other aluminium parts kept aluminium.
 - Nothing touches anything else where the links meet, at rest, at both ends of the standard cycle's horizontal leg,
   with J2 at +150 and -150 deg, and at J1's range ends.
