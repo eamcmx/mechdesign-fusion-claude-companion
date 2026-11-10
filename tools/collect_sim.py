@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """The Simulation studies of Chapters 58, 59 and 62 as Fusion solved them (6 November 2026), read from the result
-folders Fusion writes (tools/sim_results.py) into results/sim_studies.json: each solve's design, study, mesh, the
+folders Fusion writes (tools/sim_results.py) into design_office/results/sim_studies.json: each solve's design, study, mesh, the
 numbers the chapters set against their hand calculations, and the folder it came from.
 
     python tools/collect_sim.py
@@ -17,7 +17,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import sim_results as S  # noqa: E402
 
-OUT = os.path.join(os.path.dirname(HERE), 'results', 'sim_studies.json')
+OUT = os.path.join(os.path.dirname(HERE), 'design_office', 'results', 'sim_studies.json')
 
 # result folder -> (design in Admin Project / MechDesignFusionClaude Vol3 / Chapter 58 dev, study, mesh as set up)
 SOLVES = {
@@ -128,7 +128,8 @@ def stop_real(f):
     """The opening stop on its end plate (StudyAssemblies 'stop'): for each load case the bracket's root, its largest
     first principal stress at the two tension corners and the axial stress on the tension face 12 mm up the arm, in
     the arm's own frame: its axis the foot's middle, its faces square and along the absorber's push."""
-    sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'lib'))
+    sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'common'))
+    import companion_paths  # noqa: E402  every lib/ folder on sys.path
     import range_sweep as RS
     o = RS.stop_layout()['open']
     foot = o['foot']
@@ -163,7 +164,8 @@ def hinge_real(f):
     """The flap's right hinge bracket on its rib (StudyAssemblies 'hinge'; the bracket is body 0, x 1094 to 1106, the
     rib body 1 on its face x = 1106): where the rib's two held edges pass the load on, the bracket's body between the
     eye and the lap across its thickness and its depth, and the eye's bore at mid-thickness and on its two faces."""
-    sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'lib'))
+    sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'common'))
+    import companion_paths  # noqa: E402  every lib/ folder on sys.path
     import flap_design as FD
     d = FD.system_design()
     sy = FD.SYS

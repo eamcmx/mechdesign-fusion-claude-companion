@@ -1,4 +1,4 @@
-# Shared helpers for the checks in checks/ and controls/. A check runs inside Fusion and imports this module with
+# Shared helpers for the checks in each project's checks/ and controls/. A check runs inside Fusion and imports this module with
 #     import sys, importlib; sys.path.insert(0, '__COMPANION__/tools'); import fusion_check as fc; importlib.reload(fc)
 # (run_check.py replaces __COMPANION__ with the repository's folder; reload picks up edits, Fusion keeps modules).
 import math

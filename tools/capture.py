@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """Pictures for the book: build a design with a capture script, colour it, and save views of it.
 
-    python tools/capture.py captures/first_assembly.py ../book/figures/ch02_first_assembly [iso-top-right top ...] [--dark 235] [--size 3200x2000]
+    python tools/capture.py projects/first_assembly/captures/first_assembly.py ../book/figures/ch02_first_assembly [iso-top-right top ...] [--dark 235] [--size 3200x2000]
         -> ch02_first_assembly_iso-top-right.png, ... (3200 x 2000 before the empty grid is cut away)
+    python tools/capture.py first_assembly ../book/figures/ch02_first_assembly    the same: a capture by its name
 
 A capture script is a Fusion script (run(_context)) that builds the design to show; __COMPANION__ is replaced as in
 run_check.py. Views: current, front, back, top, bottom, left, right, iso-top-right, iso-top-left, ...
@@ -63,7 +64,12 @@ if __name__ == '__main__':
         i = args.index('--size'); w, h = [int(c) for c in args[i + 1].split('x')]; del args[i:i + 2]
     script, stem = args[0], args[1]
     views = args[2:] or ['iso-top-right']
-    src = io.open(os.path.join(ROOT, script), encoding='utf-8').read().replace('__COMPANION__', ROOT.replace('\\', '/'))
+    path = os.path.join(ROOT, script)
+    if not os.path.isfile(path):                         # a capture by its name: captures/<name>.py in its project
+        sys.path.insert(0, os.path.join(ROOT, 'common'))
+        import companion_paths as CP
+        path = CP.check(os.path.basename(script)[:-3] if script.endswith('.py') else os.path.basename(script))
+    src = io.open(path, encoding='utf-8').read().replace('__COMPANION__', ROOT.replace('\\', '/'))
     out = run_check.send(src)
     print(out)
     try:

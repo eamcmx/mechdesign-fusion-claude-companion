@@ -4,11 +4,12 @@ import importlib.util, os, sys
 import adsk.core, adsk.fusion
 
 COMP = r'C:\Users\eamer\Documents\MechDesignFusionClaude\companion'
-sys.path.insert(0, os.path.join(COMP, 'lib'))
+sys.path.insert(0, os.path.join(COMP, 'common'))
+import companion_paths as CP                 # every lib/ folder on sys.path
 
 
 def run(_context):
-    spec = importlib.util.spec_from_file_location('probe_rs', os.path.join(COMP, 'scripts', 'RangeSweep', 'RangeSweep.py'))
+    spec = importlib.util.spec_from_file_location('probe_rs', CP.script('RangeSweep'))
     m = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(m)
     msg, setter = m.machine('wrist')

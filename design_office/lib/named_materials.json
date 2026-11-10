@@ -1,0 +1,1152 @@
+{
+ "wrist": {
+  "Output bevel gear": {
+   "material": "42CrMo4, 300~HB; m 1.5, 40 teeth, face 11; bore 15 H7, key",
+   "chapter": 39
+  },
+  "Tool flange": {
+   "material": "stainless steel; ISO 9409-1-31.5-4-M5",
+   "chapter": 39
+  },
+  "Roll shaft": {
+   "material": "42CrMo4; 15 at the bearings, collar 20",
+   "chapter": 39
+  },
+  "Carrier block": {
+   "material": "7075-T6",
+   "chapter": 39
+  },
+  "Trunnion": {
+   "material": "42CrMo4; 15 h6, flange 30",
+   "chapter": 39
+  },
+  "Side bevel gear with 36-groove pulley": {
+   "material": "42CrMo4, 300~HB; HTD 5M, 36 grooves",
+   "chapter": 39
+  },
+  "Bearing": {
+   "material": "SKF 61902-2RS1",
+   "chapter": 39
+  },
+  "Side cheek": {
+   "material": "6082-T6, 12~mm",
+   "chapter": 39
+  },
+  "Bearing cap fixed": {
+   "material": "6082-T6",
+   "chapter": 39
+  },
+  "Belt": {
+   "material": "Gates HTD 350-5M-15",
+   "chapter": 39
+  },
+  "Motor output: gearhead shaft 18-groove pulley": {
+   "material": "aluminium pulley, flanged, two M4 set screws",
+   "chapter": 39
+  },
+  "Servo motor with brake and 15:1 gearhead": {
+   "material": "as Table~\\ref{tab:ch39motors}",
+   "chapter": 39
+  },
+  "Motor bracket": {
+   "material": "6082-T6",
+   "chapter": 39
+  },
+  "Tie bar": {
+   "material": "6082-T6, 16~mm",
+   "chapter": 39
+  },
+  "Base plate": {
+   "material": "6082-T6, 12~mm",
+   "chapter": 39
+  },
+  "Low-head screw M6x12": {
+   "material": "DIN 7984",
+   "chapter": 39
+  },
+  "Spacer S2": {
+   "material": "steel",
+   "chapter": 39
+  },
+  "Bearing cap floating": {
+   "material": "6082-T6",
+   "chapter": 39
+  },
+  "Spacer S1 (with shims)": {
+   "material": "steel",
+   "chapter": 39
+  },
+  "Spacer S3": {
+   "material": "steel",
+   "chapter": 39
+  },
+  "Spacer S4": {
+   "material": "steel",
+   "chapter": 39
+  },
+  "End washer 18x5.5x2.5": {
+   "material": "steel",
+   "chapter": 39
+  },
+  "End washer 18x6.4x2": {
+   "material": "steel",
+   "chapter": 39
+  },
+  "Key 5x5 x 18": {
+   "material": "DIN 6885 A",
+   "chapter": 39
+  },
+  "Retaining ring 15": {
+   "material": "DIN 471",
+   "chapter": 39
+  },
+  "Retaining ring 32": {
+   "material": "DIN 472",
+   "chapter": 39
+  },
+  "Countersunk screw M3x8": {
+   "material": "ISO 10642",
+   "chapter": 39
+  },
+  "Cap screw M4x10": {
+   "material": "ISO 4762 (motors)",
+   "chapter": 39
+  },
+  "Cap screw M4x12": {
+   "material": "ISO 4762 (caps)",
+   "chapter": 39
+  },
+  "Cap screw M5x12": {
+   "material": "ISO 4762 (trunnions' ends, brackets)",
+   "chapter": 39
+  },
+  "Cap screw M5x16": {
+   "material": "ISO 4762 (cheeks)",
+   "chapter": 39
+  },
+  "Cap screw M8x20": {
+   "material": "ISO 4762 (tie bars)",
+   "chapter": 39
+  },
+  "Dowel 5x16": {
+   "material": "ISO 8734",
+   "chapter": 39
+  },
+  "Retaining ring 15 on the flange": {
+   "material": "DIN 471",
+   "chapter": 40
+  },
+  "Roll shaft bored 5 mm": {
+   "material": "42CrMo4",
+   "chapter": 40
+  },
+  "Slip ring rotor": {
+   "material": "with item 6",
+   "chapter": 40
+  },
+  "Slip ring stator": {
+   "material": "capsule slip ring, 6 circuits, 2~A, 22 $\\times$ 24~mm (assumed)",
+   "chapter": 40
+  },
+  "Slip ring bracket": {
+   "material": "aluminium",
+   "chapter": 40
+  },
+  "Trunnion with stop end": {
+   "material": "42CrMo4; keyseat for item 11",
+   "chapter": 40
+  },
+  "Spacer S5": {
+   "material": "steel",
+   "chapter": 40
+  },
+  "Key 5x5 x 8": {
+   "material": "DIN 6885 A",
+   "chapter": 40
+  },
+  "Stop disc": {
+   "material": "steel; lug 25° wide to 35~mm",
+   "chapter": 40
+  },
+  "Stop cap": {
+   "material": "6082-T6; block on $-z$",
+   "chapter": 40
+  },
+  "Buffer pad": {
+   "material": "polyurethane, 6~mm",
+   "chapter": 40
+  },
+  "Countersunk screw M4x12": {
+   "material": "ISO 10642",
+   "chapter": 40
+  },
+  "Cap screw M3x8": {
+   "material": "ISO 4762 (item 7)",
+   "chapter": 40
+  }
+ },
+ "flap": {
+  "Gear cover": {
+   "material": "7075-T6",
+   "chapter": 33
+  },
+  "Screw gear 54 teeth module 1.5": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 33
+  },
+  "Idler gear 30 teeth": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 33
+  },
+  "Pinion 18 teeth": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 33
+  },
+  "Actuator housing": {
+   "material": "7075-T6",
+   "chapter": 33
+  },
+  "Motor unit: motor gearhead 24:1 brake": {
+   "material": "bought, Table~\\ref{tab:ch33motor}",
+   "chapter": 33
+  },
+  "Trunnion 20 mm": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 33
+  },
+  "Ring nut M66x1.5": {
+   "material": "steel",
+   "chapter": 33
+  },
+  "Thrust bearing BSD 2562 CGA": {
+   "material": "SKF",
+   "chapter": 33
+  },
+  "Ball screw 32x10": {
+   "material": "HIWIN, ground",
+   "chapter": 33
+  },
+  "Ball nut R32-10T4-RSI": {
+   "material": "HIWIN",
+   "chapter": 33
+  },
+  "Piston rod: sleeve tube plug stud": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 33
+  },
+  "Rod end SI 20 ES": {
+   "material": "SKF",
+   "chapter": 33
+  },
+  "Spar fitting": {
+   "material": "7075-T6",
+   "chapter": 34
+  },
+  "Spherical plain bearing GE 20 ES fitting": {
+   "material": "SKF",
+   "chapter": 34
+  },
+  "Fitting bolt M8x35 nut M8": {
+   "material": "class 10.9, ISO 4762",
+   "chapter": 34
+  },
+  "Actuator Chapter 33": {
+   "material": "43 parts, Table~\\ref{tab:ch33list}",
+   "chapter": 34
+  },
+  "Horn": {
+   "material": "7075-T6",
+   "chapter": 34
+  },
+  "Horn pin nut": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 34
+  },
+  "Spacer": {
+   "material": "steel",
+   "chapter": 34
+  },
+  "Hinge rib 6 mm round the bracket": {
+   "material": "7075-T6; the wing's",
+   "chapter": 34
+  },
+  "Hinge bracket": {
+   "material": "7075-T6",
+   "chapter": 34
+  },
+  "Spherical plain bearing GE 20 ES hinge": {
+   "material": "SKF",
+   "chapter": 34
+  },
+  "Hinge fitting (cheek)": {
+   "material": "7075-T6; the flap's",
+   "chapter": 34
+  },
+  "Hinge pin nut": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 34
+  }
+ },
+ "axle": {
+  "carrier casting": {
+   "material": "cast iron",
+   "chapter": 29
+  },
+  "bearing cap": {
+   "material": "cast iron, machined with the casting",
+   "chapter": 29
+  },
+  "adjuster": {
+   "material": "steel",
+   "chapter": 29
+  },
+  "pinion shaft 12 teeth": {
+   "material": "carburized steel, grade 2",
+   "chapter": 29
+  },
+  "crown wheel 47 teeth": {
+   "material": "carburized steel, grade 2; a matched set with item 4",
+   "chapter": 29
+  },
+  "differential case": {
+   "material": "cast iron",
+   "chapter": 29
+  },
+  "cross": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 29
+  },
+  "spider 15 teeth": {
+   "material": "carburized steel, grade 2",
+   "chapter": 29
+  },
+  "side gear 22 teeth": {
+   "material": "carburized steel, grade 2",
+   "chapter": 29
+  },
+  "spider washer spherical": {
+   "material": "hardened steel",
+   "chapter": 29
+  },
+  "side gear washer spherical": {
+   "material": "hardened steel",
+   "chapter": 29
+  },
+  "pinion depth shim": {
+   "material": "steel",
+   "chapter": 29
+  },
+  "spacer": {
+   "material": "steel",
+   "chapter": 29
+  },
+  "companion flange": {
+   "material": "steel",
+   "chapter": 29
+  },
+  "washer": {
+   "material": "steel",
+   "chapter": 29
+  },
+  "nut M30": {
+   "material": "steel",
+   "chapter": 29
+  },
+  "bearing 32309 cone assembly": {
+   "material": "SKF",
+   "chapter": 29
+  },
+  "bearing 32309 cup": {
+   "material": "SKF",
+   "chapter": 29
+  },
+  "bearing 32308 cone assembly": {
+   "material": "SKF",
+   "chapter": 29
+  },
+  "bearing 32308 cup": {
+   "material": "SKF",
+   "chapter": 29
+  },
+  "bearing 32213 cone assembly": {
+   "material": "SKF",
+   "chapter": 29
+  },
+  "bearing 32213 cup": {
+   "material": "SKF",
+   "chapter": 29
+  },
+  "lip seal 60x85x10": {
+   "material": "DIN 3760 range",
+   "chapter": 29
+  },
+  "hexagon socket screw M12x35": {
+   "material": "ISO 4762, class 10.9",
+   "chapter": 29
+  },
+  "hexagon socket screw M12x90": {
+   "material": "ISO 4762, class 10.9",
+   "chapter": 29
+  },
+  "banjo housing": {
+   "material": "steel, pressed and welded",
+   "chapter": 30
+  },
+  "rear cover": {
+   "material": "steel",
+   "chapter": 30
+  },
+  "half shaft splines 8x35x40": {
+   "material": "4140 Q\\&T 425~°C",
+   "chapter": 30
+  },
+  "retaining ring": {
+   "material": "steel",
+   "chapter": 30
+  },
+  "retainer plate": {
+   "material": "steel",
+   "chapter": 30
+  },
+  "oil seal 74x100x10": {
+   "material": "rubber lip seal",
+   "chapter": 30
+  },
+  "wheel stud M14": {
+   "material": "class 10.9",
+   "chapter": 30
+  },
+  "carrier stud M12": {
+   "material": "class 10.9",
+   "chapter": 30
+  },
+  "nut M12": {
+   "material": "class 10",
+   "chapter": 30
+  },
+  "hexagon socket screw M8x20": {
+   "material": "ISO 4762",
+   "chapter": 30
+  },
+  "breather": {
+   "material": "brass",
+   "chapter": 30
+  },
+  "filler plug M22": {
+   "material": "steel",
+   "chapter": 30
+  },
+  "drain plug M22": {
+   "material": "steel",
+   "chapter": 30
+  }
+ },
+ "robot": {
+  "Floor plate": {
+   "material": "steel, 1100 $\\times$ 1100 $\\times$ 40~mm",
+   "chapter": 42
+  },
+  "Column": {
+   "material": "steel tube 660 $\\times$ 40",
+   "chapter": 42
+  },
+  "Base flange": {
+   "material": "steel, 1000~mm across, 50~mm",
+   "chapter": 42
+  },
+  "Slewing ring outer ring": {
+   "material": "SKF RKS.23 0841",
+   "chapter": 42
+  },
+  "Slewing ring balls": {
+   "material": "with item 4, 20~mm",
+   "chapter": 42
+  },
+  "Slewing ring inner ring": {
+   "material": "with item 4",
+   "chapter": 42
+  },
+  "RV-500N case J1": {
+   "material": "Nabtesco RV-500N, ratio 192.75",
+   "chapter": 42
+  },
+  "Servo motor J1": {
+   "material": "Table~\\ref{tab:ch42motors}",
+   "chapter": 42
+  },
+  "Coupling disc": {
+   "material": "disc coupling, $12 \\times 10^6$~N\\,m/rad",
+   "chapter": 42
+  },
+  "Turret plate": {
+   "material": "steel, 1040 $\\times$ 1200 $\\times$ 60~mm",
+   "chapter": 42
+  },
+  "Cheek J2 side": {
+   "material": "steel, 80~mm",
+   "chapter": 42
+  },
+  "RV-500N case J2": {
+   "material": "Nabtesco RV-500N, ratio 192.75",
+   "chapter": 42
+  },
+  "Servo motor J2": {
+   "material": "Table~\\ref{tab:ch42motors}",
+   "chapter": 42
+  },
+  "Fork plate": {
+   "material": "steel, 40~mm",
+   "chapter": 42
+  },
+  "Lower arm root box": {
+   "material": "steel, 220 $\\times$ 300, 12~mm wall (Chapter~43)",
+   "chapter": 42
+  },
+  "Balancer barrel": {
+   "material": "AISI 1045 cold drawn, 75 $\\times$ 6, 63 bore",
+   "chapter": 42
+  },
+  "Balancer rod with piston": {
+   "material": "steel, 32~mm rod",
+   "chapter": 42
+  },
+  "Balancer pin P": {
+   "material": "steel, 30~mm",
+   "chapter": 42
+  },
+  "Gas bottle": {
+   "material": "nitrogen, 110 $\\times$ 280~mm",
+   "chapter": 42
+  },
+  "Crank web": {
+   "material": "steel, 60~mm",
+   "chapter": 42
+  },
+  "Counterweight block": {
+   "material": "steel, 460 $\\times$ 460 $\\times$ 60.2~mm",
+   "chapter": 42
+  },
+  "RV-500N case J3": {
+   "material": "Nabtesco RV-500N, ratio 192.75",
+   "chapter": 42
+  },
+  "J3 bracket": {
+   "material": "steel, 30~mm",
+   "chapter": 42
+  },
+  "Servo motor J3": {
+   "material": "Table~\\ref{tab:ch42motors}",
+   "chapter": 42
+  },
+  "J1 stop": {
+   "material": "with a hydraulic absorber",
+   "chapter": 42
+  },
+  "RV-500N output J1": {
+   "material": "with item 7",
+   "chapter": 42
+  },
+  "RV-500N output J2": {
+   "material": "with item 12",
+   "chapter": 42
+  },
+  "RV-500N output J3": {
+   "material": "with item 22",
+   "chapter": 42
+  },
+  "Coupling spacer": {
+   "material": "with item 9",
+   "chapter": 42
+  },
+  "Cheek J3 side": {
+   "material": "steel, 80~mm",
+   "chapter": 42
+  },
+  "J1 reducer plate": {
+   "material": "steel, 10~mm",
+   "chapter": 42
+  },
+  "J1 stop dog": {
+   "material": "steel",
+   "chapter": 42
+  },
+  "J2 support bearing": {
+   "material": "on the J3 cheek",
+   "chapter": 42
+  },
+  "J3 support bearing": {
+   "material": "in the J3 cheek",
+   "chapter": 42
+  },
+  "J3 bracket post": {
+   "material": "steel, 50~mm",
+   "chapter": 42
+  },
+  "Hub boss J2 side": {
+   "material": "steel",
+   "chapter": 42
+  },
+  "Hub boss J3 side": {
+   "material": "steel",
+   "chapter": 42
+  },
+  "Balancer cross pin Q": {
+   "material": "steel, 30~mm",
+   "chapter": 42
+  },
+  "Balancer lug": {
+   "material": "steel",
+   "chapter": 42
+  },
+  "Crank shaft": {
+   "material": "steel, 180~mm",
+   "chapter": 42
+  },
+  "RV-700N case J1": {
+   "material": "Nabtesco RV-700N, ratio 203.52",
+   "chapter": 43
+  },
+  "Lower arm box": {
+   "material": "AISI 1020 hot rolled, 220 $\\times$ 300 $\\times$ 12~mm",
+   "chapter": 43
+  },
+  "Elbow hub": {
+   "material": "steel, 220~mm across",
+   "chapter": 43
+  },
+  "Elbow pin": {
+   "material": "steel, 65 and 35~mm",
+   "chapter": 43
+  },
+  "Upper arm cheek": {
+   "material": "AISI 1020 hot rolled, 40~mm",
+   "chapter": 43
+  },
+  "Bearing 32213 elbow": {
+   "material": "SKF 32213",
+   "chapter": 43
+  },
+  "Upper arm box": {
+   "material": "AISI 1020 hot rolled, 200 $\\times$ 260 $\\times$ 10~mm",
+   "chapter": 43
+  },
+  "Torque tube": {
+   "material": "AISI 1020, 300 $\\times$ 12~mm",
+   "chapter": 43
+  },
+  "Rear lever": {
+   "material": "AISI 1020 hot rolled, 60~mm",
+   "chapter": 43
+  },
+  "Parallel rod body": {
+   "material": "AISI 1020 hot rolled flat, 40 $\\times$ 70~mm",
+   "chapter": 43
+  },
+  "Levelling rod 1 body": {
+   "material": "AISI 1020 tube, 60 $\\times$ 5~mm",
+   "chapter": 43
+  },
+  "Triangle plate": {
+   "material": "steel, 30~mm",
+   "chapter": 43
+  },
+  "Wrist housing": {
+   "material": "steel, 15~mm walls",
+   "chapter": 43
+  },
+  "RV-80N case J4": {
+   "material": "Nabtesco RV-80N, ratio 101",
+   "chapter": 43
+  },
+  "Tool flange": {
+   "material": "Chapter~44, ISO 9409-1",
+   "chapter": 43
+  },
+  "Balancer rod": {
+   "material": "steel, 32~mm rod, with piston",
+   "chapter": 43
+  },
+  "Bearing 22207 E Levelling rod 1 end": {
+   "material": "SKF 22207 E",
+   "chapter": 43
+  },
+  "Bearing 22207 E Levelling rod 2 end": {
+   "material": "SKF 22207 E",
+   "chapter": 43
+  },
+  "Bearing 22207 E triangle": {
+   "material": "SKF 22207 E",
+   "chapter": 43
+  },
+  "Bearing 22213 E Parallel rod end": {
+   "material": "SKF 22213 E",
+   "chapter": 43
+  },
+  "Bearing 32213 wrist": {
+   "material": "SKF 32213",
+   "chapter": 43
+  },
+  "Bearing 61836 crank": {
+   "material": "SKF 61836",
+   "chapter": 43
+  },
+  "Bearing 61856 MA lower arm": {
+   "material": "SKF 61856 MA",
+   "chapter": 43
+  },
+  "Counterweight standoff": {
+   "material": "steel, 50~mm",
+   "chapter": 43
+  },
+  "E bracket": {
+   "material": "steel, 90 $\\times$ 90~mm",
+   "chapter": 43
+  },
+  "Front fork cheek": {
+   "material": "AISI 1020 hot rolled, 40~mm",
+   "chapter": 43
+  },
+  "H plate": {
+   "material": "steel, 30~mm",
+   "chapter": 43
+  },
+  "J2 support housing": {
+   "material": "steel, on the J3 cheek",
+   "chapter": 43
+  },
+  "J3 support housing": {
+   "material": "steel, in the J3 cheek",
+   "chapter": 43
+  },
+  "Levelling rod 1 end 1 eye": {
+   "material": "steel, 100~mm across",
+   "chapter": 43
+  },
+  "Levelling rod 1 end 2 eye": {
+   "material": "steel, 100~mm across",
+   "chapter": 43
+  },
+  "Levelling rod 2 body": {
+   "material": "AISI 1020 tube, 60 $\\times$ 5~mm",
+   "chapter": 43
+  },
+  "Levelling rod 2 end 1 eye": {
+   "material": "steel, 100~mm across",
+   "chapter": 43
+  },
+  "Levelling rod 2 end 2 eye": {
+   "material": "steel, 100~mm across",
+   "chapter": 43
+  },
+  "Parallel rod end 1 eye": {
+   "material": "steel, 150~mm across",
+   "chapter": 43
+  },
+  "Parallel rod end 2 eye": {
+   "material": "steel, 150~mm across",
+   "chapter": 43
+  },
+  "Pin C": {
+   "material": "steel, 65~mm",
+   "chapter": 43
+  },
+  "Pin D": {
+   "material": "steel, 65~mm",
+   "chapter": 43
+  },
+  "Pin E": {
+   "material": "steel, 35~mm",
+   "chapter": 43
+  },
+  "Pin F": {
+   "material": "steel, 35~mm",
+   "chapter": 43
+  },
+  "Pin G": {
+   "material": "steel, 35~mm",
+   "chapter": 43
+  },
+  "Pin H": {
+   "material": "steel, 35~mm",
+   "chapter": 43
+  },
+  "RV-700N output J1": {
+   "material": "with the RV-700N",
+   "chapter": 43
+  },
+  "RV-80N output J4": {
+   "material": "with the RV-80N",
+   "chapter": 43
+  },
+  "Servo motor J4": {
+   "material": "its torque from Table~\\ref{tab:ch43again}",
+   "chapter": 43
+  },
+  "Wrist hub": {
+   "material": "steel, 150~mm across",
+   "chapter": 43
+  },
+  "Wrist pin": {
+   "material": "steel, 65~mm",
+   "chapter": 43
+  },
+  "Yoke bulkhead": {
+   "material": "AISI 1020 hot rolled, 20~mm",
+   "chapter": 43
+  }
+ },
+ "changer": {
+  "Robot plate": {
+   "material": "steel C45, ISO 9409-1-160-6-M10, 25~mm",
+   "chapter": 44
+  },
+  "Pin robot side": {
+   "material": "dowel pin 10~h6 $\\times$ 18, hardened",
+   "chapter": 44
+  },
+  "Master cover": {
+   "material": "steel C45, 7~mm, spigot 100~g6",
+   "chapter": 44
+  },
+  "Piston with rod": {
+   "material": "steel, piston 100~mm, rod 40~mm",
+   "chapter": 44
+  },
+  "Master body": {
+   "material": "steel C45, spigot 130~mm, gland, two air ports",
+   "chapter": 44
+  },
+  "Cap screw": {
+   "material": "ISO 4762 M10 $\\times$ 35, class 10.9",
+   "chapter": 44
+  },
+  "Pin tool side": {
+   "material": "dowel pin 12~h6 $\\times$ 24, hardened",
+   "chapter": 44
+  },
+  "Segment": {
+   "material": "steel, hardened to 600~HB, 36~mm wide",
+   "chapter": 44
+  },
+  "Cam": {
+   "material": "steel, hardened to 600~HB, $5^\\circ$ and $30^\\circ$",
+   "chapter": 44
+  },
+  "Tool plate": {
+   "material": "steel C45, ISO 9409-1-160-6-M10 below, lip face hardened",
+   "chapter": 44
+  }
+ },
+ "clamp": {
+  "Adapter plate": {
+   "material": "aluminium 6082-T6, 200 $\\times$ 16, spigot 100~g6, ISO 9409-1-160-6-M10",
+   "chapter": 45
+  },
+  "Cap screw M10x25": {
+   "material": "ISO 4762, class 10.9, into the tool plate",
+   "chapter": 45
+  },
+  "Dowel pin 10x17": {
+   "material": "hardened, 10~h6, on $+X_m$",
+   "chapter": 45
+  },
+  "Beam": {
+   "material": "aluminium 6082-T6, 1900 $\\times$ 200 $\\times$ 100, walls 10, 12, 6",
+   "chapter": 45
+  },
+  "Cap screw M8x25": {
+   "material": "ISO 4762, class 8.8, the beam to the adapter",
+   "chapter": 45
+  },
+  "Rail HGR25": {
+   "material": "HIWIN HGR25R, 1720~mm",
+   "chapter": 45
+  },
+  "Seat BK25": {
+   "material": "aluminium 6082-T6, 42 $\\times$ 80 $\\times$ 61",
+   "chapter": 45
+  },
+  "Fixed bearing BK25": {
+   "material": "HIWIN BK25, housing",
+   "chapter": 45
+  },
+  "Angular contact bearing 7205": {
+   "material": "the BK25's pair, 25 $\\times$ 52 $\\times$ 15",
+   "chapter": 45
+  },
+  "Seat BF25": {
+   "material": "aluminium 6082-T6, 30 $\\times$ 80 $\\times$ 61",
+   "chapter": 45
+  },
+  "Supported bearing BF25": {
+   "material": "HIWIN BF25, housing",
+   "chapter": 45
+  },
+  "Deep groove bearing 6205": {
+   "material": "the BF25's, 25 $\\times$ 52 $\\times$ 15",
+   "chapter": 45
+  },
+  "Motor bracket": {
+   "material": "aluminium 6082-T6, 15~mm",
+   "chapter": 45
+  },
+  "Coupling": {
+   "material": "clamping coupling, 20~mm bores",
+   "chapter": 45
+  },
+  "Gearhead 3:1": {
+   "material": "planetary, to the specification in the text",
+   "chapter": 45
+  },
+  "Motor with brake": {
+   "material": "servo motor with a spring-applied brake, to the specification",
+   "chapter": 45
+  },
+  "Ballscrew 32x10 right and left": {
+   "material": "HIWIN peeled, 1845~mm, right-hand $+x$, left-hand $-x$",
+   "chapter": 45
+  },
+  "Carriage plate": {
+   "material": "aluminium 6082-T6, 194 $\\times$ 200 $\\times$ 20",
+   "chapter": 45
+  },
+  "Block HGH25CA": {
+   "material": "HIWIN HGH25CA, four to a jaw",
+   "chapter": 45
+  },
+  "Arm": {
+   "material": "aluminium 6082-T6, 800 $\\times$ 12, two ribs 20 $\\times$ 60",
+   "chapter": 45
+  },
+  "Pad": {
+   "material": "rubber, 800 $\\times$ 280 $\\times$ 10",
+   "chapter": 45
+  },
+  "Ball nut R32-10K5-DEB right": {
+   "material": "HIWIN, right-hand, in the $+x$ jaw",
+   "chapter": 45
+  },
+  "Cap screw M8x25 nut": {
+   "material": "ISO 4762, class 8.8, six to a nut",
+   "chapter": 45
+  },
+  "Ball nut R32-10K5-DEB left": {
+   "material": "HIWIN, left-hand, in the $-x$ jaw",
+   "chapter": 45
+  }
+ },
+ "vacuum": {
+  "Adapter plate": {
+   "material": "aluminium 6082-T6, 200 $\\times$ 16, spigot 100~g6, ISO 9409-1-160-6-M10",
+   "chapter": 46
+  },
+  "Cap screw M10x25": {
+   "material": "ISO 4762, class 10.9, into the tool plate",
+   "chapter": 46
+  },
+  "Dowel pin 10x17": {
+   "material": "hardened, 10~h6, on $+X_m$",
+   "chapter": 46
+  },
+  "Beam": {
+   "material": "aluminium 6082-T6, 1240 $\\times$ 60 $\\times$ 100, walls 5",
+   "chapter": 46
+  },
+  "Cap screw M8x20": {
+   "material": "ISO 4762, class 8.8, the beams to the adapter",
+   "chapter": 46
+  },
+  "Plate": {
+   "material": "aluminium 6082-T6, 1240 $\\times$ 840 $\\times$ 10",
+   "chapter": 46
+  },
+  "Cap screw M6x14": {
+   "material": "ISO 4762, class 8.8, the plate to the beams, 9~mm into it",
+   "chapter": 46
+  },
+  "Sleeve": {
+   "material": "aluminium, 30 $\\times$ 16.2 $\\times$ 50",
+   "chapter": 46
+  },
+  "Spring": {
+   "material": "music wire A228, 1.5 $\\times$ 20, 10.8 active turns, ends closed and ground",
+   "chapter": 46
+  },
+  "Manifold": {
+   "material": "aluminium, 150 $\\times$ 60 $\\times$ 40, one to a zone",
+   "chapter": 46
+  },
+  "Ejector SCPSi 2-14": {
+   "material": "Schmalz, two-stage, air saving, two to a zone",
+   "chapter": 46
+  },
+  "Plunger": {
+   "material": "steel tube 16 $\\times$ 2, collar and seat 24",
+   "chapter": 46
+  },
+  "Cup SPB1 80": {
+   "material": "Schmalz SPB1 80 ED-65 SC065, Elastodur 65 Shore A",
+   "chapter": 46
+  }
+ },
+ "bag": {
+  "Adapter plate": {
+   "material": "aluminium 6082-T6, 200 $\\times$ 16, spigot 100~g6, ISO 9409-1-160-6-M10",
+   "chapter": 47
+  },
+  "Cap screw M10x25": {
+   "material": "ISO 4762, class 10.9, into the tool plate",
+   "chapter": 47
+  },
+  "Dowel pin 10x17": {
+   "material": "hardened, 10~h6, on $+X_m$",
+   "chapter": 47
+  },
+  "Beam": {
+   "material": "aluminium 6082-T6, 820 $\\times$ 160 $\\times$ 100, walls 6",
+   "chapter": 47
+  },
+  "Cap screw M8x20": {
+   "material": "ISO 4762, class 8.8, the beam to the adapter",
+   "chapter": 47
+  },
+  "End block": {
+   "material": "aluminium, 30 $\\times$ 148 $\\times$ 88, in the beam's ends",
+   "chapter": 47
+  },
+  "End plate": {
+   "material": "aluminium 6082-T6, 15 thick, with the bearing bosses and the bag's end wall",
+   "chapter": 47
+  },
+  "Cap screw M8x30": {
+   "material": "ISO 4762, class 8.8, the end plates to the end blocks",
+   "chapter": 47
+  },
+  "Bearing 6206": {
+   "material": "deep-groove ball bearing, 30 $\\times$ 62 $\\times$ 16",
+   "chapter": 47
+  },
+  "Bracket": {
+   "material": "steel, the cylinders' rear pins",
+   "chapter": 47
+  },
+  "Cylinder DSBC-32-50": {
+   "material": "Festo, ISO 15552, the press",
+   "chapter": 47
+  },
+  "Cap screw M6x16": {
+   "material": "ISO 4762, class 8.8, the press cylinders to the beam",
+   "chapter": 47
+  },
+  "Press plate": {
+   "material": "aluminium, 700 $\\times$ 400 $\\times$ 10",
+   "chapter": 47
+  },
+  "Press rod": {
+   "material": "the press cylinders' rods, 12",
+   "chapter": 47
+  },
+  "Tube": {
+   "material": "steel box tube 60 $\\times$ 60 $\\times$ 4, 810 long, one to a jaw",
+   "chapter": 47
+  },
+  "Stub shaft long": {
+   "material": "steel 1045, 30, with its cap, to the lever",
+   "chapter": 47
+  },
+  "Stub shaft short": {
+   "material": "steel 1045, 30, with its cap",
+   "chapter": 47
+  },
+  "Tine": {
+   "material": "steel 1020, 10 thick, leg 25 and foot 25",
+   "chapter": 47
+  },
+  "Lever": {
+   "material": "steel, 150 from the hinge to the rod end's pin",
+   "chapter": 47
+  },
+  "Cylinder DSBC-80-125-C": {
+   "material": "Festo, ISO 15552, with clamping unit, on an SNCB-80 swivel flange",
+   "chapter": 47
+  },
+  "Piston rod": {
+   "material": "the jaw cylinders' rods, 25",
+   "chapter": 47
+  },
+  "Rod end": {
+   "material": "steel, 40 from the rod's end to the pin, 16",
+   "chapter": 47
+  }
+ },
+ "unit": {
+  "Housing": {
+   "material": "aluminium 2024-T3, plate 274 $\\times$ 200 $\\times$ 20 with its cheeks, spigot 100~g6, ISO 9409-1-160-6-M10",
+   "chapter": 48
+  },
+  "Cap screw M10x25": {
+   "material": "ISO 4762, class 10.9, into the tool plate",
+   "chapter": 48
+  },
+  "Dowel pin 10x17": {
+   "material": "hardened, 10~h6, on the pattern's $+X$",
+   "chapter": 48
+  },
+  "Plug housing": {
+   "material": "steel, 8 $\\times$ 6, the galleries' drilled ends",
+   "chapter": 48
+  },
+  "Rail HGR25": {
+   "material": "HIWIN HGR25R, 218 long",
+   "chapter": 48
+  },
+  "Cap screw M6x20": {
+   "material": "ISO 4762, class 8.8, the rails to the cheeks",
+   "chapter": 48
+  },
+  "Spring seat": {
+   "material": "aluminium, 46 across, an M10 stud into the top plate, a spigot 35 $\\times$ 5",
+   "chapter": 48
+  },
+  "Stop block": {
+   "material": "aluminium, 36 $\\times$ 25 $\\times$ 35, on the cheeks' inner faces",
+   "chapter": 48
+  },
+  "Cap screw M8x30": {
+   "material": "ISO 4762, class 8.8, the stop blocks from the cheeks' outside",
+   "chapter": 48
+  },
+  "Spring": {
+   "material": "music wire A228, 4 on a mean 40, 13.22 active turns, 170.5 free, 100 installed",
+   "chapter": 48
+  },
+  "Tube 20x16": {
+   "material": "steel, 189 long, pressed into the housing's boss",
+   "chapter": 48
+  },
+  "Sensor M12": {
+   "material": "proximity sensor, 40 long, a sensing distance of 4 assumed",
+   "chapter": 48
+  },
+  "Sensor bracket": {
+   "material": "aluminium, under the top plate",
+   "chapter": 48
+  },
+  "O-ring 20x2.5": {
+   "material": "in the receiver's groove, sealing on the tube",
+   "chapter": 48
+  },
+  "Carriage": {
+   "material": "aluminium 2024-T3, 176 $\\times$ 200 $\\times$ 32 with its wings, lugs and receiver; its face ISO 9409-1-160-6-M10",
+   "chapter": 48
+  },
+  "Block HGH25CA": {
+   "material": "HIWIN, on the carriage's wings, $C_0 = 36.49$~kN",
+   "chapter": 48
+  },
+  "Plug carriage": {
+   "material": "steel, 8 $\\times$ 6, the carriage's galleries' drilled ends",
+   "chapter": 48
+  }
+ }
+}

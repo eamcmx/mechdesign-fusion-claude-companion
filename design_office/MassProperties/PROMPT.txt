@@ -1,0 +1,40 @@
+Write a Fusion Python script that, when run, builds one of Part 9's nine detailed assemblies, the bag gripper with
+Chapter 56's stops, and weighs it: every group's mass, centre and moments of inertia about its centre, and for the
+robot each of its eleven moving bodies in the form Chapter 43's cycle reads, so that the cycle can be run again on the
+detailed robot.
+
+INPUTS (a command dialog, with this default):
+- the machine: one of robot, wrist, flap, axle, bag, clamp, vacuum, changer or unit, robot
+
+DERIVED (never typed):
+- RangeSweep.py's machine(): the build, through each detail script, the bag gripper with its stops
+- the parts' materials: Chapter 51's library materials, as the detail scripts give them
+
+HARD CONSTRAINTS:
+- Build each machine through RangeSweep.py's machine(), loaded, not copied; copy none of the detail scripts.
+- Weigh with Fusion's own physical properties of each part that has bodies: the mass, the centre of mass, and the
+  moments of inertia about the world's axes moved to the centre by the parallel-axis rule.
+- A group is a top-level occurrence and all the parts under it; a group's name that comes twice is numbered, so that
+  no group is lost from the sum.
+- For the robot at q = 0: the turret, the lower arm, the crank and counterweight, the parallel rod, levelling rod 1,
+  the triangle, the upper arm, levelling rod 2, the wrist housing, the tool flange and the balancer, each with its mass,
+  its layer y, its centre against its own pivot and the moments of inertia its motion needs, in
+  projects/palletizer/lib/palletizer_weighed.json's form; the base apart.
+- Write each machine's result to results/mass_<machine>.json.
+- Refuse a machine that is not one of the nine.
+
+FUSION CONVENTIONS:
+- Each machine's own new design document (FusionDesignDocumentType), made by its own script; masses in kg, lengths in
+  mm, moments of inertia in kg m2; the API's cm and kg cm2 inside.
+- The joints are each machine's own: the wrist, the flap and the rear axle keep their scripts' As-built joints; the
+  robot, the tool changer, the three grippers and the compliance unit have no joints, as-built or otherwise, and
+  place their groups by transforms. The weighing adds no joint and moves nothing but the robot, set to q = 0 by its
+  own set_pose() for its moving bodies.
+
+ACCEPTANCE CRITERIA:
+- A message gives the machine, its parts, its mass and centre, its groups, the machine's own first line, and a
+  version tag.
+- Each of the 9 weighed, its groups' masses summing to its total within 0.1 %, its file written.
+- The robot's 11 moving bodies written, each with a mass, each within 10 % of the concept's mass and moments of
+  inertia.
+- Refused: a machine called crane.

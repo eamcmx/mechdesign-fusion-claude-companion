@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Check a prompt for the five parts of Chapter 4, before it is sent.
 
-    python tools/prompt_lint.py scripts/FirstAssembly/PROMPT.txt
-    python tools/prompt_lint.py --all            every scripts/*/PROMPT.txt
+    python tools/prompt_lint.py projects/first_assembly/FirstAssembly/PROMPT.txt
+    python tools/prompt_lint.py --all            every PROMPT.txt in projects/, design_office/ and common/
 
 What it checks (it cannot tell whether the design is right, only whether the prompt leaves things to guess):
   1. the goal names the deliverable: a Fusion script that, when run, builds ...
@@ -67,13 +67,14 @@ def lint(path):
 
 if __name__ == '__main__':
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-    paths = sorted(glob.glob(os.path.join(ROOT, 'scripts', '*', 'PROMPT.txt'))) if sys.argv[1:] == ['--all'] else sys.argv[1:]
+    paths = sorted(glob.glob(os.path.join(ROOT, 'projects', '*', '*', 'PROMPT.txt')) + glob.glob(os.path.join(ROOT, 'design_office', '*', 'PROMPT.txt'))
+                   + glob.glob(os.path.join(ROOT, 'common', '*', 'PROMPT.txt'))) if sys.argv[1:] == ['--all'] else sys.argv[1:]
     bad = 0
     for p in paths:
         res, notes = lint(p)
         miss = [n for n, good in res if not good]
         bad += bool(miss)
-        print('%-44s %2d of %d %s' % (os.path.relpath(p, ROOT), len(res) - len(miss), len(res), 'ok' if not miss else 'MISSING: ' + '; '.join(miss)))
+        print('%-56s %2d of %d %s' % (os.path.relpath(p, ROOT), len(res) - len(miss), len(res), 'ok' if not miss else 'MISSING: ' + '; '.join(miss)))
         for n in notes:
             print('      ' + n)
     sys.exit(1 if bad else 0)

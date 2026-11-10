@@ -1,0 +1,56 @@
+Write a Fusion Python script that, when run, builds one of the real assemblies Chapter 59's and Chapter 62's
+Simulation studies are run on: the part under study and the neighbours that carry its load, copied out of the machine's own detailed model
+into a design of their own, one component each with its material, where they sit in the machine, so that the study
+supports and loads the part the way the machine does.
+
+INPUTS (a command dialog, with this default):
+- the assembly: one of stop, stop_diagonal, fitting, hinge, arms or arms_closed, stop
+
+DERIVED (never typed):
+- design_office/RangeSweep/RangeSweep.py: the bag gripper with its stops, the flap system and the palletizer robot as their
+  detail chapters left them, loaded and called, not copied; the robot posed by it
+- projects/palletizer/StopBracket/StopBracket.py: Chapter 62's change to the opening bracket, called on the machine's own bracket
+- lib/range_sweep.py: the opening stop's layout, the absorber's axis, the design's push and the DYSC's rating
+- projects/flap_actuation/lib/flap_design.py: the spar fitting's and the hinges' layout, the actuator's ultimate push, the hinges' ultimate
+  load
+- lib/lugs_brackets.py: the opening bracket's hand volume, turned and on its diagonal; the spar web patch's
+- projects/palletizer/lib/palletizer_design.py: the cycle's high point (q2, q3) and the robot's points there: the shoulder A, the flange
+- projects/palletizer/lib/palletizer_links.py: the arms' sideways compliance by hand (lateral()), at the point the force acts
+
+HARD CONSTRAINTS:
+- stop: jaw A's opening bracket with its arm turned 45 deg and its root rounded 2.5 mm, its DYSC-25-25-Y1F, the lock
+  nut and the end plate; stop_diagonal: the same with the arm on its diagonal and the same root.
+- fitting: the spar fitting, both GE 20 ES and both trunnions, and the rear spar web cut to 200 mm either side of the
+  base plate.
+- hinge: the right hinge bracket, its rib, the GE 20 ES in its eye, the hinge pin and the flap's two hinge fittings.
+- arms: the robot at the cycle's high point; its lower arm without J2's reducer output, its upper arm with its rear
+  lever and torque tube but without the pin D's washer and screw, and its wrist from the wrist pin to the tool flange
+  without J4's motor and the levelling link: 27 parts. The robot's model ends the upper arm's box open, 120 mm short of
+  the wrist pin, beside the front fork's cheeks, which then touch it only along an edge; for the study only, cut the
+  box's last 10 mm and put in their place an end plate 10 thick, 340 wide (the cheeks' outer faces) and 200 deep (the
+  box's), of the box's steel, which the box's walls and the cheeks' ends both butt on: 28 parts.
+- arms_closed: the same 28 parts and the two diaphragms the lower arm's box lacks, for the study only: the box is a
+  tube open at both ends, so put a 12 mm plate filling its inside (276 by 196) at its fork end, 650 to 662 mm from
+  the shoulder, and another 122 to 110 mm short of the elbow's axis, against the hub, of the box's steel: 30 parts.
+- Every body copied from the machine's model, none rebuilt, but those plates; the bolts left out, for the study's
+  bolt connectors.
+- The faces each study picks found on the bodies: the bolt holes, the fixed faces, the face the load goes on; for
+  arms the hub's two bosses (held) and the tool flange's outer face (1000 N across the arms' plane).
+- Save nothing; refuse an assembly that is not one of the six.
+
+FUSION CONVENTIONS:
+- a new design document (FusionDesignDocumentType) for the assembly, parametric, each part a component of the root
+  with its bodies in a base feature, no joints and no as-built joints (the study's contacts and connectors join
+  them); the machine's document closed unsaved; lengths in mm, the API's cm inside.
+
+ACCEPTANCE CRITERIA:
+- A message gives the assembly, each part's bodies, material and volume, the picks found, and a version tag.
+- Every part the machine's own volume and material, but the upper arm's box, 10 mm of its 8800 mm2 section shorter,
+  and the end plate, 680 000 mm3, and arms_closed's two diaphragms, 649 152 mm3 each; the opening bracket's within
+  0.01 % of lib/lugs_brackets.py's, turned for stop and on its diagonal for stop_diagonal; the web patch's within
+  0.01 % of its hand volume.
+- Every pick found on a face.
+- The loads: the stop's push of 2180.0 N along the absorber's axis and the DYSC's 4000 N; the fitting's 20 848.4 N
+  both ways; the hinge's 13 956.0 N; the arms' 1000 N across, and the give it causes by hand at its point.
+- arms: the tool flange where the high point puts it; the hand's give at the flange's outer face from lateral().
+- Refused: an assembly called crane.

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Chapter 59's study of the palletizer's arms sideways, read from the result files Fusion wrote: the tool flange's
 outer face moves across the arms' plane under the 1000 N, and the parts along the way say where that give comes from.
-Writes results/sim_arms.json (or the file named after the guid), which fig_ch59.py and the verifier read.
+Writes design_office/results/sim_arms.json (or the file named after the guid), which fig_ch59.py and the verifier read.
 
     python tools/arms_give.py <the study's result guid> [<out.json>]
 
@@ -22,13 +22,14 @@ import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'lib'))
+sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'common'))
+import companion_paths  # noqa: E402  every lib/ folder on sys.path
 import sim_results as S          # noqa: E402
 import palletizer_design as PD   # noqa: E402
 import palletizer_links as PL    # noqa: E402
 import fea_studies as FS         # noqa: E402
 
-OUT = os.path.join(os.path.dirname(HERE), 'results', 'sim_arms.json')
+OUT = os.path.join(os.path.dirname(HERE), 'design_office', 'results', 'sim_arms.json')
 F = 1000.0                        # N across the plane, on the flange's outer face
 # StudyAssemblies' ARMS, in its order: the body index in the result files
 ARMS = ('Fork plate 1', 'Fork plate 2', 'Hub boss J2 side', 'Hub boss J3 side', 'Balancer cross pin Q', 'Lower arm box',
