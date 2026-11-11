@@ -1,0 +1,10 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan",
+    "description": {
+        "": "The palletizer's ISO 9409-1-160-6-M10 robot plate and its tool changer (master, piston and cam, six segments, tool plate), shown locked or free."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}

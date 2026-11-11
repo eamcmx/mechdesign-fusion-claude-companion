@@ -1,5 +1,5 @@
-# checks/scara_tool_check
-# Autodesk Fusion 2706.1.17, run 2026-11-02 08:24, 7 s
+# scara_tool_check
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:34, 8 s
 
 ScaraToolJoints 1.0 (2026-11-02)
   ok   the screw's cube mean 66.65 N and the shaft's swing 21.12 Hz worked again (the module: 66.65, 21.12)
@@ -11,8 +11,8 @@ Belts 3MR-474 and 3MR-489, centre distances 173.48 and 175.10 mm.
 
 Parts: 48 components; 1 Ball screw spline shaft SP20, 1 Base plate, 1 Belt 3MR-474-09 J3, 1 Belt 3MR-489-09 J4, 8 Flange bolt M4, 4 Motor bolt M4, 4 Motor bolt M5, 1 Motor shaft J3, 1 Motor shaft J4, 1 Pulley 18T motor J4, 1 Pulley 28T motor J3, 1 Pulley 56T nut J3, 1 Pulley 72T nut J4, 12 Pulley screw M5, 1 Screw nut SP20 flange, 1 Screw nut SP20 rotor, 1 Servo motor J3, 1 Servo motor J4, 1 Side wall left, 1 Side wall right, 1 Spline nut SP20 flange, 1 Spline nut SP20 rotor, 1 Tool flange, 1 Top plate.
 
-[ScaraToolJoints 1.0 (2026-11-02)] ScaraToolJoints 1.0 (2026-11-02)
-  OK pressed, built in 6 s
+[ScaraToolJoints 1.0 (2026-11-02)]
+  OK pressed, built in 7 s
   ok   a new design opened
   ok   seven groups: ['Arm end', 'J3 carriage', 'J3 motor side', 'J4 motor side', 'Screw side', 'Spline side', 'Tool shaft']
   parts: 48 components, 24 kinds: [('Ball screw spline shaft SP20', 1), ('Base plate', 1), ('Belt 3MR-474-09 J3', 1), ('Belt 3MR-489-09 J4', 1), ('Flange bolt M4', 8), ('Motor bolt M4', 4), ('Motor bolt M5', 4), ('Motor shaft J3', 1), ('Motor shaft J4', 1), ('Pulley 18T motor J4', 1), ('Pulley 28T motor J3', 1), ('Pulley 56T nut J3', 1), ('Pulley 72T nut J4', 1), ('Pulley screw M5', 12), ('Screw nut SP20 flange', 1), ('Screw nut SP20 rotor', 1), ('Servo motor J3', 1), ('Servo motor J4', 1), ('Side wall left', 1), ('Side wall right', 1), ('Spline nut SP20 flange', 1), ('Spline nut SP20 rotor', 1), ('Tool flange', 1), ('Top plate', 1)]
@@ -31,4 +31,5 @@ Parts: 48 components; 1 Ball screw spline shaft SP20, 1 Base plate, 1 Belt 3MR-4
   Belt 3MR-489-09 J4: 0.0049 kg
   ok   {'size': 16.0} refused: The SP16 falls short: its shaft swings at 13.1 Hz at the full stroke against 20; its fatigue factor at 100 mm is 0.81 against 1.5.
   ok   {'size': 25.0} refused: The SP25 falls short: its mass at the tool costs the first joint its life (19784 h against 20 000).
+  ok   a message gives the version tag ScaraToolJoints 1.0 (2026-11-02)
 ALL PASS

@@ -1,13 +1,13 @@
-# checks/scara_robot_check
-# Autodesk Fusion 2706.1.17, run 2026-11-02 09:10, 25 s
+# scara_robot_check
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:33, 21 s
 
 ScaraRobot 1.0 (2026-11-02)
   ok   Run opens the dialog
 SCARA put together: J1 CSG-45-50-2UH, J2 CSG-20-50-2UH, SP20 ball screw spline.
 Parts: 93 components; 1 Ball screw spline shaft SP20, 1 Base column, 1 Base foot, 1 Base top flange, 1 Belt 3MR-474-09 J3, 1 Belt 3MR-489-09 J4, 1 CSG-20-50-2UH housing, 1 CSG-45-50-2UH housing, 8 Case bolt M5, 12 Case bolt M8, 2 Cross rollers, 1 First arm beam, 8 Flange bolt M4, 2 Flexspline, 4 J3 motor bolt M5, 1 Module plate J1, 1 Module plate J2, 4 Motor bolt M4, 4 Motor bolt M5, 4 Motor bolt M8, 1 Motor shaft J1, 1 Motor shaft J2, 1 Motor shaft J3, 1 Motor shaft J4, 2 Output flange, 1 Pulley 18T motor J4, 1 Pulley 28T motor J3, 1 Pulley 56T nut J3, 1 Pulley 72T nut J4, 12 Pulley screw M5, 1 Screw nut SP20 flange, 1 Screw nut SP20 rotor, 1 Second arm structure, 1 Servo motor J1, 1 Servo motor J2, 1 Servo motor J3, 1 Servo motor J4, 1 Spline nut SP20 flange, 1 Spline nut SP20 rotor, 1 Tool flange, 2 Wave generator.
 
-[ScaraRobot 1.0 (2026-11-02)] ScaraRobot 1.0 (2026-11-02)
-  OK pressed, built in 22 s
+[ScaraRobot 1.0 (2026-11-02)]
+  OK pressed, built in 19 s
   ok   a new design opened
   ok   three groups: ['Base', 'First arm', 'Second arm']
   parts: 93 components, 41 kinds
@@ -30,4 +30,5 @@ ROWS [[0, "Base foot", 10.524995183147796, -5.0197217487170705e-12, 2.7133631074
   the tool flange's underside 359.00 mm above the floor at J3 0
   ok   the tool flange where heights() puts it
   ok   {'size1': 32.0} refused: The J1 unit is a CSG-40 or a CSG-45 (Chapter 38); 32 was asked.
+  ok   a message gives the version tag ScaraRobot 1.0 (2026-11-02)
 ALL PASS

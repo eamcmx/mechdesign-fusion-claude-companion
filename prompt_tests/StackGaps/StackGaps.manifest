@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 61: builds each machine in which Chapter 56's range sweep found a small gap and measures the gap's least distance, its two points and its direction at the closest approach and in the states either side, for the tolerance stack-ups."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "StackGaps"
+}

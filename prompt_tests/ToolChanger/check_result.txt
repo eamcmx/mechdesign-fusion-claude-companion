@@ -1,0 +1,33 @@
+# projects/palletizer/checks/tool_changer_check.py on prompt_tests/ToolChanger/ToolChanger.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 09:14, 10 s
+
+ToolChanger v1.0 (prompt test, 2026-11-10)
+  ok   Run opens the dialog
+ToolChanger v1.0 (prompt test, 2026-11-10)
+ISO 9409-1-160-6-M10 on the robot plate and under the tool plate: d2 200 h8, d3 100 H7 (8 deep), 6 x M10 at 30/90/150/210/270/330 deg on 160, pin hole d5 10 H7 on +Xm (t1 8, t2 10)
+Screws: 6 x Cap screw ISO 4762 M10 x 35, class 10.9, through the cover and the master's 20 mm flange into the robot plate: preload Fi = 0.75 Sp At = 36.1 kN each, joint constant C = 0.203
+Piston: D 100 double-acting, rod 40, stroke 20; at 5.50 bar it pushes 4.32 kN locking and pulls 3.63 kN releasing
+Angles: cam 5.00 deg (holds itself: under atan 0.10 = 5.71 deg), lead 30 deg, ring face 15 deg; phi = atan 0.15 = 8.53 deg
+Clamp: F_c = 41.2 kN against the cycle's need 17.1 kN (1.5 x = 25.7 kN): 2.41 times
+Locked: rod end -76.0 (gland -55 to -51), piston face -47.0 over the release port -49, top -32.0 under the lock port -10: ok
+Free: rod end -56.0 (gland -55 to -51), piston face -27.0 over the release port -49, top -12.0 under the lock port -10: ok
+Weighed: Robot plate 5.60 kg, Master 14.04 kg, Piston 2.33 kg, Segment 0.44 kg, Tool plate 6.55 kg
+Parts (20): Cam 1, Cap screw ISO 4762 M10 x 6, Cover 1, Master body 1, Pin ISO 8734 12 x 2, Piston with rod 1, Robot plate 1, Segment 6, Tool plate 1
+Shown locked
+  OK pressed, built in 6 s
+  ok   a new design opened
+  parts: 20 components, 9 kinds
+  Cam 1, Cap screw ISO 4762 M10 x 6, Cover 1, Master body 1, Pin ISO 8734 12 x 2, Piston with rod 1, Robot plate 1, Segment 6, Tool plate 1
+  ok   locked: no interference among the 20 parts 
+  ok   locked: every segment's 15 deg face on the lip's face, least distance 0.0000 mm
+  ok   locked, the tool plate lowered 0.5 mm runs into all six segments (6 clashes, 300.7 mm3): the lock holds it
+  ok   free: no interference 
+  ok   free: the segments clear of the tool plate by 0.747 mm
+  ok   free: the tool plate comes off through 45 mm in 5 mm steps with nothing in the way 
+  ok   the rod through the gland (-55 to -51) locked and free, its end at -76.0 and -56.0; the release port (-49) under the piston's face (-47.0, -27.0), the lock port (-10) over its top (-32.0, -12.0)
+  ok   the robot plate: six M10 holes and the 10 H7 pin hole on the 160 circle at [0.0, 30.0, 90.0, 150.0, 210.0, 270.0, 330.0] deg, the 100 H7 recess on the axis
+  weighed: robot plate 5.60 kg, master with piston and segments 16.82 kg, tool plate 6.55 kg
+  ok   {'alpha': 6.0} refused: Refused: a locking angle of 6.00 deg is not held by friction as low as 0.10 (the cam holds itself only under atan 0.10 = 5.71 deg): the lock would let go when the air fails
+  ok   {'p_bar': 1.5} refused: Refused: at 1.50 bar the clamp F_c = F_p / (tan(alpha + phi) tan(beta + phi)) = 11.2 kN falls under 1.5 times the 17.1 kN that keeps the coupling face closed over the standard cycle (25.7 kN wanted)
+  ok   a message gives the version tag ToolChanger v1.0 (prompt test, 2026-11-10)
+ALL PASS

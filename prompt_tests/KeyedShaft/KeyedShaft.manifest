@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"A shaft turning in a bearing block, with a hub fixed to it by a DIN 6885 parallel key; the key is checked for shear and crushing, and the shaft's As-built revolute Joint turns shaft, key and hub together."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}
