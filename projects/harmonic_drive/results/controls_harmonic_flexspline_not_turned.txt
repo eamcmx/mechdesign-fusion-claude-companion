@@ -1,5 +1,5 @@
 # controls/harmonic_flexspline_not_turned
-# Autodesk Fusion 2706.1.17, run 2026-11-09 20:16, 76 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:17, 78 s
 
   ok   no interference at phi = 0
   angles with the flexspline in collision (wave generator deg, mm^3): [(45, 44.199), (90, 80.011)]

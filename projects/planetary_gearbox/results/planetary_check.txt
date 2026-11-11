@@ -1,5 +1,5 @@
 # planetary_check
-# Autodesk Fusion 2706.1.17, run 2026-11-09 20:15, 27 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:02, 34 s
 
 PlanetaryPrompt 1.0 (2026-11-01)
   ok   Run opens the dialog
@@ -12,8 +12,8 @@ Sun held (ring in, carrier out):    1 + Zs / Zr = 1.2857
 
 Drive Joints on "Sun (input)": one turn moves the carrier 80.00 deg the same way.
 
-[PlanetaryPrompt 1.0 (2026-11-01)] PlanetaryPrompt 1.0 (2026-11-01)
-  OK pressed with the defaults, built in 5 s
+[PlanetaryPrompt 1.0 (2026-11-01)]
+  OK pressed with the defaults, built in 7 s
   ok   a new design opened
   ok   parts: ['Carrier', 'Planet 1', 'Planet 2', 'Planet 3', 'Ring', 'Sun', 'Sun bearing']
   ok   one body each
@@ -38,4 +38,5 @@ Drive Joints on "Sun (input)": one turn moves the carrier 80.00 deg the same way
   ok   no interference at any of the 8 steps 
   ok   {'zs': 20, 'zp': 25, 'n': 4} refused: (Zs + Zr) / N = (20 + 70) / 4 = 22.50 is not whole: 4 planets cannot be spaced evenly.
   ok   {'zs': 18, 'zp': 18, 'n': 6} refused: Neighbouring planets touch: 2 · a · sin(180 / N) = 27.0 mm is not more than their tip diameter m · (Zp + 2) = 30.0 mm.
+  ok   a message gives the version tag PlanetaryPrompt 1.0 (2026-11-01)
 ALL PASS

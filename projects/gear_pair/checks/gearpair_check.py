@@ -23,9 +23,13 @@ def mark(doc):
     doc.attributes.add('mdfc', 'run', 'gearpair_check')
 
 
+MESSAGES = []          # what the script showed in its message boxes
+
+
 def load():
-    src = open(PATH, encoding='utf-8').read().replace('ui.messageBox(', 'print(')
+    src = open(PATH, encoding='utf-8').read().replace('ui.messageBox(', '_mdfc_message(')
     ns = {'__name__': 'gearpair_check', '__file__': PATH}
+    ns['_mdfc_message'] = lambda text='', *a, **kw: (MESSAGES.append(str(text)), print(text))
     exec(compile(src, PATH, 'exec'), ns)
     return ns
 
@@ -137,4 +141,5 @@ def run(_context):
         ok(False, 'z1 = 12 refused')
     except ValueError as e:
         ok('undercut' in str(e), 'z1 = 12 refused: %s' % e)
+    ok(any(ns['VERSION'] in m for m in MESSAGES), 'a message gives the version tag %s' % ns['VERSION'])
     print('ALL PASS' if not fails else '%d FAILED' % len(fails))

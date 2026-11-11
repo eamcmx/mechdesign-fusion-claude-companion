@@ -1,5 +1,5 @@
 # rear_axle_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 20:38, 91 s
+# Autodesk Fusion 2706.1.17, run 2026-11-11 08:55, 66 s
 
 RearAxle 1.0 (2026-11-01)
   ok   the splines recomputed: 71.75 mm engaged, 35.3 mm needed, 280.8 MPa on the flanks 
@@ -29,4 +29,5 @@ Parts: 106 components in 43 kinds; 2 Adjuster, 1 Banjo housing, 2 Bearing 6213 b
   Wheel end L: 10 parts, 14.50 kg
   Wheel end R: 10 parts, 14.50 kg
   ok   splines from 100 mm refused: The half shafts' splines reach 6.75 mm into the side gears; they need 35.3 mm.
+  ok   a message gives the version tag RearAxle 1.0 (2026-11-01)
 ALL PASS

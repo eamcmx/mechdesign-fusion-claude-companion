@@ -1,5 +1,5 @@
 # harmonic_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 19:08, 2073 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 20:09, 1614 s
 
 HarmonicDrive 1.2 (2026-11-01)
   ok   z_c 202, ratio -100, r_f 30.000, r_c 30.300, w0 0.300 mm 
@@ -12,8 +12,8 @@ Teeth: straight flanks at 30 deg, addendum 0.225, dedendum 0.270, pitch thicknes
 
 Turn it with turn_to(phi): the flexspline is built bent at phi and turned by -0.0100 deg per input deg.
 
-[HarmonicDrive 1.2 (2026-11-01)] HarmonicDrive 1.2 (2026-11-01)
-  OK pressed, built in 21 s
+[HarmonicDrive 1.2 (2026-11-01)]
+  OK pressed, built in 16 s
   ok   a new design opened
   ok   three components: ['CircularSpline', 'Flexspline', 'WaveGenerator']
   ok   one body each
@@ -22,23 +22,24 @@ Turn it with turn_to(phi): the flexspline is built bent at phi and turned by -0.
   ok   flexspline tip on the short axis 29.9249 mm from the axis
   ok   circular spline tips 30.0749 mm from the axis
   ok   no interference at phi = 0 
-  phi   0.1485 deg: rebuilt in 36 s, interference in 0 s
-  phi   0.2970 deg: rebuilt in 51 s, interference in 0 s
-  phi   0.4455 deg: rebuilt in 61 s, interference in 0 s
-  phi   0.5941 deg: rebuilt in 79 s, interference in 0 s
-  phi   0.7426 deg: rebuilt in 88 s, interference in 0 s
-  phi   0.8911 deg: rebuilt in 107 s, interference in 0 s
-  phi   1.0396 deg: rebuilt in 120 s, interference in 0 s
-  phi   1.1881 deg: rebuilt in 129 s, interference in 0 s
-  phi   1.3366 deg: rebuilt in 146 s, interference in 0 s
-  phi   1.4851 deg: rebuilt in 162 s, interference in 0 s
-  phi   1.6337 deg: rebuilt in 180 s, interference in 0 s
-  phi   1.7822 deg: rebuilt in 206 s, interference in 0 s
-  phi  45.0000 deg: rebuilt in 214 s, interference in 0 s
-  phi  90.0000 deg: rebuilt in 227 s, interference in 1 s
-  phi 180.0000 deg: rebuilt in 236 s, interference in 1 s
+  phi   0.1485 deg: rebuilt in 28 s, interference in 0 s
+  phi   0.2970 deg: rebuilt in 38 s, interference in 0 s
+  phi   0.4455 deg: rebuilt in 47 s, interference in 0 s
+  phi   0.5941 deg: rebuilt in 62 s, interference in 0 s
+  phi   0.7426 deg: rebuilt in 72 s, interference in 0 s
+  phi   0.8911 deg: rebuilt in 87 s, interference in 0 s
+  phi   1.0396 deg: rebuilt in 94 s, interference in 0 s
+  phi   1.1881 deg: rebuilt in 107 s, interference in 0 s
+  phi   1.3366 deg: rebuilt in 116 s, interference in 0 s
+  phi   1.4851 deg: rebuilt in 130 s, interference in 1 s
+  phi   1.6337 deg: rebuilt in 140 s, interference in 0 s
+  phi   1.7822 deg: rebuilt in 152 s, interference in 0 s
+  phi  45.0000 deg: rebuilt in 160 s, interference in 0 s
+  phi  90.0000 deg: rebuilt in 173 s, interference in 1 s
+  phi 180.0000 deg: rebuilt in 185 s, interference in 0 s
   ok   the flexspline turned -0.9000 deg at phi = 90 and -1.8000 deg at phi = 180
   ok   no interference at any of the 15 angles 
   ok   {'dz': 1} refused: z_c - z_f = 1: a two-lobed wave generator needs a difference of 2 teeth.
   ok   {'z_f': 40} refused: 40 flexspline teeth: choose from 60 to 320.
+  ok   a message gives the version tag HarmonicDrive 1.2 (2026-11-01)
 ALL PASS

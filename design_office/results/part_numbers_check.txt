@@ -1,12 +1,12 @@
 # part_numbers_check
-# Autodesk Fusion 2706.1.17, run 2026-11-03 10:49, 19 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:01, 24 s
 
 PartNumbers 1.1 (2026-11-03)
   ok   Run opens the dialog
 Bag gripper numbered P13-000: 74 components; 13 made kinds (P13-001 to P13-013), 8 bought kinds; 2 bodies with a bought part; left unnumbered: Bag (1), Roller 1, Roller 2, Roller 3, Roller 4, Roller 5, Roller 6, Roller 7, Roller 8, Roller 9.
 
-[PartNumbers 1.1 (2026-11-03)] PartNumbers 1.1 (2026-11-03)
-  OK pressed, built in 10 s
+[PartNumbers 1.1 (2026-11-03)]
+  OK pressed, built in 11 s
   ok   a new design opened
   components with a body: 84
   ok   every component numbered, with a bought part, or not a part: 72, 2, 10; wrong []
@@ -20,4 +20,5 @@ Bag gripper numbered P13-000: 74 components; 13 made kinds (P13-001 to P13-013),
   ok   the compliance unit: root P14-000; made P14-001 to P14-006; 10 bought, the new ones S-0101 to S-0106; wrong []
   ok   two names, one part: ['Plug carriage', 'Plug housing'] as S-0102; the unit's spring S-0106, not the vacuum gripper's
   ok   {'key': 'crane'} refused: No assembly called crane: the nine are wrist, flap, axle, robot, changer, clamp, vacuum, bag, unit.
+  ok   a message gives the version tag PartNumbers 1.1 (2026-11-03)
 ALL PASS

@@ -188,7 +188,7 @@
     "seen": 71
    }
   ],
-  "seconds": 379.9,
+  "seconds": 297.2,
   "pairs": {
    "all": 4656,
    "cross": 2912,
@@ -347,7 +347,7 @@
     "seen": 21
    },
    {
-    "a": "Trunnion L",
+    "a": "Trunnion R",
     "b": "Screw gear z54",
     "min": 7.159,
     "at": [
@@ -358,7 +358,7 @@
     "seen": 21
    },
    {
-    "a": "Trunnion R",
+    "a": "Trunnion L",
     "b": "Screw gear z54",
     "min": 7.159,
     "at": [
@@ -611,7 +611,7 @@
     "seen": 21
    },
    {
-    "a": "Motor screw M5x12 4",
+    "a": "Motor screw M5x12 1",
     "b": "Pinion z18",
     "min": 17.87,
     "at": [
@@ -622,7 +622,7 @@
     "seen": 21
    },
    {
-    "a": "Motor screw M5x12 1",
+    "a": "Motor screw M5x12 4",
     "b": "Pinion z18",
     "min": 17.87,
     "at": [
@@ -820,7 +820,7 @@
     "seen": 21
    }
   ],
-  "seconds": 166.8,
+  "seconds": 109.0,
   "pairs": {
    "all": 3741,
    "cross": 2963,
@@ -835,34 +835,6 @@
   "groups": 9,
   "hits": [],
   "rows": [
-   {
-    "a": "Bearing cap C1",
-    "b": "Crown wheel bolt M12x35 5",
-    "min": 1.0,
-    "at": [
-     "turning",
-     [
-      30.0,
-      2.5
-     ]
-    ],
-    "max": 10.0,
-    "seen": 35
-   },
-   {
-    "a": "Bearing cap C1",
-    "b": "Crown wheel bolt M12x35 6",
-    "min": 1.0,
-    "at": [
-     "turning",
-     [
-      180.0,
-      2.5
-     ]
-    ],
-    "max": 9.037,
-    "seen": 36
-   },
    {
     "a": "Carrier casting",
     "b": "Crown wheel bolt M12x35 1",
@@ -932,6 +904,34 @@
     ],
     "max": 10.0,
     "seen": 21
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 5",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      30.0,
+      0.0
+     ]
+    ],
+    "max": 10.0,
+    "seen": 35
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 6",
+    "min": 1.0,
+    "at": [
+     "straight",
+     [
+      180.0,
+      0.0
+     ]
+    ],
+    "max": 9.037,
+    "seen": 36
    },
    {
     "a": "Bearing cap C1",
@@ -1050,10 +1050,10 @@
     "b": "Crown wheel bolt M12x35 1",
     "min": 5.922,
     "at": [
-     "turning",
+     "straight",
      [
       90.0,
-      2.5
+      0.0
      ]
     ],
     "max": 10.0,
@@ -1088,27 +1088,13 @@
     "seen": 6
    },
    {
-    "a": "Spider 2",
-    "b": "Side gear washer R",
-    "min": 9.306,
-    "at": [
-     "turning",
-     [
-      60.0,
-      2.5
-     ]
-    ],
-    "max": 9.68,
-    "seen": 36
-   },
-   {
     "a": "Spider 4",
     "b": "Side gear washer R",
     "min": 9.306,
     "at": [
      "turning",
      [
-      0.0,
+      330.0,
       2.5
      ]
     ],
@@ -1122,7 +1108,21 @@
     "at": [
      "turning",
      [
-      270.0,
+      330.0,
+      2.5
+     ]
+    ],
+    "max": 9.68,
+    "seen": 36
+   },
+   {
+    "a": "Spider 2",
+    "b": "Side gear washer R",
+    "min": 9.306,
+    "at": [
+     "turning",
+     [
+      330.0,
       2.5
      ]
     ],
@@ -1136,7 +1136,7 @@
     "at": [
      "turning",
      [
-      60.0,
+      330.0,
       2.5
      ]
     ],
@@ -1164,7 +1164,7 @@
     "at": [
      "turning",
      [
-      240.0,
+      210.0,
       2.5
      ]
     ],
@@ -1228,8 +1228,8 @@
     "seen": 36
    },
    {
-    "a": "Spider 3",
-    "b": "Spider 4",
+    "a": "Spider 1",
+    "b": "Spider 2",
     "min": 11.835,
     "at": [
      "straight",
@@ -1242,13 +1242,13 @@
     "seen": 36
    },
    {
-    "a": "Spider 1",
-    "b": "Spider 2",
+    "a": "Spider 3",
+    "b": "Spider 4",
     "min": 11.835,
     "at": [
      "straight",
      [
-      0.0,
+      180.0,
       0.0
      ]
     ],
@@ -1276,7 +1276,7 @@
     "at": [
      "turning",
      [
-      270.0,
+      180.0,
       2.5
      ]
     ],
@@ -1304,25 +1304,11 @@
     "at": [
      "turning",
      [
-      270.0,
+      180.0,
       2.5
      ]
     ],
     "max": 17.081,
-    "seen": 36
-   },
-   {
-    "a": "Spider 3",
-    "b": "Half shaft L",
-    "min": 19.057,
-    "at": [
-     "turning",
-     [
-      270.0,
-      2.5
-     ]
-    ],
-    "max": 19.248,
     "seen": 36
    },
    {
@@ -1340,8 +1326,8 @@
     "seen": 36
    },
    {
-    "a": "Spider 4",
-    "b": "Half shaft R",
+    "a": "Spider 3",
+    "b": "Half shaft L",
     "min": 19.057,
     "at": [
      "turning",
@@ -1361,6 +1347,20 @@
      "turning",
      [
       270.0,
+      2.5
+     ]
+    ],
+    "max": 19.248,
+    "seen": 36
+   },
+   {
+    "a": "Spider 4",
+    "b": "Half shaft R",
+    "min": 19.057,
+    "at": [
+     "turning",
+     [
+      150.0,
       2.5
      ]
     ],
@@ -1402,7 +1402,7 @@
     "at": [
      "turning",
      [
-      210.0,
+      90.0,
       2.5
      ]
     ],
@@ -1416,7 +1416,7 @@
     "at": [
      "straight",
      [
-      90.0,
+      0.0,
       0.0
      ]
     ],
@@ -1430,7 +1430,7 @@
     "at": [
      "straight",
      [
-      90.0,
+      0.0,
       0.0
      ]
     ],
@@ -1444,7 +1444,7 @@
     "at": [
      "turning",
      [
-      270.0,
+      0.0,
       2.5
      ]
     ],
@@ -1466,13 +1466,13 @@
     "seen": 36
    },
    {
-    "a": "Crown wheel bolt M12x35 2",
+    "a": "Crown wheel bolt M12x35 7",
     "b": "Side gear R",
     "min": 23.671,
     "at": [
      "straight",
      [
-      105.0,
+      300.0,
       0.0
      ]
     ],
@@ -1480,13 +1480,13 @@
     "seen": 36
    },
    {
-    "a": "Crown wheel bolt M12x35 7",
+    "a": "Crown wheel bolt M12x35 2",
     "b": "Side gear R",
     "min": 23.671,
     "at": [
      "straight",
      [
-      15.0,
+      165.0,
       0.0
      ]
     ],
@@ -1556,7 +1556,7 @@
     "at": [
      "turning",
      [
-      210.0,
+      0.0,
       2.5
      ]
     ],
@@ -1584,7 +1584,7 @@
     "at": [
      "straight",
      [
-      15.0,
+      210.0,
       0.0
      ]
     ],
@@ -1598,7 +1598,7 @@
     "at": [
      "straight",
      [
-      45.0,
+      330.0,
       0.0
      ]
     ],
@@ -1640,7 +1640,7 @@
     "at": [
      "straight",
      [
-      240.0,
+      300.0,
       0.0
      ]
     ],
@@ -1654,7 +1654,7 @@
     "at": [
      "straight",
      [
-      135.0,
+      15.0,
       0.0
      ]
     ],
@@ -1668,7 +1668,7 @@
     "at": [
      "straight",
      [
-      150.0,
+      135.0,
       0.0
      ]
     ],
@@ -1690,7 +1690,7 @@
     "seen": 36
    }
   ],
-  "seconds": 315.6,
+  "seconds": 274.8,
   "pairs": {
    "all": 5565,
    "cross": 3942,
@@ -1804,7 +1804,7 @@
     "seen": 25
    }
   ],
-  "seconds": 13.3,
+  "seconds": 8.2,
   "pairs": {
    "all": 6903,
    "cross": 5818,
@@ -1996,7 +1996,7 @@
     "seen": 22
    }
   ],
-  "seconds": 8.9,
+  "seconds": 5.2,
   "pairs": {
    "all": 4186,
    "cross": 2714,
@@ -2364,7 +2364,7 @@
     "seen": 16
    }
   ],
-  "seconds": 11.2,
+  "seconds": 5.4,
   "pairs": {
    "all": 8128,
    "cross": 4298,
@@ -2424,7 +2424,7 @@
     "seen": 1
    }
   ],
-  "seconds": 405.3,
+  "seconds": 362.8,
   "pairs": {
    "all": 1485,
    "cross": 952,
@@ -3100,7 +3100,7 @@
     "seen": 6
    }
   ],
-  "seconds": 12.2,
+  "seconds": 7.2,
   "pairs": {
    "all": 48828,
    "cross": 17352,
@@ -3354,7 +3354,7 @@
     "seen": 4
    }
   ],
-  "seconds": 0.9,
+  "seconds": 0.6,
   "pairs": {
    "all": 210,
    "cross": 143,
@@ -3700,7 +3700,7 @@
     "seen": 11
    }
   ],
-  "seconds": 4.1,
+  "seconds": 2.4,
   "pairs": {
    "all": 990,
    "cross": 324,

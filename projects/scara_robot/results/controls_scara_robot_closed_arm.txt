@@ -1,5 +1,5 @@
 # controls/scara_robot_closed_arm
-# Autodesk Fusion 2706.1.17, run 2026-11-02 09:11, 19 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 23:43, 19 s
 
   FAIL no interference at rest [('First arm beam', 'Flange', 13299.06), ('First arm beam', 'Motor', 9852.035), ('First arm beam', 'Motor shaft J2', 615.752)]
 CONTROL: the first arm without its window; the interference check MUST fail

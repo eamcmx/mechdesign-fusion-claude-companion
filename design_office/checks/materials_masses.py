@@ -22,6 +22,7 @@ ONLY = ()             # the assemblies to weigh again, the others kept from the 
 
 def run(_context):
     ns = fc.load(PATH)
+    fc.no_message('a helper: it weighs the nine through build(), not through the dialog')
     print(ns['VERSION'])
     import os
     out = json.load(open(OUT)) if ONLY and os.path.exists(OUT) else {}

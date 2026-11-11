@@ -1,5 +1,5 @@
 # controls/four_bar_crossed
-# Autodesk Fusion 2706.1.17, run 2026-11-01 09:48, 2 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:16, 2 s
 
   the crossed rocker turned [-12.213, -22.401, -28.22] deg at 30, 60, 90 deg of the crank (open: -8.032, -8.190, -2.290); overlaps []
   FAIL the rocker where Freudenstein's open branch puts it

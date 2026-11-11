@@ -1,5 +1,5 @@
 # controls/making_sharp_tine
-# Autodesk Fusion 2706.1.17, run 2026-11-08 00:13, 920 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:32, 794 s
 
 Making 1.1 (2026-11-07)
   ok   Run opens the dialog
@@ -10,7 +10,7 @@ Making bracket: 3 setups, 27.4 min of cutting.
 notes: the lug contour: bottom height 'from surface top' (default 'from surface bottom'), -25.5 mm
 
 [Making 1.1 (2026-11-07)]
-  OK pressed, built in 61 s
+  OK pressed, built in 44 s
   ok   a new design opened
   ok   the parts made: bracket, spacer, tine
   ok   the bracket: 99399.2 mm3 against 99399.2 by hand (the arm turned); 2 holes, the bore, 4 root edges found
@@ -37,5 +37,6 @@ notes: the lug contour: bottom height 'from surface top' (default 'from surface 
   ok   by route: cast 3; gear 10; machined 135; moulded 2; the aircraft's 4; welded 14; by shape: 3D 30; milled 2.5D 21; plate profile 29; turned 65; turned, milled 22; weldment 1
   ok   known answers: the spacer turned, the tine a plate profile 10 thick, the turned bracket 3D, the jaw a weldment measured on 4 (its tube, two stubs and welds), the carrier cast, the crown wheel a gear
   ok   refused: No part called crane: Chapter 66 makes bracket, spacer, tine.
+  ok   a message gives the version tag Making 1.1 (2026-11-07)
 3 FAILED
 CONTROL: the tine's corner left sharp; the tine's volume, corner and nest lines above MUST fail, and they alone

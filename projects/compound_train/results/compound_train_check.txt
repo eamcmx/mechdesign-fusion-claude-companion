@@ -1,5 +1,5 @@
 # compound_train_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:19, 25 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:37, 23 s
 
 CompoundTrain 1.0 (2026-11-01)
   ok   a 60.00, z4 40, ratio 6.000, contact ratios 1.671 and 1.635 
@@ -13,8 +13,8 @@ Ratio (z2 / z1) (z4 / z3) = 6.000, the output turning the same way as the input
 
 Drive Joints on "Gear 1 turns": 90 deg turns the cluster -30.0 deg and gear 4 15.0 deg.
 
-[CompoundTrain 1.0 (2026-11-01)] CompoundTrain 1.0 (2026-11-01)
-  OK pressed, built in 9 s
+[CompoundTrain 1.0 (2026-11-01)]
+  OK pressed, built in 8 s
   ok   a new design opened
   ok   seven components: ['Base plate', 'Cluster', 'Countershaft', 'Gear 1', 'Gear 4', 'Spacer', 'Spindle']
   ok   one body each
@@ -35,4 +35,5 @@ Drive Joints on "Gear 1 turns": 90 deg turns the cluster -30.0 deg and gear 4 15
   ok   no tooth collision while gear 1 turns 0 to 18.0 deg in 13 positions 
   ok   {'m2': 1.75} refused: The second stage needs z3 + z4 = m1 (z1 + z2) / m2 = 68.57 teeth: not a whole number. Change m2 or the first stage.
   ok   {'z3': 12} refused: 12 teeth: below 18 teeth at 20 degrees the involute is undercut.
+  ok   a message gives the version tag CompoundTrain 1.0 (2026-11-01)
 ALL PASS

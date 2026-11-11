@@ -1,12 +1,12 @@
 # controls/design_for_assembly_material
-# Autodesk Fusion 2706.1.17, run 2026-11-06 20:38, 44 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:12, 42 s
 
 DesignForAssembly 1.0 (2026-11-04)
   ok   Run opens the dialog
 Design for assembly: the bag gripper, 114 pieces tagged; 26 essential (base 1, material 7, move 15, separate 3); after the three fixings 96 pieces (16 tines and 2 end blocks joined, 8 screws removed, 8 added); the new screws: 0 interferences; 323.499 kg to 323.474 kg.
 
 [DesignForAssembly 1.0 (2026-11-04)]
-  OK pressed, built in 44 s
+  OK pressed, built in 42 s
   ok   a new design opened
   ok   every piece answered in the model: 114 tagged, 114 read back, the lib 114
   ok   every first-level line of the bill has its answer (30 lines)
@@ -21,5 +21,6 @@ Design for assembly: the bag gripper, 114 pieces tagged; 26 essential (base 1, m
   ok   mass 323.499 kg before, 323.474 kg after
   ok   results/dfa.json written
   ok   refused: No answers for crane: Chapter 65 answers the test for the bag gripper.
+  ok   a message gives the version tag DesignForAssembly 1.0 (2026-11-04)
 3 FAILED
 CONTROL: the steel parts on aluminium answered 'different material' as they are; the minimum, its questions and the efficiency above MUST fail, and they alone

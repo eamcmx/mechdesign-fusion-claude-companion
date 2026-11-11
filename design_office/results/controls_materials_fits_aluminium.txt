@@ -1,12 +1,12 @@
 # controls/materials_fits_aluminium
-# Autodesk Fusion 2706.1.17, run 2026-11-03 10:47, 15 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:55, 16 s
 
 MaterialsFits 1.0 (2026-11-03)
   ok   Run opens the dialog
 bag: 41 made parts given their materials (none not in Fusion's library); the made parts weigh 72.77 kg, 72.73 kg with Fusion's generic materials; faces given a class and a roughness: 8 bearing seat, 1 dowel hole, 14 key seat, 2 keyed, 2 located, 4 sliding.
 
-[MaterialsFits 1.0 (2026-11-03)] MaterialsFits 1.0 (2026-11-03)
-  OK pressed, built in 14 s
+[MaterialsFits 1.0 (2026-11-03)]
+  OK pressed, built in 13 s
   ok   a new design opened
   ok   every made part's bodies in the library's material for its alloy: 41 parts, wrong []; the library lacks none
   aluminium 6082-T6: Aluminum 6061; steel 1020: Steel AISI 1020 107 HR; steel 1045 (C45): Steel AISI 1045 225 ANLD
@@ -20,5 +20,6 @@ bag: 41 made parts given their materials (none not in Fusion's library); the mad
   ok   the dowel's hole H7: [('Adapter plate', 'H7')]
   ok   the made parts weigh 72.7746 kg, volume times the library's density 72.7746 kg (72.7342 kg with the generic materials)
   ok   {'key': 'gearbox'} refused: No assembly called gearbox: the nine are wrist, flap, axle, robot, changer, clamp, vacuum, bag, unit.
+  ok   a message gives the version tag MaterialsFits 1.0 (2026-11-03)
 1 FAILED
 CONTROL: the aluminium housing's J7 removed; the end plates' line above MUST fail, and it alone

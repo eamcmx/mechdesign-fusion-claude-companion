@@ -1,5 +1,5 @@
 # controls/scara_module_long_shaft
-# Autodesk Fusion 2706.1.17, run 2026-11-02 07:50, 6 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 23:43, 6 s
 
   FAIL no interference at rest [('Flexspline 20', 'Motor shaft J2', 75.398)]
 CONTROL: the motor shaft reaches the flexspline; the interference check MUST fail

@@ -1,5 +1,5 @@
 # flap_actuator_check
-# Autodesk Fusion 2706.1.17, run 2026-11-02 06:05, 45 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:39, 40 s
 
 FlapActuator 2.1 (2026-11-02)
   ok   the nut's life 4.2727, the screw's torque 23710.0 N mm and its back-driving torque -30800.9 N mm recomputed from the linkage 
@@ -11,8 +11,8 @@ Rod end centre 378.96 mm from the gimbal, retracted.
 
 Parts: 43 components; 1 Actuator housing, 1 Ball nut R32-10T4-RSI, 1 Ball screw 32x10, 2 Bearing 6201, 2 Bearing BSD 2562 CGA, 6 Cover screw M5x16, 1 Encoder, 1 Encoder pinion z26, 1 Encoder shaft, 1 End bolt M8x20, 1 End stop, 1 Gear cover, 1 Gearhead shaft, 1 Guide key, 1 Idler gear z30, 1 Idler pin, 1 Jam nut M20x1.5, 1 Key 8x7x16, 4 Motor screw M5x12, 1 Motor unit, 1 Nut key 6x6.5x32, 1 Nut retaining ring, 1 Pinion z18, 1 Piston rod, 1 Ring nut M66x1.5, 1 Rod end SI 20 ES, 1 Rod seal, 1 Screw gear z54, 1 Stop bolt M8x16, 2 Trunnion, 2 Washer M8.
 
-[FlapActuator 2.1 (2026-11-02)] FlapActuator 2.1 (2026-11-02)
-  OK pressed, built in 31 s
+[FlapActuator 2.1 (2026-11-02)]
+  OK pressed, built in 27 s
   ok   a new design opened
   ok   six subassemblies: ['Housing', 'Screw', 'Rod', 'Idler', 'Pinion', 'Encoder pinion']
   parts: 43 components, 31 kinds: [('Actuator housing', 1), ('Ball nut R32-10T4-RSI', 1), ('Ball screw 32x10', 1), ('Bearing 6201', 2), ('Bearing BSD 2562 CGA', 2), ('Cover screw M5x16', 6), ('Encoder', 1), ('Encoder pinion z26', 1), ('Encoder shaft', 1), ('End bolt M8x20', 1), ('End stop', 1), ('Gear cover', 1), ('Gearhead shaft', 1), ('Guide key', 1), ('Idler gear z30', 1), ('Idler pin', 1), ('Jam nut M20x1.5', 1), ('Key 8x7x16', 1), ('Motor screw M5x12', 4), ('Motor unit', 1), ('Nut key 6x6.5x32', 1), ('Nut retaining ring', 1), ('Pinion z18', 1), ('Piston rod', 1), ('Ring nut M66x1.5', 1), ('Rod end SI 20 ES', 1), ('Rod seal', 1), ('Screw gear z54', 1), ('Stop bolt M8x16', 1), ('Trunnion', 2), ('Washer M8', 2)]
@@ -29,4 +29,5 @@ Parts: 43 components; 1 Actuator housing, 1 Ball nut R32-10T4-RSI, 1 Ball screw 
   Piston rod 1.268 kg
   Screw gear z54 0.375 kg
   ok   {'fp': 5.0} refused: The actuator falls short: the nut R32-10T4-RSI lasts 0.92 of the 60000 strokes at f_p 5.00.
+  ok   a message gives the version tag FlapActuator 2.1 (2026-11-02)
 ALL PASS

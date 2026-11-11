@@ -1,5 +1,5 @@
 # scara_modules_check
-# Autodesk Fusion 2706.1.17, run 2026-11-02 07:33, 6 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:33, 6 s
 
 ScaraJointModules 1.0 (2026-11-02)
   ok   J1: the average torque 150.84 N m and the life 23984 h worked again (the module: 150.84, 23984)
@@ -10,11 +10,12 @@ J2: CSG-20-50-2UH, average torque 26.4 N m (limit 44), life 15121 h on radial mo
 
 Parts: 42 components; 1 CSG-20-50-2UH housing, 1 CSG-40-50-2UH housing, 8 Case bolt M5, 10 Case bolt M8, 2 Cross rollers, 2 Flexspline, 1 Module plate J1, 1 Module plate J2, 4 Motor bolt M5, 4 Motor bolt M8, 1 Motor shaft J1, 1 Motor shaft J2, 2 Output flange, 1 Servo motor J1, 1 Servo motor J2, 2 Wave generator.
 
-[ScaraJointModules 1.0 (2026-11-02)] ScaraJointModules 1.0 (2026-11-02)
+[ScaraJointModules 1.0 (2026-11-02)]
   OK pressed, built in 5 s
   ok   a new design opened
   ok   two modules: ['J1 module', 'J2 module']
   parts: 42 components, 16 kinds: [('CSG-20-50-2UH housing', 1), ('CSG-40-50-2UH housing', 1), ('Case bolt M5', 8), ('Case bolt M8', 10), ('Cross rollers', 2), ('Flexspline', 2), ('Module plate J1', 1), ('Module plate J2', 1), ('Motor bolt M5', 4), ('Motor bolt M8', 4), ('Motor shaft J1', 1), ('Motor shaft J2', 1), ('Output flange', 2), ('Servo motor J1', 1), ('Servo motor J2', 1), ('Wave generator', 2)]
+  ok   the parts as listed 
   ok   no interference among the 42 parts at rest 
   ok   J1: the output turned 7.2 deg, the input -360.0 deg: -50.0000 to one, the other way
   ok   J1: the output turned 30.0 deg, the input -1500.0 deg: -50.0000 to one, the other way
@@ -28,4 +29,5 @@ Parts: 42 components; 1 CSG-20-50-2UH housing, 1 CSG-40-50-2UH housing, 8 Case b
   CSG-40 unit as drawn: 7.83 kg; the catalogue: 5.00 kg
   CSG-20 unit as drawn: 1.68 kg; the catalogue: 0.98 kg
   ok   {'size1': 32.0} refused: The CSG-32-50-2UH falls short at J1: an average torque of 150.8 N m against its limit of 140; a life of 4126 h against 20000.
+  ok   a message gives the version tag ScaraJointModules 1.0 (2026-11-02)
 ALL PASS

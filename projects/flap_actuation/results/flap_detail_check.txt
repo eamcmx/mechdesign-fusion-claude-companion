@@ -1,5 +1,5 @@
 # flap_detail_check
-# Autodesk Fusion 2706.1.17, run 2026-11-03 12:32, 105 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:41, 101 s
 
 FlapDetail 1.0 (2026-11-03)
   ok   Run opens the dialog
@@ -9,7 +9,7 @@ Zones hardened: 3 faces; by hand: 12 faces.
 flap: 32 made parts given their materials (none not in Fusion's library); the made parts weigh 335.17 kg, 334.93 kg with Fusion's generic materials; faces given a class and a roughness: 3 bearing seat, 7 key seat, 23 located, 12 plain bearing seat.
 
 [FlapDetail 1.0 (2026-11-03)]
-  OK pressed, built in 93 s
+  OK pressed, built in 89 s
   ok   a new design opened
   ok   the motor unit's bodies along the axis and across: [('Brake to specification', (191.1, 216.0, 52.0)), ('Flange', (40.0, 46.0, 60.0)), ('Gearhead GP 52 C 26-1', (46.0, 111.0, 52.0)), ('Motor EC-i 52 180 W', (111.0, 191.1, 52.0))]
   ok   the unit ends 176.0 mm from its flange's face, the specification's 176; the brake 24.9 long
@@ -27,4 +27,5 @@ flap: 32 made parts given their materials (none not in Fusion's library); the ma
   ok   no interference among the 64 parts at 0, 10, 20, 30 and 40 deg 
   ok   none inside the actuator's 45 parts, flap up 
   ok   {'i_gh': 21.0} refused: The motor unit falls short: at 21:1 the motor would give 477.9 mN m, over its 438 continuous.
+  ok   a message gives the version tag FlapDetail 1.0 (2026-11-03)
 ALL PASS

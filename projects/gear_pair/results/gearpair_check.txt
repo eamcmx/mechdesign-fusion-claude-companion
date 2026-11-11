@@ -1,5 +1,5 @@
 # gearpair_check
-# Autodesk Fusion 2706.1.17, run 2026-11-09 20:19, 9 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:42, 12 s
 
 GearPairOnPlate 1.2 (2026-11-09)
   ok   Run opens the dialog
@@ -11,9 +11,9 @@ Ratio z2 / z1 = 40 / 20 = 2.000, gear 2 turning the other way
 
 Drive Joints on "Gear 1 turns": 90 deg turns gear 2 by 45.0 deg the other way.
 
-[GearPairOnPlate 1.2 (2026-11-09)] GearPairOnPlate 1.2 (2026-11-09)
-  OK pressed, built in 3 s
-  ok   a new design opened (documents 5 -> 6)
+[GearPairOnPlate 1.2 (2026-11-09)]
+  OK pressed, built in 4 s
+  ok   a new design opened (documents 1 -> 2)
   ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
   ok   one body each: [1, 1, 1, 1, 1]
   ok   gear 2 and shaft 2 at x = a = 60.00 mm (measured 60.000, 60.000)
@@ -35,4 +35,5 @@ Drive Joints on "Gear 1 turns": 90 deg turns gear 2 by 45.0 deg the other way.
   ok   gear 1 driven 90 deg: gear 2 joint reads -36.000, its body turned -36.000 deg about z (want -36.000)
   ok   no tooth collision while gear 1 turns 0 to 18.0 deg in 13 positions 
   ok   z1 = 12 refused: 12 teeth: below 18 teeth at 20 degrees the involute is undercut. Choose 18 or more.
+  ok   a message gives the version tag GearPairOnPlate 1.2 (2026-11-09)
 ALL PASS

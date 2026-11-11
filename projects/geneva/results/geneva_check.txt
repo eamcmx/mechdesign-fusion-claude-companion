@@ -1,5 +1,5 @@
 # geneva_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:20, 5 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:42, 4 s
 
 Geneva 1.0 (2026-11-01)
   ok   C 42.426, b 30.000, indexing 90.0 deg, dwell 270.0 deg, peak speed ratio 2.414
@@ -12,7 +12,7 @@ Peak wheel speed at mid-index: 2.414 times the driver's
 
 Turn "Driver turns" and set "Wheel turns" by the Geneva law: Fusion cannot link them.
 
-[Geneva 1.0 (2026-11-01)] Geneva 1.0 (2026-11-01)
+[Geneva 1.0 (2026-11-01)]
   OK pressed, built in 3 s
   ok   a new design opened
   ok   three components: ['Driver', 'Ground', 'Wheel']
@@ -24,4 +24,5 @@ Turn "Driver turns" and set "Wheel turns" by the Geneva law: Fusion cannot link 
   ok   after one driver turn the wheel has turned -90.000 deg
   ok   {'n': 2} refused: 2 slots: choose from 3 to 12.
   ok   {'dp': 12.0} refused: A pin of 12.0 mm is too large for a = 30.0 mm: at most a / 3 = 10.0 mm.
+  ok   a message gives the version tag Geneva 1.0 (2026-11-01)
 ALL PASS

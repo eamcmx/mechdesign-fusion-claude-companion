@@ -1,5 +1,5 @@
 # controls/geneva_centre_distance
-# Autodesk Fusion 2706.1.17, run 2026-11-01 05:23, 3 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:16, 3 s
 
   steps with the driver in the wheel (driver deg, mm^3): [(140, 8.393), (150, 7.544), (160, 5.434), (170, 1.579), (190, 1.579), (200, 5.434), (210, 7.544), (220, 8.393)]
   FAIL no interference at the 36 steps

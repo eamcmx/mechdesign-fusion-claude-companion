@@ -1,5 +1,5 @@
 # controls/axle_detail_spacer
-# Autodesk Fusion 2706.1.17, run 2026-11-03 13:04, 161 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:51, 147 s
 
 AxleDetail 1.0 (2026-11-03)
   ok   Run opens the dialog
@@ -9,7 +9,7 @@ By hand: 198 faces, 192 of them new.
 axle: 30 made parts given their materials (none not in Fusion's library); the made parts weigh 153.16 kg, 153.16 kg with Fusion's generic materials; faces given a class and a roughness: 18 bearing seat, 4 located, 16 sliding.
 
 [AxleDetail 1.0 (2026-11-03)]
-  OK pressed, built in 90 s
+  OK pressed, built in 87 s
   ok   a new design opened
   ok   the cups' bores 100, 90 and 120 across, none 0.1 over: the casting's radii [40.0, 42.6, 44.0, 45.0, 50.0, 60.0]
   ok   the caps' bores 120
@@ -24,5 +24,6 @@ axle: 30 made parts given their materials (none not in Fusion's library); the ma
   ok   no interference among the 106 parts at rest 
   ok   no interference driving straight nor in a turn  
   ok   {'pitch': 1.0} refused: The adjusters' thread falls short: at a pitch of 1.0 mm one thread carries the case bearing's 21.6 kN at 174.0 MPa in shear, over the 152.9 a factor of 2 allows.
+  ok   a message gives the version tag AxleDetail 1.0 (2026-11-03)
 1 FAILED
 CONTROL: the spacer left at 63.3 mm; the spacer's line above MUST fail, and it alone

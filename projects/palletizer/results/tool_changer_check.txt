@@ -1,5 +1,5 @@
 # tool_changer_check
-# Autodesk Fusion 2706.1.17, run 2026-11-09 20:57, 4 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:44, 5 s
 
 ToolChanger 1.0 (2026-11-02)
   ok   Run opens the dialog
@@ -9,7 +9,7 @@ Lock: piston 100 mm at 5.5 bar, air to lock and to free; cam 5.0 deg (holds itse
 
 Parts: 21 components; 1 Cam, 6 Cap screw M10x35, 1 Master body, 1 Master cover, 1 Pin 10 robot, 2 Pin 12 tool, 1 Piston with rod, 1 Robot plate ISO 9409-1-160-6-M10, 6 Segment, 1 Tool plate ISO 9409-1-160-6-M10.
 
-[ToolChanger 1.0 (2026-11-02)] ToolChanger 1.0 (2026-11-02)
+[ToolChanger 1.0 (2026-11-02)]
   OK pressed, built in 3 s
   ok   a new design opened
   parts: 21 components, 10 kinds
@@ -25,4 +25,5 @@ Parts: 21 components; 1 Cam, 6 Cap screw M10x35, 1 Master body, 1 Master cover, 
   weighed: robot plate 5.47 kg, master with piston and segments 16.91 kg, tool plate 6.55 kg
   ok   {'alpha': 6.0} refused: A locking angle of 6.0 deg is not held by friction as low as 0.10 (atan = 5.71 deg): the lock would let go without air.
   ok   {'p_bar': 1.5} refused: At 1.5 bar the clamp is 11.2 kN, under 1.5 times the cycle's need (25.7 kN).
+  ok   a message gives the version tag ToolChanger 1.0 (2026-11-02)
 ALL PASS

@@ -1,5 +1,5 @@
 # controls/clamp_gripper_bearing_seat
-# Autodesk Fusion 2706.1.17, run 2026-11-02 23:18, 418 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:11, 477 s
 
   FAIL the jaws from 200 to 650 mm in 25 mm steps: nothing in the way [(650, [('Seat BK25', 'Carriage plate', 24000.0)])]
 CONTROL: the fixed bearing moved in to x = -860; the check above MUST fail

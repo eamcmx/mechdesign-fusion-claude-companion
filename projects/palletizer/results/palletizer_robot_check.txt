@@ -1,5 +1,5 @@
 # palletizer_robot_check
-# Autodesk Fusion 2706.1.17, run 2026-11-02 20:21, 14 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 20:47, 14 s
 
 PalletizerRobot 1.0 (2026-11-02)
   ok   Run opens the dialog
@@ -10,7 +10,7 @@ Bearings: 32213 pairs at the elbow and the wrist, 22213 E in the parallel rod's 
 
 Parts: 100 components; 2 Balancer barrel, 1 Balancer cross pin Q, 3 Balancer lug, 1 Balancer pin P, 2 Balancer rod, 1 Base flange, 2 Bearing 22207 E Levelling rod 1 end, 2 Bearing 22207 E Levelling rod 2 end, 1 Bearing 22207 E triangle, 2 Bearing 22213 E Parallel rod end, 2 Bearing 32213 elbow, 2 Bearing 32213 wrist, 1 Bearing 61836 crank, 1 Bearing 61856 MA lower arm, 1 Cheek J2 side, 1 Cheek J3 side, 1 Column, 1 Counterweight block, 4 Counterweight standoff, 2 Coupling disc, 1 Coupling spacer, 1 Crank shaft, 1 Crank web, 1 E bracket, 1 Elbow hub, 1 Elbow pin, 1 Floor plate, 2 Fork plate, 2 Front fork cheek, 2 Gas bottle, 1 H plate, 1 Hub boss J2 side, 1 Hub boss J3 side, 1 J1 reducer plate, 1 J1 stop, 1 J1 stop dog, 1 J2 support housing, 1 J3 bracket, 2 J3 bracket post, 1 J3 support housing, 1 Levelling rod 1 body, 1 Levelling rod 1 end 1 eye, 1 Levelling rod 1 end 2 eye, 1 Levelling rod 2 body, 1 Levelling rod 2 end 1 eye, 1 Levelling rod 2 end 2 eye, 1 Lower arm box, 1 Parallel rod body, 1 Parallel rod end 1 eye, 1 Parallel rod end 2 eye, 1 Pin C, 1 Pin D, 1 Pin E, 1 Pin F, 1 Pin G, 1 Pin H, 1 RV-500N case J2, 1 RV-500N case J3, 1 RV-500N output J2, 1 RV-500N output J3, 1 RV-700N case J1, 1 RV-700N output J1, 1 RV-80N case J4, 1 RV-80N output J4, 1 Rear lever, 1 Servo motor J1, 1 Servo motor J2, 1 Servo motor J3, 1 Servo motor J4, 1 Slewing ring balls, 1 Slewing ring inner ring, 1 Slewing ring outer ring, 1 Tool flange, 1 Torque tube, 1 Triangle plate, 1 Turret plate, 1 Upper arm box, 2 Upper arm cheek, 1 Wrist housing, 1 Wrist hub, 1 Wrist pin, 1 Yoke bulkhead.
 
-[PalletizerRobot 1.0 (2026-11-02)] PalletizerRobot 1.0 (2026-11-02)
+[PalletizerRobot 1.0 (2026-11-02)]
   OK pressed, built in 12 s
   ok   a new design opened
   parts: 100 components, 82 kinds
@@ -23,4 +23,5 @@ Parts: 100 components; 2 Balancer barrel, 1 Balancer cross pin Q, 3 Balancer lug
   ok   the inertia about a centre: the block's Iyy 3.527 against m (a^2 + h^2)/12 = 3.527 kg m2
   weighed: turret 1281.8 kg at (104.5, 61.2, 751.2) mm; lower arm 529.9 kg at (300.0, -12.9, 1382.4) mm; crank and counterweight 292.9 kg at (-82.2, 693.9, 999.1) mm; parallel rod 36.2 kg at (-150.0, 710.0, 1650.0) mm; levelling rod 1 11.6 kg at (-90.0, -280.0, 1800.0) mm; triangle 19.9 kg at (155.2, -233.0, 2431.3) mm; upper arm 270.4 kg at (583.4, 257.2, 2300.0) mm; levelling rod 2 12.3 kg at (1000.0, -280.0, 2550.0) mm; wrist housing 127.1 kg at (1846.0, -25.0, 2233.3) mm; tool flange 13.0 kg at (1950.0, 0.0, 1907.2) mm; balancer 20.2 kg at (300.0, 0.0, 1046.1) mm; base 992.7 kg
   written: lib/palletizer_weighed.json
+  ok   a message gives the version tag PalletizerRobot 1.0 (2026-11-02)
 ALL PASS

@@ -1,5 +1,5 @@
 # joint_census
-# Autodesk Fusion 2706.1.17, run 2026-11-03 10:24, 221 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 20:09, 0 s
 
   wrist: counted before
   wrist: 97 components, 31 made; 30 seats of bought parts (0 with a gap, 2 key seats), 18 made-in-made fits; bearings with a seat 8 of 8
@@ -72,16 +72,20 @@
       drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
       drawn clear: Half shaft R in Side gear R, 35.200 mm, 0.0900 mm
   ok   axle: every bearing has its seats on made faces, touching or with its gap recorded: 12 bearings, alone []; the nearest []
+  robot: counted before
   robot: 100 components, 72 made; 26 seats of bought parts (0 with a gap, 0 key seats), 7 made-in-made fits; bearings with a seat 13 of 13
       drawn clear: J1 reducer plate in Column, 580.000 mm, 0.0100 mm
   ok   robot: every bearing has its seats on made faces, touching or with its gap recorded: 13 bearings, alone []; the nearest []
+  changer: counted before
   changer: 21 components, 12 made; 7 seats of bought parts (0 with a gap, 0 key seats), 3 made-in-made fits; bearings with a seat 0 of 0
       drawn clear: Master cover in Robot plate ISO 9409-1-160-6-M10, 100.000 mm, 0.0100 mm
       drawn clear: Piston with rod in Master body, 40.200 mm, 0.1000 mm
       drawn clear: Piston with rod in Master body, 100.000 mm, 0.0500 mm
   ok   changer: every bearing has its seats on made faces, touching or with its gap recorded: 0 bearings, alone []; the nearest []
+  clamp: counted before
   clamp: 55 components, 11 made; 1 seats of bought parts (0 with a gap, 0 key seats), 0 made-in-made fits; bearings with a seat 0 of 0
   ok   clamp: every bearing has its seats on made faces, touching or with its gap recorded: 0 bearings, alone []; the nearest []
+  vacuum: counted before
   vacuum: 193 components, 82 made; 1 seats of bought parts (0 with a gap, 0 key seats), 72 made-in-made fits; bearings with a seat 0 of 0
       drawn clear: Plunger 1-1 in Plate, 16.200 mm, 0.1000 mm
       drawn clear: Plunger 1-1 in Sleeve 1, 16.200 mm, 0.1000 mm
@@ -156,8 +160,10 @@
       drawn clear: Plunger 6-6 in Plate, 16.200 mm, 0.1000 mm
       drawn clear: Plunger 6-6 in Sleeve 36, 16.200 mm, 0.1000 mm
   ok   vacuum: every bearing has its seats on made faces, touching or with its gap recorded: 0 bearings, alone []; the nearest []
+  bag: counted before
   bag: 82 components, 41 made; 13 seats of bought parts (0 with a gap, 2 key seats), 6 made-in-made fits; bearings with a seat 4 of 4
   ok   bag: every bearing has its seats on made faces, touching or with its gap recorded: 4 bearings, alone []; the nearest []
+  unit: counted before
   unit: 53 components, 12 made; 1 seats of bought parts (0 with a gap, 0 key seats), 7 made-in-made fits; bearings with a seat 0 of 0
   ok   unit: every bearing has its seats on made faces, touching or with its gap recorded: 0 bearings, alone []; the nearest []
 ALL PASS

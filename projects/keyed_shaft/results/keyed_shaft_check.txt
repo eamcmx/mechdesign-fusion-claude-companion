@@ -1,5 +1,5 @@
 # keyed_shaft_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:21, 5 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 20:09, 5 s
 
 KeyedShaft 1.0 (2026-11-01)
   ok   Run opens the dialog
@@ -13,7 +13,7 @@ Torque 30.0 N.m: force on the key F = 2T/D = 3000 N
   crushing stress      sigma = F / ((h - t1) L) = 66.67 MPa (allowed 100)
   shaft torsion stress 16T / (pi D^3)           = 19.10 MPa
 
-[KeyedShaft 1.0 (2026-11-01)] KeyedShaft 1.0 (2026-11-01)
+[KeyedShaft 1.0 (2026-11-01)]
   OK pressed, built in 2 s
   ok   a new design opened
   ok   four components: ['Bearing block', 'Hub', 'Key', 'Shaft']
@@ -32,4 +32,5 @@ Torque 30.0 N.m: force on the key F = 2T/D = 3000 N
   ok   {'L_key': 30.0} refused: The key (30.0 mm) is longer than the hub (25.0 mm).
   ok   {'D': 70.0} refused: A shaft of 70.0 mm is outside the DIN 6885 table used here (above 10 mm, up to 58 mm).
   ok   {'T': 100.0} refused: The key is overstressed: key shear stress 92.6 MPa is over 60 MPa by 32.6 MPa; crushing stress 222.2 MPa is over 100 MPa by 122.2 MPa. Use a longer key or a larger shaft.
+  ok   a message gives the version tag KeyedShaft 1.0 (2026-11-01)
 ALL PASS

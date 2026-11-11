@@ -1,5 +1,5 @@
 # worm_wheel_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:22, 12 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:45, 10 s
 
 WormWheel 1.0 (2026-11-01)
   ok   all values recomputed independently 
@@ -12,7 +12,7 @@ Wheel pitch diameter d2 = 60.00 mm; centre distance a = 40.00 mm; ratio 30.0
 Wheel face width 7.854 mm (asked 8.000): its teeth turn 1.5 deg over it
 Normal pressure angle 19.909 deg; efficiency 0.649 at f = 0.05, 0.479 at f = 0.10; back-driving at f = 0.10: -0.063; self-locking above f = 0.0940
 
-[WormWheel 1.0 (2026-11-01)] WormWheel 1.0 (2026-11-01)
+[WormWheel 1.0 (2026-11-01)]
   OK pressed, built in 5 s
   ok   a new design opened
   ok   four components: ['Wheel', 'Wheel shaft', 'Worm', 'Worm shaft']
@@ -24,4 +24,5 @@ Normal pressure angle 19.909 deg; efficiency 0.649 at f = 0.05, 0.479 at f = 0.1
   ok   no interference at the 12 steps of 30 deg through one worm turn 
   ok   {'z2': 16} refused: 16 teeth: below 18 teeth the wheel is undercut.
   ok   {'q': 2.0} refused: Lead angle 26.6 deg: more than 25 degrees; use more teeth or a larger q.
+  ok   a message gives the version tag WormWheel 1.0 (2026-11-01)
 ALL PASS

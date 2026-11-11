@@ -1,5 +1,5 @@
 # spur_reducer_check
-# Autodesk Fusion 2706.1.17, run 2026-11-09 20:56, 14 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:34, 17 s
 
 SpurReducer 1.1 (2026-11-09)
   ok   the sizing recomputed independently 
@@ -13,8 +13,8 @@ Keys 5x5x28, 10x8x42, 8x7x52: crushing 90.1, 96.7, 98.5 MPa.
 
 Parts: 63 components; 2 Bearing 6204 balls, 2 Bearing 6204 inner ring, 2 Bearing 6204 outer ring, 2 Bearing 6206 balls, 2 Bearing 6206 inner ring, 2 Bearing 6206 outer ring, 1 Cap input blind, 1 Cap input through, 1 Cap output blind, 1 Cap output through, 16 Cap screw M6x16, 2 Dowel 8x24, 1 Drain plug M16, 1 Filler plug M16, 1 Gear z95, 1 Housing base, 1 Housing cover, 1 Key 10x8x42 gear, 1 Key 5x5x28 input, 1 Key 8x7x52 output, 1 Lip seal 20x35x7, 1 Lip seal 30x47x7, 8 Nut M10, 1 Output shaft, 1 Pinion shaft, 8 Screw M10x45, 1 Spacer.
 
-[SpurReducer 1.1 (2026-11-09)] SpurReducer 1.1 (2026-11-09)
-  OK pressed, built in 12 s
+[SpurReducer 1.1 (2026-11-09)]
+  OK pressed, built in 13 s
   ok   a new design opened
   ok   three subassemblies: ['Housing', 'Input shaft assembly', 'Output shaft assembly']
   ok   the parts, counted from Fusion: 63 components, 27 kinds 
@@ -42,4 +42,5 @@ Parts: 63 components; 2 Bearing 6204 balls, 2 Bearing 6204 inner ring, 2 Bearing
   ok   {'P': 4.5} refused: At 4.50 kW and 1440 rpm the chosen parts fall short: the pinion's flanks have a contact factor of 1.089 (1.1 needed); the in key bears 101.4 MPa and shears 40.5 MPa (100 and 60 allowed); the gear key bears 108.8 MPa and shears 32.6 MPa (100 and 60 allowed); the out key bears 110.8 MPa and shears 41.5 MPa (100 and 60 allowed).
   ok   {'life': 150000.0} refused: At 4.00 kW and 1440 rpm the chosen parts fall short: the pinion's flanks have a contact factor of 1.031 (1.1 needed); bearing 6204 lasts 99941 h (150000 h needed).
   ok   {'nd': 3.0} refused: At 4.00 kW and 1440 rpm the chosen parts fall short: the pinion's teeth have a bending factor of 2.99 (3.0 needed); the input end has a factor of safety of 2.94 (3.0 needed); the output end has a factor of safety of 2.29 (3.0 needed).
+  ok   a message gives the version tag SpurReducer 1.1 (2026-11-09)
 ALL PASS

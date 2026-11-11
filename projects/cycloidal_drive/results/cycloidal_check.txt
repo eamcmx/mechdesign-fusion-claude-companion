@@ -1,5 +1,5 @@
 # cycloidal_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:20, 8 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:37, 8 s
 
 CycloidalDrive 1.0 (2026-11-01)
   ok   N_d 10, ratio -10, K1 0.550, outline 25.40 to 28.40 mm 
@@ -12,7 +12,7 @@ K1 = e N_p / R = 0.550; the disc outline runs from 25.400 to 28.400 mm; gap 0.10
 
 Step the input 30 deg at a time: the output turns -3.0 deg per step.
 
-[CycloidalDrive 1.0 (2026-11-01)] CycloidalDrive 1.0 (2026-11-01)
+[CycloidalDrive 1.0 (2026-11-01)]
   OK pressed, built in 7 s
   ok   a new design opened
   ok   four components: ['Disc', 'Housing', 'Input', 'Output']
@@ -25,4 +25,5 @@ Step the input 30 deg at a time: the output turns -3.0 deg per step.
   ok   no interference at any of the 12 steps 
   ok   {'n_p': 40} refused: The pins overlap: 2 R sin(pi / N_p) = 4.71 mm is not more than the pin diameter + 1 mm.
   ok   {'e': 3.0} refused: K1 = e N_p / R = 1.100: the curve of the pin centre loops. Use a smaller eccentricity.
+  ok   a message gives the version tag CycloidalDrive 1.0 (2026-11-01)
 ALL PASS

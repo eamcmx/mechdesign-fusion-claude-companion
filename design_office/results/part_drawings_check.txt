@@ -1,9 +1,9 @@
 # part_drawings_check
-# Autodesk Fusion 2706.1.17, run 2026-11-09 20:32, 730 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:01, 825 s
 
 PartDrawings 1.2 (2026-11-09)
   ok   Run opens the dialog
-Part drawings: 6 made in MechDesignFusionClaude Vol3/Chapter 63 check 2026-11-09 2020.
+Part drawings: 6 made in MechDesignFusionClaude Vol3/Chapter 63 check 2026-11-10 2047.
 P13-018 Stop bracket, opening: 2 views, 5 dimensions, 2 symbols, P13-018.pdf
 P10-006 Segment: 3 views, 4 dimensions, 2 symbols, P10-006.pdf
 A01-016 Spacer, pinion: 2 views, 3 dimensions, 0 symbols, A01-016.pdf
@@ -12,7 +12,7 @@ W01-018 Stop disc: 3 views, 6 dimensions, 0 symbols, W01-018.pdf
 P13-000 Bag gripper, the opening stop: 1 views, 0 dimensions, 0 symbols, P13-000.pdf
 
 [PartDrawings 1.2 (2026-11-09)]
-  OK pressed, built in 730 s
+  OK pressed, built in 824 s
   ok   a new design opened
   ok   six drawings: bracket, disc, fitting, segment, spacer, stop
   ok   P13-018 Stop bracket, opening: A3 420 x 297, 1 sheet(s), 2 views on the first
@@ -43,6 +43,7 @@ P13-000 Bag gripper, the opening stop: 1 views, 0 dimensions, 0 symbols, P13-000
   ok   A01-016: its table, 8 rows: Length 67.8 nominal, turned to 68.6; Grinding to each axle, 67.78 to 68.46; Faces both ground in one set-up; Datum A the face on cone A; Face on cone B parallel to A within 0.013 (IT5); Ø45.1 bore H7, Ra 1.6
   ok   F01-022: its table, 4 rows: Bores envelope (E), ISO 14405-1; 2 × Ø35 bore N7, Rz 16.0
   ok   W01-018: its table, 4 rows: Ø15 bore H7, Ra 1.6; keyseat JS9, Ra 3.2
-  ok   every file in MechDesignFusionClaude Vol3/Chapter 63 check 2026-11-09 2020 once: 12 files
+  ok   every file in MechDesignFusionClaude Vol3/Chapter 63 check 2026-11-10 2047 once: 12 files
   ok   refused: No part called crane: Chapter 63 draws bracket, segment, spacer, fitting, disc, stop.
+  ok   a message gives the version tag PartDrawings 1.2 (2026-11-09)
 ALL PASS

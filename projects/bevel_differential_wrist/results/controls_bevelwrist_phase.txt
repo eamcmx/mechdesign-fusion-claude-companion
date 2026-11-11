@@ -1,5 +1,5 @@
 # controls/bevelwrist_phase
-# Autodesk Fusion 2706.1.17, run 2026-11-01 02:57, 16 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:52, 16 s
 
 BevelWristPrompt 1.0 (2026-11-01)
   ok   Run opens the dialog
@@ -10,7 +10,7 @@ Drive "Pitch" to pitch the wrist and "Roll" to roll it. With the side gears' wor
   pitch = (thL + thR) / 2,   roll = (thL - thR) / 2
 
 [BevelWristPrompt 1.0 (2026-11-01)] BevelWristPrompt 1.0 (2026-11-01)
-  OK pressed with the defaults, built in 7 s
+  OK pressed with the defaults, built in 8 s
   ok   a new design opened
   ok   parts: ['Frame', 'Idler gear', 'Output gear', 'Side gear L', 'Side gear R', 'Yoke']
   ok   one body each: {'Frame': 1, 'Yoke': 1, 'Output gear': 1, 'Idler gear': 1, 'Side gear R': 1, 'Side gear L': 1}

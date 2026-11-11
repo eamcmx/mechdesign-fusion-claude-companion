@@ -1,5 +1,5 @@
 # controls/stop_bracket_diagonal
-# Autodesk Fusion 2706.1.17, run 2026-11-07 14:24, 39 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 23:48, 32 s
 
 StopBracket 1.0 (2026-11-07)
   ok   Run opens the dialog
@@ -7,7 +7,7 @@ Opening stop brackets: the arm as Chapter 56 made it, its 4 sides within 45.000 
 Sweep of the bag gripper: 16 states, interference at 16 states, 4 contacts made in motion.
 
 [StopBracket 1.0 (2026-11-07)]
-  OK pressed, built in 39 s
+  OK pressed, built in 31 s
   ok   a new design opened
   ok   the dialog's root radius: 2.5 mm
   FAIL Stop bracket open 1: 4 sides of the arm, the worst 45.0000 deg off square to the push
@@ -22,5 +22,6 @@ Sweep of the bag gripper: 16 states, interference at 16 states, 4 contacts made 
   ok   contacts made in motion: Shock absorber DYSC-25-25-Y1F closed 1 / Lever A; Shock absorber DYSC-25-25-Y1F closed 2 / Lever B; Shock absorber DYSC-25-25-Y1F open 1 / Lever A; Shock absorber DYSC-25-25-Y1F open 2 / Lever B
 closest to the opening brackets: 
   ok   refused: A root radius of 7 mm is refused: it must be at least 0 and under 6.5 mm, where the fillet's toe would reach the M8 heads' seats.
+  ok   a message gives the version tag StopBracket 1.0 (2026-11-07)
 7 FAILED
 CONTROL: the arm left on its diagonal; the sides, volume, heads and sweep lines above MUST fail, and they alone

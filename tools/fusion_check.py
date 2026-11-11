@@ -18,20 +18,63 @@ def ok(cond, msg):
     return cond
 
 
+messages = []          # what the script under test showed in its message boxes, in order
+loaded = []            # the scripts loaded by load(), the one under test first
+
+
+def _message(*args, **kwargs):
+    """The script's ui.messageBox, recorded and printed instead of shown."""
+    text = str(args[0]) if args else ''
+    messages.append(text)
+    print(text)
+    return adsk.core.DialogResults.DialogOK
+
+
+exempt = []           # why the script's message is not tested here (a helper that calls its functions, not its dialog)
+
+
+def no_message(why):
+    """For a helper file kept with the checks that runs a script's functions but never its dialog."""
+    exempt.append(why)
+
+
+def message_ok():
+    """Every prompt's first acceptance criterion: a message shows what was built and the script's version tag."""
+    if exempt:
+        print('  --   no message tested: ' + exempt[0])
+        return True
+    if not loaded or 'VERSION' not in loaded[0]:
+        return True
+    v = loaded[0]['VERSION']
+    return ok(any(v in m for m in messages), 'a message gives the version tag %s' % v)
+
+
 def verdict():
+    message_ok()
     print('ALL PASS' if not fails else '%d FAILED' % len(fails))
 
 
 def load(path, edits=()):
     """Load a script's source as a namespace, its message boxes printed instead of shown. `edits` = (old, new) pairs
     applied first; a control uses them to break one line on purpose (each old text must be found exactly once)."""
-    src = open(path, encoding='utf-8').read().replace('ui.messageBox(', 'print(')
+    src = open(path, encoding='utf-8').read()
     for old, new in edits:
         if src.count(old) != 1:
             raise RuntimeError('control edit not found exactly once: %r' % old[:60])
         src = src.replace(old, new)
-    ns = {'__name__': 'mdfc_check', '__file__': path}
+    src = src.replace('ui.messageBox(', '_mdfc_message(')
+    ns = {'__name__': 'mdfc_check', '__file__': path, '_mdfc_message': _message}
     exec(compile(src, path, 'exec'), ns)
+    if callable(ns.get('build')):              # a check that calls build() itself sees the message run() would show
+        built = ns['build']
+
+        def build(*a, **k):
+            r = built(*a, **k)
+            if isinstance(r, str):
+                messages.append(r)
+            return r
+        ns['build'] = build
+    loaded.append(ns)
     return ns
 
 

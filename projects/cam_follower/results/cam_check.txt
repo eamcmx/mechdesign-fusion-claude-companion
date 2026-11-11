@@ -1,5 +1,5 @@
 # cam_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:19, 8 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:27, 7 s
 
 CamFollower 1.0 (2026-11-01)
   ok   the script's lift agrees with the motion law (worst 9.8e-15 mm)
@@ -12,7 +12,7 @@ Largest pressure angle 14.97 deg; the pitch curve's smallest radius of curvature
 
 Turn "Cam turns" and set "Follower slides" to s(theta): Fusion cannot link them.
 
-[CamFollower 1.0 (2026-11-01)] CamFollower 1.0 (2026-11-01)
+[CamFollower 1.0 (2026-11-01)]
   OK pressed, built in 5 s
   ok   a new design opened
   ok   three components: ['Cam', 'Follower', 'Ground']
@@ -23,4 +23,5 @@ Turn "Cam turns" and set "Follower slides" to s(theta): Fusion cannot link them.
   ok   the gap measured by Fusion from 0.0500 to 0.0500 mm (0.05 wanted)
   ok   {'beta1': 40.0} refused: The pressure angle reaches 38.7 deg: above 30 deg. Use a longer rise or a larger base circle.
   ok   {'beta2': 200.0} refused: The motion takes 120 + 60 + 200 = 380 deg: more than one turn.
+  ok   a message gives the version tag CamFollower 1.0 (2026-11-01)
 ALL PASS

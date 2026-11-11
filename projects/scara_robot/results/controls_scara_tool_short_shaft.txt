@@ -1,5 +1,5 @@
 # controls/scara_tool_short_shaft
-# Autodesk Fusion 2706.1.17, run 2026-11-02 08:27, 6 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 23:43, 7 s
 
   ok   no interference at the full stroke 
   FAIL at the full stroke the shaft's top 136.00 mm, the screw nut's rotor's top 181.00 mm

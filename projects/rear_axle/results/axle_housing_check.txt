@@ -1,5 +1,5 @@
 # axle_housing_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 20:36, 11 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:13, 9 s
 
 AxleHousing 1.3 (2026-11-01)
   ok   the shaft in the hardest turn and the tube in the pothole recomputed: 2.4872, 141.996 MPa 
@@ -10,8 +10,8 @@ Tubes 80 x 8: 142.0 MPa in the pothole at the spring seat, factor 1.90.
 
 Parts: 57 components; 1 Banjo housing, 2 Bearing 6213 balls, 2 Bearing 6213 inner ring, 2 Bearing 6213 outer ring, 1 Breather, 8 Carrier nut M12, 8 Carrier stud M12, 10 Cover screw M8x20, 1 Drain plug M22, 1 Filler plug M22, 2 Half shaft, 2 Oil seal 74x100x10, 1 Rear cover, 2 Retainer plate, 2 Retaining ring, 12 Wheel stud M14.
 
-[AxleHousing 1.3 (2026-11-01)] AxleHousing 1.3 (2026-11-01)
-  OK pressed, built in 9 s
+[AxleHousing 1.3 (2026-11-01)]
+  OK pressed, built in 8 s
   ok   a new design opened
   ok   three subassemblies: ['Housing', 'Wheel end L', 'Wheel end R']
   ok   the parts, counted from Fusion: 57 components, 16 kinds 
@@ -26,4 +26,5 @@ Parts: 57 components; 1 Banjo housing, 2 Bearing 6213 balls, 2 Bearing 6213 inne
   ok   {'d_body': 38.0} refused: The wheel end falls short: the shaft keeps 1.23 against yield in the hardest turn.
   ok   {'d_seat': 60.0} refused: The wheel end falls short: bearing 60 lasts 106.1 million turns of the 127.3 million needed.
   ok   {'D': 70.0, 't': 5.0} refused: The wheel end falls short: the tube keeps 0.99 in the pothole.
+  ok   a message gives the version tag AxleHousing 1.3 (2026-11-01)
 ALL PASS

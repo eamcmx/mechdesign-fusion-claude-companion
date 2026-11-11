@@ -1,5 +1,5 @@
 # mass_properties_check
-# Autodesk Fusion 2706.1.17, run 2026-11-03 19:47, 852 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 20:35, 600 s
 
 MassProperties 1.1 (2026-11-03)
   ok   Run opens the dialog
@@ -7,7 +7,7 @@ Weighed: the robot, 118 parts, 3609.91 kg, centre (193.9, 98.7, 924.3) mm; 14 gr
 Palletizer in detail: the robot, built by PalletizerRobot; then Chapter 51's materials and fits, and by hand 12 faces (6 new) and 9 descriptions.
 
 [MassProperties 1.1 (2026-11-03)]
-  OK pressed, built in 31 s
+  OK pressed, built in 20 s
   ok   a new design opened
   ok   the robot: 118 parts, 3609.906 kg, its 14 groups 3609.906 kg; centre (193.9, 98.7, 924.3) mm
   ok   the robot's moving bodies in Chapter 43's form: ['turret 1281.8', 'lower arm 530.1', 'crank and counterweight 292.9', 'parallel rod 36.9', 'levelling rod 1 11.8', 'triangle 19.8', 'upper arm 271.1', 'levelling rod 2 12.5', 'wrist housing 127.0', 'tool flange 13.0', 'balancer 20.2']
@@ -29,4 +29,5 @@ Palletizer in detail: the robot, built by PalletizerRobot; then Chapter 51's mat
   Weighed: the unit, 53 parts, 19.84 kg, centre (0.2, 0.2, -126.6) mm; 2 groups.
   ok   the unit: 53 parts, 19.842 kg, its 2 groups 19.842 kg; centre (0.1, 0.2, -126.6) mm
   ok   refused: No machine called crane: Chapter 57 weighs robot, wrist, flap, axle, bag, clamp, vacuum, changer, unit.
+  ok   a message gives the version tag MassProperties 1.1 (2026-11-03)
 ALL PASS

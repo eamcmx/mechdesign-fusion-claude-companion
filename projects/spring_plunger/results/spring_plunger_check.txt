@@ -1,5 +1,5 @@
 # spring_plunger_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 09:52, 6 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:34, 6 s
 
 SpringPlunger 1.0 (2026-11-01)
   ok   C 8.000, K_B 1.17241, N_a 9, L_s 15.00, k 3.32438, F1 19.95, F2 46.54, F_s 69.81, tau2 494.0, tau_s 741.1, S_sy 938.1, n2 1.899, n_s 1.266, xi 0.500, tau_p 3.29 
@@ -14,7 +14,7 @@ tau(F2) = 494.0 MPa, tau(F_s) = 741.1 MPa, S_sy = 938.1 MPa
 n2 = 1.899, n_s = 1.266, xi = 0.500
 Cross pin in double shear: tau_p = 3.29 MPa
 
-[SpringPlunger 1.0 (2026-11-01)] SpringPlunger 1.0 (2026-11-01)
+[SpringPlunger 1.0 (2026-11-01)]
   OK pressed, built in 5 s
   ok   a new design opened
   ok   six components: ['Base', 'Pin', 'Retaining ring', 'Rod', 'Sleeve', 'Spring']
@@ -31,4 +31,5 @@ Cross pin in double shear: tau_p = 3.29 MPa
   ok   {'stroke': 14.0} refused: Robust linearity: xi = F_s / F2 - 1 = 0.050, below 0.15. Shorten the stroke or add coils.
   ok   {'D': 20.0} refused: Spring index C = D / d = 13.3: keep it between 4 and 12.
   ok   {'dr': 12} refused: The spring's inside diameter 10.5 mm does not clear the 12 mm rod by 1 mm.
+  ok   a message gives the version tag SpringPlunger 1.0 (2026-11-01)
 ALL PASS

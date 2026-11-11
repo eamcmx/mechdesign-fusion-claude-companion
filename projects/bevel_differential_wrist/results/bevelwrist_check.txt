@@ -1,5 +1,5 @@
 # bevelwrist_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:19, 17 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:14, 21 s
 
 BevelWristPrompt 1.0 (2026-11-01)
   ok   Run opens the dialog
@@ -9,7 +9,7 @@ Four miter gears: z = 40, module 2.00 mm at the heel, cone distance R = 56.57 mm
 Drive "Pitch" to pitch the wrist and "Roll" to roll it. With the side gears' world angles about +Y:
   pitch = (thL + thR) / 2,   roll = (thL - thR) / 2
 
-[BevelWristPrompt 1.0 (2026-11-01)] BevelWristPrompt 1.0 (2026-11-01)
+[BevelWristPrompt 1.0 (2026-11-01)]
   OK pressed with the defaults, built in 9 s
   ok   a new design opened
   ok   parts: ['Frame', 'Idler gear', 'Output gear', 'Side gear L', 'Side gear R', 'Yoke']
@@ -26,4 +26,5 @@ Drive "Pitch" to pitch the wrist and "Roll" to roll it. With the side gears' wor
   ok   no interference at (30, 40), (-45, 120) and roll 1.5 to 9 deg 
   ok   z = 30 refused: Face width 16.0 mm is more than R / 3 = 42.43 / 3 = 14.14 mm.
   ok   z = 41 refused: z = 41 is odd: each gear meets two others 180 degrees apart, so z must be even.
+  ok   a message gives the version tag BevelWristPrompt 1.0 (2026-11-01)
 ALL PASS

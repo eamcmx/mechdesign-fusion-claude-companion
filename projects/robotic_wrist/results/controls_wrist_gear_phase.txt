@@ -1,7 +1,8 @@
 # controls/wrist_gear_phase
-# Autodesk Fusion 2706.1.17, run 2026-11-02 10:04, 14 s
+# Autodesk Fusion 2706.1.17, run 2026-11-11 08:58, 21 s
 
 WristDifferential 1.0 (2026-11-02)
   FAIL no interference among the three bevel gears at rest [('gear', 'gear', 128.894), ('gear', 'gear', 128.894)]
 CONTROL: the output gear turned half a tooth; the interference check MUST fail
+  ok   a message gives the version tag WristDifferential 1.0 (2026-11-02)
 1 FAILED

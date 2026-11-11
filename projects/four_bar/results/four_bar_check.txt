@@ -1,5 +1,5 @@
 # four_bar_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 09:49, 2 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:42, 2 s
 
 FourBar 1.0 (2026-11-01)
   ok   the script's circles agree with Freudenstein: theta4 105.590 at the start, swing 39.007 (96.525 to 135.532), mu 44.47 to 83.48 
@@ -13,7 +13,7 @@ Transmission angle from 44.47 to 83.48 deg
 
 Step "Crank turns" round (30 deg at a time) with Drive Joints.
 
-[FourBar 1.0 (2026-11-01)] FourBar 1.0 (2026-11-01)
+[FourBar 1.0 (2026-11-01)]
   OK pressed, built in 2 s
   ok   a new design opened
   ok   four components: ['Coupler', 'Crank', 'Ground', 'Rocker']
@@ -26,4 +26,5 @@ Step "Crank turns" round (30 deg at a time) with Drive Joints.
   ok   {'a': 60.0} refused: Not a crank-rocker: Grashof s + l = 110.0 against p + q = 110.0, and the crank (60.0 mm) must be the shortest link.
   ok   {'a': 20.0} refused: The transmission angle falls to 38.57 deg: below 40 deg the linkage binds.
   ok   {'a': 20.0, 'b': 38.0, 'c': 40.0, 'd': 55.0} refused: The transmission angle falls to 31.90 deg: below 40 deg the linkage binds.
+  ok   a message gives the version tag FourBar 1.0 (2026-11-01)
 ALL PASS

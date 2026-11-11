@@ -1,5 +1,5 @@
 # wrist_integration_check
-# Autodesk Fusion 2706.1.17, run 2026-11-02 10:56, 67 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:48, 59 s
 
 WristIntegration 1.0 (2026-11-02)
   ok   the brakes stop the carrier at 126.09 deg, worked again 126.09
@@ -10,8 +10,8 @@ Play at the payload: 0.86 mm.
 
 Parts: 97 components; 1 Base plate, 4 Bearing 6002-2RSH, 4 Bearing 61902-2RS1, 1 Bearing cap floating, 2 Belt HTD 350-5M-15, 1 Buffer pad, 1 Buffer pad (1), 1 Cap screw ISO 4762 M3x8, 8 Cap screw ISO 4762 M4x10, 4 Cap screw ISO 4762 M4x12, 5 Cap screw ISO 4762 M5x12, 1 Cap screw ISO 4762 M5x12 (1), 6 Cap screw ISO 4762 M5x16, 4 Cap screw ISO 4762 M8x20, 1 Carrier block, 8 Countersunk screw ISO 10642 M3x8, 4 Countersunk screw ISO 10642 M4x12, 4 Dowel ISO 8734 5x16, 1 End washer 18x5.5x2.5, 1 End washer 18x5.5x2.5 (1), 1 Key DIN 6885 A 5x5x18, 1 Key DIN 6885 A 5x5x8, 2 Motor bracket, 2 Motor output, 1 Output bevel gear, 1 Retaining ring DIN 471-15, 1 Retaining ring DIN 471-15, flange, 1 Retaining ring DIN 472-32, 1 Roll shaft, bored, 2 Servo motor with brake and 15:1 gearhead, 2 Side bevel gear with 36-groove pulley, 2 Side cheek, 1 Slip ring bracket, 1 Slip ring rotor, 1 Slip ring stator, 2 Spacer S1, 2 Spacer S2, 2 Spacer S3, 1 Spacer S4, 1 Spacer S5, 1 Stop cap, 1 Stop disc, 2 Tie bar, 1 Tool flange ISO 9409-1-31.5-4-M5, 1 Trunnion, 1 Trunnion with stop end.
 
-[WristIntegration 1.0 (2026-11-02)] WristIntegration 1.0 (2026-11-02)
-  OK pressed, built in 28 s
+[WristIntegration 1.0 (2026-11-02)]
+  OK pressed, built in 23 s
   ok   a new design opened
   parts: 97 components, 43 kinds: [('Base plate', 1), ('Bearing 6002-2RSH', 4), ('Bearing 61902-2RS1', 4), ('Bearing cap floating', 1), ('Belt HTD 350-5M-15', 2), ('Buffer pad', 2), ('Cap screw ISO 4762 M3x8', 1), ('Cap screw ISO 4762 M4x10', 8), ('Cap screw ISO 4762 M4x12', 4), ('Cap screw ISO 4762 M5x12', 6), ('Cap screw ISO 4762 M5x16', 6), ('Cap screw ISO 4762 M8x20', 4), ('Carrier block', 1), ('Countersunk screw ISO 10642 M3x8', 8), ('Countersunk screw ISO 10642 M4x12', 4), ('Dowel ISO 8734 5x16', 4), ('End washer 18x5.5x2.5', 2), ('Key DIN 6885 A 5x5x18', 1), ('Key DIN 6885 A 5x5x8', 1), ('Motor bracket', 2), ('Motor output', 2), ('Output bevel gear', 1), ('Retaining ring DIN 471-15', 1), ('Retaining ring DIN 471-15, flange', 1), ('Retaining ring DIN 472-32', 1), ('Roll shaft, bored', 1), ('Servo motor with brake and 15:1 gearhead', 2), ('Side bevel gear with 36-groove pulley', 2), ('Side cheek', 2), ('Slip ring bracket', 1), ('Slip ring rotor', 1), ('Slip ring stator', 1), ('Spacer S1', 2), ('Spacer S2', 2), ('Spacer S3', 2), ('Spacer S4', 1), ('Spacer S5', 1), ('Stop cap', 1), ('Stop disc', 1), ('Tie bar', 2), ('Tool flange ISO 9409-1-31.5-4-M5', 1), ('Trunnion', 1), ('Trunnion with stop end', 1)]
   ok   the parts as listed 
@@ -35,4 +35,5 @@ Parts: 97 components; 1 Base plate, 4 Bearing 6002-2RSH, 4 Bearing 61902-2RS1, 1
   MEASURED {"total": 5.5589896, "cg_x": 0.0035657, "cg_y": 1.4222242, "cg_z": -64.9746643, "roll": 0.4485168, "roll_z": 28.3889836, "roll_Iz": 0.0001222, "roll_Ix": 0.0001839, "carrier": 0.4185501, "carrier_z": 0.1063995, "carrier_Iy": 8.55e-05, "motors_drawn": 2.0735354}
   ok   {'contact': 125.0} refused: This stop falls short: the brakes stop the carrier at 126.1 deg, at or past the contact at 125.0.
   ok   {'contact': 155.0} refused: This stop falls short: a block of 1.0 deg either side, too short to hold its pads.
+  ok   a message gives the version tag WristIntegration 1.0 (2026-11-02)
 ALL PASS

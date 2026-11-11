@@ -1,5 +1,5 @@
 # helical_pair_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:24, 35 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 20:09, 30 s
 
 HelicalPair 1.0 (2026-11-01)
   ok   all values recomputed independently 
@@ -12,8 +12,8 @@ Face width 12.043 mm (asked 12.000): twist over it, gear 1 11.800 deg, gear 2 -5
 Twist per sweep kept by Fusion: gear 1 11.8 deg, gear 2 -5.9 deg
 z_min = 14.41; transverse contact ratio 1.504, overlap ratio 0.656
 
-[HelicalPair 1.0 (2026-11-01)] HelicalPair 1.0 (2026-11-01)
-  OK pressed, built in 6 s
+[HelicalPair 1.0 (2026-11-01)]
+  OK pressed, built in 5 s
   ok   a new design opened
   ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
   ok   one body each
@@ -37,4 +37,5 @@ z_min = 14.41; transverse contact ratio 1.504, overlap ratio 0.656
   ok   no tooth collision while gear 1 turns 0 to 18 deg in 13 positions 
   ok   {'z1': 14} refused: 14 teeth: below z_min = 2 cos(beta) / sin^2(alpha_t) = 14.41 the involute is undercut.
   ok   {'beta': 50.0} refused: Helix angle 50.0 deg: keep it from 5 to 45 degrees.
+  ok   a message gives the version tag HelicalPair 1.0 (2026-11-01)
 ALL PASS

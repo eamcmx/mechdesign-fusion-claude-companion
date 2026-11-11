@@ -1,7 +1,8 @@
 # controls/wrist_stop_lug
-# Autodesk Fusion 2706.1.17, run 2026-11-02 10:56, 28 s
+# Autodesk Fusion 2706.1.17, run 2026-11-11 08:58, 28 s
 
 WristIntegration 1.0 (2026-11-02)
   FAIL no interference among the 97 parts at rest [('stop disc', 'stop cap', 1274.309)]
 CONTROL: the lug on the wrong side of the disc; the interference check MUST fail
+  ok   a message gives the version tag WristIntegration 1.0 (2026-11-02)
 1 FAILED

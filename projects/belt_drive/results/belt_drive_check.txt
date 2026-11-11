@@ -1,5 +1,5 @@
 # belt_drive_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:18, 5 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:14, 12 s
 
 BeltDrive 1.0 (2026-11-01)
   ok   PD 12.7324 and 25.4648, C 59.6600, wraps 167.749 and 192.251 deg, 9.32 teeth in mesh 
@@ -12,8 +12,8 @@ Centre distance C = 59.660 mm (solved for a pitch length of 180 mm)
 Wrap: pulley 1 167.749 deg, pulley 2 192.251 deg; 9.32 teeth of pulley 1 in mesh
 Ratio 2.000, both pulleys turning the same way
 
-[BeltDrive 1.0 (2026-11-01)] BeltDrive 1.0 (2026-11-01)
-  OK pressed, built in 4 s
+[BeltDrive 1.0 (2026-11-01)]
+  OK pressed, built in 11 s
   ok   a new design opened
   ok   six components: ['Base plate', 'Belt', 'Pulley 1', 'Pulley 2', 'Shaft 1', 'Shaft 2']
   ok   one body each
@@ -25,4 +25,5 @@ Ratio 2.000, both pulleys turning the same way
   ok   no interference at any of the 12 steps 
   ok   {'n_b': 40} refused: A belt of 40 teeth (80 mm) is too short to go round these pulleys.
   ok   {'z1': 12, 'z2': 60, 'n_b': 70} refused: Only 3.96 teeth of pulley 1 in mesh: at least 6. Use a longer belt or closer ratios.
+  ok   a message gives the version tag BeltDrive 1.0 (2026-11-01)
 ALL PASS

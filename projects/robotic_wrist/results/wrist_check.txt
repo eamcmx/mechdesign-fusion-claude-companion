@@ -1,5 +1,5 @@
 # wrist_check
-# Autodesk Fusion 2706.1.17, run 2026-11-02 10:03, 33 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:46, 37 s
 
 WristDifferential 1.0 (2026-11-02)
   ok   the front face 23.181 mm and the belt's centre distance 106.536 mm worked again (the module: 23.181, 106.536)
@@ -10,8 +10,8 @@ Motors: 0.139 N m peak, 0.120 RMS, 2700 rev/min; belts 350-5M at 106.54 mm. The 
 
 Parts: 89 components; 1 Base plate, 4 Bearing 6002-2RSH, 4 Bearing 61902-2RS1, 1 Bearing cap fixed, 1 Bearing cap floating, 2 Belt HTD 350-5M-15, 8 Cap screw ISO 4762 M4x10, 8 Cap screw ISO 4762 M4x12, 6 Cap screw ISO 4762 M5x12, 6 Cap screw ISO 4762 M5x16, 4 Cap screw ISO 4762 M8x20, 1 Carrier block, 8 Countersunk screw ISO 10642 M3x8, 4 Dowel ISO 8734 5x16, 2 End washer 18x5.5x2.5, 1 End washer 18x6.4x2, 1 Key DIN 6885 A 5x5x18, 1 Low-head screw DIN 7984 M6x12, 2 Motor bracket, 2 Motor output, 1 Output bevel gear, 1 Retaining ring DIN 471-15, 1 Retaining ring DIN 472-32, 1 Roll shaft, 2 Servo motor with brake and 15:1 gearhead, 2 Side bevel gear with 36-groove pulley, 2 Side cheek, 2 Spacer S1, 2 Spacer S2, 2 Spacer S3, 1 Spacer S4, 2 Tie bar, 1 Tool flange ISO 9409-1-31.5-4-M5, 2 Trunnion.
 
-[WristDifferential 1.0 (2026-11-02)] WristDifferential 1.0 (2026-11-02)
-  OK pressed, built in 14 s
+[WristDifferential 1.0 (2026-11-02)]
+  OK pressed, built in 13 s
   ok   a new design opened
   ok   nine groups: ['Belt helper', 'Belt helper', 'Carrier', 'Frame', 'Input drive', 'Input drive', 'Motor output', 'Motor output', 'Roll output']
   parts: 89 components, 34 kinds: [('Base plate', 1), ('Bearing 6002-2RSH', 4), ('Bearing 61902-2RS1', 4), ('Bearing cap fixed', 1), ('Bearing cap floating', 1), ('Belt HTD 350-5M-15', 2), ('Cap screw ISO 4762 M4x10', 8), ('Cap screw ISO 4762 M4x12', 8), ('Cap screw ISO 4762 M5x12', 6), ('Cap screw ISO 4762 M5x16', 6), ('Cap screw ISO 4762 M8x20', 4), ('Carrier block', 1), ('Countersunk screw ISO 10642 M3x8', 8), ('Dowel ISO 8734 5x16', 4), ('End washer 18x5.5x2.5', 2), ('End washer 18x6.4x2', 1), ('Key DIN 6885 A 5x5x18', 1), ('Low-head screw DIN 7984 M6x12', 1), ('Motor bracket', 2), ('Motor output', 2), ('Output bevel gear', 1), ('Retaining ring DIN 471-15', 1), ('Retaining ring DIN 472-32', 1), ('Roll shaft', 1), ('Servo motor with brake and 15:1 gearhead', 2), ('Side bevel gear with 36-groove pulley', 2), ('Side cheek', 2), ('Spacer S1', 2), ('Spacer S2', 2), ('Spacer S3', 2), ('Spacer S4', 1), ('Tie bar', 2), ('Tool flange ISO 9409-1-31.5-4-M5', 1), ('Trunnion', 2)]
@@ -46,4 +46,5 @@ Parts: 89 components; 1 Base plate, 4 Bearing 6002-2RSH, 4 Bearing 61902-2RS1, 1
   ok   {'module': 1.25, 'teeth': 40, 'face': 11.0} refused: This bevel set falls short: a face of 11.0 mm against Table 13-3's 10.61 (0.3 R or 10 m); a front face 17.97 mm from the apex, where the carrier needs 22.50; 40 teeth of module 1.25: the layout is drawn for the 60 mm set, and the geometry factors of Figs. 15-6 and 15-7 were read for 40 teeth on 40.
   ok   {'module': 1.5, 'teeth': 40, 'face': 13.0} refused: This bevel set falls short: a face of 13.0 mm against Table 13-3's 12.73 (0.3 R or 10 m); a front face 21.71 mm from the apex, where the carrier needs 22.50.
   ok   {'module': 2.0, 'teeth': 30, 'face': 11.0} refused: This bevel set falls short: 30 teeth of module 2: the layout is drawn for the 60 mm set, and the geometry factors of Figs. 15-6 and 15-7 were read for 40 teeth on 40.
+  ok   a message gives the version tag WristDifferential 1.0 (2026-11-02)
 ALL PASS

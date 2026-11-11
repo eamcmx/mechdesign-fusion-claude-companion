@@ -1,5 +1,5 @@
 # controls/bill_of_materials_bodies
-# Autodesk Fusion 2706.1.17, run 2026-11-04 07:18, 633 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:02, 646 s
 
 BillOfMaterials 1.0 (2026-11-04)
   ok   Run opens the dialog
@@ -15,7 +15,7 @@ bag      made 15 kinds,  41 pieces; bought 15 kinds,  73 pieces (12 with the mak
 unit     made  6 kinds,  12 pieces; bought 10 kinds,  41 pieces (6 with the maker's mass); 19.84 kg as drawn, 18.24 kg with the makers' masses
 
 [BillOfMaterials 1.0 (2026-11-04)]
-  OK pressed, built in 631 s
+  OK pressed, built in 645 s
   ok   a new design opened
   ok   nine lists, each in results/bom: wrist.csv, flap.csv, axle.csv, robot.csv, changer.csv, clamp.csv, vacuum.csv, bag.csv, unit.csv
   ok   wrist: 97 occurrences, the lines and 0 loads 7.3575 kg, Fusion's design 7.3575 kg
@@ -43,5 +43,6 @@ unit     made  6 kinds,  12 pieces; bought 10 kinds,  41 pieces (6 with the make
   FAIL the robot's reducers counted by sets: RV-500N x4, RV-700N x2, RV-80N x2
   ok   the makers' masses: 78 lines, every page on disk 
   ok   refused: No machine called crane: the bills of materials are of wrist, flap, axle, robot, changer, clamp, vacuum, bag, unit.
+  ok   a message gives the version tag BillOfMaterials 1.0 (2026-11-04)
 2 FAILED
 CONTROL: every body of a bought part counted as a piece; the two set lines above MUST fail, and they alone

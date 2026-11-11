@@ -1,12 +1,12 @@
 # controls/study_parts_sharp_keyseat
-# Autodesk Fusion 2706.1.17, run 2026-11-06 21:44, 6 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 23:58, 4 s
 
 StudyParts 1.0 (2026-11-06)
   ok   Run opens the dialog
 Study part cantilever: 40000.0 mm3, Steel, 6 faces, 0.3140 kg; faces to pick fixed found, load found
 
 [StudyParts 1.0 (2026-11-06)]
-  OK pressed, built in 1 s
+  OK pressed, built in 0 s
   ok   a new design opened
   ok   the six parts built: bracket_r25, bracket_sharp, cantilever, keyseat, lug, tine
   ok   cantilever: 40000.0 mm3 in the model, 40000.0 by hand (0.0000 %)
@@ -29,5 +29,6 @@ Study part cantilever: 40000.0 mm3, Steel, 6 faces, 0.3140 kg; faces to pick fix
   ok   lug: faces to pick fixed found, load found
   ok   the tine weighs 0.9911 kg
   ok   refused: No part crane: the parts are cantilever, keyseat, tine, bracket_sharp, bracket_r25, lug.
+  ok   a message gives the version tag StudyParts 1.0 (2026-11-06)
 1 FAILED
 CONTROL: the keyseat's floor left sharp; its faces above MUST fail, and they alone

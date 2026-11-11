@@ -1,5 +1,5 @@
 # controls/flap_system_no_spacers
-# Autodesk Fusion 2706.1.17, run 2026-11-02 06:47, 54 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:16, 50 s
 
   ok   flap at 0 deg: no interference between the horn and the rod end 
   FAIL flap at 40 deg: no interference between the horn and the rod end [('Housing', 'Horn', 43.907)]

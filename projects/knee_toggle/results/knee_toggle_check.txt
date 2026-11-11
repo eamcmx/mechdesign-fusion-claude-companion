@@ -1,6 +1,10 @@
 # knee_toggle_check
-# Autodesk Fusion 2706.1.17, run 2026-11-01 07:21, 7 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 20:10, 2 s
 
+KneeToggle 1.0 (2026-11-01)
+  ok   F at 30, 10, 5, 2, 1 deg: [86.6, 283.56, 571.5, 1431.81, 2864.5] N
+  ok   the stroke 10.718 mm
+  ok   Run opens the dialog
 Knee toggle built: links of 40.0 mm at 30.0 deg from the ram's line; 3.0 deg over centre allowed.
 
 Mechanical advantage F / P = 1 / (2 tan(alpha)); stroke to straight 2 l (1 - cos(alpha0)) = 10.718 mm
@@ -8,8 +12,8 @@ With P = 100 N: F = 86.60 N at 30 deg, F = 283.56 N at 10 deg, F = 571.50 N at 5
 
 Drive "Upper link turns" towards negative angles (2 deg at a time) to straighten the knee.
 
-[KneeToggle 1.0 (2026-11-01)] KneeToggle 1.0 (2026-11-01)
-  OK pressed, built in 6 s
+[KneeToggle 1.0 (2026-11-01)]
+  OK pressed, built in 1 s
   ok   a new design opened
   ok   four components: ['Frame', 'Lower link', 'Ram', 'Upper link']
   ok   one body each
@@ -21,4 +25,5 @@ Drive "Upper link turns" towards negative angles (2 deg at a time) to straighten
   ok   no interference at the 15 steps 
   ok   {'alpha0': 70.0} refused: Starting angle 70.0 deg: choose from 5 to 60 deg.
   ok   {'over': 12.0} refused: Over-centre angle 12.0 deg: choose from 1 to 10 deg.
+  ok   a message gives the version tag KneeToggle 1.0 (2026-11-01)
 ALL PASS

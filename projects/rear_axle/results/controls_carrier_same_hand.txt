@@ -1,5 +1,5 @@
 # controls/carrier_same_hand
-# Autodesk Fusion 2706.1.17, run 2026-11-01 19:20, 42 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 22:03, 32 s
 
   the pinion and the crown wheel at rest: [('Pinion shaft', 'Crown wheel', 2707.059)]
   FAIL no tooth collision at rest

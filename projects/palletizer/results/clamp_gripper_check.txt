@@ -1,5 +1,5 @@
 # clamp_gripper_check
-# Autodesk Fusion 2706.1.17, run 2026-11-02 23:38, 531 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 19:36, 539 s
 
 ClampGripper 1.0 (2026-11-02)
   ok   Run opens the dialog
@@ -9,8 +9,8 @@ Ballscrew 32 x 10 right and left, R32-10K5-DEB nuts, BK25 and BF25; rails HGR25,
 
 Parts: 55 components; 1 Adapter plate, 2 Angular contact bearing 7205, 2 Arm, 1 Ball nut R32-10K5-DEB left, 1 Ball nut R32-10K5-DEB right, 1 Ballscrew 32x10 right and left, 1 Beam, 8 Block HGH25CA, 6 Cap screw M10x25, 4 Cap screw M8x25, 12 Cap screw M8x25 nut, 2 Carriage plate, 1 Coupling, 1 Deep groove bearing, 1 Dowel pin 10x17, 1 Fixed bearing BK25, 1 Gearhead 3:1, 1 Motor bracket, 1 Motor with brake, 2 Pad, 2 Rail HGR25, 1 Seat BF25, 1 Seat BK25, 1 Supported bearing BF25.
 
-[ClampGripper 1.0 (2026-11-02)] ClampGripper 1.0 (2026-11-02)
-  OK pressed, built in 142 s
+[ClampGripper 1.0 (2026-11-02)]
+  OK pressed, built in 121 s
   ok   a new design opened
   parts: 55 components, 24 kinds
   Adapter plate 1, Angular contact bearing 7205 2, Arm 2, Ball nut R32-10K5-DEB left 1, Ball nut R32-10K5-DEB right 1, Ballscrew 32x10 right and left 1, Beam 1, Block HGH25CA 8, Cap screw M10x25 6, Cap screw M8x25 4, Cap screw M8x25 nut 12, Carriage plate 2, Coupling 1, Deep groove bearing 1, Dowel pin 10x17 1, Fixed bearing BK25 1, Gearhead 3:1 1, Motor bracket 1, Motor with brake 1, Pad 2, Rail HGR25 2, Seat BF25 1, Seat BK25 1, Supported bearing BF25 1
@@ -27,4 +27,5 @@ Parts: 55 components; 1 Adapter plate, 2 Angular contact bearing 7205, 2 Arm, 1 
   ok   {'N': 5500.0} refused: A squeeze of 5500 N is over the 5000 N the screw, the guides and the arms are built for.
   ok   {'N': 4500.0} refused: A squeeze of 4500 N is under the 4595 N this pack needs to stay in the jaws.
   ok   {'nx': 3, 'ny': 1, 'N': 4700.0} refused: A squeeze of 4700 N presses the cartons' sides at 42.0 kPa, over the 40 kPa they accept.
+  ok   a message gives the version tag ClampGripper 1.0 (2026-11-02)
 ALL PASS

@@ -1,5 +1,5 @@
 # stack_gaps_check
-# Autodesk Fusion 2706.1.17, run 2026-11-03 20:03, 355 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:38, 254 s
 
 StackGaps 1.1 (2026-11-03)
   ok   Run opens the dialog
@@ -12,7 +12,7 @@ axle_casting: Crown wheel bolt M12x35 1 / Carrier casting 1.000 mm along (0.00, 
 axle_cap: Crown wheel bolt M12x35 4 / Bearing cap C1 1.000 mm along (0.00, -1.00, 0.00)
 
 [StackGaps 1.1 (2026-11-03)]
-  OK pressed, built in 355 s
+  OK pressed, built in 254 s
   ok   a new design opened
   ok   the unit: Cap screw M10x25 2 / Carriage (1) 0.707 mm at ('float', 30.0), as the sweep found, along (0.707, 0.000, -0.707) from (-72.5, 0.0, -19.5)
        at ('float', 27.0): 3.536 mm, Cap screw M10x25 2 / Carriage (1)
@@ -31,4 +31,5 @@ axle_cap: Crown wheel bolt M12x35 4 / Bearing cap C1 1.000 mm along (0.00, -1.00
   ok   the axle_cap: Crown wheel bolt M12x35 4 / Bearing cap C1 1.000 mm at ('turning', (30.0, 2.5)), as the sweep found, along (0.000, -1.000, 0.000) from (-38.3, -81.0, 75.0)
        at ('straight', (30.0, 0.0)): 1.000 mm, Crown wheel bolt M12x35 4 / Bearing cap C1
   ok   refused: No gap called crane: Chapter 61 measures unit, flap, wrist, changer, axle_casting, axle_cap.
+  ok   a message gives the version tag StackGaps 1.1 (2026-11-03)
 ALL PASS

@@ -1,5 +1,5 @@
 # controls/bearing_seat_cage_speed
-# Autodesk Fusion 2706.1.17, run 2026-11-01 03:23, 2 s
+# Autodesk Fusion 2706.1.17, run 2026-11-10 21:51, 2 s
 
   FAIL balls 90.000 deg (the cage speed gives 35.234)
 CONTROL: the balls carried round with the shaft; the check above MUST fail
