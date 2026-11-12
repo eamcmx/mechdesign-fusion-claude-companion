@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 31: the rear axle put together from its two subsystems, the carrier bolted into the banjo housing and each half shaft splined into its side gear, so that the pinion drives both wheels through the final drive and the differential."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "RearAxle"
+}

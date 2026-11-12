@@ -1,0 +1,26 @@
+# projects/four_bar/checks/four_bar_check.py on prompt_tests/FourBar/FourBar.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 11:44, 2 s
+
+FourBar pt-1 (2026-11-11)
+  ok   the script's circles agree with Freudenstein: theta4 105.590 at the start, swing 39.007 (96.525 to 135.532), mu 44.47 to 83.48 
+  ok   the rounded values of the prompt
+  ok   Run opens the dialog
+FourBar pt-1 (2026-11-11)
+Four-bar crank-rocker, a = 15, b = 55, c = 50, d = 55 mm, built at theta2 = 0 (upper branch).
+theta4 = 105.590 deg at the start.
+The rocker swings 39.007 deg, from 96.525 to 135.532 deg.
+The transmission angle runs from 44.47 to 83.48 deg (mu(0) to mu(180 deg)).
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   four components: ['Coupler', 'Crank', 'Ground', 'Rocker']
+  ok   one body each
+  ok   four revolute As-built Joints
+  ok   no interference at rest 
+  the rocker turned (deg): 30: -8.032, 60: -8.190, 90: -2.290, 120: 6.456, 150: 15.508, 180: 23.092, 210: 28.098, 240: 29.939, 270: 28.220, 300: 22.401, 330: 12.213, 360: 0.000
+  ok   at every step the rocker's body where Freudenstein puts it (worst 0.00000 deg)
+  ok   no interference at the 12 steps 
+  ok   {'a': 60.0} refused: Not a crank-rocker: the crank a = 60 mm is not the shortest link (50 mm), so it does not turn fully
+  ok   {'a': 20.0} refused: The transmission angle falls to 38.57 deg at theta2 = 0 deg; it must stay at least 40 deg (mu(0) = 38.57 deg, 180 deg - mu(180 deg) = 88.96 deg)
+  ok   {'a': 20.0, 'b': 38.0, 'c': 40.0, 'd': 55.0} refused: The transmission angle falls to 31.90 deg at theta2 = 180 deg; it must stay at least 40 deg (mu(0) = 53.25 deg, 180 deg - mu(180 deg) = 31.90 deg)
+  ok   a message gives the version tag FourBar pt-1 (2026-11-11)
+ALL PASS

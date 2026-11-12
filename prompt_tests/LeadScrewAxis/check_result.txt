@@ -1,0 +1,29 @@
+# projects/lead_screw_axis/checks/lead_screw_check.py on prompt_tests/LeadScrewAxis/LeadScrewAxis.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 16:00, 1792 s
+
+LeadScrewAxis v1.0 (prompt test, 2026-11-11)
+  ok   all values recomputed independently, self-locking 
+  ok   the rounded values of the prompt (5.197, 655.63, 0.364, 166.56)
+  ok   Run opens the dialog
+Lead screw axis built. LeadScrewAxis v1.0 (prompt test, 2026-11-11)
+Tr 12 x 3, 1 start(s); axial load F = 500 N; thread friction f = 0.15 (assumed); flanks at 15 deg
+pitch diameter d2 = 10.500 mm, screw minor d3 = 8.500 mm, nut minor D1 = 9.000 mm, nut major D4 = 12.500 mm
+lead L = 3.000 mm, lead angle lambda = 5.197 deg
+torque to move the load against it T = 655.63 N.mm, efficiency 0.364
+self-locking (pi f d2 sec(alpha) = 5.123 mm > L = 3.000 mm): torque to lower the load 166.56 N.mm
+carriage: 3.000 mm per screw turn, towards -x for a positive turn about +x (right-hand); travel -19.00 to +19.00 mm, 2 mm clear of the end blocks
+threads: screw 20 leads (7200.0 deg of twist), nut 20 mm (2400.0 deg); 0.25 mm at crests and roots, 0.2 mm along the axis
+measured: revolute sign +1, slider sign +1, 30 deg of the screw moved the carriage -0.2500 mm
+  OK pressed, built in 13 s
+  ok   a new design opened
+  ok   four components: ['Carriage', 'Frame', 'Guide rod', 'Screw']
+  ok   one body each
+  ok   As-built Joints: rigid, revolute, slider; one Motion Link
+  ok   no interference at rest 
+  ok   one screw turn (positive about +x): the carriage moved -3.0000 mm, its joint -3.0000 mm; -0.25 mm per positive 30 deg step (worst 4.44e-16 mm)
+  ok   a positive turn about +x moves the carriage towards -x (a right-hand thread)
+  ok   the screw and the nut never touch at the 12 steps 
+  ok   {'d': 6.0} refused: d = 6 mm: the screw major diameter must be from 8 to 40 mm.
+  ok   {'P': 7.0} refused: Thread depth P / 2 = 3.50 mm is more than d / 4 = 3.00 mm: refused.
+  ok   a message gives the version tag LeadScrewAxis v1.0 (prompt test, 2026-11-11)
+ALL PASS

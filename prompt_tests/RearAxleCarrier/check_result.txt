@@ -1,0 +1,38 @@
+# projects/rear_axle/checks/rear_axle_carrier_check.py on prompt_tests/RearAxleCarrier/RearAxleCarrier.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 13:59, 41 s
+
+RearAxleCarrier prompt-test v1 (12 Nov 2026)
+  ok   the rating and the forces recomputed independently: S_F 1.0783, W_t 61693.9, W_a 48637.2, W_r 15873.6 N 
+  ok   Run opens the dialog
+Rear axle carrier, RearAxleCarrier prompt-test v1 (12 Nov 2026)
+Final drive 12:47, ratio 3.9167. Spiral bevel, module 6.50 mm at the heel, face 52.0 mm (a third of the cone distance is 52.6), 35 deg spiral, 20 deg normal pressure angle.
+Crown wheel 308.1 mm outside diameter: ground clearance 196.9 mm (195 mm at least).
+Pinion at the design torque, 2009.25 N m for 9528 turns: bending factor 1.078, contact 1.718.
+Pinion at full power, 283.49 N m at 4800 rpm for 498.69 million turns: bending factor 1.861, contact 1.809.
+Pinion bearings SKF 32309 (A, head) and 32308 (B, tail) back to back: pressure points 111.0 mm apart, A's 47.6 mm behind the mean point; L10 at full power 1727 and 166958 million turns.
+Case bearings SKF 32213 face to face on shoulders at y = -/+74: pressure points 160.4 mm apart, the crown wheel's mean point 47.63 mm from C1; L10 24180 and 1524445 million turns of the case.
+Differential: 4 spiders z15 on a cross, two side gears z22, straight bevel, module 5.50 mm: bending factors side gear 1.114, spider 1.377 at the design torque.
+Parts, 49 in 27 kinds: Adjuster 2, Bearing A 32309 cone 1, Bearing A 32309 cup 1, Bearing B 32308 cone 1, Bearing B 32308 cup 1, Bearing C1 32213 cone 1, Bearing C1 32213 cup 1, Bearing C2 32213 cone 1, Bearing C2 32213 cup 1, Bearing cap 2, Cap bolt M12x90 4, Carrier casting 1, Companion flange 1, Cross 1, Crown wheel bolt M12x35 10, Crown wheel z47 1, Differential case 1, Pinion depth shim 1, Pinion nut M30 1, Pinion seal 60x85x10 1, Pinion shaft z12 1, Side gear 2, Side gear washer 2, Spacer 1, Spider 4, Spider washer 4, Washer 1.
+  OK pressed, built in 30 s
+  ok   a new design opened
+  ok   three subassemblies: ['Carrier', 'Pinion assembly', 'Differential assembly']
+  ok   the parts, counted from Fusion: 49 components, 27 kinds 
+  ok   materials {'Pinion shaft z12': 'Steel', 'Crown wheel z47': 'Steel', 'Carrier casting': 'Iron, Cast', 'Differential case': 'Iron, Cast'}
+  ok   8 As-built Joints (pinion, case, four spiders, two side gears), 1 Motion Link
+  ok   no interference among the 49 parts at rest 
+  ok   Bearing A 32309 on a 45 mm seat, its cup 100 mm in a bore of 100.1
+  ok   Bearing B 32308 on a 40 mm seat, its cup 90 mm in a bore of 90.1
+  ok   Bearing C1 32213 on a 65 mm seat, its cup 120 mm in a bore of 120.1
+  ok   Bearing C2 32213 on a 65 mm seat, its cup 120 mm in a bore of 120.1
+  ok   the pinion turned 30.000 deg about +X: the case 7.6596 deg about +Y (want 7.6596, the same way, 12/47 as far)
+  ok   no tooth collision while the pinion turns 0 to 30 deg, one pitch 
+  ok   all 8 parts of the pinion assembly turned with it (worst Pinion shaft z12, 1.2e-19 mm)
+  ok   no tooth collision in the differential with the side gears turned 4, 8.18 (half a pitch) and 12 deg in the case and the spiders 22/15 as far 
+  ok   the plate stops 166.00 mm below the axle, above the bowl's bottom
+  mass of the carrier assembly 72.42 kg; the crown wheel 5.88 kg, the casting 33.49 kg
+  ok   {'m': 5.9, 'F': 47.0} refused: module 5.90: the pinion's bending factor of 0.818 at the design torque is under 1; the M12 bolts on 186 mm would reach the pinion's toe (92.3 mm from the axle)
+  ok   {'m': 6.75, 'F': 54.0} refused: module 6.75: the crown wheel of 320.0 mm leaves 191.0 mm of ground clearance, under 195 mm
+  ok   {'F': 56.0} refused: a face of 56.0 mm is over a third of the cone distance (52.6 mm); the M12 bolts on 186 mm would reach the pinion's toe (97.6 mm from the axle)
+  ok   {'N': 3} refused: 3 spiders: 2 z_s / N = 14.67 is not a whole number, so the spiders cannot all mesh
+  ok   a message gives the version tag RearAxleCarrier prompt-test v1 (12 Nov 2026)
+ALL PASS

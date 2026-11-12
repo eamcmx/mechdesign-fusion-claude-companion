@@ -1,0 +1,48 @@
+{
+  "name": "WristDifferential",
+  "version": "WristDifferential 1.0 (prompt test)",
+  "script": "prompt_tests/WristDifferential/WristDifferential.py",
+  "prompt": "projects/robotic_wrist/WristDifferential/PROMPT.txt",
+  "check": "projects/robotic_wrist/checks/wrist_check.py",
+  "loads": [
+    "common/companion_paths.py",
+    "projects/robotic_wrist/lib/wrist_design.py",
+    "common/lib/mdfc_parts.py"
+  ],
+  "entry_points": {
+    "run(context)": "opens the dialog; OK builds the wrist in a new design",
+    "build(module=1.5, teeth=40, face=11.0)": "builds and returns the message; raises ValueError for a refused set",
+    "design(module=1.5, teeth=40, face=11.0)": "the set, its ratings and the layout, without Fusion",
+    "pose(pitch, roll)": "degrees",
+    "parts_list(root)": "{component name: count} of the occurrences that hold bodies",
+    "_last": "{'occ': {frame, carrier, roll, inL, inR, hL, hR, mL, mR}, 'joints', 'signs', 'links', 'design', 'notes'}",
+    "_Created": "the dialog's CommandCreatedEventHandler",
+    "VERSION": "the version tag in the message"
+  },
+  "dialog_inputs": {
+    "module": "mm, default 1.5",
+    "teeth": "default 40",
+    "face": "mm, default 11"
+  },
+  "groups": ["Frame (grounded)", "Carrier", "Roll output", "Input L", "Input R", "Belt helper L", "Belt helper R",
+             "Motor output (L)", "Motor output (R)"],
+  "joints": {
+    "Pitch": "Carrier on Frame, As-built revolute about y, limited to +-120 deg",
+    "Roll": "Roll output on Carrier, about z",
+    "Gear L": "Input L on Carrier, about y",
+    "Gear R": "Input R on Carrier, about y",
+    "Belt helper L": "on Frame, about the L motor's axis",
+    "Belt helper R": "on Frame, about the R motor's axis",
+    "Motor L": "Motor output (L) on Belt helper L",
+    "Motor R": "Motor output (R) on Belt helper R"
+  },
+  "motion_links": [
+    "Roll -> Gear L, -1",
+    "Roll -> Gear R, +1",
+    "Pitch -> Belt helper L, +2",
+    "Pitch -> Belt helper R, +2",
+    "Roll -> Motor L, -2",
+    "Roll -> Motor R, +2"
+  ],
+  "parts": "89 components in 34 kinds"
+}

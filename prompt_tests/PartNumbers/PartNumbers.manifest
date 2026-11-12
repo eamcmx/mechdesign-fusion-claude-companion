@@ -1,0 +1,10 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan",
+    "description": {
+        "": "Builds one of the nine assemblies with its own script and writes every part's number and description into its component"
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}

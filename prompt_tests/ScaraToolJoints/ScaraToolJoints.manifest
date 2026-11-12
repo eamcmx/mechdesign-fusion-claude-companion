@@ -1,0 +1,10 @@
+{
+    "autodeskProduct": "Fusion360",
+    "type": "script",
+    "author": "Emmanuel Merchan",
+    "description": {
+        "": "The SCARA's J3 and J4 (Chapter 37): a HIWIN FB ball screw spline at the second arm's end, its two nuts with pulleys, two GT3 belts to the J3 and J4 servo motors, a slider and a revolute joint with Motion Links. Written from its prompt alone (prompt test)."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}

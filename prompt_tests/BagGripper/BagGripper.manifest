@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"The palletizer's bag gripper of Chapter 47: adapter, beam, end plates, two jaws of tines on DSBC-80 cylinders with clamping units, a press plate on two DSBC-32, the bag and the station's rollers. Written from PROMPT.txt as a prompt test."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

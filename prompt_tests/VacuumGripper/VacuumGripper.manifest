@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"The palletizer's vacuum gripper (Chapter 46), written from its prompt alone: the clamp gripper's ISO 9409-1 adapter, two beams and a plate, six zones of six bellows cups on spring compensators with a manifold and two ejectors each, and the layer of cartons it holds."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

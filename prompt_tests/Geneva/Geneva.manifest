@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"Builds an external Geneva drive (driver with pin and locking disc, slotted wheel) and reports its timing and the wheel's peak speed."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

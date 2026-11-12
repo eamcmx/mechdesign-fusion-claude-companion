@@ -23,6 +23,7 @@ file of that job inside it. Each folder has a `README.md` listing what it holds.
 | `common/` | `companion_paths.py`, which knows where everything is kept; the parts library `lib/mdfc_parts.py`; `BallScrewAxis` |
 | `extras/` | Scripts kept for reference that no chapter prints, with their checks; left out of `--all` |
 | `tools/` | `run_check.py` (runs a check and keeps its result), `fusion_mcp.py` (talks to Fusion's MCP server), `prompt_lint.py` (the five parts of a prompt), `capture.py` (the book's figures) |
+| `FUSION_API_TRAPS.md` | What Fusion's API does that its documentation does not say: the traps met writing these scripts, each with what to do. Give it to the model with your prompts |
 
 A script that uses another project's library or script finds it through `common/companion_paths.py`: it walks up
 from its own folder to the one that holds `common/`, imports `companion_paths`, and every `lib/` folder is then on

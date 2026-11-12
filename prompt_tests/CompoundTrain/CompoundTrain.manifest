@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"A two-stage reverted compound spur gear train on a base plate: input and output gears on one fixed spindle, a cluster gear on a countershaft, As-built Joints and two Motion Links, ready to turn with Drive Joints."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

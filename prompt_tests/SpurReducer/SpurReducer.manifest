@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"A single-stage spur reducer (m 3, z 19/95, a = 171 mm) sized by subsystems after Budynas and Nisbett (2015) and built in a new design: split cast iron housing with caps, seals, screws, dowels and plugs, the pinion shaft and the output shaft with its gear, revolute As-built Joints and a reversed 5:1 Motion Link. A dialog takes the duty and refuses one the parts cannot carry."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

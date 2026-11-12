@@ -37,7 +37,7 @@ HARD CONSTRAINTS:
 FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
 - Components: Base plate (grounded), Shaft 1, Shaft 2, Gear 1, Gear 2, one body each; gear 1 at the origin, gear 2 at
-  (a, 0).
+  (a, 0). The plate from z = -6 to 0; each gear 1 mm above it, from z = 1 to z = 1 + b.
 - Each tooth: the transverse outline as ONE closed polyline of sketch lines sharing their points, swept along the
   gear's axis with a twist angle (right hand: the teeth turn anticlockwise, seen from above, as z rises); then a
   circular pattern of the swept tooth.

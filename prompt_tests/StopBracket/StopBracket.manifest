@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 62: builds the bag gripper with its stops through RangeSweep, turns the arm of both opening stop brackets 45 deg about its own axis in the bracket's base feature, fillets its root, measures each bracket against the hand figures and sweeps the gripper through its range."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "StopBracket"
+}

@@ -1,0 +1,29 @@
+# projects/fit_pair/checks/fit_pair_check.py on prompt_tests/FitPair/FitPair.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 10:34, 5 s
+
+FitPair v1.0 (prompt test)
+  ok   20 H7/g6: hole 0/+21, pin -20/-7 um; clearance 7 to 41 um, clearance
+  ok   15 H7/k6: from -12 to 17 um, transition
+  ok   Run opens the dialog
+FitPair v1.0 (prompt test)
+20 H7/g6, engaged length 20 mm, made at maximum material
+hole H7: 20.000 to 20.021 mm (EI +0 um, ES +21 um)
+pin g6: 19.980 to 19.993 mm (ei -20 um, es -7 um)
+largest clearance 41 um, smallest clearance 7 um (negative = interference)
+a clearance fit (IT6 = 13 um, IT7 = 21 um for D above 18 up to 30 mm)
+modelled: hole 20.000 mm, pin 19.993 mm, 7 um clearance on the diameter
+joint: revolute about z, the pin turns
+  OK pressed, built in 1 s
+  ok   a new design opened
+  ok   H7/g6 at maximum material: hole 20.0000, pin 19.9930 mm
+  ok   no interference
+  ok   the joint is revolute
+  ok   H7/g6 at minimum material: hole 20.0210, pin 19.9800 mm, no interference
+  ok   H7/p6 at maximum material: hole 20.0000, pin 20.0350 mm
+  ok   interference found 22.010 mm^3 (pi/4 * (20.035^2 - 20^2) * 20 = 22.010)
+  ok   the joint is rigid
+  H7/p6 at minimum material: hole 20.0210, pin 20.0220 mm; interference found 0.629 mm^3 (by hand 0.629)
+  ok   {'D': 60.0} refused: D = 60 mm is outside the ISO 286 table (above 3 mm up to 50 mm)
+  ok   {'shaft': 'r6'} refused: shaft class 'r6' is not in the table (f7, g6, h6, k6, n6, p6)
+  ok   a message gives the version tag FitPair v1.0 (prompt test)
+ALL PASS

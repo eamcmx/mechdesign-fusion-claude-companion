@@ -1,0 +1,30 @@
+# projects/palletizer/checks/vacuum_gripper_check.py on prompt_tests/VacuumGripper/VacuumGripper.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 23:35, 45 s
+
+VacuumGripper 1.0 (prompt test, 2026-11-11)
+  ok   Run opens the dialog
+Vacuum gripper built on 6 cartons of 6.5 kg (zones 1 to 6), the vacuum held at 0.60 bar; the cups' lips at z -249.9 mm on the cartons' tops.
+The cups' use in the worst stop: 0.868 (S = 2.0; J3 stopped at the low point, 22.46 m/s2 up with g, 15.64 m/s2 sideways); on the cycle 0.288. Payload 119.7 kg (the changer 23.5, the gripper 57.3 as weighed, the cartons 39.0).
+Each zone: six SPB1 80 ED-65 (166 N at -0.6 bar, 59 N lateral) on spring compensators (music wire 1.5 x 20, 10 N hanging, 25 N at the end of the 25 mm stroke, 50.0 mm installed), a manifold 150 x 60 x 40 and two SCPSi 2-14.
+
+Parts: 193 components; 1 Adapter plate, 2 Beam, 6 Cap screw M10x25, 16 Cap screw M6x14, 4 Cap screw M8x16, 36 Cup SPB1 80 ED-65, 1 Dowel pin 10x17, 12 Ejector SCPSi 2-14, 6 Manifold, 1 Plate, 36 Plunger, 36 Sleeve, 36 Spring 1.5x20.
+
+[VacuumGripper 1.0 (prompt test, 2026-11-11)]
+  OK pressed, built in 42 s
+  ok   a new design opened
+  parts: 193 components, 13 kinds
+  Adapter plate 1, Beam 2, Cap screw M10x25 6, Cap screw M6x14 16, Cap screw M8x16 4, Cup SPB1 80 ED-65 36, Dowel pin 10x17 1, Ejector SCPSi 2-14 12, Manifold 6, Plate 1, Plunger 36, Sleeve 36, Spring 1.5x20 36
+  ok   on the layer: no interference among the 193 parts and the 6 cartons 
+  ok   every one of the 36 cups' lips on its carton, the largest gap 0.0000 mm
+  ok   every zone and its cartons pushed up the whole 25 mm stroke: nothing in the way but the springs 
+  ok   pushed up, the lips still on the cartons, the largest gap 0.0000 mm
+  ok   the 36 springs: 49.99 mm long installed, 21.50 mm across, against 50.0 and 21.5
+  ok   the plate held by 16 M6 x 14, their heads on the beams' bottom walls, each 9.00 mm into the plate
+  ok   the adapter: six M10 holes on the 160 circle at [30.0, 90.0, 150.0, 210.0, 270.0, 330.0] deg, the pin on +Xm, the spigot on the axis
+  weighed: adapter 1.64 kg, frame 48.78 kg, a zone 0.82 kg; the gripper 55.35 kg, its centre at z -103.5 mm, 9.03 kg m2 about its axis (cups 0.64 kg)
+  written: lib/vacuum_gripper_weighed.json
+  ok   {'n': 7} refused: 7 cartons: the gripper has six zones, one over each carton of a layer of 3 x 2, so it takes six cartons at most.
+  ok   {'n': 1, 'm': 7.5} refused: A carton of 7.50 kg, 1 under the gripper (payload 86.3 kg): its zone's six cups would be used to 1.077 of what they hold (S = 2.0) in the worst stop (J3 stopped at the low point) and 0.333 on the cycle, over 1, so the cups do not hold it.
+  ok   {'p_bar': 0.5} refused: A vacuum of 0.50 bar: the cups' forces (166 N pulling, 59 N sideways) are worked at 0.6 bar, so the system must hold 0.6 bar or more.
+  ok   a message gives the version tag VacuumGripper 1.0 (prompt test, 2026-11-11)
+ALL PASS

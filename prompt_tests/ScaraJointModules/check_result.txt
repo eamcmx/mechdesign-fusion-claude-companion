@@ -1,0 +1,53 @@
+# projects/scara_robot/checks/scara_modules_check.py on prompt_tests/ScaraJointModules/ScaraJointModules.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 19:39, 6 s
+
+ScaraJointModules PT-1 (prompt test, 2026-11-11)
+  ok   J1: the average torque 150.84 N m and the life 23984 h worked again (the module: 150.84, 23984)
+  ok   Run opens the dialog
+SCARA joint modules J1 and J2, ScaraJointModules PT-1 (prompt test, 2026-11-11)
+
+J1  CSG-40-50-2UH: average torque 150.8 N m (limit 255), repeated peak 200.7 N m (limit 523), life 23 984 h (the brief's 20 000 h), largest input speed 3426 rev/min (limit 4000)
+    motor through the ratio 50, the efficiency 0.65 and the inertia: 9.56 N m peak, 6.04 N m RMS
+J2  CSG-20-50-2UH: average torque 26.4 N m (limit 44), repeated peak 46.1 N m (limit 73), life 15 121 h on radial moves, largest input speed 6194 rev/min (limit 6500)
+    motor: 1.98 N m peak, 1.02 N m RMS
+Output bearings: J1 static safety 14.6, life 280 480 h oscillating over the cycle; J2 static safety 7.1
+Case bolts, class 12.9: J1 10 x M8 on 144 mm hold 2 876 N m by friction (3.2 x the momentary 892 N m); J2 8 x M5 on 82 mm, 508 N m (4.0 x 127 N m)
+Natural frequencies from K1: J1 43.0 Hz, J2 32.9 Hz
+
+Parts, 42 components in 16 kinds:
+    CSG-20-50-2UH housing  1
+    CSG-40-50-2UH housing  1
+    Case bolt M5  8
+    Case bolt M8  10
+    Cross rollers  2
+    Flexspline  2
+    Module plate J1  1
+    Module plate J2  1
+    Motor bolt M5  4
+    Motor bolt M8  4
+    Motor shaft J1  1
+    Motor shaft J2  1
+    Output flange  2
+    Servo motor J1  1
+    Servo motor J2  1
+    Wave generator  2
+  OK pressed, built in 5 s
+  ok   a new design opened
+  ok   two modules: ['J1 module', 'J2 module']
+  parts: 42 components, 16 kinds: [('CSG-20-50-2UH housing', 1), ('CSG-40-50-2UH housing', 1), ('Case bolt M5', 8), ('Case bolt M8', 10), ('Cross rollers', 2), ('Flexspline', 2), ('Module plate J1', 1), ('Module plate J2', 1), ('Motor bolt M5', 4), ('Motor bolt M8', 4), ('Motor shaft J1', 1), ('Motor shaft J2', 1), ('Output flange', 2), ('Servo motor J1', 1), ('Servo motor J2', 1), ('Wave generator', 2)]
+  ok   the parts as listed 
+  ok   no interference among the 42 parts at rest 
+  ok   J1: the output turned 7.2 deg, the input -360.0 deg: -50.0000 to one, the other way
+  ok   J1: the output turned 30.0 deg, the input -1500.0 deg: -50.0000 to one, the other way
+  ok   J2: the output turned 7.2 deg, the input -360.0 deg: -50.0000 to one, the other way
+  ok   J2: the output turned 30.0 deg, the input -1500.0 deg: -50.0000 to one, the other way
+  ok   no interference with each output turned 7.2 and 30 deg 
+  ok   CSG-40: housing 160.00 mm across, 72.50 mm from the input face to the output flange (A 160, B 72.5)
+  ok   CSG-20: housing 93.00 mm across, 45.50 mm from the input face to the output flange (A 93, B 45.5)
+  J1 module: 10.55 kg without its motor, 15.05 kg with the motor at its specified 4.5 kg
+  J2 module: 2.26 kg without its motor, 3.46 kg with the motor at its specified 1.2 kg
+  CSG-40 unit as drawn: 8.92 kg; the catalogue: 5.00 kg
+  CSG-20 unit as drawn: 1.86 kg; the catalogue: 0.98 kg
+  ok   {'size1': 32.0} refused: CSG-32 at J1 falls short: its average torque 150.8 N m is over its limit 140 N m by 10.8 N m (7.7 %); its life 4 126 h is under the brief's 20 000 h by 15 874 h.
+  ok   a message gives the version tag ScaraJointModules PT-1 (prompt test, 2026-11-11)
+ALL PASS

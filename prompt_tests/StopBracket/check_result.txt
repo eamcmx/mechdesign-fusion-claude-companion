@@ -1,0 +1,28 @@
+# projects/palletizer/checks/stop_bracket_check.py on prompt_tests/StopBracket/StopBracket.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 23:36, 31 s
+
+StopBracket 1.0 (2026-11-11)
+  ok   Run opens the dialog
+Opening stop brackets (P13-018) on the bag gripper: the arm turned 45 deg about its own axis, its root R 2.5 mm; jaw B's bracket made from jaw A's by the gripper's half turn about z.
+Stop bracket open 1: the arm's 4 sides, 2 square to the absorber's axis and 2 along it, the worst 0.0000 deg off (before 45.00 deg off); turned 45.00 deg from the plate's edges (before 0.00). Root R 2.5 mm on 4 faces. 99399.2 mm3 against 99399.2 by hand (+0.0000 %), 0.7803 kg, Steel AISI 1045 225 ANLD (before 99406.5 mm3, 99406.5 by hand). M8 heads 4.50 and 4.50 mm from the arm (by hand 4.50 with the heads drawn 12 across, 4.00 at dk 13; before 2.03 and 2.03, by hand 2.03).
+Stop bracket open 2: the arm's 4 sides, 2 square to the absorber's axis and 2 along it, the worst 0.0000 deg off (before 45.00 deg off); turned 45.00 deg from the plate's edges (before 0.00). Root R 2.5 mm on 4 faces. 99399.2 mm3 against 99399.2 by hand (+0.0000 %), 0.7803 kg, Steel AISI 1045 225 ANLD (before 99406.5 mm3, 99406.5 by hand). M8 heads 4.50 and 4.50 mm from the arm (by hand 4.50 with the heads drawn 12 across, 4.00 at dk 13; before 2.03 and 2.03, by hand 2.03).
+Range sweep of the bag gripper (RangeSweep's own): 16 states, 128 parts in 7 groups; no interference; 4 contacts made in motion: Shock absorber DYSC-25-25-Y1F closed 1 / Lever A; Shock absorber DYSC-25-25-Y1F closed 2 / Lever B; Shock absorber DYSC-25-25-Y1F open 1 / Lever A; Shock absorber DYSC-25-25-Y1F open 2 / Lever B; the same as before the change (range_sweep.json). The brackets' closest approaches: Stop bracket closed 1 / Lever A 15.00 mm at 0.0; Stop bracket closed 2 / Lever B 15.00 mm at 0.0.
+Jaw stops: the levers carried on to 200 mm as strikers; four DYSC-25-25-Y1F on four brackets, 8 M8 x 40 through the end plates.
+[StopBracket 1.0 (2026-11-11)]
+  OK pressed, built in 30 s
+  ok   a new design opened
+  ok   the dialog's root radius: 2.5 mm
+  ok   Stop bracket open 1: 4 sides of the arm, the worst 0.0000 deg off square to the push
+  ok   Stop bracket open 1: the root, 4 faces of radius 2.5
+  ok   Stop bracket open 1: 99399.2 mm3 in the model, 99399.2 by hand (0.0000 %), 0.7803 kg, Steel AISI 1045 225 ANLD
+  ok   Stop bracket open 1: the M8 heads 4.50 and 4.50 mm from the arm (by hand 4.50, the heads drawn 12 across)
+  ok   Stop bracket open 2: 4 sides of the arm, the worst 0.0000 deg off square to the push
+  ok   Stop bracket open 2: the root, 4 faces of radius 2.5
+  ok   Stop bracket open 2: 99399.2 mm3 in the model, 99399.2 by hand (0.0000 %), 0.7803 kg, Steel AISI 1045 225 ANLD
+  ok   Stop bracket open 2: the M8 heads 4.50 and 4.50 mm from the arm (by hand 4.50, the heads drawn 12 across)
+  ok   the sweep: 16 states, 128 parts, no interference
+  ok   contacts made in motion: Shock absorber DYSC-25-25-Y1F closed 1 / Lever A; Shock absorber DYSC-25-25-Y1F closed 2 / Lever B; Shock absorber DYSC-25-25-Y1F open 1 / Lever A; Shock absorber DYSC-25-25-Y1F open 2 / Lever B
+closest to the opening brackets: Stop bracket closed 1 / Lever A 15.00 mm; Stop bracket closed 2 / Lever B 15.00 mm
+  ok   refused: A root radius of 7 mm refused: it must be 0 or more and below 6.50 mm, where the fillet's toe reaches the M8 heads (the heads 13 across, 25 mm either side of the arm's middle; lugs_brackets.clearance).
+  ok   a message gives the version tag StopBracket 1.0 (2026-11-11)
+ALL PASS

@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"The electromechanical actuator of a trailing-edge flap: ball screw, gear train, motor unit, rod and rod end, with joints and motion links (Volume 2, Chapter 33)."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

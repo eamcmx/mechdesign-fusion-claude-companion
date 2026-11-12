@@ -1,0 +1,27 @@
+# projects/bevel_differential_wrist/checks/bevelwrist_check.py on prompt_tests/BevelWristPrompt/BevelWristPrompt.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 11:38, 19 s
+
+BevelWristPrompt v1.0 (2026-11-11)
+  ok   Run opens the dialog
+Bevel-gear wrist differential built.
+z = 40 teeth on each of the four gears, m = 2 mm, R = 56.569 mm (pressure angle 20 deg, face width 16 mm, k = 0.7172, sweep radius S = 59.55 mm).
+Joints: "Pitch" turns the yoke on the frame about Y, "Roll" turns the output gear on the yoke about Z; the idler and the side gears follow "Roll" through 1:1 Motion Links.
+BevelWristPrompt v1.0 (2026-11-11)
+  OK pressed with the defaults, built in 12 s
+  ok   a new design opened
+  ok   parts: ['Frame', 'Idler gear', 'Output gear', 'Side gear L', 'Side gear R', 'Yoke']
+  ok   one body each: {'Frame': 1, 'Yoke': 1, 'Output gear': 1, 'Idler gear': 1, 'Side gear L': 1, 'Side gear R': 1}
+  ok   the frame is grounded
+  ok   As-built Joints: ['Pitch', 'Roll', 'Idler', 'Side L', 'Side R']
+  ok   Motion Links: ['Roll to Idler', 'Roll to Side L', 'Roll to Side R']
+  ok   no interference at rest 
+  ok   pitch 30: about Y {'Yoke': 30.0, 'Side gear L': 30.0, 'Side gear R': 30.0, 'Output gear': 30.0, 'Idler gear': 30.0}
+  ok   pitch 30: the output did not turn on the yoke
+  ok   roll 40: output 40.000 about Z, side L 40.000 and side R -40.000 about Y, idler -40.000 about Z
+  ok   pitch 30 + roll 40: thL = 70.000, thR = -10.000
+  ok   pitch = (thL + thR)/2 = 30.000, roll = (thL - thR)/2 = 40.000
+  ok   no interference at (30, 40), (-45, 120) and roll 1.5 to 9 deg 
+  ok   z = 30 refused: b = 16 mm is more than R / 3 = 14.14 mm (z = 30, m = 2 mm): the face width is refused.
+  ok   z = 41 refused: z = 41 is odd: each gear meets two others 180 deg apart, so z must be even.
+  ok   a message gives the version tag BevelWristPrompt v1.0 (2026-11-11)
+ALL PASS

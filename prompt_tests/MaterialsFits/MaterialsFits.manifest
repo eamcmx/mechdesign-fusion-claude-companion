@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"Chapter 51 (prompt test): one of the nine assemblies with every made part's material from Fusion's library and every seat and fit given its tolerance class and roughness, coloured by kind of joint"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

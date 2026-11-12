@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "",
+	"description": {
+		"": "A 6002 or 61902 deep groove ball bearing on a shaft and in a housing, with As-built Joints and a Motion Link that carries the balls round at the cage's speed; reports the rating life."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

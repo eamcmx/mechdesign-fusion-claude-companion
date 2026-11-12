@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 60: builds the bag gripper with its stops through RangeSweep's machine('bag') and measures on its faces the geometry the fatigue calculations take at the gripper's ends: the stop bolts' grip, the brackets' roots, the long stub's keyseat with its key and the short stub's circlip groove beside its bearing; the measures go to design_office/results/fatigue_spots.json."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "FatigueSpots"
+}

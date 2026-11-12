@@ -1,0 +1,42 @@
+# projects/robotic_wrist/checks/wrist_integration_check.py on prompt_tests/WristIntegration/WristIntegration.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 17:48, 55 s
+
+WristIntegration 1.0 (2026-11-11)
+  ok   the brakes stop the carrier at 126.09 deg, worked again 126.09
+  ok   Run opens the dialog
+Pitch-roll wrist made ready for its arm.
+Tool flange ISO 9409-1-31.5-4-M5: four M5 on 31.5, a 5 H7 pin hole on +X, the 20 H7 recess carried down to a DIN 471-15 ring at 44.15 mm that holds it; no screw in the shaft's end.
+Roll shaft bored 5 mm through: the payload on it at 92.8 Hz (93.4 solid; 80 wanted). Slip ring: 6 circuits of 2 A to 300 rev/min, the rotor on the shaft's lower end, the stator under the carrier.
+Pitch stops, contact at 128.0 deg: soft limit 120 deg, switch 121 deg; 3.60 deg coasting in the brakes' 20 ms and 1.49 deg braking stop the carrier at 126.09 deg. Block 28.04 deg either side of -z, pads 11.46 deg (6 mm at r 30). The hard stop alone: 0.744 J, a buffer of 335 N m/rad, 22.3 N m and 744 N at its peak (6.20 MPa on the pad), the key 74 MPa in shear and 149 MPa on its sides, the trunnion 33.7 MPa; the lug stops at 131.82 deg.
+Play at the payload's centre, 131 mm from the pitch axis: gearheads 0.286, belt 0.229, bevel set 0.349 mm, 0.86 mm in all (0.64 with 3 arcmin gearheads).
+Pitch limits opened to +-140 deg.
+
+Parts: 97 components in 43 kinds; 1 Base plate, 4 Bearing 6002-2RSH, 4 Bearing 61902-2RS1, 1 Bearing cap floating, 2 Belt HTD 350-5M-15, 2 Buffer pad, 1 Cap screw ISO 4762 M3x8, 8 Cap screw ISO 4762 M4x10, 4 Cap screw ISO 4762 M4x12, 6 Cap screw ISO 4762 M5x12, 6 Cap screw ISO 4762 M5x16, 4 Cap screw ISO 4762 M8x20, 1 Carrier block, 8 Countersunk screw ISO 10642 M3x8, 4 Countersunk screw ISO 10642 M4x12, 4 Dowel ISO 8734 5x16, 2 End washer 18x5.5x2.5, 1 Key DIN 6885 A 5x5x18, 1 Key DIN 6885 A 5x5x8, 2 Motor bracket, 2 Motor output, 1 Output bevel gear, 1 Retaining ring DIN 471-15, 1 Retaining ring DIN 471-15, flange, 1 Retaining ring DIN 472-32, 1 Roll shaft, bored, 2 Servo motor with brake and 15:1 gearhead, 2 Side bevel gear with 36-groove pulley, 2 Side cheek, 1 Slip ring bracket, 1 Slip ring rotor, 1 Slip ring stator, 2 Spacer S1, 2 Spacer S2, 2 Spacer S3, 1 Spacer S4, 1 Spacer S5, 1 Stop cap, 1 Stop disc, 2 Tie bar, 1 Tool flange ISO 9409-1-31.5-4-M5, 1 Trunnion, 1 Trunnion with stop end.
+
+[WristIntegration 1.0 (2026-11-11)]
+  OK pressed, built in 27 s
+  ok   a new design opened
+  parts: 97 components, 43 kinds: [('Base plate', 1), ('Bearing 6002-2RSH', 4), ('Bearing 61902-2RS1', 4), ('Bearing cap floating', 1), ('Belt HTD 350-5M-15', 2), ('Buffer pad', 2), ('Cap screw ISO 4762 M3x8', 1), ('Cap screw ISO 4762 M4x10', 8), ('Cap screw ISO 4762 M4x12', 4), ('Cap screw ISO 4762 M5x12', 6), ('Cap screw ISO 4762 M5x16', 6), ('Cap screw ISO 4762 M8x20', 4), ('Carrier block', 1), ('Countersunk screw ISO 10642 M3x8', 8), ('Countersunk screw ISO 10642 M4x12', 4), ('Dowel ISO 8734 5x16', 4), ('End washer 18x5.5x2.5', 2), ('Key DIN 6885 A 5x5x18', 1), ('Key DIN 6885 A 5x5x8', 1), ('Motor bracket', 2), ('Motor output', 2), ('Output bevel gear', 1), ('Retaining ring DIN 471-15', 1), ('Retaining ring DIN 471-15, flange', 1), ('Retaining ring DIN 472-32', 1), ('Roll shaft, bored', 1), ('Servo motor with brake and 15:1 gearhead', 2), ('Side bevel gear with 36-groove pulley', 2), ('Side cheek', 2), ('Slip ring bracket', 1), ('Slip ring rotor', 1), ('Slip ring stator', 1), ('Spacer S1', 2), ('Spacer S2', 2), ('Spacer S3', 2), ('Spacer S4', 1), ('Spacer S5', 1), ('Stop cap', 1), ('Stop disc', 1), ('Tie bar', 2), ('Tool flange ISO 9409-1-31.5-4-M5', 1), ('Trunnion', 1), ('Trunnion with stop end', 1)]
+  ok   the parts as listed 
+  ok   the links still hold: pitch 20, motors 40.000 and 40.000
+  ok   no interference among the 97 parts at rest 
+  ok   no interference at pitch 30, roll 0 deg 
+  ok   no interference at pitch 0, roll 45 deg 
+  ok   no interference at pitch -40, roll 70 deg 
+  ok   no interference at pitch 75, roll -123 deg 
+  ok   no interference at pitch -110, roll 200 deg 
+  ok   no interference at pitch 25, roll 30 deg 
+  ok   no interference at pitch -60, roll 150 deg 
+  ok   no interference at pitch 120, roll -90 deg 
+  ok   no interference at pitch -120, roll 300 deg 
+  ok   no interference at pitch 127, roll 30 deg 
+  ok   no interference at pitch -127, roll -200 deg 
+  ok   at pitch 129 the lug is in a pad and nothing else touches: [('stop disc', 'pad', 50.972)]
+  ok   at pitch -129 the lug is in a pad and nothing else touches: [('stop disc', 'pad', 50.972)]
+  the flange's cylindrical faces, diameters mm: [5.0, 15.0, 20.0, 45.0]
+  ok   the flange has its 20 mm recess, its 5 mm pin hole and its 45 mm outside
+  MEASURED {"total": 5.5240734, "cg_x": -0.0070194, "cg_y": 1.0082177, "cg_z": -65.429192, "roll": 0.4486645, "roll_z": 28.3941296, "roll_Iz": 0.0001222, "roll_Ix": 0.0001839, "carrier": 0.4160314, "carrier_z": 0.1408259, "carrier_Iy": 8.42e-05, "motors_drawn": 2.0735354}
+  ok   {'contact': 125.0} refused: A hard stop with its contact at 125.0 deg is refused: the brakes stop the carrier only at 126.09 deg (the switch at 121 deg, 3.60 deg in their 20 ms delay, 1.49 deg braking), not short of the contact.
+  ok   {'contact': 155.0} refused: A hard stop with its contact at 155.0 deg is refused: it leaves the block too short: 1.04 deg either side of -z, where it needs 10.
+  ok   a message gives the version tag WristIntegration 1.0 (2026-11-11)
+ALL PASS

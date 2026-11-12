@@ -56,7 +56,13 @@ ACCEPTANCE CRITERIA:
 - Defaults: T1 26.526, T2 129.977 N m; Ft 1163.4 N, Kv 1.7045; Lewis 70.2 and 49.6 MPa, contact 562.1 MPa; the
   pinion's bending factor 2.995 and contact factor 1.155; shaft factors 2.94, 4.32, 2.29; L10 99941 and 1808862 h;
   keys 90.1, 96.7, 98.5 MPa.
-- 63 components in 27 kinds; no interference at rest.
+- 63 components in 27 kinds, by component name and count: Bearing 6204 balls 2, Bearing 6204 inner ring 2, Bearing
+  6204 outer ring 2, Bearing 6206 balls 2, Bearing 6206 inner ring 2, Bearing 6206 outer ring 2, Cap input blind 1,
+  Cap input through 1, Cap output blind 1, Cap output through 1, Cap screw M6x16 16, Dowel 8x24 2, Drain plug M16 1,
+  Filler plug M16 1, Gear z95 1, Housing base 1, Housing cover 1, Key 10x8x42 gear 1, Key 5x5x28 input 1, Key 8x7x52
+  output 1, Lip seal 20x35x7 1, Lip seal 30x47x7 1, Nut M10 8, Output shaft 1, Pinion shaft 1, Screw M10x45 8, Spacer
+  1.
+- No interference at rest.
 - Measured: every bearing on its seat and in its bore, its shoulder at least dS of Table 11-2; the output shaft's
   stack (shoulder, gear, spacer, bearing) without play; every cap on its outer ring; the gear's tip radius.
 - The input turned 18 deg: the output -3.6 deg; every part of the shaft assemblies turned with them; no tooth

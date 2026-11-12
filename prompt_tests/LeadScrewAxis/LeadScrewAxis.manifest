@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"A linear axis: a trapezoidal lead screw turning in a frame and a carriage with its nut on a guide rod, joined so that Drive Joints on the screw moves the carriage; reports the screw's torque, efficiency and self-locking."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

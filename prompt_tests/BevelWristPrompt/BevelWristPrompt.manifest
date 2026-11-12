@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "",
+	"description": {
+		"": "The bevel-gear differential of a robot wrist as one jointed assembly: Pitch turns the yoke, Roll turns the output gear, the side gears follow through Motion Links."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

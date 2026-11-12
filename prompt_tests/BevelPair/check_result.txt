@@ -1,0 +1,26 @@
+# projects/bevel_pair/checks/bevel_pair_check.py on prompt_tests/BevelPair/BevelPair.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 12:54, 6 s
+
+BevelPair v1.0 (prompt test, 11 Nov 2026)
+  ok   all values recomputed independently 
+  ok   the rounded values of the prompt (26.565, 63.435, 44.721, 22.36, 89.44, 1.712)
+  ok   Run opens the dialog
+Straight bevel pair: z1 = 20, z2 = 40, m = 2 mm, alpha = 20 deg, b = 12 mm, d = 8 mm
+pitch cone angles: delta1 = 26.565 deg, delta2 = 63.435 deg
+cone distance R = 44.721 mm (b / R = 0.268, k = 0.7317)
+virtual teeth: z_v1 = 22.36, z_v2 = 89.44
+contact ratio of the virtual spur gears = 1.712, ratio z2 / z1 = 2.000
+pinion driven 90.0 deg about +Z: gear -45.000 deg about +X
+BevelPair v1.0 (prompt test, 11 Nov 2026)
+  OK pressed, built in 3 s
+  ok   a new design opened
+  ok   four components: ['Gear', 'Pinion', 'Shaft 1', 'Shaft 2']
+  ok   one body each
+  ok   two revolute As-built Joints, one Motion Link
+  ok   no interference at rest 
+  ok   the pinion turned 90.000 deg about +Z: the gear turned -45.000 deg about +X (want -45.000)
+  ok   no tooth collision while the pinion turns through 18 deg in 13 positions 
+  ok   {'b': 16.0} refused: face width b = 16.00 mm is more than R / 3 = 14.91 mm (R = 44.721 mm): refused
+  ok   {'z1': 15} refused: the pinion has z_v1 = z1 / cos(delta1) = 16.02 virtual teeth, fewer than 2 / sin^2(alpha) = 17.10, so it would be undercut: refused
+  ok   a message gives the version tag BevelPair v1.0 (prompt test, 11 Nov 2026)
+ALL PASS

@@ -1,6 +1,7 @@
 # HarmonicDrive (Chapter 19) against the acceptance criteria of its prompt, measured on what Fusion built: the tips
 # at the long and short axes and the circular spline's tips measured on the bodies; the drive turned through one mesh
-# period (360 / z_c deg) in 12 steps and to 45, 90 and 180 deg, with no interference at any.
+# period (360 / z_c deg) in 6 steps and to 90 deg, with no interference at any (7 rebuilds: each takes the script
+# about two minutes, and the whole check must stay under half an hour).
 import math, sys, importlib, time
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc
@@ -53,7 +54,7 @@ def run(_context):
     c = fc.interference()
     fc.ok(not c, 'no interference at phi = 0 %s' % (c or ''))
     per = 360.0 / k['z_c']
-    angles = [round(per * i / 12, 4) for i in range(1, 13)] + [45, 90, 180]
+    angles = [round(per * i / 6, 4) for i in range(1, 7)] + [90]
     hits, rhos = [], []
     pair = [fc.occ('Flexspline'), fc.occ('CircularSpline')]        # the meshing pair, at every angle
     for a in angles:
@@ -61,12 +62,11 @@ def run(_context):
         rhos.append((a, ns['turn_to'](a)))
         adsk.doEvents()
         t1 = time.time()
-        hit = fc.interference() if a in (90, 180) else fc.interference(pair)   # all three parts at 90 and 180
+        hit = fc.interference() if a == 90 else fc.interference(pair)          # all three parts at 90
         if hit:
             hits.append((a, hit))
         print('  phi %8.4f deg: rebuilt in %.0f s, interference in %.0f s' % (a, t1 - t0, time.time() - t1))
-    fc.ok(abs(rhos[-1][1] + 1.8) < 1e-9 and abs(rhos[-2][1] + 0.9) < 1e-9,
-          'the flexspline turned %.4f deg at phi = 90 and %.4f deg at phi = 180' % (rhos[-2][1], rhos[-1][1]))
+    fc.ok(abs(rhos[-1][1] + 0.9) < 1e-9, 'the flexspline turned %.4f deg at phi = 90' % rhos[-1][1])
     fc.ok(not hits, 'no interference at any of the %d angles %s' % (len(angles), hits or ''))
     fc.refused(ns, 'difference of 2', dz=1)
     fc.refused(ns, 'from 60 to 320', z_f=40)

@@ -14,6 +14,8 @@ script that runs and builds the right part or assembly.
 - Every file the prompt names by its place (libraries under `.../lib/`, other scripts it tells you to load and call,
   results it tells you to read). Load them as the prompt says (loaded, not copied).
 - `common/companion_paths.py` and `common/lib/mdfc_parts.py` (how a script finds the libraries, and the parts library).
+- `FUSION_API_TRAPS.md` at the companion's root: what Fusion's API does that its documentation does not say. A reader
+  gives this file to the model with every prompt; read it before you write.
 - `tools/fusion_check.py` and the check `{CHECK}`, ONLY to learn how the check drives a script: the functions and
   module-level names it calls or reads (for example `build()`, `run()`, `_Created`, `VERSION`, `_last`, `set_state()`),
   the ids of the dialog's inputs it types into, and the names of components and joints it looks up. Do not take any

@@ -1,0 +1,79 @@
+# projects/spur_reducer/checks/spur_reducer_check.py on prompt_tests/SpurReducer/SpurReducer.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 05:02, 14 s
+
+SpurReducer v1.0 (prompt test, 12 Nov 2026)
+  ok   the sizing recomputed independently 
+  T1 26.526, T2 129.977 N m; Ft 1163.4 N, Kv 1.7045; Lewis 70.2 / 49.6 MPa, contact 562.1 MPa; DE-Goodman 2.94, 4.32, 2.29; L10 99941 h, 1808862 h; keys 90.1, 96.7, 98.5 MPa; the pinion's bending factor 2.995, contact factor 1.1546
+  ok   Run opens the dialog
+SpurReducer v1.0 (prompt test, 12 Nov 2026)
+Duty: 4 kW at 1440 rpm, KA 1.25, bearing life 20000 h, design factor 2
+
+Gears m 3, z 19/95, face 30 mm, 20 deg, a = 171 mm: T1 26.526 N m, T2 129.977 N m; Ft 1163.4 N, Fr 423.4 N, W 1238.1 N; V 4.298 m/s, Kv 1.7045
+  Lewis: pinion 70.2 MPa (Y 0.314), gear 49.6 MPa (Y 0.4446); contact 562.1 MPa
+  300 HB: St 248.2, Sc 866 MPa; YN 0.8467 / 0.8919, ZN 0.7494 / 0.8200
+  pinion: bending factor 2.995, contact factor 1.155; gear: bending factor 4.467, contact factor 1.263
+Shafts, 1045 CD, DE-Goodman with Kt 2.14, Kts 3.0: input end (16) 2.94, gear seat (35) 4.32, output end (25) 2.29
+  slopes at the bearings: input 0.00046 rad, output 0.00009 rad (0.001 allowed)
+  deflection under the pinion 0.0149 mm, under the gear 0.0031 mm (Table 7-2: 0.254 mm)
+Bearings: 6204 on 20 mm, R 619.0 N at 1440 rpm, C needed 7.43 of 12.7 kN, L10 99941 h; 6206 on 30 mm, C needed 4.34 of 19.5 kN, L10 1808862 h
+Keys (60 MPa shear, 100 MPa crushing allowed): Key 5x5x28 input on 16 mm: shear 36.0, crushing 90.1 MPa; Key 10x8x42 gear on 35 mm: shear 29.0, crushing 96.7 MPa; Key 8x7x52 output on 25 mm: shear 36.9, crushing 98.5 MPa
+Motion, measured: input turned 18.000 deg, output -3.600 deg (joint axes +0 +1 +0, +0 +1 +0)
+
+Parts list, 63 components in 27 kinds:
+    2  Bearing 6204 balls
+    2  Bearing 6204 inner ring
+    2  Bearing 6204 outer ring
+    2  Bearing 6206 balls
+    2  Bearing 6206 inner ring
+    2  Bearing 6206 outer ring
+    1  Cap input blind
+    1  Cap input through
+    1  Cap output blind
+    1  Cap output through
+   16  Cap screw M6x16
+    2  Dowel 8x24
+    1  Drain plug M16
+    1  Filler plug M16
+    1  Gear z95
+    1  Housing base
+    1  Housing cover
+    1  Key 10x8x42 gear
+    1  Key 5x5x28 input
+    1  Key 8x7x52 output
+    1  Lip seal 20x35x7
+    1  Lip seal 30x47x7
+    8  Nut M10
+    1  Output shaft
+    1  Pinion shaft
+    8  Screw M10x45
+    1  Spacer
+  OK pressed, built in 11 s
+  ok   a new design opened
+  ok   three subassemblies: ['Housing', 'Input shaft assembly', 'Output shaft assembly']
+  ok   the parts, counted from Fusion: 63 components, 27 kinds 
+  ok   materials {'Pinion shaft': 'Steel', 'Output shaft': 'Steel', 'Gear z95': 'Steel', 'Housing base': 'Iron, Cast', 'Cap input through': 'Iron, Cast'}
+  ok   two revolute As-built Joints, one link
+  ok   no interference among the 63 parts at rest 
+  ok   6204 bore on its seat
+  ok   6204 width 14 mm
+  ok   6204 outside in its bore
+  ok   6204 shoulder 25 mm, at least dS = 25 mm (Table 11-2)
+  ok   6206 bore on its seat
+  ok   6206 width 16 mm
+  ok   6206 outside in its bore
+  ok   6206 shoulder 40 mm, at least dS = 35 mm (Table 11-2)
+  ok   the output shaft's stack without play: shoulder to gear 0.000 mm, gear to spacer 0.000 mm, spacer to bearing 0.000 mm
+  ok   Cap input through on its outer ring
+  ok   Cap input blind on its outer ring
+  ok   Cap output blind on its outer ring
+  ok   Cap output through on its outer ring
+  ok   the gear's tip radius 145.477 mm (want 145.5)
+  ok   the input turned 18.000 deg: the output -3.600 deg (want -3.600)
+  ok   all 11 parts of the two shaft assemblies turned with them (worst Key 10x8x42 gear, 7.4e-14 mm)
+  ok   no tooth collision while the pinion turns 0 to 19 deg, past one pitch of 18.947 deg 
+  mass of the reducer 62.99 kg; the gear 6.81 kg, the housing 51.72 kg
+  ok   {'P': 4.5} refused: Refused: the pinion's flanks have a contact factor of 1.089, below 1.1; the in key bears 101.4 MPa in crushing, above 100 MPa; the gear key bears 108.8 MPa in crushing, above 100 MPa; the out key bears 110.8 MPa in crushing, above 100 MPa
+  ok   {'life': 150000.0} refused: Refused: the pinion's flanks have a contact factor of 1.031, below 1.1; bearing 6204 lasts 99941 h, short of the 150000 h asked (C needed 14.54 kN, C10 12.70 kN)
+  ok   {'nd': 3.0} refused: Refused: the pinion's teeth have a bending factor of 2.995, below nd = 3; the input end has a factor of safety of 2.94, below nd = 3; the output end has a factor of safety of 2.29, below nd = 3
+  ok   a message gives the version tag SpurReducer v1.0 (prompt test, 12 Nov 2026)
+ALL PASS

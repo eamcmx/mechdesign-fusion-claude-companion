@@ -18,6 +18,7 @@ DERIVED (never typed):
   (10 mm), the number of tines (16)
 - the tools from Fusion's sample libraries 'Milling Tools (Metric)', 'Hole Making Tools (Metric)', 'Turning Tools
   (Metric)' and 'Cutting Tools (Metric)'; the posts fanuc.cps, fanuc turning.cps and jet.cps from Fusion's own install
+  (the newest of %LOCALAPPDATA%/Autodesk/webdeploy/production/*/Applications/CAM360/Data/Posts/<name>.cps)
 
 HARD CONSTRAINTS:
 - bracket: the opening stop bracket P13-018 with its arm turned and its root R2.5, in its own frame (the bolting face
@@ -48,6 +49,9 @@ FUSION CONVENTIONS:
 - a new design document (FusionDesignDocumentType) for the part, parametric, the body in a base feature, no joints
   and no as-built joints; the Manufacture workspace's CAM product, milling, turning and cutting setups; lengths in mm,
   the API's cm inside.
+- A setup's tool axis is turned through its parameters, each set by its expression as a string: setup 1, which
+  works from under the bolting face, sets wcs_orientation_flipZ to 'true'; setup 3 sets wcs_orientation_mode to
+  "'axesZX'" and the value of wcs_orientation_axisZ to [the lug's bore, its cylindrical face].
 
 ACCEPTANCE CRITERIA:
 - A message gives each setup's operations, its machining time and its NC file with its length in lines, and a

@@ -1,0 +1,29 @@
+# design_office/checks/materials_fits_check.py on prompt_tests/MaterialsFits/MaterialsFits.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 23:59, 18 s
+
+MaterialsFits (prompt test) 1.0 (2026-11-11)
+  ok   Run opens the dialog
+The bag gripper, built by StandardParts.py.
+Materials: 41 of 41 made parts given the library's material; the library lacks none.
+   Aluminum 6061 for aluminium 6082-T6: 7; Steel AISI 1020 107 HR for steel 1020: 16; Steel AISI 1045 225 ANLD for steel 1045 (C45): 18
+The made parts weigh 72.775 kg with the library's materials and 72.734 kg with the model's generic ones.
+Joints decided: bearings 4, keys 2, dowel holes 1, sliding fits 2, located fits 2, keyed fits 2; 0 seats the model leaves open by up to 0.2 mm, decided as touching (the model has to be closed).
+Faces coloured by kind: 8 red (bearing seats), 4 blue (sliding fits), 4 green (located, keyed and pressed fits), 15 black (dowel holes and key seats); 31 faces carry 'mdfc' 'fit', 0 of them two classes, one for each zone.
+
+[MaterialsFits (prompt test) 1.0 (2026-11-11)]
+  OK pressed, built in 16 s
+  ok   a new design opened
+  ok   every made part's bodies in the library's material for its alloy: 41 parts, wrong []; the library lacks none
+  aluminium 6082-T6: Aluminum 6061; steel 1020: Steel AISI 1020 107 HR; steel 1045 (C45): Steel AISI 1045 225 ANLD
+  ok   every decided face carries its class and roughness: 31 faces, wrong [], carried and not decided 0
+  ok   the bearing seats coloured Paint - Enamel Glossy (Red): 8 faces
+  ok   the four 6206-2RS1 on the stub shafts k5: [('Stub shaft long', 'k5'), ('Stub shaft short', 'k5')]
+  ok   the four 6206-2RS1 in the aluminium end plates J7: [('End plate', 'J7')]
+  ok   the lever's hub H7 on the bearing's k5 seat: [('Stub shaft long', 'Lever', 'H7/k5')]
+  ok   the key seats' faces coloured Paint - Enamel Glossy (Black): 14 faces
+  ok   the key seats N9 in the shafts and JS9 in the hubs: [('Lever', 'JS9'), ('Stub shaft long', 'N9')]
+  ok   the dowel's hole H7: [('Adapter plate', 'H7')]
+  ok   the made parts weigh 72.7746 kg, volume times the library's density 72.7746 kg (72.7342 kg with the generic materials)
+  ok   {'key': 'gearbox'} refused: 'gearbox' is not one of the nine assemblies: The robotic wrist (wrist), The flap actuation system (flap), The rear axle (axle), The palletizer's robot (robot), The tool changer (changer), The clamp gripper (clamp), The vacuum gripper (vacuum), The bag gripper (bag), The compliance unit (unit).
+  ok   a message gives the version tag MaterialsFits (prompt test) 1.0 (2026-11-11)
+ALL PASS

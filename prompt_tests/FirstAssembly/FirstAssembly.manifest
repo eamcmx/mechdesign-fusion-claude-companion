@@ -1,0 +1,11 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "Emmanuel Merchan",
+	"description": {
+		"": "A block with a shaft standing in a hole through it, the shaft on a revolute As-built Joint so that Drive Joints turns it about z."
+	},
+	"version": "1.0",
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

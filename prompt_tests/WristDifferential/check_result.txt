@@ -1,0 +1,91 @@
+# projects/robotic_wrist/checks/wrist_check.py on prompt_tests/WristDifferential/WristDifferential.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 07:14, 31 s
+
+WristDifferential 1.0 (prompt test)
+  ok   the front face 23.181 mm and the belt's centre distance 106.536 mm worked again (the module: 23.181, 106.536)
+  ok   Run opens the dialog
+WristDifferential 1.0 (prompt test)
+Bevel set: miter, module 1.50 mm, 40 teeth on 40, face 11.0 mm; pitch diameter 60.0 mm, cone distance 42.426 mm, addendum 1.50 mm, dedendum 1.832 mm (Shigley, Table 13-3).
+Front face: 23.181 mm from the apex, through the toe's root; the carrier needs 22.5 mm.
+Safety factors on the duty (3.34 N m at a side gear, 1.8e+07 cycles): S_F 3.63, S_H 2.81; at the drives' torque limit (8.75 N m): S_F 1.87, S_H 1.99.
+Motors: two servos with brakes (rated 0.16 N m, peak 0.48 N m, brake 0.32 N m, assumed), 15:1 gearheads and 18/36 belts, 30:1 in all; each needs 0.139 N m peak, 0.120 N m rms, 2700 rev/min, 0.120 N m to hold and a 0.200 N m brake.
+Belts: HTD 350-5M-15, centre distance 106.536 mm, 8.2 teeth in mesh on the small pulley.
+Parts: 89 components in 34 kinds:
+  Base plate: 1
+  Bearing 6002-2RSH: 4
+  Bearing 61902-2RS1: 4
+  Bearing cap fixed: 1
+  Bearing cap floating: 1
+  Belt HTD 350-5M-15: 2
+  Cap screw ISO 4762 M4x10: 8
+  Cap screw ISO 4762 M4x12: 8
+  Cap screw ISO 4762 M5x12: 6
+  Cap screw ISO 4762 M5x16: 6
+  Cap screw ISO 4762 M8x20: 4
+  Carrier block: 1
+  Countersunk screw ISO 10642 M3x8: 8
+  Dowel ISO 8734 5x16: 4
+  End washer 18x5.5x2.5: 2
+  End washer 18x6.4x2: 1
+  Key DIN 6885 A 5x5x18: 1
+  Low-head screw DIN 7984 M6x12: 1
+  Motor bracket: 2
+  Motor output: 2
+  Output bevel gear: 1
+  Retaining ring DIN 471-15: 1
+  Retaining ring DIN 472-32: 1
+  Roll shaft: 1
+  Servo motor with brake and 15:1 gearhead: 2
+  Side bevel gear with 36-groove pulley: 2
+  Side cheek: 2
+  Spacer S1: 2
+  Spacer S2: 2
+  Spacer S3: 2
+  Spacer S4: 1
+  Tie bar: 2
+  Tool flange ISO 9409-1-31.5-4-M5: 1
+  Trunnion: 2
+Notes:
+  motion link roll-inL dropped: it drove -0.2007 rad for 0.2000
+  motion link roll-inR dropped: it drove 0.2007 rad for -0.2000
+  motion link carrier-hL dropped: it drove -0.1004 rad for 0.4000
+  motion link carrier-hR dropped: it drove -0.1004 rad for 0.4000
+  motion link roll-mL dropped: it drove -0.1004 rad for 0.4000
+  motion link roll-mR dropped: it drove 0.1004 rad for -0.4000
+  OK pressed, built in 12 s
+  ok   a new design opened
+  ok   nine groups: ['Belt helper L', 'Belt helper R', 'Carrier', 'Frame', 'Input L', 'Input R', 'Motor output', 'Motor output', 'Roll output']
+  parts: 89 components, 34 kinds: [('Base plate', 1), ('Bearing 6002-2RSH', 4), ('Bearing 61902-2RS1', 4), ('Bearing cap fixed', 1), ('Bearing cap floating', 1), ('Belt HTD 350-5M-15', 2), ('Cap screw ISO 4762 M4x10', 8), ('Cap screw ISO 4762 M4x12', 8), ('Cap screw ISO 4762 M5x12', 6), ('Cap screw ISO 4762 M5x16', 6), ('Cap screw ISO 4762 M8x20', 4), ('Carrier block', 1), ('Countersunk screw ISO 10642 M3x8', 8), ('Dowel ISO 8734 5x16', 4), ('End washer 18x5.5x2.5', 2), ('End washer 18x6.4x2', 1), ('Key DIN 6885 A 5x5x18', 1), ('Low-head screw DIN 7984 M6x12', 1), ('Motor bracket', 2), ('Motor output', 2), ('Output bevel gear', 1), ('Retaining ring DIN 471-15', 1), ('Retaining ring DIN 472-32', 1), ('Roll shaft', 1), ('Servo motor with brake and 15:1 gearhead', 2), ('Side bevel gear with 36-groove pulley', 2), ('Side cheek', 2), ('Spacer S1', 2), ('Spacer S2', 2), ('Spacer S3', 2), ('Spacer S4', 1), ('Tie bar', 2), ('Tool flange ISO 9409-1-31.5-4-M5', 1), ('Trunnion', 2)]
+  ok   the parts as listed 
+  ok   pitch 20 deg alone: carrier 20.000, gear L 20.000, gear R 20.000, motor L 40.000, motor R 40.000
+  ok   roll 30 deg alone: output 30.000, carrier 0.000, gear L -30.000, gear R 30.000, motor L -60.000, motor R 60.000
+  ok   pitch 25, roll 30: gear L -5.000 (-5), gear R 55.000 (55), motor L -10.000 (-10), motor R 110.000 (110)
+  ok   no interference among the 89 parts at rest 
+  ok   no interference at pitch 30, roll 0 deg 
+  ok   no interference at pitch 0, roll 45 deg 
+  ok   no interference at pitch -40, roll 70 deg 
+  ok   no interference at pitch 75, roll -123 deg 
+  ok   no interference at pitch -110, roll 200 deg 
+  ok   no interference at pitch 25, roll 30 deg 
+  ok   no interference at pitch -60, roll 150 deg 
+  ok   no interference at pitch 120, roll -90 deg 
+  MEASURED {"roll": 0.3935775, "roll_z": 25.2128104, "roll_Iz": 0.0001097, "roll_Ix": 0.0001578, "carrier": 0.3591748, "carrier_z": -0.173731, "carrier_Iy": 6.35e-05, "side": 0.3933011, "side_Iy": 0.0001724}
+  the wrist in all: 5.066 kg (the frame 3.343, its share of the motors in it); each motor output 0.092 kg
+  Base plate: 0.5092 kg
+  Side cheek: 0.5697 kg
+  Side cheek: 0.5697 kg
+  Servo motor with brake and 15:1 gearhead: 0.5394 kg
+  Servo motor with brake and 15:1 gearhead: 0.5394 kg
+  Carrier block: 0.0874 kg
+  Trunnion: 0.0904 kg
+  Trunnion: 0.0904 kg
+  Roll shaft: 0.1121 kg
+  Output bevel gear: 0.2277 kg
+  Tool flange ISO 9409-1-31.5-4-M5: 0.0388 kg
+  Side bevel gear with 36-groove pulley: 0.3684 kg
+  Side bevel gear with 36-groove pulley: 0.3684 kg
+  ok   {'module': 1.25, 'teeth': 40, 'face': 11.0} refused: Refused (module 1.25 mm, 40 teeth, face 11 mm): the face 11.00 mm is above Shigley's Table 13-3 limit, 0.3 R or 10 m, whichever is smaller (10.61 mm); the front face is 17.970 mm from the apex, nearer than the carrier needs (22.5 mm: the roll bearing's radius 16.0, its seat's wall 3.0, the trunnion's flange 3.0 and a shim space 0.5); the layout is drawn, and the geometry factors I and J (Figs. 15-6 and 15-7) were read, for the 40-tooth, 60 mm set only: 40 teeth on 40.
+  ok   {'module': 1.5, 'teeth': 40, 'face': 13.0} refused: Refused (module 1.5 mm, 40 teeth, face 13 mm): the face 13.00 mm is above Shigley's Table 13-3 limit, 0.3 R or 10 m, whichever is smaller (12.73 mm); the front face is 21.706 mm from the apex, nearer than the carrier needs (22.5 mm: the roll bearing's radius 16.0, its seat's wall 3.0, the trunnion's flange 3.0 and a shim space 0.5).
+  ok   {'module': 2.0, 'teeth': 30, 'face': 11.0} refused: Refused (module 2 mm, 30 teeth, face 11 mm): the layout is drawn, and the geometry factors I and J (Figs. 15-6 and 15-7) were read, for the 40-tooth, 60 mm set only: 40 teeth on 40.
+  ok   a message gives the version tag WristDifferential 1.0 (prompt test)
+ALL PASS

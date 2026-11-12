@@ -32,8 +32,9 @@ FUSION CONVENTIONS:
   rack's whole outline, teeth and body, is one closed polyline of sketch lines sharing their points.
 - The API works in cm and radians.
 - AsBuiltJoints: rigid between the plate and the shaft; revolute about z between the pinion and the shaft; a slider
-  along x between the rack and the plate, limited to the travel. A Motion Link: 360 deg of the pinion for pi m z of
-  the rack; the pinion turning anticlockwise (seen from above) moves the rack towards +x.
+  along x between the rack and the plate, limited to the travel (switch each limit on before setting its value: a
+  value set while its limit is off is rounded to 0.001 mm). A Motion Link: 360 deg of the pinion for pi m z of the
+  rack; the pinion turning anticlockwise (seen from above) moves the rack towards +x.
 
 ACCEPTANCE CRITERIA:
 - A message gives r, the travel per turn, the contact ratio, the travel limits and a version tag.

@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"A parametric pair of helical or herringbone gears on a base plate, with As-built Joints and a Motion Link (written from the HelicalPair prompt alone)."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

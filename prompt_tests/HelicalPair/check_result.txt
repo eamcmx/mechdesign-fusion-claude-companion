@@ -1,0 +1,40 @@
+# projects/helical_pair/checks/helical_pair_check.py on prompt_tests/HelicalPair/HelicalPair.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 19:05, 46 s
+
+HelicalPair v1.0 (prompt test, 11 Nov 2026)
+  ok   all values recomputed independently 
+  ok   the rounded values of the prompt (2.12836, 21.173, 63.851, 12.043, 11.8, 5.9, 14.41, 1.504, 0.656)
+  ok   Run opens the dialog
+HelicalPair v1.0 (prompt test, 11 Nov 2026): helical gear pair built
+m_t = 2.12836 mm, alpha_t = 21.173 deg, centre distance a = 63.851 mm
+face width b' = 12.043 mm (asked 12.000 mm; gear 1's twist made a whole number of tenth of a degree)
+theta1 = 11.800 deg (gear 1, right hand), theta2 = 5.900 deg (gear 2, left hand)
+twist Fusion stored per sweep: gear 1 11.8 deg, gear 2 -5.9 deg (gear 2 tips off by 0.0000 mm, limit 0.050 mm)
+z_min = 14.41 (z1 = 20, z2 = 40); transverse contact ratio 1.504, overlap ratio 0.656
+m_n = 2 mm, beta = 20 deg, alpha_n = 20 deg, backlash 0.2 mm; herringbone: no
+  OK pressed, built in 9 s
+  ok   a new design opened
+  ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each
+  ok   gear 2 at x = a = 63.851 mm (measured 63.851)
+  ok   Gear 1: 1100 points along the tooth tips, mean -0.0000 deg from a helical twist of 11.800 deg
+  ok   Gear 2: 2200 points along the tooth tips, mean -0.0000 deg from a helical twist of -5.900 deg
+  ok   four As-built Joints, no plain Joints, one Motion Link
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: gear 2 joint -45.000, body -45.000
+  ok   no tooth collision while gear 1 turns 0 to 18 deg in 13 positions 
+  herringbone:
+  twist Fusion stored per sweep: gear 1 5.9, -5.9 deg, gear 2 -3.0, 3.0 deg (gear 2 tips off by 0.0389 mm, limit 0.050 mm)
+  ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each
+  ok   gear 2 at x = a = 63.851 mm (measured 63.851)
+  ok   Gear 1: 2200 points along the tooth tips, mean -0.0000 deg from a herringbone twist of 11.800 deg
+  ok   Gear 2: 4400 points along the tooth tips, mean -0.0250 deg from a herringbone twist of -5.900 deg
+  ok   four As-built Joints, no plain Joints, one Motion Link
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: gear 2 joint -45.000, body -45.000
+  ok   no tooth collision while gear 1 turns 0 to 18 deg in 13 positions 
+  ok   {'z1': 14} refused: z1 = 14 teeth would be undercut: the smallest number of teeth is z_min = 2 cos(beta) / sin^2(alpha_t) = 14.41
+  ok   {'beta': 50.0} refused: helix angle beta = 50 deg: it must be from 5 to 45 degrees
+  ok   a message gives the version tag HelicalPair v1.0 (prompt test, 11 Nov 2026)
+ALL PASS

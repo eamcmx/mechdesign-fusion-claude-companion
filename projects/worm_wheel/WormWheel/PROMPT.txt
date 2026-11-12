@@ -40,8 +40,10 @@ FUSION CONVENTIONS:
   swept along the axis with a twist of 5 turns. The wheel's tooth swept the same way with the twist theta, then
   patterned z2 times.
 - The API works in cm and radians.
-- AsBuiltJoints: revolute between the worm and its shaft and between the wheel and its shaft, the joint direction
-  tried and its sign measured; a Motion Link at the ratio, its direction set from the signs.
+- AsBuiltJoints: revolute between the worm and its shaft and between the wheel and its shaft, each on a sketch point
+  at the moving part's own origin, the moving part's occurrence given first, with ZAxisJointDirection. A joint's axes
+  are the moving part's own, so a positive value turns the worm anticlockwise about world +X and the wheel about world
+  +Z. A Motion Link at the ratio, reversed: the right-hand worm turning about +X turns the wheel about -Z.
 
 ACCEPTANCE CRITERIA:
 - A message gives d1, L, lambda, d2, a, the ratio, b', phi_n, the efficiencies and a version tag.

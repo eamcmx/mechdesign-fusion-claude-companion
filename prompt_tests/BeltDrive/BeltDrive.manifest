@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"A GT2 timing-belt drive: two toothed pulleys on shafts and the belt round them, the centre distance found for a whole number of belt teeth, joined so that pulley 1 turns pulley 2."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

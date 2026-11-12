@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 42: the palletizer's drives, written from its prompt alone. The base with the SKF RKS.23 0841 slewing ring, the turret on J1's RV-500N through a disc coupling, the shoulder's cheeks with J2's RV-500N and the crank with its counterweight on J3's RV-500N, the lower arm's fork with the gas balancer's two cylinders."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "PalletizerDrives"
+}

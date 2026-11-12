@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"Chapter 66: the program for one made part (bracket, spacer, tine) in the Manufacture workspace, or the census of the made kinds. Written from design_office/Making/PROMPT.txt alone (a prompt test)."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

@@ -1,0 +1,29 @@
+# projects/rack_pinion/checks/rack_pinion_check.py on prompt_tests/RackPinion/RackPinion.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 05:02, 3 s
+
+RackPinion prompt-test v1 (2026-11-12)
+  ok   r 20.00, p 6.283, travel per turn 125.664, contact ratio 1.769, limits 37.699 
+  ok   the rounded values of the prompt
+  ok   Run opens the dialog
+Rack and pinion built. RackPinion prompt-test v1 (2026-11-12)
+module 2 mm, pinion z = 20, rack N_r = 16, pressure angle 20 deg, face width 10 mm
+pinion: pitch radius r = 20.000 mm, base 18.794, tip 22.000, root 17.500
+rack: pitch p = 6.283 mm, tooth 3.042 mm thick on the pitch line (backlash 0.2 mm)
+travel per pinion turn = 125.664 mm (0.3491 mm per degree)
+contact ratio = 1.769
+travel limits = -37.699 to +37.699 mm
+pinion driven 90 deg (turned 90.0 deg): rack joint +31.416 mm, rack body +31.416 mm (want +31.416)
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   four components: ['Base plate', 'Pinion', 'Rack', 'Shaft']
+  ok   one body each
+  ok   As-built Joints: rigid, revolute, slider ['RevoluteJointMotion', 'RigidJointMotion', 'SliderJointMotion']
+  ok   one Motion Link
+  ok   the rack limited to plus and minus 37.699 mm
+  ok   no interference at rest 
+  ok   pinion driven 90 deg: the rack joint 31.4159 mm, its body moved 31.4159 mm (want +31.4159)
+  ok   no tooth collision while the pinion turns 0 to 18 deg in 13 positions 
+  ok   {'z': 12} refused: z = 12 refused: a pinion of fewer than 18 teeth is undercut at a 20 deg pressure angle
+  ok   {'n_r': 6} refused: N_r = 6 refused: a rack of fewer than 8 teeth cannot travel and keep whole teeth in mesh
+  ok   a message gives the version tag RackPinion prompt-test v1 (2026-11-12)
+ALL PASS

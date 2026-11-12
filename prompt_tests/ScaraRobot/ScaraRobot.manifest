@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "Emmanuel Merchan, TSI Engineering Faculty",
+	"description": {
+		"": "The SCARA of Chapter 38 as one robot: base column, J1 and J2 modules, both arms and the ball screw spline (written from its prompt alone)"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

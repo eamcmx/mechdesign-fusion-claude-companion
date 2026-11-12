@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"Builds one of the six parts the static and modal Simulation studies are run on (cantilever, keyseat, tine, bracket_sharp, bracket_r25, lug) in a new design, as one body with its material, and gives the faces each study picks."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

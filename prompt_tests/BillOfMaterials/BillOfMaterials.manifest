@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"Chapter 64: the bills of materials of the nine detailed machines, counted from Fusion's census, numbered, written into the components and to results/bom"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

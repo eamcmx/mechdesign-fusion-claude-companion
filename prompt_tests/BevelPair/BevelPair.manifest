@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"A pair of straight bevel gears (Tredgold's approximation) on shafts at right angles, with As-built Joints and a Motion Link (prompt test)"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

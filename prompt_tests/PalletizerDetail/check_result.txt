@@ -1,0 +1,45 @@
+# projects/palletizer/checks/palletizer_detail_check.py on prompt_tests/PalletizerDetail/PalletizerDetail.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 09:18, 233 s
+
+PalletizerDetail 1.0 (2026-11-12)
+  ok   Run opens the dialog
+Palletizer detail, the bag gripper.
+In each end plate the locating boss holds its 6206's outer ring between a lip 56 across and a DIN 472 62 circlip (groove 65 across), the floating boss leaves it 1 mm either way; the bosses out to 451 mm; 4 DIN 472 62 x 2 and 2 DIN 471 30 x 1.5 circlips; the short stubs with a shoulder 36 and a groove 28.6 to 447.1 mm; the plugs 4 mm into the tube's ends, 4 fillet welds of 4.0 mm from 401 to 405 mm (Table 9-6: 3.2 to 4.0 mm); in the brake stop n = 5.9 on the weld metal and 5.5 on the base metal, in the cycle nf = 7.1.
+
+Materials and fits by rule (MaterialsFits.apply): bag: 41 made parts given their materials (none not in Fusion's library); the made parts weigh 73.34 kg, 73.30 kg with Fusion's generic materials; faces given a class and a roughness: 8 bearing seat, 1 dowel hole, 14 key seat, 2 keyed, 2 located, 4 sliding.
+
+Given by hand after the census: H7 in the 2 floating bosses' seats (the locating ones by rule: J7 Ra 3.2); the jaws' 2 tubes, 4 stubs and 4 welds in steel 1020 (Steel AISI 1020 107 HR); 4 stub seats marked ground after welding.
+Descriptions: SKF 6206-2RS1/C4 on the 4 bearings (the class nearest SKF's virtual zero over the hall).
+
+[PalletizerDetail 1.0 (2026-11-12)]
+  OK pressed, built in 18 s
+  ok   a new design opened
+  ok   the end plates' bosses: the lip 56, the seat 62, the DIN 472 groove 65, out to 451 mm: [28.0, 31.0, 32.5], [(409.99, 451.01), (-451.01, -409.99)]
+  ok   circlips: 4 DIN 472 62 x 2 in the bosses, 2 DIN 471 30 x 1.5 on the short stubs
+  ok   the plugs' fillet welds, 4, from 401 to 405 mm, the plugs set 4 mm into the tube: (400.99, 405.01)
+  ok   the short stubs from the plug at 393 to 447.1, the shoulder 36 and the DIN 471 groove 28.6: [(392.99, 447.11), (392.99, 447.11)] ['Stub shaft long A', 'Stub shaft long B', 'Stub shaft short A', 'Stub shaft short B']
+  ok   the jaws' tubes, stubs and welds in 1020 (10 parts)
+  ok   the bosses' seats: J7 at the two locating ends, H7 at the two floating ends: {'J7 Ra 3.2': 2, 'H7 Ra 3.2': 2}
+  ok   the stubs' seats marked ground after welding (4 faces); the bearings ['SKF 6206-2RS1/C4']
+  ok   the bag gripper: no interference among 102 parts, closed nor open  
+  Palletizer detail, the robot.
+  ok   the six eyes: the shoulders 64 and 110, the seats 72 and 120, the DIN 472 grooves 75 and 124
+  ok   the six pins: the collars 43 and 76 against the inner rings, the seats 35 and 65
+  ok   six DIN 472 circlips in the eyes, six end washers and their screws on the pins
+  ok   the eyes' seats H7, none K7: {None: 6, 'H7 Ra 3.2': 6}
+  ok   the triangle's seat K7 ['K7 Ra 3.2']; the clearance classes in the designations: ['SKF 22207 E', 'SKF 22207 E/C3', 'SKF 22213 E/C3', 'SKF 61836/C4', 'SKF 61856 MA/C4']
+  ok   the robot: no interference among 118 parts at the pick pose nor at full reach  
+  Palletizer detail, the compliance unit.
+  ok   the O-ring's groove 24.30 across and 3.40 wide (ERIKS: gland depth 2.15), none 25: [3.4]
+  ok   the O-ring squeezed from 2.5 to 2.15, its section kept: [10.0, 12.15], 2.30 long
+  ok   six DIN 908 M10 x 1 plugs, their collars in counterbores 15 across
+  ok   the tube's outside in two zones: ['g6 Ra 0.4', 's6 Ra 0.8']
+  ok   the guideways ['HIWIN HGH25CAZ0C', 'HIWIN HGR25R218C']
+  ok   the unit: no interference among 53 parts at rest, nor risen 30 mm but for the springs, drawn at their installed length  
+  Palletizer detail, the vacuum gripper.
+  ok   the plate on 16 through bolts M6 x 25, 32 washers and 16 nuts, its holes 6.6 through, none tapped
+  ok   the 36 sleeves on their flanges 48 across, held by 108 M4 x 12 tapped into the plate
+  ok   the vacuum gripper: no interference among 355 parts 
+  ok   {'key': 'bag', 'weld': 3.0} refused: A fillet weld leg of 3.0 mm is under the minimum of Shigley's Table 9-6, 3.2 mm, for the tube's 4 mm wall.
+  ok   a message gives the version tag PalletizerDetail 1.0 (2026-11-12)
+ALL PASS

@@ -1,0 +1,30 @@
+# design_office/checks/design_for_assembly_check.py on prompt_tests/DesignForAssembly/DesignForAssembly.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 02:23, 56 s
+
+DesignForAssembly 1.0 (2026-11-12)
+  ok   Run opens the dialog
+Design for assembly of the bag gripper, each question answered for a future redesign (Dewhurst & Meeker, 2014, p. 5).
+Pieces answered on their occurrences: 114 (30 lines of the bill); essential, read back: 19 (base 1, move 15, separate 3); candidates for elimination: 95. Assembly time 640.2 s (Matuszek et al., 2021, Table 2); E = 3 x 19 / 640.2 s = 0.0890.
+Fixings: 16 tines joined to their tubes; 2 end blocks joined to the end plates, the 8 M8 x 30 between them removed (Cap screw M8x30 1, Cap screw M8x30 2, Cap screw M8x30 3, Cap screw M8x30 4, Cap screw M8x30 5, Cap screw M8x30 6, Cap screw M8x30 7, Cap screw M8x30 8) and their holes filled; added 4 ISO 4762 M8 x 20 through the beam's side walls into the spigots and 4 ISO 4762 M8 x 30 from inside the end plates into the cylinder brackets: Cap screw M8x20 spigot 1, Cap screw M8x20 spigot 2, Cap screw M8x20 spigot 3, Cap screw M8x20 spigot 4, Cap screw M8x30 bracket 1, Cap screw M8x30 bracket 2, Cap screw M8x30 bracket 3, Cap screw M8x30 bracket 4.
+After the fixings: 96 pieces in the bill, M8 x 20 10, M8 x 30 4, no tine or end block line.
+New screws' interference: none (0 interferences among all the gripper's pieces). Mass 96.182 kg before, 96.157 kg after.
+Blue: essential; red: candidates; yellow: the kinds that had no fixing and the new screws.
+
+[DesignForAssembly 1.0 (2026-11-12)]
+  OK pressed, built in 56 s
+  ok   a new design opened
+  ok   every piece answered in the model: 114 tagged, 114 read back, the lib 114
+  ok   every first-level line of the bill has its answer (30 lines)
+  ok   the theoretical minimum read back: 19, the lib 19
+  ok   the questions that keep them: {'base': 1, 'separate': 3, 'move': 15}, the lib {'base': 1, 'separate': 3, 'move': 15}
+  ok   design efficiency 3 x 19 / 640.20 s = 0.0890, the lib 0.0890
+  ok   joined: 16 tines to their tubes, 2 end blocks to the end plates
+  ok   the eight M8 x 30 between plates and blocks removed, 8 screws added: ['Cap screw M8x20 spigot 1', 'Cap screw M8x20 spigot 2', 'Cap screw M8x20 spigot 3', 'Cap screw M8x20 spigot 4', 'Cap screw M8x30 bracket 1', 'Cap screw M8x30 bracket 2', 'Cap screw M8x30 bracket 3', 'Cap screw M8x30 bracket 4']
+  ok   the bill after: no tine or end block line, M8 x 20 10, M8 x 30 4
+  ok   pieces after the fixings: 96 in the model, the lib 96
+  ok   the new screws touch nothing they should not: [] (of 0 interferences in the gripper)
+  ok   mass 96.182 kg before, 96.157 kg after
+  ok   results/dfa.json written
+  ok   refused: No answers for crane: the test for unnecessary parts is answered only for the bag gripper (bag).
+  ok   a message gives the version tag DesignForAssembly 1.0 (2026-11-12)
+ALL PASS

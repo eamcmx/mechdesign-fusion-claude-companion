@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 54: the rear axle in detail. RearAxle.py's own build with the tapered bearings' shoulders and spacer inside SKF's abutment dimensions, the cups' bores closed, ISO 14 splines and threaded adjusters; then the materials and fits of MaterialsFits.py."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "AxleDetail"
+}

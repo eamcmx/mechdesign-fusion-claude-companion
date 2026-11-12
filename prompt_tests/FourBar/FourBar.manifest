@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"A four-bar crank-rocker linkage on a base plate, one closed loop of revolute As-built Joints: Drive Joints on the crank swings the rocker."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

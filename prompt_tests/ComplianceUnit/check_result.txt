@@ -1,0 +1,34 @@
+# projects/palletizer/checks/compliance_unit_check.py on prompt_tests/ComplianceUnit/ComplianceUnit.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 23:35, 16 s
+
+ComplianceUnit PT-1 (prompt test, 11 Nov 2026)
+  ok   Run opens the dialog
+Compliance unit for the bag gripper.
+Height 270 mm from the tool plate to the gripper's face (top plate 20, rails 218, carriage 32); stroke asked 30.0 mm, built 30 mm (the rails give 30, the sensor sees 3).
+Guides: 2 x HGR25R rails 218 long, 4 x HGH25CA blocks (C0 36490 N); the worst block carries 6687 N in the worst stop, static factor 5.46 (at least 3).
+Springs: 4 x music wire 4 x 40 mean, 13.2 active turns, 100 installed and 70 at the top of the stroke, rate 3.03 N/mm, 213.3 N each installed (853.3 N in all), 304.1 N at the top, static factor 1.48. Preload asked 853.3 N, needed 853.3 N.
+Ring factor with the unit in the stack: 1.25 (bag), against 2.00 without it; vacuum 1.68, bag 1.25, clamp 0.77.
+Parts (57): Block HGH25CA 4, Carriage, 2024-T3 1, Housing, 2024-T3 1, O-ring 20 x 2.5, NBR 1, Pin 10 x 20 1, Plug 8 x 8 10, Proximity sensor M12 x 40 1, Rail HGR25R x 218 2, Screw ISO 4762 M10 x 25 6, Screw ISO 4762 M6 x 20 8, Screw ISO 4762 M8 x 30 8, Sensor bracket 1, Spring seat 46 with M10 stud 4, Spring, music wire 4 x 40, 100 installed 4, Stop block 4, Tube 20 x 16, steel 1.
+Weighed: the body 16.06 kg, the carriage 8.20 kg.
+ComplianceUnit PT-1 (prompt test, 11 Nov 2026)
+  OK pressed, built in 15 s
+  ok   a new design opened
+  parts: 57 components, 16 kinds
+  Block HGH25CA 4, Carriage, 2024-T3 1, Housing, 2024-T3 1, O-ring 20 x 2.5, NBR 1, Pin 10 x 20 1, Plug 8 x 8 10, Proximity sensor M12 x 40 1, Rail HGR25R x 218 2, Screw ISO 4762 M10 x 25 6, Screw ISO 4762 M6 x 20 8, Screw ISO 4762 M8 x 30 8, Sensor bracket 1, Spring seat 46 with M10 stud 4, Spring, music wire 4 x 40, 100 installed 4, Stop block 4, Tube 20 x 16, steel 1
+  ok   at rest: no interference among the 57 parts 
+  ok   the carriage's lugs on the four stop blocks, the largest gap 0.0000 mm
+  ok   nothing below the gripper's face at z -270.0: the lowest point -270.000 mm
+  ok   the 4 springs: 100.00 mm long installed, 44.00 mm across, against 100.0 and 44.0
+  ok   the sensor 3.606 mm from the carriage at rest and 2.000 mm once it has risen 3 mm
+  ok   raised the whole 30 mm: nothing in the way but the springs ; the wings on the top plate (0.0000 mm); the four blocks still on their rails
+  ok   the tube's foot below the O-ring: 5.4 under it at rest, 35.4 raised
+  ok   the housing: six M10 holes on the 160 circle at [0.0, 60.0, 120.0, 180.0, 240.0, 300.0] deg
+  ok   the carriage: six M10 tapped on the 160 circle at [0.0, 60.0, 120.0, 180.0, 240.0, 300.0] deg
+  ok   the four passages and the pin on both faces, lined up: [(-69.282, -40.0), (-69.282, 40.0), (0.0, 80.0), (69.282, -40.0), (69.282, 40.0)]
+  weighed: the body 16.06 kg, its centre at z -84.9 mm; the carriage 8.20 kg, its centre at z -180.7 mm; the unit 24.25 kg
+  written: lib/compliance_unit_weighed.json
+  ok   {'gripper': 'clamp'} refused: the clamp gripper is refused: with the unit 270 mm tall in the stack the tool changer's locking ring would open in the worst stop (ring factor 0.77, under 1)
+  ok   {'gripper': 'bag', 'stroke': 40.0} refused: a stroke of 40.0 mm is refused: the rails give 30 mm
+  ok   {'gripper': 'bag', 'F_pre': 500.0} refused: a preload of 500.0 N is refused: the springs' preload must be at least 853.3 N to keep the carriage on its stops in the stops that throw the bag gripper's load up
+  ok   a message gives the version tag ComplianceUnit PT-1 (prompt test, 11 Nov 2026)
+ALL PASS

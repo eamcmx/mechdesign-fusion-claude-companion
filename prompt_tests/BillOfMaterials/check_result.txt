@@ -1,0 +1,49 @@
+# design_office/checks/bill_of_materials_check.py on prompt_tests/BillOfMaterials/BillOfMaterials.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 02:06, 586 s
+
+BillOfMaterials 1.0 (prompt test, 2026-11-12)
+  ok   Run opens the dialog
+Bills of materials of the nine machines, counted from Fusion (9 machines):
+wrist: made 22 kinds in 31 pieces, bought 18 kinds in 63; 7.358 kg as drawn, 5.777 kg with the makers' masses (11 of 18 bought kinds from a maker's page); 0 loads left out (0.00 kg); Fusion's mass 7.358 kg; 46 components numbered and read back.
+flap: made 25 kinds in 33 pieces, bought 26 kinds in 53; 339.817 kg as drawn, 340.355 kg with the makers' masses (14 of 26 bought kinds from a maker's page); 0 loads left out (0.00 kg); Fusion's mass 339.817 kg; 87 components numbered and read back; superseded and merged: S-0045, S-0056, S-0059, S-0068.
+axle: made 18 kinds in 30 pieces, bought 18 kinds in 68; 162.647 kg as drawn, 163.568 kg with the makers' masses (8 of 18 bought kinds from a maker's page); 0 loads left out (0.00 kg); Fusion's mass 162.647 kg; 106 components numbered and read back; superseded and merged: S-0046.
+robot: made 61 kinds in 78 pieces, bought 18 kinds in 34; 3609.906 kg as drawn, 3557.954 kg with the makers' masses (14 of 18 bought kinds from a maker's page); 0 loads left out (0.00 kg); Fusion's mass 3609.906 kg; 118 components numbered and read back; superseded and merged: S-0036.
+changer: made 7 kinds in 12 pieces, bought 3 kinds in 9; 28.930 kg as drawn, 28.889 kg with the makers' masses (1 of 3 bought kinds from a maker's page); 0 loads left out (0.00 kg); Fusion's mass 28.930 kg; 21 components numbered and read back; superseded and merged: S-0074.
+clamp: made 8 kinds in 11 pieces, bought 13 kinds in 41; 107.783 kg as drawn, 102.515 kg with the makers' masses (4 of 13 bought kinds from a maker's page); 4 loads left out (178.56 kg); Fusion's mass 286.343 kg; 55 components numbered and read back; superseded and merged: S-0038.
+vacuum: made 6 kinds in 82 pieces, bought 10 kinds in 267; 58.064 kg as drawn, 57.175 kg with the makers' masses (8 of 10 bought kinds from a maker's page); 6 loads left out (267.84 kg); Fusion's mass 325.904 kg; 349 components numbered and read back; superseded and merged: S-0036, S-0116, S-0119.
+bag: made 15 kinds in 41 pieces, bought 15 kinds in 73; 96.182 kg as drawn, 94.108 kg with the makers' masses (12 of 15 bought kinds from a maker's page); 10 loads left out (227.32 kg); Fusion's mass 323.499 kg; 128 components numbered and read back; superseded and merged: S-0036.
+unit: made 6 kinds in 12 pieces, bought 10 kinds in 41; 19.842 kg as drawn, 18.243 kg with the makers' masses (6 of 10 bought kinds from a maker's page); 0 loads left out (0.00 kg); Fusion's mass 19.842 kg; 53 components numbered and read back.
+All: made 168 kinds in 330 pieces, bought 131 kinds in 649; 4430.529 kg as drawn, 4368.584 kg with the makers' masses.
+Written to design_office/results/bom/<machine>.csv and design_office/results/bom.json; the compliance unit stays open, its components numbered (P14-000).
+
+[BillOfMaterials 1.0 (prompt test, 2026-11-12)]
+  OK pressed, built in 586 s
+  ok   a new design opened
+  ok   nine lists, each in results/bom: wrist.csv, flap.csv, axle.csv, robot.csv, changer.csv, clamp.csv, vacuum.csv, bag.csv, unit.csv
+  ok   wrist: 97 occurrences, the lines and 0 loads 7.3575 kg, Fusion's design 7.3575 kg
+  ok   wrist: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   flap: 87 occurrences, the lines and 0 loads 339.8172 kg, Fusion's design 339.8172 kg
+  ok   flap: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   axle: 106 occurrences, the lines and 0 loads 162.6472 kg, Fusion's design 162.6472 kg
+  ok   axle: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   robot: 118 occurrences, the lines and 0 loads 3609.9061 kg, Fusion's design 3609.9061 kg
+  ok   robot: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   changer: 21 occurrences, the lines and 0 loads 28.9304 kg, Fusion's design 28.9304 kg
+  ok   changer: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   clamp: 59 occurrences, the lines and 4 loads 286.3432 kg, Fusion's design 286.3432 kg
+  ok   clamp: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   vacuum: 355 occurrences, the lines and 6 loads 325.9038 kg, Fusion's design 325.9038 kg
+  ok   vacuum: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   bag: 138 occurrences, the lines and 10 loads 323.4988 kg, Fusion's design 323.4988 kg
+  ok   bag: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   unit: 53 occurrences, the lines and 0 loads 19.8417 kg, Fusion's design 19.8417 kg
+  ok   unit: every line numbered, no superseded number, every component read back ([] [] [])
+  ok   the tool changer: made 7 kinds in 12 pieces, bought 3 kinds in 9
+  ok   the bag gripper: the weldment P13-016 x2, under it {'P13-010': (2, 1.0), 'P13-011': (2, 1.0), 'P13-013': (2, 1.0), 'welds': (4, 2.0)}
+  ok   the bag gripper: 10 loads left out, 227.32 kg (Bag, Roller)
+  ok   the axle's bearings counted by sets: 6213 x2, 32213 x2, 32308 x1, 32309 x1
+  ok   the robot's reducers counted by sets: RV-500N x2, RV-700N x1, RV-80N x1
+  ok   the makers' masses: 78 lines, every page on disk 
+  ok   refused: No machine called crane: the bills of materials are of wrist, flap, axle, robot, changer, clamp, vacuum, bag, unit, or all of them.
+  ok   a message gives the version tag BillOfMaterials 1.0 (prompt test, 2026-11-12)
+ALL PASS

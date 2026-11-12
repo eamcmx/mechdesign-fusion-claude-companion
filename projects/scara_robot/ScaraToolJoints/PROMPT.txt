@@ -41,7 +41,11 @@ ACCEPTANCE CRITERIA:
   bottom, the screw's cube-mean force and life, the motors' torques, the belts and their centre distances, the parts
   list and a version tag. Defaults: 21.1 Hz, 1.60 and 1.01, 0.632; 66.7 N, 910 708 h; J3 motor 0.699 N m peak,
   0.407 RMS, 3092 rev/min; J4 motor 0.342 and 0.209; 3MR-474 and 3MR-489, 173.48 and 175.10 mm.
-- 48 components in 24 kinds.
+- 48 components in 24 kinds, by component name and count: Ball screw spline shaft SP20 1, Base plate 1, Belt
+  3MR-474-09 J3 1, Belt 3MR-489-09 J4 1, Flange bolt M4 8, Motor bolt M4 4, Motor bolt M5 4, Motor shaft J3 1, Motor
+  shaft J4 1, Pulley 18T motor J4 1, Pulley 28T motor J3 1, Pulley 56T nut J3 1, Pulley 72T nut J4 1, Pulley screw M5
+  12, Screw nut SP20 flange 1, Screw nut SP20 rotor 1, Servo motor J3 1, Servo motor J4 1, Side wall left 1, Side wall
+  right 1, Spline nut SP20 flange 1, Spline nut SP20 rotor 1, Tool flange 1, Top plate 1.
 - J4 turned 90 deg alone: both nuts turn 90, the J4 motor 360, the J3 motor 180. J3 down 7 mm alone: the spline nut
   still, the screw nut -126 deg, the J3 motor -252 deg.
 - At the full stroke the shaft's top 5 mm above the screw nut's rotor; the belts' centre distances measured on the

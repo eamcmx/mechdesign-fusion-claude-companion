@@ -1,0 +1,28 @@
+# projects/first_assembly/checks/first_assembly_check.py on prompt_tests/FirstAssembly/FirstAssembly.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 10:29, 3 s
+
+FirstAssembly 1.0 (prompt test)
+  ok   Run opens the dialog
+FirstAssembly 1.0 (prompt test)
+
+Shaft at (15.000, 0.000) mm, z = 0.000 mm; it runs from z = -20 to 30 mm.
+Shaft volume 3927.0 mm^3 (pi * 5^2 * 50 = 3927.0).
+Block volume 46365.7 mm^3 (60 * 40 * 20 - pi * 5.1^2 * 20 = 46365.7).
+Hole 10.2 mm; wall left round it 9.9 mm in x, 14.9 mm in y.
+Joint "Shaft turns": As-built, revolute about z through the shaft's centre; the Block is grounded.
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   two components: ['Block', 'Shaft']
+  ok   one body each
+  ok   the shaft is at (15.000, 0.000, 0.000) mm
+  ok   shaft volume 3926.99 mm^3 (pi * 5^2 * 50 = 3926.99)
+  ok   block volume 46365.74 mm^3 (60 * 40 * 20 - pi * 5.1^2 * 20 = 46365.74)
+  ok   the block is grounded
+  ok   one As-built Joint, no plain Joints
+  ok   no interference 
+  ok   joint at 90 deg: the shaft turned 90.000 deg about z, the block stayed
+  ok   the shaft turned in place, still at (15.000, 0.000) mm
+  ok   {'x': 22.0} refused: Only 2.9 mm of block material is left round the hole in x (30 - 22 - 5.1 = 2.9 mm); at least 3 mm is needed. Move the shaft towards the centre or make the block bigger.
+  ok   {'L_s': 15.0} refused: The shaft must be longer than the block is high: L_s = 15 mm is not more than H_b = 20 mm.
+  ok   a message gives the version tag FirstAssembly 1.0 (prompt test)
+ALL PASS

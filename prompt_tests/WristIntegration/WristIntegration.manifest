@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 40: the pitch-roll wrist of Chapter 39 made ready for its arm. The tool flange drawn to ISO 9409-1-31.5-4-M5 and held by a DIN 471 ring, the roll shaft bored for the tool's wires and a slip ring under the carrier, and hard stops for the pitch: a keyed stop disc, a stop cap with a block and two buffer pads."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "WristIntegration"
+}

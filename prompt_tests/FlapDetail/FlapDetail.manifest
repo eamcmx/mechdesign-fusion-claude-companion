@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 53: the flap actuation system in detail. FlapSystem's build with the motor unit drawn to maxon's EC-i 52 and GP 52 C, the pinion keyed on the gearhead's shaft, the pins' seats split out and hardened, and the materials and fits of Chapter 51 applied."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "FlapDetail"
+}

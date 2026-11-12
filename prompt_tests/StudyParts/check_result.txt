@@ -1,0 +1,86 @@
+# design_office/checks/study_parts_check.py on prompt_tests/StudyParts/StudyParts.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 00:43, 7 s
+
+StudyParts v1.0
+  ok   Run opens the dialog
+StudyParts v1.0: cantilever
+One body in the root component, Steel.
+Volume 40000.00 mm3 (hand volume in fea_studies 40000.00 mm3, +0.0000 %).
+Mass 0.3140 kg. Faces: 6.
+Faces to pick in the Simulation window: fixed found, load found.
+  fixed: the root end at x = 0; outward normal (-1, +0, +0), 200.0 mm2, found
+  load: the free end at x = 200, the tip load along -z; outward normal (+1, +0, +0), 200.0 mm2, found
+Hand calculation: 100 N at the tip: 60.0 MPa at the root, the tip 0.762 mm down; first bending modes 208.9 Hz (thin), 417.8 Hz (stiff)
+StudyParts v1.0: cantilever
+One body in the root component, Steel.
+Volume 40000.00 mm3 (hand volume in fea_studies 40000.00 mm3, +0.0000 %).
+Mass 0.3140 kg. Faces: 6.
+Faces to pick in the Simulation window: fixed found, load found.
+  fixed: the root end at x = 0; outward normal (-1, +0, +0), 200.0 mm2, found
+  load: the free end at x = 200, the tip load along -z; outward normal (+1, +0, +0), 200.0 mm2, found
+Hand calculation: 100 N at the tip: 60.0 MPa at the root, the tip 0.762 mm down; first bending modes 208.9 Hz (thin), 417.8 Hz (stiff)
+  OK pressed, built in 1 s
+  ok   a new design opened
+StudyParts v1.0: keyseat
+One body in the root component, Steel.
+Volume 105319.21 mm3 (hand volume in fea_studies 105319.40 mm3, -0.0002 %).
+Mass 0.8268 kg. Faces: 12.
+Faces to pick in the Simulation window: fixed found, load found.
+  fixed: the end at x = 0; outward normal (-1, +0, +0), 706.9 mm2, found
+  load: the end at x = 150, the torque about x; outward normal (+1, +0, +0), 706.9 mm2, found
+Hand calculation: T = 95.3 N m: tau 17.98 MPa nominal, 53.93 MPa at the keyseat (Kts 3), r/d 0.02
+StudyParts v1.0: tine
+One body in the root component, Steel.
+Volume 126250.00 mm3 (hand volume in fea_studies 126250.00 mm3, +0.0000 %).
+Mass 0.9911 kg. Faces: 8.
+Faces to pick in the Simulation window: fixed found, load found.
+  fixed: the leg's top at z = -230, where it hangs from the jaw; outward normal (+0, +0, +1), 250.0 mm2, found
+  load: the foot's upper face at z = -480, where the bag lies; outward normal (+0, +0, +1), 2300.0 mm2, found
+Hand calculation: first modes 46.8 Hz out of the leg's plane, 111.3 Hz in it
+StudyParts v1.0: bracket_sharp
+One body in the root component, Steel.
+Volume 86448.00 mm3 (hand volume in fea_studies 86448.00 mm3, +0.0000 %).
+Mass 0.6786 kg. Faces: 11.
+Faces to pick in the Simulation window: fixed found, load found.
+  fixed: the foot's back face at z = 0, bolted down; outward normal (+0, +0, -1), 4900.0 mm2, found
+  load: the arm's end at z = 60, 48 from the foot's face, where the push goes on; outward normal (+0, +0, +1), 576.0 mm2, found
+Hand calculation: push 2180 N at 48 mm: 64.2 MPa nominal at the root, 173.4 MPa peak (Kt 2.7)
+StudyParts v1.0: bracket_r25
+One body in the root component, Steel.
+Volume 86582.75 mm3 (hand volume in fea_studies 86581.47 mm3, +0.0015 %).
+Mass 0.6797 kg. Faces: 15.
+Faces to pick in the Simulation window: fixed found, load found.
+  fixed: the foot's back face at z = 0, bolted down; outward normal (+0, +0, -1), 4900.0 mm2, found
+  load: the arm's end at z = 60, 48 from the foot's face, where the push goes on; outward normal (+0, +0, +1), 576.0 mm2, found
+Hand calculation: push 2180 N at 48 mm: 64.2 MPa nominal at the root, 109.2 MPa peak (Kt 1.7)
+StudyParts v1.0: lug
+One body in the root component, Aluminum 7075.
+Volume 68709.62 mm3 (hand volume in fea_studies 68709.62 mm3, -0.0000 %).
+Mass 0.1931 kg. Faces: 7.
+Faces to pick in the Simulation window: fixed found, load found.
+  fixed: the shank end at the spar, x = 100; outward normal (+1, +0, +0), 660.0 mm2, found
+  load: the hole's bore, 35 across, where the GE 20 ES's outer ring bears; outward normal (+0, -1, +0), 1319.5 mm2, found
+Hand calculation: P = 10424 N: 43.4 MPa on the net section, 24.8 MPa bearing, 99.9 MPa peak (Kt 2.3)
+  ok   the six parts built: bracket_r25, bracket_sharp, cantilever, keyseat, lug, tine
+  ok   cantilever: 40000.0 mm3 in the model, 40000.0 by hand (0.0000 %)
+  ok   cantilever: Steel, 6 faces
+  ok   cantilever: faces to pick fixed found, load found
+  ok   keyseat: 105319.2 mm3 in the model, 105319.4 by hand (-0.0002 %)
+  ok   keyseat: Steel, 12 faces
+  ok   keyseat: faces to pick fixed found, load found
+  ok   tine: 126250.0 mm3 in the model, 126250.0 by hand (0.0000 %)
+  ok   tine: Steel, 8 faces
+  ok   tine: faces to pick fixed found, load found
+  ok   bracket_sharp: 86448.0 mm3 in the model, 86448.0 by hand (0.0000 %)
+  ok   bracket_sharp: Steel, 11 faces
+  ok   bracket_sharp: faces to pick fixed found, load found
+  ok   bracket_r25: 86582.8 mm3 in the model, 86581.5 by hand (0.0015 %)
+  ok   bracket_r25: Steel, 15 faces
+  ok   bracket_r25: faces to pick fixed found, load found
+  ok   lug: 68709.6 mm3 in the model, 68709.6 by hand (-0.0000 %)
+  ok   lug: Aluminum 7075, 7 faces
+  ok   lug: faces to pick fixed found, load found
+  ok   the tine weighs 0.9911 kg
+  ok   refused: No part called 'crane': the parts are cantilever, keyseat, tine, bracket_sharp, bracket_r25, lug
+  ok   a message gives the version tag StudyParts v1.0
+ALL PASS

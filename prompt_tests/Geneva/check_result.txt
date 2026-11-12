@@ -1,0 +1,26 @@
+# projects/geneva/checks/geneva_check.py on prompt_tests/Geneva/Geneva.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 12:12, 3 s
+
+Geneva prompt-test 1.0 (2026-11-11)
+  ok   C 42.426, b 30.000, indexing 90.0 deg, dwell 270.0 deg, peak speed ratio 2.414
+  ok   Run opens the dialog
+External Geneva drive built (Geneva prompt-test 1.0 (2026-11-11))
+n = 4 slots, pin circle radius a = 30.000 mm, pin diameter 8.000 mm
+centre distance C = 42.426 mm, wheel radius b = 30.000 mm
+indexing: 90.0 deg of driver turn; dwell: 270.0 deg
+each index turns the wheel -90.0 deg (the other way)
+peak speed ratio (wheel over driver, mid-index) = 2.414
+No Motion Link: turn "Driver turns", then set "Wheel turns" by the Geneva law (set_state does both).
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   three components: ['Driver', 'Ground', 'Wheel']
+  ok   one body each
+  ok   two revolute As-built Joints, no Motion Link
+  clearance (mm) at every 30 deg: 30: 0.200, 60: 0.200, 90: 0.200, 120: 0.200, 150: 0.187, 180: 0.200, 210: 0.187, 240: 0.200, 270: 0.200, 300: 0.200, 330: 0.200, 360: 0.200
+  ok   no interference at the 36 steps 
+  ok   at least 0.15 mm between driver and wheel at every step (smallest 0.181 mm)
+  ok   after one driver turn the wheel has turned -90.000 deg
+  ok   {'n': 2} refused: number of slots n = 2: n must be a whole number from 3 to 12
+  ok   {'dp': 12.0} refused: pin diameter 12 mm is too large for a = 30 mm: at most a / 3 = 10.000 mm
+  ok   a message gives the version tag Geneva prompt-test 1.0 (2026-11-11)
+ALL PASS

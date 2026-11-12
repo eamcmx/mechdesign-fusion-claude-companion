@@ -1,0 +1,32 @@
+# projects/cam_follower/checks/cam_check.py on prompt_tests/CamFollower/CamFollower.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 12:01, 5 s
+
+CamFollower v1.0 (2026-11-11)
+  ok   the script's lift agrees with the motion law (worst 7.1e-15 mm)
+  ok   largest pressure angle 14.97 deg, smallest radius of curvature 29.38 mm
+  ok   Run opens the dialog
+CamFollower v1.0 (2026-11-11) failed
+Traceback (most recent call last):
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/CamFollower/CamFollower.py", line 353, in notify
+    raise RuntimeError('the build event could not be fired')
+RuntimeError: the build event could not be fired
+
+CamFollower v1.0 (2026-11-11)
+Disc cam with a translating roller follower.
+Largest pressure angle: 14.97 deg (at theta = 56.6 deg), limit 30 deg.
+Smallest radius of curvature of the pitch curve: 29.38 mm (at theta = 85.5 deg), roller radius 6 mm.
+R_b = 25 mm, R_r = 6 mm, R_p = 31 mm, lift h = 10 mm.
+Cycloidal rise 120 deg, dwell 60 deg, cycloidal return 120 deg, dwell 60 deg.
+Turn 'Cam turns' and set 'Follower slides' to s(theta): there is no Motion Link.
+  OK pressed, built in 3 s
+  ok   a new design opened
+  ok   three components: ['Cam', 'Follower', 'Ground']
+  ok   one body each
+  ok   a revolute and a slider As-built Joint, no Motion Link
+  smallest distance roller to cam (mm): 0: 0.0500, 30: 0.0500, 60: 0.0500, 90: 0.0500, 120: 0.0500, 150: 0.0500, 180: 0.0500, 210: 0.0500, 240: 0.0500, 270: 0.0500, 300: 0.0500, 330: 0.0500
+  ok   no interference at the 36 steps 
+  ok   the gap measured by Fusion from 0.0500 to 0.0500 mm (0.05 wanted)
+  ok   {'beta1': 40.0} refused: the pressure angle reaches 38.7 deg (at theta = 18.9 deg), more than the 30 deg allowed
+  ok   {'beta2': 200.0} refused: beta1 + dwell + beta2 = 120 + 60 + 200 = 380 deg, more than the 360 deg of one turn
+  ok   a message gives the version tag CamFollower v1.0 (2026-11-11)
+ALL PASS

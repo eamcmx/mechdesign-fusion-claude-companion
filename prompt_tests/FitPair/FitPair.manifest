@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"A pin in a hole through a block, each made at a chosen ISO 286 limit (H7 hole basis), joined revolute when the pair has clearance and rigid when it has interference"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

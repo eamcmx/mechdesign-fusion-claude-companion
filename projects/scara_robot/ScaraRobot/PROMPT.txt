@@ -37,7 +37,14 @@ FUSION CONVENTIONS:
 
 ACCEPTANCE CRITERIA:
 - A message gives the units and the parts list with a version tag.
-- 93 components in 41 kinds with the CSG-45.
+- 93 components in 41 kinds with the CSG-45, by component name and count: Ball screw spline shaft SP20 1, Base column
+  1, Base foot 1, Base top flange 1, Belt 3MR-474-09 J3 1, Belt 3MR-489-09 J4 1, CSG-20-50-2UH housing 1,
+  CSG-45-50-2UH housing 1, Case bolt M5 8, Case bolt M8 12, Cross rollers 2, First arm beam 1, Flange bolt M4 8,
+  Flexspline 2, J3 motor bolt M5 4, Module plate J1 1, Module plate J2 1, Motor bolt M4 4, Motor bolt M5 4, Motor bolt
+  M8 4, Motor shaft J1 1, Motor shaft J2 1, Motor shaft J3 1, Motor shaft J4 1, Output flange 2, Pulley 18T motor J4
+  1, Pulley 28T motor J3 1, Pulley 56T nut J3 1, Pulley 72T nut J4 1, Pulley screw M5 12, Screw nut SP20 flange 1,
+  Screw nut SP20 rotor 1, Second arm structure 1, Servo motor J1 1, Servo motor J2 1, Servo motor J3 1, Servo motor J4
+  1, Spline nut SP20 flange 1, Spline nut SP20 rotor 1, Tool flange 1, Wave generator 2.
 - No interference where the links meet at the seven poses.
 - The robot's mass properties measured part by part; on them, with the motors at their specified masses and the
   units at the catalogue's, J1 lasts 20 000 h or more on the CSG-45 and less on the CSG-40; J2's peak and average

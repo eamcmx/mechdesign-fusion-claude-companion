@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"A pressure housing closed by a bolted cover and sealed by a face-groove O-ring drawn at its free size, so that the interference check measures its squeeze; reports the squeeze, gland fill, pressure force and bolt clamp margin."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

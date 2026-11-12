@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "Emmanuel Merchan",
+	"description": {
+		"": "Chapters 59 and 62: the assemblies the static and modal Simulation studies are run on (stop, stop_diagonal, fitting, hinge, arms, arms_closed), copied from the machine's own model into a new design"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

@@ -86,7 +86,9 @@ def book_refs(text):
     out = []
     for line in text.split('\n'):
         for m in BOOK_REF.finditer(line):
-            near = line[max(0, m.start() - 30):m.start()] + line[m.end():m.end() + 25]   # the source named next to it
+            near = line[max(0, m.start() - 30):m.start()]                                # the source named before it
+            if not m.group(0).lower().startswith(('chapter', 'volume', 'vol.')):
+                near += line[m.end():m.end() + 25]          # a table or figure may name its source after it too
             if not SOURCE.search(near):
                 out.append(line.strip()[:90])
     return out

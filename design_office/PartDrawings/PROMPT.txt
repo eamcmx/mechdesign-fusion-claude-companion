@@ -54,6 +54,13 @@ FUSION CONVENTIONS:
   as-built or otherwise: a part is one body, and the stop's items stand where the machine has them. The machines they
   come from keep their own scripts' joints (the wrist's, the flap's and the axle's As-built joints) and are closed.
 - ISO drawings, first-angle projection, millimetres; the API's cm in the model, mm on the sheet.
+- Fusion's automatic drawing leaves its auto-dimension command open, its preview dimensions on the sheet: end that
+  command (terminateActiveCommand) and wait until the sheet's count of dimensions stays the same before counting what
+  is there or adding to it.
+- Read each view through its viewCurves, in sheet millimetres: an arc's or a circle's radius is the distance from its
+  startPoint to its centerPoint. Fusion picks the views' scale: take it as the largest radius on the sheet over the
+  part's largest radius. A hole shows round in a view where a curve's radius is the hole's radius times that scale,
+  to 0.05 mm; dimension it there with addDiameterDimension.
 
 ACCEPTANCE CRITERIA:
 - A message gives each drawing's views, dimensions, symbols and PDF, the folder, and a version tag.

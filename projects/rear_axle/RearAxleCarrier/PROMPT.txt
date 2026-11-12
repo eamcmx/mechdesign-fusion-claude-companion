@@ -17,7 +17,9 @@ DERIVED (computed from the inputs by projects/rear_axle/lib/axle_design.py, neve
 - the forces of the mesh (Childs Eqs. 10.6, 10.7, the upper signs driving forward), the pinion's bearings SKF 32309
   and 32308 back to back, the case's SKF 32213 face to face (Shigley Eqs. 11-18 to 11-20)
 - the differential: side gears 22, spiders 15, straight bevel, rated in bending at the design torque
-- the layout: the pinion's bearings' pressure points from SKF's a; the case's bearings at y = -74 and +74
+- the layout: the pinion's bearings' pressure points from SKF's a; the case's bearings at y = -74 and +74: the case
+  ends at shoulders there, and each 32213 cone sits on a seat running outwards from its shoulder, its large (back)
+  face against the shoulder, so that the pressure points lie T - a further out
 
 HARD CONSTRAINTS:
 - Refuse a module whose pinion keeps a bending factor under 1 at the design torque, a crown wheel that leaves less
@@ -25,9 +27,12 @@ HARD CONSTRAINTS:
   over a third of the cone distance, and spiders for which 2 z_s / N is not a whole number, saying which.
 - The pair's apex at the origin, the pinion along +X (forward), the axle along Y, the crown wheel on the -Y side.
 - Spiral teeth lofted through seven transverse sections from the toe to the heel, each Tredgold's virtual tooth with
-  the transverse module and pressure angle, turned about the axis by phi(R) = -/+ tan(35 deg) / sin(delta) ln(R/A_m);
-  the crown wheel's teeth of the opposite hand to the pinion's, its tooth 0 half a pitch round so that a gap meets
-  the pinion's tooth.
+  the transverse module and pressure angle, drawn in its gear's own frame (the apex at the origin, the gear's axis
+  +z, the heel at the outer cone distance) and turned about that +z by phi(R) = -/+ tan(35 deg) / sin(delta)
+  ln(R/A_m): minus for the pinion, which is then left-handed, plus for the crown wheel, right-handed, so the crown
+  wheel's teeth of the opposite hand to the pinion's (projects/rear_axle/lib/spiral_bevel.py's member(), section()
+  and to_world(), loaded, not copied, draw them so), its tooth 0 half a pitch round so that a gap meets the
+  pinion's tooth.
 - Tapered roller bearings drawn from their catalogue sizes: the cone with its rollers as one body, the cup apart.
 - The pinion's shaft: a collar, a depth shim, bearing A's seat (45), a spacer, bearing B's seat (40), splines
   8 x 32 x 38 for the companion flange, an M30 thread, washer and nut.
@@ -37,7 +42,10 @@ HARD CONSTRAINTS:
 - The carrier: a mounting plate 400 mm across, cut flat 166 mm below the axle so that it stays above the housing's
   bowl, with eight holes on 370 mm over its upper three quarters (projects/rear_axle/lib/axle_design.joint_bolts); the
   nose with the cups' bores and the seal's, two legs with the saddles, bearing caps with two M12 bolts each, threaded
-  adjusters behind the case's cups.
+  adjusters behind the case's cups. Every cup's bore in the casting, in the nose and in the saddles, is 0.1 mm over
+  the cup's outside diameter (0.05 mm a side); every cone sits on a seat of its own bore.
+- Each bearing cap 75 mm deep below the legs' face at x = 0, the width of its leg, held by two M12 x 90 at z = -68
+  and +68 mm (clear of the cups), each through a 13.2 mm hole in the cap into a hole tapped 16 mm into the leg.
 - Nothing touches anything else, at rest or turning.
 
 FUSION CONVENTIONS:
@@ -54,7 +62,12 @@ ACCEPTANCE CRITERIA:
   points, the bearings and their spacing, the differential's factors, the parts list and a version tag.
 - Defaults: bending factor 1.078 and contact 1.718 at the design torque; 1.861 and 1.809 at full power; crown wheel
   308.1 mm, clearance 196.9 mm; the differential's side gear 1.114 and spider 1.377.
-- 49 components in 27 kinds; no interference at rest; every bearing's cone on its seat and its cup in its bore; the
+- 49 components in 27 kinds, by component name and count: Adjuster 2, Bearing A 32309 cone 1, Bearing A 32309 cup 1,
+  Bearing B 32308 cone 1, Bearing B 32308 cup 1, Bearing C1 32213 cone 1, Bearing C1 32213 cup 1, Bearing C2 32213
+  cone 1, Bearing C2 32213 cup 1, Bearing cap 2, Cap bolt M12x90 4, Carrier casting 1, Companion flange 1, Cross 1,
+  Crown wheel bolt M12x35 10, Crown wheel z47 1, Differential case 1, Pinion depth shim 1, Pinion nut M30 1, Pinion
+  seal 60x85x10 1, Pinion shaft z12 1, Side gear 2, Side gear washer 2, Spacer 1, Spider 4, Spider washer 4, Washer 1.
+- No interference at rest; every bearing's cone on its seat and its cup in its bore; the
   plate no lower than 166 mm below the axle.
 - The pinion turned 30 deg about +X: the case 7.6596 deg about +Y. No tooth collision while the pinion turns one
   pitch, nor with the side gears turned 4, 8.18 and 12 deg in the case.

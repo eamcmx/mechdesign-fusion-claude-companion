@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan",
+    "description": {
+        "": "A single-disc cycloidal drive with As-built Joints and Motion Links: Drive Joints on the input turns the disc on its eccentric and the output at -1/N_d."
+    },
+    "version": "1.0",
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}

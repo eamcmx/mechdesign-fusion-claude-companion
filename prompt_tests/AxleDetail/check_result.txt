@@ -1,0 +1,49 @@
+# projects/rear_axle/checks/axle_detail_check.py on prompt_tests/AxleDetail/AxleDetail.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 19:22, 149 s
+
+AxleDetail 1.0 (2026-11-11)
+  ok   Run opens the dialog
+Rear axle in detail: Rear axle built: the carrier of Chapter 29 bolted into the housing of Chapter 30, the half shafts splined into the side gears.
+
+Abutments, the detail's diameters against SKF's:
+  the pinion's shim on cone A's back face (32309, SKF at most 57): 56, Volume 2 56
+  the spacer on cone A's front face (32309, SKF at least 55): 56, Volume 2 56
+  the nose's middle bore at cup A's back face (32309, SKF 82 to 92): 88, Volume 2 93
+  the nose's bore beside cup A's front face (32309, SKF at least 93): 100, Volume 2 100.1
+  the spacer on cone B's front face (32308, SKF at least 49.5): 56, Volume 2 56
+  the companion flange's hub on cone B's back face (32308, SKF at most 51): 50, Volume 2 60
+  the nose's middle bore at cup B's back face (32308, SKF 73 to 82.5): 80, Volume 2 93
+  the nose's bore beside cup B's front face (32308, SKF at least 82): 90, Volume 2 90.1
+  the case's shoulder on a cone C's back face (32213, SKF at most 76): 75, Volume 2 80
+  the adjuster's face on a cup C's back face (32213, SKF 104 to 111.5): 106, Volume 2 72
+Spacer from cone A's front face to cone B's, 196.996 to 264.796 mm: 67.8 long (Volume 2: 63.3 between the cups, 2.25 and 2.25 mm short of the cones).
+Cups' bores 100, 90 and 120, the cups' own diameters, in the casting and the caps (Volume 2: 0.1 over). Nose's middle bore 88 from cup A to 230.9 mm, 80 on to cup B (Volume 2: 93).
+Companion flange's hub 50 for 3 mm at cone B; the case's ends cut to 75 where the cones sit (a ring 2 deep to 82); the adjusters 106 for 6 mm at the cups, 72 beyond.
+Load classes:
+  pinion head A 32309: 0.107 C cruising (heavy), 0.756 C at the peaks (heavy); seat m5
+  pinion tail B 32308: 0.027 C cruising (light), 0.876 C at the peaks (heavy); seat m5
+  case C1 32213: 0.048 C cruising (light), 0.343 C at the peaks (heavy); seat n5
+  case C2 32213: 0.014 C cruising (light), 0.099 C at the peaks (normal); seat n5
+Splines: half shafts and side gears 8 x 36 x 40 x 7 (ISO 14 light series; Volume 2 8 x 35 x 40): 412.3 MPa in torsion at the minor diameter, factor 1.60 (Volume 2 1.47); engaged 71.75 mm (43.6 needed), 346.4 MPa on the flanks, factor 3.29. Pinion 8 x 32 x 38 x 6: in ISO 14's medium series.
+Adjusters' thread M120 x 2 6H/6g: minor diameter 117.546, pitch diameter 118.701 mm, 8 threads engaged. The case bearing's axial load at the peak, 21642 N, on one thread: 87.9 MPa in shear, factor 2.03 against the 1045's 178.9 MPa (2 needed); 58.0 MPa bearing, 175.8 MPa bending; on all 8 threads 11.0 MPa in shear.
+Faces given by hand: M120 x 2 6g on the 2 adjusters' outsides, 6H on 4 faces of the casting's and the caps' bores beyond the cups (4 bores split); ISO 14's sliding fit on the half shafts (64 faces) and the side gears (64), its fixed fit on the pinion (32) in the companion flange (32); 198 faces in all, 192 of them new.
+By the rules: axle: 30 made parts given their materials (none not in Fusion's library); the made parts weigh 153.19 kg, 153.19 kg with Fusion's generic materials; faces given a class and a roughness: 18 bearing seat, 4 located, 16 sliding.
+
+[AxleDetail 1.0 (2026-11-11)]
+  OK pressed, built in 79 s
+  ok   a new design opened
+  ok   the cups' bores 100, 90 and 120 across, none 0.1 over: the casting's radii [40.0, 42.6, 44.0, 45.0, 50.0, 60.0]
+  ok   the caps' bores 120
+  ok   the census's cup seats touching, H7, on six pairs of cup and bore (10 records, the threads' faces beside the cups among them): [('Bearing A 32309 cup', 'Carrier casting'), ('Bearing B 32308 cup', 'Carrier casting'), ('Bearing C1 32213 cup', 'Bearing cap C1'), ('Bearing C1 32213 cup', 'Carrier casting'), ('Bearing C2 32213 cup', 'Bearing cap C2'), ('Bearing C2 32213 cup', 'Carrier casting')]
+  ok   the nose's middle bore 88 at cup A and 80 at cup B, none 93
+  ok   the spacer from 196.986 to 264.806 mm, 67.82 long, on cone A's face at 197.006 and cone B's at 264.786
+  ok   the flange's hub 50 at cone B, the case's ends relieved to 75, the adjusters 106 at the cups and 72 beyond
+  ok   the half shafts' and the side gears' splines 36 across their minor diameter (drawn [18.01, 18.1], the shafts 0.01 and the hubs 0.1 over, as Chapters 29 and 30 draw them)
+  ok   the adjusters' threads 6g on 2 faces and 6H on 4 in the casting and the caps: {'M120 x 2 6g': 2, 'M120 x 2 6H': 4}
+  ok   the splines' classes, ISO 14: H10 Ra 3.2 24, H7 Ra 1.6 24, H9 Ra 1.6 48, a11 Ra 3.2 24, d10 Ra 1.6 32, f7 Ra 1.6 16, h10 Ra 1.6 16, h7 Ra 1.6 8
+  ok   every other decided face as Chapter 51 decides it: 230 faces carry a class, 38 by the rules and 192 more by hand
+  ok   no interference among the 106 parts at rest 
+  ok   no interference driving straight nor in a turn  
+  ok   {'pitch': 1.0} refused: The adjusters' thread M120 x 1 falls short: one thread would carry the case bearing's axial load at the peak, 21642 N, at 174.0 MPa in shear, a factor of 1.03 against the 1045's 178.9 MPa (0.577 x 310, hot rolled); 2 is needed.
+  ok   a message gives the version tag AxleDetail 1.0 (2026-11-11)
+ALL PASS

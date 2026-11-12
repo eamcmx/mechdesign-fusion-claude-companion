@@ -1,0 +1,37 @@
+# projects/spring_plunger/checks/spring_plunger_check.py on prompt_tests/SpringPlunger/SpringPlunger.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 11:01, 4 s
+
+SpringPlunger v1 (prompt test)
+  ok   C 8.000, K_B 1.17241, N_a 9, L_s 15.00, k 3.32438, F1 19.95, F2 46.54, F_s 69.81, tau2 494.0, tau_s 741.1, S_sy 938.1, n2 1.899, n_s 1.266, xi 0.500, tau_p 3.29 
+  ok   the rounded values of the prompt (1.17241, 3.32438, 19.95, 46.54, 69.81, 494.0, 741.1, 938.1, 1.899, 1.266, 0.5, 3.29)
+  ok   Run opens the dialog
+Spring plunger built  [SpringPlunger v1 (prompt test)]
+
+Spring, music wire ASTM A228, plain and ground ends: d = 1.50 mm, D = 12.00 mm, N_t = 10, L0 = 36.00 mm, L1 = 30.00 mm, stroke 8.00 mm
+C = 8.000, K_B = 1.17241, N_a = 9, L_s = 15.00 mm
+k = 3.32438 N/mm (G = 81.7 GPa)
+F1 = 19.95 N, F2 = 46.54 N (at L2 = 22.00 mm), F_s = 69.81 N
+tau at F1 = 211.7 MPa, at F2 = 494.0 MPa, at solid = 741.1 MPa
+S_ut = 2084.8 MPa, S_sy = 938.1 MPa
+n2 = 1.899, n_s = 1.266, xi = 0.500
+Cross pin d_p = 3.00 mm in double shear: tau_p = 3.29 MPa
+Retaining ring DIN 471-8: s = 0.8 mm, groove d2 = 7.6 mm x m = 0.9 mm
+Base 30.0 x 30.0 x 16.0 mm, sleeve OD 17.5 mm, bore 8.2 mm
+  OK pressed, built in 4 s
+  ok   a new design opened
+  ok   six components: ['Base', 'Pin', 'Retaining ring', 'Rod', 'Sleeve', 'Spring']
+  ok   one body each
+  ok   the base is grounded
+  ok   As-built Joints only, four rigid and one slider: ['RigidJointMotion', 'RigidJointMotion', 'RigidJointMotion', 'RigidJointMotion', 'SliderJointMotion']
+  ok   the spring stands on the base, 30.000 mm high
+  ok   the spring's outside diameter 13.500 mm (13.5 wanted)
+  ok   the ring from z = 38.000 to 38.800 mm, on top of the sleeve
+  ok   no interference anywhere at rest 
+  ok   the slider is limited to -8 .. 0 mm
+  ok   driven to the full stroke, the sleeve moved -8.000 mm
+  asked for 12 mm: the sleeve stands 8.000 mm below rest
+  ok   {'stroke': 14.0} refused: xi = F_s / F2 - 1 = 0.050 is below 0.15: the spring is not robustly linear over the stroke
+  ok   {'D': 20.0} refused: C = D / d = 13.3 is outside Shigley's recommended 4 .. 12
+  ok   {'dr': 12} refused: the spring's inside diameter D - d = 10.50 mm does not clear the rod d_r = 12 mm by 1 mm
+  ok   a message gives the version tag SpringPlunger v1 (prompt test)
+ALL PASS

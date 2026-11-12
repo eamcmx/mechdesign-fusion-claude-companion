@@ -1,0 +1,37 @@
+# design_office/checks/mass_properties_check.py on prompt_tests/MassProperties/MassProperties.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 10:12, 581 s
+
+MassProperties 1.0 (prompt test, 2026-11-12)
+  ok   Run opens the dialog
+Mass properties of the robot: 118 parts, 3609.906 kg, centre (193.9, 98.7, 924.3) mm; 14 groups summing to 3609.906 kg.
+Groups: Turret 1281.813 kg, Base 992.690 kg, Lower arm 530.070 kg, Crank 292.935 kg, Upper arm 271.118 kg, Wrist 140.036 kg, Parallel rod 36.944 kg, Triangle 19.830 kg, Levelling rod 2 12.491 kg, Levelling rod 1 11.811 kg, Balancer barrel 1 5.655 kg, Balancer barrel 2 5.655 kg, Balancer rod 1 4.430 kg, Balancer rod 2 4.430 kg.
+Fusion weighs the whole design at 3609.906 kg.
+The robot at q = 0, its 11 moving bodies (palletizer_weighed.json form): turret 1281.8 kg, lower arm 530.1 kg, crank and counterweight 292.9 kg, parallel rod 36.9 kg, levelling rod 1 11.8 kg, triangle 19.8 kg, upper arm 271.1 kg, levelling rod 2 12.5 kg, wrist housing 127.0 kg, tool flange 13.0 kg, balancer 20.2 kg; the base apart, 992.690 kg. Pivots from mdfc_pd55_PalletizerRobot.HOME.
+Written to design_office/results/mass_robot.json.
+Palletizer in detail: the robot, built by PalletizerRobot; then Chapter 51's materials and fits, and by hand 12 faces (6 new) and 9 descriptions.
+
+[MassProperties 1.0 (prompt test, 2026-11-12)]
+  OK pressed, built in 20 s
+  ok   a new design opened
+  ok   the robot: 118 parts, 3609.906 kg, its 14 groups 3609.906 kg; centre (193.9, 98.7, 924.3) mm
+  ok   the robot's moving bodies in Chapter 43's form: ['turret 1281.8', 'lower arm 530.1', 'crank and counterweight 292.9', 'parallel rod 36.9', 'levelling rod 1 11.8', 'triangle 19.8', 'upper arm 271.1', 'levelling rod 2 12.5', 'wrist housing 127.0', 'tool flange 13.0', 'balancer 20.2']
+  ok   each body within 10 % of the concept's mass and moments of inertia; the most changed: ['parallel rod In +4.2 %', 'parallel rod It +4.2 %', 'levelling rod 1 It +2.7 %']
+  Mass properties of the wrist: 97 parts, 7.358 kg, centre (0.0, 1.2, -74.3) mm; 9 groups summing to 7.358 kg.
+  ok   the wrist: 97 parts, 7.358 kg, its 9 groups 7.358 kg; centre (0.0, 1.2, -74.3) mm
+  Mass properties of the flap: 87 parts, 339.817 kg, centre (0.0, 81.3, 11.2) mm; 3 groups summing to 339.817 kg.
+  ok   the flap: 87 parts, 339.817 kg, its 3 groups 339.817 kg; centre (0.0, 81.3, 11.2) mm
+  Mass properties of the axle: 106 parts, 162.647 kg, centre (34.9, -3.7, 1.9) mm; 6 groups summing to 162.647 kg.
+  ok   the axle: 106 parts, 162.647 kg, its 6 groups 162.647 kg; centre (34.9, -3.7, 1.9) mm
+  Mass properties of the bag: 138 parts, 323.499 kg, centre (0.0, 0.0, -394.2) mm; 11 groups summing to 323.499 kg.
+  ok   the bag: 138 parts, 323.499 kg, its 11 groups 323.499 kg; centre (0.0, 0.0, -394.2) mm
+  Mass properties of the clamp: 59 parts, 286.343 kg, centre (-34.7, 0.0, -334.6) mm; 6 groups summing to 286.343 kg.
+  ok   the clamp: 59 parts, 286.343 kg, its 6 groups 286.343 kg; centre (-34.7, 0.0, -334.6) mm
+  Mass properties of the vacuum: 355 parts, 325.904 kg, centre (0.0, 0.0, -347.9) mm; 9 groups summing to 325.904 kg.
+  ok   the vacuum: 355 parts, 325.904 kg, its 9 groups 325.904 kg; centre (0.0, 0.0, -347.9) mm
+  Mass properties of the changer: 21 parts, 28.930 kg, centre (-0.0, 0.0, -41.7) mm; 10 groups summing to 28.930 kg.
+  ok   the changer: 21 parts, 28.930 kg, its 10 groups 28.930 kg; centre (-0.0, 0.0, -41.7) mm
+  Mass properties of the unit: 53 parts, 19.842 kg, centre (0.2, 0.2, -126.6) mm; 2 groups summing to 19.842 kg.
+  ok   the unit: 53 parts, 19.842 kg, its 2 groups 19.842 kg; centre (0.2, 0.2, -126.6) mm
+  ok   refused: No machine called crane: Chapter 57 weighs robot, wrist, flap, axle, bag, clamp, vacuum, changer, unit.
+  ok   a message gives the version tag MassProperties 1.0 (prompt test, 2026-11-12)
+ALL PASS

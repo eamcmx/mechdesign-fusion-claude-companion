@@ -1,0 +1,13 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"id": "81c23132-a615-4e67-8b18-2e4cfd58b159",
+	"author": "Emmanuel Merchan",
+	"description": {
+		"": "Two round flange plates clamped by hexagon bolts and nuts on a bolt circle, joined with rigid As-built Joints; reports the preload, tightening torque and safety factors of the joint under an external tensile load."
+	},
+	"version": "1.0.0",
+	"runOnStartup": false,
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

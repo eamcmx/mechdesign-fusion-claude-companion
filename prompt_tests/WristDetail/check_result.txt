@@ -1,0 +1,38 @@
+# projects/robotic_wrist/checks/wrist_detail_check.py on prompt_tests/WristDetail/WristDetail.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 17:25, 88 s
+
+WristDetail 1.0 (2026-11-11)
+  ok   Run opens the dialog
+Robotic wrist in detail: Chapter 40's wrist with the makers' figures.
+Gear motors (the Beckhoff AG2250-PLE040, two-stage, i = 15, on the Beckhoff AM8111 with holding brake, 48 V DC): 209.5, 209.5 mm from the gearhead's face to the motor's end, the 26 h7 spigot 2.0, 2.0 mm beyond, 40 mm square; the motors' ends at y -187.5, +187.5 (with the assumed products -113.0).
+Output: the unit's smooth 12 mm shaft, 26 mm beyond its face, the pulley on two M4 set screws; the bracket's middle slot 27 mm across.
+Slip ring Senring SNM022A-06 (SparkFun ROB-13064): stator 22 across and 19.5 long, its 44.5 flange at the top against the bracket's tab; 6 circuits of 2 A, 250 rev/min against the roll's 60. The bar and the pin gone; the bracket's screw now a Cap screw ISO 4762 M3x10 (S-0108).
+Abutments: roll shaft collar 20 to 18, spacer S4 19 to 18, spacer S5 19 to 18 mm, inside SKF's da (6002-2RSH 17.0 to 18.5); the other 6 shoulders inside their bands.
+Key: Key DIN 6885 A 5x5x10 (S-0067) from 72 to 82 mm, in the stop disc from 71 to 82; the trunnion's end at 82.
+Motors' duty: 0.139 N m peak (0.20 of the AM8111's 0.68), 0.119 N m RMS (0.63 of its 0.19), 2700 rev/min; the brakes 3.0 times the holding torque needed.
+Stop: the switch at 121 deg; the brakes (8 ms) stop the carrier by 123.1 deg, contact at 128; the block 28.0 deg either side.
+Play at the tool: 0.940 mm (assumed products 0.864). The wrist's mass: 5.87 kg (4.99).
+Bearing loads against SKF's C: roll shaft, upper (fixed) 0.103 C, over normal; roll shaft, lower (floating) 0.050 C, normal; side gear, front 0.039 C, light; side gear, in the pulley 0.060 C, normal; frame, in each cheek 0.064 C, normal.
+Housings: the front side gears' bores M7 on 2 faces (the rules gave N7 Ra 3.2); the floating roll bearing's bore J7 on 1 face (the rules gave K7 Ra 3.2); every other face as Chapter 51's rules decide.
+Materials and fits, wrist: 29 made parts given their materials (polyurethane not in Fusion's library); the made parts weigh 3.04 kg, 3.04 kg with Fusion's generic materials; faces given a class and a roughness: 12 bearing seat, 8 dowel hole, 20 key seat, 3 keyed, 17 located.
+
+Parts: 97 components.
+
+[WristDetail 1.0 (2026-11-11)]
+  OK pressed, built in 53 s
+  ok   a new design opened
+  ok   the two gear motors [211.5, 211.5] mm along y with the spigot's 2 mm, the unit and the motor 209.5; ends at [-187.5, 187.5]
+  ok   their section [(40.0, 46.0), (40.0, 46.0)] mm, 40 square with the connector's 6
+  ok   the output shafts [12.0] mm across, the PLE040's 12
+  ok   the slip ring's stator [3.4, 22.0, 44.5] across, 19.50 long, its flange among them; pins left 0
+  ok   the bracket's screw M3 x 10, the M3 x 8 gone
+  ok   the collar [18.0], S4 [18.0], S5 [18.0] mm across, inside the 6002's 17.0 to 18.5
+  ok   the key from 72.0 to 82.0 mm, in the stop disc from 71.0 to 82.0
+  ok   the front side gears' bores ['M7 Ra 3.2', 'M7 Ra 3.2']
+  ok   the floating roll bearing's bore ['J7 Ra 3.2'], the fixed one's ['K7 Ra 3.2']
+  ok   every other decided face as Chapter 51 decides it: 60 faces carry a class, 60 coloured
+  ok   no interference among the 97 parts at rest 
+  ok   no interference at pitch -120, 0, 120 and roll 0, 90, 180 deg 
+  ok   {'contact': 123.0} refused: This stop falls short: the brakes stop the carrier at 123.1 deg, at or past the contact at 123.0.
+  ok   a message gives the version tag WristDetail 1.0 (2026-11-11)
+ALL PASS

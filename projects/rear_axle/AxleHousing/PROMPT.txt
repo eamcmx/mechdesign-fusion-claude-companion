@@ -46,7 +46,11 @@ FUSION CONVENTIONS:
 ACCEPTANCE CRITERIA:
 - A message gives the shaft's three factors, the bearing's life, the tube's stress and factor, the parts list and a
   version tag. Defaults: 2.49, 3.17, 1.47; 172.9 million turns; 142.0 MPa, 1.90.
-- 57 components in 16 kinds; no interference at rest or with each half shaft turned 30 and 75 deg; each bearing's
+- 57 components in 16 kinds, by component name and count: Banjo housing 1, Bearing 6213 balls 2, Bearing 6213 inner
+  ring 2, Bearing 6213 outer ring 2, Breather 1, Carrier nut M12 8, Carrier stud M12 8, Cover screw M8x20 10, Drain
+  plug M22 1, Filler plug M22 1, Half shaft 2, Oil seal 74x100x10 2, Rear cover 1, Retainer plate 2, Retaining ring 2,
+  Wheel stud M14 12.
+- No interference at rest or with each half shaft turned 30 and 75 deg; each bearing's
   inner ring on the 65 mm seat and its outer ring in the 120 mm bore; each wheel end able to go together, the shaft
   inboard of the bearing no wider than its bore, the retaining ring inboard of it, a shoulder of d_S at its outboard
   face; the housing no lower than 168.07 mm below the axle.

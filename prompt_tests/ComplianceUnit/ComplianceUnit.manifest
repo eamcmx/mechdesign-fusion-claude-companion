@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"The palletizer's compliance unit (Volume 2, Chapter 48), written from its prompt alone: a vertical float on two HGR25 rails between the tool changer and the vacuum or bag gripper."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

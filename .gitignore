@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# first attempts of the prompt tests, kept on this computer only
+prompt_tests/_first/

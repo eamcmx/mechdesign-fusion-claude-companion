@@ -11,12 +11,16 @@ check changes to test the refusal, with its default):
 DERIVED (from the two scripts and projects/rear_axle/lib/axle_design.py, never typed):
 - the carrier: RearAxleCarrier.design() and layout(); the housing and wheel ends: AxleHousing.design()
 - the splines in the side gears (projects/rear_axle/lib/axle_design.spline_engagement): engaged from the shaft's tip
-  to the end of the side gear's hub (74 + 32.75 mm); the flanks carrying the design torque, 3777.4 N m, at their mean
-  radius on their height with half the teeth taken to carry it; at least 2 against the shaft's yield (1140 MPa)
+  to the end of the side gear's hub (74 + 32.75 mm); the flanks carrying one half shaft's torque, 3777.4 N m (half
+  the design torque: duty(brief())['T_shaft'], passed in N mm), at their mean radius on their height with half the
+  teeth taken to carry it; at least 2 against the shaft's yield (1140 MPa)
 
 HARD CONSTRAINTS:
-- Use the two subsystems' own builders; draw nothing twice. Refuse what either refuses, and refuse splines that reach
-  less than the length needed into the side gears, saying how far they reach.
+- Use the two subsystems' own builders, each of which builds into the component it is given: AxleHousing.py's
+  housing() and wheel_end_asm(), RearAxleCarrier.py's carrier(), pinion_assembly() and differential_assembly(), and
+  RearAxleCarrier.py's revolute_about() for the joints. Their build() functions open documents of their own and are
+  not called; the final drive's Motion Link is made here. Draw nothing twice. Refuse what either refuses, and refuse
+  splines that reach less than the length needed into the side gears, saying how far they reach.
 - The axle along Y, forward +X, up +Z, Y to the left (ISO 8855), the axle's middle at the origin: L at +Y, R at -Y in
   both subsystems.
 - The carrier's plate on the housing's neck flange at x = 165, on the eight studs.
@@ -37,7 +41,15 @@ FUSION CONVENTIONS:
 ACCEPTANCE CRITERIA:
 - A message gives the final drive, the differential, the splines' engagement with their pressure and factor, the
   parts list and a version tag. Defaults: 71.75 mm engaged, 35.3 mm needed, 280.8 MPa, factor 4.06.
-- 106 components in 43 kinds; no interference at rest; each half shaft's splines 71.75 mm into its side gear.
+- 106 components in 43 kinds, by component name and count: Adjuster 2, Banjo housing 1, Bearing 6213 balls 2, Bearing
+  6213 inner ring 2, Bearing 6213 outer ring 2, Bearing A 32309 cone 1, Bearing A 32309 cup 1, Bearing B 32308 cone 1,
+  Bearing B 32308 cup 1, Bearing C1 32213 cone 1, Bearing C1 32213 cup 1, Bearing C2 32213 cone 1, Bearing C2 32213
+  cup 1, Bearing cap 2, Breather 1, Cap bolt M12x90 4, Carrier casting 1, Carrier nut M12 8, Carrier stud M12 8,
+  Companion flange 1, Cover screw M8x20 10, Cross 1, Crown wheel bolt M12x35 10, Crown wheel z47 1, Differential case
+  1, Drain plug M22 1, Filler plug M22 1, Half shaft 2, Oil seal 74x100x10 2, Pinion depth shim 1, Pinion nut M30 1,
+  Pinion seal 60x85x10 1, Pinion shaft z12 1, Rear cover 1, Retainer plate 2, Retaining ring 2, Side gear 2, Side gear
+  washer 2, Spacer 1, Spider 4, Spider washer 4, Washer 1, Wheel stud M14 12.
+- No interference at rest; each half shaft's splines 71.75 mm into its side gear.
 - Driving straight, the pinion turned 30 deg: the case and both half shafts 7.6596 deg about +Y, no interference.
 - In a turn, the pinion 47 deg and spider 1 2.5 deg: the case 12 deg, the half shafts 12 -/+ 1.7045 deg, no
   interference.

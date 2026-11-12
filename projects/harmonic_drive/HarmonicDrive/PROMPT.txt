@@ -41,13 +41,19 @@ FUSION CONVENTIONS:
 - AsBuiltJoints: WaveGenerator revolute about z on CircularSpline; Flexspline revolute about z on CircularSpline.
   No Motion Link: a rigid body cannot keep its oval turning with the wave generator. turn_to(phi) replaces the bodies
   of Flexspline and WaveGenerator with new ones bent at phi, the flexspline turned by rho.
+- Each of the two is a few extrusions of sketches: the whole bent rim, all its teeth, one closed polyline in one
+  sketch, then the wall, the diaphragm and the hub joined to it. Five points a tooth (the four corners of its
+  straight flanks and the middle of the root land) and 360 points for each round curve (the bore, the root line, the
+  wave generator): more points only slow each rebuild. turn_to deletes the extrusions, sketches and planes
+  the last build made, not only the bodies: features left behind stay in the timeline, which grows and slows every
+  later turn. The check turns the drive 7 times.
 
 ACCEPTANCE CRITERIA:
 - A message gives z_c, the ratio, r_f, r_c, w0, the tooth form and a version tag.
 - Defaults: z_c = 202, ratio -100; r_f = 30, r_c = 30.3, w0 = 0.3 mm.
 - Measured on the bodies at phi = 0: the flexspline's tooth tip 30.525 mm from the axis on the long axis and
   29.925 mm on the short axis; the circular spline's tips 30.075 mm from the axis.
-- turn_to at 12 angles across one mesh period (360 / z_c deg) and at 45, 90 and 180 deg: no interference at any.
+- turn_to at 6 angles across one mesh period (360 / z_c deg) and at 90 deg: no interference at any.
 - Refused: z_c - z_f = 1; z_f = 40.
 
 Give me one Python file and its .manifest.

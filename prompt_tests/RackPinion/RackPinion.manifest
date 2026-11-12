@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "",
+	"description": {
+		"": "Builds a rack and pinion on a base plate from a dialog: a spur pinion on a fixed shaft, a rack sliding under it, as-built joints and a Motion Link so that Drive Joints on the pinion moves the rack."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

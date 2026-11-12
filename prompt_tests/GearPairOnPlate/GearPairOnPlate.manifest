@@ -1,0 +1,13 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "",
+	"description": {
+		"": "A parametric spur gear pair on a base plate: involute teeth, As-built Joints and a Motion Link, ready for Drive Joints"
+	},
+	"version": "1.0.0",
+	"runOnStartup": false,
+	"supportedOS": "windows|mac",
+	"editEnabled": true,
+	"iconFilename": ""
+}

@@ -1,0 +1,11 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"Chapter 43: the whole palletizer, PalletizerDrives.py's base, turret, drives, balancer and crank with the links, placed by set_pose() (prompt test)"
+	},
+	"version":	"1.0",
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

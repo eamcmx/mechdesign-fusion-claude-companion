@@ -1,0 +1,11 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Mechanical Design in Autodesk Fusion with Claude",
+	"description":	{
+		"":	"A disc cam (cycloidal rise, dwell, cycloidal return, dwell) with a translating roller follower on a slider; reports the largest pressure angle and the pitch curve's smallest radius of curvature."
+	},
+	"version":	"1.0",
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

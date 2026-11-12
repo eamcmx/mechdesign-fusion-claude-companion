@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "Emmanuel Merchan",
+	"description": {
+		"": "Chapter 57: builds one of the nine detailed assemblies through RangeSweep.py and weighs it, every group and the robot's eleven moving bodies at q = 0 (prompt test)"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

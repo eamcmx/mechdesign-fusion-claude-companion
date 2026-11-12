@@ -1,0 +1,11 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"",
+	"description":	{
+		"":	"Builds a parametric planetary gearbox (ring, sun, N planets, carrier, sun bearing) in a new design, with As-built Joints and Motion Links so that Drive Joints on the sun turns the carrier and the planets."
+	},
+	"version":	"1.0",
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

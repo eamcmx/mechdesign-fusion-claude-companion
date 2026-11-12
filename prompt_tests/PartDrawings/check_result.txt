@@ -1,0 +1,57 @@
+# design_office/checks/part_drawings_check.py on prompt_tests/PartDrawings/PartDrawings.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 13:39, 1555 s
+
+PartDrawings 1.0 (2026-11-12)
+  ok   Run opens the dialog
+PartDrawings could not start:
+Traceback (most recent call last):
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/PartDrawings/PartDrawings.py", line 1637, in notify
+    raise RuntimeError('the build could not be queued')
+RuntimeError: the build could not be queued
+
+Part drawings (Chapter 63): 5 of 6 drawings made, in MechDesignFusionClaude Vol3/Chapter 63 check 2026-11-12 1313.
+P13-018 Stop bracket, opening: 1 sheet(s), 0 views on the first; 0 dimensions and 0 symbols added (asked 2 and 2); table of 7 rows; PDF none
+P10-006 Segment: 1 sheet(s), 3 views on the first; 0 dimensions and 2 symbols added (asked 0 and 2); table of 6 rows; PDF P10-006.pdf
+A01-016 Spacer, pinion: 1 sheet(s), 2 views on the first; 1 dimensions and 0 symbols added (asked 1 and 0); table of 8 rows; PDF A01-016.pdf
+F01-022 Spar fitting: 1 sheet(s), 3 views on the first; 0 dimensions and 0 symbols added (asked 2 and 0); table of 4 rows; PDF F01-022.pdf
+W01-018 Stop disc: 1 sheet(s), 3 views on the first; 1 dimensions and 0 symbols added (asked 1 and 0); table of 4 rows; PDF W01-018.pdf
+P13-000 Bag gripper, the opening stop: 2 sheet(s), 1 views on the first; 0 dimensions and 0 symbols added (asked 0 and 0); table of 4 rows; PDF P13-000.pdf
+Folder MechDesignFusionClaude Vol3/Chapter 63 check 2026-11-12 1313: 12 files, each once.
+Results: design_office/results/part_drawings.json; PDFs in design_office/results/drawings.
+
+[PartDrawings 1.0 (2026-11-12)]
+  OK pressed, built in 1554 s
+  ok   a new design opened
+  ok   six drawings: bracket, disc, fitting, segment, spacer, stop
+  FAIL P13-018 Stop bracket, opening: A3 0 x 0, 1 sheet(s), 0 views on the first
+  FAIL P13-018: the PDF None
+  FAIL P13-018: on the sheet 0 dimensions and 0 symbols more (asked 2 and 2)
+  ok   P10-006 Segment: A3 420 x 297, 1 sheet(s), 3 views on the first
+  ok   P10-006: the PDF P10-006.pdf
+  ok   P10-006: on the sheet 0 dimensions and 2 symbols more (asked 0 and 2)
+  ok   A01-016 Spacer, pinion: A3 420 x 297, 1 sheet(s), 2 views on the first
+  ok   A01-016: the PDF A01-016.pdf
+  ok   A01-016: on the sheet 1 dimensions and 0 symbols more (asked 1 and 0)
+  ok   F01-022 Spar fitting: A3 420 x 297, 1 sheet(s), 3 views on the first
+  ok   F01-022: the PDF F01-022.pdf
+  FAIL F01-022: on the sheet 0 dimensions and 0 symbols more (asked 2 and 0)
+  ok   W01-018 Stop disc: A3 420 x 297, 1 sheet(s), 3 views on the first
+  ok   W01-018: the PDF W01-018.pdf
+  ok   W01-018: on the sheet 1 dimensions and 0 symbols more (asked 1 and 0)
+  ok   P13-000 Bag gripper, the opening stop: A3 420 x 297, 2 sheet(s), 1 views on the first
+  ok   P13-000: the PDF P13-000.pdf
+  ok   P13-000: on the sheet 0 dimensions and 0 symbols more (asked 0 and 0)
+  ok   the bracket's root in the model: 4 faces of radius 2.5
+  ok   the bracket's holes in the model: 2 of 9 across
+  ok   the bracket's model: its arm turned 45.0 deg (Ch 62), 99399.2 mm3 against 99399.2 by hand
+  ok   the opening stop's bracket as its sheet draws it: the arm turned, the root filleted on 4 edges, r 2.5
+  ok   the opening stop: P13-018 x1, S-0120 x1,  x1, S-0121 x2, S-0122 x2, S-0123 x2; ['tighten to 25.5 N m (K 0.2, zinc-plated)']
+  ok   P13-018: its table, 7 rows: Arm 24 square, at 45° to the foot, its sides square to the lug's axis; Root of the arm R2.5 min, all round; Holes 2 × Ø9 H13 through, 50 apart on the foot's diagonal; Their position Ø1.0 (M) to A, the face on the end plate; Lug Ø48 × 25, M30 × 1.5-6H through
+  ok   P10-006: its table, 6 rows: 15° face profile of a surface 0.02 to A; 5° face profile of a surface 0.02 to B; Wedge faces ground after hardening; Set the 6 ground as one set, kept as one item
+  ok   A01-016: its table, 8 rows: Length 67.8 nominal, turned to 68.6; Grinding to each axle, 67.78 to 68.46; Faces both ground in one set-up; Datum A the face on cone A; Face on cone B parallel to A within 0.013 (IT5); Ø45.1 bore H7, Ra 1.6
+  ok   F01-022: its table, 4 rows: Bores envelope (E), ISO 14405-1; 2 × Ø35 bore N7, Rz 16.0
+  ok   W01-018: its table, 4 rows: Ø15 bore H7, Ra 1.6; keyseat JS9, Ra 3.2
+  ok   every file in MechDesignFusionClaude Vol3/Chapter 63 check 2026-11-12 1313 once: 12 files
+  ok   refused: No part called crane: the drawings are of all, bracket, segment, spacer, fitting, disc, stop.
+  ok   a message gives the version tag PartDrawings 1.0 (2026-11-12)
+4 FAILED

@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"Chapter 52: the robotic wrist of Chapter 40 in detail, its bought products to their makers' figures, its abutments inside SKF's bands, the stop disc's key the length made, and Chapter 51's materials and fits"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

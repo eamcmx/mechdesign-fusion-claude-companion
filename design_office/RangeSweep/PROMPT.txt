@@ -30,7 +30,9 @@ HARD CONSTRAINTS:
   brackets' bolts; after the build add to the frame, for each end plate (the -x end's turned half a turn about z):
   the closing bracket (foot, lip over the plate's end, lug) and the opening bracket (foot, arm, round lug) in steel
   1045, a DYSC-25-25-Y1F in each in its end position with its lock nut, and each bracket's two ISO 4762 M8 x 40 with
-  an ISO 7089 washer and an ISO 4032 nut inside the plate; describe them.
+  an ISO 7089 washer and an ISO 4032 nut inside the plate; describe them. Each DYSC drawn with its rod pushed in:
+  from stop_layout()'s face along its axis, the thread D1 for L2, then the body D3 to L1 (DYSC's sizes), nothing in
+  front of that face, which meets the striker with the jaws closed (closing) or the lever's bar at 45 deg (opening).
 - Leave out the parts that are not the machine: the clamp's carton, the vacuum gripper's carton and pack, the bag
   gripper's bag and rollers; and the vacuum gripper's and the compliance unit's springs, which are drawn rigid at
   their installed length. Leave them out by the start of their names, so that the compliance unit's four spring

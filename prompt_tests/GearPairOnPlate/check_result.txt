@@ -1,0 +1,38 @@
+# projects/gear_pair/checks/gearpair_check.py on prompt_tests/GearPairOnPlate/GearPairOnPlate.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 11:10, 9 s
+
+GearPairOnPlate pt-1 (2026-11-11)
+  ok   Run opens the dialog
+  dialog defaults (API units): {'m': 0.2, 'z1': 20, 'z2': 40, 'alpha': 0.3490658503988659, 'b': 1.0, 'backlash': 0.020000000000000004, 'd_s': 0.8, 'plate_t': 0.6000000000000001}
+Spur gear pair on a base plate, GearPairOnPlate pt-1 (2026-11-11)
+m = 2 mm, z1 = 20, z2 = 40, alpha = 20 deg, b = 10 mm, backlash 0.2 mm, shaft 8 mm, plate 6 mm
+Centre distance a = 60.00 mm
+Ratio z2/z1 = 40/20 = 2.000: gear 2 turns 0.5 deg the other way for each degree of gear 1
+Pitch radii 20.000 / 40.000 mm, base 18.794 / 37.588, tip 22.000 / 42.000, root 17.500 / 37.500
+Tooth thickness on the pitch circle 3.0416 mm each; fewest teeth without undercut at 20 deg: 18
+Drive "Gear 1 turns" (Drive Joints) to turn the pair.
+  OK pressed, built in 3 s
+  ok   a new design opened (documents 1 -> 2)
+  ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each: [1, 1, 1, 1, 1]
+  ok   gear 2 and shaft 2 at x = a = 60.00 mm (measured 60.000, 60.000)
+  ok   the base plate is grounded
+  ok   As-built Joints only: ['RevoluteJointMotion', 'RevoluteJointMotion', 'RigidJointMotion', 'RigidJointMotion'], plain Joints 0
+  ok   one Motion Link: ['Gear 1 drives gear 2']
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: gear 2 joint reads -45.000, its body turned -45.000 deg about z (want -45.000)
+  ok   no tooth collision while gear 1 turns 0 to 18.0 deg in 13 positions 
+  z2 = 50: Centre distance a = 70.00 mm
+  ok   z2 = 50 gives a = 70 mm in the message
+  ok   five components: ['Base plate', 'Gear 1', 'Gear 2', 'Shaft 1', 'Shaft 2']
+  ok   one body each: [1, 1, 1, 1, 1]
+  ok   gear 2 and shaft 2 at x = a = 70.00 mm (measured 70.000, 70.000)
+  ok   the base plate is grounded
+  ok   As-built Joints only: ['RevoluteJointMotion', 'RevoluteJointMotion', 'RigidJointMotion', 'RigidJointMotion'], plain Joints 0
+  ok   one Motion Link: ['Gear 1 drives gear 2']
+  ok   no interference at rest 
+  ok   gear 1 driven 90 deg: gear 2 joint reads -36.000, its body turned -36.000 deg about z (want -36.000)
+  ok   no tooth collision while gear 1 turns 0 to 18.0 deg in 13 positions 
+  ok   z1 = 12 refused: z1 = 12 is refused: fewer than 18 teeth undercut at a pressure angle of 20 deg (z_min = 2/sin^2(alpha) = 17.10, rounded up to 18).
+  ok   a message gives the version tag GearPairOnPlate pt-1 (2026-11-11)
+ALL PASS

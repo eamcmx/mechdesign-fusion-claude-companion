@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"The palletizer's parallel-jaw gripper for cartons (Chapter 45), written from its prompt"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

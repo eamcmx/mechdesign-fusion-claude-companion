@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "Emmanuel Merchan",
+	"description": {
+		"": "A cup-type harmonic drive (strain wave gear): circular spline, flexspline bent by the wave generator, wave generator; turn_to(phi) rebuilds it at a new wave generator angle."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

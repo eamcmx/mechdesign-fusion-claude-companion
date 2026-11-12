@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Emmanuel Merchan",
+	"description":	{
+		"":	"Chapter 50: the bag gripper with its bought parts described by their full designations and its driven stub shafts detailed with their standard parts"
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

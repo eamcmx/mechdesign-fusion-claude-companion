@@ -1,0 +1,33 @@
+# design_office/checks/making_check.py on prompt_tests/Making/Making.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 15:10, 674 s
+
+Making 1.0 prompt test (2026-11-12)
+  ok   Run opens the dialog
+Making failed:
+Traceback (most recent call last):
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/Making/Making.py", line 1358, in notify
+    ui.messageBox(build(args.additionalInfo))
+                  ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users/eamer/Documents/MechDesignFusionClaude/companion/tools\fusion_check.py", line 72, in build
+    r = built(*a, **k)
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/Making/Making.py", line 1314, in build
+    info, setups = dict(bracket=build_bracket, spacer=build_spacer, tine=build_tine)[part](log)
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/Making/Making.py", line 739, in build_bracket
+    out = [_program(cam, s, ops, 'fanuc.cps', PROGRAMS['bracket'][i], log) for i, (s, ops) in enumerate(setups)]
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/Making/Making.py", line 580, in _program
+    t = _machining_time(cam, setup, log)
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/Making/Making.py", line 527, in _machining_time
+    mt = cam.getMachiningTime(setup, scale, rapid, TOOL_CHANGE)
+  File "C:\Users/eamer/AppData/Local/Autodesk/webdeploy/production/39e8a3d5e919c70b05ef3ebfe9c6bfc8d9ee001e/Api/Python/packages\adsk\cam.py", line 26530, in getMachiningTime
+    return _cam.CAM_getMachiningTime(self, operations, feedScale, rapidFeed, toolChangeTime)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: 3 : Machining time could not be calculated.
+
+  OK pressed, built in 674 s
+  ok   a new design opened
+Traceback (most recent call last):
+  File "<string>", line 156, in <module>
+  File "<string>", line 57, in run
+KeyError: 'part'

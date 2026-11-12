@@ -1,0 +1,32 @@
+# projects/palletizer/checks/palletizer_drives_check.py on prompt_tests/PalletizerDrives/PalletizerDrives.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 14:30, 46 s
+
+PalletizerDrives prompt test 1.0 (2026-11-12)
+  ok   Run opens the dialog
+The palletizer's drives of Chapter 42, built at rest (q = 0).
+Slewing ring: SKF RKS.23 0841 (dm 841 mm, one row of 120 balls of 20 mm).
+J1 RV-500N: 12 497 h of the 11 667 h it needs.
+J2 RV-500N: 120 984 h of the 10 667 h it needs.
+J3 RV-500N: 13 074 h of the 10 667 h it needs.
+Balancer: two cylinders of 63 mm bore; the pair pushes 54.0 to 69.5 kN over J2's range, 8.66 to 11.14 MPa in each.
+Counterweight: 100 kg at 600 mm behind the shoulder, a steel block 460 x 460 x 60.2 mm on the crank's outer face; its lowest corner 166 mm above the floor at q3 = 60 deg.
+Parts: 48 components in 40 kinds: 2 Balancer barrel, 1 Balancer cross pin Q, 3 Balancer lug, 1 Balancer pin P, 2 Balancer rod, 1 Base flange, 1 Cheek J2 side, 1 Cheek J3 side, 1 Column, 1 Counterweight block, 2 Coupling disc, 1 Coupling spacer, 1 Crank shaft, 1 Crank web, 1 Floor plate, 2 Fork plate, 2 Gas bottle, 1 Hub boss J2 side, 1 Hub boss J3 side, 1 J1 reducer plate, 1 J1 stop, 1 J1 stop dog, 1 J2 support bearing, 1 J3 bracket, 2 J3 bracket post, 1 J3 support bearing, 1 Lower arm root box, 1 RV-500N case J1, 1 RV-500N case J2, 1 RV-500N case J3, 1 RV-500N output J1, 1 RV-500N output J2, 1 RV-500N output J3, 1 Servo motor J1, 1 Servo motor J2, 1 Servo motor J3, 1 Slewing ring balls, 1 Slewing ring inner ring, 1 Slewing ring outer ring, 1 Turret plate.
+[PalletizerDrives prompt test 1.0 (2026-11-12)]
+  OK pressed, built in 44 s
+  ok   a new design opened
+  ok   two top-level groups: ['Base', 'Turret']
+  parts: 48 components, 40 kinds
+  ok   the parts as listed 
+  ok   no interference among the 48 parts at rest 
+  ok   J1 at -30 and +30 deg: no interference 
+  ok   J2 at -42, 0, 13, 26, 60 and 85 deg: the pins' distance measured against sqrt(a^2 + b^2 + 2 a b cos q2), worst 0.0000 mm
+  ok   each piston inside its barrel's travel, 60 to 470 mm from the pin: [(-42.0, 283.3), (0.0, 340.0), (13.0, 334.5), (26.0, 318.1), (60.0, 225.8), (85.0, 117.2)]
+  ok   J2 at its six poses, the balancer set to each: no interference 
+  ok   J3 at -75, -51, 0, 30 and 60 deg: no interference 
+  masses as drawn: Base 1000.5 kg, Crank 283.0 kg, Lower arm 425.3 kg, Turret 1267.4 kg
+  the slewing ring as drawn 80.3 kg (SKF 48.0); each RV-500N as drawn 69.6 kg (Nabtesco 57.2)
+  ok   the counterweight block 100.00 kg
+  ok   {'cw': 300.0} refused: A counterweight of 300 kg is over the 200 kg limit: with it J1's RV-500N falls short of its rated life (palletizer_drives.rv_life).
+  ok   {'r_cw': 1100.0} refused: A counterweight 1100 mm behind the shoulder comes within 20 mm of the floor: with the crank turned down to q3 = 60 deg its block's lowest corner would be at z = -267 mm, the floor at 0.
+  ok   a message gives the version tag PalletizerDrives prompt test 1.0 (2026-11-12)
+ALL PASS

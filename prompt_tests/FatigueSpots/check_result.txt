@@ -1,0 +1,26 @@
+# design_office/checks/fatigue_spots_check.py on prompt_tests/FatigueSpots/FatigueSpots.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 01:11, 24 s
+
+FatigueSpots 1.0 (2026-11-12)
+  ok   Run opens the dialog
+Fatigue spots at the bag gripper's ends, measured on the parts as drawn:
+Bolts: Cap screw ISO 4762 M8x40 stop 1 with Nut ISO 4032 M8 stop 1: the grip 28.60 mm along the axis from the head's underside to the nut's face; the head 8.00 high and 12.00 across; the shank 8.00 across and 40.00 long.
+Roots: Stop bracket closed 1, 2 bolt holes; no cylinder under 10 mm in radius other than its bolt holes and no torus: sharp roots.
+Roots: Stop bracket open 1, 2 bolt holes; no cylinder under 10 mm in radius other than its bolt holes and no torus: sharp roots.
+Keyseat: Stub shaft long A 30.00 across at the key; Key 8x7x25 A 8.00 wide, 7.00 high and 25.00 long (its mesh, 584 nodes), its nearest 11.00 mm from the axis, so the keyseat is 4.00 deep.
+Groove: Stub shaft short A 28.60 across, 443.00 to 444.60 mm from the gripper's middle (halfway between the end plates); Bearing 6206 4 427.00 to 443.00 mm: the groove is outside the bearing.
+Red: Stop bracket closed 1, Stop bracket open 1, Key 8x7x25 A. Yellow: Cap screw ISO 4762 M8x40 stop 1, Cap screw ISO 4762 M8x40 stop 2, Cap screw ISO 4762 M8x40 stop 3, Cap screw ISO 4762 M8x40 stop 4, Nut ISO 4032 M8 stop 1, Nut ISO 4032 M8 stop 2, Nut ISO 4032 M8 stop 3, Nut ISO 4032 M8 stop 4. The stubs keep their fits' colours.
+Written to design_office/results/fatigue_spots.json.
+Jaw stops: the levers carried on to 200 mm as strikers; four DYSC-25-25-Y1F on four brackets, 8 M8 x 40 through the end plates.
+
+[FatigueSpots 1.0 (2026-11-12)]
+  OK pressed, built in 24 s
+  ok   a new design opened
+  ok   the bolts: the grip 28.60 mm, the head 8.00, the shank 8.00 across
+  ok   closed: 2 bolt holes, fillets none, sharp
+  ok   open: 2 bolt holes, fillets none, sharp
+  ok   the keyseat: the stub 30.00 across, the key 8.00 x 7.00 x 25.00, the keyseat 4.00 deep
+  ok   the groove: 28.60 across, from 443.00 to 444.60 mm out, the bearing 427.00 to 443.00
+  ok   refused: No spot called crane: Chapter 60 measures bolts, roots, keyseat or groove (or all four).
+  ok   a message gives the version tag FatigueSpots 1.0 (2026-11-12)
+ALL PASS

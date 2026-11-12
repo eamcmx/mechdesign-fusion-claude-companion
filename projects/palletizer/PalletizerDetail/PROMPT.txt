@@ -47,6 +47,8 @@ FUSION CONVENTIONS:
 - Each assembly's own script makes its new design document (FusionDesignDocumentType) and its groups.
 - No joints, as-built or otherwise: the robot, the bag gripper, the compliance unit and the vacuum gripper each place
   their groups by transforms, as their own scripts do.
+- A face is split with splitFaceFeatures.createInput(an ObjectCollection of the faces, a construction plane, True):
+  the faces go in a collection even when there is only one.
 - Lengths in mm, the API's cm inside.
 
 ACCEPTANCE CRITERIA:

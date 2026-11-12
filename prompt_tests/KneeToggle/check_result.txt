@@ -1,0 +1,36 @@
+# projects/knee_toggle/checks/knee_toggle_check.py on prompt_tests/KneeToggle/KneeToggle.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 11:53, 2 s
+
+KneeToggle v1 (prompt test 2026-11-11)
+  ok   F at 30, 10, 5, 2, 1 deg: [86.6, 283.56, 571.5, 1431.81, 2864.5] N
+  ok   the stroke 10.718 mm
+  ok   Run opens the dialog
+Knee toggle: l = 40 mm, alpha0 = 30 deg, over-centre 3 deg, P = 100 N
+
+Stroke from alpha0 to straight, 2 l (1 - cos alpha0) = 10.718 mm
+Mechanical advantage F / P = 1 / (2 tan alpha); at alpha0: 0.866
+
+Ram force F = P / (2 tan alpha):
+   alpha = 30 deg:  F = 86.60 N   (F / P = 0.866)
+   alpha = 10 deg:  F = 283.56 N   (F / P = 2.836)
+   alpha = 5 deg:  F = 571.50 N   (F / P = 5.715)
+   alpha = 2 deg:  F = 1431.81 N   (F / P = 14.318)
+   alpha = 1 deg:  F = 2864.50 N   (F / P = 28.645)
+
+Drive Joints on "Upper link turns": 0 is alpha0; limited from alpha = -3 deg (past straight, the stop) to alpha = 45 deg.
+
+KneeToggle v1 (prompt test 2026-11-11)
+  OK pressed, built in 1 s
+  ok   a new design opened
+  ok   four components: ['Frame', 'Lower link', 'Ram', 'Upper link']
+  ok   one body each
+  ok   three revolute and one slider As-built Joints closing the loop
+  ok   no interference at rest 
+  knee travel over ram travel, measured: 30-28: 0.9020, 28-26: 0.9813, 26-24: 1.0723, 24-22: 1.1779, 22-20: 1.3025, 20-18: 1.4521, 18-16: 1.6354, 16-14: 1.8660, 14-12: 2.1657, 12-10: 2.5723, 10-8: 3.1569, 8-6: 4.0722, 6-4: 5.7150, 4-2: 9.5406
+  ok   the ram at -2 l cos(alpha) at every step (worst 1.28e-13 mm)
+  ok   the virtual-work ratio from Fusion's positions equals the formula's (worst 1.6e-13 relative)
+  ok   no interference at the 15 steps 
+  ok   {'alpha0': 70.0} refused: alpha0 must be from 5 to 60 deg (got 70)
+  ok   {'over': 12.0} refused: the over-centre angle must be from 1 to 10 deg, so that the toggle locks against its stop just past straight (got 12)
+  ok   a message gives the version tag KneeToggle v1 (prompt test 2026-11-11)
+ALL PASS

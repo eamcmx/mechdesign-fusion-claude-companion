@@ -1,0 +1,94 @@
+# design_office/checks/range_sweep_check.py on prompt_tests/RangeSweep/RangeSweep.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 10:03, 1584 s
+
+RangeSweep 1.0 (2026-11-12)
+  ok   Run opens the dialog
+Range sweep of the robotic wrist: 71 states, 97 parts in 7 groups, moved by mdfc_wd52_WristIntegration.pose.
+Interference at 0 of the 71 states; 2 contacts made in motion: Stop disc / Buffer pad at pitch (128, 0); Stop disc / Buffer pad (1) at pitch (-128, 0).
+Closest approaches: Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at pitch (24, 0); Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at pitch (112, 0); Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at pitch (-128, 0).
+Pairs: all 4656, across groups 2912, near at the four states 355, kept 2670, near in the sweep 121, changing 35, contacts 2 (GAP 10 mm, STEADY 0.05 mm); 0 parts left out.
+The machine: Wrist in detail: the AM8111 with its brake and the PLE040 at 15:1 drawn to their makers' figures, each motor's end -187.5 mm off the middle; the SNM022A-06 with its 44.5 mm flange; the collar and spacers S4 and S5 at 18 mm; the key 5 x 5 x 10.
+Results: C:\Users\eamer\Documents\MechDesignFusionClaude\companion\design_office\results\range_sweep.json
+
+[RangeSweep 1.0 (2026-11-12)]
+RangeSweep failed:
+Traceback (most recent call last):
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/RangeSweep/RangeSweep.py", line 799, in notify
+    ui.messageBox(build(machine), VERSION)
+                  ~~~~~^^^^^^^^^
+  File "C:\Users/eamer/Documents/MechDesignFusionClaude/companion/tools\fusion_check.py", line 72, in build
+    r = built(*a, **k)
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/RangeSweep/RangeSweep.py", line 746, in build
+    msg, move, how, extra = _build(machine)
+                            ~~~~~~^^^^^^^^^
+  File "C:/Users/eamer/Documents/MechDesignFusionClaude/companion/prompt_tests/RangeSweep/RangeSweep.py", line 499, in _build
+    return (W.build(),) + _mover(W.pose, machine) + (None,)
+            ~~~~~~~^^
+  File "C:\Users\eamer\Documents\MechDesignFusionClaude\companion\projects\robotic_wrist\WristDetail\WristDetail.py", line 212, in build
+    msg40 = WI.build(contact)
+  File "C:\Users\eamer\Documents\MechDesignFusionClaude\companion\projects\robotic_wrist\WristIntegration\WristIntegration.py", line 263, in build
+    msg39 = WD.build()
+  File "C:\Users\eamer\Documents\MechDesignFusionClaude\companion\projects\robotic_wrist\WristDifferential\WristDifferential.py", line 1019, in build
+    app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users/eamer/AppData/Local/Autodesk/webdeploy/production/39e8a3d5e919c70b05ef3ebfe9c6bfc8d9ee001e/Api/Python/packages\adsk\core.py", line 13946, in add
+    return _core.Documents_add(self, *args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+RuntimeError: 2 : InternalValidationError : doc
+
+  OK pressed, built in 333 s
+  ok   a new design opened
+  ok   the wrist: 71 states, 97 parts in 7 groups, no interference 
+       contacts made in motion: 2 ['Stop disc / Buffer pad at (128.0, 0.0)', 'Stop disc / Buffer pad (1) at (-128.0, 0.0)']
+       closest: ['Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at (24.0, 0.0)', 'Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at (112.0, 0.0)', 'Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at (-128.0, 0.0)']
+       pairs: {'all': 4656, 'across groups': 2912, 'near at the four states': 355, 'kept': 2670, 'near in the sweep': 121, 'changing': 35, 'contacts': 2}, 332 s
+  Range sweep of the flap actuation system: 21 states, 87 parts in 8 groups, moved by mdfc_rs56_FlapDetail.pose.
+  ok   the flap: 21 states, 87 parts in 8 groups, no interference 
+       contacts made in motion: 0 []
+       closest: ['Rod end SI 20 ES / Horn 0.859 mm at 40.0', 'Ring nut M66x1.5 / Piston rod 2.000 mm at 0.0', 'Idler gear z30 / Encoder pinion z26 2.156 mm at 4.0']
+       pairs: {'all': 3741, 'across groups': 2963, 'near at the four states': 181, 'kept': 2878, 'near in the sweep': 97, 'changing': 84, 'contacts': 0}, 196 s
+  Range sweep of the rear axle: 36 states, 106 parts in 9 groups, moved by the joints Pinion turns and Spider 1 turns in the case.
+  ok   the axle: 36 states, 106 parts in 9 groups, no interference 
+       contacts made in motion: 0 []
+       closest: ['Carrier casting / Crown wheel bolt M12x35 1 1.000 mm at (105.0, 0.0)', 'Carrier casting / Crown wheel bolt M12x35 3 1.000 mm at (105.0, 0.0)', 'Carrier casting / Crown wheel bolt M12x35 10 1.000 mm at (105.0, 0.0)']
+       pairs: {'all': 5565, 'across groups': 3942, 'near at the four states': 320, 'kept': 3728, 'near in the sweep': 108, 'changing': 85, 'contacts': 0}, 290 s
+  Range sweep of the palletizer robot: 25 states, 118 parts in 11 groups, moved by mdfc_pd55_PalletizerRobot.set_pose.
+  ok   the robot: 25 states, 118 parts in 11 groups, no interference 
+       contacts made in motion: 0 []
+       closest: ['E bracket / Levelling rod 1 body 5.000 mm at (-42.0, -8.0)', 'RV-500N case J3 / Parallel rod body 7.678 mm at (77.03, -12.03)', 'J3 bracket post 2 / Parallel rod body 11.437 mm at (85.0, -20.0)']
+       pairs: {'all': 6903, 'across groups': 5818, 'near at the four states': 149, 'kept': 5704, 'near in the sweep': 38, 'changing': 20, 'contacts': 0}, 31 s
+  Range sweep of the bag gripper without its stops: 22 states, 92 parts in 7 groups, moved by mdfc_BagGripper.set_state.
+  ok   the bag0: 22 states, 92 parts in 7 groups, no interference 
+       contacts made in motion: 0 []
+       closest: ['Tine 7 B / Press plate 70.000 mm at 0.0', 'Tine 8 B / Press plate 70.000 mm at 0.0', 'Tine 1 A / Press plate 70.000 mm at 0.0']
+       pairs: {'all': 4186, 'across groups': 2714, 'near at the four states': 56, 'kept': 2676, 'near in the sweep': 18, 'changing': 16, 'contacts': 0}, 27 s
+  Range sweep of the bag gripper with its stops: 16 states, 128 parts in 7 groups, moved by mdfc_BagGripper.set_state.
+  ok   the bag: 16 states, 128 parts in 7 groups, no interference 
+       contacts made in motion: 4 ['Shock absorber DYSC-25-25-Y1F closed 1 / Lever A at 0.0', 'Shock absorber DYSC-25-25-Y1F closed 2 / Lever B at 0.0', 'Shock absorber DYSC-25-25-Y1F open 1 / Lever A at 45.0', 'Shock absorber DYSC-25-25-Y1F open 2 / Lever B at 45.0']
+       closest: ['Lock nut DYSC-25-25-Y1F open 1 / Lever A 2.000 mm at 45.0', 'Lock nut DYSC-25-25-Y1F open 2 / Lever B 2.000 mm at 45.0', 'Lever A / Piston rod A 3.971 mm at 45.0']
+       pairs: {'all': 8128, 'across groups': 4298, 'near at the four states': 84, 'kept': 4260, 'near in the sweep': 46, 'changing': 42, 'contacts': 4}, 36 s
+  ok   the stops: the closing absorbers on the strikers closed, the opening ones on the bars at 45 deg, touching nothing else []
+       the stops' closest: ['Lock nut DYSC-25-25-Y1F open 1 / Lever A 2.000 mm at 45.0', 'Lock nut DYSC-25-25-Y1F open 2 / Lever B 2.000 mm at 45.0', 'Lock nut DYSC-25-25-Y1F closed 1 / Lever A 5.000 mm at 0.0', 'Lock nut DYSC-25-25-Y1F closed 2 / Lever B 5.000 mm at 0.0']
+  Range sweep of the clamp gripper: 19 states, 55 parts in 3 groups, moved by mdfc_rs56_ClampGripper.set_state.
+  ok   the clamp: 19 states, 55 parts in 3 groups, no interference 
+       contacts made in motion: 0 []
+       closest: ['Seat BK25 / Carriage plate (1) 5.000 mm at 650.0', 'Fixed bearing BK25 / Carriage plate (1) 5.099 mm at 650.0', 'Seat BK25 / Block HGH25CA o+ (1) 7.810 mm at 650.0']
+       pairs: {'all': 1485, 'across groups': 952, 'near at the four states': 32, 'kept': 924, 'near in the sweep': 4, 'changing': 4, 'contacts': 0}, 474 s
+  Range sweep of the vacuum gripper: 6 states, 313 parts in 2 groups, moved by mdfc_pd55_VacuumGripper.set_state.
+  ok   the vacuum: 6 states, 313 parts in 2 groups, no interference 
+       contacts made in motion: 36 ['Sleeve 1 / Plunger 1-1 at 0.0', 'Sleeve 2 / Plunger 1-2 at 0.0', 'Sleeve 3 / Plunger 1-3 at 0.0', 'Sleeve 4 / Plunger 1-4 at 0.0', 'Sleeve 5 / Plunger 1-5 at 0.0', 'Sleeve 6 / Plunger 1-6 at 0.0']
+       closest: ['Ejector SCPSi 2-14 1 / Plunger 1-5 8.597 mm at 0.0', 'Ejector SCPSi 2-14 2 / Plunger 1-5 8.597 mm at 0.0', 'Ejector SCPSi 2-14 5 / Plunger 3-5 8.597 mm at 0.0']
+       pairs: {'all': 48828, 'across groups': 17352, 'near at the four states': 204, 'kept': 17208, 'near in the sweep': 60, 'changing': 60, 'contacts': 36}, 176 s
+  Range sweep of the tool changer: 4 states, 21 parts in 9 groups, moved by mdfc_rs56_ToolChanger.set_state.
+  ok   the changer: 4 states, 21 parts in 9 groups, no interference 
+       contacts made in motion: 13 ['Master body / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 1 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 2 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 6 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 3 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 4 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)']
+       closest: ['Cam / Tool plate ISO 9409-1-160-6-M10 1.500 mm at (True, 0.0)', 'Master cover / Piston with rod 5.000 mm at (False, 0.0)', 'Pin 12 tool 1 / Segment 1 (1) 6.000 mm at (True, 0.0)']
+       pairs: {'all': 210, 'across groups': 143, 'near at the four states': 38, 'kept': 133, 'near in the sweep': 28, 'changing': 17, 'contacts': 13}, 4 s
+  Range sweep of the compliance unit: 11 states, 45 parts in 2 groups, moved by mdfc_pd55_ComplianceUnit.set_state.
+  ok   the unit: 11 states, 45 parts in 2 groups, no interference 
+       contacts made in motion: 5 ['Housing / Carriage (1) at 30.0', 'Stop block 1 / Carriage (1) at 0.0', 'Stop block 2 / Carriage (1) at 0.0', 'Stop block 3 / Carriage (1) at 0.0', 'Stop block 4 / Carriage (1) at 0.0']
+       closest: ['Cap screw M10x25 2 / Carriage (1) 0.707 mm at 30.0', 'Cap screw M10x25 5 / Carriage (1) 0.707 mm at 30.0', 'Housing / Block HGH25CA 1 2.000 mm at 30.0']
+       pairs: {'all': 990, 'across groups': 324, 'near at the four states': 62, 'kept': 297, 'near in the sweep': 35, 'changing': 35, 'contacts': 5}, 15 s
+  ok   refused: No machine called crane: the range sweep knows wrist, flap, axle, robot, bag0, bag, clamp, vacuum, changer, unit.
+  ok   a message gives the version tag RangeSweep 1.0 (2026-11-12)
+ALL PASS

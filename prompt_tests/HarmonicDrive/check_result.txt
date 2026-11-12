@@ -1,0 +1,35 @@
+# projects/harmonic_drive/checks/harmonic_check.py on prompt_tests/HarmonicDrive/HarmonicDrive.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 06:36, 363 s
+
+HarmonicDrive 1.0 (2026-11-12)
+  ok   z_c 202, ratio -100, r_f 30.000, r_c 30.300, w0 0.300 mm 
+  ok   Run opens the dialog
+Harmonic drive (cup type), HarmonicDrive 1.0 (2026-11-12)
+z_f = 200, z_c = 202 (difference 2, two-lobed wave generator)
+ratio -100 with the circular spline held (the flexspline turns 0.0100 of the wave generator, the other way)
+r_f = 30.000 mm, r_c = 30.300 mm, w0 = 0.300 mm
+tooth form: straight flanks at 30 deg, addendum 0.75 m = 0.225 mm, dedendum 0.90 m = 0.270 mm, thickness on the pitch line 0.4412 mm (backlash 0.06 mm), tip width 0.1814 mm
+face width 8.00 mm, wall under the teeth 0.60 mm
+wave generator at phi = 0.0000 deg, flexspline turned rho = 0.0000 deg
+  OK pressed, built in 15 s
+  ok   a new design opened
+  ok   three components: ['CircularSpline', 'Flexspline', 'WaveGenerator']
+  ok   one body each
+  ok   two revolute As-built Joints, no Motion Link
+  ok   flexspline tip on the long axis 30.5248 mm from the axis
+  ok   flexspline tip on the short axis 29.9249 mm from the axis
+  ok   circular spline tips 30.0749 mm from the axis
+  ok   no interference at phi = 0 
+  phi   0.2970 deg: rebuilt in 21 s, interference in 0 s
+  phi   0.5941 deg: rebuilt in 31 s, interference in 0 s
+  phi   0.8911 deg: rebuilt in 42 s, interference in 0 s
+  phi   1.1881 deg: rebuilt in 48 s, interference in 0 s
+  phi   1.4851 deg: rebuilt in 59 s, interference in 0 s
+  phi   1.7822 deg: rebuilt in 68 s, interference in 0 s
+  phi  90.0000 deg: rebuilt in 76 s, interference in 0 s
+  ok   the flexspline turned -0.9000 deg at phi = 90
+  ok   no interference at any of the 7 angles 
+  ok   {'dz': 1} refused: Refused: a two-lobed wave generator needs a tooth difference of 2 (z_c - z_f = 1 given).
+  ok   {'z_f': 40} refused: Refused: the flexspline teeth z_f must be a count from 60 to 320 (40 given).
+  ok   a message gives the version tag HarmonicDrive 1.0 (2026-11-12)
+ALL PASS

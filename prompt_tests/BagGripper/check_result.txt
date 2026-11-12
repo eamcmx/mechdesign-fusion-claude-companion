@@ -1,0 +1,35 @@
+# projects/palletizer/checks/bag_gripper_check.py on prompt_tests/BagGripper/BagGripper.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 22:20, 13 s
+
+BagGripper 1.0 (prompt test, 2026-11-11)
+  ok   Run opens the dialog
+Bag gripper built, closed on a bag of 50 kg, 800 x 500 x 160 mm, on the station's 9 rollers 60 mm across at 100 mm.
+Supply 6.0 bar. Payload in the stops 160.3 kg (changer 23.5, gripper 86.9, bag 50); 16 stops worked.
+Worst stop for the jaws: low point, J3 +, a_v 21.32 and a_h 14.23 m/s2: the jaw's opening moment 263.1 N m (the bag's weight on the tines 82.6, its sideways push on the legs 142.3, the tines' own 38.1).
+DSBC-80-125 on a lever of 150 mm: it holds that 1.72 times (3016 N at 6 bar), its clamping unit 2.85 times (5000 N); 1.25 needed.
+Cylinders 594.60 mm pin to pin closed, 490.51 mm opened 45 deg; the press plate on two DSBC-32-50, on the bag at 24.9 mm of stroke.
+
+Parts: 80 components; 1 Adapter plate, 1 Beam, 4 Bearing 6206, 2 Box tube 60x4, 2 Bracket, 6 Cap screw M10x25, 8 Cap screw M6x16, 4 Cap screw M8x20, 8 Cap screw M8x30, 2 Clamping unit, 2 Cylinder DSBC-32-50, 2 Cylinder DSBC-80-125, 1 Dowel pin 10x17, 2 End block, 2 End plate, 2 Lever, 2 Long stub shaft, 2 Pin 16, 2 Piston rod, 2 Piston rod DSBC-32, 1 Press plate, 2 Rod end, 2 Short stub shaft, 2 Swivel flange SNCB-80, 16 Tine.
+
+[BagGripper 1.0 (prompt test, 2026-11-11)]
+  OK pressed, built in 10 s
+  ok   a new design opened
+  parts: 80 components, 25 kinds
+  Adapter plate 1, Beam 1, Bearing 6206 4, Box tube 60x4 2, Bracket 2, Cap screw M10x25 6, Cap screw M6x16 8, Cap screw M8x20 4, Cap screw M8x30 8, Clamping unit 2, Cylinder DSBC-32-50 2, Cylinder DSBC-80-125 2, Dowel pin 10x17 1, End block 2, End plate 2, Lever 2, Long stub shaft 2, Pin 16 2, Piston rod 2, Piston rod DSBC-32 2, Press plate 1, Rod end 2, Short stub shaft 2, Swivel flange SNCB-80 2, Tine 16
+  ok   closed on the bag: no interference among the 80 parts, the bag and the 9 rollers 
+  ok   every one of the 16 tines and the press plate on the bag, the largest gap 0.0000 mm
+  ok   the end plates 10.00 and 10.00 mm off the bag's ends
+  ok   opened 5 to 45 deg in steps of 5, the press up: nothing in the way; the tines' least distances to the bag and to the rollers, their lowest point and the cylinder's pin to pin: [(5, 5.42, 15.0, -526.5, 581.53), (10, 12.94, 15.0, -545.5, 568.56), (15, 22.48, 15.0, -561.9, 555.8), (20, 33.99, 15.0, -575.5, 543.37), (25, 47.36, 15.0, -586.3, 531.39), (30, 62.51, 16.73, -594.1, 519.99), (35, 79.32, 23.48, -599.0, 509.29), (40, 85.44, 35.39, -600.8, 499.42), (45, 90.21, 51.44, -599.5, 490.51)]
+  ok   open: the cylinders 490.51 mm pin to pin, against 490.51; 104.09 of the stroke used
+  ok   cylinder A at 0 deg: 594.60 mm between its pins, against 594.60
+  ok   cylinder B at 0 deg: 594.60 mm between its pins, against 594.60
+  ok   cylinder A at 45 deg: 490.51 mm between its pins, against 490.51
+  ok   cylinder B at 45 deg: 490.51 mm between its pins, against 490.51
+  ok   the adapter: six M10 holes on the 160 circle at [30.0, 90.0, 150.0, 210.0, 270.0, 330.0] deg
+  weighed: adapter 1.64 kg, frame 32.69 kg, each jaw 15.85 kg, each cylinder 6.18 + rod 2.62 kg, press 8.00 kg; the gripper 91.61 kg, its centre at z -190.2 mm, 16.19 kg m2 about its axis; a jaw 0.5675 kg m2 about its hinge
+  written: lib/bag_gripper_weighed.json
+  ok   {'m': 80.0} refused: A bag of 80 kg: in the worst stop (low point, J3 +) the jaw's opening moment is 374.4 N m; the cylinder holds it 1.21 times and its clamping unit 2.00 times, under the 1.25 needed.
+  ok   {'w': 600.0} refused: A bag 600 mm wide: the tines take bags from 280 to 520 mm wide.
+  ok   {'p_bar': 5.0} refused: A supply of 5.0 bar: the cylinders and their forces are sized at 6 bar; the gripper needs at least 6 bar.
+  ok   a message gives the version tag BagGripper 1.0 (prompt test, 2026-11-11)
+ALL PASS

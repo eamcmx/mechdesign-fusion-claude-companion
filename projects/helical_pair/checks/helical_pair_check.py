@@ -17,16 +17,20 @@ def twist_residual(o, z, ra, z0, bw, phase, want):
     about its centre, so the mean residual is zero when the twist is right at every height, and the wrong hand
     cannot pass, though at the top face it may land a whole tooth pitch away and look right."""
     p = 2 * math.pi / z
-    res = []
+    pts = []
     for e in o.component.bRepBodies.item(0).edges:
         a, b = e.startVertex.geometry, e.endVertex.geometry
         if abs(math.hypot(a.x, a.y) * 10 - ra) < 1e-3 and abs(math.hypot(b.x, b.y) * 10 - ra) < 1e-3                 and abs(a.z - b.z) * 10 > 1e-3:
             ev = e.evaluator
             _, t0, t1 = ev.getParameterExtents()
             for i in range(11):
-                _, q = ev.getPointAtParameter(t0 + (t1 - t0) * i / 10)
-                r = math.atan2(q.y, q.x) - phase - math.radians(want((q.z * 10 - z0) / bw))
-                res.append(((r + p / 2) % p) - p / 2)
+                pts.append(ev.getPointAtParameter(t0 + (t1 - t0) * i / 10)[1])
+    if z0 is None and pts:              # the teeth's lower face, read from the tips themselves
+        z0 = min(q.z for q in pts) * 10
+    res = []
+    for q in pts:
+        r = math.atan2(q.y, q.x) - phase - math.radians(want((q.z * 10 - z0) / bw))
+        res.append(((r + p / 2) % p) - p / 2)
     if not res:
         return None, 0
     ref = res[0]
@@ -48,7 +52,7 @@ def check_pair(a, herring, bw):
         per = th / 2 if herring else th                       # Fusion keeps each sweep's twist in tenths of a degree
         tol = abs(per - round(per, 1)) + 1e-3
         want = (lambda f, th=th: th * min(f, 1 - f)) if herring else (lambda f, th=th: th * f)
-        m, n = twist_residual(fc.occ(name), z, mt * z / 2 + MN, 1.0, bw, phase, want)
+        m, n = twist_residual(fc.occ(name), z, mt * z / 2 + MN, None, bw, phase, want)
         fc.ok(n > 0 and abs(m) <= tol, '%s: %d points along the tooth tips, mean %.4f deg from a %s twist of %.3f deg'
               % (name, n, m if n else float('nan'), 'herringbone' if herring else 'helical', th))
     fc.ok(root.joints.count == 0 and root.asBuiltJoints.count == 4 and root.motionLinks.count == 1,

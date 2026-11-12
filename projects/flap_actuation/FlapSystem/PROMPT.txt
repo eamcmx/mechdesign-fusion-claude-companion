@@ -13,9 +13,12 @@ DERIVED (from projects/flap_actuation/lib/flap_design.py, never typed):
 - linkage(): the actuator's angle about its gimbal and its rod's travel for each flap angle; SYS: the positions
 
 HARD CONSTRAINTS:
-- Build the actuator with FlapActuator.py's own functions, loaded, not copied; draw nothing of it twice. Refuse what
-  it refuses, and the horn's root or cheeks, a pin, a bracket or its eye, or a lug of the fitting under 2 against
-  yield at the ultimate load, saying which and by how much.
+- Build the actuator with FlapActuator.py's own functions, loaded, not copied: its housing(), screw(), rod() and
+  train() each build their subassembly into the component they are given (here the Actuator), and its revolute_y(),
+  slider_y() and link() make the joints and Motion Links in the root component between the Actuator occurrence's
+  childOccurrences. Its build() opens a document of its own and is not called. Draw nothing of it twice.
+- Refuse what the actuator refuses, and the horn's root or cheeks, a pin, a bracket or its eye, or a lug of the
+  fitting under 2 against yield at the ultimate load, saying which and by how much.
 - The hinge line on X, along the span, the flap's middle at x = 0; Y aft, Z up; the gimbal at (y, z) = (-420, 114).
 - Two hinges, 1100 mm either side of the middle, each a bracket bolted to a trailing-edge rib inside the wing and out
   through the cove to an SKF GE 20 ES on the hinge line; the rib 6 mm thick at the bolts.
@@ -38,7 +41,14 @@ FUSION CONVENTIONS:
 ACCEPTANCE CRITERIA:
 - A message gives the hinges' load, the horn's stress and factor, the pin's, the brackets' and the lugs' stresses, the
   parts list and a version tag. Defaults: hinges 13 956 N each, horn 144.1 MPa (3.76), pin 228.3 MPa.
-- 85 components in 51 kinds.
+- 85 components in 51 kinds, by component name and count: Actuator housing 1, Ball nut R32-10T4-RSI 1, Ball screw
+  32x10 1, Bearing 6201 2, Bearing BSD 2562 CGA 2, Bearing GE 20 ES fitting 2, Bearing GE 20 ES hinge 2, Bracket bolt
+  M8x25 4, Bracket nut M8 4, Cover screw M5x16 6, Encoder 1, Encoder pinion z26 1, Encoder shaft 1, End bolt M8x20 1,
+  End stop 1, Fitting bolt M8x35 4, Fitting nut M8 4, Flap panel 1, Gear cover 1, Gearhead shaft 1, Guide key 1, Hinge
+  bracket 2, Hinge fitting 4, Hinge pin 2, Hinge pin nut 2, Hinge rib 2, Horn 1, Horn pin 1, Horn pin nut 1, Idler
+  gear z30 1, Idler pin 1, Jam nut M20x1.5 1, Key 8x7x16 1, Lower skin 1, Motor screw M5x12 4, Motor unit 1, Nut key
+  6x6.5x32 1, Nut retaining ring 1, Pinion z18 1, Piston rod 1, Rear spar web 1, Ring nut M66x1.5 1, Rod end SI 20 ES
+  1, Rod seal 1, Screw gear z54 1, Spacer 2, Spar fitting 1, Stop bolt M8x16 1, Trunnion 2, Upper skin 1, Washer M8 2.
 - At 0, 10, 20, 30 and 40 deg: the rod end's centre within 0.01 mm of the horn's pin; the transmission angle
   measured in Fusion 69.81 deg flap up and 70.15 deg at 40; no interference among the system's parts and the
   actuator's outer ones.

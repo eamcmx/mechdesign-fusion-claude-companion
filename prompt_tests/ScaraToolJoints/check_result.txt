@@ -1,0 +1,37 @@
+# projects/scara_robot/checks/scara_tool_check.py on prompt_tests/ScaraToolJoints/ScaraToolJoints.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 21:01, 5 s
+
+ScaraToolJoints v1 [prompt test, 11 Nov 2026]
+  ok   the screw's cube mean 66.65 N and the shaft's swing 21.12 Hz worked again (the module: 66.65, 21.12)
+  ok   Run opens the dialog
+ScaraToolJoints v1 [prompt test, 11 Nov 2026]
+HIWIN FB ball screw spline SP20: lead 20 mm, stroke 200 mm.
+Shaft at the full stroke: swings at 21.1 Hz (at least 20 Hz); fatigue factor 1.60 with the tool 100 mm down and 1.01 at the bottom, so below 100 mm the horizontal acceleration is scaled by 0.632 (the horizontal leg in 0.251 s).
+Screw: cube-mean force 66.7 N, life 910 708 h (f_p 3.0); spline torque 1.30 N m (C_T 57.8 N m).
+Motors: J3 0.699 N m peak, 0.407 N m RMS, 3092 rev/min; J4 0.342 N m peak, 0.209 N m RMS, 1200 rev/min.
+Belt J3: 28T on the motor, 56T on the nut, 3MR-474-09, centre distance 173.48 mm, motor at x 79.88, y +34 mm; rated 3.27 N m against 1.40 N m (2.34 times), 13 teeth in mesh.
+Belt J4: 18T on the motor, 72T on the nut, 3MR-489-09, centre distance 175.10 mm, motor at x 78.23, y -34 mm; rated 2.34 N m against 0.68 N m (3.42 times), 8 teeth in mesh.
+Brakes: J3 at least 0.219 N m (0.32 N m stops a fall at 500 mm/s in 26.3 mm), J4 at least 0.109 N m.
+First joint's life with this shaft: 23 984 h.
+Parts: 48 components in 24 kinds: Ball screw spline shaft SP20 1, Base plate 1, Belt 3MR-474-09 J3 1, Belt 3MR-489-09 J4 1, Flange bolt M4 8, Motor bolt M4 4, Motor bolt M5 4, Motor shaft J3 1, Motor shaft J4 1, Pulley 18T motor J4 1, Pulley 28T motor J3 1, Pulley 56T nut J3 1, Pulley 72T nut J4 1, Pulley screw M5 12, Screw nut SP20 flange 1, Screw nut SP20 rotor 1, Servo motor J3 1, Servo motor J4 1, Side wall left 1, Side wall right 1, Spline nut SP20 flange 1, Spline nut SP20 rotor 1, Tool flange 1, Top plate 1.
+  OK pressed, built in 4 s
+  ok   a new design opened
+  ok   seven groups: ['Arm end', 'Carriage', 'J3 motor side', 'J4 motor side', 'Screw side', 'Spline side', 'Tool shaft']
+  parts: 48 components, 24 kinds: [('Ball screw spline shaft SP20', 1), ('Base plate', 1), ('Belt 3MR-474-09 J3', 1), ('Belt 3MR-489-09 J4', 1), ('Flange bolt M4', 8), ('Motor bolt M4', 4), ('Motor bolt M5', 4), ('Motor shaft J3', 1), ('Motor shaft J4', 1), ('Pulley 18T motor J4', 1), ('Pulley 28T motor J3', 1), ('Pulley 56T nut J3', 1), ('Pulley 72T nut J4', 1), ('Pulley screw M5', 12), ('Screw nut SP20 flange', 1), ('Screw nut SP20 rotor', 1), ('Servo motor J3', 1), ('Servo motor J4', 1), ('Side wall left', 1), ('Side wall right', 1), ('Spline nut SP20 flange', 1), ('Spline nut SP20 rotor', 1), ('Tool flange', 1), ('Top plate', 1)]
+  ok   the parts as listed 
+  ok   no interference among the 48 parts at J3 0 mm, J4 0 deg 
+  ok   no interference among the 48 parts at J3 100 mm, J4 90 deg 
+  ok   no interference among the 48 parts at J3 200 mm, J4 180 deg 
+  ok   J4 90 deg alone: the spline nut 90.0, its motor 360.0, the screw nut 90.0, its motor 180.0 deg
+  ok   J3 7 mm alone: the shaft down 7.000 mm, the spline nut 0.0, the screw nut 234.0 (-126), its motor 468.0 (-252) deg, within a turn
+  ok   at the full stroke the shaft's top 186.00 mm, the screw nut's rotor's top 181.00 mm
+  ok   J3 belt: centre distance 173.485 mm measured, 173.485 for the 3MR-474
+  ok   J4 belt: centre distance 175.098 mm measured, 175.098 for the 3MR-489
+  the shaft, the nuts, their pulleys, screws and bolts and the tool flange: 3.305 kg (Chapter 35: 1.5 kg)
+  the motors at their specified 1.0 and 0.6 kg, their shafts and pulleys: 1.654 kg (Chapter 35: 2.0 kg)
+  Belt 3MR-474-09 J3: 0.0068 kg
+  Belt 3MR-489-09 J4: 0.0070 kg
+  ok   {'size': 16.0} refused: SP16 refused: it falls short, as the shaft swings at 13.1 Hz at the full stroke, 6.9 Hz (35 %) under 20 Hz; its fatigue factor with the tool 100 mm down is 0.81, 0.69 under 1.5.
+  ok   {'size': 25.0} refused: SP25 refused: it falls short, as its shaft puts 0.647 kg more at the tool than the SP20, which cuts the first joint's life to 19 784 h, 216 h (1.1 %) short of 20 000 h.
+  ok   a message gives the version tag ScaraToolJoints v1 [prompt test, 11 Nov 2026]
+ALL PASS

@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "",
+	"description": {
+		"": "The carrier of a light truck's rear axle: spiral bevel pinion and crown wheel on tapered roller bearings, the differential's case under bearing caps, an open differential of spiders and side gears (Volume 2, Chapter 29). Written from its prompt alone."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

@@ -1,0 +1,37 @@
+# projects/planetary_gearbox/checks/planetary_check.py on prompt_tests/PlanetaryPrompt/PlanetaryPrompt.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 11:25, 60 s
+
+PlanetaryPrompt v1.0
+  ok   Run opens the dialog
+PlanetaryPrompt v1.0: planetary gearbox built
+m 1.5 mm, Zs 16, Zp 20, Zr 56, N 3, centre distance a 27.000 mm
+Ratios: ring held 1 + Zr/Zs = 4.5000, carrier held -Zr/Zs = -3.5000, sun held 1 + Zs/Zr = 1.2857
+One sun turn: carrier 80.000 deg the same way, each planet -224.000 deg relative to the carrier
+Drive Joints on "Sun (input)" to watch it turn.
+  OK pressed with the defaults, built in 11 s
+  ok   a new design opened
+  ok   parts: ['Carrier', 'Planet 1', 'Planet 2', 'Planet 3', 'Ring', 'Sun', 'Sun bearing']
+  ok   one body each
+  ok   the ring is grounded
+  ok   As-built Joints only: 5 revolute, 1 rigid, plain Joints 0
+  ok   Motion Links: ['Sun to carrier', 'Carrier to planet 1', 'Carrier to planet 2', 'Carrier to planet 3']
+  ok   no interference at rest 
+  one sun turn: carrier joint 80.000 deg, planet 1 on the carrier -224.000 deg
+  ok   carrier = sun / 4.500 at every 45 deg step (worst error 0.0000 deg)
+  ok   each planet = -2.800 x carrier, relative to the carrier (worst error 0.0000 deg)
+  ok   no interference at any of the 8 steps 
+  Zs 24, Zp 30, N 4: Ratios: ring held 1 + Zr/Zs = 4.5000, carrier held -Zr/Zs = -3.5000, sun held 1 + Zs/Zr = 1.2857
+  ok   parts: ['Carrier', 'Planet 1', 'Planet 2', 'Planet 3', 'Planet 4', 'Ring', 'Sun', 'Sun bearing']
+  ok   one body each
+  ok   the ring is grounded
+  ok   As-built Joints only: 6 revolute, 1 rigid, plain Joints 0
+  ok   Motion Links: ['Sun to carrier', 'Carrier to planet 1', 'Carrier to planet 2', 'Carrier to planet 3', 'Carrier to planet 4']
+  ok   no interference at rest 
+  one sun turn: carrier joint 80.000 deg, planet 1 on the carrier -224.000 deg
+  ok   carrier = sun / 4.500 at every 45 deg step (worst error 0.0000 deg)
+  ok   each planet = -2.800 x carrier, relative to the carrier (worst error 0.0000 deg)
+  ok   no interference at any of the 8 steps 
+  ok   {'zs': 20, 'zp': 25, 'n': 4} refused: (Zs + Zr)/N = 90/4 = 22.500 is not whole: 4 planets cannot be spaced evenly
+  ok   {'zs': 18, 'zp': 18, 'n': 6} refused: neighbouring planets touch: 2*a*sin(pi/N) = 27.000 mm is not more than m*(Zp + 2) = 30.000 mm
+  ok   a message gives the version tag PlanetaryPrompt v1.0
+ALL PASS

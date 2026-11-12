@@ -1,0 +1,47 @@
+# projects/palletizer/checks/clamp_gripper_check.py on prompt_tests/ClampGripper/ClampGripper.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 23:34, 3252 s
+
+ClampGripper 1.0 prompt test (2026-11-11)
+  ok   Run opens the dialog
+Clamp gripper built for a pack of 2 x 2 cartons (400 x 400 x 300 mm, 40 kg each): 160 kg; the payload at the flange 291.2 kg (changer 23.5, gripper 107.8, pack 160).
+
+Squeeze 4700 N against the 4595 N this pack needs (pads 4595 N, carton on carton 0 N; the stop governs: |a + g| 13.70 m/s2 on the cycle, 22.98 in a brake stop; factors 2.00 and 1.25 on mu 0.50): 1.02 times the need.
+
+The sides: 4700 N on 0.224 m2 of pad, 21.0 kPa against the 40 kPa they accept (8960 N at most on this pack).
+
+Screw: HIWIN peeled 32 x 10, core 28.7 mm, its axis at z = -225; right-hand groove from x = 215 to 760, left-hand from -760 to -215 (balls 4.763 mm on a 33.65 mm circle, groove radius 2.477); in tension 4700 N between the nuts, 7.3 MPa on the core, C0 / N = 15.5.
+
+Nuts: R32-10K5-DEB, right-hand on Jaw A and left-hand on Jaw B (C 30900 N, C0 72800 N), each flange on the arm's outer face with six M8.
+
+Bearings: BK25 fixed at x = -880 (d 25, 42 long, 7000 N axial at most), BF25 supported at x = 880 (d 25, 30 long), each on a seat under the beam; coupling, 3:1 gearhead and motor with its brake beyond the bracket at x = -1000.
+
+Guides: two HGR25 rails, 1720 mm long at y = +-70; four HGH25CA blocks a jaw, 110 mm apart along x; the most loaded block 7231 N in a brake stop, static factor 5.05 (C0 36490 N).
+
+Arms: 15.8 MPa at the ribs' tips, the pad 0.084 mm out under the squeeze.
+
+Jaws: gripping at j = 400 mm, open at 450 mm (the pads 50 mm off the pack), their range 200 to 650 mm; shown gripping at j = 400 mm.
+
+Weighed: Adapter 1.64 kg at z -5.9 mm, 0.008 kg m2; Frame 60.33 kg at z -126.8 mm, 36.269 kg m2; Screw 10.92 kg at z -225.0 mm, 3.175 kg m2; Jaw A 21.58 kg at z -315.5 mm, 5.147 kg m2; Jaw B 21.58 kg at z -315.5 mm, 5.147 kg m2. The gripper 116.03 kg, its centre at z -204.5 mm, 49.746 kg m2 about its axis.
+
+Parts (58 components in 25 kinds): Adapter plate 1, Arm 2, Ballscrew R32-10 1, Beam 1, Bearing unit BF25 1, Bearing unit BK25 1, Block HGH25CA 8, Brake, spring-applied 1, Cap screw ISO 4762 M10 x 25 6, Cap screw ISO 4762 M8 x 20 4, Cap screw ISO 4762 M8 x 25 12, Carriage 2, Carton 4, Coupling 1, Gearhead 3 to 1 1, Lantern 1, Motor bracket 1, Nut R32-10K5-DEB left-hand 1, Nut R32-10K5-DEB right-hand 1, Pad 2, Pin 10 mm 1, Rail HGR25 2, Seat BF25 1, Seat BK25 1, Servo motor 1.
+
+[ClampGripper 1.0 prompt test (2026-11-11)]
+  OK pressed, built in 330 s
+  ok   a new design opened
+  parts: 58 components, 25 kinds
+  Adapter plate 1, Arm 2, Ballscrew R32-10 1, Beam 1, Bearing unit BF25 1, Bearing unit BK25 1, Block HGH25CA 8, Brake, spring-applied 1, Cap screw ISO 4762 M10 x 25 6, Cap screw ISO 4762 M8 x 20 4, Cap screw ISO 4762 M8 x 25 12, Carriage 2, Carton 4, Coupling 1, Gearhead 3 to 1 1, Lantern 1, Motor bracket 1, Nut R32-10K5-DEB left-hand 1, Nut R32-10K5-DEB right-hand 1, Pad 2, Pin 10 mm 1, Rail HGR25 2, Seat BF25 1, Seat BK25 1, Servo motor 1
+  ok   gripping: no interference among the 54 parts and the 4 cartons 
+  ok   gripping: both pads on the pack, least distances 0.0000 and 0.0000 mm
+  ok   open: no interference, the pads 50.000 and 50.000 mm off the pack
+  ok   the jaws from 200 to 650 mm in 25 mm steps: nothing in the way 
+  ok   the screw: right-hand groove on +x, left-hand on -x, probed at 8 places each side
+  ok   the adapter: six M10 holes on the 160 circle at [30.0, 90.0, 150.0, 210.0, 270.0, 330.0] deg, the 10 mm pin on +Xm, the 100 g6 spigot on the axis
+  weighed: Adapter 1.64 kg at z -5.9, Frame 60.33 kg at z -126.8, Screw 10.92 kg at z -225.0, Jaw A 21.58 kg at z -315.5, Jaw B 21.58 kg at z -315.5
+  gripper 116.03 kg, its centre at z -204.5 mm, 49.75 kg m2 about its axis (pads 5.38 kg)
+  written: lib/clamp_gripper_weighed.json
+  ok   {'nx': 3, 'ny': 2, 'N': 4700.0} refused: A pack of 3 x 2 cartons, 240 kg, is refused: the gripper takes at most 160 kg, at most three along the squeeze and two across.
+  ok   {'N': 5500.0} refused: A squeeze of 5500 N is refused: it is over the 5000 N the screw, the guides and the arms are built for.
+  ok   {'N': 4500.0} refused: A squeeze of 4500 N is refused: the 2 x 2 pack (160 kg) needs 4595 N (pads 4595 N, carton on carton 0 N, the stop governing), more than 4500 N.
+  ok   {'nx': 3, 'ny': 1, 'N': 4700.0} refused: A squeeze of 4700 N is refused: 4700 N presses the cartons' sides at 42.0 kPa, over the 40 kPa they accept (4480 N at most on this pack).
+  ok   a message gives the version tag ClampGripper 1.0 prompt test (2026-11-11)
+ALL PASS

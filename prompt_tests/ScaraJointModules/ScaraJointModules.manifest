@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "Emmanuel Merchan",
+	"description": {
+		"": "The SCARA's J1 and J2 joint modules side by side: servo motor and brake on a module plate, Harmonic Drive CSG-2UH housed unit, ratio 50, as-built joints and a motion link."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

@@ -1,0 +1,29 @@
+# extras/checks/ball_screw_check.py on prompt_tests/BallScrewAxis/BallScrewAxis.py
+# Autodesk Fusion 2706.1.17, run 2026-11-12 03:27, 77 s
+
+BallScrewAxis prompt-test v1 (2026-11-12)
+  ok   d_m 16.60, R_g 1.651, d_k 13.298; 16 balls a turn, 48; T_a 442.10, T_c 318.31 N.mm; L 1.8084e+09, L_h 30140 h; F_k 88183 N, n_k 44523 rpm 
+  ok   Run opens the dialog
+Ball screw axis  [BallScrewAxis prompt-test v1 (2026-11-12)]
+Inputs: d_s 16 mm, P 5 mm, D_w 3.175 mm, F 500 N, C_dyn 7310 N, n 1000 rpm
+d_m = 16.600 mm, R_g = 1.651 mm, d_k = 13.298 mm (screw land 15.6 mm, nut bore 17.6 mm)
+Land between grooves P - 2 R_g = 1.698 mm; d_s / D_w = 5.04
+Balls: 16 a turn, 3 circuits of one turn, 48 in all
+T_a = 442.10 N mm (driving), T_c = 318.31 N mm (back-driving)
+L = 1.8084e9 revolutions, L_h = 30 140 h
+l_s = 190 mm: F_k = 88 183 N (0.5 F_k against 2 F = 1 000 N), n_k = 44 523 rpm
+Carriage travel -52 to 52 mm; 30 deg of the screw moved it -0.4167 mm (one lead a turn)
+Groove swept in 8 + 1 piece(s), checked in screw: yes, nut: yes; WARNING: the swept surface is off R_g by more than 0.02 mm
+  OK pressed, built in 48 s
+  ok   a new design opened
+  ok   six components: ['Balls', 'Carriage', 'Frame', 'Guide rod', 'Nut', 'Screw']
+  ok   one body each
+  ok   five As-built Joints, one Motion Link
+  ok   the balls: 804.4 mm^3 against 48 spheres of 804.4
+  ok   no interference at rest 
+  ok   the carriage at -P/12 per 30 deg step (worst 5.71e-09 mm); after one turn -5.0000 mm
+  ok   no interference at any of the 12 steps 
+  ok   {'P': 3.0} refused: land P - 2 R_g = -0.30 mm: the grooves overlap
+  ok   {'F': 3000.0} refused: L_h 140 h, below 10 000 h
+  ok   a message gives the version tag BallScrewAxis prompt-test v1 (2026-11-12)
+ALL PASS

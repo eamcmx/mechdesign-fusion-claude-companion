@@ -22,6 +22,16 @@ HARD CONSTRAINTS:
   the triangle, the upper arm, levelling rod 2, the wrist housing, the tool flange and the balancer, each with its
   mass, its layer y, its centre against its own pivot and the moments of inertia its motion needs, in
   projects/palletizer/lib/palletizer_weighed.json's form; the base apart.
+- The robot's bodies are its groups, set to q = 0 with set_pose(G, 0, 0, 0) and measured from its HOME points: the
+  turret (group Turret, pivot (AX, AZ)), the lower arm (Lower arm, about A), the crank and counterweight (Crank, about
+  A), the parallel rod (Parallel rod, moving with C), levelling rod 1 (about E), the triangle (moving with B), the
+  upper arm (about B), levelling rod 2 (about G), the wrist housing (group Wrist without RV-80N output J4 and Tool
+  flange, moving with W), the tool flange (those two, spinning, moving with W) and the balancer (its barrels and
+  rods, with the turret). A body turning on q2 (the lower arm, levelling rod 1) or moving with C gives c, its
+  centre's z from its pivot, and Ia, It, In about its centre: Ia about Z, It about Y, In about X; one turning on q3
+  (the crank, the upper arm, levelling rod 2) gives c along x, Ia about X, It about Y, In about Z; the turret, the
+  triangle, the wrist housing, the tool flange and the balancer give off, the centre's (x, z) from the pivot, and
+  Izz.
 - Write each machine's result to design_office/results/mass_<machine>.json.
 - Refuse a machine that is not one of the nine.
 

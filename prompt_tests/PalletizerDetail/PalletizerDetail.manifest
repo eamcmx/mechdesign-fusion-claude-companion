@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 55: one of the palletizer's assemblies in detail (bag gripper, robot, compliance unit or vacuum gripper), built by its own script with the detailed parts drawn in, then its materials and fits by MaterialsFits.apply() and palletizer_detail.py's own decisions by hand."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "PalletizerDetail"
+}

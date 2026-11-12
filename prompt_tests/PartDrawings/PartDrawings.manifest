@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "Emmanuel Merchan",
+	"description": {
+		"": "Chapter 63: the engineering drawings of the five parts the checks changed most and of the bag gripper's opening stop put together, each with what the checks decided, as PDFs"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

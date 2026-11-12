@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 65: builds the detailed bag gripper with its stops, puts its 114 pieces through Boothroyd and Dewhurst's test for unnecessary parts with each answer on its occurrence, then joins the tines to their tubes and the end blocks to the end plates and screws the spigots and the cylinder brackets, checking the new screws for interference."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "DesignForAssembly"
+}

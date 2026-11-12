@@ -30,8 +30,12 @@ HARD CONSTRAINTS:
 - hinge: the right hinge bracket, its rib, the GE 20 ES in its eye, the hinge pin and the flap's two hinge fittings.
 - arms: the robot at the cycle's high point; its lower arm without J2's reducer output, its upper arm with its rear
   lever and torque tube but without the pin D's washer and screw, and its wrist from the wrist pin to the tool flange
-  without J4's motor and the levelling link: 27 parts. The robot's model ends the upper arm's box open, 120 mm short of
-  the wrist pin, beside the front fork's cheeks, which then touch it only along an edge; for the study only, cut the
+  without J4's motor and the levelling link: 27 parts, by their names in the robot's model: Fork plate 1, Fork plate
+  2, Hub boss J2 side, Hub boss J3 side, Balancer cross pin Q, Lower arm box, Elbow hub, Elbow pin, Upper arm cheek 1,
+  Upper arm cheek 2, Bearing 32213 elbow 1, Bearing 32213 elbow 2, Yoke bulkhead, Upper arm box, Front fork cheek 1,
+  Front fork cheek 2, Bearing 32213 wrist 1, Bearing 32213 wrist 2, Torque tube, Rear lever, Pin D, Wrist pin, Wrist
+  hub, Wrist housing, RV-80N case J4, RV-80N output J4, Tool flange. The robot's model ends the upper arm's box open,
+  120 mm short of the wrist pin, beside the front fork's cheeks, which then touch it only along an edge; for the study only, cut the
   box's last 10 mm and put in their place an end plate 10 thick, 340 wide (the cheeks' outer faces) and 200 deep (the
   box's), of the box's steel, which the box's walls and the cheeks' ends both butt on: 28 parts.
 - arms_closed: the same 28 parts and the two diaphragms the lower arm's box lacks, for the study only: the box is a
@@ -40,7 +44,8 @@ HARD CONSTRAINTS:
 - Every body copied from the machine's model, none rebuilt, but those plates; the bolts left out, for the study's
   bolt connectors.
 - The faces each study picks found on the bodies: the bolt holes, the fixed faces, the face the load goes on; for
-  arms the hub's two bosses (held) and the tool flange's outer face (1000 N across the arms' plane).
+  arms the hub's two bosses (held: their outsides, 280 across, from y 190 to 500 either side of the arms' plane) and
+  the tool flange's outer face (30 mm under J4's output; 1000 N across the arms' plane).
 - Save nothing; refuse an assembly that is not one of the six.
 
 FUSION CONVENTIONS:

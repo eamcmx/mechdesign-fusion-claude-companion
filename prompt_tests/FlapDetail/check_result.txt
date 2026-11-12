@@ -1,0 +1,38 @@
+# projects/flap_actuation/checks/flap_detail_check.py on prompt_tests/FlapDetail/FlapDetail.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 16:07, 95 s
+
+FlapDetail 1.0 (2026-11-11)
+  ok   Run opens the dialog
+Flap system in detail: the motor unit to maxon's EC-i 52 180 W and GP 52 C 26:1, the pinion keyed on the gearhead's shaft, the pins' seats hardened, the materials and the fits given.
+
+Motor unit: the flange 6, the gearhead 65, the motor 80.1 (maxon's overall 145.1), the brake 24.9 long, all 52 across but the flange, 176 mm from the flange's face as the specification.
+Motor: 386 mN m at 3201 rev/min (88 % of its 438 continuous; it reaches 5395 rev/min at 28 V with this load), 8.74 A (97 % of 9.03); 5.57 A from the bus.
+Brake: 0.395 N m to hold the ultimate, 0.790 N m with the factor of 2.
+Pinion: tooth force 657 N at the limit and 809 N at the ultimate, 20 mm from the flange, against the gearhead's 630 N at 12 mm (1.04 and 1.28 of it; 13.1 N m against 7.56 N m about the flange).
+Rim over the keyway: m_B 1.13, K_B 1.092; the pinion's fatigue factor 5.78 (6.30 without the keyway).
+Key 4x4x20 in the hub 14.5 mm: 47.9 MPa on its side at the limit, 59.0 at the ultimate; the K7 bore on maxon's shaft -0.007 to +0.026 mm; the M4 x 10 through the 2 mm washer, 8 mm in the shaft (7 with the shaft at its shortest). The key's corner 7.76 mm from the axis, the hole 17 across.
+Zones hardened to HRC 50-55, case 0.8-1.2 mm: the hinge pins -1108 to -1092 and 1092 to 1108, the horn pin -8 to 8 mm; 16 mm long.
+Faces: flap: 32 made parts given their materials (none not in Fusion's library); the made parts weigh 335.17 kg, 334.93 kg with Fusion's generic materials; faces given a class and a roughness: 3 bearing seat, 7 key seat, 23 located, 12 plain bearing seat.
+By hand 12 faces (3 carried no class before): the seats h6 Rz 10.0, beside them h6 Ra 0.8, the pinion's bore K7 Ra 1.6, its keyway JS9 Ra 3.2.
+
+[FlapDetail 1.0 (2026-11-11)]
+  OK pressed, built in 83 s
+  ok   a new design opened
+  ok   the motor unit's bodies along the axis and across: [('Brake to specification', (191.1, 216.0, 52.0)), ('Flange', (40.0, 46.0, 60.0)), ('Gearhead GP 52 C 26-1', (46.0, 111.0, 52.0)), ('Motor EC-i 52 180 W', (111.0, 191.1, 52.0))]
+  ok   the unit ends 176.0 mm from its flange's face, the specification's 176; the brake 24.9 long
+  ok   the gearhead's shaft 12 mm across from 10.50 to 46.00 mm
+  ok   the key 4 wide and 20 long, from 12.5 mm
+  ok   the pinion's hub [18.0] mm across from 10.50 mm
+  ok   the end washer against the hub at 10.50 mm, the M4 x 10 to 18.50, 8.0 mm of it in the shaft
+  ok   the unit's flange on the housing by its four M5 x 12, as Chapter 33 drew it
+  ok   three zones hardened, each 16 mm long: {'Hinge pin L': [16.0], 'Hinge pin R': [16.0], 'Horn pin': [16.0]}
+  ok   their classes {'Hinge pin L': ['h6 Rz 10.0'], 'Hinge pin R': ['h6 Rz 10.0'], 'Horn pin': ['h6 Rz 10.0']}
+  ok   beside each seat, in the cheeks or the spacers, {'Horn pin': ['h6 Ra 0.8', 'h6 Ra 0.8'], 'Hinge pin L': ['h6 Ra 0.8', 'h6 Ra 0.8'], 'Hinge pin R': ['h6 Ra 0.8', 'h6 Ra 0.8']}
+  ok   by hand: the three pins' nine faces, the pinion's bore and its keyway's two sides, 12 faces, 3 of them new ['JS9 Ra 3.2', 'K7 Ra 1.6', 'h6 Ra 0.8', 'h6 Rz 10.0']
+  ok   the trunnions' seats in the spar fitting's bearings ['m6 Rz 10.0', 'm6 Rz 10.0']
+  ok   every other decided face as Chapter 51 decides it: 48 faces carry a class, 45 coloured by the rules and 3 more by hand
+  ok   no interference among the 64 parts at 0, 10, 20, 30 and 40 deg 
+  ok   none inside the actuator's 45 parts, flap up 
+  ok   {'i_gh': 21.0} refused: The motor unit falls short: at 21:1 the motor would give 478 mN m, over its 438 continuous.
+  ok   a message gives the version tag FlapDetail 1.0 (2026-11-11)
+ALL PASS

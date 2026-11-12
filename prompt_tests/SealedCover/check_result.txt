@@ -1,0 +1,33 @@
+# projects/sealed_cover/checks/sealed_cover_check.py on prompt_tests/SealedCover/SealedCover.py
+# Autodesk Fusion 2706.1.17, run 2026-11-11 10:52, 2 s
+
+SealedCover v1.0 (prompt test, 2026-11-11)
+  ok   c 0.67, squeeze 25.57 %, D_o 50.24, D_i 43.24, fill 78.99 %, V 162.793 mm^3, F_p 1982.4 N, n_c 12.46 
+  ok   the rounded values of the prompt (0.67, 25.57, 50.24, 43.24, 78.99, 162.793, 1982.4, 12.46)
+  ok   Run opens the dialog
+SealedCover v1.0 (prompt test, 2026-11-11)
+
+O-ring W = 2.62 mm, d1 = 45 mm; groove L = 1.95 mm deep, G = 3.5 mm wide; p = 1 MPa; 4 bolts M5 8.8
+
+squeeze c = W - L = 0.67 mm, 25.57 percent of W (20 to 30)
+groove D_o = 50.24 mm, D_i = 43.24 mm
+gland fill 78.99 percent (60 to 85)
+squeeze volume V = 162.793 mm^3 (the O-ring inside the cover, as the interference check finds it)
+pressure force F_p = 1982.4 N; preload F_i = 6177 N per bolt
+clamp margin n_c = N F_i / F_p = 12.46 (at least 2)
+
+bolt circle 63 mm, housing and cover 79 mm
+  OK pressed, built in 2 s
+  ok   a new design opened
+  ok   housing, cover, O-ring and 4 bolts: ['Bolt 1', 'Bolt 2', 'Bolt 3', 'Bolt 4', 'Cover', 'Housing', 'O-ring']
+  ok   one body each
+  ok   the housing is grounded
+  ok   6 rigid As-built Joints
+  ok   the O-ring at its free size: 806.551 mm^3 (2 pi^2 R_c r^2 = 806.551)
+  ok   each bolt on the 63 mm bolt circle at 360 (i - 1) / 4 degrees (worst 3.55e-15 mm)
+  ok   exactly one overlap, the O-ring with the cover, of 162.793 mm^3: [('Cover', 'O-ring', 162.793)]
+  ok   {'L': 1.7} refused: Squeeze 35.11 percent (c = W - L = 0.92 mm) is outside 20 to 30 percent (Parker O-Ring Handbook, Design Chart 4-3, face seals).
+  ok   {'G': 3.0} refused: Gland fill 92.16 percent is outside 60 to 85 percent (Parker, section 3.7): section pi W^2 / 4 = 5.391 mm^2 in a groove G L = 5.850 mm^2.
+  ok   {'p': 7.0} refused: Clamp margin n_c = N F_i / F_p = 1.78 is below 2: 4 M5 8.8 bolts at F_i = 6177 N against F_p = 13876.7 N.
+  ok   a message gives the version tag SealedCover v1.0 (prompt test, 2026-11-11)
+ALL PASS

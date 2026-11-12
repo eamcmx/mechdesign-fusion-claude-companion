@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 30: the rear axle's banjo housing and its two semi-floating wheel ends. Half shafts on deep-groove bearings in the tubes' ends, sized for yield in the hardest turn, fatigue, bearing life and the tube in the pothole, and built as three subassemblies of real parts."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "AxleHousing"
+}

@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion",
+	"type": "script",
+	"author": "Emmanuel Merchan",
+	"description": {
+		"": "Knee toggle: two equal links from a fixed pivot to a ram on a straight guide, one closed loop of As-built Joints; reports the stroke and the ram's force F = P / (2 tan alpha)."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

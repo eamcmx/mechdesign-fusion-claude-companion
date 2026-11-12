@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion",
+    "type": "script",
+    "author": "Emmanuel Merchan, TSI Engineering Faculty",
+    "description": {
+        "": "Chapter 56: one of the detailed machines built by its own script and stepped through its whole range of motion, Fusion's interference and the closest approaches of the parts that move against each other at every state; for the bag gripper, its DYSC stops at both ends of each jaw's travel."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "RangeSweep"
+}

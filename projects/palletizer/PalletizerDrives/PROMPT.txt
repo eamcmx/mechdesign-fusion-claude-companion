@@ -1,4 +1,4 @@
-Write a Fusion Python script that, when run, builds the palletizer's drives of Chapter 42: the base with an SKF
+Write a Fusion Python script that, when run, builds the palletizer's drives: the base with an SKF
 slewing ring RKS.23 0841 on its flange; the turret on the ring's inner ring, turned by a Nabtesco RV-500N on the axis
 through a disc coupling; the shoulder's two cheeks with J2's RV-500N and motor on one side and, on the other, the
 crank with its counterweight turned by J3's RV-500N on an outboard bracket; the root of the lower arm, a fork, with
@@ -21,7 +21,11 @@ HARD CONSTRAINTS:
   deg, would come within 20 mm of the floor.
 - The ring, its sizes typed here from SKF's table (pp. 66-67): the outer ring on the base's flange, bored 842.5 mm,
   its top 46 mm above the ring's plane; the inner ring under the turret, 839.5 mm outside and 734 mm at its lip,
-  its top at 56 mm; one row of 20 mm balls on dm = 841 mm between them in grooves, 0.4 mm clear of each.
+  its top at 56 mm; one row of 20 mm balls on dm = 841 mm, their centres 28 mm above the ring's plane, between
+  them in grooves cut in both rings 0.4 mm clear of the balls.
+- The turret's plate 60 mm thick on the inner ring, with a pocket 30 mm deep, 200 mm along X and 260 mm across,
+  round the balancer's pin P; the pin on three lugs 60 mm along X standing on the pocket's floor, at y = -125 to
+  -100, -15 to 15 and 100 to 125 mm.
 - The reducers drawn 325 mm across (the product page) and 170 mm long (assumed), typed here.
 - J1's reducer under the turret's middle: its case on a plate inside the base's column, its output through a disc
   coupling to the turret's plate; its motor under it. The reducer carries no load but the torque.
@@ -38,12 +42,22 @@ FUSION CONVENTIONS:
 - Subassemblies: Base (grounded), Turret (on J1), Lower arm and Crank (each on its own joint in the turret), and one
   occurrence each for the balancer's barrels and rods, set by the script to each pose.
 - As-built revolute joints: J1 about Z, J2 and J3 about the line through A along Y.
+- A part inside a subassembly is moved by setting transform2 on its proxy from the root
+  (occurrence.createForAssemblyContext(the parent's occurrence)), in world coordinates: set_balancer() moves the
+  barrels and rods so, the turret's own turn included. Fusion refuses transform2 on the occurrence itself.
 - The API works in cm and radians.
 
 ACCEPTANCE CRITERIA:
 - A message gives the ring, the three reducers with their lives against what each needs, the balancer's forces and
   pressures, the counterweight, the parts list and a version tag. Defaults: RKS.23 0841; J1 12 497 h of 11 667,
   J2 120 984 h of 10 667, J3 13 074 h of 10 667; the pair 54.0 to 69.5 kN, 8.66 to 11.14 MPa; 100 kg at 600 mm.
+- 48 components in 40 kinds, by component name and count: Balancer barrel 2, Balancer cross pin Q 1, Balancer lug 3,
+  Balancer pin P 1, Balancer rod 2, Base flange 1, Cheek J2 side 1, Cheek J3 side 1, Column 1, Counterweight block 1,
+  Coupling disc 2, Coupling spacer 1, Crank shaft 1, Crank web 1, Floor plate 1, Fork plate 2, Gas bottle 2, Hub boss
+  J2 side 1, Hub boss J3 side 1, J1 reducer plate 1, J1 stop 1, J1 stop dog 1, J2 support bearing 1, J3 bracket 1, J3
+  bracket post 2, J3 support bearing 1, Lower arm root box 1, RV-500N case J1 1, RV-500N case J2 1, RV-500N case J3 1,
+  RV-500N output J1 1, RV-500N output J2 1, RV-500N output J3 1, Servo motor J1 1, Servo motor J2 1, Servo motor J3 1,
+  Slewing ring balls 1, Slewing ring inner ring 1, Slewing ring outer ring 1, Turret plate 1.
 - No interference at rest, at J1 -30 and +30 deg, at J2 -42, 0, 13, 26, 60 and 85 deg, at J3 -75, -51, 0, 30 and
   60 deg.
 - At each J2 pose the pins' distance in the model equals sqrt(a^2 + b^2 + 2 a b cos q2) to 0.01 mm, and each piston

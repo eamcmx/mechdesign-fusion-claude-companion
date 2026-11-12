@@ -39,7 +39,10 @@ ACCEPTANCE CRITERIA:
 - A message gives each joint's unit, average torque against its limit, life and largest input speed, the J1 motor's
   peak and RMS torques, the parts list and a version tag. Defaults: J1 CSG-40, 150.8 N m (limit 255), 23 984 h,
   3426 rev/min, motor 9.56 N m peak and 6.04 RMS; J2 CSG-20, 26.4 N m (limit 44), 15 121 h on radial moves.
-- 42 components in 16 kinds.
+- 42 components in 16 kinds, by component name and count: CSG-20-50-2UH housing 1, CSG-40-50-2UH housing 1, Case bolt
+  M5 8, Case bolt M8 10, Cross rollers 2, Flexspline 2, Module plate J1 1, Module plate J2 1, Motor bolt M5 4, Motor
+  bolt M8 4, Motor shaft J1 1, Motor shaft J2 1, Output flange 2, Servo motor J1 1, Servo motor J2 1, Wave generator
+  2.
 - Each output turned 7.2 and 30 deg: its input turned 50 times as far, the other way; no interference.
 - Each housing A across and each output flange's face B from the input face, as the catalogue gives them.
 - Refused: a CSG-32 at J1.

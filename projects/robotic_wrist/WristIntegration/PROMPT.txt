@@ -36,7 +36,15 @@ FUSION CONVENTIONS:
 
 ACCEPTANCE CRITERIA:
 - A message gives the stop's numbers, the bored shaft's frequency, the play, and the parts list with a version tag.
-- 97 components in 43 kinds.
+- 97 components in 43 kinds, by component name and count: Base plate 1, Bearing 6002-2RSH 4, Bearing 61902-2RS1 4,
+  Bearing cap floating 1, Belt HTD 350-5M-15 2, Buffer pad 2, Cap screw ISO 4762 M3x8 1, Cap screw ISO 4762 M4x10 8,
+  Cap screw ISO 4762 M4x12 4, Cap screw ISO 4762 M5x12 6, Cap screw ISO 4762 M5x16 6, Cap screw ISO 4762 M8x20 4,
+  Carrier block 1, Countersunk screw ISO 10642 M3x8 8, Countersunk screw ISO 10642 M4x12 4, Dowel ISO 8734 5x16 4, End
+  washer 18x5.5x2.5 2, Key DIN 6885 A 5x5x18 1, Key DIN 6885 A 5x5x8 1, Motor bracket 2, Motor output 2, Output bevel
+  gear 1, Retaining ring DIN 471-15 1, Retaining ring DIN 471-15, flange 1, Retaining ring DIN 472-32 1, Roll shaft,
+  bored 1, Servo motor with brake and 15:1 gearhead 2, Side bevel gear with 36-groove pulley 2, Side cheek 2, Slip
+  ring bracket 1, Slip ring rotor 1, Slip ring stator 1, Spacer S1 2, Spacer S2 2, Spacer S3 2, Spacer S4 1, Spacer S5
+  1, Stop cap 1, Stop disc 1, Tie bar 2, Tool flange ISO 9409-1-31.5-4-M5 1, Trunnion 1, Trunnion with stop end 1.
 - The links as WristDifferential.py makes them.
 - No interference at rest, at the eleven poses of the check; at +-129 deg the stop disc inside a pad and nothing
   else.

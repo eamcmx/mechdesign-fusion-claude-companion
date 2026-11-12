@@ -1,0 +1,11 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Mechanical Design in Autodesk Fusion with Claude",
+	"description":	{
+		"":	"A worm driving a worm wheel on shafts at right angles (Archimedean worm, helical involute wheel), assembled with As-built revolute joints and a reversed Motion Link at the ratio."
+	},
+	"version":	"1.0",
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}

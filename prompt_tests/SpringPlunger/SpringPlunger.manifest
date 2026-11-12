@@ -1,0 +1,11 @@
+{
+    "autodeskProduct": "Fusion360",
+    "type": "script",
+    "author": "Emmanuel Merchan",
+    "description": {
+        "": "Spring plunger (Chapter 10): a sleeve sliding down a rod against a music wire compression spring, held up by a DIN 471 retaining ring, the rod pinned in a base block. Sizes the spring (rate, forces, stresses, safety factors), refuses designs outside the hard constraints and builds six components with As-built joints."
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true,
+    "id": "SpringPlunger"
+}

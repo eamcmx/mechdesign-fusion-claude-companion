@@ -25,6 +25,10 @@ HARD CONSTRAINTS:
 - Nothing more than 25 mm forward of the gimbal's axis (the spar's fitting); the actuator inside the wing's skins
   with the flap anywhere from 0 to 40 deg.
 - The guide key on the rod runs in a slot along the housing's bore, to the gland.
+- Inside the rod's sleeve (LAY's sleeve, r_sleeve): the ball nut on LAY's nut, held against the sleeve's end by a
+  retaining ring in a groove from y = 69 to 71, and keyed by the 6 x 6.5 x 32 feather key of RSI_KEY at the nut's
+  middle on -Z, 3.5 mm in the nut's groove and 3 mm in the sleeve. The guide key 6 mm wide from y = 80 to 140 on +Z,
+  sunk 1 mm into the sleeve (from z = 29.5) and standing to z = 34 in the housing's slot.
 - Nothing touches anything else, retracted, part way or extended.
 
 FUSION CONVENTIONS:
@@ -42,7 +46,13 @@ ACCEPTANCE CRITERIA:
 - A message gives the nut, its life and static margin, the torques, the gears' factors, the motor unit and the brake,
   the rod end's position, the parts list and a version tag. Defaults: life 4.27 of 60 000 strokes, f_p up to 4.87,
   C0 3.41 of the ultimate force, 23.71 N m, 30.80 N m backwards, factors 9.73 and 4.91, 2955 rev/min, 0.428 N m.
-- 43 components in 31 kinds; no interference retracted and with the flap at 10, 20, 30 and 40 deg.
+- 43 components in 31 kinds, by component name and count: Actuator housing 1, Ball nut R32-10T4-RSI 1, Ball screw
+  32x10 1, Bearing 6201 2, Bearing BSD 2562 CGA 2, Cover screw M5x16 6, Encoder 1, Encoder pinion z26 1, Encoder shaft
+  1, End bolt M8x20 1, End stop 1, Gear cover 1, Gearhead shaft 1, Guide key 1, Idler gear z30 1, Idler pin 1, Jam nut
+  M20x1.5 1, Key 8x7x16 1, Motor screw M5x12 4, Motor unit 1, Nut key 6x6.5x32 1, Nut retaining ring 1, Pinion z18 1,
+  Piston rod 1, Ring nut M66x1.5 1, Rod end SI 20 ES 1, Rod seal 1, Screw gear z54 1, Stop bolt M8x16 1, Trunnion 2,
+  Washer M8 2.
+- No interference retracted and with the flap at 10, 20, 30 and 40 deg.
 - The rod end's centre 378.96 mm from the gimbal retracted and 461.04 mm extended, the screw turned 8.2084 turns.
 - At least 2 mm of room to the skins above and below; the mass, with the motor unit at its specified 1.6 kg, at
   most 9 kg.
