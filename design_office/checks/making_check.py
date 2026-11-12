@@ -1,7 +1,8 @@
 # Making (Chapter 66) against the acceptance criteria of its prompt: run by the dialog, as a user runs it, for its
 # default part, the bracket, then for the spacer and the tine; each part the machine's own (the bracket's volume against
 # lib/lugs_brackets.py, the spacer's length against lib/drawings_detail.py, the tine's against lib/making.py); every
-# operation with a toolpath; the bracket's root cut by a cutter whose corner radius is the drawing's 2.5; each setup
+# operation with a toolpath; the bracket's root, under the lug, cut along the lug's axis from both its ends by cutters
+# of radius and corner radius 2.5, the drawing's; each setup
 # timed and posted, its NC file on disk with the tools it lists; the spacer turned long by the grinding allowance; the
 # tine's corner rounded, the sixteen nested on one plate and cut, one pierce each; the refusal.
 import sys, importlib, os, re
@@ -57,9 +58,18 @@ def run(_context):
             tools = tools or re.findall(r'^\(((?:Laser|Plasma|Waterjet) cutting)\)', txt, re.M)   # a cutting program names its head
             fc.ok(bool(txt) and st['nc_lines'] > 10 and st['seconds'] > 0 and len(tools) >= 1,
                   '%s / %s: %.0f s, %s, %d lines, tools %s' % (part, st['setup'], st['seconds'], st['nc'], st['nc_lines'], '; '.join(tools)))
-    root = [o for st in b['setups'] for o in st['ops'] if o['strategy'] == 'contour2d']
-    txt = open(os.path.join(nc, b['setups'][1]['nc']), encoding='latin-1').read()
-    fc.ok(len(root) == 1 and 'CR=2.5' in txt, "the arm's root: a 2D contour with %s, CR=2.5 in the program" % (root[0]['tool'] if root else None))
+    # the arm's root lies under the lug seen from the top: it is cut along the lug's axis from both its ends, the walls
+    # along the axis by a cutter of radius 2.5, the end walls by one of corner radius 2.5, and never from the top
+    top = [o for o in b['setups'][1]['ops'] if o['strategy'] == 'contour2d']
+    ends = b['setups'][2:4]
+    got = []
+    for st in ends:
+        txt = open(os.path.join(nc, st['nc']), encoding='latin-1').read() if st['nc'] else ''
+        tools = [o['tool'] for o in st['ops'] if o['toolpath']]
+        got.append('5mm Flat Endmill' in tools and '10mm Bullnose R2.5' in tools and 'D=5.' in txt and 'CR=2.5' in txt)
+    fc.ok(len(b['setups']) == 4 and not top and all(got),
+          "the arm's root from both the lug's ends, none from the top: a 5 mm cutter (its radius the root's 2.5) and the "
+          "bull nose R2.5 in setups %s" % ' and '.join(st['setup'][:1] for st in ends))
     face = [o for o in s['setups'][0]['ops'] if o['strategy'] == 'turning_face']
     i = s['info']
     fc.ok(len(face) == 1 and abs(i['front'] - i['leave']) < 1e-6 and abs(i['back'] + i['leave']) < 1e-6

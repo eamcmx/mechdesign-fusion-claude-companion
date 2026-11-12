@@ -24,7 +24,8 @@ DERIVED (computed from the inputs by projects/rear_axle/lib/axle_design.py, neve
 HARD CONSTRAINTS:
 - Refuse a module whose pinion keeps a bending factor under 1 at the design torque, a crown wheel that leaves less
   than 195 mm of ground clearance (365 mm less half its outside diameter, 8 mm of wall and 6 mm of gap), a face
-  over a third of the cone distance, and spiders for which 2 z_s / N is not a whole number, saying which.
+  over a third of the cone distance, spiders for which 2 z_s / N is not a whole number, and a differential module
+  whose gears' heel tips (sqrt(A_e^2 + h_a^2) from the apex) pass their 74 mm spherical backs, saying which.
 - The pair's apex at the origin, the pinion along +X (forward), the axle along Y, the crown wheel on the -Y side.
 - Spiral teeth lofted through seven transverse sections from the toe to the heel, each Tredgold's virtual tooth with
   the transverse module and pressure angle, drawn in its gear's own frame (the apex at the origin, the gear's axis
@@ -41,7 +42,8 @@ HARD CONSTRAINTS:
   spherical washers; the side gears' hubs splined 8 x 35 x 40 for the half shafts.
 - The carrier: a mounting plate 400 mm across, cut flat 166 mm below the axle so that it stays above the housing's
   bowl, with eight holes on 370 mm over its upper three quarters (projects/rear_axle/lib/axle_design.joint_bolts); the
-  nose with the cups' bores and the seal's, two legs with the saddles, bearing caps with two M12 bolts each, threaded
+  nose with the cups' bores and the seal's (the seal's bore over cup B's outside diameter, so that cup B is pressed
+  in past it from the front), two legs with the saddles, bearing caps with two M12 bolts each, threaded
   adjusters behind the case's cups. Every cup's bore in the casting, in the nose and in the saddles, is 0.1 mm over
   the cup's outside diameter (0.05 mm a side); every cone sits on a seat of its own bore.
 - Each bearing cap 75 mm deep below the legs' face at x = 0, the width of its leg, held by two M12 x 90 at z = -68
@@ -56,6 +58,11 @@ FUSION CONVENTIONS:
   47 turns of the pinion to 12 of the case, the case turning about +Y when the pinion turns about +X. The spiders and
   the side gears revolute on the case, each joint made in the root between the parts' proxies.
 - The API works in cm and radians. Materials: Steel; Iron, Cast for the casting, the caps and the case.
+- The companion's check, projects/rear_axle/checks/rear_axle_carrier_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(m, F, m_d, N), the dialog's input ids the
+  same; the joint 'Pinion turns'; at module level design(), parts_list(), axle_design imported as ad; refusals that
+  say 'bending factor of 0.818', 'ground clearance', 'third of the cone distance', '2 z_s / N = 14.67', 'past their
+  spherical backs'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the ratio, the module, the crown wheel's size and the clearance, the pinion's factors at both duty
@@ -66,10 +73,10 @@ ACCEPTANCE CRITERIA:
   Bearing B 32308 cone 1, Bearing B 32308 cup 1, Bearing C1 32213 cone 1, Bearing C1 32213 cup 1, Bearing C2 32213
   cone 1, Bearing C2 32213 cup 1, Bearing cap 2, Cap bolt M12x90 4, Carrier casting 1, Companion flange 1, Cross 1,
   Crown wheel bolt M12x35 10, Crown wheel z47 1, Differential case 1, Pinion depth shim 1, Pinion nut M30 1, Pinion
-  seal 60x85x10 1, Pinion shaft z12 1, Side gear 2, Side gear washer 2, Spacer 1, Spider 4, Spider washer 4, Washer 1.
-- No interference at rest; every bearing's cone on its seat and its cup in its bore; the
-  plate no lower than 166 mm below the axle.
+  seal 60x95x10 1, Pinion shaft z12 1, Side gear 2, Side gear washer 2, Spacer 1, Spider 4, Spider washer 4, Washer 1.
+- No interference at rest; every bearing's cone on its seat and its cup in its bore; cup B passes the seal's bore;
+  the plate no lower than 166 mm below the axle.
 - The pinion turned 30 deg about +X: the case 7.6596 deg about +Y. No tooth collision while the pinion turns one
   pitch, nor with the side gears turned 4, 8.18 and 12 deg in the case.
 - Refused: module 5.9 with a face of 47 mm (bending), module 6.75 with a face of 54 mm (clearance), a face of 56 mm,
-  three spiders.
+  three spiders, a differential module of 5.6.

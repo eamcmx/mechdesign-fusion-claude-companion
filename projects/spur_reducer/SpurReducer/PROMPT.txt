@@ -49,6 +49,10 @@ FUSION CONVENTIONS:
 - AsBuiltJoints: each shaft assembly revolute about y on the housing; a Motion Link of 1800 deg to 360 deg,
   the output turning the other way. Materials: Steel for the shafts, gear and small parts; Iron, Cast for the
   housing and the caps.
+- The companion's check, projects/spur_reducer/checks/spur_reducer_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(P, n1, KA, life, nd), the dialog's input
+  ids the same; the joint 'Input shaft'; at module level parts_list(), reducer_design imported as rd; refusals that
+  say 'the in key bears 101.4 MPa', 'bearing 6204 lasts 99941 h', 'the output end has a factor of safety of 2.29'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the gears' stresses, the shafts' factors, both slopes and the input shaft's deflection under

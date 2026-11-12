@@ -9,9 +9,10 @@ INPUTS (a command dialog, with these defaults):
 - the gearhead's ratio, 24
 
 DERIVED (from projects/flap_actuation/lib/flap_design.py, never typed):
-- actuator_design(): the force over the stroke and its cube mean; the nut's life, static rating and the largest f_p
-  it passes; the screw's torque and its back-driving torque; buckling and critical speed; the thrust bearings'
-  life; the gears' stresses; the motor unit's speed, torque, power and brake; the rod as a column; the trunnions
+- actuator_design(fp, i_gh): the force over the stroke and its cube mean; the nut's life, static rating and the
+  largest f_p it passes; the screw's torque and its back-driving torque; buckling and critical speed; the thrust
+  bearings' life; the gears' stresses; the motor unit's speed, torque, power and brake at the gearhead's ratio i_gh;
+  the rod as a column; the trunnions
 - the positions of LAY: the actuator along its own axis from the gimbal
 
 HARD CONSTRAINTS:
@@ -24,6 +25,12 @@ HARD CONSTRAINTS:
 - The rod end's centre 378.96 mm from the gimbal's axis retracted and 461.04 mm extended.
 - Nothing more than 25 mm forward of the gimbal's axis (the spar's fitting); the actuator inside the wing's skins
   with the flap anywhere from 0 to 40 deg.
+- The screw goes into the housing from the back with its bearings: their outer rings forward against the housing's
+  shoulder (LAY's shoulder_ring), held from behind by the ring nut M60 x 1.5 (LAY's ring_nut, r_ring), which passes
+  the tube's 62 mm bore to its thread.
+- The trunnions' bosses (r_tboss round the gimbal's axis) stand out past the nose's face, and the gear cover is cut
+  clear of them. The encoder's pinion turns in a boss of its own on the housing, 26 mm in radius round its axis
+  with a pocket of 23, which the cover closes too.
 - The guide key on the rod runs in a slot along the housing's bore, to the gland.
 - Inside the rod's sleeve (LAY's sleeve, r_sleeve): the ball nut on LAY's nut, held against the sleeve's end by a
   retaining ring in a groove from y = 69 to 71, and keyed by the 6 x 6.5 x 32 feather key of RSI_KEY at the nut's
@@ -39,8 +46,13 @@ FUSION CONVENTIONS:
   slider along Y, limited to the stroke. Motion Links: 54:30 to the idler and 54:26 to the encoder's pinion, each
   turning the other way; 54:18 to the pinion, the same way; one turn of the screw moves the rod 10 mm aft.
 - The ball groove is the one common/BallScrewAxis/BallScrewAxis.py cuts: the section swept along the screw with one
-  turn of twist per lead.
+  turn of twist per lead; its root at HIWIN's d_k of 26.91 mm (not that script's own rule for its screw), the
+  groove's radius 0.52 of the 6.35 mm ball, the same d_k the buckling and critical speed use.
 - The API works in cm and radians.
+- The companion's check, projects/flap_actuation/checks/flap_actuator_check.py, drives the script as
+  CHECK_INTERFACE.md says (give it to the model for its names, never for a design fact): build(fp, i_gh), the dialog's
+  input ids the same; the joints 'Rod slides', 'Screw turns'; at module level design(), parts_list(), flap_design
+  imported as fd; refusals that say 'strokes'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the nut, its life and static margin, the torques, the gears' factors, the motor unit and the brake,
@@ -50,9 +62,9 @@ ACCEPTANCE CRITERIA:
   32x10 1, Bearing 6201 2, Bearing BSD 2562 CGA 2, Cover screw M5x16 6, Encoder 1, Encoder pinion z26 1, Encoder shaft
   1, End bolt M8x20 1, End stop 1, Gear cover 1, Gearhead shaft 1, Guide key 1, Idler gear z30 1, Idler pin 1, Jam nut
   M20x1.5 1, Key 8x7x16 1, Motor screw M5x12 4, Motor unit 1, Nut key 6x6.5x32 1, Nut retaining ring 1, Pinion z18 1,
-  Piston rod 1, Ring nut M66x1.5 1, Rod end SI 20 ES 1, Rod seal 1, Screw gear z54 1, Stop bolt M8x16 1, Trunnion 2,
+  Piston rod 1, Ring nut M60x1.5 1, Rod end SI 20 ES 1, Rod seal 1, Screw gear z54 1, Stop bolt M8x16 1, Trunnion 2,
   Washer M8 2.
-- No interference retracted and with the flap at 10, 20, 30 and 40 deg.
+- No interference retracted and with the flap at 10, 20, 30 and 40 deg; the ring nut passes the tube's bore.
 - The rod end's centre 378.96 mm from the gimbal retracted and 461.04 mm extended, the screw turned 8.2084 turns.
 - At least 2 mm of room to the skins above and below; the mass, with the motor unit at its specified 1.6 kg, at
   most 9 kg.

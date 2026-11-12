@@ -182,7 +182,7 @@ FASTENERS = {
     'Horn pin nut': F(open='as the hinge pin\'s'),
     'Jam nut M20x1.5': F(open='the rod end\'s jam nut: a thin nut of fine pitch (ISO 8675) once the rod end\'s '
                               'thread is fixed (Chapter 53)'),
-    'Ring nut M66x1.5': F(open='the ring nut that holds the screw\'s bearings: a lock nut to the bearings\' maker\'s '
+    'Ring nut M60x1.5': F(open='the ring nut that holds the screw\'s bearings: a lock nut to the bearings\' maker\'s '
                                'instructions (Chapter 53)'),
     'Washer M8': F(open='modelled 30 mm across and 3 mm thick, neither ISO 7089 (16 x 1.6) nor ISO 7093-1 (24 x 2): an '
                         'end washer to be made, or the end redrawn for ISO 7093-1 (Chapter 53)'),
@@ -280,7 +280,7 @@ OTHERS = {
     'Nut retaining ring': O(status='open', note='the flap actuator\'s nut ring follows the ring nut (Chapter 53)'),
     'Oil seal 74x100x10': O(status='specified', note='a radial shaft seal 74 x 100 x 10; lip and compound with the '
                             'axle\'s oil (Chapter 54)'),
-    'Pinion seal 60x85x10': O(status='specified', note='a DIN 3760 lip seal (Chapter 29); lip and compound as the oil '
+    'Pinion seal 60x95x10': O(status='specified', note='a DIN 3760 lip seal (Chapter 29); lip and compound as the oil '
                               'seals\''),
     'Breather': O(status='specified', note='the axle\'s breather'),
     'Rod seal': O(status='specified', note='the flap actuator\'s rod seal, with its groove (Chapter 53)'),

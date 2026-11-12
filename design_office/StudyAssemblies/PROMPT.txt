@@ -52,6 +52,9 @@ FUSION CONVENTIONS:
 - a new design document (FusionDesignDocumentType) for the assembly, parametric, each part a component of the root
   with its bodies in a base feature, no joints and no as-built joints (the study's contacts and connectors join
   them); the machine's document closed unsaved; lengths in mm, the API's cm inside.
+- The companion's check, design_office/checks/study_assemblies_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(which); the dialog's input ids assembly; at
+  module level ASSEMBLIES, END_PLATE.
 
 ACCEPTANCE CRITERIA:
 - A message gives the assembly, each part's bodies, material and volume, the picks found, and a version tag.

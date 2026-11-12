@@ -12,6 +12,16 @@ Fusion. The rules it followed are in `BRIEF.md`.
 
 `run_prompt_test.py` runs the project's check unchanged but for the path of the script it loads.
 
+Since this run every prompt has gained a last FUSION CONVENTIONS line that names its check and the names that check
+looks for (`CHECK_INTERFACE.md`, `tools/check_names.py`), and the design points the models raised have been settled in
+the companion's own scripts and their prompts, each script's check run again on 12 November: the pinion seal
+60 x 95 x 10 and the differential's module limit (RearAxleCarrier), the ring nut M60 x 1.5 and the gearhead ratio
+passed through (FlapActuator), the pinion's end washer (FlapDetail), the shaft ends inside their washers' faces
+(WristDifferential, WristIntegration), the manifold 200 x 100 x 18 (VacuumGripper), the Geneva wheel's relief and
+its 1 deg steps through the index, the cycloidal disc's 72 points a lobe and its chord test, the lead screw's layout
+for a large screw, the bearing seat's shoulders, the counterweight's standoffs and block, and the closing stop
+bracket's lip. The table below is the run of 11 and 12 November, before those changes.
+
 ## Results (Autodesk Fusion 2706.1.17, 11 and 12 November 2026)
 
 58 of the 60 prompts gave a script that passes its check: the part or assembly built, measured and moved as the

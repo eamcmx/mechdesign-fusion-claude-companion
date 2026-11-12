@@ -1,5 +1,5 @@
 # rear_axle_check
-# Autodesk Fusion 2706.1.17, run 2026-11-11 08:55, 66 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 16:58, 60 s
 
 RearAxle 1.0 (2026-11-01)
   ok   the splines recomputed: 71.75 mm engaged, 35.3 mm needed, 280.8 MPa on the flanks 
@@ -7,7 +7,7 @@ Rear axle built: the carrier of Chapter 29 bolted into the housing of Chapter 30
 Final drive 12:47; differential 4 spiders of 15 teeth, side gears of 22.
 Splines 8 x 35 x 40 engaged 71.75 mm in each side gear (35.3 mm needed): 280.8 MPa on the flanks, factor 4.06.
 
-Parts: 106 components in 43 kinds; 2 Adjuster, 1 Banjo housing, 2 Bearing 6213 balls, 2 Bearing 6213 inner ring, 2 Bearing 6213 outer ring, 1 Bearing A 32309 cone, 1 Bearing A 32309 cup, 1 Bearing B 32308 cone, 1 Bearing B 32308 cup, 1 Bearing C1 32213 cone, 1 Bearing C1 32213 cup, 1 Bearing C2 32213 cone, 1 Bearing C2 32213 cup, 2 Bearing cap, 1 Breather, 4 Cap bolt M12x90, 1 Carrier casting, 8 Carrier nut M12, 8 Carrier stud M12, 1 Companion flange, 10 Cover screw M8x20, 1 Cross, 10 Crown wheel bolt M12x35, 1 Crown wheel z47, 1 Differential case, 1 Drain plug M22, 1 Filler plug M22, 2 Half shaft, 2 Oil seal 74x100x10, 1 Pinion depth shim, 1 Pinion nut M30, 1 Pinion seal 60x85x10, 1 Pinion shaft z12, 1 Rear cover, 2 Retainer plate, 2 Retaining ring, 2 Side gear, 2 Side gear washer, 1 Spacer, 4 Spider, 4 Spider washer, 1 Washer, 12 Wheel stud M14.
+Parts: 106 components in 43 kinds; 2 Adjuster, 1 Banjo housing, 2 Bearing 6213 balls, 2 Bearing 6213 inner ring, 2 Bearing 6213 outer ring, 1 Bearing A 32309 cone, 1 Bearing A 32309 cup, 1 Bearing B 32308 cone, 1 Bearing B 32308 cup, 1 Bearing C1 32213 cone, 1 Bearing C1 32213 cup, 1 Bearing C2 32213 cone, 1 Bearing C2 32213 cup, 2 Bearing cap, 1 Breather, 4 Cap bolt M12x90, 1 Carrier casting, 8 Carrier nut M12, 8 Carrier stud M12, 1 Companion flange, 10 Cover screw M8x20, 1 Cross, 10 Crown wheel bolt M12x35, 1 Crown wheel z47, 1 Differential case, 1 Drain plug M22, 1 Filler plug M22, 2 Half shaft, 2 Oil seal 74x100x10, 1 Pinion depth shim, 1 Pinion nut M30, 1 Pinion seal 60x95x10, 1 Pinion shaft z12, 1 Rear cover, 2 Retainer plate, 2 Retaining ring, 2 Side gear, 2 Side gear washer, 1 Spacer, 4 Spider, 4 Spider washer, 1 Washer, 12 Wheel stud M14.
 
 [RearAxle 1.0 (2026-11-01)]
   ok   six subassemblies: ['Housing', 'Carrier', 'Pinion assembly', 'Differential assembly', 'Wheel end L', 'Wheel end R']
@@ -21,9 +21,9 @@ Parts: 106 components in 43 kinds; 2 Adjuster, 1 Banjo housing, 2 Bearing 6213 b
   the joints hold (deg): Pinion turns 47.0000, Case turns 12.0000, Spider 1 turns in the case 2.5000, Side gear L turns in the case -1.7045, Side gear R turns in the case -1.7045
   ok   in a turn: the case 12.0000 deg, the half shafts 10.2955 and 13.7045; their mean 12.0000, half their difference 1.7045 (2.5 x 15/22 = 1.7045), their ratio 1.3311 (the tightest turn, 6.28/4.72 = 1.3305)
   ok   no interference in the turn 
-  mass of the axle 162.53 kg
+  mass of the axle 162.44 kg
   Housing: 37 parts, 65.32 kg
-  Carrier: 14 parts, 35.93 kg
+  Carrier: 14 parts, 35.85 kg
   Pinion assembly: 8 parts, 6.99 kg
   Differential assembly: 27 parts, 25.29 kg
   Wheel end L: 10 parts, 14.50 kg

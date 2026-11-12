@@ -38,6 +38,10 @@ FUSION CONVENTIONS:
   the cover and a 5 mm shank down to z = -10. Bolt i at angle 360 (i - 1) / N degrees.
 - The API works in cm: convert every mm input.
 - Joints, As-built only, all rigid: Cover, O-ring and each Bolt to Housing.
+- The companion's check, projects/sealed_cover/checks/sealed_cover_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(W, d1, L, G, p, N), the dialog's input ids
+  the same; the components 'Bolt <n>', 'Housing', 'O-ring'; at module level seal(); refusals that say 'Squeeze 35.11
+  percent', 'Gland fill 92.16 percent', 'n_c = N F_i / F_p = 1.78'.
 
 ACCEPTANCE CRITERIA:
 - A message gives c, the squeeze, D_o, D_i, the gland fill, V, F_p, n_c and a version tag.

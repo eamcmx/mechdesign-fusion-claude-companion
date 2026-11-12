@@ -22,7 +22,10 @@ HARD CONSTRAINTS:
   and the geometry factors were read.
 - A gap of the output gear faces each side gear's tooth at rest.
 - Each side gear runs on two 61902s on its trunnion, the one at its front in the gear, the other inside the
-  pulley's hub; the inner rings, the spacers and the frame's 6002 clamped by an end washer and an M5 screw.
+  pulley's hub; the inner rings, the spacers and the frame's 6002 clamped by an end washer and an M5 screw, the
+  trunnion's end 0.5 mm inside the 6002's face so that the washer bears on the stack; the tool flange held on the
+  output gear's hub the same way, by a washer and a low-head M6 on the flange's floor, the roll shaft's end 0.5 mm
+  below it.
 - The carrier: 7075, its walls 3 mm beside the roll bearings' seats, chamfered at 45 deg under the output gear's
   toe; the upper roll bearing held by a DIN 472 ring, the lower one free to slide in its seat.
 - The two motors side by side under the carrier, each in its own belt's plane with its body across the frame and
@@ -39,6 +42,10 @@ FUSION CONVENTIONS:
 - Motion links, two joints each: gear L turns -psi and gear R +psi on the carrier; each helper turns 2 phi; motor L
   turns -2 psi and motor R +2 psi on its helper; the pitch limited to +-120 deg.
 - pose(pitch, roll) in degrees. The API works in cm and radians.
+- The companion's check, projects/robotic_wrist/checks/wrist_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(module, teeth, face, phase), the dialog's input
+  ids the same; at module level design(), parts_list(), pose; refusals that say 'carrier needs', 'Table 13-3', '40
+  teeth on 40'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the set, its front face, the safety factors, the motors and the parts list with a version tag.

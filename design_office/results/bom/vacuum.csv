@@ -1,7 +1,7 @@
 item,level,part number,description,qty,material or maker,kg each,kg,mass from,kg as drawn,superseded
 1,1,P12-001,Adapter plate,1,aluminium 6082-T6,1.4675,1.4675,Fusion,1.4675,
 2,1,P12-002,Beam,2,aluminium 6082-T6,4.9938,9.9875,Fusion,9.9875,
-3,1,P12-003,Manifold,6,"aluminium 6082-T6, T6",0.9720,5.8320,Fusion,5.8320,
+3,1,P12-003,Manifold,6,"aluminium 6082-T6, T6",0.9180,5.5080,Fusion,5.5080,
 4,1,P12-004,Plate,1,aluminium 6082-T6,27.8448,27.8448,Fusion,27.8448,
 5,1,P12-005,Plunger,36,"steel 1045 (C45), cold drawn, or hot rolled over 76 mm across",0.1192,4.2899,Fusion,4.2899,
 6,1,P12-006,Sleeve,36,"aluminium 6082-T6, T6",0.0819,2.9473,Fusion,2.9473,

@@ -34,6 +34,9 @@ FUSION CONVENTIONS:
   Component.partNumber and Component.description, once for each component however many occurrences it has.
 - Nothing is moved and no joint is added, as-built or otherwise; no length is used, so the API's cm do not arise.
 - The assembly's script is loaded from its folder beside this one as a module; nothing of it is copied.
+- The companion's check, design_office/checks/part_numbers_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(key); the dialog's input ids assembly; refusals
+  that say 'No assembly'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the assembly, its number, the components numbered, the made kinds with their first and last numbers,

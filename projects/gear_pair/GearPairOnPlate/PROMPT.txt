@@ -33,6 +33,9 @@ FUSION CONVENTIONS:
   shaft, revolute about the shaft axis between each gear and its shaft.
 - A Motion Link between the two revolute joints, so that driving gear 1 turns gear 2 by z1/z2 of the angle,
   the opposite way.
+- The companion's check, projects/gear_pair/checks/gearpair_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(m, z1, z2, alpha, b, backlash, ds, plate), the
+  dialog's input ids the same.
 
 ACCEPTANCE CRITERIA:
 - A message box at the end gives the centre distance, the ratio and a version tag.

@@ -39,8 +39,9 @@ Y = dict(rod_p=710.0, crank=640.0, lever=640.0, block=780.0, rod_l=-280.0, tri=-
          rv2=-450.0 - 79.55, sup2=480.0, sup3=560.0, rv3=670.0 + 79.55, B=(-180.0, 180.0), W=(-150.0, 150.0))
 CW = dict(m=100.0, r=0.60, block=(0.46, 0.46))           # Chapter 42's counterweight: 100 kg, 600 mm behind A
 # the block's four standoffs in the crank's own frame (mm along it from A, across it: + toward the side the parallel
-# rod can be, which it reaches from C at 40 deg or more to the crank's line)
-STANDOFFS = ((560.0, -170.0), (800.0, -170.0), (800.0, 60.0), (650.0, 60.0))
+# rod can be, which it reaches from C at 40 deg or more to the crank's line); each stands on the web, whose box reaches
+# 150 either side of the crank's line, so none is further across than 150 less its 25 mm radius
+STANDOFFS = ((560.0, -120.0), (800.0, -120.0), (800.0, 60.0), (650.0, 60.0))
 
 
 def chapter_bodies(base=None):

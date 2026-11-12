@@ -1,12 +1,12 @@
 # study_parts_check
-# Autodesk Fusion 2706.1.17, run 2026-11-10 21:44, 4 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 17:24, 6 s
 
 StudyParts 1.0 (2026-11-06)
   ok   Run opens the dialog
 Study part cantilever: 40000.0 mm3, Steel, 6 faces, 0.3140 kg; faces to pick fixed found, load found
 
 [StudyParts 1.0 (2026-11-06)]
-  OK pressed, built in 0 s
+  OK pressed, built in 1 s
   ok   a new design opened
   ok   the six parts built: bracket_r25, bracket_sharp, cantilever, keyseat, lug, tine
   ok   cantilever: 40000.0 mm3 in the model, 40000.0 by hand (0.0000 %)

@@ -35,6 +35,10 @@ FUSION CONVENTIONS:
   joint on a sketch point at the moving part's own origin, the moving part's occurrence given first, with
   ZAxisJointDirection: a positive value then turns the part anticlockwise about its own +z. A Motion Link: z2 x 360
   deg of pulley 1 for z1 x 360 deg of pulley 2, NOT reversed (a belt keeps the direction).
+- The companion's check, projects/belt_drive/checks/belt_drive_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(z1, z2, n_b, width), the dialog's input ids the
+  same; the joint 'Pulley 1 turns'; the components 'Belt', 'Pulley 2'; at module level belt(); refusals that say 'too
+  short', 'Only 3.96 teeth'.
 
 ACCEPTANCE CRITERIA:
 - A message gives PD1, PD2, C, both wrap angles, the teeth in mesh, the ratio and a version tag.

@@ -41,6 +41,10 @@ FUSION CONVENTIONS:
 - AsBuiltJoints: Guide rod rigid on Frame; Screw revolute about x on Frame; Carriage slider along x on Frame, its
   travel limited to keep the nut on the grooved part; Nut rigid on Carriage; Balls rigid on Nut. One Motion Link:
   360 deg of the screw for one lead of the carriage, in the direction that keeps the nut's groove on the screw's.
+- The companion's check, extras/checks/ball_screw_check.py, drives the script as CHECK_INTERFACE.md says (give it to
+  the model for its names, never for a design fact): build(d_s, P, D_w, F, C_dyn, n), the dialog's input ids the same;
+  the joint 'Screw turns'; the components 'Balls', 'Carriage'; at module level ballscrew(); refusals that say 'grooves
+  overlap', 'below 10 000 h'.
 
 ACCEPTANCE CRITERIA:
 - A message gives d_m, R_g, d_k, the balls per turn and in all, T_a, T_c, L and L_h, F_k and n_k, and a version tag.

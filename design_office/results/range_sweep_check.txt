@@ -1,33 +1,33 @@
 # range_sweep_check
-# Autodesk Fusion 2706.1.17, run 2026-11-10 21:30, 1729 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 20:15, 710 s
 
-RangeSweep 1.1 (2026-11-03)
+RangeSweep 1.2 (2026-11-12)
   ok   Run opens the dialog
 Range sweep of the wrist: 71 states, 97 parts in 7 groups that move apart; no interference; 2 contacts made in motion; closest: Stop disc / Buffer pad 0.00 mm at (128.0, 0.0), Stop disc / Buffer pad (1) 0.00 mm at (-128.0, 0.0), Stop disc / Countersunk screw ISO 10642 M4x12 1.00 mm at (24.0, 0.0).
 Wrist in detail: the AM8111 with its brake and the PLE040 at 15:1 drawn to their makers' figures, each motor's end -187.5 mm off the middle; the SNM022A-06 with its 44.5 mm flange; the collar and spacers S4 and S5 at 18 mm; the key 5 x 5 x 10.
 
-[RangeSweep 1.1 (2026-11-03)]
-  OK pressed, built in 357 s
+[RangeSweep 1.2 (2026-11-12)]
+  OK pressed, built in 242 s
   ok   a new design opened
   ok   the wrist: 71 states, 97 parts in 7 groups, no interference 
        contacts made in motion: 2 ['Stop disc / Buffer pad at (128.0, 0.0)', 'Stop disc / Buffer pad (1) at (-128.0, 0.0)']
        closest: ['Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at (24.0, 0.0)', 'Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at (112.0, 0.0)', 'Stop disc / Countersunk screw ISO 10642 M4x12 1.000 mm at (-128.0, 0.0)']
-       pairs: {'all': 4656, 'cross': 2912, 'near': 357, 'kept': 107, 'measured': 107}, 297 s
+       pairs: {'all': 4656, 'cross': 2912, 'near': 357, 'kept': 107, 'measured': 107}, 196 s
   Range sweep of the flap: 21 states, 87 parts in 8 groups that move apart; no interference; 0 contacts made in motion; closest: Rod end SI 20 ES / Horn 0.86 mm a
   ok   the flap: 21 states, 87 parts in 8 groups, no interference 
        contacts made in motion: 0 []
-       closest: ['Rod end SI 20 ES / Horn 0.859 mm at 40.0', 'Ring nut M66x1.5 / Piston rod 2.000 mm at 0.0', 'Idler gear z30 / Encoder pinion z26 2.156 mm at 4.0']
-       pairs: {'all': 3741, 'cross': 2963, 'near': 181, 'kept': 89, 'measured': 89}, 109 s
-  Range sweep of the axle: 36 states, 106 parts in 9 groups that move apart; no interference; 0 contacts made in motion; closest: Carrier casting / Crown wheel bo
+       closest: ['Rod end SI 20 ES / Horn 0.859 mm at 40.0', 'Ring nut M60x1.5 / Piston rod 2.000 mm at 0.0', 'Idler gear z30 / Encoder pinion z26 2.156 mm at 4.0']
+       pairs: {'all': 3741, 'cross': 2963, 'near': 181, 'kept': 89, 'measured': 89}, 91 s
+  Range sweep of the axle: 36 states, 106 parts in 9 groups that move apart; no interference; 0 contacts made in motion; closest: Bearing cap C1 / Crown wheel bol
   ok   the axle: 36 states, 106 parts in 9 groups, no interference 
        contacts made in motion: 0 []
-       closest: ['Carrier casting / Crown wheel bolt M12x35 1 1.000 mm at (0.0, 0.0)', 'Carrier casting / Crown wheel bolt M12x35 3 1.000 mm at (105.0, 0.0)', 'Carrier casting / Crown wheel bolt M12x35 9 1.000 mm at (0.0, 0.0)']
-       pairs: {'all': 5565, 'cross': 3942, 'near': 320, 'kept': 102, 'measured': 102}, 275 s
+       closest: ['Bearing cap C1 / Crown wheel bolt M12x35 5 1.000 mm at (30.0, 2.5)', 'Bearing cap C1 / Crown wheel bolt M12x35 6 1.000 mm at (180.0, 2.5)', 'Carrier casting / Crown wheel bolt M12x35 1 1.000 mm at (0.0, 0.0)']
+       pairs: {'all': 5565, 'cross': 3942, 'near': 320, 'kept': 102, 'measured': 102}, 156 s
   Range sweep of the robot: 25 states, 118 parts in 11 groups that move apart; no interference; 0 contacts made in motion; closest: E bracket / Levelling rod 1 bo
   ok   the robot: 25 states, 118 parts in 11 groups, no interference 
        contacts made in motion: 0 []
        closest: ['E bracket / Levelling rod 1 body 5.000 mm at (-42.0, -8.0)', 'RV-500N case J3 / Parallel rod body 7.678 mm at (77.03, -12.03)', 'Lower arm box / Upper arm cheek 1 10.000 mm at (8.25, -58.25)']
-       pairs: {'all': 6903, 'cross': 5818, 'near': 151, 'kept': 37, 'measured': 37}, 8 s
+       pairs: {'all': 6903, 'cross': 5818, 'near': 153, 'kept': 39, 'measured': 39}, 5 s
   Range sweep of the bag0: 22 states, 92 parts in 7 groups that move apart; no interference; 0 contacts made in motion; closest: Tine 7 B / Press plate 70.00 mm a
   ok   the bag0: 22 states, 92 parts in 7 groups, no interference 
        contacts made in motion: 0 []
@@ -37,29 +37,8 @@ Wrist in detail: the AM8111 with its brake and the PLE040 at 15:1 drawn to their
   ok   the bag: 16 states, 128 parts in 7 groups, no interference 
        contacts made in motion: 4 ['Shock absorber DYSC-25-25-Y1F closed 1 / Lever A at 0.0', 'Shock absorber DYSC-25-25-Y1F closed 2 / Lever B at 0.0', 'Shock absorber DYSC-25-25-Y1F open 1 / Lever A at 45.0', 'Shock absorber DYSC-25-25-Y1F open 2 / Lever B at 45.0']
        closest: ['Lock nut DYSC-25-25-Y1F open 2 / Lever B 2.000 mm at 45.0', 'Lock nut DYSC-25-25-Y1F open 1 / Lever A 2.000 mm at 45.0', 'Lever A / Piston rod A 3.971 mm at 45.0']
-       pairs: {'all': 8128, 'cross': 4298, 'near': 84, 'kept': 46, 'measured': 46}, 5 s
+       pairs: {'all': 8128, 'cross': 4298, 'near': 84, 'kept': 46, 'measured': 46}, 4 s
   ok   the stops: the closing absorbers on the strikers closed, the opening ones on the bars at 45 deg, touching nothing else []
        the stops' closest: ['Lock nut DYSC-25-25-Y1F open 2 / Lever B 2.000 mm at 45.0', 'Lock nut DYSC-25-25-Y1F open 1 / Lever A 2.000 mm at 45.0', 'Lock nut DYSC-25-25-Y1F closed 1 / Lever A 5.000 mm at 0.0', 'Lock nut DYSC-25-25-Y1F closed 2 / Lever B 5.000 mm at 0.0']
-  Range sweep of the clamp: 19 states, 55 parts in 3 groups that move apart; no interference; 0 contacts made in motion; closest: Seat BK25 / Carriage plate (1) 5
-  ok   the clamp: 19 states, 55 parts in 3 groups, no interference 
-       contacts made in motion: 0 []
-       closest: ['Seat BK25 / Carriage plate (1) 5.000 mm at 650.0', 'Fixed bearing BK25 / Carriage plate (1) 5.099 mm at 650.0', 'Seat BK25 / Block HGH25CA o+ (1) 7.810 mm at 650.0']
-       pairs: {'all': 1485, 'cross': 952, 'near': 36, 'kept': 4, 'measured': 4}, 363 s
-  Range sweep of the vacuum: 6 states, 313 parts in 2 groups that move apart; no interference; 36 contacts made in motion; closest: Sleeve 1 / Plunger 1-1 0.00 mm
-  ok   the vacuum: 6 states, 313 parts in 2 groups, no interference 
-       contacts made in motion: 36 ['Sleeve 1 / Plunger 1-1 at 0.0', 'Sleeve 2 / Plunger 1-2 at 0.0', 'Sleeve 3 / Plunger 1-3 at 0.0', 'Sleeve 4 / Plunger 1-4 at 0.0', 'Sleeve 5 / Plunger 1-5 at 0.0', 'Sleeve 6 / Plunger 1-6 at 0.0']
-       closest: ['Ejector SCPSi 2-14 1 / Plunger 1-5 8.597 mm at 0.0', 'Ejector SCPSi 2-14 2 / Plunger 1-5 8.597 mm at 0.0', 'Ejector SCPSi 2-14 5 / Plunger 3-5 8.597 mm at 0.0']
-       pairs: {'all': 48828, 'cross': 17352, 'near': 204, 'kept': 60, 'measured': 60}, 7 s
-  Range sweep of the changer: 4 states, 21 parts in 9 groups that move apart; no interference; 13 contacts made in motion; closest: Master body / Tool plate ISO 9
-  ok   the changer: 4 states, 21 parts in 9 groups, no interference 
-       contacts made in motion: 13 ['Master body / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 1 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 2 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 6 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 3 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)', 'Segment 4 (1) / Tool plate ISO 9409-1-160-6-M10 at (True, 0.0)']
-       closest: ['Cam / Tool plate ISO 9409-1-160-6-M10 1.500 mm at (True, 0.0)', 'Master cover / Piston with rod 5.000 mm at (False, 0.0)', 'Pin 12 tool 1 / Segment 1 (1) 6.000 mm at (True, 0.0)']
-       pairs: {'all': 210, 'cross': 143, 'near': 38, 'kept': 28, 'measured': 28}, 1 s
-  Range sweep of the unit: 11 states, 45 parts in 2 groups that move apart; no interference; 5 contacts made in motion; closest: Housing / Carriage (1) 0.00 mm at
-  ok   the unit: 11 states, 45 parts in 2 groups, no interference 
-       contacts made in motion: 5 ['Housing / Carriage (1) at 30.0', 'Stop block 1 / Carriage (1) at 0.0', 'Stop block 2 / Carriage (1) at 0.0', 'Stop block 3 / Carriage (1) at 0.0', 'Stop block 4 / Carriage (1) at 0.0']
-       closest: ['Cap screw M10x25 2 / Carriage (1) 0.707 mm at 30.0', 'Cap screw M10x25 5 / Carriage (1) 0.707 mm at 30.0', 'Housing / Block HGH25CA 1 2.000 mm at 30.0']
-       pairs: {'all': 990, 'cross': 324, 'near': 62, 'kept': 35, 'measured': 35}, 2 s
-  ok   refused: No machine called crane: Chapter 56 sweeps wrist, flap, axle, robot, bag0, bag, clamp, vacuum, changer, unit.
-  ok   a message gives the version tag RangeSweep 1.1 (2026-11-03)
+  ok   a message gives the version tag RangeSweep 1.2 (2026-11-12)
 ALL PASS

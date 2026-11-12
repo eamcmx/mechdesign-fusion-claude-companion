@@ -37,6 +37,9 @@ FUSION CONVENTIONS:
   shaft rigid in its side gear. Motion Links for the differential: each spider turns 22 for 15 of a side gear, the
   other way as seen along their own axes; side gear L to every spider, spider 1 to side gear R.
 - The API works in cm and radians.
+- The companion's check, projects/rear_axle/checks/rear_axle_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(); at module level CAR, HSG, design(),
+  refuse().
 
 ACCEPTANCE CRITERIA:
 - A message gives the final drive, the differential, the splines' engagement with their pressure and factor, the
@@ -47,7 +50,7 @@ ACCEPTANCE CRITERIA:
   cup 1, Bearing cap 2, Breather 1, Cap bolt M12x90 4, Carrier casting 1, Carrier nut M12 8, Carrier stud M12 8,
   Companion flange 1, Cover screw M8x20 10, Cross 1, Crown wheel bolt M12x35 10, Crown wheel z47 1, Differential case
   1, Drain plug M22 1, Filler plug M22 1, Half shaft 2, Oil seal 74x100x10 2, Pinion depth shim 1, Pinion nut M30 1,
-  Pinion seal 60x85x10 1, Pinion shaft z12 1, Rear cover 1, Retainer plate 2, Retaining ring 2, Side gear 2, Side gear
+  Pinion seal 60x95x10 1, Pinion shaft z12 1, Rear cover 1, Retainer plate 2, Retaining ring 2, Side gear 2, Side gear
   washer 2, Spacer 1, Spider 4, Spider washer 4, Washer 1, Wheel stud M14 12.
 - No interference at rest; each half shaft's splines 71.75 mm into its side gear.
 - Driving straight, the pinion turned 30 deg: the case and both half shafts 7.6596 deg about +Y, no interference.

@@ -4,9 +4,11 @@
 # operations with tools from Fusion's sample libraries, the toolpaths generated, each setup's machining time, and the
 # NC program from Fusion's generic Fanuc posts.
 #   bracket   the bag gripper's opening stop bracket P13-018 (Chapter 62: the arm turned, the root R2.5), milled from
-#             a 1045 block in three setups: the bolting face and its two holes; the top, the part bolted to a
-#             fixture plate through its own holes (face, adaptive roughing, the arm's root with a 10 mm cutter of
-#             corner radius 2.5, the lug finished, the outline); the lug's M30 x 1.5, on an angle plate
+#             a 1045 block in four setups: the bolting face and its two holes; the top, the part bolted to a
+#             fixture plate through its own holes (face, adaptive roughing, the walls the top can reach); the lug's
+#             M30 x 1.5 on an angle plate, and from that end the arm under the lug, which the top cannot reach (its
+#             walls and root R2.5 by a 5 mm cutter, its end wall and that root by a 10 mm cutter of corner radius 2.5);
+#             the arm under the lug from the lug's other end
 #   spacer    the rear axle's pinion spacer A01-016 (Chapter 61: ground to each axle), turned from 60 x 40 tube,
 #             0.8 mm long for the grinding
 #   tine      the bag gripper's tine P13-012, a flat L cut from 10 mm plate: its inside corner rounded, the sixteen
@@ -20,7 +22,8 @@
 #                 tine's corner, the plate and the spacing), the machines through RangeSweep.py, the change through
 #                 StopBracket.py, the bills of materials through BillOfMaterials.py
 #   HARD RULES    every part copied from its machine's model; the tools from Fusion's sample libraries (one cutter
-#                 copied and given the root's corner radius); nothing saved but the NC programs and the census
+#                 copied and given the root's corner radius, one given 5 mm); nothing saved but the NC programs and
+#                 the census
 #   CONVENTIONS   a new design document per part; mm, the API's cm inside
 #   ACCEPTANCE    the message: the setups, their operations and toolpaths, the times, the NC files
 #
@@ -52,9 +55,10 @@ import companion_paths as CP                            # every lib/ folder on s
 import drawings_detail as DD     # noqa: E402
 import making as MK              # noqa: E402
 
-VERSION = 'Making 1.1 (2026-11-07)'
+VERSION = 'Making 1.2 (2026-11-12)'
 PARTS = ('bracket', 'spacer', 'tine')
-NUMBERS = dict(bracket=(661, 662, 663), spacer=(665,), tine=(667,))     # the NC programs' numbers, Fanuc's 1-9999
+NUMBERS = dict(bracket=(661, 662, 663, 664), spacer=(665,), tine=(667,))     # the NC programs' numbers, Fanuc's 1-9999
+UNDER_LUG = 13.0                   # mm from the lug's end face: half its 25, and 0.5 over, cut from each end
 NC = os.path.join(PROJECT, 'results', 'nc')
 FEED_SCALE, RAPID, TOOL_CHANGE = 100.0, 5000.0, 10.0      # % of the programmed feed, mm/min rapid, s a tool change
 _last = {}
@@ -237,15 +241,9 @@ def bracket(notes):
     b = new_setup('2 Top, bolted to a fixture plate')
     operation(b, 'face', face_mill, notes=notes)
     operation(b, 'adaptive', flat12, [('stockToLeave', '0.3 mm')], notes=notes)
-
-    def sel_root(op):
-        cp = op.parameters.itemByName('contours').value
-        sels = cp.getCurveSelections()
-        ch = sels.createNewChainSelection()
-        ch.inputGeometry = root_edges
-        cp.applyCurveSelections(sels)
-    operation(b, 'contour_new', flat12, [('maximumStepdown', '4 mm')], notes=notes)   # the walls: foot, arm, the lug's ends
-    operation(b, 'contour2d', bull, [('bottomHeight_offset', '-2.5 mm')], sel_root, notes)
+    # the walls the top can reach: the foot's, the lug's ends. The arm and its root R2.5 lie under the lug seen from
+    # here (24 inside the lug's 25 along its axis, 24 inside its 48 across), so no cutter reaches them from the top
+    operation(b, 'contour_new', flat12, [('maximumStepdown', '4 mm')], notes=notes)
     c = new_setup('3 The lug, M30 x 1.5', axis=bore[0])
 
     def sel_bore(op):
@@ -266,7 +264,34 @@ def bracket(notes):
             continue
     notes.append('the lug contour: bottom height %s (default %s), %s' % (bh.expression, default,
                                                                           lugop.parameters.itemByName('bottomHeight_offset').expression))
-    return doc, cam, [a, b, c], 'fanuc', dict(holes=len(holes), bore=len(bore), root_edges=len(root_edges),
+
+    # the arm under the lug, cut along the lug's axis, half its length from each end: roughed; its walls along the
+    # axis and their root by a 5 mm cutter, whose radius is the root's 2.5; its end wall and that root by the bull nose
+    flat5 = adsk.cam.Tool.createFromJson(flat10.toJson())
+    setp(flat5.parameters, 'tool_diameter', '5 mm', notes)
+    setp(flat5.parameters, 'tool_description', "'5mm Flat Endmill'", notes)
+
+    def half_depth(op, label):
+        bh_ = op.parameters.itemByName('bottomHeight_mode')
+        for v, extra in (("'from model top'", 0.0), ("'from surface top'", 0.0), ("'from stock top'", 3.0),
+                         ("'from top'", 3.0)):
+            try:
+                bh_.expression = v
+                setp(op.parameters, 'bottomHeight_offset', '%.1f mm' % -(UNDER_LUG + extra), notes)
+                break
+            except Exception:
+                continue
+        notes.append('%s: bottom height %s, %s' % (label, bh_.expression, op.parameters.itemByName('bottomHeight_offset').expression))
+
+    def under_lug(s, side):
+        for strategy, t, prm, what in (('adaptive', flat10, [('stockToLeave', '0.3 mm')], 'roughed'),
+                                       ('contour_new', flat5, [('maximumStepdown', '2 mm')], 'walls and root along the axis'),
+                                       ('parallel', bull, [], 'the end wall and its root')):
+            half_depth(operation(s, strategy, t, prm, notes=notes), 'under the lug from its %s end, %s' % (side, what))
+    under_lug(c, 'first')
+    d = new_setup('4 The arm under the lug, from its other end', flip=True, axis=bore[0])
+    under_lug(d, 'other')
+    return doc, cam, [a, b, c, d], 'fanuc', dict(holes=len(holes), bore=len(bore), root_edges=len(root_edges),
                                                volume=body.volume * 1000.0, material=body.material.name if body.material else None)
 
 

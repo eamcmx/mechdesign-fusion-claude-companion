@@ -44,6 +44,11 @@ FUSION CONVENTIONS:
 - The API works in cm and radians.
 - AsBuiltJoints: rigid between the plate and each shaft, revolute about z between each gear and its shaft; a Motion
   Link between the revolute joints, the opposite way, at the ratio of the teeth.
+- The companion's check, projects/helical_pair/checks/helical_pair_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(mn, z1, z2, beta, alpha_n, b,
+  herringbone), the dialog's input ids the same; the joints 'Gear 1 turns', 'Gear 2 turns'; the components 'Gear 1',
+  'Gear 2'; at module level helical(); refusals that say 'z_min = 2 cos(beta) / sin^2(alpha_t) = 14.41', 'from 5 to
+  45'.
 
 ACCEPTANCE CRITERIA:
 - A message gives m_t, alpha_t, a, b', theta for each gear, z_min, both contact ratios and a version tag.

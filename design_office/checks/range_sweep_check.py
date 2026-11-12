@@ -2,7 +2,8 @@
 # then the other machines by build(), the bag gripper twice, as Part 9 left it (bag0) and with its stops (bag); for
 # each, no interference at any state, the contacts made in motion and the closest approaches; for the bag gripper's
 # stops, each absorber touching its contact at its end of travel and nothing else; every result kept in
-# results/range_sweep.json for the chapter.
+# results/range_sweep.json for the chapter. This check sweeps the first six machines, checks/range_sweep_rest_check.py
+# the other four, so that neither run keeps Fusion busy for more than half an hour.
 import sys, importlib, json
 sys.path.insert(0, '__COMPANION__/tools')
 sys.path.insert(0, '__COMPANION__/common')
@@ -13,6 +14,7 @@ importlib.reload(fc)
 PATH = '__COMPANION__/design_office/RangeSweep/RangeSweep.py'
 OUT = '__COMPANION__/design_office/results/range_sweep.json'
 ORDER = ['wrist', 'flap', 'axle', 'robot', 'bag0', 'bag', 'clamp', 'vacuum', 'changer', 'unit']
+KEYS = ORDER[:6]        # the rest, ORDER[6:], by checks/range_sweep_rest_check.py: each half within half an hour
 
 
 def report(ns, key, out):
@@ -47,18 +49,23 @@ def report(ns, key, out):
 def run(_context):
     ns = fc.load(PATH)
     print(ns['VERSION'])
-    out = {}
-    fc.run_dialog(ns)
-    report(ns, 'wrist', out)
-    for k in ORDER[1:]:
-        print('  ' + ns['build'](k).split('\n')[0][:160])
-        fc.mark()
+    try:                                         # the other half's machines kept: the file holds all ten
+        out = json.load(open(OUT))
+    except Exception:
+        out = {}
+    for k in KEYS:
+        if k == 'wrist':
+            fc.run_dialog(ns)                    # the default machine, by the dialog, as a user runs it
+        else:
+            print('  ' + ns['build'](k).split('\n')[0][:160])
+            fc.mark()
         report(ns, k, out)
-        json.dump(out, open(OUT, 'w'), indent=1)
-    try:
-        ns['build']('crane')
-        fc.mark()
-        fc.ok(False, 'an unknown machine refused')
-    except ValueError as e:
-        fc.ok('No machine called' in str(e), 'refused: %s' % e)
+        json.dump({m: out[m] for m in ORDER if m in out}, open(OUT, 'w'), indent=1)
+    if KEYS[-1] == ORDER[-1]:
+        try:
+            ns['build']('crane')
+            fc.mark()
+            fc.ok(False, 'an unknown machine refused')
+        except ValueError as e:
+            fc.ok('No machine called' in str(e), 'refused: %s' % e)
     fc.verdict()

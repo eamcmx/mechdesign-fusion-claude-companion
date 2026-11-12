@@ -483,6 +483,9 @@ CHANGED_NUMBERS = [  # (number, as it was, as it is now)
 
 
 # ---- the vacuum gripper's sleeves: held by a foot flange and three screws (Chapter 46 left them on the plate loose) --
+# the manifold's underside stepped in along both long sides (mm in, mm up from the plate): the middle cups' flanges reach
+# 46 from the zone's middle and their inner screws' heads 47.5, under the manifold's 50; its top keeps the ejectors' 100
+MANIFOLD_STEP = (5.0, 10.0)
 SLEEVE = dict(flange_d=48.0, flange_t=5.0, n=3, pcd=38.0, d=4.0, L=12.0, At=8.78, Sp=580.0)   # ISO 4762 M4; the detail's:
 #                                     the screws' heads (7 across) clear of the sleeve's 30, the holes 2.8 from the edge
 

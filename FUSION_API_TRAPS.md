@@ -193,5 +193,12 @@ Fusion updates itself every month: when one of these stops being true, test it a
 
 - `tools/fusion_mcp.py` waits one hour for each script by default; a slower check needs `MDFC_MCP_TIMEOUT` (seconds)
   set, or the client gives up while Fusion keeps working and the result is lost.
+- A script whose client has given up goes on running in Fusion, and what it prints comes back with the answer to the
+  next request sent to the MCP server: the next check's result file then begins with the last one's lines (seen
+  12 November 2026, the range sweep's output in front of the palletizer detail's). Wait for Fusion to go quiet, or
+  restart it, before the next run, and split a check that would run longer than the client waits.
+- A control runs its whole check on a broken script, and where the check writes result files (Making's
+  `making_*.json` and its NC programs) the control writes them too, from the broken part. Run a check after its
+  controls, not before, or the chapter is set against the control's numbers.
 - A check that hangs with Fusion idle is usually waiting behind a modal dialog: Recovered Documents, or a message
   box from a script that did not replace `ui.messageBox`.

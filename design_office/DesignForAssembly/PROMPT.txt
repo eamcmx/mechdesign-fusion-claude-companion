@@ -35,6 +35,8 @@ FUSION CONVENTIONS:
 - a new design document (FusionDesignDocumentType), as RangeSweep.py makes it; lengths in mm, the API's cm inside.
 - No joints, as-built or otherwise: the bag gripper's script places its groups by transforms, and the fixings add
   none.
+- The companion's check, design_office/checks/design_for_assembly_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(which); the dialog's input ids machine.
 
 ACCEPTANCE CRITERIA:
 - A message gives the pieces, the essential ones by question, the pieces after the fixings, what was joined, removed

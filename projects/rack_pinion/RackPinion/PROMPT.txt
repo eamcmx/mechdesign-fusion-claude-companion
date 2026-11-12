@@ -27,7 +27,8 @@ FUSION CONVENTIONS:
 - Create a new Fusion design document (FusionDesignDocumentType), not a part design.
 - Components, one body each, created where they belong: Base plate (grounded), top face at z = 0; Shaft at (0, r), 8
   mm, with a collar under the pinion; Pinion on it from z = 1 to 1 + b, centre (0, r); Rack from z = 1 to 1 + b, its
-  pitch line on y = 0, teeth pointing up (+y), centred on x = 0. The rack's guide is not drawn.
+  pitch line on y = 0, teeth pointing up (+y), tooth k (from 0) centred at x = (k + 1/2) p - floor(N_r / 2) p, so
+  that a gap sits at x = 0 (an odd N_r puts one tooth more on the +x side). The rack's guide is not drawn.
 - The pinion tooth outline is one closed polyline of sketch lines that share their SketchPoints (no splines); the
   rack's whole outline, teeth and body, is one closed polyline of sketch lines sharing their points.
 - The API works in cm and radians.
@@ -35,6 +36,10 @@ FUSION CONVENTIONS:
   along x between the rack and the plate, limited to the travel (switch each limit on before setting its value: a
   value set while its limit is off is rounded to 0.001 mm). A Motion Link: 360 deg of the pinion for pi m z of the
   rack; the pinion turning anticlockwise (seen from above) moves the rack towards +x.
+- The companion's check, projects/rack_pinion/checks/rack_pinion_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(m, z, n_r, alpha, b), the dialog's input
+  ids the same; the joints 'Pinion turns', 'Rack slides'; the components 'Pinion', 'Rack'; at module level
+  rack_pinion(); refusals that say 'undercut', 'cannot travel'.
 
 ACCEPTANCE CRITERIA:
 - A message gives r, the travel per turn, the contact ratio, the travel limits and a version tag.

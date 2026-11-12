@@ -42,6 +42,8 @@ FUSION CONVENTIONS:
   robot, the tool changer, the three grippers and the compliance unit have no joints, as-built or otherwise, and
   place their groups by transforms. The weighing adds no joint and moves nothing but the robot, set to q = 0 by its
   own set_pose() for its moving bodies.
+- The companion's check, design_office/checks/mass_properties_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(key), the dialog's input ids the same.
 
 ACCEPTANCE CRITERIA:
 - A message gives the machine, its parts, its mass and centre, its groups, the machine's own first line, and a

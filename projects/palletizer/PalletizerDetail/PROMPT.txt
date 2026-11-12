@@ -36,7 +36,9 @@ HARD CONSTRAINTS:
   before the census.
 - The vacuum gripper: the plate held by ISO 4762 M6 through bolts, a washer under each head and under each nut, the
   plate's holes 6.6 through; each cup's sleeve on a foot flange 48 across and 5 thick with three ISO 4762 M4 x 12
-  on a circle of 38, tapped 7 mm into the plate.
+  on a circle of 38, tapped 7 mm into the plate; each manifold's underside stepped 5 mm in along both long sides,
+  10 mm up from the plate (projects/palletizer/lib/palletizer_detail.py's MANIFOLD_STEP), over the middle cups'
+  flanges and their screws' heads, its top face left whole for the ejectors.
 - By hand after the census: H7 in the rods' eyes, H7 in the floating bosses, the jaws' tubes, stubs and welds in 1020,
   the tube's zones s6 Ra 0.8 in the boss and g6 Ra 0.4 below, the stubs' seats marked ground after welding, and the
   clearance classes and the HIWIN codes in the descriptions.
@@ -50,6 +52,9 @@ FUSION CONVENTIONS:
 - A face is split with splitFaceFeatures.createInput(an ObjectCollection of the faces, a construction plane, True):
   the faces go in a collection even when there is only one.
 - Lengths in mm, the API's cm inside.
+- The companion's check, projects/palletizer/checks/palletizer_detail_check.py, drives the script as
+  CHECK_INTERFACE.md says (give it to the model for its names, never for a design fact): build(key, weld), the
+  dialog's input ids the same; _last holding 'mod', 'weld'; refusals that say 'under'.
 
 ACCEPTANCE CRITERIA:
 - A message names the assembly, the faces given by hand and the descriptions, and a version tag.

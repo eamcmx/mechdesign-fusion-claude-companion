@@ -12,7 +12,7 @@ DERIVED (computed from the inputs, never typed):
 - disc lobes N_d = N_p - 1; ratio -N_d (the output turns the other way, 1 / N_d of the input)
 - the disc's outline: the curve the centre of one ring pin traces in the disc's frame while the input turns N_d
   times (the disc's centre at e (cos theta, sin theta), the disc turned by -theta / N_d), offset towards the
-  disc's centre by the pin radius plus a gap of 0.1 mm; 36 points per input turn, one closed polyline
+  disc's centre by the pin radius plus a gap of 0.1 mm; 72 points per input turn, one closed polyline
 - the outline's radius then runs from R - r_pin - 0.1 - e to R - r_pin - 0.1 + e
 - the disc turns -theta / N_d absolutely, -theta (N_d + 1) / N_d relative to the eccentric
 - output: 6 pins of 5 mm on a circle of radius 17 mm; their holes in the disc 5 + 2 e + 0.2 mm across
@@ -22,6 +22,9 @@ HARD CONSTRAINTS:
 - N_p from 6 to 40, or refuse.
 - The pins must not overlap on their circle: 2 R sin(pi / N_p) > pin diameter + 1 mm, or refuse.
 - The curve of the pin's centre must not loop: K1 = e N_p / R must be less than 1, or refuse giving K1.
+- The drawn outline's straight chords cut across the valleys of the curve: measure how near they come to the pin's
+  path (sampled on and between the outline's points, less the pin's radius) and refuse an outline that comes within
+  half the gap, 0.05 mm, saying how near.
 - At theta = 0 the disc's centre is at (e, 0) and a lobe valley faces ring pin 0 at (R, 0).
 
 FUSION CONVENTIONS:
@@ -34,13 +37,19 @@ FUSION CONVENTIONS:
 - AsBuiltJoints: Input revolute about z on Housing at the origin; Disc revolute about z on Input at the eccentric's
   centre; Output revolute about z on Housing at the origin. Motion Links: Input to Disc, N_d x 360 deg of the input
   for (N_d + 1) x 360 deg of the disc, reversed; Input to Output, N_d x 360 deg for 360 deg, reversed.
+- The companion's check, projects/cycloidal_drive/checks/cycloidal_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(n_p, R, d_pin, e, t), the dialog's input
+  ids the same; the joint 'Input turns'; the components 'Disc', 'Housing', 'Output'; at module level cycloid(),
+  disc_outline(), least_gap(); refusals that say 'overlap', 'K1 = e N_p / R = 1.100', 'valleys are too sharp'.
 
 ACCEPTANCE CRITERIA:
 - A message gives N_d, the ratio, K1, the outline's smallest and largest radius, the gap and a version tag.
-- Defaults: N_d = 10, ratio -10, K1 = 0.550, outline from 25.4 to 28.4 mm.
+- Defaults: N_d = 10, ratio -10, K1 = 0.550, outline from 25.4 to 28.4 mm, the chords at worst 0.095 mm from a pin;
+  Fusion's minimum distance from the disc to the housing's pins the same, within 0.005 mm.
 - The input stepped one turn, 30 deg at a time: the output turns -3 deg per step, -36 deg in all; the disc's
   centre stays e from the axis.
 - No interference at any of the 12 steps.
-- Refused: N_p = 40 with R = 30 (pins overlap: 2 R sin(pi / 40) = 4.71 mm); e = 3 (K1 = 1.100).
+- Refused: N_p = 40 with R = 30 (pins overlap: 2 R sin(pi / 40) = 4.71 mm); e = 3 (K1 = 1.100); e = 2.5 (the
+  chords 0.105 mm into a pin).
 
 Give me one Python file and its .manifest.

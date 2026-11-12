@@ -1,42 +1,45 @@
 # controls/making_square_cutter
-# Autodesk Fusion 2706.1.17, run 2026-11-10 22:45, 789 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 19:51, 720 s
 
-Making 1.1 (2026-11-07)
+Making 1.2 (2026-11-12)
   ok   Run opens the dialog
-Making bracket: 3 setups, 27.4 min of cutting.
+Making bracket: 4 setups, 42.5 min of cutting.
 1 Bolting face and holes: Face1 ok, Drill1 ok; 47 s; 661.NC (61 lines)
-2 Top, bolted to a fixture plate: Face2 ok, 3D Adaptive Roughing1 ok, 3D Contour1 ok, 2D Contour1 ok; 1142 s; 662.NC (10429 lines)
-3 The lug, M30 x 1.5: Bore1 ok, Thread1 ok, 3D Contour2 ok; 453 s; 663.NC (711 lines)
-notes: the lug contour: bottom height 'from surface top' (default 'from surface bottom'), -25.5 mm
+2 Top, bolted to a fixture plate: Face2 ok, 3D Adaptive Roughing1 ok, 3D Contour1 ok; 1104 s; 662.NC (10392 lines)
+3 The lug, M30 x 1.5: Bore1 ok, Thread1 ok, 3D Contour2 ok, 3D Adaptive Roughing2 ok, 3D Contour3 ok, Parallel1 ok; 916 s; 663.NC (7002 lines)
+4 The arm under the lug, from its other end: 3D Adaptive Roughing3 ok, 3D Contour4 ok, Parallel2 ok; 482 s; 664.NC (6158 lines)
+notes: the lug contour: bottom height 'from surface top' (default 'from surface bottom'), -25.5 mm; under the lug from its first end, roughed: bottom height 'from surface top', -13.0 mm; under the lug from its first end, walls and root along the axis: bottom height 'from surface top', -13.0 mm; under the lug from its first end, the end wall and its root: bottom height 'from surface top', -13.0 mm; under the lug from its other end, roughed: bottom height 'from surface top', -13.0 mm; under the lug from its other end, walls and root along the axis: bottom height 'from surface top', -13.0 mm; under the lug from its other end, the end wall and its root: bottom height 'from surface top', -13.0 mm
 
-[Making 1.1 (2026-11-07)]
-  OK pressed, built in 43 s
+[Making 1.2 (2026-11-12)]
+  OK pressed, built in 83 s
   ok   a new design opened
   ok   the parts made: bracket, spacer, tine
   ok   the bracket: 99399.2 mm3 against 99399.2 by hand (the arm turned); 2 holes, the bore, 4 root edges found
   ok   the spacer: 67.80 mm long as drawn
   ok   bracket / 1 Bolting face and holes: Face1 (50mm Face Mill), Drill1 ()
   ok   bracket / 1 Bolting face and holes: 47 s, 661.NC, 61 lines, tools T1 D=50. CR=0. - ZMIN=87. - FACE MILL; T2 D=9. CR=0. TAPER=118DEG - ZMIN=3. - DRILL
-  ok   bracket / 2 Top, bolted to a fixture plate: Face2 (50mm Face Mill), 3D Adaptive Roughing1 (12mm Flat Endmill), 3D Contour1 (12mm Flat Endmill), 2D Contour1 (10mm Bullnose R2.5)
-  ok   bracket / 2 Top, bolted to a fixture plate: 1142 s, 662.NC, 10429 lines, tools T1 D=50. CR=0. - ZMIN=-3. - FACE MILL; T3 D=12. CR=0. - ZMIN=-86.7 - FLAT END MILL; T4 D=10. CR=1. - ZMIN=-75. - BULLNOSE END MILL
-  ok   bracket / 3 The lug, M30 x 1.5: Bore1 (10mm Flat Endmill), Thread1 (M10-1.5 Thread Mill), 3D Contour2 (12mm Flat Endmill)
-  ok   bracket / 3 The lug, M30 x 1.5: 453 s, 663.NC, 711 lines, tools T3 D=12. CR=0. - ZMIN=-28.5 - FLAT END MILL; T5 D=10. CR=0. - ZMIN=-64.997 - FLAT END MILL; T6 D=7.62 CR=0. - ZMIN=-65.023 - THREAD MILL
+  ok   bracket / 2 Top, bolted to a fixture plate: Face2 (50mm Face Mill), 3D Adaptive Roughing1 (12mm Flat Endmill), 3D Contour1 (12mm Flat Endmill)
+  ok   bracket / 2 Top, bolted to a fixture plate: 1104 s, 662.NC, 10392 lines, tools T1 D=50. CR=0. - ZMIN=-3. - FACE MILL; T3 D=12. CR=0. - ZMIN=-86.7 - FLAT END MILL
+  ok   bracket / 3 The lug, M30 x 1.5: Bore1 (10mm Flat Endmill), Thread1 (M10-1.5 Thread Mill), 3D Contour2 (12mm Flat Endmill), 3D Adaptive Roughing2 (10mm Flat Endmill), 3D Contour3 (5mm Flat Endmill), Parallel1 (10mm Bullnose R2.5)
+  ok   bracket / 3 The lug, M30 x 1.5: 916 s, 663.NC, 7002 lines, tools T3 D=12. CR=0. - ZMIN=-28.5 - FLAT END MILL; T4 D=10. CR=0. - ZMIN=-64.997 - FLAT END MILL; T5 D=7.62 CR=0. - ZMIN=-65.023 - THREAD MILL; T6 D=5. CR=0. - ZMIN=-16. - FLAT END MILL; T7 D=10. CR=1. - ZMIN=-16.293 - BULLNOSE END MILL
+  ok   bracket / 4 The arm under the lug, from its other end: 3D Adaptive Roughing3 (10mm Flat Endmill), 3D Contour4 (5mm Flat Endmill), Parallel2 (10mm Bullnose R2.5)
+  ok   bracket / 4 The arm under the lug, from its other end: 482 s, 664.NC, 6158 lines, tools T4 D=10. CR=0. - ZMIN=88.995 - FLAT END MILL; T6 D=5. CR=0. - ZMIN=88.995 - FLAT END MILL; T7 D=10. CR=1. - ZMIN=88.702 - BULLNOSE END MILL
   note spacer / Profile Finishing1: Lead-Out has been modified due to a gouge with the remaining stock
   ok   spacer / Turned from 60 x 40 tube: Face1 (CNMT Right Hand), Profile Roughing1 (CNMT Right Hand), Profile Finishing1 (VNMT Right Hand) WARNING, Profile Roughing2 (ID Boring), Part1 (OD Grooving)
   ok   spacer / Turned from 60 x 40 tube: 70 s, 665.NC, 122 lines, tools T0101; T0202; T0303; T0404
   ok   tine / The sixteen on one plate: 2D Profile1 ()
   ok   tine / The sixteen on one plate: 1021 s, 667.NC, 323 lines, tools Laser cutting
-  FAIL the arm's root: a 2D contour with 10mm Bullnose R2.5, CR=2.5 in the program
+  FAIL the arm's root from both the lug's ends, none from the top: a 5 mm cutter (its radius the root's 2.5) and the bull nose R2.5 in setups 3 and 4
   ok   the spacer faced 0.40 long and parted 0.40 long: turned to 68.6 for grinding to 67.78-68.46
-  ok   the bracket: 27.4 min of cutting in 3 setups; the spacer 1.2 min
+  ok   the bracket: 42.5 min of cutting in 4 setups; the spacer 1.2 min
   ok   the tine from the gripper: 126250.0 mm3 sharp (by hand 126250.0), 126464.6 with the corner R10 (by hand 126464.6), 10 thick, Steel AISI 1020 107 HR
   ok   its inside corner: one edge found, rounded R10.0; outline 1055.708 mm (by hand 1055.708); the round starts 260 from the jaw's middle, 10 clear of the bag's side
   ok   nested: 16 of 16 on the 2000 x 1000 plate, in 472.6 x 953.3 (turned 0, 90, 180, 270 deg); 44.9 % of that rectangle is tine, 10.1 % of the plate (Fusion 10.1 %)
   ok   cut: 16 pierces, F1000, 16975 mm cut (the outlines 16891 by hand, the rest lead-ins), 1021 s in Fusion against 1013 s for the outlines alone at the sample laser's 1000 mm/min; the pierces' 1 s each come on top
-  ok   the census: 168 made kinds measured, as the bill has them, 330 pieces, 3934.4 kg
-  ok   by route: cast 3; gear 10; machined 135; moulded 2; the aircraft's 4; welded 14; by shape: 3D 30; milled 2.5D 21; plate profile 29; turned 65; turned, milled 22; weldment 1
+  ok   the census: 168 made kinds measured, as the bill has them, 330 pieces, 3934.1 kg
+  ok   by route: cast 3; gear 10; machined 135; moulded 2; the aircraft's 4; welded 14; by shape: 3D 30; milled 2.5D 22; plate profile 28; turned 65; turned, milled 22; weldment 1
   ok   known answers: the spacer turned, the tine a plate profile 10 thick, the turned bracket 3D, the jaw a weldment measured on 4 (its tube, two stubs and welds), the carrier cast, the crown wheel a gear
   ok   refused: No part called crane: Chapter 66 makes bracket, spacer, tine.
-  ok   a message gives the version tag Making 1.1 (2026-11-07)
+  ok   a message gives the version tag Making 1.2 (2026-11-12)
 1 FAILED
 CONTROL: the root cut with the library's 1 mm corner; the root line above MUST fail, and it alone

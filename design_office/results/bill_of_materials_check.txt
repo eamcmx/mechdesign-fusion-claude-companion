@@ -1,28 +1,28 @@
 # bill_of_materials_check
-# Autodesk Fusion 2706.1.17, run 2026-11-10 19:27, 741 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 17:57, 932 s
 
 BillOfMaterials 1.0 (2026-11-04)
   ok   Run opens the dialog
 Bills of materials: 9 machines, results/bom/.
 wrist    made 22 kinds,  31 pieces; bought 18 kinds,  63 pieces (11 with the maker's mass); 7.36 kg as drawn, 5.78 kg with the makers' masses
-flap     made 25 kinds,  33 pieces; bought 26 kinds,  53 pieces (14 with the maker's mass); 339.82 kg as drawn, 340.35 kg with the makers' masses
-axle     made 18 kinds,  30 pieces; bought 18 kinds,  68 pieces (8 with the maker's mass); 162.65 kg as drawn, 163.57 kg with the makers' masses
+flap     made 25 kinds,  33 pieces; bought 26 kinds,  53 pieces (14 with the maker's mass); 339.80 kg as drawn, 340.33 kg with the makers' masses
+axle     made 18 kinds,  30 pieces; bought 18 kinds,  68 pieces (8 with the maker's mass); 162.56 kg as drawn, 163.48 kg with the makers' masses
 robot    made 61 kinds,  78 pieces; bought 18 kinds,  34 pieces (14 with the maker's mass); 3609.91 kg as drawn, 3557.95 kg with the makers' masses
 changer  made  7 kinds,  12 pieces; bought  3 kinds,   9 pieces (1 with the maker's mass); 28.93 kg as drawn, 28.89 kg with the makers' masses
 clamp    made  8 kinds,  11 pieces; bought 13 kinds,  41 pieces (4 with the maker's mass); 107.78 kg as drawn, 102.51 kg with the makers' masses
-vacuum   made  6 kinds,  82 pieces; bought 10 kinds, 267 pieces (8 with the maker's mass); 58.06 kg as drawn, 57.18 kg with the makers' masses
-bag      made 15 kinds,  41 pieces; bought 15 kinds,  73 pieces (12 with the maker's mass); 96.18 kg as drawn, 94.11 kg with the makers' masses
+vacuum   made  6 kinds,  82 pieces; bought 10 kinds, 267 pieces (8 with the maker's mass); 57.74 kg as drawn, 56.85 kg with the makers' masses
+bag      made 15 kinds,  41 pieces; bought 15 kinds,  73 pieces (12 with the maker's mass); 96.31 kg as drawn, 94.23 kg with the makers' masses
 unit     made  6 kinds,  12 pieces; bought 10 kinds,  41 pieces (6 with the maker's mass); 19.84 kg as drawn, 18.24 kg with the makers' masses
 
 [BillOfMaterials 1.0 (2026-11-04)]
-  OK pressed, built in 740 s
+  OK pressed, built in 931 s
   ok   a new design opened
   ok   nine lists, each in results/bom: wrist.csv, flap.csv, axle.csv, robot.csv, changer.csv, clamp.csv, vacuum.csv, bag.csv, unit.csv
-  ok   wrist: 97 occurrences, the lines and 0 loads 7.3575 kg, Fusion's design 7.3575 kg
+  ok   wrist: 97 occurrences, the lines and 0 loads 7.3562 kg, Fusion's design 7.3562 kg
   ok   wrist: every line numbered, no superseded number, every component read back ([] [] [])
-  ok   flap: 87 occurrences, the lines and 0 loads 339.8169 kg, Fusion's design 339.8169 kg
+  ok   flap: 87 occurrences, the lines and 0 loads 339.7974 kg, Fusion's design 339.7974 kg
   ok   flap: every line numbered, no superseded number, every component read back ([] [] [])
-  ok   axle: 106 occurrences, the lines and 0 loads 162.6472 kg, Fusion's design 162.6472 kg
+  ok   axle: 106 occurrences, the lines and 0 loads 162.5631 kg, Fusion's design 162.5631 kg
   ok   axle: every line numbered, no superseded number, every component read back ([] [] [])
   ok   robot: 118 occurrences, the lines and 0 loads 3609.9058 kg, Fusion's design 3609.9058 kg
   ok   robot: every line numbered, no superseded number, every component read back ([] [] [])
@@ -30,9 +30,9 @@ unit     made  6 kinds,  12 pieces; bought 10 kinds,  41 pieces (6 with the make
   ok   changer: every line numbered, no superseded number, every component read back ([] [] [])
   ok   clamp: 59 occurrences, the lines and 4 loads 286.3414 kg, Fusion's design 286.3414 kg
   ok   clamp: every line numbered, no superseded number, every component read back ([] [] [])
-  ok   vacuum: 355 occurrences, the lines and 6 loads 325.9038 kg, Fusion's design 325.9038 kg
+  ok   vacuum: 355 occurrences, the lines and 6 loads 325.5798 kg, Fusion's design 325.5798 kg
   ok   vacuum: every line numbered, no superseded number, every component read back ([] [] [])
-  ok   bag: 138 occurrences, the lines and 10 loads 323.4988 kg, Fusion's design 323.4988 kg
+  ok   bag: 138 occurrences, the lines and 10 loads 323.6254 kg, Fusion's design 323.6254 kg
   ok   bag: every line numbered, no superseded number, every component read back ([] [] [])
   ok   unit: 53 occurrences, the lines and 0 loads 19.8417 kg, Fusion's design 19.8417 kg
   ok   unit: every line numbered, no superseded number, every component read back ([] [] [])

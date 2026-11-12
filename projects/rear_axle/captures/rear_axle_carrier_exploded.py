@@ -99,7 +99,7 @@ ITEMS = ['Carrier casting', 'Bearing cap C1', 'Adjuster C1', 'Pinion shaft z12',
          'Cross', 'Spider 1', 'Side gear L', 'Spider washer 1', 'Side gear washer L', 'Pinion depth shim', 'Spacer',
          'Companion flange', 'Washer', 'Pinion nut M30', 'Bearing A 32309 cone', 'Bearing A 32309 cup',
          'Bearing B 32308 cone', 'Bearing B 32308 cup', 'Bearing C2 32213 cone', 'Bearing C2 32213 cup',
-         'Pinion seal 60x85x10', 'Crown wheel bolt M12x35 3', 'Cap bolt M12x90 C1 upper']
+         'Pinion seal 60x95x10', 'Crown wheel bolt M12x35 3', 'Cap bolt M12x90 C1 upper']
 
 
 def world_nodes(o):

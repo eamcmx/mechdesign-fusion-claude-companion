@@ -360,8 +360,8 @@ def cw_thickness(dm_cw, block=CW_BLOCK):
 
 def with_counterweight(dm_cw, r_cw=0.60, base=None, y_crank=640.0, block=CW_BLOCK):
     """The bodies (Chapter 41's, or base) with the crank moved out to y_crank (mm), clear of the J3 cheek and the
-    base's flange, and a steel block of dm_cw kg bolted to its outer face, 5 mm out from the web (60 mm thick), its
-    centre r_cw (m) behind the shoulder on the crank's line."""
+    base's flange, and a steel block of dm_cw kg bolted to the web's outer face (the web 60 mm thick), its centre
+    r_cw (m) behind the shoulder on the crank's line."""
     out = []
     for bd in (base if base is not None else P.BODIES):
         if bd['name'] == 'crank and counterweight':
@@ -370,7 +370,7 @@ def with_counterweight(dm_cw, r_cw=0.60, base=None, y_crank=640.0, block=CW_BLOC
     if dm_cw > 0:
         a, h = block
         t = cw_thickness(dm_cw, block)
-        out.append(dict(name='counterweight', m=dm_cw, move='q3@A', c=-r_cw * 1000.0, y=y_crank + 35.0 + t * 500.0,
+        out.append(dict(name='counterweight', m=dm_cw, move='q3@A', c=-r_cw * 1000.0, y=y_crank + 30.0 + t * 500.0,
                         Ia=dm_cw * (h * h + t * t) / 12, It=dm_cw * (a * a + h * h) / 12, In=dm_cw * (a * a + t * t) / 12))
     return out
 

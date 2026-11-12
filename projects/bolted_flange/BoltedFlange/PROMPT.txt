@@ -36,6 +36,10 @@ FUSION CONVENTIONS:
   360 * (i - 1) / N degrees. Each hexagon is one closed polyline with shared sketch points.
 - The API works in cm: convert every mm input.
 - Joints, As-built only, all rigid: Plate 2, each Bolt, and each Nut to Plate 1.
+- The companion's check, projects/bolted_flange/checks/bolted_flange_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(size, N, BCD, t1, t2, F_ext), the dialog's
+  input ids the same; at module level joint(); refusals that say 'no room for a socket', 'n0 = Fi / (P (1 - C)) =
+  0.977'.
 
 ACCEPTANCE CRITERIA:
 - A message gives At, Fp, Fi, T, kb, km, C, P, Fb, Fm, np, n0 and a version tag.

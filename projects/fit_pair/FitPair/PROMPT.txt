@@ -36,6 +36,10 @@ FUSION CONVENTIONS:
   with the hole along z through it; Pin, a cylinder along z from z = -L/2 - 5 to L/2 + 5. Create both where they belong.
 - The API works in cm: convert every mm input, and micrometres to mm (1 um = 0.001 mm).
 - Join with an As-built Joint: revolute about z if the pair is a clearance fit at the chosen condition, rigid otherwise.
+- The companion's check, projects/fit_pair/checks/fit_pair_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(D, L, shaft, condition); the dialog's input ids
+  D, hole, shaft, condition, L; the components 'Block', 'Pin'; at module level limits; refusals that say 'outside the
+  ISO 286 table', 'not in the table'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the four limits, the largest and smallest clearance in micrometres, the kind of fit and a version tag.

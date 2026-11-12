@@ -45,7 +45,7 @@ importlib.reload(pdr)
 importlib.reload(pl)
 importlib.reload(mp)
 
-VERSION = 'PalletizerRobot 1.0 (2026-11-02)'
+VERSION = 'PalletizerRobot 1.1 (2026-11-12)'
 CM = 0.1
 P3 = adsk.core.Point3D.create
 V3 = adsk.core.Vector3D.create

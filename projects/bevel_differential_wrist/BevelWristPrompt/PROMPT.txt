@@ -55,6 +55,9 @@ FUSION CONVENTIONS:
 - Fusion has no tooth contact: the meshes are Motion Links, all 1:1, from "Roll" to each gear on the yoke. About +Y,
   relative to the yoke, side gear L turns +roll and side gear R −roll; about +Z the idler turns −roll. Set Reverse
   from these signs and the joint signs.
+- The companion's check, projects/bevel_differential_wrist/checks/bevelwrist_check.py, drives the script as
+  CHECK_INTERFACE.md says (give it to the model for its names, never for a design fact): build(m, z, alpha, b,
+  backlash, d), the dialog's input ids the same.
 
 ACCEPTANCE CRITERIA:
 - A message at the end gives z, m, R and a version tag.

@@ -21,8 +21,8 @@ HARD CONSTRAINTS:
 - The roll shaft bored 5 mm through; the slip ring's rotor on its lower end, its stator under the carrier, held
   from turning by a pin in a bracket screwed to the carrier.
 - On the left (+y) side only: the trunnion longer, a spacer, a stop disc keyed to it with a lug on +z, an end
-  washer and screw; the fixed cap replaced by a stop cap with four countersunk screws, a block on -z and two buffer
-  pads.
+  washer and screw, the trunnion's end 0.5 mm inside the disc's face so that the washer clamps the stack; the fixed
+  cap replaced by a stop cap with four countersunk screws, a block on -z and two buffer pads.
 - Nothing touches anything else at rest, at the eight poses of pitch and roll (30, 0), (0, 45), (-40, 70), (75, -123),
   (-110, 200), (25, 30), (-60, 150) and (120, -90) deg, and over +-127 deg of pitch with the roll turned.
 
@@ -33,6 +33,9 @@ FUSION CONVENTIONS:
   move with, with the joints at rest; the As-built joints and motion links are WristDifferential.py's; the pitch's
   limits opened to +-140 deg so that the check can reach the stops.
 - Every body keeps the material it had before the deletions.
+- The companion's check, projects/robotic_wrist/checks/wrist_integration_check.py, drives the script as
+  CHECK_INTERFACE.md says (give it to the model for its names, never for a design fact): build(contact), the dialog's
+  input ids the same; at module level design(), parts_list(), pose; refusals that say 'brakes', 'too short'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the stop's numbers, the bored shaft's frequency, the play, and the parts list with a version tag.

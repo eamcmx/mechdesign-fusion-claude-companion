@@ -1,17 +1,17 @@
 # axle_detail_check
-# Autodesk Fusion 2706.1.17, run 2026-11-10 19:13, 191 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 17:00, 142 s
 
 AxleDetail 1.0 (2026-11-03)
   ok   Run opens the dialog
 Rear axle in detail: the nose's middle bore 88 at cup A and 80 at cup B, the flange's hub 50 where it meets cone B, the case's shoulders 75, the adjusters 106 across at the cups; the spacer 67.8 mm from cone to cone; the cups' bores 100, 90 and 120.
 Splines 8 x 36 x 40 x 7 (ISO 14), torsion factor 1.60; adjusters M120 x 2.0, minor 117.55, 8 threads.
 By hand: 198 faces, 192 of them new.
-axle: 30 made parts given their materials (none not in Fusion's library); the made parts weigh 153.19 kg, 153.19 kg with Fusion's generic materials; faces given a class and a roughness: 18 bearing seat, 4 located, 16 sliding.
+axle: 30 made parts given their materials (none not in Fusion's library); the made parts weigh 153.09 kg, 153.09 kg with Fusion's generic materials; faces given a class and a roughness: 18 bearing seat, 4 located, 16 sliding.
 
 [AxleDetail 1.0 (2026-11-03)]
-  OK pressed, built in 123 s
+  OK pressed, built in 78 s
   ok   a new design opened
-  ok   the cups' bores 100, 90 and 120 across, none 0.1 over: the casting's radii [40.0, 42.6, 44.0, 45.0, 50.0, 60.0]
+  ok   the cups' bores 100, 90 and 120 across, none 0.1 over: the casting's radii [40.0, 44.0, 45.0, 47.6, 50.0, 60.0]
   ok   the caps' bores 120
   ok   the census's cup seats touching, H7, on six pairs of cup and bore (10 records, the threads' faces beside the cups among them): [('Bearing A 32309 cup', 'Carrier casting'), ('Bearing B 32308 cup', 'Carrier casting'), ('Bearing C1 32213 cup', 'Bearing cap C1'), ('Bearing C1 32213 cup', 'Carrier casting'), ('Bearing C2 32213 cup', 'Bearing cap C2'), ('Bearing C2 32213 cup', 'Carrier casting')]
   ok   the nose's middle bore 88 at cup A and 80 at cup B, none 93

@@ -24,7 +24,7 @@ MOVES = {                        # mm in the actuator's frame: x along the span,
     'Trunnion R': (45, 0, 0), 'Trunnion L': (-45, 0, 0),
 }
 ITEMS = ['Gear cover', 'Screw gear z54', 'Idler gear z30', 'Pinion z18', 'Actuator housing', 'Motor unit',
-         'Trunnion R', 'Ring nut M66x1.5', 'Bearing BSD 2562 CGA 1', 'Ball screw 32x10', 'Ball nut R32-10T4-RSI',
+         'Trunnion R', 'Ring nut M60x1.5', 'Bearing BSD 2562 CGA 1', 'Ball screw 32x10', 'Ball nut R32-10T4-RSI',
          'Piston rod', 'Rod end SI 20 ES']
 
 

@@ -54,6 +54,11 @@ FUSION CONVENTIONS:
 - The API works in cm: convert every mm input.
 - Joints, As-built only: rigid for Rod, Pin and Spring to Base and for Retaining ring to Rod; a slider along z
   for Sleeve on Rod, limited from -stroke to 0.
+- The companion's check, projects/spring_plunger/checks/spring_plunger_check.py, drives the script as
+  CHECK_INTERFACE.md says (give it to the model for its names, never for a design fact): build(dr, d, D, Nt, L0, L1,
+  stroke, dp), the dialog's input ids the same; the joint 'Sleeve slides'; the components 'Base', 'Retaining ring',
+  'Sleeve', 'Spring'; at module level spring(); refusals that say 'xi = F_s / F2 - 1 = 0.050', 'C = D / d = 13.3',
+  'does not clear'.
 
 ACCEPTANCE CRITERIA:
 - A message gives C, K_B, N_a, L_s, k, F1, F2, F_s, tau at F2 and at solid, S_sy, n2, n_s, xi, tau_p and a

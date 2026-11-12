@@ -43,6 +43,10 @@ FUSION CONVENTIONS:
 - Create every component where it belongs; never move one afterwards. The API works in cm: convert every mm input.
 - Joints, As-built only: the Shaft turns on the Bearing block about z; the Key and the Hub are rigid to the Shaft
   (the key locks the hub to the shaft, so they turn together).
+- The companion's check, projects/keyed_shaft/checks/keyed_shaft_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(D, L_shaft, L_hub, t_wall, L_key, T,
+  tau_allow, sigma_allow), the dialog's input ids the same; the joint 'Shaft turns'; the components 'Bearing block',
+  'Hub', 'Key'; refusals that say 'longer than the hub', 'outside the DIN 6885 table', 'crushing stress 222.2 MPa'.
 
 ACCEPTANCE CRITERIA:
 - A message gives b, h, t1, t2, the hub's outside diameter, the three stresses and a version tag.

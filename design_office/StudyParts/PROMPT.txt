@@ -30,6 +30,9 @@ FUSION CONVENTIONS:
 - a new design document (FusionDesignDocumentType), parametric, the body made from temporary bodies in a base feature
   and the fillets as fillet features on its edges; no joints and no as-built joints, the part is one body; lengths
   in mm, the API's cm inside.
+- The companion's check, design_office/checks/study_parts_check.py, drives the script as CHECK_INTERFACE.md says (give
+  it to the model for its names, never for a design fact): build(which); the dialog's input ids part; at module level
+  PARTS.
 
 ACCEPTANCE CRITERIA:
 - A message gives the part, its volume, its material, its faces, its mass, the faces to pick found, and a version tag.

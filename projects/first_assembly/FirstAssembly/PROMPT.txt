@@ -28,6 +28,10 @@ FUSION CONVENTIONS:
 - Draw the shaft in its own component at its own origin; the API works in cm, so convert every mm input.
 - Join with an As-built Joint (not a Joint): revolute, the Shaft turning on the Block about z through the shaft's
   centre.
+- The companion's check, projects/first_assembly/checks/first_assembly_check.py, drives the script as
+  CHECK_INTERFACE.md says (give it to the model for its names, never for a design fact): build(L_b, W_b, H_b, d, L_s,
+  x, y), the dialog's input ids the same; the joint 'Shaft turns'; the components 'Block', 'Shaft'; refusals that say
+  'Only 2.9 mm', 'longer than the block'.
 
 ACCEPTANCE CRITERIA:
 - A message at the end gives the shaft's position, the two volumes and a version tag.

@@ -1,5 +1,5 @@
 # compliance_unit_check
-# Autodesk Fusion 2706.1.17, run 2026-11-10 19:36, 18 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 17:13, 42 s
 
 ComplianceUnit 1.2 (2026-11-03)
   ok   Run opens the dialog
@@ -8,7 +8,7 @@ Compliance unit for the bag gripper: 270 mm tall, a stroke of 30 mm on two HGR25
 Parts: 53 components; 4 Block HGH25CA, 6 Cap screw M10x25, 8 Cap screw M6x20, 8 Cap screw M8x30, 1 Carriage, 1 Dowel pin 10x17, 1 Housing, 1 O-ring 20x2.5, 3 Plug carriage, 3 Plug housing, 2 Rail HGR25, 1 Sensor M12, 1 Sensor bracket, 4 Spring, 4 Spring seat, 4 Stop block, 1 Tube 20x16.
 
 [ComplianceUnit 1.2 (2026-11-03)]
-  OK pressed, built in 11 s
+  OK pressed, built in 12 s
   ok   a new design opened
   parts: 53 components, 17 kinds
   Block HGH25CA 4, Cap screw M10x25 6, Cap screw M6x20 8, Cap screw M8x30 8, Carriage 1, Dowel pin 10x17 1, Housing 1, O-ring 20x2.5 1, Plug carriage 3, Plug housing 3, Rail HGR25 2, Sensor M12 1, Sensor bracket 1, Spring 4, Spring seat 4, Stop block 4, Tube 20x16 1

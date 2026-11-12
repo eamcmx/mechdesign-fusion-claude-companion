@@ -1,5 +1,5 @@
 # flap_system_check
-# Autodesk Fusion 2706.1.17, run 2026-11-10 19:42, 56 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 16:29, 50 s
 
 FlapSystem 1.0 (2026-11-02)
   ok   at 40 deg and the ultimate: the push 20848.4 N and each hinge's reaction 13956.0 N worked again 
@@ -7,13 +7,13 @@ FlapSystem 1.0 (2026-11-02)
 Flap system built: the actuator on the spar's fitting, its rod end on the horn's pin, the flap on two hinges.
 At 40 deg and the ultimate: hinges 13956 N each, horn 144.1 MPa (factor 3.76), horn pin 228.3 MPa, brackets 22.3 MPa, fitting lugs 43.4 MPa.
 
-Parts: 85 components; 1 Actuator housing, 1 Ball nut R32-10T4-RSI, 1 Ball screw 32x10, 2 Bearing 6201, 2 Bearing BSD 2562 CGA, 2 Bearing GE 20 ES fitting, 2 Bearing GE 20 ES hinge, 4 Bracket bolt M8x25, 4 Bracket nut M8, 6 Cover screw M5x16, 1 Encoder, 1 Encoder pinion z26, 1 Encoder shaft, 1 End bolt M8x20, 1 End stop, 4 Fitting bolt M8x35, 4 Fitting nut M8, 1 Flap panel, 1 Gear cover, 1 Gearhead shaft, 1 Guide key, 2 Hinge bracket, 4 Hinge fitting, 2 Hinge pin, 2 Hinge pin nut, 2 Hinge rib, 1 Horn, 1 Horn pin, 1 Horn pin nut, 1 Idler gear z30, 1 Idler pin, 1 Jam nut M20x1.5, 1 Key 8x7x16, 1 Lower skin, 4 Motor screw M5x12, 1 Motor unit, 1 Nut key 6x6.5x32, 1 Nut retaining ring, 1 Pinion z18, 1 Piston rod, 1 Rear spar web, 1 Ring nut M66x1.5, 1 Rod end SI 20 ES, 1 Rod seal, 1 Screw gear z54, 2 Spacer, 1 Spar fitting, 1 Stop bolt M8x16, 2 Trunnion, 1 Upper skin, 2 Washer M8.
+Parts: 85 components; 1 Actuator housing, 1 Ball nut R32-10T4-RSI, 1 Ball screw 32x10, 2 Bearing 6201, 2 Bearing BSD 2562 CGA, 2 Bearing GE 20 ES fitting, 2 Bearing GE 20 ES hinge, 4 Bracket bolt M8x25, 4 Bracket nut M8, 6 Cover screw M5x16, 1 Encoder, 1 Encoder pinion z26, 1 Encoder shaft, 1 End bolt M8x20, 1 End stop, 4 Fitting bolt M8x35, 4 Fitting nut M8, 1 Flap panel, 1 Gear cover, 1 Gearhead shaft, 1 Guide key, 2 Hinge bracket, 4 Hinge fitting, 2 Hinge pin, 2 Hinge pin nut, 2 Hinge rib, 1 Horn, 1 Horn pin, 1 Horn pin nut, 1 Idler gear z30, 1 Idler pin, 1 Jam nut M20x1.5, 1 Key 8x7x16, 1 Lower skin, 4 Motor screw M5x12, 1 Motor unit, 1 Nut key 6x6.5x32, 1 Nut retaining ring, 1 Pinion z18, 1 Piston rod, 1 Rear spar web, 1 Ring nut M60x1.5, 1 Rod end SI 20 ES, 1 Rod seal, 1 Screw gear z54, 2 Spacer, 1 Spar fitting, 1 Stop bolt M8x16, 2 Trunnion, 1 Upper skin, 2 Washer M8.
 
 [FlapSystem 1.0 (2026-11-02)]
-  OK pressed, built in 54 s
+  OK pressed, built in 48 s
   ok   a new design opened
   ok   three subassemblies: ['Wing', 'Actuator', 'Flap']
-  parts: 85 components, 51 kinds: [('Actuator housing', 1), ('Ball nut R32-10T4-RSI', 1), ('Ball screw 32x10', 1), ('Bearing 6201', 2), ('Bearing BSD 2562 CGA', 2), ('Bearing GE 20 ES fitting', 2), ('Bearing GE 20 ES hinge', 2), ('Bracket bolt M8x25', 4), ('Bracket nut M8', 4), ('Cover screw M5x16', 6), ('Encoder', 1), ('Encoder pinion z26', 1), ('Encoder shaft', 1), ('End bolt M8x20', 1), ('End stop', 1), ('Fitting bolt M8x35', 4), ('Fitting nut M8', 4), ('Flap panel', 1), ('Gear cover', 1), ('Gearhead shaft', 1), ('Guide key', 1), ('Hinge bracket', 2), ('Hinge fitting', 4), ('Hinge pin', 2), ('Hinge pin nut', 2), ('Hinge rib', 2), ('Horn', 1), ('Horn pin', 1), ('Horn pin nut', 1), ('Idler gear z30', 1), ('Idler pin', 1), ('Jam nut M20x1.5', 1), ('Key 8x7x16', 1), ('Lower skin', 1), ('Motor screw M5x12', 4), ('Motor unit', 1), ('Nut key 6x6.5x32', 1), ('Nut retaining ring', 1), ('Pinion z18', 1), ('Piston rod', 1), ('Rear spar web', 1), ('Ring nut M66x1.5', 1), ('Rod end SI 20 ES', 1), ('Rod seal', 1), ('Screw gear z54', 1), ('Spacer', 2), ('Spar fitting', 1), ('Stop bolt M8x16', 1), ('Trunnion', 2), ('Upper skin', 1), ('Washer M8', 2)]
+  parts: 85 components, 51 kinds: [('Actuator housing', 1), ('Ball nut R32-10T4-RSI', 1), ('Ball screw 32x10', 1), ('Bearing 6201', 2), ('Bearing BSD 2562 CGA', 2), ('Bearing GE 20 ES fitting', 2), ('Bearing GE 20 ES hinge', 2), ('Bracket bolt M8x25', 4), ('Bracket nut M8', 4), ('Cover screw M5x16', 6), ('Encoder', 1), ('Encoder pinion z26', 1), ('Encoder shaft', 1), ('End bolt M8x20', 1), ('End stop', 1), ('Fitting bolt M8x35', 4), ('Fitting nut M8', 4), ('Flap panel', 1), ('Gear cover', 1), ('Gearhead shaft', 1), ('Guide key', 1), ('Hinge bracket', 2), ('Hinge fitting', 4), ('Hinge pin', 2), ('Hinge pin nut', 2), ('Hinge rib', 2), ('Horn', 1), ('Horn pin', 1), ('Horn pin nut', 1), ('Idler gear z30', 1), ('Idler pin', 1), ('Jam nut M20x1.5', 1), ('Key 8x7x16', 1), ('Lower skin', 1), ('Motor screw M5x12', 4), ('Motor unit', 1), ('Nut key 6x6.5x32', 1), ('Nut retaining ring', 1), ('Pinion z18', 1), ('Piston rod', 1), ('Rear spar web', 1), ('Ring nut M60x1.5', 1), ('Rod end SI 20 ES', 1), ('Rod seal', 1), ('Screw gear z54', 1), ('Spacer', 2), ('Spar fitting', 1), ('Stop bolt M8x16', 1), ('Trunnion', 2), ('Upper skin', 1), ('Washer M8', 2)]
   ok   the parts as listed 
   interference over 64 parts: the system and the outside of the actuator
   ok   the rod end's centre on the horn's pin at 0 to 40 deg: the largest gap 0.0004 mm
@@ -21,7 +21,7 @@ Parts: 85 components; 1 Actuator housing, 1 Ball nut R32-10T4-RSI, 1 Ball screw 
   ok   the transmission angle measured in Fusion: 69.81 deg flap up, 70.15 at 40 deg (69.81 and 70.15)
   ok   no interference among the 64 parts at 0, 10, 20, 30 and 40 deg 
   ok   both hinges' bearings on the hinge line: 0.0000 mm off it at most, 2200 mm apart
-  the system's mass, the flap and the wing's structure left out, the motor unit at 1.6 kg: 13.83 kg
+  the system's mass, the flap and the wing's structure left out, the motor unit at 1.6 kg: 13.81 kg
   Spar fitting 0.449 kg
   Horn 1.032 kg
   Hinge bracket L 0.339 kg

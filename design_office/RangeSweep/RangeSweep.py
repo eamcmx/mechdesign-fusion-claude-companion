@@ -49,7 +49,7 @@ def _load(name):
 import range_sweep as RS      # noqa: E402
 importlib.reload(RS)
 
-VERSION = 'RangeSweep 1.1 (2026-11-03)'
+VERSION = 'RangeSweep 1.2 (2026-11-12)'
 MACHINES = ('wrist', 'flap', 'axle', 'robot', 'bag0', 'bag', 'clamp', 'vacuum', 'changer', 'unit')
 EXCLUDE = dict(unit=('Spring',), clamp=('Carton',), vacuum=('Carton', 'Pack', 'Spring'), bag=('Bag', 'Roller'), bag0=('Bag', 'Roller'))
 _last = {}

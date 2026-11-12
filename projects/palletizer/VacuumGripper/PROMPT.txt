@@ -25,8 +25,8 @@ HARD CONSTRAINTS:
   centre; each cup's sleeve 30 x 16.2 x 50 on the plate, its plunger 16 x 2 from the collar at z -60 to its foot at
   -204, the collar 24 resting on the sleeve, the seat 24 x 4 at -180, the spring between the plate's underside and
   the seat, 50 mm installed.
-- Each zone's manifold 150 x 60 x 40 between the zone's two rows of cups, its two ejectors on it, clear of the
-  sleeves.
+- Each zone's manifold 200 x 100 x 18 on the plate between the zone's two rows of cups, clear of the sleeves, its
+  two ejectors lying on it end to end from its middle, wholly on its top face.
 - The cups' lips at z -249.9, on the cartons' tops; every zone free to rise its 25 mm stroke with nothing in the way
   but its springs.
 
@@ -34,8 +34,14 @@ FUSION CONVENTIONS:
 - A new design document (FusionDesignDocumentType), parametric; millimetres in the world, z = 0 the gripper's
   mounting face, z up; x along the pallet's 1200 mm.
 - Top-level groups: Adapter and Frame (grounded), Zone 1 to 6 (each zone's plungers and cups), Pack. One function,
-  set_state(lift), raises the zones (and the pack) by their transforms. No joints, as-built or otherwise.
+  set_state(G, lift=0, zones=None, pack_dz=None), G the groups by name (_last['groups']), raises the zones (all, or
+  the ones listed in zones) by lift and the pack by pack_dz (lift if None), by their transforms. No joints, as-built
+  or otherwise.
 - The API works in cm and radians. A spring is swept once along a helix and copied as a temporary body.
+- The companion's check, projects/palletizer/checks/vacuum_gripper_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(n, m, p_bar), the dialog's input ids the
+  same; at module level L, parts_list(), set_state(), vacuum_gripper imported as vg; _last holding 'groups'; refusals
+  that say 'six zones', 'used', 'worked at'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the cartons, the cups' use in the worst stop, the parts list and a version tag.

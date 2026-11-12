@@ -52,7 +52,7 @@ import flap_detail as FDET              # noqa: E402
 importlib.reload(FDET)
 ACT = FS.ACT
 
-VERSION = 'FlapDetail 1.0 (2026-11-03)'
+VERSION = 'FlapDetail 1.1 (2026-11-12)'
 CM = 0.1
 VI = adsk.core.ValueInput.createByReal
 _last = {}
@@ -128,8 +128,8 @@ def gear_detail(parent, name, *a, **kw):
 
 def part_detail(parent, name, tb, material='Steel', t=(0.0, 0.0, 0.0)):
     """The gearhead's output shaft at maxon's 29.5 from the flange's face, its keyseat (t1 = 2.5) with the key in it
-    and its centre hole M4 (drawn at the thread's size, as the book's tapped holes are); the end washer, 18 across
-    so that it bears on the pinion's hub, and the M4 x 10 through it."""
+    and its centre hole M4 (drawn at the thread's size, as the book's tapped holes are); the end washer, 18 across,
+    clamped on the shaft's end and over the pinion's hub, and the M4 x 10 through it."""
     if name != 'Gearhead shaft':
         return _orig['part'](parent, name, tb, material, t)
     zP = fd.LAY['z_P']

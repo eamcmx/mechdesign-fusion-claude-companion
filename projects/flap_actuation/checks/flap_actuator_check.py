@@ -13,7 +13,7 @@ EXPECTED = {'Actuator housing': 1, 'Ball nut R32-10T4-RSI': 1, 'Ball screw 32x10
             'Bearing BSD 2562 CGA': 2, 'Cover screw M5x16': 6, 'Encoder': 1, 'Encoder pinion z26': 1, 'Encoder shaft': 1,
             'End bolt M8x20': 1, 'End stop': 1, 'Gear cover': 1, 'Gearhead shaft': 1, 'Guide key': 1, 'Idler gear z30': 1,
             'Idler pin': 1, 'Jam nut M20x1.5': 1, 'Key 8x7x16': 1, 'Motor screw M5x12': 4, 'Motor unit': 1,
-            'Nut key 6x6.5x32': 1, 'Nut retaining ring': 1, 'Pinion z18': 1, 'Piston rod': 1, 'Ring nut M66x1.5': 1,
+            'Nut key 6x6.5x32': 1, 'Nut retaining ring': 1, 'Pinion z18': 1, 'Piston rod': 1, 'Ring nut M60x1.5': 1,
             'Rod end SI 20 ES': 1, 'Rod seal': 1, 'Screw gear z54': 1, 'Stop bolt M8x16': 1, 'Trunnion': 2, 'Washer M8': 2}
 A, R_HORN, TH0 = (-420.0, 114.0), 120.0, 110.0
 UP = ((-430.0, 175.0), (-60.0, 160.0))          # the brief's skins in the wing's section (Chapter 32)
@@ -117,6 +117,12 @@ def run(_context):
     leaves = {x.component.name: x for x in root.allOccurrences if x.component.bRepBodies.count}
     c = fc.interference(list(leaves.values()))
     fc.ok(not c, 'no interference among the %d parts, retracted %s' % (len(leaves), c or ''))
+    # the order the screw goes in: its bearings and the ring nut behind them pass the tube's bore from the back
+    r_nut = max(round(f.geometry.radius * 10, 3) for b in leaves['Ring nut M60x1.5'].component.bRepBodies
+                for f in b.faces if f.geometry.surfaceType == adsk.core.SurfaceTypes.CylinderSurfaceType)
+    r_bore = ns['fd'].LAY['bore'] / 2.0
+    fc.ok(r_nut < r_bore, "the ring nut (%.0f mm) passes the tube's bore (%.0f mm) to its thread behind the bearings"
+          % (2 * r_nut, 2 * r_bore))
     y0 = rod_end_y(leaves)
     fc.ok(abs(y0 - own['L0']) < 0.01, 'the rod end\'s centre %.3f mm from the gimbal, retracted (%.3f)' % (y0, own['L0']))
     jr = fc.joint('Rod slides')

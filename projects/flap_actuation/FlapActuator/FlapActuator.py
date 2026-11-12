@@ -55,7 +55,7 @@ def _load(name, script):
 
 BSA = _load('mdfc_ballscrewaxis', 'BallScrewAxis')
 
-VERSION = 'FlapActuator 2.1 (2026-11-02)'
+VERSION = 'FlapActuator 2.2 (2026-11-12)'
 CM = 0.1
 P3 = adsk.core.Point3D.create
 VI = adsk.core.ValueInput.createByReal
@@ -68,15 +68,7 @@ SENSOR = (60.0 * math.cos(math.radians(L['sensor_angle'])), 60.0 * math.sin(math
 
 
 def design(fp=3.0, i_gh=24.0):
-    o = fd.actuator_design(fp=fp)
-    if abs(i_gh - o['i_gh']) > 1e-9:
-        o['i_gh'] = i_gh
-        o['n_motor'] = o['n_pin'] * i_gh
-        o['T_motor'] = o['T_pin'] / i_gh / o['eta_gh']
-        o['P_motor'] = o['T_motor'] / 1000.0 * o['n_motor'] * 2 * math.pi / 60.0
-        o['T_brake_need'] = -o['T_back'] / o['gears']['ratio'] / i_gh
-        o['T_brake'] = 2.0 * o['T_brake_need']
-    return o
+    return fd.actuator_design(fp=fp, i_gh=i_gh)
 
 
 def refuse(o):
@@ -228,7 +220,7 @@ def housing(root):
         for nm, body in (('inner ring', inner), ('outer ring', outer), ('balls', balls)):
             mp.add_body(o, body, nm, 'Steel')
         parts.append(o)
-    parts.append(part(asm, 'Ring nut M66x1.5', along_y(0, 0, L['ring_nut'][0], L['ring_nut'][1], L['r_ring'],
+    parts.append(part(asm, 'Ring nut M60x1.5', along_y(0, 0, L['ring_nut'][0], L['ring_nut'][1], L['r_ring'],
                                                        L['r_shoulder_in'])))
     parts.append(part(asm, 'Idler pin', along_y(0, L['z_I'], L['idler_pin'][0], L['idler_pin'][1], 6.0)))
     for k, y0 in enumerate((L['idler_hub'][0], L['idler_hub'][0] + 10.0)):

@@ -1,7 +1,7 @@
 # palletizer_drives_check
-# Autodesk Fusion 2706.1.17, run 2026-11-10 20:47, 22 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 16:41, 23 s
 
-PalletizerDrives 1.0 (2026-11-02)
+PalletizerDrives 1.1 (2026-11-12)
   ok   Run opens the dialog
 Palletizer drives built.
 J1: slewing ring RKS.23 0841; RV-500N, ratio 192.75.
@@ -11,8 +11,8 @@ Lives (h, the reducers, against the hours each joint moves): J1 12 497 of 11 667
 
 Parts: 48 components; 2 Balancer barrel, 1 Balancer cross pin Q, 3 Balancer lug, 1 Balancer pin P, 2 Balancer rod, 1 Base flange, 1 Cheek J2 side, 1 Cheek J3 side, 1 Column, 1 Counterweight block, 2 Coupling disc, 1 Coupling spacer, 1 Crank shaft, 1 Crank web, 1 Floor plate, 2 Fork plate, 2 Gas bottle, 1 Hub boss J2 side, 1 Hub boss J3 side, 1 J1 reducer plate, 1 J1 stop, 1 J1 stop dog, 1 J2 support bearing, 1 J3 bracket, 2 J3 bracket post, 1 J3 support bearing, 1 Lower arm root box, 1 RV-500N case J1, 1 RV-500N case J2, 1 RV-500N case J3, 1 RV-500N output J1, 1 RV-500N output J2, 1 RV-500N output J3, 1 Servo motor J1, 1 Servo motor J2, 1 Servo motor J3, 1 Slewing ring balls, 1 Slewing ring inner ring, 1 Slewing ring outer ring, 1 Turret plate.
 
-[PalletizerDrives 1.0 (2026-11-02)]
-  OK pressed, built in 21 s
+[PalletizerDrives 1.1 (2026-11-12)]
+  OK pressed, built in 22 s
   ok   a new design opened
   ok   two top-level groups: ['Base', 'Turret']
   parts: 48 components, 40 kinds
@@ -28,5 +28,5 @@ Parts: 48 components; 2 Balancer barrel, 1 Balancer cross pin Q, 3 Balancer lug,
   ok   the counterweight block 100.00 kg
   ok   {'cw': 300.0} refused: A counterweight of 300 kg is over 200 kg: J1's RV-500N then falls short of its life.
   ok   {'r_cw': 1100.0} refused: With the crank turned down to 60 deg the block would reach -267 mm above the floor: it must stay 20 mm clear.
-  ok   a message gives the version tag PalletizerDrives 1.0 (2026-11-02)
+  ok   a message gives the version tag PalletizerDrives 1.1 (2026-11-12)
 ALL PASS

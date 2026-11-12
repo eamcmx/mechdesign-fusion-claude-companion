@@ -38,6 +38,9 @@ HARD CONSTRAINTS:
 FUSION CONVENTIONS:
 - RearAxle's own build() makes the new design document (FusionDesignDocumentType) and its six subassemblies, with
   its As-built joints and motion links; nothing moved; lengths in mm, the API's cm inside.
+- The companion's check, projects/rear_axle/checks/axle_detail_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(pitch), the dialog's input ids the same; at
+  module level DIA; _last holding 'changed', 'mf', 'new'; refusals that say 'falls short'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the abutments' diameters, the spacer, the cups' bores, the splines and their torsion factor, the

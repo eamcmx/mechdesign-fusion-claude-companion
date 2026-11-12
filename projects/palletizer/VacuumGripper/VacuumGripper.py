@@ -43,7 +43,7 @@ importlib.reload(clamp_gripper)
 importlib.reload(vg)
 importlib.reload(mp)
 
-VERSION = 'VacuumGripper 1.0 (2026-11-03)'
+VERSION = 'VacuumGripper 1.1 (2026-11-12)'
 CM = 0.1
 P3 = adsk.core.Point3D.create
 V3 = adsk.core.Vector3D.create

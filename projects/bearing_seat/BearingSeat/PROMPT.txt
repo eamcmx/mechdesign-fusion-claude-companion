@@ -27,12 +27,17 @@ FUSION CONVENTIONS:
 - Five components, one body each, created where they belong, all on the z axis: Housing (grounded), Outer ring,
   Inner ring, Balls (all Z balls as one body, their centres at radius dm / 2 and height B / 2), Shaft.
   The bearing occupies z = 0 to B. The housing is a square block of side D + 16, from z = -3 to B, with a bore D from
-  z = 0 to B and a smaller bore D - 4 below it (the shoulder the outer ring sits on). The shaft has diameter d from
-  z = 0 to B + 20 and a shoulder of diameter d + 3 from z = -10 to 0 (the shoulder the inner ring sits on).
+  z = 0 to B and a smaller bore below it, D - 4 but not under the outer ring's inside diameter (the shoulder the
+  outer ring sits on). The shaft has diameter d from z = 0 to B + 20 and a shoulder from z = -10 to 0, d + 3 across
+  but not over the inner ring's outside diameter (the shoulder the inner ring sits on); neither shoulder reaches
+  past its ring's face into the space between the rings.
 - The API works in cm: convert every mm input.
 - Joints, As-built only: Outer ring rigid to the Housing; Shaft revolute on the Housing about z; Inner ring rigid to
   the Shaft; Balls revolute on the Housing about z; a Motion Link from the shaft's joint to the balls' joint, same
   direction, 360 deg to 360 * n_cage / n deg.
+- The companion's check, projects/bearing_seat/checks/bearing_seat_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(bearing, n, Fr, L10h_req), the dialog's
+  input ids the same; the joint 'Shaft turns'; at module level geometry(), rating(); refusals that say 'L10h = 417 h'.
 
 ACCEPTANCE CRITERIA:
 - A message gives d, D, B, C, C0, P, L10, L10h, s0, Z, n_cage and a version tag.

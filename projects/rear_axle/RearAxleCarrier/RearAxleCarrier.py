@@ -10,7 +10,8 @@
 #   DERIVED       axle_design: the duty, the rating, the bearings, the differential; layout(): every position
 #   HARD RULES    build() refuses a module whose pinion falls short in bending at the design torque, a crown wheel
 #                 that would leave less than the revised ground clearance, a face over a third of the cone distance,
-#                 and spiders that cannot mesh with both side gears
+#                 spiders that cannot mesh with both side gears, and a differential module whose gears' heels pass
+#                 their spherical backs
 #   CONVENTIONS   the bevel pair's apex at the origin, the pinion along +X (forward), the axle along Y, the crown
 #                 wheel on the -Y side; three subassemblies (pinion, differential, carrier), every part a component;
 #                 gears in frames with their own z along their axis (Volume 1, Chapter 17)
@@ -43,7 +44,7 @@ importlib.reload(ad)
 importlib.reload(sb)
 importlib.reload(mp)
 
-VERSION = 'RearAxleCarrier 1.4 (2026-11-01)'
+VERSION = 'RearAxleCarrier 1.5 (2026-11-12)'
 CM = 0.1
 P3 = adsk.core.Point3D.create
 V3 = adsk.core.Vector3D.create
@@ -90,6 +91,11 @@ def refuse(D):
     if abs(x['assembly'] - round(x['assembly'])) > 1e-9:
         raise ValueError('%d spiders cannot all mesh with side gears of 22 teeth: 2 z_s / N = %.2f.'
                          % (x['N'], x['assembly']))
+    gs = sb.member(x['z_s'], x['z_p'], x['m'], x['F'], beta=0.0, backlash=BACKLASH, pinion=True)
+    tip = math.hypot(gs['Ae'], gs['ha'])                   # the heel's tooth tips, from the apex
+    if tip > GEAR_BACK:
+        raise ValueError("At differential module %.2f the gears' heels reach %.2f mm from the apex, past their "
+                         'spherical backs at %.0f mm.' % (x['m'], tip, GEAR_BACK))
     return clr
 
 
@@ -448,7 +454,7 @@ def carrier(root, D, L):
     mp.cut(body, mp.cyl((x_plate[0] - 1, 0, 0), (cupA[1], 0, 0), A[1] / 2.0 + 0.05))
     mp.cut(body, mp.cyl((cupA[1] - 0.01, 0, 0), (cupB[0] + 0.01, 0, 0), 46.5))
     mp.cut(body, mp.cyl((cupB[0], 0, 0), (cupB[1] + 12.0, 0, 0), B[1] / 2.0 + 0.05))
-    mp.cut(body, mp.cyl((cupB[1] + 11.9, 0, 0), (cupB[1] + 23.0, 0, 0), 42.6))
+    mp.cut(body, mp.cyl((cupB[1] + 11.9, 0, 0), (cupB[1] + 23.0, 0, 0), 47.6))         # over cup B, which goes in past it
     for yb, zb in ad.joint_bolts():
         mp.cut(body, mp.cyl((x_plate[0] - 1, yb, zb), (x_plate[1] + 1, yb, zb), 7.0))
     o = mp.new_occ(asm.component, 'Carrier casting')
@@ -484,8 +490,8 @@ def carrier(root, D, L):
         o = mp.new_occ(asm.component, 'Bearing %s cup' % tag)
         mp.add_body(o, cup, 'Cup', 'Steel')
         parts.append(o)
-    o = mp.new_occ(asm.component, 'Pinion seal 60x85x10')
-    mp.add_body(o, mp.tube((cupB[1] + 12.0, 0, 0), (cupB[1] + 22.0, 0, 0), 42.5, 30.05), 'Seal', 'Rubber, Silicone')
+    o = mp.new_occ(asm.component, 'Pinion seal 60x95x10')
+    mp.add_body(o, mp.tube((cupB[1] + 12.0, 0, 0), (cupB[1] + 22.0, 0, 0), 47.5, 30.05), 'Seal', 'Rubber, Silicone')
     parts.append(o)
     return asm, parts
 

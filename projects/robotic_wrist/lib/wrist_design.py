@@ -220,7 +220,7 @@ def layout(gear=None):
     L['lip'] = (L['cheek'][0], L['cheek'][0] + 1.5)     # the cheek's lip that locates the 6002 inward
     L['B3'] = (L['lip'][1], L['lip'][1] + 9.0)          # the frame's 6002
     L['S3'] = (L['B2'][1], L['B3'][0])
-    L['tr_end'] = L['B3'][1]                     # the trunnion's outer end; the washer and the M5 screw beyond it
+    L['tr_end'] = L['B3'][1]                     # the stack's outer face; the washer and the M5 screw beyond it
     L['tr_spigot'] = 13.0                        # the trunnion's spigot from |y| 13 into the carrier
     # --- the roll axis, z
     L['z_ct'] = zff - CLEAR                      # the carrier's top face
@@ -262,9 +262,9 @@ def layout(gear=None):
 MASS_EST = dict(roll=0.45, roll_z=25.0, roll_Iz=0.00003, roll_Ix=0.0004,      # the roll shaft, output gear, flange (assumed)
                 carrier=0.40, carrier_z=0.0, carrier_Iy=0.0001,              # block, trunnions, spacers, roll bearings (assumed)
                 side=0.45, side_Iy=0.00016)                                  # each side gear with its pulley (assumed)
-# measured on the model by checks/wrist_check.py (WristDifferential 1.0): the groups at rest, about the apex
-MASS_MEAS = dict(roll=0.4565017, roll_z=28.0288096, roll_Iz=0.0001219, roll_Ix=0.0001883,
-                 carrier=0.3389319, carrier_z=0.2120428, carrier_Iy=5.32e-05, side=0.3955012, side_Iy=0.0001719)
+# measured on the model by checks/wrist_check.py (WristDifferential 1.1): the groups at rest, about the apex
+MASS_MEAS = dict(roll=0.4558642, roll_z=28.009989, roll_Iz=0.0001219, roll_Ix=0.0001881,
+                 carrier=0.3375447, carrier_z=0.2129142, carrier_Iy=5.32e-05, side=0.3955012, side_Iy=0.0001719)
 
 
 def masses(measured=None):
@@ -518,12 +518,15 @@ def trunnion(b=None, M=None, d=15.0):
 # ISO 9409-1, size 31.5: the pitch circle, four M5, a 5 H7 pin hole on +X (clause 4.1), the 20 H7 centring recess
 # that the mating plate's 20 g7 spigot, 2.5 mm high, enters (Weiss Robotics, n.d., customer drawing of the adapter
 # ISO31.5-ISO50); a hollow centre no larger than the centring diameter (clause 4.4)
-FLANGE40 = dict(d1=31.5, n=4, thread=5.0, pin=5.0, pin_depth=6.0, d2=20.0, d2_depth=3.0, spigot=2.5, D=45.0, T=11.0,
-                pocket=22.0)
+FLANGE40 = dict(d1=31.5, n=4, thread=5.0, pin=5.0, pin_depth=6.0, d2=20.0, d2_depth=3.0, spigot=2.5, D=45.0, T=11.0)
 BORE40 = 5.0                    # mm, the roll shaft's bore for the tool's wires, assumed
 SLIPRING = dict(D=22.0, L=24.0, circuits=6, amps=2.0, rpm=300.0, mass=0.03, flange=(7.5, 2.0))   # a capsule slip ring, assumed
 STOP40 = dict(soft=120.0, switch=121.0, delay=0.020, contact=128.0, travel=2.0, r=30.0, lug=25.0, pad=6.0,
               r_in=24.0, r_out=36.0, width=10.0)       # deg, deg, s, deg, mm, mm, deg, mm, mm, mm, mm; assumed
+# A shaft's end stands this far inside the face its end washer clamps, so that the screw clamps the stack and not
+# the shaft's own end (mm).
+END_SET = 0.5
+
 LAY40 = dict(S5=(62.5, 71.0), disc=(71.0, 80.0), lug_r=(11.9, 35.0), key=(72.0, 80.0), tr_end=80.0,
              cap_plate=(64.0, 70.0), block=(70.0, 80.0), shaft_top=46.0, ring2=(44.15, 45.05),
              rotor=(-25.5, -23.5), stator=(-50.0, -26.0), pin_z=-38.0)                     # mm, +y side and roll axis
@@ -593,9 +596,9 @@ def backlash40(b=None):
                 precise=(math.radians(3 / 60) / I_BELT + a_belt + a_bev) * r_p)
 
 
-# measured on the integrated model by checks/wrist_integration_check.py (WristIntegration 1.0), the motors drawn solid
-MEAS40 = dict(total=5.5589896, cg_z=-64.9746643, motors_drawn=2.0735354, roll=0.4485168, roll_z=28.3889836,
-              roll_Iz=0.0001222, roll_Ix=0.0001839, carrier=0.4185501, carrier_z=0.1063995, carrier_Iy=8.55e-05)
+# measured on the integrated model by checks/wrist_integration_check.py (WristIntegration 1.1), the motors drawn solid
+MEAS40 = dict(total=5.5576585, cg_z=-64.9901664, motors_drawn=2.0735354, roll=0.4485168, roll_z=28.3889836,
+              roll_Iz=0.0001222, roll_Ix=0.0001839, carrier=0.417219, carrier_z=0.1075366, carrier_Iy=8.55e-05)
 
 
 def wrist_mass40():

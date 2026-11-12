@@ -37,6 +37,10 @@ FUSION CONVENTIONS:
 - AsBuiltJoints: revolute between each gear and its shaft. Try the joint directions and keep the one that really
   turns the part about its axis, measuring the sign of the turn. A Motion Link between the two revolute joints at
   the ratio of the teeth, its direction set from the measured signs.
+- The companion's check, projects/bevel_pair/checks/bevel_pair_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(m, z1, z2, alpha, b, d), the dialog's input ids
+  the same; the joint 'Pinion turns'; the components 'Gear', 'Pinion'; at module level pair(); refusals that say 'more
+  than R / 3 = 14.91', 'z_v1 = z1 / cos(delta1) = 16.02'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the two cone angles, R, z_v1, z_v2, the contact ratio and a version tag.

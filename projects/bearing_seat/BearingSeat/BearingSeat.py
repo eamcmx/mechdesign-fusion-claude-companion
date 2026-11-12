@@ -18,7 +18,7 @@ import traceback
 import adsk.core
 import adsk.fusion
 
-VERSION = 'BearingSeat 1.0 (2026-11-01)'
+VERSION = 'BearingSeat 1.1 (2026-11-12)'
 CM = 0.1                                   # Fusion works in centimetres: millimetres x 0.1
 P3 = adsk.core.Point3D.create
 V3 = adsk.core.Vector3D.create
@@ -112,13 +112,17 @@ def build(bearing='6002', n=1000.0, Fr=500.0, L10h_req=10000.0):
     root = design.rootComponent
     ext = lambda comp: comp.features.extrudeFeatures
 
-    # housing: a block with the bore D and the shoulder bore D - 4 below it
+    # the shoulders reach no further across the bearing than its rings' faces: the housing's D - 4, but not inside the
+    # outer ring's inside diameter; the shaft's d + 3, but not over the inner ring's outside diameter
+    D_sh = max(D - 4.0, g['ring_out_id'])
+    d_sh = min(d + 3.0, g['ring_in_od'])
+    # housing: a block with the bore D and the shoulder bore below it
     housing = place(root, 'Housing')
     hc = housing.component
     side = D + 16.0
     sk = hc.sketches.add(plane_at(hc, -3.0))
     sk.sketchCurves.sketchLines.addTwoPointRectangle(P3(-side / 2 * CM, -side / 2 * CM, 0), P3(side / 2 * CM, side / 2 * CM, 0))
-    sk.sketchCurves.sketchCircles.addByCenterRadius(P3(0, 0, 0), (D - 4.0) / 2 * CM)
+    sk.sketchCurves.sketchCircles.addByCenterRadius(P3(0, 0, 0), D_sh / 2 * CM)
     prof = [p for p in sk.profiles if p.profileLoops.count == 2][0]
     inp = ext(hc).createInput(prof, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
     inp.setDistanceExtent(False, VI((B + 3.0) * CM))
@@ -126,7 +130,7 @@ def build(bearing='6002', n=1000.0, Fr=500.0, L10h_req=10000.0):
     hb.name = 'Housing'
     sk = hc.sketches.add(hc.xYConstructionPlane)
     sk.sketchCurves.sketchCircles.addByCenterRadius(P3(0, 0, 0), D / 2 * CM)
-    sk.sketchCurves.sketchCircles.addByCenterRadius(P3(0, 0, 0), (D - 4.0) / 2 * CM)
+    sk.sketchCurves.sketchCircles.addByCenterRadius(P3(0, 0, 0), D_sh / 2 * CM)
     prof = [p for p in sk.profiles if p.profileLoops.count == 2][0]
     inp = ext(hc).createInput(prof, adsk.fusion.FeatureOperations.CutFeatureOperation)
     inp.setDistanceExtent(False, VI(B * CM))
@@ -160,7 +164,7 @@ def build(bearing='6002', n=1000.0, Fr=500.0, L10h_req=10000.0):
     shaft = place(root, 'Shaft')
     sc = shaft.component
     sk = sc.sketches.add(plane_at(sc, -10.0))
-    sk.sketchCurves.sketchCircles.addByCenterRadius(P3(0, 0, 0), (d + 3.0) / 2 * CM)
+    sk.sketchCurves.sketchCircles.addByCenterRadius(P3(0, 0, 0), d_sh / 2 * CM)
     inp = ext(sc).createInput(sk.profiles.item(0), adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
     inp.setDistanceExtent(False, VI(10.0 * CM))
     sb = ext(sc).add(inp).bodies.item(0)

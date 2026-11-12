@@ -41,6 +41,9 @@ FUSION CONVENTIONS:
 - WristIntegration's build() makes the design document (FusionDesignDocumentType), its groups and
   projects/robotic_wrist/WristDifferential/WristDifferential.py's As-built joints and motion links; nothing moved;
   lengths in mm, the API's cm inside.
+- The companion's check, projects/robotic_wrist/checks/wrist_detail_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(contact), the dialog's input ids the same;
+  at module level pose; refusals that say 'falls short'.
 
 ACCEPTANCE CRITERIA:
 - A message gives each motor's end, the slip ring, the abutments, the key, the motors' duty, the stop, the play, the

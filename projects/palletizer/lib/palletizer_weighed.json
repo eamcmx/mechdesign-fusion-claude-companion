@@ -1,5 +1,5 @@
 {
- "version": "PalletizerRobot 1.0 (2026-11-02)",
+ "version": "PalletizerRobot 1.1 (2026-11-12)",
  "base": 992.7,
  "bodies": [
   {
@@ -29,8 +29,8 @@
    "move": "q3@A",
    "y": 693.9,
    "c": -382.2,
-   "Ia": 4.789,
-   "It": 28.154,
+   "Ia": 4.753,
+   "It": 28.119,
    "In": 26.852
   },
   {

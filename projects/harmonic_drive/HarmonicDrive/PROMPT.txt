@@ -47,6 +47,10 @@ FUSION CONVENTIONS:
   wave generator): more points only slow each rebuild. turn_to deletes the extrusions, sketches and planes
   the last build made, not only the bodies: features left behind stay in the timeline, which grows and slows every
   later turn. The check turns the drive 7 times.
+- The companion's check, projects/harmonic_drive/checks/harmonic_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(m, z_f, dz, b, t, phi), the dialog's input
+  ids the same; the components 'CircularSpline', 'Flexspline'; at module level harmonic(), turn_to(); refusals that
+  say 'difference of 2', 'from 60 to 320'.
 
 ACCEPTANCE CRITERIA:
 - A message gives z_c, the ratio, r_f, r_c, w0, the tooth form and a version tag.

@@ -1,7 +1,7 @@
 # RearAxleCarrier (Chapter 29) against the acceptance criteria of its prompt, measured on what Fusion built: the
 # rating recomputed here with formulas of this check's own; the parts counted from Fusion's components; no
 # interference at rest, while the pinion turns through one tooth pitch, or with the side gears turned in the case;
-# the ratio measured on the bodies; every bearing's cone on its seat and its cup in its bore; four refusals.
+# the ratio measured on the bodies; every bearing's cone on its seat and its cup in its bore; five refusals; cup B passes the seal's bore.
 import math, sys, importlib
 sys.path.insert(0, '__COMPANION__/tools')
 import fusion_check as fc
@@ -13,7 +13,7 @@ EXPECTED = {'Adjuster': 2, 'Bearing A 32309 cone': 1, 'Bearing A 32309 cup': 1, 
             'Bearing B 32308 cup': 1, 'Bearing C1 32213 cone': 1, 'Bearing C1 32213 cup': 1, 'Bearing C2 32213 cone': 1,
             'Bearing C2 32213 cup': 1, 'Bearing cap': 2, 'Cap bolt M12x90': 4, 'Carrier casting': 1,
             'Companion flange': 1, 'Cross': 1, 'Crown wheel bolt M12x35': 10, 'Crown wheel z47': 1,
-            'Differential case': 1, 'Pinion depth shim': 1, 'Pinion nut M30': 1, 'Pinion seal 60x85x10': 1,
+            'Differential case': 1, 'Pinion depth shim': 1, 'Pinion nut M30': 1, 'Pinion seal 60x95x10': 1,
             'Pinion shaft z12': 1, 'Side gear': 2, 'Side gear washer': 2, 'Spacer': 1, 'Spider': 4,
             'Spider washer': 4, 'Washer': 1}
 
@@ -100,6 +100,11 @@ def run(_context):
         seats.append(good)
         fc.ok(good, '%s on a %d mm seat, its cup %d mm in a bore of %.1f' % (cone[:-5], d, Dd, Dd + 0.1))
 
+    # the order the nose is put together in: cup B is pressed in from the front, past the seal's bore
+    r_seal = max(cyl_radii(leaves['Pinion seal 60x95x10']))
+    fc.ok(round(r_seal + 0.1, 3) in cyl_radii(leaves['Carrier casting']) and r_seal + 0.1 > 45.05,
+          "cup B (90 mm) passes the seal's bore (%.1f mm) into the nose from the front" % (2 * (r_seal + 0.1)))
+
     # the ratio, measured on the bodies
     jp = fc.joint('Pinion turns')
     pin = root.occurrences.item(1)
@@ -172,4 +177,5 @@ def run(_context):
     fc.refused(ns, 'ground clearance', m=6.75, F=54.0)
     fc.refused(ns, 'third of the cone distance', F=56.0)
     fc.refused(ns, '2 z_s / N = 14.67', N=3)
+    fc.refused(ns, 'past their spherical backs', m_d=5.6)
     fc.verdict()

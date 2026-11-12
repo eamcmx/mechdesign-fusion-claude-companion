@@ -214,7 +214,7 @@
    "material": "4140 Q\\&T 425~°C",
    "chapter": 33
   },
-  "Ring nut M66x1.5": {
+  "Ring nut M60x1.5": {
    "material": "steel",
    "chapter": 33
   },
@@ -376,7 +376,7 @@
    "material": "SKF",
    "chapter": 29
   },
-  "lip seal 60x85x10": {
+  "lip seal 60x95x10": {
    "material": "DIN 3760 range",
    "chapter": 29
   },

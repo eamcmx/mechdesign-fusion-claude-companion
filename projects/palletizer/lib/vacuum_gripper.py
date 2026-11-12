@@ -111,7 +111,7 @@ LAY = dict(adapter=(0.0, -16.0), beam=(-16.0, -116.0), beam_y=70.0, beam_w=60.0,
            plate=(-116.0, -126.0), plate_l=1240.0, plate_w=840.0, zone_x=(-400.0, 0.0, 400.0), zone_y=(-200.0, 200.0),
            cup_dx=(-130.0, 0.0, 130.0), cup_dy=(-70.0, 70.0), sleeve=(-116.0, -66.0), sleeve_r=(15.0, 8.1),
            plunger_r=(8.0, 6.0), collar=(-66.0, -60.0), collar_r=12.0, seat=-180.0, seat_t=4.0, seat_r=12.0,
-           plunger_low=-204.0, stroke=25.0, manifold=(-116.0, -76.0), manifold_xy=(150.0, 60.0))
+           plunger_low=-204.0, stroke=25.0, manifold=(-116.0, -98.0), manifold_xy=(200.0, 100.0))
 LAY['cup_top'] = LAY['plunger_low']
 LAY['cup_lip'] = LAY['plunger_low'] - CUP['H']
 # the plate held to each beam's bottom wall by eight M6 x 14 cap screws on the beam's middle, from inside the beam

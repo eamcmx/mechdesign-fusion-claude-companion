@@ -38,12 +38,16 @@ HARD CONSTRAINTS:
 FUSION CONVENTIONS:
 - A new design document (FusionDesignDocumentType), parametric; millimetres in the world, z = 0 the gripper's
   mounting face, z up; x the squeeze, y across.
-- Top-level groups: Adapter, Frame and Screw (grounded), Jaw A (+x), Jaw B (-x), Pack. One function,
-  set_state(j), places the two jaws at +-j by their transforms: the screw's two hands keep them symmetric. No
-  joints, as-built or otherwise.
+- Top-level groups: Adapter, Frame and Screw (grounded), Jaw A (+x), Jaw B (-x), Pack. One function, set_state(G, j),
+  G the groups by name (_last['groups']), places the two jaws at +-j by their transforms: the screw's two hands keep
+  them symmetric. No joints, as-built or otherwise.
 - The API works in cm and radians.
 - Each ball groove: groove_section() of common/BallScrewAxis/BallScrewAxis.py, right-hand with a positive twist about
   +x, left-hand mirrored.
+- The companion's check, projects/palletizer/checks/clamp_gripper_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(nx, ny, N, gripping), the dialog's input
+  ids the same; at module level SC, ZS, parts_list(), set_state(); _last holding 'groups', 'j_grip'; refusals that say
+  'three along', 'built for', 'needs', 'kPa'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the pack, the squeeze against its need and the sides' limit, the screw, nuts, bearings and guides,

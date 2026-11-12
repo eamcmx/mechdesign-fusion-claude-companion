@@ -40,7 +40,7 @@ importlib.reload(pd)
 importlib.reload(pdr)
 importlib.reload(mp)
 
-VERSION = 'PalletizerDrives 1.0 (2026-11-02)'
+VERSION = 'PalletizerDrives 1.1 (2026-11-12)'
 CM = 0.1
 P3 = adsk.core.Point3D.create
 V3 = adsk.core.Vector3D.create
@@ -246,7 +246,7 @@ def build_crank(tur, rotor3, cw, r_cw):
         a, h = (v * 1000 for v in pdr.CW_BLOCK)
         tk = pdr.cw_thickness(cw) * 1000.0               # the block's thickness for its mass (mm)
         xc = AX - r_cw
-        part(c, 'Counterweight block', mp.box(xc - a / 2, xc + a / 2, y1 + 5, y1 + 5 + tk, AZ - h / 2, AZ + h / 2))
+        part(c, 'Counterweight block', mp.box(xc - a / 2, xc + a / 2, y1, y1 + tk, AZ - h / 2, AZ + h / 2))  # on the face
     return cr
 
 

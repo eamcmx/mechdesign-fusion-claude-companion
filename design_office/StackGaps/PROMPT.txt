@@ -32,6 +32,9 @@ FUSION CONVENTIONS:
 - The joints are each machine's own: the wrist, the flap and the rear axle keep their scripts' As-built joints; the
   compliance unit and the tool changer have no joints, as-built or otherwise, and place their groups by transforms.
   Each machine is put in its states as RangeSweep.py's machine() does it.
+- The companion's check, design_office/checks/stack_gaps_check.py, drives the script as CHECK_INTERFACE.md says (give
+  it to the model for its names, never for a design fact): build(which); the dialog's input ids key; _last holding
+  'gaps'.
 
 ACCEPTANCE CRITERIA:
 - A message gives each gap's parts, its least distance and its direction, and a version tag.

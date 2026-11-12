@@ -34,6 +34,10 @@ FUSION CONVENTIONS:
   one out, the output turning the other way (the circular spline is fixed).
 - The temporary-body manager makes no ellipse: sketch the wave generator and extrude it in its own component.
 - The API works in cm and radians.
+- The companion's check, projects/scara_robot/checks/scara_modules_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(size1), the dialog's input ids the same;
+  at module level design(), parts_list(), scara_design imported as sd; _last holding 'joints'; refusals that say
+  'falls short'.
 
 ACCEPTANCE CRITERIA:
 - A message gives each joint's unit, average torque against its limit, life and largest input speed, the J1 motor's

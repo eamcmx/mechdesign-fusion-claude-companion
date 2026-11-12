@@ -49,7 +49,7 @@ import wrist_detail as WDET             # noqa: E402
 importlib.reload(WDET)
 WD = WI.WD
 
-VERSION = 'WristDetail 1.1 (2026-11-09)'
+VERSION = 'WristDetail 1.2 (2026-11-12)'
 _last = {}
 pose = WI.pose           # the joints as Chapter 40 drives them
 

@@ -46,10 +46,14 @@ FUSION CONVENTIONS:
   (occurrence.createForAssemblyContext(the parent's occurrence)), in world coordinates: set_balancer() moves the
   barrels and rods so, the turret's own turn included. Fusion refuses transform2 on the occurrence itself.
 - The API works in cm and radians.
+- The companion's check, projects/palletizer/checks/palletizer_drives_check.py, drives the script as
+  CHECK_INTERFACE.md says (give it to the model for its names, never for a design fact): build(cw, r_cw), the dialog's
+  input ids the same; at module level AX, AZ, A_MM, BARREL, B_MM, ROD_LEN, parts_list(), set_balancer(); refusals that
+  say 'over', 'floor'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the ring, the three reducers with their lives against what each needs, the balancer's forces and
-  pressures, the counterweight, the parts list and a version tag. Defaults: RKS.23 0841; J1 12 497 h of 11 667,
+  pressures, the counterweight, the parts list and a version tag. Defaults: RKS.23 0841; J1 12 505 h of 11 667,
   J2 120 984 h of 10 667, J3 13 074 h of 10 667; the pair 54.0 to 69.5 kN, 8.66 to 11.14 MPa; 100 kg at 600 mm.
 - 48 components in 40 kinds, by component name and count: Balancer barrel 2, Balancer cross pin Q 1, Balancer lug 3,
   Balancer pin P 1, Balancer rod 2, Base flange 1, Cheek J2 side 1, Cheek J3 side 1, Column 1, Counterweight block 1,

@@ -19,7 +19,8 @@ HARD CONSTRAINTS:
   is under 1.5, or whose mass at the tool costs the first joint its life of 20 000 h, saying which and by how much.
 - The screw nut's flange on the top plate, its rotor's pilot up, its pulley above it; the spline nut's flange under
   the base plate, its rotor's pilot down, its pulley below it; each pulley located on its nut's pilot and held by
-  six M5 screws in the pilot's tapped holes; each flange held by four M4 bolts.
+  six M5 screws in the pilot's tapped holes; each flange held by four M4 bolts. The spline nut's pulley takes 4 mm of
+  its 6 mm pilot (nut_layout()'s p4): it stops 5 mm under the flange, clear of the flange bolts' heads.
 - Pulleys of 28 and 56 teeth for J3, 18 and 72 for J4; 9 mm belts of the stock lengths Gates' procedure gives, the
   motors placed at the centre distances those lengths give, 34 mm either side of the arm's middle line.
 - The shaft long enough to stay 5 mm beyond the screw nut's rotor at the full stroke of 200 mm.
@@ -35,6 +36,10 @@ FUSION CONVENTIONS:
   cannot hold: pose(j3, j4) sets it by the numbers, and the check measures the result.
 - The temporary-body manager makes no belt: sketch each belt's band (the external tangents and arcs) and extrude it.
 - The API works in cm and radians.
+- The companion's check, projects/scara_robot/checks/scara_tool_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(size), the dialog's input ids the same; at
+  module level design(), parts_list(), pose, scara_design imported as sd; _last holding 'joints'; refusals that say
+  'falls short'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the shaft's swing, the fatigue factors at 100 and 200 mm and the acceleration's scale at the

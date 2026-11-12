@@ -37,6 +37,10 @@ FUSION CONVENTIONS:
 - Joints, As-built only: rigid for Spindle and Countershaft to Base plate and Spacer to Spindle; revolute about z
   for Gear 1 and Gear 4 on Spindle and Cluster on Countershaft. Two Motion Links, one per mesh, each the opposite
   way at the ratio of its teeth.
+- The companion's check, projects/compound_train/checks/compound_train_check.py, drives the script as
+  CHECK_INTERFACE.md says (give it to the model for its names, never for a design fact): build(m1, m2, z1, z2, z3, b,
+  ds), the dialog's input ids the same; the joints 'Cluster turns', 'Gear 1 turns', 'Gear 4 turns'; the components
+  'Cluster', 'Gear 1', 'Gear 4'; at module level train(); refusals that say '= 68.57 teeth', 'undercut'.
 
 ACCEPTANCE CRITERIA:
 - A message gives a, z4, the ratio, each stage's contact ratio and a version tag.

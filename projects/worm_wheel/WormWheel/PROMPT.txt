@@ -44,6 +44,10 @@ FUSION CONVENTIONS:
   at the moving part's own origin, the moving part's occurrence given first, with ZAxisJointDirection. A joint's axes
   are the moving part's own, so a positive value turns the worm anticlockwise about world +X and the wheel about world
   +Z. A Motion Link at the ratio, reversed: the right-hand worm turning about +X turns the wheel about -Z.
+- The companion's check, projects/worm_wheel/checks/worm_wheel_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(m, q, z2, alpha_x, b, starts), the dialog's
+  input ids the same; the joints 'Wheel turns', 'Worm turns'; the components 'Wheel', 'Worm'; at module level worm();
+  refusals that say 'undercut', 'Lead angle 26.6 deg'.
 
 ACCEPTANCE CRITERIA:
 - A message gives d1, L, lambda, d2, a, the ratio, b', phi_n, the efficiencies and a version tag.

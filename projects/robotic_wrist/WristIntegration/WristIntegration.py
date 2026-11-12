@@ -47,7 +47,7 @@ def _load(name, script):
 
 WD = _load('mdfc_wrist_differential', 'WristDifferential')
 
-VERSION = 'WristIntegration 1.0 (2026-11-02)'
+VERSION = 'WristIntegration 1.1 (2026-11-12)'
 
 
 def design(contact=128.0):
@@ -83,7 +83,7 @@ def sector(z0, z1, r0, r1, a_lo, a_hi):
 def trunnion_stop(L, K):
     """The left trunnion, longer, with a keyseat for the stop disc on local +x (world +z) and an M5 end."""
     y0, y1 = L['y_fl']
-    end = K['tr_end']
+    end = K['tr_end'] - wd.END_SET                      # inside the disc's face, so that the washer clamps the stack
     t = WD.union(WD.zcyl(L['tr_spigot'], y0 + 0.1, 7.5), WD.zcyl(y0, y1, 15.0), WD.zcyl(y1 - 0.1, end, 7.5))
     for ang in (45, 135, 225, 315):
         x, y = WD.polar(10.0, ang)

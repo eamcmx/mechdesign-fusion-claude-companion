@@ -33,6 +33,10 @@ FUSION CONVENTIONS:
 - The API works in cm and radians.
 - AsBuiltJoints: Cam revolute about z on Ground at the origin; Follower slider along y on Ground. No Motion Link:
   a Motion Link keeps a constant ratio, and a cam's is not constant. Whoever turns the cam sets the follower to s.
+- The companion's check, projects/cam_follower/checks/cam_check.py, drives the script as CHECK_INTERFACE.md says (give
+  it to the model for its names, never for a design fact): build(Rb, Rr, h, beta1, dwell, beta2), the dialog's input
+  ids the same; the joints 'Cam turns', 'Follower slides'; the components 'Cam', 'Follower'; at module level cam();
+  refusals that say 'pressure angle reaches 38.7', '= 380 deg'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the largest pressure angle, the smallest radius of curvature and a version tag.

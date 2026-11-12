@@ -22,12 +22,16 @@ DERIVED (never typed):
 
 HARD CONSTRAINTS:
 - bracket: the opening stop bracket P13-018 with its arm turned and its root R2.5, in its own frame (the bolting face
-  on z = 0, the arm up z), milled from a block 2.5 mm over each side and 3 mm over top and bottom, in three setups:
+  on z = 0, the arm up z), milled from a block 2.5 mm over each side and 3 mm over top and bottom, in four setups:
   (1) the bolting face faced and the two 9 mm holes drilled; (2) the part bolted to a fixture plate through its own
-  holes: the top faced, adaptive roughing leaving 0.3 mm, the walls finished by a 3D contour, the arm's root cut by a
-  2D contour of the arm's walls with a 10 mm cutter whose corner radius is the drawing's 2.5 mm, its floor at the
-  foot's face; (3) down the lug's axis: the bore to the M30 x 1.5's minor diameter, the thread milled at 1.5 mm
-  pitch, the lug's round finished over its 25 mm length.
+  holes: the top faced, adaptive roughing leaving 0.3 mm, the walls finished by a 3D contour. Seen from the top the
+  arm lies wholly under the lug (24 mm inside its 25 along its axis, 24 inside its 48 across), so no cutter reaches
+  the arm or its root from the top. (3) down the lug's axis: the bore to the M30 x 1.5's minor diameter, the thread
+  milled at 1.5 mm pitch, the lug's round finished over its 25 mm length; then, to 13 mm from the lug's end face,
+  the arm under the lug: adaptive roughing leaving 0.3 mm with the 10 mm flat cutter, its walls along the axis and
+  their root by a 3D contour with a 5 mm flat cutter (the 10 mm one copied, its diameter made 5, whose radius is the
+  root's 2.5), its end wall and that root by a 3D parallel pass with the 10 mm cutter of corner radius 2.5; (4) the
+  same three operations from the lug's other end.
 - spacer: the rear axle's pinion spacer A01-016, its axis along z, turned from 60 x 40 tube: faced, the outside
   roughed and finished, the bore roughed, parted off; faced and parted each half the grinding allowance long, so the
   part comes off at the length it is turned to, for grinding to each axle.
@@ -50,8 +54,13 @@ FUSION CONVENTIONS:
   and no as-built joints; the Manufacture workspace's CAM product, milling, turning and cutting setups; lengths in mm,
   the API's cm inside.
 - A setup's tool axis is turned through its parameters, each set by its expression as a string: setup 1, which
-  works from under the bolting face, sets wcs_orientation_flipZ to 'true'; setup 3 sets wcs_orientation_mode to
-  "'axesZX'" and the value of wcs_orientation_axisZ to [the lug's bore, its cylindrical face].
+  works from under the bolting face, sets wcs_orientation_flipZ to 'true'; setups 3 and 4 set
+  wcs_orientation_mode to "'axesZX'" and the value of wcs_orientation_axisZ to [the lug's bore, its cylindrical
+  face], setup 4 also wcs_orientation_flipZ to 'true'. The 3D strategies' ids are 'adaptive', 'contour_new' and
+  'parallel'.
+- The companion's check, design_office/checks/making_check.py, drives the script as CHECK_INTERFACE.md says (give it
+  to the model for its names, never for a design fact): build(which); the dialog's input ids part; at module level
+  PARTS.
 
 ACCEPTANCE CRITERIA:
 - A message gives each setup's operations, its machining time and its NC file with its length in lines, and a
@@ -60,7 +69,8 @@ ACCEPTANCE CRITERIA:
   root edges found.
 - Every operation with a toolpath and no warning but Fusion's own note that it moved a lead-in or a lead-out off the
   stock left; every setup timed and posted, its NC file listing its tools or its cutting head.
-- The root's cutter with a corner radius of 2.5 mm in the program.
+- The root cut from both the lug's ends, none of it from the top: setups 3 and 4 each with the 5 mm cutter and the
+  cutter of corner radius 2.5 mm in their programs.
 - The spacer as drawn, faced and parted 0.40 mm long each, turned to 68.6 mm.
 - The tine: 126 250.0 mm3 sharp and 126 464.6 mm3 with its corner R10 (by hand), outline 1055.708 mm, 10 mm thick,
   in 1020; the round 10 mm clear of the bag's side; all sixteen nested, none left over, Fusion's share of the plate

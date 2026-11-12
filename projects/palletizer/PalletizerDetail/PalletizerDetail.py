@@ -56,7 +56,7 @@ import mdfc_parts as mp                  # noqa: E402
 import palletizer_detail as XP           # noqa: E402
 importlib.reload(XP)
 
-VERSION = 'PalletizerDetail 1.0 (2026-11-03)'
+VERSION = 'PalletizerDetail 1.1 (2026-11-12)'
 CM = 0.1
 VI = adsk.core.ValueInput.createByReal
 KEYS = ('bag', 'robot', 'unit', 'vacuum')
@@ -355,6 +355,14 @@ def build_vacuum():
                 plain_part(g, 'Cap screw M4x%d s%s %d' % (sx['L'], k, j + 1),
                            mp.cap_screw(SL['d'], float(sx['L']), (hx, hy, p0 + SL['flange_t']), (0, 0, -1)))
             return o
+        if name.startswith('Manifold '):                               # its underside stepped over the flanges and screws
+            (x, y, _), _ = centre_mm(tb)
+            mx, my = VG.L['manifold_xy']
+            w, h = XP.MANIFOLD_STEP
+            for s in (-1.0, 1.0):
+                y0, y1 = sorted((y + s * (my / 2.0 - w), y + s * (my / 2.0 + 1.0)))
+                mp.cut(tb, mp.box(x - mx / 2.0 - 1.0, x + mx / 2.0 + 1.0, y0, y1, p0 - 0.01, p0 + h))
+            return plain_part(g, name, tb, material)
         if not name.startswith('Cap screw M6x14 '):
             return plain_part(g, name, tb, material)
         k = name.split()[-1]

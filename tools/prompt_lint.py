@@ -14,6 +14,7 @@ What it checks (it cannot tell whether the design is right, only whether the pro
   7. the prompt stands on its own: it cites no chapter, part, section, table or figure of a book (a named source's
      table, such as Shigley's Table 7-1, is fine)
   8. every file it names is named by its place: projects/<project>/<Name>/<Name>.py, design_office/lib/x.py
+  9. it names its check and every name the check looks for (tools/check_names.py; CHECK_INTERFACE.md)
 """
 import glob
 import io
@@ -22,6 +23,8 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import check_names as CN  # noqa: E402
 BLOCKS = ['INPUTS', 'DERIVED', 'HARD CONSTRAINTS', 'FUSION CONVENTIONS', 'ACCEPTANCE CRITERIA']
 
 
@@ -67,10 +70,14 @@ def lint(path):
     res.append(('acceptance criteria include a refusal', 'refused' in acc.lower()))
     refs = book_refs(text)
     res.append(('stands on its own: no chapter, part or table of a book the model does not have', not refs))
-    loose = unplaced(text, os.path.basename(os.path.dirname(os.path.abspath(path))))
+    own = os.path.basename(os.path.dirname(os.path.abspath(path)))
+    loose = unplaced(text, own)
     res.append(('every file named by its place (project/folder/file)', not loose))
+    n = CN.names(own)
+    gone = CN.missing(own, n, text) if n else ['no check loads %s.py' % own]
+    res.append(('names its check and every name the check looks for', not gone))
     return res, unitless + ['(no default) ' + l for l in nodefault] + ['(cites the book) ' + r for r in refs] + \
-        ['(no place given) ' + f for f in loose]
+        ['(no place given) ' + f for f in loose] + ['(for the check) ' + g for g in gone]
 
 
 # A prompt is read by a model that has never seen the book it was printed in: "as in Chapter 12" tells it nothing.

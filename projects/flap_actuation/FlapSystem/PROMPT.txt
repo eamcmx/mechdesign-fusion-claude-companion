@@ -34,9 +34,13 @@ FUSION CONVENTIONS:
 - The flap turns on an As-built revolute joint about X. The actuator is placed by its occurrence's transform, turned
   about the gimbal's axis by the exact angle: Fusion holds a joint's angle to 0.1 deg and the actuator swings less
   than 1 deg. Its rod slides on its own joint, and its Motion Links turn the screw and the gears.
-- pose(delta) sets the flap, the actuator and the rod from the linkage; the loop is closed by the numbers, and the
-  check measures it.
+- pose(delta, joints), joints what build() keeps in _last_joints (the flap's joint and its sign, the actuator's group,
+  the rod's joint and its sign), sets the flap, the actuator and the rod from the linkage; the loop is closed by the
+  numbers, and the check measures it.
 - The API works in cm and radians.
+- The companion's check, projects/flap_actuation/checks/flap_system_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(fp), the dialog's input ids the same; at
+  module level _last_joints, design(), parts_list(), pose(), flap_design imported as fd; refusals that say 'strokes'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the hinges' load, the horn's stress and factor, the pin's, the brackets' and the lugs' stresses, the
@@ -47,7 +51,7 @@ ACCEPTANCE CRITERIA:
   End stop 1, Fitting bolt M8x35 4, Fitting nut M8 4, Flap panel 1, Gear cover 1, Gearhead shaft 1, Guide key 1, Hinge
   bracket 2, Hinge fitting 4, Hinge pin 2, Hinge pin nut 2, Hinge rib 2, Horn 1, Horn pin 1, Horn pin nut 1, Idler
   gear z30 1, Idler pin 1, Jam nut M20x1.5 1, Key 8x7x16 1, Lower skin 1, Motor screw M5x12 4, Motor unit 1, Nut key
-  6x6.5x32 1, Nut retaining ring 1, Pinion z18 1, Piston rod 1, Rear spar web 1, Ring nut M66x1.5 1, Rod end SI 20 ES
+  6x6.5x32 1, Nut retaining ring 1, Pinion z18 1, Piston rod 1, Rear spar web 1, Ring nut M60x1.5 1, Rod end SI 20 ES
   1, Rod seal 1, Screw gear z54 1, Spacer 2, Spar fitting 1, Stop bolt M8x16 1, Trunnion 2, Upper skin 1, Washer M8 2.
 - At 0, 10, 20, 30 and 40 deg: the rod end's centre within 0.01 mm of the horn's pin; the transmission angle
   measured in Fusion 69.81 deg flap up and 70.15 deg at 40; no interference among the system's parts and the

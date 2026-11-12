@@ -42,7 +42,7 @@ import companion_paths as CP                            # every lib/ folder on s
 import wrist_design as wd       # noqa: E402
 importlib.reload(wd)
 
-VERSION = 'WristDifferential 1.0 (2026-11-02)'
+VERSION = 'WristDifferential 1.1 (2026-11-12)'
 MM = 0.1
 BACKLASH = 0.15                 # mm at the heel, modelled (the real set is shimmed to less: Chapter 40)
 _TBM = None
@@ -398,11 +398,11 @@ def top_gear_blank(g, L, key_deg):
 
 def roll_shaft(L):
     s = union(zcyl(L['shaft_bot'], L['collar'][0] + 0.1, 7.5), zcyl(L['collar'][0], L['collar'][1], 10.0),
-              zcyl(L['collar'][1] - 0.1, L['shaft_top'], 7.5))
+              zcyl(L['collar'][1] - 0.1, L['shaft_top'] - wd.END_SET, 7.5))   # inside the flange's floor
     cut(s, ring(L['ring471'][0], L['ring471'][1], 7.15, 9.0))
     k0, k1 = L['key']
     cut(s, box(4.5, 10, -2.5, 2.5, k0 + 2.5, k1), xcyl(4.5, 10, 2.5, 0, k0 + 2.5))
-    cut(s, zcyl(L['shaft_top'] - 13, L['shaft_top'] + 1, 3.0))          # M6 tapped (threads drawn at the nominal size)
+    cut(s, zcyl(L['shaft_top'] - wd.END_SET - 13, L['shaft_top'] + 1, 3.0))   # M6 tapped (threads drawn at the nominal size)
     return s
 
 
@@ -442,11 +442,12 @@ def carrier_block(L, g):
 
 def trunnion(L):
     y0, y1 = L['y_fl']
-    t = union(zcyl(L['tr_spigot'], y0 + 0.1, 7.5), zcyl(y0, y1, 15.0), zcyl(y1 - 0.1, L['tr_end'], 7.5))
+    end = L['tr_end'] - wd.END_SET                                      # inside the stack's face: the washer clamps it
+    t = union(zcyl(L['tr_spigot'], y0 + 0.1, 7.5), zcyl(y0, y1, 15.0), zcyl(y1 - 0.1, end, 7.5))
     for ang in (45, 135, 225, 315):
         x, y = polar(10.0, ang)
         cut(t, zcyl(y0 - 1, y1 + 1, 1.7, x, y), zcone(y1 - 1.5, 1.7, y1 + 0.01, 3.1, x, y))
-    cut(t, zcyl(L['tr_end'] - 10, L['tr_end'] + 1, 2.5))                  # M5 tapped
+    cut(t, zcyl(end - 10, end + 1, 2.5))                                # M5 tapped
     return t
 
 

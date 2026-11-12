@@ -38,6 +38,9 @@ FUSION CONVENTIONS:
 - The joints are each machine's own: the wrist, the flap and the rear axle keep their scripts' As-built joints; the
   robot, the tool changer, the three grippers and the compliance unit have no joints, as-built or otherwise, and
   place their groups by transforms. The bill adds none and moves nothing.
+- The companion's check, design_office/checks/bill_of_materials_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(which); the dialog's input ids machine; at
+  module level MACHINES; _last holding 'machines'.
 
 ACCEPTANCE CRITERIA:
 - A message gives each machine's kinds and pieces made and bought, its mass as drawn and with the makers' masses, and

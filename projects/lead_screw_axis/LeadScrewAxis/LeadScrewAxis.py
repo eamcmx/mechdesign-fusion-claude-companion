@@ -20,7 +20,7 @@ import traceback
 import adsk.core
 import adsk.fusion
 
-VERSION = 'LeadScrewAxis 1.0 (2026-11-01)'
+VERSION = 'LeadScrewAxis 1.1 (2026-11-12)'
 CM = 0.1                                   # Fusion works in centimetres: millimetres x 0.1
 P3 = adsk.core.Point3D.create
 VI = adsk.core.ValueInput.createByReal
@@ -31,12 +31,14 @@ CUT = adsk.fusion.FeatureOperations.CutFeatureOperation
 FLANK = math.radians(15.0)                 # half the 30 deg thread angle
 AC = 0.25                                  # mm, clearance at every crest and root
 J = 0.2                                    # mm, axial clearance between the threads
-H = 20.0                                   # mm, height of the screw's axis above the plate
+H0 = 20.0                                  # mm, height of the screw's axis above the plate, at least
+H = H0
 LEADS = 20                                 # the threaded length, in leads
 CAR = 20.0                                 # mm, length of the carriage
 END = 10.0                                 # mm, thickness of each end block
 DJ, DR = 8.0, 8.0                          # mm, journal and guide rod diameters
-ROD_Y = 20.0                               # mm, the guide rod's y
+ROD_Y0 = 20.0                              # mm, the guide rod's y, at least
+ROD_Y = ROD_Y0
 
 
 def screw(d, P, starts, F, f):
@@ -206,6 +208,9 @@ def build(d=12.0, P=3.0, starts=1, F=500.0, f=0.15):
     if P / 2.0 > d / 4.0:
         raise ValueError('Thread depth P / 2 = %.2f mm is more than d / 4 = %.2f mm.' % (P / 2.0, d / 4.0))
     s = screw(d, P, starts, F, f)
+    global H, ROD_Y                     # a larger screw moves its axis up and the rod out: the nut's bore 6 mm above
+    H = max(H0, s['D4'] / 2 + 6.0)      # the plate (2 over the carriage's underside), 3 mm between it and the guide's
+    ROD_Y = max(ROD_Y0, s['D4'] / 2 + 3.0 + (DR + 0.4) / 2)
     L = s['L']
     Ls = LEADS * L                                                 # the threaded length
     x_in = Ls / 2 + 2.0                                            # the end blocks' inner faces

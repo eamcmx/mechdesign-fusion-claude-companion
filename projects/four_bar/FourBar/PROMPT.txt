@@ -31,6 +31,10 @@ FUSION CONVENTIONS:
 - The API works in cm and radians.
 - AsBuiltJoints, all revolute about z: Crank on Ground at A, Rocker on Ground at D, Coupler on Crank at B, Coupler
   on Rocker at C (the last one closes the loop).
+- The companion's check, projects/four_bar/checks/four_bar_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(a, b, c, d), the dialog's input ids the same;
+  the joint 'Crank turns'; the component 'Rocker'; at module level linkage(); refusals that say 'Not a crank-rocker',
+  'falls to 38.57 deg'.
 
 ACCEPTANCE CRITERIA:
 - A message gives theta4 at the start, the rocker's swing, the transmission angle's range and a version tag.

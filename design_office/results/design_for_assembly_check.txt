@@ -1,12 +1,12 @@
 # design_for_assembly_check
-# Autodesk Fusion 2706.1.17, run 2026-11-10 19:38, 46 s
+# Autodesk Fusion 2706.1.17, run 2026-11-12 17:19, 54 s
 
 DesignForAssembly 1.0 (2026-11-04)
   ok   Run opens the dialog
-Design for assembly: the bag gripper, 114 pieces tagged; 19 essential (base 1, move 15, separate 3); after the three fixings 96 pieces (16 tines and 2 end blocks joined, 8 screws removed, 8 added); the new screws: 0 interferences; 323.499 kg to 323.474 kg.
+Design for assembly: the bag gripper, 114 pieces tagged; 19 essential (base 1, move 15, separate 3); after the three fixings 96 pieces (16 tines and 2 end blocks joined, 8 screws removed, 8 added); the new screws: 0 interferences; 323.625 kg to 323.600 kg.
 
 [DesignForAssembly 1.0 (2026-11-04)]
-  OK pressed, built in 46 s
+  OK pressed, built in 53 s
   ok   a new design opened
   ok   every piece answered in the model: 114 tagged, 114 read back, the lib 114
   ok   every first-level line of the bill has its answer (30 lines)
@@ -18,7 +18,7 @@ Design for assembly: the bag gripper, 114 pieces tagged; 19 essential (base 1, m
   ok   the bill after: no tine or end block line, M8 x 20 10, M8 x 30 4
   ok   pieces after the fixings: 96 in the model, the lib 96
   ok   the new screws touch nothing they should not: [] (of 0 interferences in the gripper)
-  ok   mass 323.499 kg before, 323.474 kg after
+  ok   mass 323.625 kg before, 323.600 kg after
   ok   results/dfa.json written
   ok   refused: No answers for crane: Chapter 65 answers the test for the bag gripper.
   ok   a message gives the version tag DesignForAssembly 1.0 (2026-11-04)

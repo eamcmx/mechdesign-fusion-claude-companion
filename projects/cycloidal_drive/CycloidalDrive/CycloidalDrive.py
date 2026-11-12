@@ -5,7 +5,8 @@
 #
 #   INPUTS        the dialog: N_p, R, ring pin diameter, e, t
 #   DERIVED       cycloid(): N_d, the ratio, K1; disc_outline(): the pin centre's curve in the disc's frame, offset
-#   HARD RULES    build() refuses a pin count out of range, pins that overlap, and a looping curve (K1 >= 1)
+#   HARD RULES    build() refuses a pin count out of range, pins that overlap, a looping curve (K1 >= 1), and an
+#                 outline whose chords come within half the gap of a pin
 #   CONVENTIONS   a new design; parts at the origin, drawn in place; the outline one closed polyline; cm inside the
 #                 API; As-built Joints, the disc's on the eccentric's centre; two Motion Links
 #   ACCEPTANCE    the message; the output -3 deg per 30 deg step of the input; no interference at 12 steps
@@ -18,7 +19,7 @@ import traceback
 import adsk.core
 import adsk.fusion
 
-VERSION = 'CycloidalDrive 1.0 (2026-11-01)'
+VERSION = 'CycloidalDrive 1.1 (2026-11-12)'
 CM = 0.1                                   # Fusion works in centimetres: millimetres x 0.1
 P3 = adsk.core.Point3D.create
 VI = adsk.core.ValueInput.createByReal
@@ -27,7 +28,7 @@ NEW = adsk.fusion.FeatureOperations.NewBodyFeatureOperation
 JOIN = adsk.fusion.FeatureOperations.JoinFeatureOperation
 CUT = adsk.fusion.FeatureOperations.CutFeatureOperation
 GAP = 0.1                                  # mm between the disc and the pins, and in every hole
-PER_TURN = 36                              # points of the outline per input turn
+PER_TURN = 72                              # points of the outline per input turn: 36 left 0.081 mm in the valleys
 N_OUT, D_OUT, R_OUT = 6, 5.0, 17.0         # output pins: number, diameter, circle radius (mm)
 R_CAM, DS = 10.0, 8.0                      # eccentric radius and input shaft diameter (mm)
 
@@ -63,6 +64,35 @@ def disc_outline(n_p, R, d_pin, e):
             nx, ny = -nx, -ny
         out.append((pts[i][0] + d * nx, pts[i][1] + d * ny))
     return out
+
+
+def pin_path(n_p, R, e, shift):
+    """The pin's centre in the disc's frame, sampled between the outline's points (shift 0.5) or on them (0)."""
+    n_d = n_p - 1
+    pts = []
+    for i in range(PER_TURN * n_d):
+        th = 2 * math.pi * (i + shift) / PER_TURN
+        cx, cy, phi = e * math.cos(th), e * math.sin(th), -th / n_d
+        px, py = R - cx, -cy
+        c, s = math.cos(-phi), math.sin(-phi)
+        pts.append((px * c - py * s, px * s + py * c))
+    return pts
+
+
+def least_gap(n_p, R, d_pin, e):
+    """How near the drawn outline (its straight chords) comes to the ring pins: every sample of the pin's path, on
+    and between the outline's points, against the chords near it, less the pin's radius (mm)."""
+    out = disc_outline(n_p, R, d_pin, e)
+    n = len(out)
+    worst = 1e9
+    for shift in (0.0, 0.25, 0.5, 0.75):
+        for i, (qx, qy) in enumerate(pin_path(n_p, R, e, shift)):
+            for j in range(i - 12, i + 13):
+                (ax, ay), (bx, by) = out[j % n], out[(j + 1) % n]
+                dx, dy = bx - ax, by - ay
+                u = max(0.0, min(1.0, ((qx - ax) * dx + (qy - ay) * dy) / (dx * dx + dy * dy)))
+                worst = min(worst, math.hypot(qx - ax - u * dx, qy - ay - u * dy))
+    return worst - d_pin / 2.0
 
 
 # ---------- Fusion building blocks (mm at the interface) ----------
@@ -156,6 +186,11 @@ def build(n_p=11, R=30.0, d_pin=6.0, e=1.5, t=8.0):
     k = cycloid(n_p, R, d_pin, e)
     if k['K1'] >= 1.0:
         raise ValueError('K1 = e N_p / R = %.3f: the curve of the pin centre loops. Use a smaller eccentricity.' % k['K1'])
+    k['gap'] = least_gap(n_p, R, d_pin, e)
+    if k['gap'] < GAP / 2:
+        raise ValueError('At K1 = %.3f the outline, drawn with %d points a lobe, comes %.3f mm from a pin, under half '
+                         'the %.1f mm gap: its valleys are too sharp. Use a smaller eccentricity.'
+                         % (k['K1'], PER_TURN, k['gap'], GAP))
     n_d = k['n_d']
 
     app = adsk.core.Application.get()
@@ -211,9 +246,11 @@ def build(n_p=11, R=30.0, d_pin=6.0, e=1.5, t=8.0):
 
     return ('Cycloidal drive built: %d ring pins on R = %.1f mm, a disc of %d lobes, eccentricity %.2f mm.\n\n'
             'Ratio %d (the output turns the other way, 1/%d of the input)\n'
-            'K1 = e N_p / R = %.3f; the disc outline runs from %.3f to %.3f mm; gap %.2f mm\n\n'
+            'K1 = e N_p / R = %.3f; the disc outline runs from %.3f to %.3f mm; gap %.2f mm at its points, %.3f at '
+            'its worst chord\n\n'
             'Step the input 30 deg at a time: the output turns %.1f deg per step.\n\n[%s]'
-            % (n_p, R, n_d, e, k['ratio'], n_d, k['K1'], k['r_min'], k['r_max'], GAP, -30.0 / n_d, VERSION))
+            % (n_p, R, n_d, e, k['ratio'], n_d, k['K1'], k['r_min'], k['r_max'], GAP, k['gap'], -30.0 / n_d,
+               VERSION))
 
 
 # ---------- the command dialog ----------

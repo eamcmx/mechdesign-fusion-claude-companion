@@ -34,6 +34,9 @@ FUSION CONVENTIONS:
   end's nuts and motors held still in their groups.
 - pose(q1, q2, j3, j4) in degrees and millimetres.
 - The API works in cm and radians.
+- The companion's check, projects/scara_robot/checks/scara_robot_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(size1), the dialog's input ids the same;
+  at module level parts_list(), pose(), scara_design imported as sd; refusals that say 'CSG-40 or a CSG-45'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the units and the parts list with a version tag.

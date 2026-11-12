@@ -32,6 +32,11 @@ def run(_context):
           'three revolute As-built Joints, two Motion Links')
     c = fc.interference()
     fc.ok(not c, 'no interference at rest %s' % (c or ''))
+    mm = adsk.core.Application.get().measureManager
+    g = mm.measureMinimumDistance(fc.occ('Disc').bRepBodies.item(0), fc.occ('Housing').bRepBodies.item(0)).value * 10
+    fc.ok(abs(g - ns['least_gap'](n_p, R, d_pin, e)) < 0.005 and g > 0.09,
+          'the disc %.3f mm from the ring pins at rest, measured by Fusion (the chords\' worst, %.3f, worked out)'
+          % (g, ns['least_gap'](n_p, R, d_pin, e)))
     j_in = fc.joint('Input turns')
     Ro, Rd = fc.rotation(fc.occ('Output')), fc.rotation(fc.occ('Disc'))
     worst_o, worst_c, worst_d, hits = 0.0, 0.0, 0.0, []
@@ -58,4 +63,5 @@ def run(_context):
         adsk.doEvents()
     fc.refused(ns, 'overlap', n_p=40)
     fc.refused(ns, 'K1 = e N_p / R = 1.100', e=3.0)
+    fc.refused(ns, 'valleys are too sharp', e=2.5)
     fc.verdict()

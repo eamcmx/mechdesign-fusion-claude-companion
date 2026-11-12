@@ -1,4 +1,4 @@
-# CONTROL for the prompt line "each zone's manifold 150 x 60 between the zone's two rows of cups": the manifold made
+# CONTROL for the prompt line "each zone's manifold 200 x 100 between the zone's two rows of cups": the manifold made
 # 120 mm wide across. Expected: it reaches y = +-60 from the zone's middle, over the sleeves of the cups at +-70
 # (their outside at +-55): the interference check fails.
 import sys, importlib
@@ -8,7 +8,7 @@ importlib.reload(fc)
 
 PATH = '__COMPANION__/projects/palletizer/VacuumGripper/VacuumGripper.py'
 OLD = "    mx, my = L['manifold_xy']"
-NEW = "    mx, my = 150.0, 120.0"
+NEW = "    mx, my = 200.0, 120.0"
 
 
 def run(_context):

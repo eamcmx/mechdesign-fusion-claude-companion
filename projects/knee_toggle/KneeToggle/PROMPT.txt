@@ -30,6 +30,10 @@ FUSION CONVENTIONS:
 - The API works in cm and radians.
 - AsBuiltJoints: Upper link revolute about z on Frame at T, limited as above; Lower link revolute on Upper link at
   K; Lower link revolute on Ram at R; Ram slider along y on Frame (the last closes the loop).
+- The companion's check, projects/knee_toggle/checks/knee_toggle_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(l, alpha0, over, P), the dialog's input
+  ids the same; the joint 'Upper link turns'; the components 'Ram', 'Upper link'; at module level toggle(); refusals
+  that say 'from 5 to 60', 'from 1 to 10'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the stroke, F at the five angles and a version tag.

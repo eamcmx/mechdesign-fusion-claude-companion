@@ -21,14 +21,16 @@ DERIVED (from projects/palletizer/lib/palletizer_design.py, projects/palletizer/
 
 HARD CONSTRAINTS:
 - Refuse a pose outside the working range: the joints' limits, and psi = 90 - q2 - q3 between 25 and 140 deg.
-- Build each group at q = 0 and place every group by one function, set_pose(q1, q2, q3): the lower arm turned by q2
-  about the shoulder; the crank and the upper arm turned by q3 about the shoulder and the elbow; the parallel rod
-  turned by q2 about its pin C; the levelling rods turned by q2 about E and by q3 about G; the triangle and the wrist
-  moved with the elbow and the wrist pin; the balancer's barrels and rods as PalletizerDrives.py draws them; then all
-  turned by q1. Fusion's joints do not close a parallelogram's loop; its geometry does.
+- Build each group at q = 0 and place every group by one function, set_pose(G, q1, q2, q3), G the dict of top-level
+  groups by name that build() keeps in _last['groups']: the lower arm turned by q2 about the shoulder; the crank and
+  the upper arm turned by q3 about the shoulder and the elbow; the parallel rod turned by q2 about its pin C; the
+  levelling rods turned by q2 about E and by q3 about G; the triangle and the wrist moved with the elbow and the wrist
+  pin; the balancer's barrels and rods as PalletizerDrives.py draws them; then all turned by q1. Fusion's joints do
+  not close a parallelogram's loop; its geometry does.
 - The layers across the arm's plane (y, mm): the crank's web 610 to 670 and the parallel rod 675 to 745 on its
   outer face; the upper arm's rear lever 610 to 670 on a torque tube round the elbow's axis from 200; the
-  counterweight block 750 to 810 on four standoffs where the rod never swings; the levelling rods -310 to -250; the
+  counterweight block 750 to 810 on four standoffs where the rod never swings, each standing on the web (whose box
+  reaches 150 either side of the crank's line); the levelling rods -310 to -250; the
   triangle and the wrist's plate up to H -245 to -215.
 - The parallel rod 40 mm deep in the arm's plane: at full reach it passes 190.2 mm from J3's axis, beside the
   reducer's case of 162.5 mm.
@@ -47,6 +49,10 @@ FUSION CONVENTIONS:
 - Top-level groups: Base (grounded), Turret, Lower arm, Crank, Upper arm, Parallel rod, Levelling rod 1 and 2,
   Triangle, Wrist, and one each for the balancer's barrels and rods; each group's parts grounded inside it.
 - The API works in cm and radians.
+- The companion's check, projects/palletizer/checks/palletizer_robot_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(q1, q2, q3), the dialog's input ids the
+  same; at module level AX, AZ, HOME, Y, parts_list(), set_pose(); _last holding 'groups'; refusals that say
+  'outside'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the pose, the reducers, the sections, the bearings, the parts list and a version tag.

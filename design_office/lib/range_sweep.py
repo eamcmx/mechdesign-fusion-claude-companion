@@ -212,7 +212,8 @@ def stop_layout():
     along +y from its contact on the striker, the opening one along the bar's motion at 45 deg from its contact on
     the leading face; each drawn in its end position, its front face at the contact. Each bracket: a foot 12 thick on
     the end plate's outer face, two M8 through the plate, a lug round the absorber's thread; the closing bracket's lip
-    over the plate's +y end, which takes the stop's push."""
+    over the plate's +y end, which takes the stop's push, running on over the foot's thickness so that lip and foot
+    are one solid, not two blocks that meet along an edge."""
     L = BG.LAY
     yh, zh = L['hinge']
     face = L['plate_x'][1]
@@ -221,7 +222,7 @@ def stop_layout():
     c_face = (yh + 20.0, zh + STRIKER['contact'])
     closed = dict(face=c_face, axis=(1.0, 0.0), x=ax,
                   foot=dict(x=(face, face + ft), y=(296.0, L['plate_y']), z=(-72.0, 16.0)),
-                  lip=dict(x=(L['plate_x'][0], face), y=(L['plate_y'], L['plate_y'] + 12.0), z=(-72.0, -16.0)),
+                  lip=dict(x=(L['plate_x'][0], face + ft), y=(L['plate_y'], L['plate_y'] + 12.0), z=(-72.0, -16.0)),
                   lug=dict(x=(face + ft, 509.0), y=(335.0, L['plate_y']), z=(c_face[1] - 24.0, c_face[1] + 24.0)),
                   bolts=[(312.0, -30.0), (312.0, -58.0)], pivot=(face, L['plate_y']), nut=(325.0, 335.0))
     ph = math.radians(L['open'])

@@ -32,6 +32,8 @@ FUSION CONVENTIONS:
   temporary bodies (cut, union), in world millimetres turned into the component's frame, and BaseFeature.updateBody;
   the machine's joints and as-built joints left as RangeSweep made them, none added; lengths in mm, the API's cm
   inside.
+- The companion's check, projects/palletizer/checks/stop_bracket_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(r), the dialog's input ids the same.
 
 ACCEPTANCE CRITERIA:
 - A message gives the arm's sides against the push, the root's radius and its faces, each bracket's volume and mass

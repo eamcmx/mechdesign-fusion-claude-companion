@@ -39,6 +39,9 @@ FUSION CONVENTIONS:
   into Component.partNumber and Component.description; components keep the names the gripper's script gives them (the
   dowel, drawn 22 long, keeps the name 'Dowel pin 10x17'); lengths in mm, the API's cm inside mdfc_parts.
 - No joints, as-built or otherwise: BagGripper.py places its groups by transforms, and nothing is moved.
+- The companion's check, design_office/checks/standard_parts_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(shoulder, key_len); the dialog's input ids
+  shoulder, key; _last holding 'added', 'g', 'groups'; refusals that say 'SKF', 'crushed', 'makes keys'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the shoulder and SKF's band, the bearing, the spacer, the hub and the key, the end washer and the

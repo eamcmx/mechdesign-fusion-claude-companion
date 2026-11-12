@@ -36,6 +36,9 @@ FUSION CONVENTIONS:
 - The joints are the assembly's own: the wrist's, the flap's and the rear axle's scripts make As-built joints; the
   other six (the robot, the tool changer, the three grippers and the compliance unit) have no joints, as-built or
   otherwise, and place their groups by transforms.
+- The companion's check, design_office/checks/materials_fits_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(key); the dialog's input ids assembly; at
+  module level COLOURS, finish(); refusals that say 'nine'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the assembly, how many made parts got their materials and which materials the library lacks, the

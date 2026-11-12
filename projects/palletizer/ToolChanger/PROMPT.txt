@@ -39,10 +39,14 @@ FUSION CONVENTIONS:
 - A new design document (FusionDesignDocumentType), parametric; millimetres in the world, the interface's axis along Z with the robot's face at z = 0, +Xm
   along X.
 - Top-level groups: Robot plate (grounded), Master (grounded, with its body, cover, screws and pins), Piston (the
-  piston with its rod, and the cam), Segment 1 to 6, Tool plate. One function, set_state(locked, tool_down), places
-  the moving groups by their transforms; tool_down lowers the tool plate to test the lock. No joints, as-built or
-  otherwise: the lock's states are poses, not motions.
+  piston with its rod, and the cam), Segment 1 to 6, Tool plate. One function, set_state(G, locked=True, tool_down=0),
+  G the groups by name (_last['groups']), places the moving groups by their transforms; tool_down lowers the tool
+  plate to test the lock. No joints, as-built or otherwise: the lock's states are poses, not motions.
 - The API works in cm and radians.
+- The companion's check, projects/palletizer/checks/tool_changer_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(alpha, p_bar, locked), the dialog's input
+  ids the same; at module level GM, parts_list(), set_state(); _last holding 'groups'; refusals that say 'friction',
+  'under'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the ISO designation, the screws, the piston, the angles, the clamp against the need, the parts

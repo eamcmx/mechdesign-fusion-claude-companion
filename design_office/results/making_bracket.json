@@ -71,24 +71,14 @@
      "tool": "12mm Flat Endmill",
      "d": 12.000000000000002,
      "seconds": 600.495217
-    },
-    {
-     "name": "2D Contour1",
-     "strategy": "contour2d",
-     "toolpath": true,
-     "warning": false,
-     "message": "",
-     "tool": "10mm Bullnose R2.5",
-     "d": 10.0,
-     "seconds": 22.559959
     }
    ],
-   "seconds": 1141.95451,
-   "feed": 14066.936143162004,
-   "rapid": 6889.6176273408655,
-   "tool_changes": 2,
+   "seconds": 1104.39455,
+   "feed": 13852.236819891747,
+   "rapid": 6790.6176273408655,
+   "tool_changes": 1,
    "nc": "662.NC",
-   "nc_lines": 10429
+   "nc_lines": 10392
   },
   {
    "setup": "3 The lug, M30 x 1.5",
@@ -122,20 +112,97 @@
      "tool": "12mm Flat Endmill",
      "d": 12.000000000000002,
      "seconds": 255.896996
+    },
+    {
+     "name": "3D Adaptive Roughing2",
+     "strategy": "adaptive",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "10mm Flat Endmill",
+     "d": 10.0,
+     "seconds": 149.654564
+    },
+    {
+     "name": "3D Contour3",
+     "strategy": "contour3d",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "5mm Flat Endmill",
+     "d": 5.0,
+     "seconds": 46.915682
+    },
+    {
+     "name": "Parallel1",
+     "strategy": "parallel",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "10mm Bullnose R2.5",
+     "d": 10.0,
+     "seconds": 136.406717
     }
    ],
-   "seconds": 452.513031,
-   "feed": 4834.753765881325,
-   "rapid": 748.3538076008772,
-   "tool_changes": 2,
+   "seconds": 830.489996,
+   "feed": 10087.601751362983,
+   "rapid": 2200.731830136494,
+   "tool_changes": 5,
    "nc": "663.NC",
-   "nc_lines": 711
+   "nc_lines": 6250
+  },
+  {
+   "setup": "4 The arm under the lug, from its other end",
+   "ops": [
+    {
+     "name": "3D Adaptive Roughing3",
+     "strategy": "adaptive",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "10mm Flat Endmill",
+     "d": 10.0,
+     "seconds": 183.692784
+    },
+    {
+     "name": "3D Contour4",
+     "strategy": "contour3d",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "5mm Flat Endmill",
+     "d": 5.0,
+     "seconds": 46.915638
+    },
+    {
+     "name": "Parallel2",
+     "strategy": "parallel",
+     "toolpath": true,
+     "warning": false,
+     "message": "",
+     "tool": "10mm Bullnose R2.5",
+     "d": 10.0,
+     "seconds": 134.021056
+    }
+   ],
+   "seconds": 394.629479,
+   "feed": 5768.124921115648,
+   "rapid": 1718.4284769673804,
+   "tool_changes": 2,
+   "nc": "664.NC",
+   "nc_lines": 5389
   }
  ],
- "total": 1641.243964,
+ "total": 2376.290448,
  "post": "fanuc.cps",
  "notes": [
-  "the lug contour: bottom height 'from surface top' (default 'from surface bottom'), -25.5 mm"
+  "the lug contour: bottom height 'from surface top' (default 'from surface bottom'), -25.5 mm",
+  "under the lug from its first end, roughed: bottom height 'from surface top', -13.0 mm",
+  "under the lug from its first end, walls and root along the axis: bottom height 'from surface top', -13.0 mm",
+  "under the lug from its first end, the end wall and its root: bottom height 'from surface top', -13.0 mm",
+  "under the lug from its other end, roughed: bottom height 'from surface top', -13.0 mm",
+  "under the lug from its other end, walls and root along the axis: bottom height 'from surface top', -13.0 mm",
+  "under the lug from its other end, the end wall and its root: bottom height 'from surface top', -13.0 mm"
  ],
- "version": "Making 1.1 (2026-11-07)"
+ "version": "Making 1.2 (2026-11-12)"
 }

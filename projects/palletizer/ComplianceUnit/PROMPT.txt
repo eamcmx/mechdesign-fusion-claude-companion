@@ -6,7 +6,7 @@ the float through a tube that slides in a sealed receiver.
 INPUTS (a command dialog, with these defaults):
 - the gripper (bag, vacuum or clamp), bag
 - the stroke (mm), 30
-- the springs' preload (N), 853.3
+- the springs' preload (N), 853.4
 
 DERIVED (from projects/palletizer/lib/compliance_unit.py, never typed):
 - LAY: the layout below; GUIDE: HIWIN HGR25 rails and HGH25CA blocks (C0 36 490 N, 84 long, 40 high, 48 wide)
@@ -45,9 +45,13 @@ HARD CONSTRAINTS:
 FUSION CONVENTIONS:
 - A new design document (FusionDesignDocumentType), parametric; millimetres in the world, z = 0 the unit's top face
   on the tool plate, z up.
-- Top-level groups: Body (grounded) and Carriage. One function, set_state(lift), raises the carriage by its
-  transform. No joints, as-built or otherwise.
+- Top-level groups: Body (grounded) and Carriage. One function, set_state(G, lift=0), G the groups by name
+  (_last['groups']), raises the carriage by its transform. No joints, as-built or otherwise.
 - The API works in cm and radians. A spring is swept once along a helix and copied as a temporary body.
+- The companion's check, projects/palletizer/checks/compliance_unit_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(gripper, stroke, F_pre), the dialog's
+  input ids the same; at module level ISO, L, Z_CAR, parts_list(), set_state(); _last holding 'coil', 'groups';
+  refusals that say 'ring would open', 'rails give', 'preload'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the gripper, the unit's height and stroke, the guides' static factor, the springs, the ring factor,

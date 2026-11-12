@@ -56,6 +56,9 @@ FUSION CONVENTIONS:
 - Fusion has no tooth contact: the meshes are Motion Links. Sun to carrier: (Zs + Zr)·360 deg of the sun for
   Zs·360 deg of the carrier, same direction. Carrier to each planet: Zp·360 deg of the carrier for Zr·360 deg of
   the planet, reversed (the planet turns backwards relative to the carrier).
+- The companion's check, projects/planetary_gearbox/checks/planetary_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(m, zs, zp, n, alpha, b, backlash, d_pin,
+  d_in, d_out, ct, wall), the dialog's input ids the same.
 
 ACCEPTANCE CRITERIA:
 - A message at the end gives Zr, the three ratios and a version tag.

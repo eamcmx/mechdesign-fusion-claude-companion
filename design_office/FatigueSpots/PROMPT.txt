@@ -32,6 +32,8 @@ FUSION CONVENTIONS:
 - A new design document (FusionDesignDocumentType), made by the gripper's own script; lengths in mm, the API's cm
   inside.
 - No joints, as-built or otherwise: the bag gripper's script places its groups by transforms, and nothing is moved.
+- The companion's check, design_office/checks/fatigue_spots_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(which); the dialog's input ids spot.
 
 ACCEPTANCE CRITERIA:
 - A message gives each spot's measures, the gripper's own first line, and a version tag.

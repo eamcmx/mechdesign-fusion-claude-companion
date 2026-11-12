@@ -194,7 +194,7 @@ LAY = dict(
     lobe_x=34.0, lobe_z=-132.0, cav_x=27.0, cav_z=-117.0, lobe_s=40.0,
     washer=(7.0, 10.0), gear_hub=(10.0, 30.0), gear_face=(13.0, 27.0), key=(12.0, 28.0),
     shoulder_ring=(28.0, 30.0), r_shoulder_in=25.0,
-    bearings=((30.0, 45.0), (45.0, 60.0)), ring_nut=(60.0, 66.0), r_ring=33.0,
+    bearings=((30.0, 45.0), (45.0, 60.0)), ring_nut=(60.0, 66.0), r_ring=30.0,
     seat=(10.0, 60.0), neck=(60.0, 68.0), thread=(68.0, 240.0), groove=(70.0, 238.0), stop=(240.0, 248.0),
     journal_end=(240.0, 250.0),
     boss=(30.0, 66.0), r_boss=40.0, tube=(66.0, 245.0), r_tube=38.0, bore=62.0, gland=(245.0, 265.0),
@@ -251,7 +251,7 @@ def gear_train(T_s, T_s_ult, n_s, L=None):
     return out
 
 
-def actuator_design(b=None, fp=3.0):
+def actuator_design(b=None, fp=3.0, i_gh=24.0):
     """Chapter 33's sizing, in the order of the chapter."""
     b = b or brief()
     act = actuator(b, deltas=[b['delta_max'] * i / 400.0 for i in range(401)])
@@ -299,7 +299,7 @@ def actuator_design(b=None, fp=3.0):
     out['T_pin'] = (T_lim + WBK25DF_DRAG * 1000.0) / g['ratio'] / eta_mesh ** 2   # N mm at the motor unit's pinion
     out['n_pin'] = out['n_screw'] * g['ratio']
     # the motor unit, bought to this specification: gearhead i_gh, efficiency assumed
-    i_gh, eta_gh, eta_m = 24.0, 0.81, 0.85
+    eta_gh, eta_m = 0.81, 0.85
     out.update(i_gh=i_gh, eta_gh=eta_gh, eta_m=eta_m)
     out['n_motor'] = out['n_pin'] * i_gh
     out['T_motor'] = out['T_pin'] / i_gh / eta_gh                         # N mm

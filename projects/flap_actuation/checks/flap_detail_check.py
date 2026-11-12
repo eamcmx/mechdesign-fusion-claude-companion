@@ -82,10 +82,13 @@ def run(_context):
     ws, sc = named('Pinion end washer'), named('Cap screw ISO 4762 M4x10')
     wb = ws[0].component.bRepBodies.item(0).boundingBox if ws else None
     scb = sc[0].component.bRepBodies.item(0).boundingBox if sc else None
-    fc.ok(wb is not None and scb is not None and abs(wb.maxPoint.y * 10 - P['hub'][0]) < 0.01
+    fc.ok(wb is not None and scb is not None and abs(wb.maxPoint.y * 10 - P['shaft'][0]) < 0.01
+          and pb.minPoint.y * 10 - (P['shaft'][0] + 1.0) > 0.5 - 0.01
           and abs(scb.maxPoint.y * 10 - (P['washer'][0] + P['screw'][1])) < 0.02,
-          'the end washer against the hub at %.2f mm, the M4 x 10 to %.2f, %.1f mm of it in the shaft'
-          % (wb.maxPoint.y * 10 if wb else 0, scb.maxPoint.y * 10 if scb else 0,
+          "the end washer on the shaft's end at %.2f mm, the hub %.2f behind it (0.5 at maxon's shortest shaft), "
+          'the M4 x 10 to %.2f, %.1f mm of it in the shaft'
+          % (wb.maxPoint.y * 10 if wb else 0, pb.minPoint.y * 10 - (wb.maxPoint.y * 10 if wb else 0),
+             scb.maxPoint.y * 10 if scb else 0,
              (scb.maxPoint.y * 10 - P['shaft'][0]) if scb else 0))
     fc.ok(len([o for o in leaves if o.component.name.startswith('Motor screw M5x12')]) == 4,
           'the unit\'s flange on the housing by its four M5 x 12, as Chapter 33 drew it')

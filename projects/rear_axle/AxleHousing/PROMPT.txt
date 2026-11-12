@@ -42,6 +42,10 @@ FUSION CONVENTIONS:
   common/lib/mdfc_parts.py's bearing_bodies() (inner ring, outer ring, balls).
 - Each wheel end turns on an As-built revolute joint about Y on the housing.
 - The API works in cm and radians. Materials: Steel; the breather Brass; the seals Rubber, Silicone.
+- The companion's check, projects/rear_axle/checks/axle_housing_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(d_body, D, t, d_seat), the dialog's input ids
+  the same; the joint 'Half shaft <side> turns'; at module level design(), parts_list(); refusals that say 'against
+  yield', 'million turns', 'in the pothole'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the shaft's three factors, the bearing's life, the tube's stress and factor, the parts list and a

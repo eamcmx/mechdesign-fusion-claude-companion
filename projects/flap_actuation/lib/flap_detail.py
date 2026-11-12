@@ -99,9 +99,11 @@ def ratios():
 # ---- the pinion on the gearhead's shaft ------------------------------------------------------------------------------
 # along s (mm, the actuator's axis, as flap_design.LAY): the unit's flange 6 thick from the housing's back face at 40,
 # the output shaft 29.5 from the flange's face, maxon's key 4 x 4 x 20 two from its end, the pinion's teeth on
-# Chapter 33's face with a hub forward to the shaft's end, an M4 screw and a made end washer, 18 across, in the shaft's
-# centre hole (an ISO 7089 washer, 9 across, would bear on the 12 mm shaft's end and not on the hub)
-PIN = dict(flange=(40.0, 46.0), shaft=(40.0 - GEARHEAD['shaft'][1], 46.0), key=(12.5, 32.5), hub=(10.5, 13.0),
+# Chapter 33's face with a short hub, 18 across, from 0.5 mm behind the shaft's end at maxon's shortest shaft; an M4
+# screw in the shaft's centre hole clamps a made end washer, 18 across, on the shaft's end and over the hub, so that
+# the pinion cannot walk off (nothing behind the pinion to clamp it against; an ISO 7089 washer, 9 across, would sit
+# inside the 12 mm shaft's end and never reach the hub)
+PIN = dict(flange=(40.0, 46.0), shaft=(40.0 - GEARHEAD['shaft'][1], 46.0), key=(12.5, 32.5), hub=(12.0, 13.0),
            r_hub=9.0, t1=2.5, t2=1.8, washer=(8.5, 10.5), screw=(4.0, 10.0), centre_hole=10.0)
 END_WASHER = dict(d1=4.3, d2=18.0, h=2.0)          # made, the hub's diameter; its thickness assumed
 
@@ -154,7 +156,8 @@ def pinion_key():
     return dict(L_in=L_in, sig=4 * T / (d * h * L_in), sig_u=4 * T_u / (d * h * L_in),
                 fit=(K7[0] - hi, K7[1] - lo), screw_min=END_WASHER['h'] + 1.5 * PIN['screw'][0],
                 engage=PIN['screw'][1] - END_WASHER['h'], engage_short=PIN['screw'][1] - END_WASHER['h'] - 1.0,
-                hole=PIN['centre_hole'])
+                hole=PIN['centre_hole'], hub_gap=PIN['hub'][0] - PIN['shaft'][0],
+                hub_gap_short=PIN['hub'][0] - PIN['shaft'][0] - 1.0)
 
 
 # ---- the spherical plain bearings: clearance against fits and temperature ----------------------------------------

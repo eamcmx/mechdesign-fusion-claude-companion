@@ -5,10 +5,12 @@
 #
 #   INPUTS        the dialog: n, a, the pin diameter
 #   DERIVED       geneva(): C, b, alpha, the indexing and dwell angles, the peak speed ratio, the gap sizes
-#   HARD RULES    build() refuses n outside 3-12 and a pin larger than a / 3; built at dwell, the pin away
+#   HARD RULES    build() refuses n outside 3-12, a pin larger than a / 3 and slots whose bottoms reach the bore;
+#                 built at dwell, the pin away
 #   CONVENTIONS   a new design; parts at the origin, drawn in place; cm inside the API; two As-built revolute
 #                 joints and no Motion Link (the wheel's motion is not a constant ratio)
-#   ACCEPTANCE    the message; 36 steps of the driver, the wheel set by the law: no interference, 0.15 mm clear,
+#   ACCEPTANCE    the message; the driver stepped 10 deg in the dwell and 1 deg in the index, the wheel set by
+#                 the law: no interference, 0.15 mm clear,
 #                 the wheel -90 deg after the turn
 #
 #   Emmanuel Merchan, TSI Engineering Faculty - AI Augmented Education
@@ -19,7 +21,7 @@ import traceback
 import adsk.core
 import adsk.fusion
 
-VERSION = 'Geneva 1.0 (2026-11-01)'
+VERSION = 'Geneva 1.1 (2026-11-12)'
 CM = 0.1                                   # Fusion works in centimetres: millimetres x 0.1
 P3 = adsk.core.Point3D.create
 VI = adsk.core.ValueInput.createByReal
@@ -28,6 +30,9 @@ JOIN = adsk.fusion.FeatureOperations.JoinFeatureOperation
 CUT = adsk.fusion.FeatureOperations.CutFeatureOperation
 GAP = 0.2                                  # mm, the running gap
 BORE = 8.0                                 # mm, the wheel's bore
+RELIEF = 0.5                               # mm over the running gap: the slots' mouth corners swing out of the wheel's
+                                           # circle against the relief between mid-index and the steps either side of it
+WALL = 2.0                                 # mm, the least wall between a slot's bottom and the bore
 
 
 def geneva(n, a, dp):
@@ -111,6 +116,9 @@ def build(n=4, a=30.0, dp=8.0):
     if dp > a / 3:
         raise ValueError('A pin of %.1f mm is too large for a = %.1f mm: at most a / 3 = %.1f mm.' % (dp, a, a / 3))
     g = geneva(n, a, dp)
+    if g['r_bot'] < BORE / 2 + WALL:
+        raise ValueError("The slots' bottoms come %.2f mm from the wheel's centre, inside its %.0f mm bore and a %.0f mm "
+                         'wall: the wheel would fall apart. Make a larger.' % (g['r_bot'], BORE, WALL))
     C, b = g['C'], g['b']
 
     app = adsk.core.Application.get()
@@ -137,7 +145,7 @@ def build(n=4, a=30.0, dp=8.0):
     extrude(k, sk.profiles.item(0), 10.0, JOIN, body)                              # the pin, pointing away (theta = pi)
     sk = k.sketches.add(plane_at(k, 3.5))
     circle(sk, 0, 0, g['r_lock'])
-    circle(sk, -C, 0, b + GAP)  # the relief, towards the pin
+    circle(sk, -C, 0, b + GAP + RELIEF)  # the relief, towards the pin
     crescent = [p for p in sk.profiles if p.areaProperties().centroid.x > 0][0]
     extrude(k, crescent, 6.5, JOIN, body)                                          # the locking disc
 

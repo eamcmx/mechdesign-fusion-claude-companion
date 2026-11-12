@@ -61,6 +61,9 @@ FUSION CONVENTIONS:
   startPoint to its centerPoint. Fusion picks the views' scale: take it as the largest radius on the sheet over the
   part's largest radius. A hole shows round in a view where a curve's radius is the hole's radius times that scale,
   to 0.05 mm; dimension it there with addDiameterDimension.
+- The companion's check, design_office/checks/part_drawings_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(which, where, annotate); the dialog's input ids
+  key; at module level WANT, drawings_detail imported as DD.
 
 ACCEPTANCE CRITERIA:
 - A message gives each drawing's views, dimensions, symbols and PDF, the folder, and a version tag.

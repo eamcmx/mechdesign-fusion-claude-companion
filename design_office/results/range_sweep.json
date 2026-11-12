@@ -188,7 +188,7 @@
     "seen": 71
    }
   ],
-  "seconds": 297.2,
+  "seconds": 195.6,
   "pairs": {
    "all": 4656,
    "cross": 2912,
@@ -215,7 +215,7 @@
     "seen": 21
    },
    {
-    "a": "Ring nut M66x1.5",
+    "a": "Ring nut M60x1.5",
     "b": "Piston rod",
     "min": 2.0,
     "at": [
@@ -237,7 +237,7 @@
     "seen": 21
    },
    {
-    "a": "Ring nut M66x1.5",
+    "a": "Ring nut M60x1.5",
     "b": "Nut retaining ring",
     "min": 3.0,
     "at": [
@@ -303,7 +303,7 @@
     "seen": 21
    },
    {
-    "a": "Ring nut M66x1.5",
+    "a": "Ring nut M60x1.5",
     "b": "Ball nut R32-10T4-RSI",
     "min": 6.0,
     "at": [
@@ -611,7 +611,7 @@
     "seen": 21
    },
    {
-    "a": "Motor screw M5x12 1",
+    "a": "Motor screw M5x12 4",
     "b": "Pinion z18",
     "min": 17.87,
     "at": [
@@ -622,7 +622,7 @@
     "seen": 21
    },
    {
-    "a": "Motor screw M5x12 4",
+    "a": "Motor screw M5x12 1",
     "b": "Pinion z18",
     "min": 17.87,
     "at": [
@@ -652,17 +652,6 @@
      26.0
     ],
     "max": 24.069,
-    "seen": 21
-   },
-   {
-    "a": "Upper skin",
-    "b": "Ring nut M66x1.5",
-    "min": 23.979,
-    "at": [
-     "deflection",
-     20.0
-    ],
-    "max": 25.11,
     "seen": 21
    },
    {
@@ -707,6 +696,17 @@
      20.0
     ],
     "max": 26.661,
+    "seen": 21
+   },
+   {
+    "a": "Upper skin",
+    "b": "Ring nut M60x1.5",
+    "min": 26.975,
+    "at": [
+     "deflection",
+     20.0
+    ],
+    "max": 28.107,
     "seen": 21
    },
    {
@@ -820,7 +820,7 @@
     "seen": 21
    }
   ],
-  "seconds": 109.0,
+  "seconds": 91.0,
   "pairs": {
    "all": 3741,
    "cross": 2963,
@@ -835,6 +835,34 @@
   "groups": 9,
   "hits": [],
   "rows": [
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 5",
+    "min": 1.0,
+    "at": [
+     "turning",
+     [
+      30.0,
+      2.5
+     ]
+    ],
+    "max": 10.0,
+    "seen": 35
+   },
+   {
+    "a": "Bearing cap C1",
+    "b": "Crown wheel bolt M12x35 6",
+    "min": 1.0,
+    "at": [
+     "turning",
+     [
+      180.0,
+      2.5
+     ]
+    ],
+    "max": 9.037,
+    "seen": 36
+   },
    {
     "a": "Carrier casting",
     "b": "Crown wheel bolt M12x35 1",
@@ -904,34 +932,6 @@
     ],
     "max": 10.0,
     "seen": 21
-   },
-   {
-    "a": "Bearing cap C1",
-    "b": "Crown wheel bolt M12x35 5",
-    "min": 1.0,
-    "at": [
-     "straight",
-     [
-      30.0,
-      0.0
-     ]
-    ],
-    "max": 10.0,
-    "seen": 35
-   },
-   {
-    "a": "Bearing cap C1",
-    "b": "Crown wheel bolt M12x35 6",
-    "min": 1.0,
-    "at": [
-     "straight",
-     [
-      180.0,
-      0.0
-     ]
-    ],
-    "max": 9.037,
-    "seen": 36
    },
    {
     "a": "Bearing cap C1",
@@ -1050,10 +1050,10 @@
     "b": "Crown wheel bolt M12x35 1",
     "min": 5.922,
     "at": [
-     "straight",
+     "turning",
      [
       90.0,
-      0.0
+      2.5
      ]
     ],
     "max": 10.0,
@@ -1088,13 +1088,27 @@
     "seen": 6
    },
    {
+    "a": "Spider 2",
+    "b": "Side gear washer R",
+    "min": 9.306,
+    "at": [
+     "turning",
+     [
+      60.0,
+      2.5
+     ]
+    ],
+    "max": 9.68,
+    "seen": 36
+   },
+   {
     "a": "Spider 4",
     "b": "Side gear washer R",
     "min": 9.306,
     "at": [
      "turning",
      [
-      330.0,
+      0.0,
       2.5
      ]
     ],
@@ -1108,21 +1122,7 @@
     "at": [
      "turning",
      [
-      330.0,
-      2.5
-     ]
-    ],
-    "max": 9.68,
-    "seen": 36
-   },
-   {
-    "a": "Spider 2",
-    "b": "Side gear washer R",
-    "min": 9.306,
-    "at": [
-     "turning",
-     [
-      330.0,
+      270.0,
       2.5
      ]
     ],
@@ -1136,7 +1136,7 @@
     "at": [
      "turning",
      [
-      330.0,
+      60.0,
       2.5
      ]
     ],
@@ -1164,7 +1164,7 @@
     "at": [
      "turning",
      [
-      210.0,
+      240.0,
       2.5
      ]
     ],
@@ -1228,8 +1228,8 @@
     "seen": 36
    },
    {
-    "a": "Spider 1",
-    "b": "Spider 2",
+    "a": "Spider 3",
+    "b": "Spider 4",
     "min": 11.835,
     "at": [
      "straight",
@@ -1242,13 +1242,13 @@
     "seen": 36
    },
    {
-    "a": "Spider 3",
-    "b": "Spider 4",
+    "a": "Spider 1",
+    "b": "Spider 2",
     "min": 11.835,
     "at": [
      "straight",
      [
-      180.0,
+      0.0,
       0.0
      ]
     ],
@@ -1276,7 +1276,7 @@
     "at": [
      "turning",
      [
-      180.0,
+      270.0,
       2.5
      ]
     ],
@@ -1304,11 +1304,25 @@
     "at": [
      "turning",
      [
-      180.0,
+      270.0,
       2.5
      ]
     ],
     "max": 17.081,
+    "seen": 36
+   },
+   {
+    "a": "Spider 3",
+    "b": "Half shaft L",
+    "min": 19.057,
+    "at": [
+     "turning",
+     [
+      270.0,
+      2.5
+     ]
+    ],
+    "max": 19.248,
     "seen": 36
    },
    {
@@ -1326,8 +1340,8 @@
     "seen": 36
    },
    {
-    "a": "Spider 3",
-    "b": "Half shaft L",
+    "a": "Spider 4",
+    "b": "Half shaft R",
     "min": 19.057,
     "at": [
      "turning",
@@ -1347,20 +1361,6 @@
      "turning",
      [
       270.0,
-      2.5
-     ]
-    ],
-    "max": 19.248,
-    "seen": 36
-   },
-   {
-    "a": "Spider 4",
-    "b": "Half shaft R",
-    "min": 19.057,
-    "at": [
-     "turning",
-     [
-      150.0,
       2.5
      ]
     ],
@@ -1402,7 +1402,7 @@
     "at": [
      "turning",
      [
-      90.0,
+      210.0,
       2.5
      ]
     ],
@@ -1416,7 +1416,7 @@
     "at": [
      "straight",
      [
-      0.0,
+      90.0,
       0.0
      ]
     ],
@@ -1430,7 +1430,7 @@
     "at": [
      "straight",
      [
-      0.0,
+      90.0,
       0.0
      ]
     ],
@@ -1444,7 +1444,7 @@
     "at": [
      "turning",
      [
-      0.0,
+      270.0,
       2.5
      ]
     ],
@@ -1466,13 +1466,13 @@
     "seen": 36
    },
    {
-    "a": "Crown wheel bolt M12x35 7",
+    "a": "Crown wheel bolt M12x35 2",
     "b": "Side gear R",
     "min": 23.671,
     "at": [
      "straight",
      [
-      300.0,
+      105.0,
       0.0
      ]
     ],
@@ -1480,13 +1480,13 @@
     "seen": 36
    },
    {
-    "a": "Crown wheel bolt M12x35 2",
+    "a": "Crown wheel bolt M12x35 7",
     "b": "Side gear R",
     "min": 23.671,
     "at": [
      "straight",
      [
-      165.0,
+      15.0,
       0.0
      ]
     ],
@@ -1556,7 +1556,7 @@
     "at": [
      "turning",
      [
-      0.0,
+      210.0,
       2.5
      ]
     ],
@@ -1584,7 +1584,7 @@
     "at": [
      "straight",
      [
-      210.0,
+      15.0,
       0.0
      ]
     ],
@@ -1598,7 +1598,7 @@
     "at": [
      "straight",
      [
-      330.0,
+      45.0,
       0.0
      ]
     ],
@@ -1640,7 +1640,7 @@
     "at": [
      "straight",
      [
-      300.0,
+      240.0,
       0.0
      ]
     ],
@@ -1654,7 +1654,7 @@
     "at": [
      "straight",
      [
-      15.0,
+      135.0,
       0.0
      ]
     ],
@@ -1668,7 +1668,7 @@
     "at": [
      "straight",
      [
-      135.0,
+      150.0,
       0.0
      ]
     ],
@@ -1690,7 +1690,7 @@
     "seen": 36
    }
   ],
-  "seconds": 274.8,
+  "seconds": 156.1,
   "pairs": {
    "all": 5565,
    "cross": 3942,
@@ -1804,13 +1804,13 @@
     "seen": 25
    }
   ],
-  "seconds": 8.2,
+  "seconds": 4.9,
   "pairs": {
    "all": 6903,
    "cross": 5818,
-   "near": 151,
-   "kept": 37,
-   "measured": 37
+   "near": 153,
+   "kept": 39,
+   "measured": 39
   }
  },
  "bag0": {
@@ -1996,7 +1996,7 @@
     "seen": 22
    }
   ],
-  "seconds": 5.2,
+  "seconds": 4.5,
   "pairs": {
    "all": 4186,
    "cross": 2714,
@@ -2364,7 +2364,7 @@
     "seen": 16
    }
   ],
-  "seconds": 5.4,
+  "seconds": 4.4,
   "pairs": {
    "all": 8128,
    "cross": 4298,
@@ -2424,7 +2424,7 @@
     "seen": 1
    }
   ],
-  "seconds": 362.8,
+  "seconds": 368.3,
   "pairs": {
    "all": 1485,
    "cross": 952,
@@ -2834,279 +2834,15 @@
     ],
     "max": 0.1,
     "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 1",
-    "b": "Plunger 1-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 2",
-    "b": "Plunger 1-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 5",
-    "b": "Plunger 3-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 6",
-    "b": "Plunger 3-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 7",
-    "b": "Plunger 4-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 8",
-    "b": "Plunger 4-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 11",
-    "b": "Plunger 6-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 12",
-    "b": "Plunger 6-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 3",
-    "b": "Plunger 2-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 4",
-    "b": "Plunger 2-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 9",
-    "b": "Plunger 5-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 10",
-    "b": "Plunger 5-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 1",
-    "b": "Plunger 1-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 2",
-    "b": "Plunger 1-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 5",
-    "b": "Plunger 3-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 6",
-    "b": "Plunger 3-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 7",
-    "b": "Plunger 4-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 8",
-    "b": "Plunger 4-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 11",
-    "b": "Plunger 6-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 12",
-    "b": "Plunger 6-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 3",
-    "b": "Plunger 2-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 4",
-    "b": "Plunger 2-2",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 9",
-    "b": "Plunger 5-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
-   },
-   {
-    "a": "Ejector SCPSi 2-14 10",
-    "b": "Plunger 5-5",
-    "min": 8.597,
-    "at": [
-     "cups",
-     0.0
-    ],
-    "max": 12.597,
-    "seen": 6
    }
   ],
-  "seconds": 7.2,
+  "seconds": 6.8,
   "pairs": {
    "all": 48828,
    "cross": 17352,
-   "near": 204,
-   "kept": 60,
-   "measured": 60
+   "near": 216,
+   "kept": 36,
+   "measured": 36
   }
  },
  "changer": {
@@ -3700,7 +3436,7 @@
     "seen": 11
    }
   ],
-  "seconds": 2.4,
+  "seconds": 2.2,
   "pairs": {
    "all": 990,
    "cross": 324,

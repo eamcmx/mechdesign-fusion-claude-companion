@@ -27,8 +27,9 @@ HARD CONSTRAINTS:
   EC-i 52 to maxon's overall 145.1 with it, the brake 52 across in what is left of the specification's 176.
 - The gearhead's shaft 12 across from the flange's face 29.5 forward, its keyseat 2.5 deep with maxon's 4 x 4 x 20
   key 2 mm from its end, its centre hole for an M4; the pinion with a hub 18 across forward to the shaft's end and a
-  keyway 4 wide, 1.8 over the bore, through hub and teeth; an end washer 18 across and 2 thick on the hub, so that
-  it bears on the hub and not on the shaft's end, and an M4 x 10 cap screw through it into the shaft's centre hole.
+  keyway 4 wide, 1.8 over the bore, through hub and teeth; nothing behind the pinion to clamp it against, so its hub
+  starts 0.5 mm behind the shaft's end at maxon's shortest shaft, and an end washer 18 across and 2 thick, clamped on
+  the shaft's end by an M4 x 10 cap screw in the shaft's centre hole, overlaps the hub and keeps the pinion on.
 - The hinge pins' and the horn pin's cylinders split across at the edges of the ring that sits on them (16 wide) and
   the faces between marked as hardened. The horn pin's seat h6 Rz 10, the pinion's bore K7 and its keyway JS9, by
   hand, the census not reaching them; every other class as design_office/lib/materials_fits.py decides it.
@@ -39,14 +40,17 @@ FUSION CONVENTIONS:
 - FlapSystem's own build() makes the new design document (FusionDesignDocumentType) and its groups, with the flap's
   As-built revolute joint and the actuator's own joints and motion links; nothing moved; lengths in mm, the API's cm
   inside.
+- The companion's check, projects/flap_actuation/checks/flap_detail_check.py, drives the script as CHECK_INTERFACE.md
+  says (give it to the model for its names, never for a design fact): build(i_gh), the dialog's input ids the same; at
+  module level BESIDE, HARD, KEYED, KEYWAY, SEAT, pose(); refusals that say 'falls short'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the unit's length and the brake's, the key in the hub, the motor's point and current, the brake,
   the pinion's force against the gearhead's rating, the rim factor, the zones and the faces given, and a version tag.
 - The motor unit's bodies: the flange 6, the gearhead 65, the motor 80.1, the brake 24.9 long, all 52 across but the
   flange, ending 176 from the flange's face.
-- The gearhead's shaft 12 across from 10.5 to 46 mm, the key 20 long in it, the pinion's hub 18 across from 10.5,
-  the end washer against the hub at 10.5, the M4 x 10 through it, 8 mm of it in the shaft.
+- The gearhead's shaft 12 across from 10.5 to 46 mm, the key 20 long in it, the pinion's hub 18 across from 12.0,
+  the end washer on the shaft's end at 10.5, the M4 x 10 through it, 8 mm of it in the shaft.
 - Three zones hardened, each 16 long and centred on its ring; the faces' classes as above.
 - No interference among the system's parts and the actuator's outside at 0, 10, 20, 30 and 40 deg.
 - No interference inside the actuator, the flap up: the key clear of the housing's back wall.

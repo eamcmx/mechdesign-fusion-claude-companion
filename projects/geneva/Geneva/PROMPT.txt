@@ -17,12 +17,15 @@ DERIVED (computed from the inputs, never typed):
 - the wheel's speed over the driver's at mid-index a / (C - a)
 - running gap 0.2 mm everywhere: slots 0.4 mm wider than the pin; slot bottoms 1 mm inside the pin's closest
   approach; locking disc radius a - pin diameter, the wheel's locking arcs 0.2 mm larger round the driver's centre
-  at dwell; the locking disc's relief a circle of radius b + 0.2 round the point C from the driver's centre
-  towards the pin
+  at dwell; the locking disc's relief a circle of radius b + 0.7 round the point C from the driver's centre
+  towards the pin (the gap and 0.5 more: off mid-index the slots' mouth corners swing out of the wheel's circle
+  against the relief by up to 0.34 mm)
 
 HARD CONSTRAINTS:
 - n from 3 to 12, or refuse.
 - The pin must fit: pin diameter at most a / 3, or refuse.
+- The slots' bottoms at least 2 mm outside the wheel's 8 mm bore (C - a - pin diameter / 2 - 1 >= 6), or refuse:
+  the wheel would fall apart.
 - Driver at the origin, wheel's centre at (C, 0); built at dwell, the pin pointing away from the wheel (theta = pi),
   a slot of the wheel pointing at angle pi + pi / n.
 
@@ -34,13 +37,17 @@ FUSION CONVENTIONS:
 - The API works in cm and radians.
 - AsBuiltJoints: Driver revolute about z on Ground at the origin; Wheel revolute about z on Ground at (C, 0). No
   Motion Link: the wheel's motion is not a constant ratio; whoever turns the driver sets the wheel.
+- The companion's check, projects/geneva/checks/geneva_check.py, drives the script as CHECK_INTERFACE.md says (give it
+  to the model for its names, never for a design fact): build(n, a, dp), the dialog's input ids the same; the joints
+  'Driver turns', 'Wheel turns'; the components 'Driver', 'Wheel'; at module level geneva(); refusals that say 'from 3
+  to 12', 'too large', 'fall apart'.
 
 ACCEPTANCE CRITERIA:
 - A message gives C, b, the indexing and dwell angles, the peak speed ratio and a version tag.
 - Defaults: C = 42.426 mm, b = 30 mm, indexing 90 deg, dwell 270 deg, peak speed ratio 2.414.
-- The driver stepped through one turn from the built position, 10 deg at a time, the wheel set by the law above at
-  each step (still during the dwell): no interference and at least 0.15 mm between driver and wheel at every
-  step; after the turn the wheel has turned -90 deg.
-- Refused: n = 2; a pin of 12 mm on a = 30.
+- The driver stepped through one turn from the built position, 10 deg at a time in the dwell and 1 deg at a time
+  through the index, the wheel set by the law above at each step (still during the dwell): no interference and at
+  least 0.15 mm between driver and wheel at every step; after the turn the wheel has turned -90 deg.
+- Refused: n = 2; a pin of 12 mm on a = 30; n = 3 on a = 30 with the 8 mm pin.
 
 Give me one Python file and its .manifest.

@@ -26,16 +26,23 @@ HARD CONSTRAINTS:
   and a foot 25 deep under the bag to its tip at y = +-40, its top on the bag's underside at z -480.
 - On the long stub shaft a lever 150 to the cylinder's rod end; the cylinder's rear pin on a bracket on the end plate,
   pin to pin 594.6 closed; the -y jaw and its cylinder the +y ones turned half a turn about z.
-- The press plate 700 x 400 x 10 on the rods of two DSBC-32-50 under the beam at x = +-250, each on four M6 x 16.
+- The press plate 700 x 400 x 10 on the rods of two DSBC-32-50 under the beam at x = +-250, each on four M6 x 16;
+  each cylinder drawn 94 + 50 mm long from the beam's underside, its rod standing 26 mm out of the front face when
+  retracted, so that the plate reaches the bag's top at an extension e of 24 mm.
 - The bag 800 x 500 x 160 from z -480 to -320; nine rollers 60 across at a pitch of 100 under it.
 
 FUSION CONVENTIONS:
 - A new design document (FusionDesignDocumentType), parametric; millimetres in the world, z = 0 the gripper's
   mounting face, z up; x along the bag's 800.
 - Top-level groups: Adapter and Frame (grounded), Jaw A and B, Cylinder A and B, Rod A and B, Press, Bag, Station.
-  One function, set_state(phi, e), opens the jaws by phi and sets the press plate's extension e, by the groups'
+  One function, set_state(G, phi=0, e=None), G the groups by name (_last['groups']), opens the jaws by phi
+  (deg) and sets the press plate's extension e (mm; None: on the bag, 24), by the groups'
   transforms. No joints, as-built or otherwise.
 - The API works in cm and radians. Every part is built closed and axis-aligned; the motion is only transforms.
+- The companion's check, projects/palletizer/checks/bag_gripper_check.py, drives the script as CHECK_INTERFACE.md says
+  (give it to the model for its names, never for a design fact): build(m, w, p_bar), the dialog's input ids the same;
+  at module level L, parts_list(), set_state(), bag_gripper imported as bg; _last holding 'groups'; refusals that say
+  'worst stop', 'mm wide', '6 bar'.
 
 ACCEPTANCE CRITERIA:
 - A message gives the bag, the jaw's moment in the worst stop and its factors, the parts list and a version tag.

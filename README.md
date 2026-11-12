@@ -22,8 +22,9 @@ file of that job inside it. Each folder has a `README.md` listing what it holds.
 | `design_office/` | The work of Volume 3 on every machine, kept the same way: part numbers, standard parts, materials and fits, the range sweep, masses, studies, fatigue, stack-ups, drawings, bills of materials, assembly, making |
 | `common/` | `companion_paths.py`, which knows where everything is kept; the parts library `lib/mdfc_parts.py`; `BallScrewAxis` |
 | `extras/` | Scripts kept for reference that no chapter prints, with their checks; left out of `--all` |
-| `tools/` | `run_check.py` (runs a check and keeps its result), `fusion_mcp.py` (talks to Fusion's MCP server), `prompt_lint.py` (the five parts of a prompt), `capture.py` (the book's figures) |
+| `tools/` | `run_check.py` (runs a check and keeps its result), `fusion_mcp.py` (talks to Fusion's MCP server), `prompt_lint.py` (the five parts of a prompt), `check_names.py` (the names a prompt's check looks for), `capture.py` (the book's figures) |
 | `FUSION_API_TRAPS.md` | What Fusion's API does that its documentation does not say: the traps met writing these scripts, each with what to do. Give it to the model with your prompts |
+| `CHECK_INTERFACE.md` | What a script must offer for the companion's check to run it: `build()`, `VERSION`, refusals, the dialog, the names. Each prompt's last convention line names its check; give the model that check too, for its names only |
 
 A script that uses another project's library or script finds it through `common/companion_paths.py`: it walks up
 from its own folder to the one that holds `common/`, imports `companion_paths`, and every `lib/` folder is then on
