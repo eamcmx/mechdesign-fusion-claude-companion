@@ -104,6 +104,11 @@ script before you run it, and switch the server off when you are not using it.
 Results in the book were measured in Autodesk Fusion 2706.1.17 in November 2026. When Fusion changes, the checks are
 run again and any result that no longer holds is corrected here first.
 
+## Licence
+
+The scripts, checks and tools here are under the MIT licence (`LICENSE`): use them, change them and pass them on,
+keeping the copyright notice. The text and figures of the book are not; they stay under the book's copyright.
+
 ## Trademarks
 
 Autodesk, Autodesk Fusion and Fusion are registered trademarks or trademarks of Autodesk, Inc., and/or its
