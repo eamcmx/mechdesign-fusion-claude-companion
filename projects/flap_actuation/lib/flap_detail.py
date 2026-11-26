@@ -36,8 +36,8 @@ AB42S = dict(T=1.4, mass=0.14, J=6.1, T_amb=(-40.0, 120.0), U=(24.0 * 0.90, 24.0
 ETA_ELEC = 0.95                                      # the drive's electronics, assumed
 BRAKE_FACTOR = 2.0                                   # Chapter 33's, assumed
 SPEC = dict(T_motor=428.5, n_motor=2955.0, P=132.6, i=24.0, eta_gh=0.81, brake=0.856, D=52.0, L=176.0, mass=1.6,
-            T_min=-55.0, T_max=70.0)                 # Table ch33motor
-FLANGE_T = 6.0                                       # the unit's flange, as Table ch33motor, mm
+            T_min=-55.0, T_max=70.0)                 # Table 33.3 (Volume 2)
+FLANGE_T = 6.0                                       # the unit's flange, as Table 33.3 (Volume 2), mm
 
 
 def numbers(i=None, eta=None):

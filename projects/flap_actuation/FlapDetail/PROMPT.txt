@@ -9,7 +9,7 @@ INPUTS (a command dialog, with this default):
 
 DERIVED (from projects/flap_actuation/lib/flap_detail.py, projects/flap_actuation/lib/flap_design.py and design_office/MaterialsFits/MaterialsFits.py, never typed):
 - numbers(i): the motor's point at that ratio, its speed at 28 V, its current, the brake it needs, the bus current
-- MOTOR, GEARHEAD, OVERALL, SPEC, PIN: maxon's figures, the catalogue's overall length, Table ch33motor's envelope,
+- MOTOR, GEARHEAD, OVERALL, SPEC, PIN: maxon's figures, the catalogue's overall length, Table 33.3's envelope,
   the pinion's layout along the actuator's axis
 - pinion_force(), pinion_rim(), pinion_key(), hinge_zones()
 - MaterialsFits.apply(): the materials and the fits on the open design
